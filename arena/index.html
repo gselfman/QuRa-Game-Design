@@ -1,10 +1,15 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QuRa Arena Prototype</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#101114;color:#f4f4f5;font:14px system-ui}button{font:inherit;color:#fff;background:#292c33;border:1px solid #444a55;border-radius:8px;padding:8px;cursor:pointer}.app{padding:14px}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 330px 1fr;gap:12px}.panel{background:#191b20;border:1px solid #363a43;border-radius:14px;padding:12px}.pool,.team{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.card,.slot{background:#22252b;border:1px solid #3b404a;border-radius:10px;padding:8px;min-height:105px}.card{cursor:pointer}.sel,.active{outline:2px solid #e4b94e}.dead{opacity:.3}.icon{font-size:26px}.name{font-weight:700}.tiny{font-size:11px;color:#aab0ba}.stats{font-size:11px;margin-top:5px}.bar{height:6px;background:#343842;border-radius:4px;overflow:hidden;margin-top:4px}.hp{height:100%;background:#55bd78}.sp{height:100%;background:#e4b94e}.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.chosen{outline:2px solid #e4b94e}.log{height:430px;overflow:auto;background:#111318;border-radius:9px;padding:8px}.log div{border-bottom:1px solid #252830;padding:4px}.center{text-align:center}.center .log{text-align:left}.gold{color:#e4b94e}.roundResult{min-height:78px;margin:10px 0;padding:12px;border:1px solid #4a505c;border-radius:12px;background:#22252b;display:flex;flex-direction:column;justify-content:center}.roundResult.win{border-color:#e4b94e;background:#2b2518}.roundResult.draw{border-color:#606773}.roundResult b{font-size:20px}.roundResult span{font-size:12px;color:#c5cad2;margin-top:4px}.row{display:flex;gap:6px;flex-wrap:wrap}.ready{background:#70551d}.hiddenChoice{margin-top:7px;color:#7ed6a0;font-size:12px}
+*{box-sizing:border-box}body{margin:0;background:#101114;color:#f4f4f5;font:14px system-ui}button{font:inherit;color:#fff;background:#292c33;border:1px solid #444a55;border-radius:8px;padding:8px;cursor:pointer}.app{padding:14px}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 330px 1fr;gap:12px}.panel{background:#191b20;border:1px solid #363a43;border-radius:14px;padding:12px}.pool,.team{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.card,.slot{background:#22252b;border:1px solid #3b404a;border-radius:10px;padding:8px;min-height:105px}.card{cursor:pointer}.sel,.active{outline:2px solid #e4b94e}.dead{opacity:.3}.icon{font-size:26px}.name{font-weight:700}.tiny{font-size:11px;color:#aab0ba}.stats{font-size:11px;margin-top:5px}.bar{height:6px;background:#343842;border-radius:4px;overflow:hidden;margin-top:4px}.hp{height:100%;background:#55bd78}.sp{height:100%;background:#e4b94e}.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.chosen{outline:2px solid #e4b94e}.log{height:430px;overflow:auto;background:#111318;border-radius:9px;padding:8px}.log div{border-bottom:1px solid #252830;padding:4px}.center{text-align:center}.center .log{text-align:left}.gold{color:#e4b94e}.roundResult{min-height:78px;margin:10px 0;padding:12px;border:1px solid #4a505c;border-radius:12px;background:#22252b;display:flex;flex-direction:column;justify-content:center}.roundResult.win{border-color:#e4b94e;background:#2b2518}.roundResult.draw{border-color:#606773}.roundResult b{font-size:20px}.roundResult span{font-size:12px;color:#c5cad2;margin-top:4px}
+.cheat{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:8px 0}.cheat div{background:#15171b;border:1px solid #343943;border-radius:8px;padding:6px;font-size:11px}
+.explain{margin:8px 0;border:1px solid #414752;border-radius:10px;background:#14161a;padding:8px;text-align:left}.explainTitle{font-weight:800;text-align:center;margin-bottom:6px}.versus{display:grid;grid-template-columns:1fr 38px 1fr;gap:6px;align-items:center}.move{background:#23262c;border-radius:8px;padding:8px;text-align:center}.move.win{outline:2px solid #e4b94e}.vs{text-align:center;color:#8e96a3;font-weight:800}.why{text-align:center;margin:7px 0;font-weight:700}.delta{display:grid;grid-template-columns:1fr 1fr;gap:6px}.delta div{background:#1d2026;border-radius:7px;padding:6px;text-align:center}.damage{color:#ef7777}.heal{color:#62c989}.row{display:flex;gap:6px;flex-wrap:wrap}.ready{background:#70551d}.hiddenChoice{margin-top:7px;color:#7ed6a0;font-size:12px}
 @media(max-width:1000px){.grid{grid-template-columns:1fr}.center{order:-1}.log{height:200px}}
 </style></head><body><div class="app">
 <div class="top"><div><b>🐔 QuRa Arena — Battle Lab</b><div class="tiny">Прототип механики, без финальной графики</div></div><div class="row"><button onclick="size(1)">1×1</button><button onclick="size(2)">2×2</button><button onclick="size(3)">3×3</button><button onclick="reset()">Сброс</button></div></div>
-<div class="grid"><div class="panel" id="p0"></div><div class="panel center"><h2 id="round">Подготовка</h2><div class="gold" id="phase">Соберите команды</div><div class="roundResult draw" id="roundResult"><b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span></div><p class="tiny"><b>Атака > Манёвр</b> · <b>Манёвр > Защита</b> · <b>Защита > Атака</b>. Одинаковые действия дают ослабленный результат. Special заряжается за успешные раунды.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
+<div class="grid"><div class="panel" id="p0"></div><div class="panel center"><h2 id="round">Подготовка</h2><div class="gold" id="phase">Соберите команды</div><div class="roundResult draw" id="roundResult"><b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span></div>
+<div class="cheat"><div>⚔️ <b>Атака</b><br>бьёт 🎯 Манёвр</div><div>🎯 <b>Манёвр</b><br>обходит 🛡️ Защиту</div><div>🛡️ <b>Защита</b><br>контрит ⚔️ Атаку</div></div>
+<div class="explain" id="explain"><div class="explainTitle">Что произошло в раунде</div><div class="tiny" style="text-align:center">После первого хода здесь появится подробный разбор.</div></div>
+<p class="tiny">Special — отдельный сильный приём. При одинаковом выборе действует ослабленный результат и/или Скорость.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
 <script>
 const R=[
 {id:'r',n:'Ряба',i:'🐔',hp:110,a:24,d:20,s:16,m:'Скорлупа',x:'Золотой щит'},
@@ -15,7 +20,7 @@ const R=[
 {id:'g',n:'Гламурочка',i:'😎',hp:100,a:22,d:17,s:24,m:'Позирование',x:'Выход'}];
 let N=3,B=false,T=0,P=[];
 function np(k){return {n:'Игрок '+(k+1),pick:[],team:[],act:0,choice:null}}
-function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';let el=document.querySelector('#roundResult');if(el){el.className='roundResult draw';el.innerHTML='<b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span>'}draw()}
+function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';let el=document.querySelector('#roundResult');if(el){el.className='roundResult draw';el.innerHTML='<b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span>'}let ex=document.querySelector('#explain');if(ex)ex.innerHTML='<div class="explainTitle">Что произошло в раунде</div><div class="tiny" style="text-align:center">После первого хода здесь появится подробный разбор.</div>';draw()}
 function size(n){N=n;reset()}
 function clone(c){return {...c,max:c.hp,q:0,guard:false,shield:0,boost:0,dead:false}}
 function pick(k,id){if(B)return;let p=P[k],z=p.pick.indexOf(id);if(z>=0)p.pick.splice(z,1);else if(p.pick.length<N)p.pick.push(id);draw()}
@@ -56,9 +61,22 @@ function special(c,e){
  if(c.id==='b')return fixedHit(c,e,.55,'✨ Ответочка!')
  return fixedHit(c,e,.50,'✨ '+c.x)
 }
+function moveName(x){return {attack:'⚔️ Атака',defend:'🛡️ Защита',maneuver:'🎯 Манёвр',special:'✨ Особый приём'}[x]||x}
+function explainRound(ca,cb,winner,reason,before,after){
+ let d1=after[0]-before[0],d2=after[1]-before[1];
+ let p1=P[0].team[P[0].act],p2=P[1].team[P[1].act];
+ let cls1=winner===1?'move win':'move',cls2=winner===2?'move win':'move';
+ let fmt=(d)=>d<0?'<span class="damage">'+d+' HP</span>':d>0?'<span class="heal">+'+d+' HP</span>':'0 HP';
+ document.querySelector('#explain').innerHTML=
+ '<div class="explainTitle">Раунд '+T+'</div>'+
+ '<div class="versus"><div class="'+cls1+'"><b>Игрок 1</b><br>'+moveName(ca)+'</div><div class="vs">VS</div><div class="'+cls2+'"><b>Игрок 2</b><br>'+moveName(cb)+'</div></div>'+
+ '<div class="why">'+(winner?'🏅 Победил Игрок '+winner:'🤝 Ничья')+' — '+reason+'</div>'+
+ '<div class="delta"><div>'+p1.n+'<br>❤️ '+before[0]+' → '+after[0]+' ('+fmt(d1)+')<br>✨ Special '+p1.q+'/100</div><div>'+p2.n+'<br>❤️ '+before[1]+' → '+after[1]+' ('+fmt(d2)+')<br>✨ Special '+p2.q+'/100</div></div>';
+}
 function resolve(){
  if(!B||P.some(p=>!p.choice)){L('⚠️ Оба игрока должны выбрать действие.');return}
  let a=cur(P[0]),b=cur(P[1]),ca=P[0].choice,cb=P[1].choice;
+ let before=[a.hp,b.hp];
  let score=[0,0],reason='',winner=0;
  L('<b>Раунд '+T+'</b>: Игрок 1 — '+ca+' · Игрок 2 — '+cb);
 
@@ -101,6 +119,7 @@ function resolve(){
  if(winner){charge(P[winner-1].team[P[winner-1].act],45);charge(P[2-winner].team[P[2-winner].act],15)}
  else {charge(a,25);charge(b,25)}
  setRoundResult(winner,reason);
+ explainRound(ca,cb,winner,reason,before,[a.hp,b.hp]);
  L((winner?'🏅 <b>Раунд за Игроком '+winner+'</b>':'🤝 <b>Раунд без победителя</b>')+' — '+reason);
 
  P.forEach(p=>p.choice=null);
