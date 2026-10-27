@@ -50,7 +50,7 @@ function special(c,e,opp){c.q=0;let guard=opp==='defend',v=0;
  else if(c.id==='m'){let h=Math.min(c.max-c.hp,27);c.hp+=h;v=take(e,18*(guard?.50:1));L('✨ Благодать: лечение '+h+' HP и −'+v+' HP врагу')}
  else{e.weaken=Math.max(e.weaken,.30);v=take(e,41*(guard?.50:1));L('✨ Ослепительный выход: −'+v+' HP, следующая атака врага −30%'+(guard?' — урон снижен Защитой':'') )}
  return v}
-function moveName(x){return {attack:'⚔️ Атака',defend:'🛡️ Защита',maneuver:'🎯 Манёвр',special:'✨ Особый приём'}[x]||x}
+function choiceLabel(c,x){return x==='attack'?'⚔️ Атака':x==='defend'?'🛡️ Защита':x==='maneuver'?'🎯 '+c.m:x==='special'?'✨ '+c.x:x}
 function explainRound(ca,cb,winner,reason,before,after){
  let d1=after[0]-before[0],d2=after[1]-before[1];
  let p1=P[0].team[P[0].act],p2=P[1].team[P[1].act];
@@ -58,66 +58,63 @@ function explainRound(ca,cb,winner,reason,before,after){
  let fmt=(d)=>d<0?'<span class="damage">'+d+' HP</span>':d>0?'<span class="heal">+'+d+' HP</span>':'0 HP';
  document.querySelector('#explain').innerHTML=
  '<div class="explainTitle">Раунд '+T+'</div>'+
- '<div class="versus"><div class="'+cls1+'"><b>Игрок 1</b><br>'+moveName(ca)+'</div><div class="vs">VS</div><div class="'+cls2+'"><b>Игрок 2</b><br>'+moveName(cb)+'</div></div>'+
+ '<div class="versus"><div class="'+cls1+'"><b>Игрок 1</b><br>'+choiceLabel(p1,ca)+'</div><div class="vs">VS</div><div class="'+cls2+'"><b>Игрок 2</b><br>'+choiceLabel(p2,cb)+'</div></div>'+
  '<div class="why">'+(winner?'🏅 Победил Игрок '+winner:'🤝 Ничья')+' — '+reason+'</div>'+
  '<div class="delta"><div>'+p1.n+'<br>❤️ '+before[0]+' → '+after[0]+' ('+fmt(d1)+')<br>✨ Special '+p1.q+'/100</div><div>'+p2.n+'<br>❤️ '+before[1]+' → '+after[1]+' ('+fmt(d2)+')<br>✨ Special '+p2.q+'/100</div></div>';
 }
 function resolve(){
  if(!B||P.some(p=>!p.choice)){L('⚠️ Оба игрока должны выбрать действие.');return}
- let a=cur(P[0]),b=cur(P[1]),ca=P[0].choice,cb=P[1].choice;
- let before=[a.hp,b.hp];
- let score=[0,0],reason='',winner=0;
- L('<b>Раунд '+T+'</b>: Игрок 1 — '+ca+' · Игрок 2 — '+cb);
+ let x=cur(P[0]),y=cur(P[1]),ca=P[0].choice,cb=P[1].choice,before=[x.hp,y.hp],score=[0,0],winner=0,reason='';
+ L('<b>Раунд '+T+'</b>: '+choiceLabel(x,ca)+' VS '+choiceLabel(y,cb));
 
- // Special: сильное персональное действие. Второй игрок отвечает своим действием, если пережил эффект.
  if(ca==='special'||cb==='special'){
-   let order=[{c:a,e:b,x:ca,k:0},{c:b,e:a,x:cb,k:1}].sort((u,v)=>v.c.s-u.c.s);
-   for(let o of order){
-     if(o.c.dead||o.e.dead)continue;
-     if(o.x==='special')score[o.k]+=special(o.c,o.e);
-     else if(o.x==='attack')score[o.k]+=pctHit(o.c,o.e,.30,'⚔️ Ответная атака');
-     else if(o.x==='defend'){charge(o.c,25);score[o.k]+=8;L('🛡️ '+o.c.n+' уходит в защиту')}
-     else {charge(o.c,30);score[o.k]+=10;L('🎯 '+o.c.n+' выполняет манёвр')}
+   if(ca==='special')score[0]+=special(x,y,cb);
+   if(cb==='special')score[1]+=special(y,x,ca);
+   if(ca!=='special'){
+     if(ca==='attack')score[0]+=hit(x,y,.35,'⚔️ Атака сквозь Special');
+     else if(ca==='maneuver')score[0]+=maneuver(x,y);
+     else {charge(x,18);L('🛡️ '+x.n+' готовится принять Special')}
    }
-   reason='Особый приём изменил ход боя';
+   if(cb!=='special'){
+     if(cb==='attack')score[1]+=hit(y,x,.35,'⚔️ Атака сквозь Special');
+     else if(cb==='maneuver')score[1]+=maneuver(y,x);
+     else {charge(y,18);L('🛡️ '+y.n+' готовится принять Special')}
+   }
+   reason=(ca==='defend'||cb==='defend')?'Защита уменьшила прямой Special':'Special вступил в игру';
  } else if(ca===cb){
    if(ca==='attack'){
-     let order=a.s>=b.s?[{c:a,e:b,k:0},{c:b,e:a,k:1}]:[{c:b,e:a,k:1},{c:a,e:b,k:0}];
-     for(let o of order){if(!o.c.dead&&!o.e.dead)score[o.k]+=pctHit(o.c,o.e,.30,'⚔️ Встречная атака')}
-     reason='Оба атаковали — скорость могла решить исход';
-   } else if(ca==='defend'){
-     charge(a,15);charge(b,15);reason='Оба закрылись в защите — урона нет';
-   } else {
-     let fast=a.s>=b.s?0:1,slow=1-fast,fc=fast?b:a,fe=fast?a:b;
-     score[fast]+=pctHit(fc,fe,.22,'🎯 Более быстрый манёвр');charge(fc,35);charge(slow?b:a,15);
-     reason='Оба маневрировали — победила скорость';
+     let m1=x.s>y.s?1.10:1,m2=y.s>x.s?1.10:1;
+     score[0]+=hit(x,y,m1,'⚔️ Встречная атака');score[1]+=hit(y,x,m2,'⚔️ Встречная атака');
+     reason='Оба атаковали; более быстрый получил небольшой бонус, но оба удара прошли';
+   } else if(ca==='defend'){reason='Оба защищались — урона нет'}
+   else{
+     if(x.s>=y.s){score[0]+=maneuver(x,y);score[1]+=hit(y,x,.45,'🎯 Запоздалый манёвр')}
+     else{score[1]+=maneuver(y,x);score[0]+=hit(x,y,.45,'🎯 Запоздалый манёвр')}
+     reason='Оба выбрали Манёвр — более быстрый выполнил свой эффект полностью';
    }
+   charge(x,18);charge(y,18);
  } else {
-   // Контр-треугольник: Attack > Maneuver > Defense > Attack
    const key=ca[0]+cb[0];
-   if(key==='am'){score[0]+=pctHit(a,b,.48,'💥 Атака поймала манёвр');winner=1;reason='Атака перебила Манёвр'}
-   else if(key==='ma'){score[1]+=pctHit(b,a,.48,'💥 Атака поймала манёвр');winner=2;reason='Атака перебила Манёвр'}
-   else if(key==='md'){score[0]+=pctHit(a,b,.34,'🎯 Манёвр обошёл защиту');charge(a,20);winner=1;reason='Манёвр обошёл Защиту'}
-   else if(key==='dm'){score[1]+=pctHit(b,a,.34,'🎯 Манёвр обошёл защиту');charge(b,20);winner=2;reason='Манёвр обошёл Защиту'}
-   else if(key==='da'){score[0]+=fixedHit(a,b,.28,'🛡️ Контрудар после блока');score[1]+=fixedHit(b,a,.08,'⚔️ Удар в защиту');winner=1;reason='Защита остановила Атаку и дала контрудар'}
-   else if(key==='ad'){score[1]+=fixedHit(b,a,.28,'🛡️ Контрудар после блока');score[0]+=fixedHit(a,b,.08,'⚔️ Удар в защиту');winner=2;reason='Защита остановила Атаку и дала контрудар'}
+   if(key==='am'){score[0]+=hit(x,y,1.45,'💥 Атака поймала Манёвр');winner=1;reason='Атака перебила Манёвр'}
+   else if(key==='ma'){score[1]+=hit(y,x,1.45,'💥 Атака поймала Манёвр');winner=2;reason='Атака перебила Манёвр'}
+   else if(key==='md'){score[0]+=maneuver(x,y);winner=1;reason=x.m+' обошёл Защиту'}
+   else if(key==='dm'){score[1]+=maneuver(y,x);winner=2;reason=y.m+' обошёл Защиту'}
+   else if(key==='da'){score[1]+=hit(y,x,.22,'⚔️ Удар в блок');score[0]+=counter(x,y);winner=1;reason='Защита остановила Атаку и дала контрудар'}
+   else if(key==='ad'){score[0]+=hit(x,y,.22,'⚔️ Удар в блок');score[1]+=counter(y,x);winner=2;reason='Защита остановила Атаку и дала контрудар'}
+   charge(x,18+(winner===1?17:0));charge(y,18+(winner===2?17:0));
  }
- if(!winner){
-   if(score[0]>score[1]+5)winner=1; else if(score[1]>score[0]+5)winner=2;
- }
- if(winner){charge(P[winner-1].team[P[winner-1].act],45);charge(P[2-winner].team[P[2-winner].act],15)}
- else {charge(a,25);charge(b,25)}
- setRoundResult(winner,reason);
- explainRound(ca,cb,winner,reason,before,[a.hp,b.hp]);
- L((winner?'🏅 <b>Раунд за Игроком '+winner+'</b>':'🤝 <b>Раунд без победителя</b>')+' — '+reason);
-
+ if(!winner){if(score[0]>score[1]+5)winner=1;else if(score[1]>score[0]+5)winner=2}
+ setRoundResult(winner,reason);explainRound(x,y,ca,cb,winner,reason,before,[x.hp,y.hp]);
+ L((winner?'🏅 <b>Раунд за Игроком '+winner+'</b>':'🤝 <b>Равный раунд</b>')+' — '+reason);
  P.forEach(p=>p.choice=null);
+
  let alive=P.map(p=>p.team.filter(c=>!c.dead).length);
  if(!alive[0]||!alive[1]){
-   B=false;let w=alive[0]?1:2;
-   document.querySelector('#roundResult').className='roundResult win';
-   document.querySelector('#roundResult').innerHTML='<b>🏆 Игрок '+w+' победил в бою!</b><span>Бой завершён за '+T+' раундов.</span>';
-   L('🏆 <b>Победил Игрок '+w+' за '+T+' раундов!</b>');
+   if(!alive[0]&&!alive[1]){
+     B=false;document.querySelector('#roundResult').className='roundResult draw';document.querySelector('#roundResult').innerHTML='<b>🤝 Двойной нокаут</b><span>Для Ranked правило ничьей определим отдельно.</span>';L('🤝 Двойной нокаут.');
+   } else {
+     B=false;let w=alive[0]?1:2;document.querySelector('#roundResult').className='roundResult win';document.querySelector('#roundResult').innerHTML='<b>🏆 Игрок '+w+' победил в бою!</b><span>Бой завершён за '+T+' раундов.</span>';L('🏆 <b>Победил Игрок '+w+' за '+T+' раундов!</b>');
+   }
  } else T++;
  draw()
 }
