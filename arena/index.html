@@ -1,10 +1,10 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QuRa Arena Prototype</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#101114;color:#f4f4f5;font:14px system-ui}button{font:inherit;color:#fff;background:#292c33;border:1px solid #444a55;border-radius:8px;padding:8px;cursor:pointer}.app{padding:14px}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 330px 1fr;gap:12px}.panel{background:#191b20;border:1px solid #363a43;border-radius:14px;padding:12px}.pool,.team{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.card,.slot{background:#22252b;border:1px solid #3b404a;border-radius:10px;padding:8px;min-height:105px}.card{cursor:pointer}.sel,.active{outline:2px solid #e4b94e}.dead{opacity:.3}.icon{font-size:26px}.name{font-weight:700}.tiny{font-size:11px;color:#aab0ba}.stats{font-size:11px;margin-top:5px}.bar{height:6px;background:#343842;border-radius:4px;overflow:hidden;margin-top:4px}.hp{height:100%;background:#55bd78}.sp{height:100%;background:#e4b94e}.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.chosen{outline:2px solid #e4b94e}.log{height:430px;overflow:auto;background:#111318;border-radius:9px;padding:8px}.log div{border-bottom:1px solid #252830;padding:4px}.center{text-align:center}.center .log{text-align:left}.gold{color:#e4b94e}.row{display:flex;gap:6px;flex-wrap:wrap}.ready{background:#70551d}.hiddenChoice{margin-top:7px;color:#7ed6a0;font-size:12px}
+*{box-sizing:border-box}body{margin:0;background:#101114;color:#f4f4f5;font:14px system-ui}button{font:inherit;color:#fff;background:#292c33;border:1px solid #444a55;border-radius:8px;padding:8px;cursor:pointer}.app{padding:14px}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 330px 1fr;gap:12px}.panel{background:#191b20;border:1px solid #363a43;border-radius:14px;padding:12px}.pool,.team{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.card,.slot{background:#22252b;border:1px solid #3b404a;border-radius:10px;padding:8px;min-height:105px}.card{cursor:pointer}.sel,.active{outline:2px solid #e4b94e}.dead{opacity:.3}.icon{font-size:26px}.name{font-weight:700}.tiny{font-size:11px;color:#aab0ba}.stats{font-size:11px;margin-top:5px}.bar{height:6px;background:#343842;border-radius:4px;overflow:hidden;margin-top:4px}.hp{height:100%;background:#55bd78}.sp{height:100%;background:#e4b94e}.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.chosen{outline:2px solid #e4b94e}.log{height:430px;overflow:auto;background:#111318;border-radius:9px;padding:8px}.log div{border-bottom:1px solid #252830;padding:4px}.center{text-align:center}.center .log{text-align:left}.gold{color:#e4b94e}.roundResult{min-height:78px;margin:10px 0;padding:12px;border:1px solid #4a505c;border-radius:12px;background:#22252b;display:flex;flex-direction:column;justify-content:center}.roundResult.win{border-color:#e4b94e;background:#2b2518}.roundResult.draw{border-color:#606773}.roundResult b{font-size:20px}.roundResult span{font-size:12px;color:#c5cad2;margin-top:4px}.row{display:flex;gap:6px;flex-wrap:wrap}.ready{background:#70551d}.hiddenChoice{margin-top:7px;color:#7ed6a0;font-size:12px}
 @media(max-width:1000px){.grid{grid-template-columns:1fr}.center{order:-1}.log{height:200px}}
 </style></head><body><div class="app">
 <div class="top"><div><b>🐔 QuRa Arena — Battle Lab</b><div class="tiny">Прототип механики, без финальной графики</div></div><div class="row"><button onclick="size(1)">1×1</button><button onclick="size(2)">2×2</button><button onclick="size(3)">3×3</button><button onclick="reset()">Сброс</button></div></div>
-<div class="grid"><div class="panel" id="p0"></div><div class="panel center"><h2 id="round">Подготовка</h2><div class="gold" id="phase">Соберите команды</div><p class="tiny">Оба игрока тайно выбирают действие. Защита включается первой, остальные действия исполняются по Скорости.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
+<div class="grid"><div class="panel" id="p0"></div><div class="panel center"><h2 id="round">Подготовка</h2><div class="gold" id="phase">Соберите команды</div><div class="roundResult draw" id="roundResult"><b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span></div><p class="tiny"><b>Атака > Манёвр</b> · <b>Манёвр > Защита</b> · <b>Защита > Атака</b>. Одинаковые действия дают ослабленный результат. Special заряжается за успешные раунды.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
 <script>
 const R=[
 {id:'r',n:'Ряба',i:'🐔',hp:110,a:24,d:20,s:16,m:'Скорлупа',x:'Золотой щит'},
@@ -15,7 +15,7 @@ const R=[
 {id:'g',n:'Гламурочка',i:'😎',hp:100,a:22,d:17,s:24,m:'Позирование',x:'Выход'}];
 let N=3,B=false,T=0,P=[];
 function np(k){return {n:'Игрок '+(k+1),pick:[],team:[],act:0,choice:null}}
-function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';draw()}
+function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';let el=document.querySelector('#roundResult');if(el){el.className='roundResult draw';el.innerHTML='<b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span>'}draw()}
 function size(n){N=n;reset()}
 function clone(c){return {...c,max:c.hp,q:0,guard:false,shield:0,boost:0,dead:false}}
 function pick(k,id){if(B)return;let p=P[k],z=p.pick.indexOf(id);if(z>=0)p.pick.splice(z,1);else if(p.pick.length<N)p.pick.push(id);draw()}
@@ -24,11 +24,95 @@ function active(k,z){if(!B||P[k].team[z].dead)return;P[k].act=z;P[k].choice=null
 function choose(k,a){let c=cur(P[k]);if(!c||(a==='special'&&c.q<100))return;P[k].choice=a;draw()}
 function L(t){let d=document.createElement('div');d.innerHTML=t;document.querySelector('#log').prepend(d)}
 function start(){if(P.some(p=>p.pick.length!==N)){L('⚠️ Выберите по '+N+' курочек.');return}P.forEach(p=>{p.team=p.pick.map(id=>clone(R.find(c=>c.id===id)));p.act=0;p.choice=null});B=true;T=1;L('🏁 Бой начался');draw()}
-function damage(a,d,m=1){let v=a.a*m*100/(100+d.d);if(d.guard)v*=.38;if(d.shield){let q=Math.min(v,d.shield);d.shield-=q;v-=q}return Math.max(1,Math.round(v*(.95+Math.random()*.1)))}
-function hit(a,d,m,label){let v=damage(a,d,m);d.hp=Math.max(0,d.hp-v);a.q=Math.min(100,a.q+20);d.q=Math.min(100,d.q+15);L(label+' <b>'+a.n+'</b> → '+d.n+': −'+v+' HP');if(!d.hp){d.dead=true;L('💀 '+d.n+' выбыла')}}
-function man(c,e){if(c.id==='m'){let h=Math.round(c.max*.12);c.hp=Math.min(c.max,c.hp+h);c.q=Math.min(100,c.q+30);L('🧘 '+c.n+' медитирует: +'+h+' HP')}else if(c.id==='b'){c.guard=true;c.q=Math.min(100,c.q+25);L('🥊 '+c.n+' провоцирует и усиливает защиту')}else if(c.id==='r'){c.shield+=12;c.q=Math.min(100,c.q+25);L('🥚 '+c.n+' получает +12 щита')}else{c.boost=.25;c.q=Math.min(100,c.q+25);L('🎯 '+c.n+' готовит усиленную атаку')}}
-function spec(c,e){c.q=0;if(c.id==='r'){let z=Math.round(c.max*.3);c.shield+=z;L('✨ '+c.n+': Золотой щит +'+z)}else if(c.id==='m'){let z=Math.round(c.max*.22);c.hp=Math.min(c.max,c.hp+z);L('✨ '+c.n+': Благодать +'+z+' HP')}else if(c.id==='f'){let z=Math.random();if(z<.2)L('✨ Авось! Ничего 😅');else hit(c,e,z>.75?2.2:1.55,'✨ Авось!')}else if(c.id==='p'){let old=e.d;e.d*=.35;hit(c,e,1.35,'✨ Расчёт');e.d=old}else hit(c,e,1.7,'✨ '+c.x)}
-function resolve(){if(!B||P.some(p=>!p.choice)){L('⚠️ Оба игрока должны выбрать действие.');return}let a=cur(P[0]),b=cur(P[1]);[a,b].forEach(c=>c.guard=false);let ca=P[0].choice,cb=P[1].choice;L('<b>Раунд '+T+'</b>: выборы раскрыты');if(ca==='defend')a.guard=true;if(cb==='defend')b.guard=true;let O=[{c:a,e:b,x:ca},{c:b,e:a,x:cb}].sort((u,v)=>v.c.s-u.c.s);for(let o of O){if(o.c.dead||o.e.dead)continue;if(o.x==='attack'){let m=1+(o.c.boost||0);o.c.boost=0;hit(o.c,o.e,m,'⚔️')}if(o.x==='maneuver')man(o.c,o.e);if(o.x==='special')spec(o.c,o.e)}P.forEach(p=>p.choice=null);let l=P.map(p=>p.team.filter(c=>!c.dead).length);if(!l[0]||!l[1]){B=false;L('🏆 Победил Игрок '+(l[0]?1:2)+'!')}else T++;draw()}
+function pctHit(att,def,pct,label){
+ let factor=Math.max(.82,Math.min(1.15,.92+(att.a-def.d)*.01));
+ let v=Math.round(def.max*pct*factor);
+ if(def.shield){let q=Math.min(v,def.shield);def.shield-=q;v-=q}
+ v=Math.max(1,v);def.hp=Math.max(0,def.hp-v);
+ L(label+' <b>'+att.n+'</b> → '+def.n+': <b>−'+v+' HP</b>');
+ if(!def.hp){def.dead=true;L('💀 '+def.n+' выбыла')}
+ return v
+}
+function fixedHit(att,def,pct,label){
+ let v=Math.round(def.max*pct);
+ if(def.shield){let q=Math.min(v,def.shield);def.shield-=q;v-=q}
+ v=Math.max(1,v);def.hp=Math.max(0,def.hp-v);
+ L(label+' <b>'+att.n+'</b> → '+def.n+': <b>−'+v+' HP</b>');
+ if(!def.hp){def.dead=true;L('💀 '+def.n+' выбыла')}
+ return v
+}
+function charge(c,v){c.q=Math.min(100,c.q+v)}
+function setRoundResult(winner,text){
+ let el=document.querySelector('#roundResult');
+ if(!winner){el.className='roundResult draw';el.innerHTML='<b>🤝 Ничья в раунде</b><span>'+text+'</span>'}
+ else{el.className='roundResult win';el.innerHTML='<b>🏅 Игрок '+winner+' выиграл раунд</b><span>'+text+'</span>'}
+}
+function special(c,e){
+ c.q=0;
+ if(c.id==='r'){let z=Math.round(c.max*.30);c.shield+=z;L('✨ '+c.n+': Золотой щит +'+z);return z*.6}
+ if(c.id==='m'){let before=c.hp,z=Math.round(c.max*.25);c.hp=Math.min(c.max,c.hp+z);let real=c.hp-before;L('✨ '+c.n+': Благодать восстановила '+real+' HP');return real*.8}
+ if(c.id==='f'){let r=Math.random();if(r<.2){L('✨ '+c.n+': Авось! Не повезло 😅');return 0}return fixedHit(c,e,r>.75?.62:.50,'✨ Авось!')}
+ if(c.id==='p')return fixedHit(c,e,.52,'✨ Я всё рассчитала!')
+ if(c.id==='b')return fixedHit(c,e,.55,'✨ Ответочка!')
+ return fixedHit(c,e,.50,'✨ '+c.x)
+}
+function resolve(){
+ if(!B||P.some(p=>!p.choice)){L('⚠️ Оба игрока должны выбрать действие.');return}
+ let a=cur(P[0]),b=cur(P[1]),ca=P[0].choice,cb=P[1].choice;
+ let score=[0,0],reason='',winner=0;
+ L('<b>Раунд '+T+'</b>: Игрок 1 — '+ca+' · Игрок 2 — '+cb);
+
+ // Special: сильное персональное действие. Второй игрок отвечает своим действием, если пережил эффект.
+ if(ca==='special'||cb==='special'){
+   let order=[{c:a,e:b,x:ca,k:0},{c:b,e:a,x:cb,k:1}].sort((u,v)=>v.c.s-u.c.s);
+   for(let o of order){
+     if(o.c.dead||o.e.dead)continue;
+     if(o.x==='special')score[o.k]+=special(o.c,o.e);
+     else if(o.x==='attack')score[o.k]+=pctHit(o.c,o.e,.30,'⚔️ Ответная атака');
+     else if(o.x==='defend'){charge(o.c,25);score[o.k]+=8;L('🛡️ '+o.c.n+' уходит в защиту')}
+     else {charge(o.c,30);score[o.k]+=10;L('🎯 '+o.c.n+' выполняет манёвр')}
+   }
+   reason='Особый приём изменил ход боя';
+ } else if(ca===cb){
+   if(ca==='attack'){
+     let order=a.s>=b.s?[{c:a,e:b,k:0},{c:b,e:a,k:1}]:[{c:b,e:a,k:1},{c:a,e:b,k:0}];
+     for(let o of order){if(!o.c.dead&&!o.e.dead)score[o.k]+=pctHit(o.c,o.e,.30,'⚔️ Встречная атака')}
+     reason='Оба атаковали — скорость могла решить исход';
+   } else if(ca==='defend'){
+     charge(a,15);charge(b,15);reason='Оба закрылись в защите — урона нет';
+   } else {
+     let fast=a.s>=b.s?0:1,slow=1-fast,fc=fast?b:a,fe=fast?a:b;
+     score[fast]+=pctHit(fc,fe,.22,'🎯 Более быстрый манёвр');charge(fc,35);charge(slow?b:a,15);
+     reason='Оба маневрировали — победила скорость';
+   }
+ } else {
+   // Контр-треугольник: Attack > Maneuver > Defense > Attack
+   const key=ca[0]+cb[0];
+   if(key==='am'){score[0]+=pctHit(a,b,.48,'💥 Атака поймала манёвр');winner=1;reason='Атака перебила Манёвр'}
+   else if(key==='ma'){score[1]+=pctHit(b,a,.48,'💥 Атака поймала манёвр');winner=2;reason='Атака перебила Манёвр'}
+   else if(key==='md'){score[0]+=pctHit(a,b,.34,'🎯 Манёвр обошёл защиту');charge(a,45);winner=1;reason='Манёвр обошёл Защиту'}
+   else if(key==='dm'){score[1]+=pctHit(b,a,.34,'🎯 Манёвр обошёл защиту');charge(b,45);winner=2;reason='Манёвр обошёл Защиту'}
+   else if(key==='da'){score[0]+=fixedHit(a,b,.28,'🛡️ Контрудар после блока');score[1]+=fixedHit(b,a,.08,'⚔️ Удар в защиту');charge(a,45);winner=1;reason='Защита остановила Атаку и дала контрудар'}
+   else if(key==='ad'){score[1]+=fixedHit(b,a,.28,'🛡️ Контрудар после блока');score[0]+=fixedHit(a,b,.08,'⚔️ Удар в защиту');charge(b,45);winner=2;reason='Защита остановила Атаку и дала контрудар'}
+ }
+ if(!winner){
+   if(score[0]>score[1]+5)winner=1; else if(score[1]>score[0]+5)winner=2;
+ }
+ if(winner){charge(P[winner-1].team[P[winner-1].act],45);charge(P[2-winner].team[P[2-winner].act],15)}
+ else {charge(a,25);charge(b,25)}
+ setRoundResult(winner,reason);
+ L((winner?'🏅 <b>Раунд за Игроком '+winner+'</b>':'🤝 <b>Раунд без победителя</b>')+' — '+reason);
+
+ P.forEach(p=>p.choice=null);
+ let alive=P.map(p=>p.team.filter(c=>!c.dead).length);
+ if(!alive[0]||!alive[1]){
+   B=false;let w=alive[0]?1:2;
+   document.querySelector('#roundResult').className='roundResult win';
+   document.querySelector('#roundResult').innerHTML='<b>🏆 Игрок '+w+' победил в бою!</b><span>Бой завершён за '+T+' раундов.</span>';
+   L('🏆 <b>Победил Игрок '+w+' за '+T+' раундов!</b>');
+ } else T++;
+ draw()
+}
 function side(k){let p=P[k],h='<b>'+p.n+'</b><div class="tiny">Формат '+N+'×'+N+'</div>';if(!B){h+='<div class="pool">';R.forEach(c=>h+='<div class="card '+(p.pick.includes(c.id)?'sel':'')+'" onclick="pick('+k+",'"+c.id+"'"+')"><div class="icon">'+c.i+'</div><div class="name">'+c.n+'</div><div class="stats">❤️'+c.hp+' ⚔️'+c.a+' 🛡️'+c.d+' ⚡'+c.s+'</div><div class="tiny">'+c.m+' · '+c.x+'</div></div>');return h+'</div>'}h+='<div class="team">';p.team.forEach((c,z)=>{h+='<div class="slot '+(p.act===z&&!c.dead?'active ':'')+(c.dead?'dead':'')+'" onclick="active('+k+','+z+')"><div class="icon">'+c.i+'</div><div class="name">'+c.n+'</div><div class="tiny">❤️ '+c.hp+'/'+c.max+' · ⚔️'+c.a+' 🛡️'+Math.round(c.d)+' ⚡'+c.s+'</div><div class="bar"><div class="hp" style="width:'+Math.round(c.hp/c.max*100)+'%"></div></div><div class="bar"><div class="sp" style="width:'+c.q+'%"></div></div><div class="tiny">✨ '+c.q+'/100</div></div>'});h+='</div>';let c=cur(p);if(c){h+='<div class="actions"><button class="'+(p.choice==='attack'?'chosen':'')+'" onclick="choose('+k+",'attack'"+')">⚔️ Атака</button><button class="'+(p.choice==='defend'?'chosen':'')+'" onclick="choose('+k+",'defend'"+')">🛡️ Защита</button><button class="'+(p.choice==='maneuver'?'chosen':'')+'" onclick="choose('+k+",'maneuver'"+')">🎯 '+c.m+'</button><button '+(c.q<100?'disabled':'')+' class="'+(p.choice==='special'?'chosen':'')+'" onclick="choose('+k+",'special'"+')">✨ '+c.x+'</button></div><div class="hiddenChoice">'+(p.choice?'✓ действие выбрано и скрыто':'Выберите действие')+'</div>'}return h}
 function draw(){document.querySelector('#p0').innerHTML=side(0);document.querySelector('#p1').innerHTML=side(1);document.querySelector('#round').textContent=B?'Раунд '+T:'Подготовка';document.querySelector('#phase').textContent=B?'Выберите действия обоих игроков':'Соберите команды';document.querySelector('#go').disabled=!B||P.some(p=>!p.choice)}
 reset();
