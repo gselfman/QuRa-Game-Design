@@ -29,38 +29,27 @@ function active(k,z){if(!B||P[k].team[z].dead)return;P[k].act=z;P[k].choice=null
 function choose(k,a){let c=cur(P[k]);if(!c||(a==='special'&&c.q<100))return;P[k].choice=a;draw()}
 function L(t){let d=document.createElement('div');d.innerHTML=t;document.querySelector('#log').prepend(d)}
 function start(){if(P.some(p=>p.pick.length!==N)){L('⚠️ Выберите по '+N+' курочек.');return}P.forEach(p=>{p.team=p.pick.map(id=>clone(R.find(c=>c.id===id)));p.act=0;p.choice=null});B=true;T=1;L('🏁 Бой начался');draw()}
-function pctHit(att,def,pct,label){
- let factor=Math.max(.82,Math.min(1.15,.92+(att.a-def.d)*.01));
- let v=Math.round(def.max*pct*factor);
- if(def.shield){let q=Math.min(v,def.shield);def.shield-=q;v-=q}
- v=Math.max(1,v);def.hp=Math.max(0,def.hp-v);
- L(label+' <b>'+att.n+'</b> → '+def.n+': <b>−'+v+' HP</b>');
- if(!def.hp){def.dead=true;L('💀 '+def.n+' выбыла')}
- return v
-}
-function fixedHit(att,def,pct,label){
- let v=Math.round(def.max*pct);
- if(def.shield){let q=Math.min(v,def.shield);def.shield-=q;v-=q}
- v=Math.max(1,v);def.hp=Math.max(0,def.hp-v);
- L(label+' <b>'+att.n+'</b> → '+def.n+': <b>−'+v+' HP</b>');
- if(!def.hp){def.dead=true;L('💀 '+def.n+' выбыла')}
- return v
-}
 function charge(c,v){c.q=Math.min(100,c.q+v)}
-function setRoundResult(winner,text){
- let el=document.querySelector('#roundResult');
- if(!winner){el.className='roundResult draw';el.innerHTML='<b>🤝 Ничья в раунде</b><span>'+text+'</span>'}
- else{el.className='roundResult win';el.innerHTML='<b>🏅 Игрок '+winner+' выиграл раунд</b><span>'+text+'</span>'}
-}
-function special(c,e){
- c.q=0;
- if(c.id==='r'){let z=Math.round(c.max*.30);c.shield+=z;L('✨ '+c.n+': Золотой щит +'+z);return z*.6}
- if(c.id==='m'){let before=c.hp,z=Math.round(c.max*.25);c.hp=Math.min(c.max,c.hp+z);let real=c.hp-before;L('✨ '+c.n+': Благодать восстановила '+real+' HP');return real*.8}
- if(c.id==='f'){let r=Math.random();if(r<.2){L('✨ '+c.n+': Авось! Не повезло 😅');return 0}return fixedHit(c,e,r>.75?.62:.50,'✨ Авось!')}
- if(c.id==='p')return fixedHit(c,e,.52,'✨ Я всё рассчитала!')
- if(c.id==='b')return fixedHit(c,e,.55,'✨ Ответочка!')
- return fixedHit(c,e,.50,'✨ '+c.x)
-}
+function take(def,v){if(def.shield>0){let q=Math.min(def.shield,v);def.shield-=q;v-=q}v=Math.max(0,Math.round(v));def.hp=Math.max(0,def.hp-v);if(def.hp<=0)def.dead=true;return v}
+function baseDamage(att,def,m=1){let v=(20+1.15*att.a-.72*def.d)*m;if(att.boost){v*=1+att.boost;att.boost=0}if(att.weaken){v*=1-att.weaken;att.weaken=0}return Math.max(5,v)}
+function hit(att,def,m,label){let v=take(def,baseDamage(att,def,m));L(label+' <b>'+att.n+'</b> → '+def.n+': <b>−'+v+' HP</b>');return v}
+function counter(defender,attacker){let v=take(attacker,15+.45*defender.d-.18*attacker.d);L('🛡️ <b>'+defender.n+'</b> блокирует и контратакует: <b>−'+v+' HP</b>');return v}
+function maneuver(c,e){let v=0;
+ if(c.id==='r'){c.shield+=10;v=take(e,24);L('🥚 Скорлупа: −'+v+' HP, Ряба получает 10 щита')}
+ else if(c.id==='b'){c.boost=Math.max(c.boost,.18);v=take(e,25);L('🥊 Провокация: −'+v+' HP, следующая атака Боевика +18%')}
+ else if(c.id==='f'){c.boost=Math.max(c.boost,.20);v=take(e,31);L('🤪 Финт: −'+v+' HP, следующая атака Дурочки +20%')}
+ else if(c.id==='p'){e.q=Math.max(0,e.q-18);v=take(e,26);L('🤓 Анализ: −'+v+' HP и −18 заряда Special у '+e.n)}
+ else if(c.id==='m'){let h=Math.min(c.max-c.hp,12);c.hp+=h;v=take(e,24);L('🧘 Медитация: −'+v+' HP, Монах лечит '+h+' HP')}
+ else{e.weaken=Math.max(e.weaken,.22);v=take(e,27);L('😎 Позирование: −'+v+' HP, следующая атака '+e.n+' ослаблена на 22%')}
+ return v}
+function special(c,e,opp){c.q=0;let guard=opp==='defend',v=0;
+ if(c.id==='r'){c.shield+=guard?14:18;v=take(e,guard?11:25);L('✨ Золотая скорлупа: −'+v+' HP, щит +'+(guard?14:18))}
+ else if(c.id==='b'){v=take(e,46*(guard?.45:1));L('✨ Ответочка: −'+v+' HP'+(guard?' — Защита погасила удар':'') )}
+ else if(c.id==='f'){let r=Math.random(),raw=r<.10?0:(r<.35?58:43);v=take(e,raw*(guard?.45:1));L('✨ Авось!: '+(raw?('−'+v+' HP'):'не повезло — 0 урона')+(guard&&raw?' — Защита':'') )}
+ else if(c.id==='p'){v=take(e,45*(guard?.50:1));L('✨ Расчёт: −'+v+' HP'+(guard?' — Защита':'') )}
+ else if(c.id==='m'){let h=Math.min(c.max-c.hp,27);c.hp+=h;v=take(e,18*(guard?.50:1));L('✨ Благодать: лечение '+h+' HP и −'+v+' HP врагу')}
+ else{e.weaken=Math.max(e.weaken,.30);v=take(e,41*(guard?.50:1));L('✨ Ослепительный выход: −'+v+' HP, следующая атака врага −30%'+(guard?' — урон снижен Защитой':'') )}
+ return v}
 function moveName(x){return {attack:'⚔️ Атака',defend:'🛡️ Защита',maneuver:'🎯 Манёвр',special:'✨ Особый приём'}[x]||x}
 function explainRound(ca,cb,winner,reason,before,after){
  let d1=after[0]-before[0],d2=after[1]-before[1];
