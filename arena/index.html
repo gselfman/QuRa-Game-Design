@@ -18,7 +18,7 @@ const R=[
 {id:'p',n:'Профессор',i:'🤓',role:'Контроль',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',role:'Выживание',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',role:'Дебафф / скорость',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-let N=3,B=false,T=0,P=[];
+let N=1,B=false,T=0,P=[];
 function np(k){return {n:'Игрок '+(k+1),pick:[],team:[],act:0,choice:null}}
 function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';let el=document.querySelector('#roundResult');if(el){el.className='roundResult draw';el.innerHTML='<b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span>'}let ex=document.querySelector('#explain');if(ex)ex.innerHTML='<div class="explainTitle">Что произошло в раунде</div><div class="tiny" style="text-align:center">После первого хода здесь появится подробный разбор.</div>';draw()}
 function size(n){N=n;reset()}
@@ -51,16 +51,14 @@ function special(c,e,opp){c.q=0;let guard=opp==='defend',v=0;
  else{e.weaken=Math.max(e.weaken,.30);v=take(e,41*(guard?.50:1));L('✨ Ослепительный выход: −'+v+' HP, следующая атака врага −30%'+(guard?' — урон снижен Защитой':'') )}
  return v}
 function choiceLabel(c,x){return x==='attack'?'⚔️ Атака':x==='defend'?'🛡️ Защита':x==='maneuver'?'🎯 '+c.m:x==='special'?'✨ '+c.x:x}
-function explainRound(ca,cb,winner,reason,before,after){
- let d1=after[0]-before[0],d2=after[1]-before[1];
- let p1=P[0].team[P[0].act],p2=P[1].team[P[1].act];
- let cls1=winner===1?'move win':'move',cls2=winner===2?'move win':'move';
- let fmt=(d)=>d<0?'<span class="damage">'+d+' HP</span>':d>0?'<span class="heal">+'+d+' HP</span>':'0 HP';
- document.querySelector('#explain').innerHTML=
- '<div class="explainTitle">Раунд '+T+'</div>'+
- '<div class="versus"><div class="'+cls1+'"><b>Игрок 1</b><br>'+choiceLabel(p1,ca)+'</div><div class="vs">VS</div><div class="'+cls2+'"><b>Игрок 2</b><br>'+choiceLabel(p2,cb)+'</div></div>'+
- '<div class="why">'+(winner?'🏅 Победил Игрок '+winner:'🤝 Ничья')+' — '+reason+'</div>'+
- '<div class="delta"><div>'+p1.n+'<br>❤️ '+before[0]+' → '+after[0]+' ('+fmt(d1)+')<br>✨ Special '+p1.q+'/100</div><div>'+p2.n+'<br>❤️ '+before[1]+' → '+after[1]+' ('+fmt(d2)+')<br>✨ Special '+p2.q+'/100</div></div>';
+function explainRound(a,b,ca,cb,winner,reason,before,after){
+ let d1=after[0]-before[0],d2=after[1]-before[1],cls1=winner===1?'move win':'move',cls2=winner===2?'move win':'move';
+ let fmt=d=>d<0?'<span class="damage">'+d+' HP</span>':d>0?'<span class="heal">+'+d+' HP</span>':'0 HP';
+ document.querySelector('#explain').innerHTML='<div class="explainTitle">Раунд '+T+'</div>'+
+ '<div class="versus"><div class="'+cls1+'"><b>Игрок 1</b><br>'+choiceLabel(a,ca)+'</div><div class="vs">VS</div><div class="'+cls2+'"><b>Игрок 2</b><br>'+choiceLabel(b,cb)+'</div></div>'+
+ '<div class="why">'+(winner?'🏅 Победил Игрок '+winner:'🤝 Без явного победителя')+' — '+reason+'</div>'+
+ '<div class="delta"><div>'+a.n+'<br>❤️ '+before[0]+' → '+after[0]+' ('+fmt(d1)+')<br>✨ Special '+a.q+'/100<br>🛡 Щит '+Math.round(a.shield)+'</div>'+
+ '<div>'+b.n+'<br>❤️ '+before[1]+' → '+after[1]+' ('+fmt(d2)+')<br>✨ Special '+b.q+'/100<br>🛡 Щит '+Math.round(b.shield)+'</div></div>';
 }
 function resolve(){
  if(!B||P.some(p=>!p.choice)){L('⚠️ Оба игрока должны выбрать действие.');return}
