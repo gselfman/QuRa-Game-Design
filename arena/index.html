@@ -12,17 +12,17 @@
 <p class="tiny">Special — отдельный сильный приём. При одинаковом выборе действует ослабленный результат и/или Скорость.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
 <script>
 const R=[
-{id:'r',n:'Ряба',i:'🐔',hp:110,a:24,d:20,s:16,m:'Скорлупа',x:'Золотой щит'},
-{id:'b',n:'Боевик',i:'🥊',hp:120,a:28,d:24,s:12,m:'Провокация',x:'Ответочка'},
-{id:'f',n:'Дурочка',i:'🤪',hp:95,a:25,d:14,s:26,m:'Финт',x:'Авось!'},
-{id:'p',n:'Профессор',i:'🤓',hp:90,a:27,d:15,s:23,m:'Анализ',x:'Расчёт'},
-{id:'m',n:'Монах',i:'🧘',hp:115,a:18,d:25,s:13,m:'Медитация',x:'Благодать'},
-{id:'g',n:'Гламурочка',i:'😎',hp:100,a:22,d:17,s:24,m:'Позирование',x:'Выход'}];
+{id:'r',n:'Ряба',i:'🐔',role:'Универсал',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
+{id:'b',n:'Боевик',i:'🥊',role:'Танк-боец',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
+{id:'f',n:'Дурочка',i:'🤪',role:'Риск / скорость',hp:102,a:24,d:17,s:26,m:'Финт',x:'Авось!'},
+{id:'p',n:'Профессор',i:'🤓',role:'Контроль',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
+{id:'m',n:'Монах',i:'🧘',role:'Выживание',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
+{id:'g',n:'Гламурочка',i:'😎',role:'Дебафф / скорость',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
 let N=3,B=false,T=0,P=[];
 function np(k){return {n:'Игрок '+(k+1),pick:[],team:[],act:0,choice:null}}
 function reset(){B=false;T=0;P=[np(0),np(1)];document.querySelector('#log').innerHTML='';let el=document.querySelector('#roundResult');if(el){el.className='roundResult draw';el.innerHTML='<b>Цель: короткий бой</b><span>Контр-действие снимает 25–50% HP. Ожидаемо 5–6 раундов.</span>'}let ex=document.querySelector('#explain');if(ex)ex.innerHTML='<div class="explainTitle">Что произошло в раунде</div><div class="tiny" style="text-align:center">После первого хода здесь появится подробный разбор.</div>';draw()}
 function size(n){N=n;reset()}
-function clone(c){return {...c,max:c.hp,q:0,guard:false,shield:0,boost:0,dead:false}}
+function clone(c){return {...c,max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false}}
 function pick(k,id){if(B)return;let p=P[k],z=p.pick.indexOf(id);if(z>=0)p.pick.splice(z,1);else if(p.pick.length<N)p.pick.push(id);draw()}
 function cur(p){if(p.team[p.act]&&!p.team[p.act].dead)return p.team[p.act];let z=p.team.findIndex(x=>!x.dead);if(z<0)return null;p.act=z;return p.team[z]}
 function active(k,z){if(!B||P[k].team[z].dead)return;P[k].act=z;P[k].choice=null;draw()}
