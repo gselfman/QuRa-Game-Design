@@ -90,10 +90,10 @@ function resolve(){
    const key=ca[0]+cb[0];
    if(key==='am'){score[0]+=pctHit(a,b,.48,'💥 Атака поймала манёвр');winner=1;reason='Атака перебила Манёвр'}
    else if(key==='ma'){score[1]+=pctHit(b,a,.48,'💥 Атака поймала манёвр');winner=2;reason='Атака перебила Манёвр'}
-   else if(key==='md'){score[0]+=pctHit(a,b,.34,'🎯 Манёвр обошёл защиту');charge(a,45);winner=1;reason='Манёвр обошёл Защиту'}
-   else if(key==='dm'){score[1]+=pctHit(b,a,.34,'🎯 Манёвр обошёл защиту');charge(b,45);winner=2;reason='Манёвр обошёл Защиту'}
-   else if(key==='da'){score[0]+=fixedHit(a,b,.28,'🛡️ Контрудар после блока');score[1]+=fixedHit(b,a,.08,'⚔️ Удар в защиту');charge(a,45);winner=1;reason='Защита остановила Атаку и дала контрудар'}
-   else if(key==='ad'){score[1]+=fixedHit(b,a,.28,'🛡️ Контрудар после блока');score[0]+=fixedHit(a,b,.08,'⚔️ Удар в защиту');charge(b,45);winner=2;reason='Защита остановила Атаку и дала контрудар'}
+   else if(key==='md'){score[0]+=pctHit(a,b,.34,'🎯 Манёвр обошёл защиту');charge(a,20);winner=1;reason='Манёвр обошёл Защиту'}
+   else if(key==='dm'){score[1]+=pctHit(b,a,.34,'🎯 Манёвр обошёл защиту');charge(b,20);winner=2;reason='Манёвр обошёл Защиту'}
+   else if(key==='da'){score[0]+=fixedHit(a,b,.28,'🛡️ Контрудар после блока');score[1]+=fixedHit(b,a,.08,'⚔️ Удар в защиту');winner=1;reason='Защита остановила Атаку и дала контрудар'}
+   else if(key==='ad'){score[1]+=fixedHit(b,a,.28,'🛡️ Контрудар после блока');score[0]+=fixedHit(a,b,.08,'⚔️ Удар в защиту');winner=2;reason='Защита остановила Атаку и дала контрудар'}
  }
  if(!winner){
    if(score[0]>score[1]+5)winner=1; else if(score[1]>score[0]+5)winner=2;
