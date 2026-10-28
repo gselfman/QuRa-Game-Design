@@ -15,3 +15,6 @@
 @media(max-width:1050px){.pregamegrid{grid-template-columns:1fr}}
 
 .rematchnote{margin:8px 0;padding:10px 12px;border-radius:10px;background:#1d2d22;border:1px solid #4b8a5d;color:#c9f2d3;font-weight:800}
+
+.rematchchoice{display:grid;grid-template-columns:1fr 1fr;gap:7px}.rematchchoice button{min-height:44px;font-weight:800}.rematchchoice #rematchYes{background:#1f5d34;border-color:#4ea66a}.rematchchoice #rematchNo{background:#5b2528;border-color:#b14d55}.rematchdeclined{margin:8px 0;padding:10px 12px;border-radius:10px;background:#2d2021;border:1px solid #7f454a;color:#f0c9cc;font-weight:700}
+.quickchat button:first-child{background:#1f5d34;border-color:#4ea66a}.quickchat button:nth-child(2){background:#5b2528;border-color:#b14d55}
