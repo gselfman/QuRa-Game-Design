@@ -1,6 +1,6 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='v5',selfId='qura3-'+NETVER+'-'+room+'-p'+ROLE,hostId='qura3-'+NETVER+'-'+room+'-p1',peer,conn,connected=false,handshake=false,retryTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
+var NETVER='v6',selfId='qura3-'+NETVER+'-'+room+'-p'+ROLE,hostId='qura3-'+NETVER+'-'+room+'-p1',peer,conn,connected=false,handshake=false,retryTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -118,9 +118,9 @@ function bind(dc){
  dc.on('close',function(){if(conn===dc){connected=false;handshake=false;netStatus('🔴 Соперник отключился');render();if(ROLE===2)scheduleRetry()}});
  dc.on('error',function(e){lastNetError=(e&&e.type)||'connection';if(conn===dc){connected=false;handshake=false;netStatus('🟠 Ошибка канала: '+lastNetError);render();if(ROLE===2)scheduleRetry()}})
 }
-function scheduleRetry(){if(ROLE!==2||handshake||retryTimer)return;retryTimer=setTimeout(function(){retryTimer=null;connectToHost()},1800)}
+function scheduleRetry(){if(ROLE!==2||handshake||retryTimer)return;retryTimer=setTimeout(function(){retryTimer=null;if(!peer||peer.destroyed){net()}else connectToHost()},1800)}
 function connectToHost(){
- if(ROLE!==2||handshake||!peer||peer.destroyed)return;
+ if(ROLE!==2||handshake)return;if(!peer||peer.destroyed){net();return;}
  if(conn&&!conn.open){try{conn.close()}catch(e){}}
  netStatus('🟡 Ищем сторону 1…');
  var dc=peer.connect(hostId,{serialization:'json',reliable:true,metadata:{room:room,role:2,ver:NETVER}});
@@ -135,8 +135,8 @@ function restartNetwork(){
 }
 function net(){
  netStatus('🟡 Подключаемся к серверу связи…');
- peer=new Peer(selfId,{host:'0.peerjs.com',port:443,path:'/',secure:true,debug:1,config:{iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}],sdpSemantics:'unified-plan'}});
- peer.on('open',function(){
+ peer=new Peer(selfId);
+ peer.on('open',function(id){netStatus('🟡 PeerJS Cloud подключён · '+id+' · ждём соперника…');
    if(ROLE===1){
      H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0};
      publish();netStatus('🟡 Сторона 1 готова. Ждём соперника…')
@@ -146,11 +146,23 @@ function net(){
    if(ROLE!==1){try{dc.close()}catch(e){};return}
    bind(dc)
  });
- peer.on('disconnected',function(){if(!peer.destroyed){netStatus('🟠 Потеряна связь с сервером, переподключаемся…');try{peer.reconnect()}catch(e){}}});
+ peer.on('disconnected',function(){netStatus('🟠 Потеряна связь с сервером, переподключаемся…');if(peer&&!peer.destroyed){try{peer.reconnect()}catch(e){setTimeout(restartNetwork,700)}}else setTimeout(restartNetwork,700)});
  peer.on('error',function(e){
    lastNetError=(e&&e.type)||'peer';
-   if(lastNetError==='peer-unavailable'&&ROLE===2){netStatus('🟡 Сторона 1 ещё не найдена. Повторяем…');scheduleRetry();return}
-   if(lastNetError==='unavailable-id'){netStatus('🔴 Эта сторона уже открыта в другой вкладке. Закройте старую страницу или используйте новую комнату.');return}
-   netStatus('🟠 Сетевая ошибка: '+lastNetError);if(ROLE===2)scheduleRetry()
+   if(lastNetError==='peer-unavailable'&&ROLE===2){
+     netStatus('🟡 Сторона 1 пока не зарегистрирована. Создаём новое подключение…');
+     if(peer&&peer.destroyed){peer=null;setTimeout(net,1200)}else scheduleRetry();
+     return
+   }
+   if(lastNetError==='unavailable-id'){
+     netStatus('🔴 Эта сторона уже открыта в другой вкладке. Закройте старую страницу или нажмите ↻ Переподключиться.');
+     return
+   }
+   if(lastNetError==='network'||lastNetError==='server-error'||lastNetError==='socket-error'||lastNetError==='socket-closed'){
+     netStatus('🟠 Связь с PeerJS Cloud потеряна. Перезапускаем соединение…');
+     setTimeout(restartNetwork,900);return
+   }
+   netStatus('🟠 Сетевая ошибка: '+lastNetError);
+   if(ROLE===2)setTimeout(restartNetwork,1200)
  })
 }
