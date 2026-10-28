@@ -96,8 +96,9 @@ function host(side,m){
 function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()},{qos:1})}
 function sendChat(text,kind){
  text=String(text||'').replace(/\s+/g,' ').trim().slice(0,140);if(!text||!mqttClient||!mqttClient.connected)return;
- var id=ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7);
- mqttPub(topicChat,{id:id,from:ROLE,text:text,kind:kind||'text',ts:Date.now()})
+ var msg={id:ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7),from:ROLE,text:text,kind:kind||'text',ts:Date.now()};
+ receiveChat(msg);
+ mqttPub(topicChat,msg,{qos:1})
 }
 function renderChatOnly(){
  try{
@@ -143,7 +144,7 @@ function net(){
  mqttClient.on('connect',function(){
    brokerConnected=true;lastNetError='';
    netStatus('🟡 Облако подключено. Ждём соперника…');
-   mqttClient.subscribe(topicPresence+'+',{qos:0});mqttClient.subscribe(topicChat,{qos:0});
+   mqttClient.subscribe(topicPresence+'+',{qos:0});mqttClient.subscribe(topicChat,{qos:1});
    if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:1});mqttPub(topicState,'',{qos:1,retain:true});setTimeout(publish,120);if(stateTimer)clearInterval(stateTimer);stateTimer=setInterval(function(){if(H&&mqttClient&&mqttClient.connected)broadcastState()},900)}
    else mqttClient.subscribe(topicState,{qos:1});
    publishPresence();
