@@ -1,6 +1,6 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var selfId='qura3-'+room+'-p'+ROLE,hostId='qura3-'+room+'-p1',peer,conn,connected=false,localSlots=[null,null,null],localMoves={};
+var selfId='qura3-'+room+'-p'+ROLE,hostId='qura3-'+room+'-p1',peer,conn,connected=false,localSlots=[null,null,null],localMoves={},localTargets={};
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -8,7 +8,7 @@ var R=[
 {id:'p',n:'Профессор',i:'🤓',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-var S={phase:'pick',round:0,p:{1:{slots:[null,null,null],ready:false,moved:false},2:{slots:[null,null,null],ready:false,moved:false}},f:{1:[],2:[]},last:null,winner:0},H=null;
+var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false}},f:{1:[],2:[]},last:null,winner:0},H=null;
 function $(s){return document.querySelector(s)}function C(id){return R.find(function(x){return x.id===id})}function clone(c,pos){return Object.assign({},c,{max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false,pos:pos})}
 function living(side,st){st=st||H;return st.f[side].filter(function(c){return c&&!c.dead})}function byPos(side,pos,st){st=st||H;var c=st.f[side][pos];return c&&!c.dead?c:null}function nextLiving(side,pos,st){st=st||H;for(var k=0;k<3;k++){var p=(pos+k)%3,c=byPos(side,p,st);if(c)return c}return null}
 function pairings(st){st=st||H;var a=living(1,st),b=living(2,st);if(!a.length||!b.length)return[];var anchor=a.length>=b.length?1:2,other=anchor===1?2:1;return living(anchor,st).map(function(c){var o=byPos(other,c.pos,st)||nextLiving(other,c.pos,st);return anchor===1?{a:c,b:o}:{a:o,b:c}})}
@@ -18,14 +18,69 @@ function maneuver(c,e){var v=0,detail='';if(c.id==='r'){c.shield+=10;v=take(e,24
 function special(c,e,guard,rng){c.q=0;var v=0,detail='';if(c.id==='r'){var sh=guard?14:18;c.shield+=sh;v=take(e,guard?11:25);detail='Золотая скорлупа: −'+v+' HP, +'+sh+' щита'}else if(c.id==='b'){v=take(e,46*(guard?.45:1));detail='Ответочка: −'+v+' HP'+(guard?' (Защита)':'')}else if(c.id==='f'){var raw=rng<.10?0:(rng<.35?58:43);v=take(e,raw*(guard?.45:1));detail=raw?'Авось!: −'+v+' HP'+(guard?' (Защита)':''):'Авось!: не повезло — 0 урона'}else if(c.id==='p'){v=take(e,45*(guard?.5:1));detail='Расчёт: −'+v+' HP'+(guard?' (Защита)':'')}else if(c.id==='m'){var h2=Math.min(c.max-c.hp,27);c.hp+=h2;v=take(e,18*(guard?.5:1));detail='Благодать: +'+h2+' HP себе, −'+v+' HP врагу'}else{e.weaken=Math.max(e.weaken,.30);v=take(e,41*(guard?.5:1));detail='Ослепительный выход: −'+v+' HP, следующая Атака врага −30%'}return{v:v,detail:detail}}
 function label(c,m){return m==='attack'?'⚔️ Атака':m==='defend'?'🛡️ Защита':m==='maneuver'?'🎯 '+c.m:'✨ '+c.x}function coach(m){if(m==='attack')return'Против Атаки попробуйте Защиту: блок уменьшает урон и даёт контратаку.';if(m==='defend')return'Против Защиты попробуйте Манёвр: он обходит блок.';if(m==='maneuver')return'Против Манёвра попробуйте Атаку: соперница открыта во время подготовки.';return'Против Special Защита уменьшает прямой эффект, но соперник может блефовать Манёвром.'}
 function clash(a,b,ma,mb,rng){var before=[a.hp,b.hp],da=0,db=0,w=0,why='',details=[];if(ma==='special'||mb==='special'){if(ma==='special'){var sa=special(a,b,mb==='defend',rng);da+=sa.v;details.push(a.n+': '+sa.detail)}if(mb==='special'){var sb=special(b,a,ma==='defend',1-rng);db+=sb.v;details.push(b.n+': '+sb.detail)}if(ma!=='special'&&ma==='attack'){var va=hit(a,b,.35);da+=va;details.push(a.n+' атакует сквозь Special: −'+va+' HP')}if(mb!=='special'&&mb==='attack'){var vb=hit(b,a,.35);db+=vb;details.push(b.n+' атакует сквозь Special: −'+vb+' HP')}if(ma!=='special'&&ma==='maneuver'){var ra=maneuver(a,b);da+=ra.v;details.push(a.n+': '+ra.detail)}if(mb!=='special'&&mb==='maneuver'){var rb=maneuver(b,a);db+=rb.v;details.push(b.n+': '+rb.detail)}why=(ma==='defend'||mb==='defend')?'Защита уменьшила прямой Special.':'Special дал сильный эффект.'}else if(ma===mb){if(ma==='attack'){var v1=hit(a,b,a.s>b.s?1.10:1),v2=hit(b,a,b.s>a.s?1.10:1);da+=v1;db+=v2;why='Обе атаковали: обе получили урон, Скорость дала небольшой бонус.'}else if(ma==='defend'){why='Обе защищались: урона нет.'}else{if(a.s>=b.s){var r1=maneuver(a,b),z1=hit(b,a,.45);da+=r1.v;db+=z1;w=1}else{var r2=maneuver(b,a),z2=hit(a,b,.45);db+=r2.v;da+=z2;w=2}why='Обе выбрали Манёвр: более быстрая курочка провела его полностью.'}}else{var k=ma[0]+mb[0];if(k==='am'){da=hit(a,b,1.45);w=1;why='Атака победила Манёвр: соперница открылась во время подготовки.'}else if(k==='ma'){db=hit(b,a,1.45);w=2;why='Атака победила Манёвр: соперница открылась во время подготовки.'}else if(k==='md'){var m1=maneuver(a,b);da=m1.v;w=1;why='Манёвр победил Защиту: блок ждал прямой удар.'}else if(k==='dm'){var m2=maneuver(b,a);db=m2.v;w=2;why='Манёвр победил Защиту: блок ждал прямой удар.'}else if(k==='da'){db=hit(b,a,.22);da=counter(a,b);w=1;why='Защита победила Атаку: блок превратил удар в контратаку.'}else if(k==='ad'){da=hit(a,b,.22);db=counter(b,a);w=2;why='Защита победила Атаку: блок превратил удар в контратаку.'}}if(!w){if(da>db+5)w=1;else if(db>da+5)w=2}charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);return{a:a.n,b:b.n,ma:ma,mb:mb,la:label(a,ma),lb:label(b,mb),w:w,why:why,details:details,before:before,after:[a.hp,b.hp],tips:{1:w===2?coach(mb):'',2:w===1?coach(ma):''}}}
-function resolveHost(){var pairs=pairings(),res=[],wins=[0,0],seed=Math.random();pairs.forEach(function(p,i){var ma=H.p[1].moves[p.a.pos],mb=H.p[2].moves[p.b.pos],r=clash(p.a,p.b,ma,mb,(seed+i*.271)%1);res.push(r);if(r.w)wins[r.w-1]++});var tw=wins[0]>wins[1]?1:wins[1]>wins[0]?2:0;H.last={round:H.round,clashes:res,wins:wins,teamWinner:tw};H.p[1].moves=H.p[2].moves=null;H.p[1].moved=H.p[2].moved=false;if(!living(1).length||!living(2).length){H.phase='done';H.winner=living(1).length?1:living(2).length?2:3}else H.round++;publish()}
+function resolveWallHost(){
+ var pairs=pairings(),res=[],wins=[0,0],seed=Math.random();
+ pairs.forEach(function(p,i){
+   var oa=H.p[1].moves[p.a.pos],ob=H.p[2].moves[p.b.pos],ma=oa&&oa.move,mb=ob&&ob.move;
+   var r=clash(p.a,p.b,ma,mb,(seed+i*.271)%1);res.push(r);if(r.w)wins[r.w-1]++
+ });
+ finishRound(res,wins);
+}
+function targetOutcome(actor,target,move,targetMove,rng){
+ var before=[actor.hp,target.hp],v=0,w=0,why='',detail='';
+ if(move==='defend'){charge(actor,18);return{a:actor.n,b:target.n,ma:move,mb:targetMove,la:label(actor,move),lb:label(target,targetMove),w:0,why:'Защита — стойка. Её эффект проявится, когда эту курочку атакуют.',details:[],before:before,after:[actor.hp,target.hp],tips:{1:'',2:''}}}
+ if(move==='attack'){
+   if(targetMove==='defend'){v=hit(actor,target,.22);var cv=counter(target,actor);w=2;why='Цель выбрала Защиту: прямой удар почти заблокирован, а атакующая курочка получила контратаку.';detail='Атака: −'+v+' HP цели; контратака: −'+cv+' HP атакующей.'}
+   else if(targetMove==='maneuver'){v=hit(actor,target,1.45);w=1;why='Атака поймала цель на Манёвре: во время подготовки Манёвра цель открыта.';detail='Усиленная Атака: −'+v+' HP.'}
+   else if(targetMove==='special'){v=hit(actor,target,.35);why='Цель готовит Special: часть Атаки проходит, но Special не отменяется.';detail='Атака сквозь Special: −'+v+' HP.'}
+   else{v=hit(actor,target,actor.s>target.s?1.10:1);why='Обе курочки действуют агрессивно. Скорость даёт небольшой бонус к Атаке.';detail='Атака: −'+v+' HP.'}
+ } else if(move==='maneuver'){
+   if(targetMove==='attack'){why='Цель выбрала Атаку: Манёвр уязвим перед прямым ударом и не получает бонуса контра.';var r0=maneuver(actor,target);v=r0.v;detail=r0.detail}
+   else {var rm=maneuver(actor,target);v=rm.v;detail=rm.detail;w=targetMove==='defend'?1:0;why=targetMove==='defend'?'Манёвр обошёл Защиту: цель ждала прямую Атаку.':'Манёвр сработал со своим персональным эффектом.'}
+ } else if(move==='special'){
+   var rs=special(actor,target,targetMove==='defend',rng);v=rs.v;detail=rs.detail;w=targetMove==='defend'?0:1;why=targetMove==='defend'?'Цель прочитала Special и Защитой снизила его прямой эффект.':'Special применён по выбранной цели.'
+ }
+ charge(actor,w===1?35:20);
+ return{a:actor.n,b:target.n,ma:move,mb:targetMove,la:label(actor,move),lb:label(target,targetMove),w:w,why:why,details:[detail],before:before,after:[actor.hp,target.hp],tips:{1:w===2?coach(targetMove):'',2:w===1?coach(move):''}};
+}
+function resolveTargetHost(){
+ var actions=[],seed=Math.random();
+ [1,2].forEach(function(side){living(side).forEach(function(c){var o=H.p[side].moves[c.pos];if(o&&o.move)actions.push({side:side,c:c,o:o})})});
+ actions.sort(function(x,y){if(x.o.move==='defend'&&y.o.move!=='defend')return-1;if(y.o.move==='defend'&&x.o.move!=='defend')return 1;return y.c.s-x.c.s});
+ var res=[],wins=[0,0],seenDef={};
+ actions.forEach(function(a,i){
+   if(a.c.dead)return;
+   if(a.o.move==='defend'){if(!seenDef[a.side+'-'+a.c.pos]){charge(a.c,18);seenDef[a.side+'-'+a.c.pos]=1}return}
+   var enemy=a.side===1?2:1,target=byPos(enemy,+a.o.target,H)||nextLiving(enemy,+a.o.target,H);if(!target)return;
+   var to=H.p[enemy].moves[target.pos]||{move:'attack'},r=targetOutcome(a.c,target,a.o.move,to.move,(seed+i*.173)%1);
+   r.sourceSide=a.side;r.targetSide=enemy;res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
+ });
+ finishRound(res,wins);
+}
+function finishRound(res,wins){
+ var tw=wins[0]>wins[1]?1:wins[1]>wins[0]?2:0;
+ H.last={round:H.round,mode:H.mode,clashes:res,wins:wins,teamWinner:tw};
+ H.p[1].moves=H.p[2].moves=null;H.p[1].moved=H.p[2].moved=false;
+ if(!living(1).length||!living(2).length){H.phase='done';H.winner=living(1).length?1:living(2).length?2:3}else H.round++;
+ publish()
+}
+function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWallHost()}
 function viewFor(side){
- var other=side===1?2:1,hidden=[null,null,null],p1={slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved},p2={slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved};
+ var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
- return JSON.parse(JSON.stringify({phase:H.phase,round:H.round,p:{1:p1,2:p2},f:H.phase==='pick'?{1:[],2:[]}:H.f,last:H.last,winner:H.winner}))
+ return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,winner:H.winner}))
 }
 function publish(){S=viewFor(1);render();if(conn&&conn.open)conn.send({t:'state',s:viewFor(2)})}
-function host(side,m){if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}publish()}function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
+function host(side,m){
+ if(m.t==='mode'&&H.phase==='mode'){H.p[side].mode=m.mode;if(H.p[1].mode&&H.p[2].mode&&H.p[1].mode===H.p[2].mode){H.mode=H.p[1].mode;H.phase='pick'}}
+ if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
+ if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
+ if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
+ if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
+ if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
+ publish()
+}
+function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
 function bind(c){conn=c;c.on('open',function(){connected=true;$('#net').textContent='🟢 Соединение установлено';if(ROLE===1)publish();render()});c.on('close',function(){connected=false;$('#net').textContent='🔴 Соединение потеряно';render()});c.on('error',function(){connected=false;$('#net').textContent='🔴 Ошибка соединения';render()});c.on('data',function(m){if(ROLE===1)host(2,m);else if(m.t==='state'){S=m.s;render()}})}
 function retry(){if(connected)return;$('#net').textContent='🟡 Ищем сторону 1…';var c=peer.connect(hostId,{serialization:'json'});bind(c);setTimeout(function(){if(!connected)retry()},2200)}
-function net(){peer=new Peer(selfId);peer.on('open',function(){if(ROLE===1){H={phase:'pick',round:0,p:{1:{slots:[null,null,null],ready:false,moves:null,moved:false},2:{slots:[null,null,null],ready:false,moves:null,moved:false}},f:{1:[],2:[]},last:null,winner:0};publish();$('#net').textContent='🟡 Ждём сторону 2…'}else retry()});peer.on('error',function(e){if(!connected)$('#net').textContent=e&&e.type==='unavailable-id'?'🔴 Эта сторона уже открыта в другом окне':'🟠 Не удалось соединиться, повторяем…'});if(ROLE===1)peer.on('connection',bind)}
+function net(){peer=new Peer(selfId);peer.on('open',function(){if(ROLE===1){H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false}},f:{1:[],2:[]},last:null,winner:0};publish();$('#net').textContent='🟡 Ждём сторону 2…'}else retry()});peer.on('error',function(e){if(!connected)$('#net').textContent=e&&e.type==='unavailable-id'?'🔴 Эта сторона уже открыта в другом окне':'🟠 Не удалось соединиться, повторяем…'});if(ROLE===1)peer.on('connection',bind)}
