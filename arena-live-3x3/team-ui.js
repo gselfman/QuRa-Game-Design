@@ -174,7 +174,7 @@ function bindChatControls(){
  var cm=$('#chatMessages');if(cm)cm.scrollTop=cm.scrollHeight}catch(e){console.error('QuRa chat bind error',e)}
 }
 function moveSyncStatus(){
- if(S.phase!=='fight')return'';
+ if(S.phase!=='fight')return'';if(S.engineError)return'<div class="movestatus syncerror"><b>⚠️ Ошибка расчёта раунда</b><div>'+escHtml(S.engineError)+'</div><div class="tiny">Ошибка уже показана вместо вечного зависания. Пришлите этот текст.</div></div>';
  var op=ROLE===1?2:1,me=!!(S.p[ROLE]&&S.p[ROLE].moved),other=!!(S.p[op]&&S.p[op].moved);
  if(me)localSubmitPending=false;
  var mine=me?'🟢 подтверждён арбитром':localSubmitPending?'🟡 отправляется…':'⚪ ещё не отправлен';
