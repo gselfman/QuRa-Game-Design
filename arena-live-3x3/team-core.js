@@ -8,7 +8,7 @@ var R=[
 {id:'p',n:'Профессор',i:'🤓',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false}},f:{1:[],2:[]},last:null,winner:0},H=null;
+var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0},H=null;
 function $(s){return document.querySelector(s)}function C(id){return R.find(function(x){return x.id===id})}function clone(c,pos){return Object.assign({},c,{max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false,pos:pos})}
 function living(side,st){st=st||H;return st.f[side].filter(function(c){return c&&!c.dead})}function byPos(side,pos,st){st=st||H;var c=st.f[side][pos];return c&&!c.dead?c:null}function nextLiving(side,pos,st){st=st||H;for(var k=0;k<3;k++){var p=(pos+k)%3,c=byPos(side,p,st);if(c)return c}return null}
 function pairings(st){st=st||H;var a=living(1,st),b=living(2,st);if(!a.length||!b.length)return[];var anchor=a.length>=b.length?1:2,other=anchor===1?2:1;return living(anchor,st).map(function(c){var o=byPos(other,c.pos,st)||nextLiving(other,c.pos,st);return anchor===1?{a:c,b:o}:{a:o,b:c}})}
@@ -22,7 +22,7 @@ function resolveWallHost(){
  var pairs=pairings(),res=[],wins=[0,0],seed=Math.random();
  pairs.forEach(function(p,i){
    var oa=H.p[1].moves[p.a.pos],ob=H.p[2].moves[p.b.pos],ma=oa&&oa.move,mb=ob&&ob.move;
-   var r=clash(p.a,p.b,ma,mb,(seed+i*.271)%1);res.push(r);if(r.w)wins[r.w-1]++
+   var r=clash(p.a,p.b,ma,mb,(seed+i*.271)%1);r.sideA=1;r.sideB=2;r.posA=p.a.pos;r.posB=p.b.pos;r.globalWinner=r.w;res.push(r);if(r.w)wins[r.w-1]++
  });
  finishRound(res,wins);
 }
@@ -53,29 +53,39 @@ function resolveTargetHost(){
    if(a.o.move==='defend'){if(!seenDef[a.side+'-'+a.c.pos]){charge(a.c,18);seenDef[a.side+'-'+a.c.pos]=1}return}
    var enemy=a.side===1?2:1,target=byPos(enemy,+a.o.target,H)||nextLiving(enemy,+a.o.target,H);if(!target)return;
    var to=H.p[enemy].moves[target.pos]||{move:'attack'},r=targetOutcome(a.c,target,a.o.move,to.move,(seed+i*.173)%1);
-   r.sourceSide=a.side;r.targetSide=enemy;r.globalWinner=r.w===1?a.side:r.w===2?enemy:0;r.tipsBySide={1:'',2:''};if(r.globalWinner){var loser=r.globalWinner===1?2:1;r.tipsBySide[loser]=loser===a.side?coach(to.move):coach(a.o.move)}res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
+   r.sourceSide=a.side;r.targetSide=enemy;r.sideA=a.side;r.sideB=enemy;r.posA=a.c.pos;r.posB=target.pos;r.globalWinner=r.w===1?a.side:r.w===2?enemy:0;r.tipsBySide={1:'',2:''};if(r.globalWinner){var loser=r.globalWinner===1?2:1;r.tipsBySide[loser]=loser===a.side?coach(to.move):coach(a.o.move)}res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
  });
  finishRound(res,wins);
 }
 function finishRound(res,wins){
  var tw=wins[0]>wins[1]?1:wins[1]>wins[0]?2:0;
- H.last={round:H.round,mode:H.mode,clashes:res,wins:wins,teamWinner:tw};
+ H.last={round:H.round,mode:H.mode,clashes:res,wins:wins,teamWinner:tw};H.history.push(JSON.parse(JSON.stringify(H.last)));
  H.p[1].moves=H.p[2].moves=null;H.p[1].moved=H.p[2].moved=false;
  if(!living(1).length||!living(2).length){H.phase='done';H.winner=living(1).length?1:living(2).length?2:3}else H.round++;
  publish()
 }
 function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWallHost()}
 function viewFor(side){
- var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved};
+ var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,scoutUsed:H.p[1].scoutUsed,scoutReveal:side===1?H.p[1].scoutReveal:null},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,scoutUsed:H.p[2].scoutUsed,scoutReveal:side===2?H.p[2].scoutReveal:null};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
- return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,winner:H.winner}))
+ if(side===1){p2.scoutUsed=false}else{p1.scoutUsed=false}
+ return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
 }
 function publish(){S=viewFor(1);render();if(conn&&conn.open)conn.send({t:'state',s:viewFor(2)})}
+function doScout(side){
+ if(H.phase!=='fight'||H.p[side].scoutUsed||H.p[side].moved)return;
+ var enemy=side===1?2:1;if(!H.p[enemy].moved||!H.p[enemy].moves)return;
+ var candidates=living(enemy).filter(function(ch){return H.p[enemy].moves[ch.pos]&&H.p[enemy].moves[ch.pos].move});
+ if(!candidates.length)return;
+ var ch=candidates[Math.floor(Math.random()*candidates.length)],o=H.p[enemy].moves[ch.pos],targetName=null;
+ if(H.mode==='target'&&o.target!==null&&o.target!==undefined){var t=byPos(side,+o.target,H);targetName=t?t.n:null}
+ H.p[side].scoutUsed=true;H.p[side].scoutReveal={round:H.round,name:ch.n,pos:ch.pos,move:o.move,label:label(ch,o.move),target:targetName};publish()
+}
 function host(side,m){
  if(m.t==='mode'&&H.phase==='mode'){H.p[side].mode=m.mode;if(H.p[1].mode&&H.p[2].mode&&H.p[1].mode===H.p[2].mode){H.mode=H.p[1].mode;H.phase='pick'}}
  if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
  if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
- if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
+ if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}if(m.t==='scout'){doScout(side);return}
  if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
  if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
  publish()
@@ -83,4 +93,4 @@ function host(side,m){
 function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
 function bind(c){conn=c;c.on('open',function(){connected=true;$('#net').textContent='🟢 Соединение установлено';if(ROLE===1)publish();render()});c.on('close',function(){connected=false;$('#net').textContent='🔴 Соединение потеряно';render()});c.on('error',function(){connected=false;$('#net').textContent='🔴 Ошибка соединения';render()});c.on('data',function(m){if(ROLE===1)host(2,m);else if(m.t==='state'){S=m.s;render()}})}
 function retry(){if(connected)return;$('#net').textContent='🟡 Ищем сторону 1…';var c=peer.connect(hostId,{serialization:'json'});bind(c);setTimeout(function(){if(!connected)retry()},2200)}
-function net(){peer=new Peer(selfId);peer.on('open',function(){if(ROLE===1){H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false}},f:{1:[],2:[]},last:null,winner:0};publish();$('#net').textContent='🟡 Ждём сторону 2…'}else retry()});peer.on('error',function(e){if(!connected)$('#net').textContent=e&&e.type==='unavailable-id'?'🔴 Эта сторона уже открыта в другом окне':'🟠 Не удалось соединиться, повторяем…'});if(ROLE===1)peer.on('connection',bind)}
+function net(){peer=new Peer(selfId);peer.on('open',function(){if(ROLE===1){H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0};publish();$('#net').textContent='🟡 Ждём сторону 2…'}else retry()});peer.on('error',function(e){if(!connected)$('#net').textContent=e&&e.type==='unavailable-id'?'🔴 Эта сторона уже открыта в другом окне':'🟠 Не удалось соединиться, повторяем…'});if(ROLE===1)peer.on('connection',bind)}
