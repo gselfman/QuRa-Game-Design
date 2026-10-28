@@ -1,6 +1,7 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='v6',selfId='qura3-'+NETVER+'-'+room+'-p'+ROLE,hostId='qura3-'+NETVER+'-'+room+'-p1',peer,conn,connected=false,handshake=false,retryTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
+var NETVER='mqtt1',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
+var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/';
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -71,7 +72,8 @@ function viewFor(side){
  if(side===1){p2.scoutUsed=false}else{p1.scoutUsed=false}
  return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
 }
-function publish(){S=viewFor(1);render();if(conn&&conn.open)conn.send({t:'state',s:viewFor(2)})}
+function mqttPub(topic,obj,opts){if(mqttClient&&mqttClient.connected){mqttClient.publish(topic,typeof obj==='string'?obj:JSON.stringify(obj),Object.assign({qos:0,retain:false},opts||{}))}}
+function publish(){S=viewFor(1);render();mqttPub(topicState,{t:'state',s:viewFor(2),ts:Date.now()},{retain:true})}
 function doScout(side){
  if(H.phase!=='fight'||H.p[side].scoutUsed||H.p[side].moved)return;
  var enemy=side===1?2:1;if(!H.p[enemy].moved||!H.p[enemy].moves)return;
@@ -82,87 +84,67 @@ function doScout(side){
  H.p[side].scoutUsed=true;H.p[side].scoutReveal={round:H.round,name:ch.n,pos:ch.pos,move:o.move,label:label(ch,o.move),target:targetName};publish()
 }
 function host(side,m){
+ if(!m)return;
  if(m.t==='mode'&&H.phase==='mode'){H.p[side].mode=m.mode;if(H.p[1].mode&&H.p[2].mode&&H.p[1].mode===H.p[2].mode){H.mode=H.p[1].mode;H.phase='pick'}}
  if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
  if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
- if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}if(m.t==='scout'){doScout(side);return}
+ if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
+ if(m.t==='scout'){doScout(side);return}
  if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
  if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
  publish()
 }
-function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
-function netStatus(t){var el=$('#net');if(el)el.textContent=t}function syncPendingMode(){try{if(typeof localMode!=='undefined'&&localMode&&handshake)send({t:'mode',mode:localMode})}catch(e){}}
-function bind(dc){
- if(conn&&conn!==dc&&conn.open){try{conn.close()}catch(e){}}
- conn=dc;
- dc.on('open',function(){
-   connected=true;handshake=false;lastNetError='';
-   netStatus('🟡 Канал открыт, проверяем соперника…');
-   try{dc.send({t:'hello',role:ROLE,room:room,ver:NETVER})}catch(e){}
-   if(ROLE===1)publish();
-   render()
- });
- dc.on('data',function(m){
-   if(m&&m.t==='hello'){
-     handshake=true;connected=true;netStatus('🟢 Соперник подключён');
-     try{dc.send({t:'ack',role:ROLE,room:room,ver:NETVER})}catch(e){}
-     if(ROLE===1)publish();syncPendingMode();render();return
-   }
-   if(m&&m.t==='ack'){
-     handshake=true;connected=true;netStatus('🟢 Соперник подключён');
-     if(ROLE===1)publish();syncPendingMode();render();return
-   }
-   if(!handshake){handshake=true;netStatus('🟢 Соперник подключён')}
-   if(ROLE===1)host(2,m);else if(m&&m.t==='state'){S=m.s;render()}
- });
- dc.on('close',function(){if(conn===dc){connected=false;handshake=false;netStatus('🔴 Соперник отключился');render();if(ROLE===2)scheduleRetry()}});
- dc.on('error',function(e){lastNetError=(e&&e.type)||'connection';if(conn===dc){connected=false;handshake=false;netStatus('🟠 Ошибка канала: '+lastNetError);render();if(ROLE===2)scheduleRetry()}})
+function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()})}
+function netStatus(t){var el=$('#net');if(el)el.textContent=t}
+function syncPendingMode(){try{if(typeof localMode!=='undefined'&&localMode&&connected)send({t:'mode',mode:localMode})}catch(e){}}
+function markOpponent(role){
+ if(role===ROLE)return;
+ opponentSeen=Date.now();
+ if(!connected){connected=true;netStatus('🟢 Соперник подключён через облачную комнату');syncPendingMode();if(ROLE===1)publish();render()}
 }
-function scheduleRetry(){if(ROLE!==2||handshake||retryTimer)return;retryTimer=setTimeout(function(){retryTimer=null;if(!peer||peer.destroyed){net()}else connectToHost()},1800)}
-function connectToHost(){
- if(ROLE!==2||handshake)return;if(!peer||peer.destroyed){net();return;}
- if(conn&&!conn.open){try{conn.close()}catch(e){}}
- netStatus('🟡 Ищем сторону 1…');
- var dc=peer.connect(hostId,{serialization:'json',reliable:true,metadata:{room:room,role:2,ver:NETVER}});
- bind(dc);
- setTimeout(function(){if(!handshake)scheduleRetry()},2600)
-}
+function publishPresence(){mqttPub(topicPresence+ROLE,{role:ROLE,ts:Date.now(),room:room})}
 function restartNetwork(){
- try{if(conn)conn.close()}catch(e){}
- try{if(peer&&!peer.destroyed)peer.destroy()}catch(e){}
- connected=false;handshake=false;conn=null;peer=null;lastNetError='';if(retryTimer){clearTimeout(retryTimer);retryTimer=null}
- netStatus('🟡 Перезапуск соединения…');setTimeout(net,300)
+ try{if(mqttClient)mqttClient.end(true)}catch(e){}
+ mqttClient=null;brokerConnected=false;connected=false;opponentSeen=0;lastNetError='';
+ if(presenceTimer){clearInterval(presenceTimer);presenceTimer=null}
+ if(monitorTimer){clearInterval(monitorTimer);monitorTimer=null}
+ netStatus('🟡 Перезапуск облачной комнаты…');setTimeout(net,300)
 }
 function net(){
- netStatus('🟡 Подключаемся к серверу связи…');
- peer=new Peer(selfId);
- peer.on('open',function(id){netStatus('🟡 PeerJS Cloud подключён · '+id+' · ждём соперника…');
-   if(ROLE===1){
-     H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0};
-     publish();netStatus('🟡 Сторона 1 готова. Ждём соперника…')
-   }else connectToHost()
+ if(!window.mqtt){netStatus('🔴 Не загрузилась библиотека MQTT. Обновите страницу.');return}
+ netStatus('🟡 Подключаемся к облачной комнате…');
+ if(ROLE===1&&!H){
+   H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0}
+ }
+ var clientId='qura3_'+ROLE+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);
+ mqttClient=mqtt.connect('wss://broker.emqx.io:8084/mqtt',{clientId:clientId,clean:true,keepalive:20,reconnectPeriod:1500,connectTimeout:7000,protocolVersion:4});
+ mqttClient.on('connect',function(){
+   brokerConnected=true;lastNetError='';
+   netStatus('🟡 Облако подключено. Ждём соперника…');
+   mqttClient.subscribe(topicPresence+'+',{qos:0});
+   if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:0});mqttPub(topicState,'',{retain:true});setTimeout(publish,120)}
+   else mqttClient.subscribe(topicState,{qos:0});
+   publishPresence();
+   if(presenceTimer)clearInterval(presenceTimer);
+   presenceTimer=setInterval(publishPresence,1800);
+   if(monitorTimer)clearInterval(monitorTimer);
+   monitorTimer=setInterval(function(){
+     if(opponentSeen&&Date.now()-opponentSeen<5500){
+       if(!connected){connected=true;netStatus('🟢 Соперник подключён через облачную комнату');syncPendingMode();render()}
+     }else if(connected){
+       connected=false;netStatus('🟡 Облако подключено. Соперник временно не виден…');render()
+     }
+   },1000);
+   render()
  });
- peer.on('connection',function(dc){
-   if(ROLE!==1){try{dc.close()}catch(e){};return}
-   bind(dc)
+ mqttClient.on('message',function(topic,payload){
+   var txt='';try{txt=payload.toString()}catch(e){return}
+   if(topic.indexOf(topicPresence)===0){try{var p=JSON.parse(txt);markOpponent(+p.role)}catch(e){};return}
+   if(ROLE===1&&topic===topicCmd){try{var cmd=JSON.parse(txt);if(cmd&&cmd.from===2)host(2,cmd.msg)}catch(e){};return}
+   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'){S=st.s;render()}}catch(e){}}
  });
- peer.on('disconnected',function(){netStatus('🟠 Потеряна связь с сервером, переподключаемся…');if(peer&&!peer.destroyed){try{peer.reconnect()}catch(e){setTimeout(restartNetwork,700)}}else setTimeout(restartNetwork,700)});
- peer.on('error',function(e){
-   lastNetError=(e&&e.type)||'peer';
-   if(lastNetError==='peer-unavailable'&&ROLE===2){
-     netStatus('🟡 Сторона 1 пока не зарегистрирована. Создаём новое подключение…');
-     if(peer&&peer.destroyed){peer=null;setTimeout(net,1200)}else scheduleRetry();
-     return
-   }
-   if(lastNetError==='unavailable-id'){
-     netStatus('🔴 Эта сторона уже открыта в другой вкладке. Закройте старую страницу или нажмите ↻ Переподключиться.');
-     return
-   }
-   if(lastNetError==='network'||lastNetError==='server-error'||lastNetError==='socket-error'||lastNetError==='socket-closed'){
-     netStatus('🟠 Связь с PeerJS Cloud потеряна. Перезапускаем соединение…');
-     setTimeout(restartNetwork,900);return
-   }
-   netStatus('🟠 Сетевая ошибка: '+lastNetError);
-   if(ROLE===2)setTimeout(restartNetwork,1200)
- })
+ mqttClient.on('reconnect',function(){brokerConnected=false;netStatus('🟠 Переподключаемся к облачной комнате…')});
+ mqttClient.on('offline',function(){brokerConnected=false;connected=false;netStatus('🟠 Облако недоступно, повторяем…');render()});
+ mqttClient.on('close',function(){brokerConnected=false;connected=false;netStatus('🟠 Соединение с облаком закрыто, повторяем…');render()});
+ mqttClient.on('error',function(e){lastNetError=e&&e.message?e.message:'mqtt';netStatus('🟠 Ошибка облачной комнаты: '+lastNetError)})
 }
