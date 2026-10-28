@@ -53,7 +53,7 @@ function resolveTargetHost(){
    if(a.o.move==='defend'){if(!seenDef[a.side+'-'+a.c.pos]){charge(a.c,18);seenDef[a.side+'-'+a.c.pos]=1}return}
    var enemy=a.side===1?2:1,target=byPos(enemy,+a.o.target,H)||nextLiving(enemy,+a.o.target,H);if(!target)return;
    var to=H.p[enemy].moves[target.pos]||{move:'attack'},r=targetOutcome(a.c,target,a.o.move,to.move,(seed+i*.173)%1);
-   r.sourceSide=a.side;r.targetSide=enemy;res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
+   r.sourceSide=a.side;r.targetSide=enemy;r.globalWinner=r.w===1?a.side:r.w===2?enemy:0;r.tipsBySide={1:'',2:''};if(r.globalWinner){var loser=r.globalWinner===1?2:1;r.tipsBySide[loser]=loser===a.side?coach(to.move):coach(a.o.move)}res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
  });
  finishRound(res,wins);
 }
