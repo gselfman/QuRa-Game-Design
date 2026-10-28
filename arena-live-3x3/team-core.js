@@ -35,7 +35,7 @@ function targetOutcome(actor,target,move,targetMove,rng){
    else if(targetMove==='special'){v=hit(actor,target,.35);why='Цель готовит Special: часть Атаки проходит, но Special не отменяется.';detail='Атака сквозь Special: −'+v+' HP.'}
    else{v=hit(actor,target,actor.s>target.s?1.10:1);why='Обе курочки действуют агрессивно. Скорость даёт небольшой бонус к Атаке.';detail='Атака: −'+v+' HP.'}
  } else if(move==='maneuver'){
-   if(targetMove==='attack'){why='Цель выбрала Атаку: Манёвр уязвим перед прямым ударом и не получает бонуса контра.';var r0=maneuver(actor,target);v=r0.v;detail=r0.detail}
+   if(targetMove==='attack'){v=take(target,10);why='Цель выбрала Атаку: прямое давление срывает подготовку Манёвра.';detail='Манёвр сорван: проходит только −'+v+' HP без персонального бонуса.'}
    else {var rm=maneuver(actor,target);v=rm.v;detail=rm.detail;w=targetMove==='defend'?1:0;why=targetMove==='defend'?'Манёвр обошёл Защиту: цель ждала прямую Атаку.':'Манёвр сработал со своим персональным эффектом.'}
  } else if(move==='special'){
    var rs=special(actor,target,targetMove==='defend',rng);v=rs.v;detail=rs.detail;w=targetMove==='defend'?0:1;why=targetMove==='defend'?'Цель прочитала Special и Защитой снизила его прямой эффект.':'Special применён по выбранной цели.'
