@@ -9,7 +9,7 @@ var R=[
 {id:'p',n:'Профессор',i:'🤓',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0},H=null;
+var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0},H=null;
 function $(s){return document.querySelector(s)}function C(id){return R.find(function(x){return x.id===id})}function clone(c,pos){return Object.assign({},c,{max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false,pos:pos})}
 function living(side,st){st=st||H;return st.f[side].filter(function(c){return c&&!c.dead})}function byPos(side,pos,st){st=st||H;var c=st.f[side][pos];return c&&!c.dead?c:null}function nextLiving(side,pos,st){st=st||H;for(var k=0;k<3;k++){var p=(pos+k)%3,c=byPos(side,p,st);if(c)return c}return null}
 function pairings(st){st=st||H;var a=living(1,st),b=living(2,st);if(!a.length||!b.length)return[];var anchor=a.length>=b.length?1:2,other=anchor===1?2:1;return living(anchor,st).map(function(c){var o=byPos(other,c.pos,st)||nextLiving(other,c.pos,st);return anchor===1?{a:c,b:o}:{a:o,b:c}})}
@@ -67,21 +67,18 @@ function finishRound(res,wins){
 }
 function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWallHost()}
 function viewFor(side){
- var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,scoutUsed:H.p[1].scoutUsed,scoutReveal:side===1?H.p[1].scoutReveal:null},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,scoutUsed:H.p[2].scoutUsed,scoutReveal:side===2?H.p[2].scoutReveal:null};
+ var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,rematch:!!H.p[1].rematch},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,rematch:!!H.p[2].rematch};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
- if(side===1){p2.scoutUsed=false}else{p1.scoutUsed=false}
  return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
 }
 function mqttPub(topic,obj,opts){if(mqttClient&&mqttClient.connected){mqttClient.publish(topic,typeof obj==='string'?obj:JSON.stringify(obj),Object.assign({qos:0,retain:false},opts||{}))}}
 function publish(){S=viewFor(1);render();mqttPub(topicState,{t:'state',s:viewFor(2),ts:Date.now()},{retain:true})}
-function doScout(side){
- if(H.phase!=='fight'||H.p[side].scoutUsed||H.p[side].moved)return;
- var enemy=side===1?2:1;if(!H.p[enemy].moved||!H.p[enemy].moves)return;
- var candidates=living(enemy).filter(function(ch){return H.p[enemy].moves[ch.pos]&&H.p[enemy].moves[ch.pos].move});
- if(!candidates.length)return;
- var ch=candidates[Math.floor(Math.random()*candidates.length)],o=H.p[enemy].moves[ch.pos],targetName=null;
- if(H.mode==='target'&&o.target!==null&&o.target!==undefined){var t=byPos(side,+o.target,H);targetName=t?t.n:null}
- H.p[side].scoutUsed=true;H.p[side].scoutReveal={round:H.round,name:ch.n,pos:ch.pos,move:o.move,label:label(ch,o.move),target:targetName};publish()
+function startRematch(){
+ H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});
+ H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});
+ H.phase='fight';H.round=1;H.last=null;H.history=[];H.winner=0;
+ [1,2].forEach(function(side){H.p[side].moves=null;H.p[side].moved=false;H.p[side].rematch=false});
+ publish()
 }
 function host(side,m){
  if(!m)return;
@@ -89,7 +86,7 @@ function host(side,m){
  if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
  if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
  if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
- if(m.t==='scout'){doScout(side);return}
+ if(m.t==='rematch'&&H.phase==='done'){H.p[side].rematch=true;if(H.p[1].rematch&&H.p[2].rematch){startRematch();return}publish();return}
  if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
  if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
  publish()
@@ -125,7 +122,7 @@ function net(){
  if(!window.mqtt){netStatus('🔴 Не загрузилась библиотека MQTT. Обновите страницу.');return}
  netStatus('🟡 Подключаемся к облачной комнате…');
  if(ROLE===1&&!H){
-   H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0}
+   H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0}
  }
  var clientId='qura3_'+ROLE+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);
  mqttClient=mqtt.connect('wss://broker.emqx.io:8084/mqtt',{clientId:clientId,clean:true,keepalive:20,reconnectPeriod:1500,connectTimeout:7000,protocolVersion:4});
