@@ -1,7 +1,7 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='mqtt1',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
-var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/';
+var NETVER='mqtt2',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
+var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/',topicChat=baseTopic+'/chat';
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -95,6 +95,17 @@ function host(side,m){
  publish()
 }
 function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()})}
+function sendChat(text,kind){
+ text=String(text||'').replace(/\s+/g,' ').trim().slice(0,140);if(!text||!mqttClient||!mqttClient.connected)return;
+ var id=ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7);
+ mqttPub(topicChat,{id:id,from:ROLE,text:text,kind:kind||'text',ts:Date.now()})
+}
+function receiveChat(m){
+ if(!m||!m.id||chatSeen[m.id])return;chatSeen[m.id]=1;
+ chatLog.push({id:m.id,from:+m.from,text:String(m.text||'').slice(0,140),kind:m.kind||'text',ts:+m.ts||Date.now()});
+ if(chatLog.length>60)chatLog=chatLog.slice(-60);
+ try{render()}catch(e){}
+}
 function netStatus(t){var el=$('#net');if(el)el.textContent=t}
 function syncPendingMode(){try{if(typeof localMode!=='undefined'&&localMode&&connected)send({t:'mode',mode:localMode})}catch(e){}}
 function markOpponent(role){
@@ -121,7 +132,7 @@ function net(){
  mqttClient.on('connect',function(){
    brokerConnected=true;lastNetError='';
    netStatus('🟡 Облако подключено. Ждём соперника…');
-   mqttClient.subscribe(topicPresence+'+',{qos:0});
+   mqttClient.subscribe(topicPresence+'+',{qos:0});mqttClient.subscribe(topicChat,{qos:0});
    if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:0});mqttPub(topicState,'',{retain:true});setTimeout(publish,120)}
    else mqttClient.subscribe(topicState,{qos:0});
    publishPresence();
@@ -140,6 +151,7 @@ function net(){
  mqttClient.on('message',function(topic,payload){
    var txt='';try{txt=payload.toString()}catch(e){return}
    if(topic.indexOf(topicPresence)===0){try{var p=JSON.parse(txt);markOpponent(+p.role)}catch(e){};return}
+   if(topic===topicChat){try{receiveChat(JSON.parse(txt))}catch(e){};return}
    if(ROLE===1&&topic===topicCmd){try{var cmd=JSON.parse(txt);if(cmd&&cmd.from===2)host(2,cmd.msg)}catch(e){};return}
    if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'){S=st.s;render()}}catch(e){}}
  });
