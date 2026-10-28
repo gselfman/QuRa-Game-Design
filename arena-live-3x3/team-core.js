@@ -91,7 +91,7 @@ function host(side,m){
  publish()
 }
 function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
-function netStatus(t){var el=$('#net');if(el)el.textContent=t}
+function netStatus(t){var el=$('#net');if(el)el.textContent=t}function syncPendingMode(){try{if(typeof localMode!=='undefined'&&localMode&&handshake)send({t:'mode',mode:localMode})}catch(e){}}
 function bind(dc){
  if(conn&&conn!==dc&&conn.open){try{conn.close()}catch(e){}}
  conn=dc;
@@ -106,11 +106,11 @@ function bind(dc){
    if(m&&m.t==='hello'){
      handshake=true;connected=true;netStatus('🟢 Соперник подключён');
      try{dc.send({t:'ack',role:ROLE,room:room,ver:NETVER})}catch(e){}
-     if(ROLE===1)publish();render();return
+     if(ROLE===1)publish();syncPendingMode();render();return
    }
    if(m&&m.t==='ack'){
      handshake=true;connected=true;netStatus('🟢 Соперник подключён');
-     if(ROLE===1)publish();render();return
+     if(ROLE===1)publish();syncPendingMode();render();return
    }
    if(!handshake){handshake=true;netStatus('🟢 Соперник подключён')}
    if(ROLE===1)host(2,m);else if(m&&m.t==='state'){S=m.s;render()}
