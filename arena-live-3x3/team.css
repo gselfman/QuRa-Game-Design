@@ -13,3 +13,5 @@
 
 .pregamegrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:14px;align-items:start}
 @media(max-width:1050px){.pregamegrid{grid-template-columns:1fr}}
+
+.rematchnote{margin:8px 0;padding:10px 12px;border-radius:10px;background:#1d2d22;border:1px solid #4b8a5d;color:#c9f2d3;font-weight:800}
