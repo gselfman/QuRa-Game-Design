@@ -1,7 +1,7 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='mqtt4',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,stateTimer=null,lastNetError='',lastStateRev=0,localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
-var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/',topicChat=baseTopic+'/chat';
+var NETVER='mqtt5',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,stateTimer=null,cmdTimer=null,lastNetError='',lastStateRev=0,pendingCmd=null,pendingCmdAck=false,localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
+var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/',topicChat=baseTopic+'/chat',topicAck=baseTopic+'/ack/2';
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -9,7 +9,7 @@ var R=[
 {id:'p',n:'Профессор',i:'🤓',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null},H=null;
+var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,moveAck:null,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false,moveAck:null,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null},H=null;
 function $(s){return document.querySelector(s)}function C(id){return R.find(function(x){return x.id===id})}function clone(c,pos){return Object.assign({},c,{max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false,pos:pos})}
 function living(side,st){st=st||H;return st.f[side].filter(function(c){return c&&!c.dead})}function byPos(side,pos,st){st=st||H;var c=st.f[side][pos];return c&&!c.dead?c:null}function nextLiving(side,pos,st){st=st||H;for(var k=0;k<3;k++){var p=(pos+k)%3,c=byPos(side,p,st);if(c)return c}return null}
 function pairings(st){st=st||H;var a=living(1,st),b=living(2,st);if(!a.length||!b.length)return[];var anchor=a.length>=b.length?1:2,other=anchor===1?2:1;return living(anchor,st).map(function(c){var o=byPos(other,c.pos,st)||nextLiving(other,c.pos,st);return anchor===1?{a:c,b:o}:{a:o,b:c}})}
@@ -61,13 +61,13 @@ function resolveTargetHost(){
 function finishRound(res,wins){
  var tw=wins[0]>wins[1]?1:wins[1]>wins[0]?2:0;
  H.last={round:H.round,mode:H.mode,clashes:res,wins:wins,teamWinner:tw};H.history.push(JSON.parse(JSON.stringify(H.last)));
- H.p[1].moves=H.p[2].moves=null;H.p[1].moved=H.p[2].moved=false;
+ H.p[1].moves=H.p[2].moves=null;H.p[1].moved=H.p[2].moved=false;H.p[1].moveAck=H.p[2].moveAck=null;H.resolving=false;
  if(!living(1).length||!living(2).length){H.phase='done';H.winner=living(1).length?1:living(2).length?2:3}else H.round++;
  publish()
 }
 function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWallHost()}
 function viewFor(side){
- var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,rematch:!!H.p[1].rematch},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,rematch:!!H.p[2].rematch};
+ var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,moveAck:H.p[1].moveAck||null,rematch:!!H.p[1].rematch},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,moveAck:H.p[2].moveAck||null,rematch:!!H.p[2].rematch};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
  return JSON.parse(JSON.stringify({rev:H.rev||0,phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner,rematchNotice:H.rematchNotice||null}))
 }
@@ -78,7 +78,7 @@ function startRematch(){
  H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});
  H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});
  H.phase='fight';H.round=1;H.last=null;H.history=[];H.winner=0;H.rematchNotice=null;
- [1,2].forEach(function(side){H.p[side].moves=null;H.p[side].moved=false;H.p[side].rematch=false});
+ [1,2].forEach(function(side){H.p[side].moves=null;H.p[side].moved=false;H.p[side].moveAck=null;H.p[side].rematch=false});H.resolving=false;
  publish()
 }
 function host(side,m){
@@ -86,14 +86,22 @@ function host(side,m){
  if(m.t==='mode'&&H.phase==='mode'){H.p[side].mode=m.mode;if(H.p[1].mode&&H.p[2].mode&&H.p[1].mode===H.p[2].mode){H.mode=H.p[1].mode;H.phase='pick'}}
  if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
  if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
- if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
+ if(m.t==='moves'&&H.phase==='fight'){var mr=+m.round||H.round;if(mr===H.round){if(!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true;H.p[side].moveAck=m.commandId||('r'+H.round+'-p'+side)}if(side===2)mqttPub(topicAck,{t:'move-ack',commandId:m.commandId||null,round:H.round,accepted:true,ts:Date.now()},{qos:1})}}
  if(m.t==='rematch'&&H.phase==='done'){H.rematchNotice=null;H.p[side].rematch=true;if(H.p[1].rematch&&H.p[2].rematch){startRematch();return}publish();return}
  if(m.t==='rematch-decline'&&H.phase==='done'){H.p[1].rematch=false;H.p[2].rematch=false;H.rematchNotice={type:'declined',by:side,ts:Date.now()};publish();return}
  if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
- if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
+ if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved&&!H.resolving){H.resolving=true;publish();setTimeout(function(){if(H&&H.phase==='fight'&&H.resolving)resolveHost()},250);return}
  publish()
 }
-function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()},{qos:1})}
+function sendPendingCommand(){if(ROLE!==2||!pendingCmd||pendingCmdAck)return;mqttPub(topicCmd,{from:2,msg:pendingCmd,ts:Date.now()},{qos:1})}
+function send(m){
+ if(ROLE===1){host(1,m);return}
+ if(m&&m.t==='moves'){
+   if(!m.commandId)m.commandId='p2-r'+(m.round||S.round)+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6);
+   pendingCmd=m;pendingCmdAck=false;sendPendingCommand();
+   if(cmdTimer)clearInterval(cmdTimer);cmdTimer=setInterval(function(){if(pendingCmd&&!pendingCmdAck)sendPendingCommand();else{clearInterval(cmdTimer);cmdTimer=null}},700);
+ }else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()},{qos:1})
+}
 function sendChat(text,kind){
  text=String(text||'').replace(/\s+/g,' ').trim().slice(0,140);if(!text||!mqttClient||!mqttClient.connected)return;
  var msg={id:ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7),from:ROLE,text:text,kind:kind||'text',ts:Date.now()};
@@ -131,13 +139,14 @@ function restartNetwork(){
  if(presenceTimer){clearInterval(presenceTimer);presenceTimer=null}
  if(monitorTimer){clearInterval(monitorTimer);monitorTimer=null}
  if(stateTimer){clearInterval(stateTimer);stateTimer=null}
+ if(cmdTimer){clearInterval(cmdTimer);cmdTimer=null}pendingCmd=null;pendingCmdAck=false;
  netStatus('🟡 Перезапуск облачной комнаты…');setTimeout(net,300)
 }
 function net(){
  if(!window.mqtt){netStatus('🔴 Не загрузилась библиотека MQTT. Обновите страницу.');return}
  netStatus('🟡 Подключаемся к облачной комнате…');
  if(ROLE===1&&!H){
-   H={rev:0,phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null}
+   H={rev:0,phase:'mode',mode:null,round:0,resolving:false,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,moveAck:null,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,moveAck:null,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null}
  }
  var clientId='qura3_'+ROLE+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);
  mqttClient=mqtt.connect('wss://broker.emqx.io:8084/mqtt',{clientId:clientId,clean:true,keepalive:20,reconnectPeriod:1500,connectTimeout:7000,protocolVersion:4});
@@ -146,7 +155,7 @@ function net(){
    netStatus('🟡 Облако подключено. Ждём соперника…');
    mqttClient.subscribe(topicPresence+'+',{qos:0});mqttClient.subscribe(topicChat,{qos:1});
    if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:1});mqttPub(topicState,'',{qos:1,retain:true});setTimeout(publish,120);if(stateTimer)clearInterval(stateTimer);stateTimer=setInterval(function(){if(H&&mqttClient&&mqttClient.connected)broadcastState()},900)}
-   else mqttClient.subscribe(topicState,{qos:1});
+   else{mqttClient.subscribe(topicState,{qos:1});mqttClient.subscribe(topicAck,{qos:1})}
    publishPresence();
    if(presenceTimer)clearInterval(presenceTimer);
    presenceTimer=setInterval(publishPresence,1800);
@@ -164,8 +173,9 @@ function net(){
    var txt='';try{txt=payload.toString()}catch(e){return}
    if(topic.indexOf(topicPresence)===0){try{var p=JSON.parse(txt);markOpponent(+p.role)}catch(e){};return}
    if(topic===topicChat){try{receiveChat(JSON.parse(txt))}catch(e){};return}
+   if(ROLE===2&&topic===topicAck){try{var ack=JSON.parse(txt);if(ack&&ack.t==='move-ack'&&pendingCmd&&(!ack.commandId||ack.commandId===pendingCmd.commandId)){pendingCmdAck=true;if(cmdTimer){clearInterval(cmdTimer);cmdTimer=null}}}catch(e){};return}
    if(ROLE===1&&topic===topicCmd){try{var cmd=JSON.parse(txt);if(cmd&&cmd.from===2)host(2,cmd.msg)}catch(e){};return}
-   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'&&st.s){var rev=+st.s.rev||0;if(rev>lastStateRev){lastStateRev=rev;S=st.s;render()}}}catch(e){}}
+   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'&&st.s){var rev=+st.s.rev||0;if(rev>lastStateRev){lastStateRev=rev;S=st.s;if(S.p&&S.p[2]&&S.p[2].moved){pendingCmdAck=true;if(cmdTimer){clearInterval(cmdTimer);cmdTimer=null}}render()}}}catch(e){}}
  });
  mqttClient.on('reconnect',function(){brokerConnected=false;netStatus('🟠 Переподключаемся к облачной комнате…')});
  mqttClient.on('offline',function(){brokerConnected=false;connected=false;netStatus('🟠 Облако недоступно, повторяем…');render()});
