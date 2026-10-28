@@ -1,6 +1,6 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='mqtt3',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,stateTimer=null,lastNetError='',lastStateRev=0,localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
+var NETVER='mqtt4',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,stateTimer=null,lastNetError='',lastStateRev=0,localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
 var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/',topicChat=baseTopic+'/chat';
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
@@ -9,7 +9,7 @@ var R=[
 {id:'p',n:'Профессор',i:'🤓',hp:102,a:25,d:19,s:22,m:'Анализ',x:'Расчёт'},
 {id:'m',n:'Монах',i:'🧘',hp:110,a:21,d:24,s:15,m:'Медитация',x:'Благодать'},
 {id:'g',n:'Гламурочка',i:'😎',hp:102,a:23,d:19,s:24,m:'Позирование',x:'Ослепительный выход'}];
-var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0},H=null;
+var S={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null},H=null;
 function $(s){return document.querySelector(s)}function C(id){return R.find(function(x){return x.id===id})}function clone(c,pos){return Object.assign({},c,{max:c.hp,q:0,shield:0,boost:0,weaken:0,dead:false,pos:pos})}
 function living(side,st){st=st||H;return st.f[side].filter(function(c){return c&&!c.dead})}function byPos(side,pos,st){st=st||H;var c=st.f[side][pos];return c&&!c.dead?c:null}function nextLiving(side,pos,st){st=st||H;for(var k=0;k<3;k++){var p=(pos+k)%3,c=byPos(side,p,st);if(c)return c}return null}
 function pairings(st){st=st||H;var a=living(1,st),b=living(2,st);if(!a.length||!b.length)return[];var anchor=a.length>=b.length?1:2,other=anchor===1?2:1;return living(anchor,st).map(function(c){var o=byPos(other,c.pos,st)||nextLiving(other,c.pos,st);return anchor===1?{a:c,b:o}:{a:o,b:c}})}
@@ -69,7 +69,7 @@ function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWall
 function viewFor(side){
  var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,rematch:!!H.p[1].rematch},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,rematch:!!H.p[2].rematch};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
- return JSON.parse(JSON.stringify({rev:H.rev||0,phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
+ return JSON.parse(JSON.stringify({rev:H.rev||0,phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner,rematchNotice:H.rematchNotice||null}))
 }
 function mqttPub(topic,obj,opts){if(mqttClient&&mqttClient.connected){mqttClient.publish(topic,typeof obj==='string'?obj:JSON.stringify(obj),Object.assign({qos:0,retain:false},opts||{}))}}
 function broadcastState(){if(ROLE===1&&H)mqttPub(topicState,{t:'state',s:viewFor(2),ts:Date.now()},{qos:1,retain:true})}
@@ -77,7 +77,7 @@ function publish(){H.rev=(H.rev||0)+1;S=viewFor(1);render();broadcastState()}
 function startRematch(){
  H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});
  H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});
- H.phase='fight';H.round=1;H.last=null;H.history=[];H.winner=0;
+ H.phase='fight';H.round=1;H.last=null;H.history=[];H.winner=0;H.rematchNotice=null;
  [1,2].forEach(function(side){H.p[side].moves=null;H.p[side].moved=false;H.p[side].rematch=false});
  publish()
 }
@@ -87,7 +87,8 @@ function host(side,m){
  if(m.t==='slots'&&H.phase==='pick'){H.p[side].slots=m.slots;H.p[side].ready=false}
  if(m.t==='ready'&&H.phase==='pick')H.p[side].ready=true;
  if(m.t==='moves'&&H.phase==='fight'&&!H.p[side].moved){H.p[side].moves=m.moves;H.p[side].moved=true}
- if(m.t==='rematch'&&H.phase==='done'){H.p[side].rematch=true;if(H.p[1].rematch&&H.p[2].rematch){startRematch();return}publish();return}
+ if(m.t==='rematch'&&H.phase==='done'){H.rematchNotice=null;H.p[side].rematch=true;if(H.p[1].rematch&&H.p[2].rematch){startRematch();return}publish();return}
+ if(m.t==='rematch-decline'&&H.phase==='done'){H.p[1].rematch=false;H.p[2].rematch=false;H.rematchNotice={type:'declined',by:side,ts:Date.now()};publish();return}
  if(H.phase==='pick'&&H.p[1].ready&&H.p[2].ready&&H.p[1].slots.every(Boolean)&&H.p[2].slots.every(Boolean)){H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});H.phase='fight';H.round=1}
  if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
  publish()
@@ -98,11 +99,22 @@ function sendChat(text,kind){
  var id=ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7);
  mqttPub(topicChat,{id:id,from:ROLE,text:text,kind:kind||'text',ts:Date.now()})
 }
+function renderChatOnly(){
+ try{
+   var box=$('#chatMessages');
+   if(box){
+     box.innerHTML=chatLog.slice(-24).map(function(m){return'<div class="chatmsg '+(m.from===ROLE?'mine':'theirs')+'"><span>'+escHtml(m.text)+'</span></div>'}).join('')||'<div class="muted">Бросьте первую реплику 👋</div>';
+     box.scrollTop=box.scrollHeight
+   }
+   var bubble=$('#opponentBubble'),op=ROLE===1?2:1,last=chatLog.slice().reverse().find(function(x){return x.from===op});
+   if(bubble){bubble.innerHTML=last?'💬 '+escHtml(last.text):'';bubble.style.display=last?'block':'none'}
+ }catch(e){console.error('QuRa chat update error',e)}
+}
 function receiveChat(m){
  if(!m||!m.id||chatSeen[m.id])return;chatSeen[m.id]=1;
  chatLog.push({id:m.id,from:+m.from,text:String(m.text||'').slice(0,140),kind:m.kind||'text',ts:+m.ts||Date.now()});
  if(chatLog.length>60)chatLog=chatLog.slice(-60);
- try{render()}catch(e){}
+ renderChatOnly()
 }
 function netStatus(t){var el=$('#net');if(el)el.textContent=t}
 function syncPendingMode(){try{if(typeof localMode!=='undefined'&&localMode&&connected)send({t:'mode',mode:localMode})}catch(e){}}
@@ -124,7 +136,7 @@ function net(){
  if(!window.mqtt){netStatus('🔴 Не загрузилась библиотека MQTT. Обновите страницу.');return}
  netStatus('🟡 Подключаемся к облачной комнате…');
  if(ROLE===1&&!H){
-   H={rev:0,phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0}
+   H={rev:0,phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0,rematchNotice:null}
  }
  var clientId='qura3_'+ROLE+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);
  mqttClient=mqtt.connect('wss://broker.emqx.io:8084/mqtt',{clientId:clientId,clean:true,keepalive:20,reconnectPeriod:1500,connectTimeout:7000,protocolVersion:4});
@@ -152,7 +164,7 @@ function net(){
    if(topic.indexOf(topicPresence)===0){try{var p=JSON.parse(txt);markOpponent(+p.role)}catch(e){};return}
    if(topic===topicChat){try{receiveChat(JSON.parse(txt))}catch(e){};return}
    if(ROLE===1&&topic===topicCmd){try{var cmd=JSON.parse(txt);if(cmd&&cmd.from===2)host(2,cmd.msg)}catch(e){};return}
-   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'&&st.s){var rev=+st.s.rev||0;if(rev>=lastStateRev){lastStateRev=rev;S=st.s;render()}}}catch(e){}}
+   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'&&st.s){var rev=+st.s.rev||0;if(rev>lastStateRev){lastStateRev=rev;S=st.s;render()}}}catch(e){}}
  });
  mqttClient.on('reconnect',function(){brokerConnected=false;netStatus('🟠 Переподключаемся к облачной комнате…')});
  mqttClient.on('offline',function(){brokerConnected=false;connected=false;netStatus('🟠 Облако недоступно, повторяем…');render()});
