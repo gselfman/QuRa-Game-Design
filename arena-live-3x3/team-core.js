@@ -1,6 +1,6 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var selfId='qura3-'+room+'-p'+ROLE,hostId='qura3-'+room+'-p1',peer,conn,connected=false,localSlots=[null,null,null],localMoves={},localTargets={};
+var NETVER='v5',selfId='qura3-'+NETVER+'-'+room+'-p'+ROLE,hostId='qura3-'+NETVER+'-'+room+'-p1',peer,conn,connected=false,handshake=false,retryTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={};
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -91,6 +91,66 @@ function host(side,m){
  publish()
 }
 function send(m){if(ROLE===1)host(1,m);else if(conn&&conn.open)conn.send(m)}
-function bind(c){conn=c;c.on('open',function(){connected=true;$('#net').textContent='🟢 Соединение установлено';if(ROLE===1)publish();render()});c.on('close',function(){connected=false;$('#net').textContent='🔴 Соединение потеряно';render()});c.on('error',function(){connected=false;$('#net').textContent='🔴 Ошибка соединения';render()});c.on('data',function(m){if(ROLE===1)host(2,m);else if(m.t==='state'){S=m.s;render()}})}
-function retry(){if(connected)return;$('#net').textContent='🟡 Ищем сторону 1…';var c=peer.connect(hostId,{serialization:'json'});bind(c);setTimeout(function(){if(!connected)retry()},2200)}
-function net(){peer=new Peer(selfId);peer.on('open',function(){if(ROLE===1){H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0};publish();$('#net').textContent='🟡 Ждём сторону 2…'}else retry()});peer.on('error',function(e){if(!connected)$('#net').textContent=e&&e.type==='unavailable-id'?'🔴 Эта сторона уже открыта в другом окне':'🟠 Не удалось соединиться, повторяем…'});if(ROLE===1)peer.on('connection',bind)}
+function netStatus(t){var el=$('#net');if(el)el.textContent=t}
+function bind(dc){
+ if(conn&&conn!==dc&&conn.open){try{conn.close()}catch(e){}}
+ conn=dc;
+ dc.on('open',function(){
+   connected=true;handshake=false;lastNetError='';
+   netStatus('🟡 Канал открыт, проверяем соперника…');
+   try{dc.send({t:'hello',role:ROLE,room:room,ver:NETVER})}catch(e){}
+   if(ROLE===1)publish();
+   render()
+ });
+ dc.on('data',function(m){
+   if(m&&m.t==='hello'){
+     handshake=true;connected=true;netStatus('🟢 Соперник подключён');
+     try{dc.send({t:'ack',role:ROLE,room:room,ver:NETVER})}catch(e){}
+     if(ROLE===1)publish();render();return
+   }
+   if(m&&m.t==='ack'){
+     handshake=true;connected=true;netStatus('🟢 Соперник подключён');
+     if(ROLE===1)publish();render();return
+   }
+   if(!handshake){handshake=true;netStatus('🟢 Соперник подключён')}
+   if(ROLE===1)host(2,m);else if(m&&m.t==='state'){S=m.s;render()}
+ });
+ dc.on('close',function(){if(conn===dc){connected=false;handshake=false;netStatus('🔴 Соперник отключился');render();if(ROLE===2)scheduleRetry()}});
+ dc.on('error',function(e){lastNetError=(e&&e.type)||'connection';if(conn===dc){connected=false;handshake=false;netStatus('🟠 Ошибка канала: '+lastNetError);render();if(ROLE===2)scheduleRetry()}})
+}
+function scheduleRetry(){if(ROLE!==2||handshake||retryTimer)return;retryTimer=setTimeout(function(){retryTimer=null;connectToHost()},1800)}
+function connectToHost(){
+ if(ROLE!==2||handshake||!peer||peer.destroyed)return;
+ if(conn&&!conn.open){try{conn.close()}catch(e){}}
+ netStatus('🟡 Ищем сторону 1…');
+ var dc=peer.connect(hostId,{serialization:'json',reliable:true,metadata:{room:room,role:2,ver:NETVER}});
+ bind(dc);
+ setTimeout(function(){if(!handshake)scheduleRetry()},2600)
+}
+function restartNetwork(){
+ try{if(conn)conn.close()}catch(e){}
+ try{if(peer&&!peer.destroyed)peer.destroy()}catch(e){}
+ connected=false;handshake=false;conn=null;peer=null;lastNetError='';if(retryTimer){clearTimeout(retryTimer);retryTimer=null}
+ netStatus('🟡 Перезапуск соединения…');setTimeout(net,300)
+}
+function net(){
+ netStatus('🟡 Подключаемся к серверу связи…');
+ peer=new Peer(selfId,{host:'0.peerjs.com',port:443,path:'/',secure:true,debug:1,config:{iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}],sdpSemantics:'unified-plan'}});
+ peer.on('open',function(){
+   if(ROLE===1){
+     H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,scoutUsed:false,scoutReveal:null}},f:{1:[],2:[]},last:null,history:[],winner:0};
+     publish();netStatus('🟡 Сторона 1 готова. Ждём соперника…')
+   }else connectToHost()
+ });
+ peer.on('connection',function(dc){
+   if(ROLE!==1){try{dc.close()}catch(e){};return}
+   bind(dc)
+ });
+ peer.on('disconnected',function(){if(!peer.destroyed){netStatus('🟠 Потеряна связь с сервером, переподключаемся…');try{peer.reconnect()}catch(e){}}});
+ peer.on('error',function(e){
+   lastNetError=(e&&e.type)||'peer';
+   if(lastNetError==='peer-unavailable'&&ROLE===2){netStatus('🟡 Сторона 1 ещё не найдена. Повторяем…');scheduleRetry();return}
+   if(lastNetError==='unavailable-id'){netStatus('🔴 Эта сторона уже открыта в другой вкладке. Закройте старую страницу или используйте новую комнату.');return}
+   netStatus('🟠 Сетевая ошибка: '+lastNetError);if(ROLE===2)scheduleRetry()
+ })
+}
