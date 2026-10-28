@@ -1,6 +1,6 @@
 'use strict';
 var ROLE=+window.QURA_ROLE,qs=new URLSearchParams(location.search),room=(qs.get('room')||'team3-test').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)||'team3-test';
-var NETVER='mqtt2',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,lastNetError='',localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
+var NETVER='mqtt3',mqttClient=null,brokerConnected=false,connected=false,opponentSeen=0,presenceTimer=null,monitorTimer=null,stateTimer=null,lastNetError='',lastStateRev=0,localSlots=[null,null,null],localMoves={},localTargets={},chatLog=[],chatSeen={};
 var baseTopic='qura/arena3/'+NETVER+'/'+room,topicState=baseTopic+'/state',topicCmd=baseTopic+'/cmd',topicPresence=baseTopic+'/presence/',topicChat=baseTopic+'/chat';
 var R=[
 {id:'r',n:'Ряба',i:'🐔',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
@@ -69,10 +69,11 @@ function resolveHost(){if(H.mode==='target')resolveTargetHost();else resolveWall
 function viewFor(side){
  var hidden=[null,null,null],p1={mode:H.p[1].mode,slots:H.p[1].slots.slice(),ready:H.p[1].ready,moved:H.p[1].moved,rematch:!!H.p[1].rematch},p2={mode:H.p[2].mode,slots:H.p[2].slots.slice(),ready:H.p[2].ready,moved:H.p[2].moved,rematch:!!H.p[2].rematch};
  if(H.phase==='pick'){if(side===1)p2.slots=hidden.slice();else p1.slots=hidden.slice()}
- return JSON.parse(JSON.stringify({phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
+ return JSON.parse(JSON.stringify({rev:H.rev||0,phase:H.phase,mode:H.mode,round:H.round,p:{1:p1,2:p2},f:(H.phase==='mode'||H.phase==='pick')?{1:[],2:[]}:H.f,last:H.last,history:H.history,winner:H.winner}))
 }
 function mqttPub(topic,obj,opts){if(mqttClient&&mqttClient.connected){mqttClient.publish(topic,typeof obj==='string'?obj:JSON.stringify(obj),Object.assign({qos:0,retain:false},opts||{}))}}
-function publish(){S=viewFor(1);render();mqttPub(topicState,{t:'state',s:viewFor(2),ts:Date.now()},{retain:true})}
+function broadcastState(){if(ROLE===1&&H)mqttPub(topicState,{t:'state',s:viewFor(2),ts:Date.now()},{qos:1,retain:true})}
+function publish(){H.rev=(H.rev||0)+1;S=viewFor(1);render();broadcastState()}
 function startRematch(){
  H.f[1]=H.p[1].slots.map(function(id,pos){return clone(C(id),pos)});
  H.f[2]=H.p[2].slots.map(function(id,pos){return clone(C(id),pos)});
@@ -91,7 +92,7 @@ function host(side,m){
  if(H.phase==='fight'&&H.p[1].moved&&H.p[2].moved){publish();setTimeout(resolveHost,450);return}
  publish()
 }
-function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()})}
+function send(m){if(ROLE===1)host(1,m);else mqttPub(topicCmd,{from:2,msg:m,ts:Date.now()},{qos:1})}
 function sendChat(text,kind){
  text=String(text||'').replace(/\s+/g,' ').trim().slice(0,140);if(!text||!mqttClient||!mqttClient.connected)return;
  var id=ROLE+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7);
@@ -116,13 +117,14 @@ function restartNetwork(){
  mqttClient=null;brokerConnected=false;connected=false;opponentSeen=0;lastNetError='';
  if(presenceTimer){clearInterval(presenceTimer);presenceTimer=null}
  if(monitorTimer){clearInterval(monitorTimer);monitorTimer=null}
+ if(stateTimer){clearInterval(stateTimer);stateTimer=null}
  netStatus('🟡 Перезапуск облачной комнаты…');setTimeout(net,300)
 }
 function net(){
  if(!window.mqtt){netStatus('🔴 Не загрузилась библиотека MQTT. Обновите страницу.');return}
  netStatus('🟡 Подключаемся к облачной комнате…');
  if(ROLE===1&&!H){
-   H={phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0}
+   H={rev:0,phase:'mode',mode:null,round:0,p:{1:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false},2:{mode:null,slots:[null,null,null],ready:false,moves:null,moved:false,rematch:false}},f:{1:[],2:[]},last:null,history:[],winner:0}
  }
  var clientId='qura3_'+ROLE+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);
  mqttClient=mqtt.connect('wss://broker.emqx.io:8084/mqtt',{clientId:clientId,clean:true,keepalive:20,reconnectPeriod:1500,connectTimeout:7000,protocolVersion:4});
@@ -130,8 +132,8 @@ function net(){
    brokerConnected=true;lastNetError='';
    netStatus('🟡 Облако подключено. Ждём соперника…');
    mqttClient.subscribe(topicPresence+'+',{qos:0});mqttClient.subscribe(topicChat,{qos:0});
-   if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:0});mqttPub(topicState,'',{retain:true});setTimeout(publish,120)}
-   else mqttClient.subscribe(topicState,{qos:0});
+   if(ROLE===1){mqttClient.subscribe(topicCmd,{qos:1});mqttPub(topicState,'',{qos:1,retain:true});setTimeout(publish,120);if(stateTimer)clearInterval(stateTimer);stateTimer=setInterval(function(){if(H&&mqttClient&&mqttClient.connected)broadcastState()},900)}
+   else mqttClient.subscribe(topicState,{qos:1});
    publishPresence();
    if(presenceTimer)clearInterval(presenceTimer);
    presenceTimer=setInterval(publishPresence,1800);
@@ -150,7 +152,7 @@ function net(){
    if(topic.indexOf(topicPresence)===0){try{var p=JSON.parse(txt);markOpponent(+p.role)}catch(e){};return}
    if(topic===topicChat){try{receiveChat(JSON.parse(txt))}catch(e){};return}
    if(ROLE===1&&topic===topicCmd){try{var cmd=JSON.parse(txt);if(cmd&&cmd.from===2)host(2,cmd.msg)}catch(e){};return}
-   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'){S=st.s;render()}}catch(e){}}
+   if(ROLE===2&&topic===topicState&&txt){try{var st=JSON.parse(txt);if(st&&st.t==='state'&&st.s){var rev=+st.s.rev||0;if(rev>=lastStateRev){lastStateRev=rev;S=st.s;render()}}}catch(e){}}
  });
  mqttClient.on('reconnect',function(){brokerConnected=false;netStatus('🟠 Переподключаемся к облачной комнате…')});
  mqttClient.on('offline',function(){brokerConnected=false;connected=false;netStatus('🟠 Облако недоступно, повторяем…');render()});
