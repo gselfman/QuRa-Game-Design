@@ -530,3 +530,7 @@ Do not make gameplay rule depend on a visual file.
 ## 37. Sprite batch library — approved production plan
 
 See **SPRITE_PRODUCTION_BATCHES.md**: 12 sheets × 25 assets = 300 concrete objects, each with a stable ID, exact grid cell and shared generation instructions. Generate/QA/upload/slice one sheet at a time; keep existing 'Wolf catches eggs' art unless a replacement has been approved. New monetization visual elements (chests, Season Pass, Piggy Bank, store and offers) are included. All objects must be separately exportable for Figma and runtime.
+
+## C. Визуалы для нового MVP
+
+P0: корм зерно/кукуруза/червячки/особый корм/деликатес, состояния FED/HAPPY и возврат в NEUTRAL; 20 событий дня с **двумя** вариантами; пустой силуэт седьмой и шкала общей цели. P1: клановый герб/баннер/вклад/доска лидеров и значок официального token-клана. Позиции генерации — новые листы в SPRITE_PRODUCTION_BATCHES.md.
