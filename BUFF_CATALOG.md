@@ -70,7 +70,7 @@ Activated inside match; finite one-use item.
 
 ### DOUBLE_POWER
 Name: Двойная сила
-Rarity: Epic/Legendary candidate
+Редкость: возможные варианты Epic/Legendary
 Scope: SELF_CHICKEN
 Condition: living mine =1 and living enemy >=2
 Duration: ROUND
@@ -81,16 +81,16 @@ Chronicle: «печать Двойной силы вспыхнула...»
 Последнее перо
 Scope: SELF_CHICKEN
 Trigger: lethal урон
-Effect: survive at 1 HP once
-Duration: trigger
-Rule for repeated same-round lethal collision: OPEN
+Эффект: один раз пережить смертельный урон и остаться с 1 HP
+Длительность: одно срабатывание
+Повторный смертельный урон в том же раунде: решение OPEN
 
 ### PHOENIX
 Феникс
-Rarity: Legendary/Artifact
+Редкость: Legendary/Artifact
 Trigger: death
-Effect: revive once with limited HP
-Ranked legality: requires simulation
+Эффект: однократное возвращение с ограниченным HP
+Допуск в рейтинг требует симуляции
 
 ## 7. Catalog: защита
 
@@ -99,7 +99,7 @@ Ranked legality: requires simulation
 Scope: SELF_CHICKEN
 Duration: ROUND
 Effect: incoming урон=0; harmful secondary effects baseline blocked
-Does not block Gods Lightning
+Не защищает от Молнии богов
 
 ### BATTLE_DOME
 Боевой купол
@@ -110,7 +110,7 @@ Effect: временный Щит all living allies
 ### STONE_SKIN
 Каменная кожа
 Scope: SELF_CHICKEN
-Duration: ROUND/BATTLE depending item
+Длительность: раунд или бой — зависит от предмета
 Effect: Защита boost
 
 ### TURTLE_FORMATION
@@ -123,7 +123,7 @@ Effect: Защита up, possible Скорость down
 Зеркало
 Scope: SELF_CHICKEN
 Duration: ROUND
-Effect: first harmful debuff reflected or canceled
+Эффект: первый негативный статус отражается либо отменяется
 Окончательный вариант ещё не выбран
 
 ## 8. Catalog: offense
@@ -178,7 +178,7 @@ Effect: small лечение all living allies
 ### CLEAR_MIND
 Чистая голова
 Scope: ALLY_CHICKEN
-Effect: remove weaken/debuff
+Эффект: удалить ослабление/негативный статус
 
 ## 10. Catalog: Особый приём control
 
@@ -195,14 +195,14 @@ Effect: Особый приём direct effect up, optional post-penalty
 ### SPECIAL_ECHO
 Эхо Особый приём
 Effect: repeat portion of Особый приём at reduced coefficient
-No recursive echo
+Повторное эхо не порождает новую цепочку
 
 ### SILENCE
 Тишина
 Scope: ENEMY_CHICKEN
 Duration: ROUND
 Effect: Особый приём unavailable
-Rare hard-control
+Редкий эффект жёсткого контроля
 
 ### BREAK_CONCENTRATION
 Сбить концентрацию
