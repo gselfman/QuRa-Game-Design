@@ -368,7 +368,7 @@ tabs/recipient:
 
 - литературная история
 - раскрывающиеся разделы раундов
-- Technical calculation spoiler
+- сворачиваемый блок технического расчёта
 - copy/share
 
 ## 41. Итоги боя
@@ -376,28 +376,28 @@ tabs/recipient:
 Победа: выдача **Arena-сундука**, предпросмотр трёх ячеек (трофей, опыт, шанс эксклюзивной косметики). Проигрыш: без сундука. Отмена до начала/ошибка платформы — возврат аренды; двойной KO — без сундука/возврата. Отдельно показать XP, Боевой дух и прогресс сезона; не показывать старый GE payout 15.
 
 
-## 42. Rematch Prompt
+## 42. Предложение реванша
 
 - proposal
 - Yes
 - No
-- same mode/team explanation
+- объяснение сохранения режима и команды
 
-## 43. Timeout / Gods Lightning
+## 43. Пропуск хода / Молния богов
 
 - countdown
-- warning thresholds
-- lightning animation
-- technical loss reason
-- Chronicle entry
+- пороги предупреждения
+- анимация молнии
+- причина технического поражения
+- запись в летописи
 
 ## 44. Reconnect
 
-- connection state
-- reconnect countdown/grace
-- action status
-- no duplicate submit
-- server incident handling
+- состояние соединения
+- время переподключения и льготный период
+- статус действия
+- отсутствие повторной фиксации одного хода
+- поведение при сбое сервера
 
 ## 45. Асинхронная Arena: поиск и защита
 
@@ -416,33 +416,33 @@ tabs/recipient:
 
 ## 46. Training
 
-- bot difficulty
+- сложность бота
 - free
 - no Glory
-- teaching tips
+- учебные советы
 
 ## 47. Glory / League
 
-- current Glory
+- текущая Слава
 - league
 - movement
-- season remaining
+- до конца сезона
 - предпросмотр награды
 
 ## 48. Leaderboard
 
-- season ranking
+- место в сезонном рейтинге
 - top 3 medals
-- own position
+- собственная позиция
 
 ## 49. Hall of Fame
 
 - seasons
 - champions
-- team snapshot
+- снимок команды
 - medals
 
-## 50. Buff Inventory
+## 50. Инвентарь бафов
 
 - Preparation
 - Tactical
@@ -450,30 +450,30 @@ tabs/recipient:
 - rarity
 - sources
 - effect
-- legal modes
+- разрешённые режимы
 
 ## 51. Preparation Buff
 
 - select
 - duration
-- active status
-- visibility rules
+- активный статус
+- правила видимости
 
 ## 52. Legacy / L15
 
 - eligibility
 - 3D preview
 - consequences
-- original leaves digital Coop
-- heir concept
-- explicit confirmation
+- исходная курочка покидает цифровой Курятник
+- механика наследника
+- явное подтверждение
 
-## 53. Physical Passport / Heir Claim
+## 53. Физический паспорт / получение наследника
 
 - scan/claim
-- one-time status
-- account destination
-- capacity handling
+- статус однократного использования
+- аккаунт получателя
+- обработка нехватки места
 
 ### Заказ физической 3D-фигурки
 
@@ -485,36 +485,36 @@ Game:
 - sound
 - music
 - vibration
-- chat mute
+- отключение чата
 - accessibility
 
 ## 55. Moderation/report
 
-- report player/chat/name
-- block/mute where supported
+- жалоба на игрока, чат или имя
+- блокировка или отключение сообщений, если предусмотрено
 
-## 56. Empty/error states
+## 56. Пустые состояния и ошибки
 
 Required:
 - no chicken
 - no gear
 - no buff
 - no tickets
-- full inventory
-- full Coop
-- network error
-- feature unavailable
-- reward delivery pending
-- Arena settlement pending
+- заполненный инвентарь
+- переполненный Курятник
+- сетевая ошибка
+- функция недоступна
+- награда ожидает выдачи
+- списание или возврат аренды ожидает завершения
 
-## 57. Admin screens future
+## 57. Административные экраны (FUTURE)
 
-- content catalog
+- каталог контента
 - quests
-- reward tables
-- economy config
-- feature flags
-- Arena balance
+- таблицы наград
+- настройки экономики
+- флаги функций
+- баланс Arena
 - moderation
 - analytics
 
@@ -527,7 +527,7 @@ Required:
 - disabled
 - error
 - offline
-- permission/feature gated
+- недоступно по правам или флагам
 
 ## 59. Навигация
 
@@ -537,7 +537,7 @@ Required:
 - Quests
 - Games
 - Arena
-- Inventory/Profile via secondary navigation
+- Инвентарь и профиль во вторичной навигации
 
 Окончательная навигация утверждается после UX-прототипа.
 
@@ -549,12 +549,12 @@ Required:
 
 Source: **MONETIZATION_LIVEOPS_SPEC.md**.
 
-- GE shortfall decision: earn through QuRa / purchase GE / keep saving.
-- Season Pass hub, free/premium tracks, pass purchase, retrospective claim, season completion.
-- Paid chest detail: full odds, pity progress, duplicate policy, confirmed purchase and result.
-- Golden Piggy Bank progress, guaranteed offer contents, purchase and claim.
-- Starter Bundle one-time offer.
-- Contextual offers strip (max 3–5, hide option), collection preview, season cosmetics.
-- Purchase history, refunds and recovery/entitlement pending states.
+- Недостаток GE: заработать через QuRa, купить GE или продолжить копить.
+- Раздел Season Pass: бесплатная и премиальная дорожки, покупка, получение ранее открытых наград, завершение сезона.
+- Подробности платного сундука: все вероятности, прогресс гарантии, политика дублей, подтверждение покупки и результат.
+- «Золотая копилка»: прогресс, гарантированное содержимое, покупка и выдача.
+- Одноразовое стартовое предложение.
+- Лента уместных предложений (не более 3–5, можно скрыть), предпросмотр коллекций и сезонной косметики.
+- История покупок, возвраты, восстановление и ожидание выдачи прав на награду.
 
-Use **SPRITE_PRODUCTION_BATCHES.md** for referenced icons and objects; no price text burned into images.
+Использовать **SPRITE_PRODUCTION_BATCHES.md** для иконок и предметов; цены не должны быть частью изображения.
