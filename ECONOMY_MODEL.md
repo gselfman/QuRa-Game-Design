@@ -234,6 +234,141 @@ Before price table:
 
 Speed values remain OPEN until Arena Speed rule fixed.
 
+## 15.1. Pricing architecture — effort first, GE second
+
+Ценообразование строится от **целевого усилия пользователя**, а не от произвольной цифры GE.
+
+Вводится калибровочная величина:
+
+`D = median daily earned GE`
+
+где D — медианное количество GE, которое активный пользователь получает за день из разрешённых **earned**-источников:
+- квалифицирующие операции/действия QuRa;
+- quests;
+- бесплатные mini-game attempts;
+- обычные daily rewards;
+
+но **без**:
+- покупки GE;
+- компенсаций;
+- разовых promo;
+- крупных jackpot/редких выбросов.
+
+Все цены сначала задаются как доля/множитель D, затем переводятся в GE.
+
+Это позволяет менять GE emission за реальные операции без полного ручного пересчёта магазина.
+
+### Целевые effort bands
+
+| Категория | Целевое усилие |
+|---|---:|
+| micro-action / сервис | 0.02–0.15 D |
+| Common consumable | 0.1–0.3 D |
+| Common gear | 0.5–1 D |
+| Rare gear | 1.5–3 D |
+| Epic gear | 4–8 D |
+| Legendary gear | 12–25 D |
+| Artifact | 30–60 D |
+| стандартная дополнительная курочка | 7–12 D |
+| крупный Coop upgrade | 5–90 D в зависимости от tier |
+
+### Рабочая GE-калибровка v0.1
+
+Для тестирования принимаем **D = 100 GE**. Это не финальный курс, а единица моделирования.
+
+Тогда стартовые price bands:
+
+| Объект | Рабочая цена |
+|---|---:|
+| mini-game paid retry | 5 GE |
+| Arena 2-player entry | 10 GE |
+| Hint | 2–3 GE |
+| All-Seeing | 5 GE |
+| Autobattle | 7–10 GE |
+| Common tactical buff | 10–30 GE |
+| Rare tactical buff | 30–70 GE |
+| Epic tactical buff | 80–180 GE |
+| Legendary tactical buff | 200–500 GE |
+| Common gear | 50–100 GE |
+| Rare gear | 150–300 GE |
+| Epic gear | 400–800 GE |
+| Legendary gear | 1,200–2,500 GE |
+| Artifact gear | 3,000–6,000 GE |
+
+Эти значения должны пройти проверку против фактического D и win-rate value.
+
+## 15.2. Additional chicken pricing
+
+Первая курочка — progression/start reward.
+
+Первые три взрослые курочки нужны для раскрытия основной 3×3 Arena, поэтому **нельзя превращать их получение в жёсткий paywall**.
+
+Рекомендуемая модель:
+- 1-я курочка: бесплатно через стартовую progression;
+- 2-я: guaranteed progression reward / egg; ускоренная покупка допустима;
+- 3-я: guaranteed progression path / milestone; ускоренная покупка допустима;
+- 4-я и далее: полноценный collection sink.
+
+Working v0.1 store prices при D=100:
+- standard founder egg / выбранный базовый archetype: **1,000 GE**;
+- discounted early acceleration offer для 2-й курочки: **400–500 GE**;
+- discounted early acceleration offer для 3-й: **600–800 GE**;
+- mystery founder egg: **700–800 GE**, если random purchase разрешён юридически/продуктово;
+- rare/seasonal chicken: от **2,500 GE**;
+- Epic/Legendary: price/drop policy отдельно, не “+50% stats”.
+
+Купленная дополнительная курочка всегда приходит как **L1 egg**, а не взрослой.
+
+## 15.3. Chicken pricing logic
+
+Цена конкретной курочки зависит от:
+- guaranteed vs mystery;
+- availability window;
+- rarity;
+- visual exclusivity;
+- Gift uniqueness;
+- Arena strategic uniqueness;
+- collection scarcity.
+
+Цена **не должна** напрямую продавать линейное боевое превосходство.
+
+## 15.4. GE Store conversion role
+
+GE Store существует как shortcut, а не как единственный реалистичный путь.
+
+Пользователь должен всегда видеть два пути:
+
+1. **Заработать GE** — через полезное использование QuRa, quests, mini-games, rewards.
+2. **Купить GE** — если хочет получить цель быстрее.
+
+UI у дорогой покупки может прямо показывать:
+- баланс;
+- сколько GE не хватает;
+- «Заработать GE»;
+- «Купить GE».
+
+Это соединяет игровой спрос с основной fintech-активностью без принуждения.
+
+## 15.5. Suggested GE Store bundle ladder
+
+Размеры bundle могут быть:
+- 100 GE;
+- 500 GE;
+- 1,200 GE;
+- 3,000 GE;
+- 7,500 GE;
+- 15,000 GE.
+
+Fiat price/currency and bonus percentage определяются финансовым продуктом и **не фиксируются игровой документацией**.
+
+Bundle ladder должен позволять:
+- micro purchase;
+- one useful gear purchase;
+- chicken acceleration;
+- large Coop/collection purchase.
+
+Не использовать dark patterns “не хватает ровно 1 GE”; остаток после покупки должен оставаться полезным.
+
 ## 16. Coop upgrades
 
 Known capacities:
@@ -246,11 +381,24 @@ Known capacities:
 
 2→4 first upgrade is progression gift.
 
-Later upgrades:
-- GE sink;
-- may require Coolness/collection.
+Working v0.1 prices при D=100:
 
-Exact prices OPEN.
+| Upgrade | Capacity | GE | Target effort |
+|---|---:|---:|---:|
+| Гнёздышко → Курятник | 2→4 | **0** | progression gift |
+| Курятник → Птичий двор | 4→6 | **500 GE** | ~5 D |
+| Птичий двор → Усадьба | 6→10 | **1,500 GE** | ~15 D |
+| Усадьба → Золотой двор | 10→16 | **4,000 GE** | ~40 D |
+| Золотой двор → Дворец Рябы | 16→24 | **9,000 GE** | ~90 D |
+
+Дополнительно tier может требовать Coolness/collection milestone, чтобы пользователь не мог полностью пропустить progression одной покупкой GE.
+
+Цель escalation:
+- раннее расширение достижимо;
+- midgame требует осознанного накопления;
+- endgame является крупной долгосрочной целью и сильным GE sink.
+
+Все GE числа пересчитываются после измерения фактического D.
 
 ## 17. Chest economy
 
