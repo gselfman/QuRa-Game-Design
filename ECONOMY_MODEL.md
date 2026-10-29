@@ -21,12 +21,12 @@
 Общий бонусный ресурс QuRa.
 
 ### Tickets
-Ограничитель бесплатных reward-bearing mini-game attempts.
+Ограничитель бесплатных награда-bearing mini-game attempts.
 
-### Glory
+### Слава
 Сезонный Arena rating, не валюта.
 
-### Coolness
+### Крутость
 Коллекционно-прогрессионный score, не валюта.
 
 ## 2. Базовое правило GE
@@ -34,7 +34,7 @@
 Каждый GE faucet должен иметь:
 - owner budget bucket;
 - expected value;
-- hard/daily/season cap where applicable;
+- hard/ежедневный/season лимит where applicable;
 - anti-fraud rule;
 - source_type.
 
@@ -46,21 +46,21 @@
 
 ## 2.1. Product objective of GE economy
 
-GE economy serves the core fintech product.
+Экономика GE поддерживает основной финансовый продукт.
 
-The intended user choice is:
+Желаемый выбор игрока:
 
 **хочу игровой объект → не хватает GE →**
 1. **заработать GE полезной активностью в QuRa**, или
 2. **купить GE**, если хочу ускорить получение.
 
-The game itself is a retention and engagement layer, not the primary unlimited GE farm.
+Игра служит удержанию и вовлечённости, но не превращается в безлимитный источник GE.
 
-### Working source-mix target
+### Working источник-mix target
 
 For a typical active non-paying user, the majority of repeatable earned GE should come from qualifying QuRa product activity.
 
-Initial modeling target:
+Начальные целевые значения для моделирования:
 - **50–65%** — операции QuRa;
 - **30–45%** — мини-игры;
 - остальное — quests/events/passive. Цели **PROTOTYPE BALANCE** по ECONOMY_CALIBRATION_2026-10.md §5, доли не являются гарантией выплат.
@@ -69,9 +69,9 @@ These ranges are hypotheses and can be recalibrated from real behavior, but the 
 
 > repeatable game faucets must not make core QuRa activity economically irrelevant.
 
-Rare jackpots, seasonal rewards and one-time progression rewards are excluded from source-mix comparison.
+Rare jackpots, seasonal награды and one-time progression награды are excluded from источник-mix comparison.
 
-If mini-game realized GE/hour materially exceeds normal product-earned GE without a hard cap, reduce game emission or raise relevant sink prices.
+If mini-game realized GE/hour materially exceeds normal product-earned GE without a hard лимит, reduce game emission or raise relevant sink prices.
 
 ## 2.2. Production GE accrual formula from QuRa code
 
@@ -81,27 +81,27 @@ For supported successful operations:
 
 `GE = floor(RUB × eggs_rate_pct / 100) + fact_bonus`
 
-Current defaults:
+Текущие значения по умолчанию:
 - `eggs_rate_pct = 1` → **1% of RUB amount in GE**;
 - `eggs_fact = 10` → **+10 GE** bonus for an eligible operation;
 - `eggs_fact_min_rub = 100` → fact bonus only from **100 ₽**;
 - `eggs_fact_daily_max = 10` → at most **10 fact bonuses per Moscow day**.
 
-The +10 fact bonus is not awarded when:
+Бонус +10 GE за факт операции не начисляется, если:
 - same payee already received a fact-bonus operation from this user in the previous 24 hours;
-- daily fact-bonus limit is exhausted.
+- ежедневный fact-bonus limit is exhausted.
 
-After limit/repeat-payee:
+После исчерпания лимита или повторного получателя:
 - the 1% amount-based GE still applies.
 
-Supported operation families in the current backend:
+В текущем backend поддерживаются следующие типы операций:
 - QR payment;
 - card payout;
 - crypto withdrawal;
 - service order;
 - internal QuRa transfer.
 
-Examples under current settings:
+Примеры при текущих параметрах:
 - 100 ₽ eligible operation → 1 + 10 = **11 GE**;
 - 200 ₽ → **12 GE**;
 - 500 ₽ → **15 GE**;
@@ -110,32 +110,32 @@ Examples under current settings:
 - 5,000 ₽ → **60 GE**;
 - 10,000 ₽ → **110 GE**.
 
-The formula and limits are runtime settings and can be changed through configuration/admin.
+Формула и лимиты управляются серверными настройками и могут изменяться через конфигурацию или админку.
 
 ## 2.3. Referral GE — production rule
 
-Current configured referral levels are:
+Актуальные уровни партнёрской программы:
 - Level 1: **10%**
 - Level 2: **5%**
 - Level 3: **2%**
 
-Referral reward is calculated from the friend's **actual awarded operation GE**, not directly from RUB turnover.
+Referral награда is calculated from the friend's **actual awarded operation GE**, not directly from RUB turnover.
 
 Formula:
 `partner_GE = floor(base_operation_GE × pct / 100)`
 
 If base GE > 0 and pct > 0 but floor gives 0, backend awards **1 GE minimum**.
 
-Anti-fraud can withhold rewards for:
+Антифрод может удержать вознаграждение при совпадении:
 - same device;
 - same payout card;
 - same deposit sender wallet.
 
-Historical 20/10/4 values are legacy seed values and are not the current production configuration.
+Исторические 20/10/4 — устаревшие значения первичной конфигурации, а не текущие параметры.
 
 ## 2.4. GE Shop — production packs and pricing
 
-Current GE packs in backend:
+Актуальные наборы GE в серверном коде:
 
 | Pack | GE | Base price, Oct 2026 |
 |---|---:|---:|
@@ -144,34 +144,34 @@ Current GE packs in backend:
 | Лукошко | 3,300 | 999 ₽ |
 | Сундук | 18,000 | 4,999 ₽ |
 
-Pack bonus labels:
+Бонусы к пакетам:
 - 300 GE: no bonus;
 - 1,575 GE: +5% / +75 GE;
 - 3,300 GE: +10% / +300 GE;
 - 18,000 GE: +20% / +3,000 GE.
 
-Price index:
+Индексация цены:
 - baseline `ge_price_index_bps = 10000`;
 - monthly bump default **+10%**;
 - first scheduled bump **1 Dec 2026**;
 - admin can pause or override shelf prices.
 
-Public tariff explicitly treats this as **shop purchase price**, not investment yield.
+Public tariff explicitly treats this as **магазин purchase price**, not investment yield.
 
 ## 2.5. Lukoil GE integration
 
-Current fuel service has two modes.
+Топливный сервис поддерживает два режима.
 
 ### Earn
 - user pays full fuel amount in USDT;
-- **10% of actual fuel cost in RUB** is converted to GE at current GE shop price.
+- **10% of actual fuel cost in RUB** is converted to GE at current GE магазин price.
 
 ### Spend
 - **5% of fuel cost** is paid with GE;
 - rest is paid in USDT;
 - if GE balance is insufficient, shortfall returns to USDT charge.
 
-This makes GE both:
+Таким образом, GE одновременно можно:
 - earnable through a real product action;
 - spendable as a real discount mechanism.
 
@@ -179,54 +179,54 @@ This makes GE both:
 
 ### Мини-играs
 - free ticket attempts;
-- score/milestone rewards;
-- daily caps.
+- score/milestone награды;
+- ежедневный caps.
 
 ### Quests
-- fixed GE rewards;
-- daily/weekly caps.
+- fixed GE награды;
+- ежедневный/недельный caps.
 
 ### Chests
 - random GE;
-- EV included in chest EV.
+- EV included in сундук EV.
 
 ### Partner program
-Current production ratio:
+Актуальные доли в production:
 - 10% / 5% / 2% by levels for qualifying operation GE.
 
 Exact eligible base and caps require financial-product configuration.
 
 ### Passive laying
-Allowed only with daily/account/coop cap.
+Allowed only with ежедневный/account/coop лимит.
 
 ### Arena
-2-player paid Arena winner payout.
+2-player paid Arena победитель payout.
 
 ### Events/Achievements
-Limited, configured rewards.
+Limited, configured награды.
 
 ## 4. GE Расходы
 
-- gear purchase;
+- экипировка purchase;
 - Coop upgrades;
 - paid mini-game retry;
-- paid chests;
+- paid сундуки;
 - Arena entry;
 - Preparation Buffs;
 - Tactical Consumables;
 - Hint;
 - All-Seeing;
 - Autobattle;
-- async Scout;
+- асинхронный Scout;
 - cosmetics;
-- future services.
+- будущий services.
 
 ## 5. Tickets
 
 LOCKED:
 - +2/day;
-- cap 8;
-- 1 reward-bearing mini-game attempt = 1 ticket;
+- лимит 8;
+- 1 награда-bearing mini-game attempt = 1 ticket;
 - Arena does not consume ticket.
 
 Ticket accrual should use server date/time policy.
@@ -238,21 +238,21 @@ For any repeatable GE-paid attempt:
 `EV(GE reward + convertible reward value) < GE entry cost`
 
 unless:
-- hard non-repeatable cap;
+- hard non-repeatable лимит;
 - marketing budget explicitly subsidizes difference.
 
-No guaranteed profitable loop.
+Гарантированный прибыльный цикл недопустим.
 
 ## 7. Мини-игра emission budget
 
 Per game configure:
-- daily account cap;
-- global daily budget;
-- max single reward;
-- expected rewards per active user;
+- ежедневный account лимит;
+- global ежедневный budget;
+- max single награда;
+- expected награды per active user;
 - anomaly threshold.
 
-For "Wolf catches eggs" current reward matrices live in game-specific docs, not duplicated here.
+For "Wolf catches eggs" current награда matrices живой in game-specific docs, not duplicated here.
 
 ## 8. Экономика аренды Arena — D-02 / D-02a
 
@@ -271,74 +271,74 @@ For "Wolf catches eggs" current reward matrices live in game-specific docs, not 
 
 ## 11. Tactical services pricing
 
-Pricing not final.
+Цены ещё не утверждены.
 
 Need separate price ladder for:
 - Hint;
 - All-Seeing;
 - Autobattle;
-- async Scout.
+- асинхронный Scout.
 
 Principles:
 - must be optional;
-- cannot reveal hidden live move;
+- cannot reveal hidden живой move;
 - frequent use should create sink;
 - price cannot make skill irrelevant;
-- ranked may cap use per match.
+- ranked may лимит use per match.
 
-## 12. Buff economy
+## 12. баф economy
 
-Buff sources:
+баф sources:
 - mini-games;
-- chests;
+- сундуки;
 - quests;
 - seasons;
 - events;
-- direct GE shop if allowed.
+- direct GE магазин if allowed.
 
-Buff value depends on:
-- rarity;
+баф value depends on:
+- редкость;
 - activation condition;
 - win-rate uplift;
 - flexibility;
 - ranked legality.
 
-Strong comeback buffs should not be unlimited direct-purchase spam.
+Strong возвращение в бой бафы should not be unlimited direct-purchase spam.
 
-## 13. Buff loadout economics
+## 13. баф loadout economics
 
-Working hypothesis:
-- up to 3 consumables per match.
+Рабочая гипотеза:
+- up to 3 расходники per match.
 
 Economic levers:
 - inventory acquisition;
 - scarcity;
 - loadout capacity;
-- per-match use cap;
+- per-match use лимит;
 - ranked allowlist.
 
-## 14. Gear economy
+## 14. Экипировка economy
 
-Gear price determined by:
-- level;
-- rarity;
-- Coolness;
+Экипировка price determined by:
+- уровень;
+- редкость;
+- Крутость;
 - combat marginal value;
 - native synergy;
 - set membership;
-- visual desirability.
+- визуальный desirability.
 
-Never price only by rarity label.
+Never price only by редкость label.
 
-## 15. Gear combat value
+## 15. Экипировка combat value
 
-Before price table:
+Перед утверждением цен необходимо:
 - derive marginal win-rate value of +HP/+ATK/+DEF/+SPD;
 - derive advanced effect value;
 - map to BP;
 - then map to price bands.
 
-Speed values remain OPEN until Arena Speed rule fixed.
+Скорость values remain OPEN until Arena Скорость rule fixed.
 
 ## 15.1. Pricing architecture — effort first, GE second
 
@@ -352,7 +352,7 @@ Speed values remain OPEN until Arena Speed rule fixed.
 - квалифицирующие операции/действия QuRa;
 - quests;
 - бесплатные mini-game attempts;
-- обычные daily rewards;
+- обычные ежедневный награды;
 
 но **без**:
 - покупки GE;
@@ -405,17 +405,17 @@ Speed values remain OPEN until Arena Speed rule fixed.
 
 ## 15.2. Additional chicken pricing
 
-Первая курочка — progression/start reward.
+Первая курочка — progression/start награда.
 
 Первые три взрослые курочки нужны для раскрытия основной 3×3 Arena, поэтому **нельзя превращать их получение в жёсткий paywall**.
 
 Рекомендуемая модель:
 - 1-я курочка: бесплатно через стартовую progression;
-- 2-я: guaranteed progression reward / egg; ускоренная покупка допустима;
+- 2-я: guaranteed progression награда / egg; ускоренная покупка допустима;
 - 3-я: guaranteed progression path / milestone; ускоренная покупка допустима;
 - 4-я и далее: полноценный collection sink.
 
-Working v0.1 store prices при D=100:
+Рабочие цены магазина v0.1 при D=100:
 - standard founder egg / выбранный базовый archetype: **1,000 GE**;
 - discounted early acceleration offer для 2-й курочки: **400–500 GE**;
 - discounted early acceleration offer для 3-й: **600–800 GE**;
@@ -434,8 +434,8 @@ Working v0.1 store prices при D=100:
 Цена конкретной курочки зависит от:
 - guaranteed vs mystery;
 - availability window;
-- rarity;
-- visual exclusivity;
+- редкость;
+- визуальный exclusivity;
 - Gift uniqueness;
 - Arena strategic uniqueness;
 - collection scarcity.
@@ -448,7 +448,7 @@ GE Store существует как shortcut, а не как единствен
 
 Пользователь должен всегда видеть два пути:
 
-1. **Заработать GE** — через полезное использование QuRa, quests, mini-games, rewards.
+1. **Заработать GE** — через полезное использование QuRa, quests, mini-games, награды.
 2. **Купить GE** — если хочет получить цель быстрее.
 
 UI у дорогой покупки может прямо показывать:
@@ -466,7 +466,7 @@ UI у дорогой покупки может прямо показывать:
 
 ## 16. Coop upgrades
 
-Known capacities:
+Установленные значения вместимости:
 - 2
 - 4
 - 6
@@ -486,7 +486,7 @@ Working v0.1 prices при D=100:
 | Усадьба → Золотой двор | 10→16 | **4,000 GE** | ~40 D |
 | Золотой двор → Дворец Рябы | 16→24 | **9,000 GE** | ~90 D |
 
-Дополнительно tier может требовать Coolness/collection milestone, чтобы пользователь не мог полностью пропустить progression одной покупкой GE.
+Дополнительно tier может требовать Крутость/collection milestone, чтобы пользователь не мог полностью пропустить progression одной покупкой GE.
 
 Цель escalation:
 - раннее расширение достижимо;
@@ -497,17 +497,17 @@ Working v0.1 prices при D=100:
 
 ## 17. Экономика сундуков
 
-Each chest has:
-- price/source;
-- reward table;
+Для каждого сундука задано:
+- price/источник;
+- награда table;
 - EV;
 - pity;
 - progression pool;
 - disclosure if paid.
 
-Paid chest expected value must account for:
+Paid сундук expected value must account for:
 - GE;
-- gear replacement value;
+- экипировка replacement value;
 - buff value;
 - ticket value;
 - rare chicken value.
@@ -525,13 +525,13 @@ These are modeling hypotheses, not final production rates.
 
 ## 19. Pity
 
-Pity counter needed for expensive paid chest families.
+Pity counter needed for expensive paid сундук families.
 
-Define per chest family:
+Для каждого семейства сундуков указать:
 - threshold;
-- guaranteed minimum rarity;
+- guaranteed minimum редкость;
 - reset rule;
-- cross-chest sharing or isolation.
+- cross-сундук sharing or isolation.
 
 OPEN until Reward Tables.
 
@@ -544,52 +544,52 @@ OPEN until Reward Tables.
 
 Output depends on:
 - adult residents;
-- level/progression;
+- уровень/progression;
 - Ryaba Gift;
 - Daily Event;
 - allowed sets;
-- Coop cap.
+- Coop лимит.
 
-Must have:
-- account/day cap;
-- Coop/tier cap;
+Обязательно:
+- account/day лимит;
+- Coop/tier лимит;
 - global budget;
 - anti-bot collection behavior.
 
-Exact formula OPEN.
+Точная формула пока открыта.
 
 ## 22. XP economy
 
 XP is non-monetary progression.
 
-Requirements:
+Требования:
 - L3/L4 early;
 - first 3 adult chickens achievable much faster than later collection;
 - L15 long-term;
 - L20 not reached in weeks of normal use;
 - no infinite cheap-action farm.
 
-Exact curve belongs future balance table inside this model.
+Exact curve belongs будущий balance table inside this model.
 
-## 23. XP Boost cap
+## 23. XP Boost лимит
 
 Sources can include:
 - Professor Gift;
-- gear/event effects;
+- экипировка/event effects;
 - special campaigns.
 
-Total XP multiplier must have server cap.
+Total XP multiplier must have server лимит.
 
 ## 24. Quest economy
 
-Daily/weekly rewards should target:
+Daily/недельный награды should target:
 - engagement;
 - feature education;
 - diversified use.
 
 No task should force a financially harmful action.
 
-GE rewards from quests have per-period budget.
+GE награды from quests have per-period budget.
 
 ## 25. Referral economy
 
@@ -597,32 +597,32 @@ Current production ratio 10/5/2.
 
 Qualifying action must be real and anti-fraud checked.
 
-Registration alone gives no reward.
+Registration alone gives no награда.
 
-Need:
-- self-referral defense;
+Необходимо:
+- self-referral защита;
 - device/payment correlation;
 - velocity limits;
 - reversal handling.
 
-## 26. Glory economy
+## 26. Слава economy
 
-Glory is not GE.
+Слава is not GE.
 
-Sources:
-- ranked attack;
-- limited defense bonus.
+Источники:
+- ranked атака;
+- limited защита bonus.
 
 Modifiers:
 - opponent rating;
 - anti-farm;
 - season config.
 
-No direct GE purchase of Glory.
+No direct GE purchase of Слава.
 
-## 27. Coolness economy
+## 27. Крутость economy
 
-Coolness is status/progression.
+Крутость is status/progression.
 
 No direct exchange to GE.
 
@@ -633,7 +633,7 @@ It can gate:
 
 ## 28. Morale economy
 
-Morale is temporary Arena state.
+Morale is временный Arena state.
 
 Cannot be directly bought with GE in v1.
 
@@ -642,7 +642,7 @@ Working range:
 
 ### Источники будущей эмиссии: корм и кланы
 
-Корм — временный effect от квалифицирующей операции, **не отдельная валюта и не GE faucet сам по себе**. Прямое начисление XP/GE за операции не меняется; если FeedEffect улучшает яйценоскость или награды, дополнительная GE-эмиссия учитывается в бюджетах `FEED_BONUS` и `CLAN_REWARD`. Дневные caps и максимальный uplift — OPEN / PROTOTYPE BALANCE. Для оценки §35 добавить сценарии: один плательщик с кормом, группа с недельной целью клана, большой реферальный клан и злоупотребления повторными операциями. Скидки на сервисы (включая Лукойл) учитывать отдельной строкой как **использованное GE-обязательство**, а не только source/sink.
+Корм — временный effect от квалифицирующей операции, **не отдельная валюта и не GE faucet сам по себе**. Прямое начисление XP/GE за операции не меняется; если FeedEffect улучшает яйценоскость или награды, дополнительная GE-эмиссия учитывается в бюджетах `FEED_BONUS` и `CLAN_REWARD`. Дневные caps и максимальный uplift — OPEN / PROTOTYPE BALANCE. Для оценки §35 добавить сценарии: один плательщик с кормом, группа с недельной целью клана, большой реферальный клан и злоупотребления повторными операциями. Скидки на сервисы (включая Лукойл) учитывать отдельной строкой как **использованное GE-обязательство**, а не только источник/sink.
 
 ## 29. GE budget buckets
 
@@ -675,7 +675,7 @@ Every credit uses one bucket.
 ## 31. Аналитика экономики
 
 Daily dashboard:
-- GE minted by source;
+- GE minted by источник;
 - GE burned by sink;
 - net issuance;
 - active users;
@@ -683,7 +683,7 @@ Daily dashboard:
 - sink/user;
 - Arena sink;
 - mini-game EV;
-- chest EV realized;
+- сундук EV realized;
 - referral issuance;
 - passive issuance;
 - anomalous accounts.
@@ -693,12 +693,12 @@ Daily dashboard:
 Alert if:
 - net issuance exceeds budget;
 - paid retry realized EV ≥ cost;
-- chest realized EV deviates materially;
+- сундук realized EV deviates materially;
 - referral spikes;
 - passive claiming spikes;
 - Arena payout mismatch;
 - negative balance;
-- duplicate reward correlation id.
+- duplicate награда correlation id.
 
 ## 33. Принципы возвратов
 
@@ -720,7 +720,7 @@ Do not hardcode in client:
 - Arena fees;
 - buff cost;
 - tactical service cost;
-- chest price;
+- сундук price;
 - retry price;
 - Coop upgrade price.
 
@@ -728,7 +728,7 @@ Do not hardcode in client:
 
 Before production run:
 1. low-engagement user;
-2. daily active;
+2. ежедневный active;
 3. power user;
 4. mini-game optimizer;
 5. Arena-heavy user;
@@ -746,25 +746,25 @@ For each:
 
 Need numeric tables later for:
 - XP curve L1–20;
-- gear prices;
+- экипировка prices;
 - Coop prices;
 - buff prices;
 - service prices;
-- chest EV;
+- сундук EV;
 - passive laying;
 - Arena 4-player payout;
 - pity;
-- season rewards.
+- season награды.
 
 ## 37. Инварианты
 
 1. No guaranteed repeatable positive GE arbitrage.
-2. GE source always audited.
+2. GE источник always audited.
 3. Paid action always has settlement.
-4. Glory cannot be bought.
-5. Temporary combat power not silently baked into matchmaking.
+4. Слава cannot be bought.
+5. Temporary combat power not silently baked into подбор соперника.
 6. Real-value GE emissions always capped/budgeted.
-7. Server owns reward roll.
+7. Server owns награда roll.
 
 ## 38.1. Полная себестоимость 3D-фигурки: сценарный расчёт (P8)
 
@@ -787,7 +787,7 @@ Need numeric tables later for:
 
 ## 38. Approved LiveOps monetization expansion
 
-See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
+See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid сундук tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and награда EV are OPEN until forecast and compliance review; do not present design ranges as actual магазин tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
 
 ## 38. Сверка экономики 29.10.2026
 
