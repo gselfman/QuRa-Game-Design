@@ -5,11 +5,11 @@
 
 ## 1. Период наблюдения
 
-Core comparison window:
+Основной период сравнения:
 - 14 Oct 2026 through 29 Oct 2026
 - 16 calendar days
 
-Excluded from normal earned GE:
+Исключены из обычного заработка GE:
 - 300 GE welcome bonus
 - 300 GE purchased in GE Shop
 
@@ -59,7 +59,7 @@ Conclusion:
 
 ## 5. Целевые доли источников
 
-For a user who both actively pays with QuRa and plays Wolf daily:
+Для игрока, который активно оплачивает через QuRa и ежедневно играет в «Волка»:
 
 - core operations: ~56%
 - Wolf: ~43%
@@ -72,7 +72,7 @@ This suggests a more realistic target than the earlier 15–30% mini-game hypoth
 - 30–45% from mini-games;
 - 5–15% from quests/events/passive/other small sources.
 
-Partner income is treated separately because it is not representative for every user.
+Партнёрский доход учитывается отдельно, потому что он есть не у каждого.
 
 Invariant:
 > No single repeatable mini-game should sustainably outperform normal core QuRa usage for the target active payer unless it is strongly capped.
@@ -89,7 +89,7 @@ Invariant:
 | Legendary | 1,200–2,500 |
 | Artifact | 3,000–6,000 |
 
-Midpoints for time-to-goal:
+Средние цены для расчёта срока накопления:
 - Common 75
 - Rare 225
 - Epic 600
@@ -108,7 +108,7 @@ Midpoints for time-to-goal:
 | Epic — working proposal | 5,000 |
 | Legendary — working proposal | 10,000 |
 
-Purchased chicken arrives as L1 egg.
+Купленная курочка всегда поступает яйцом L1.
 
 ### Coop upgrades
 
@@ -142,7 +142,7 @@ Purchased chicken arrives as L1 egg.
 
 ## 8. Интерпретация
 
-The current ladder creates four useful horizons:
+Эта лестница формирует четыре временных горизонта:
 
 ### Immediate: < 3 days
 - Common gear
@@ -168,14 +168,14 @@ This is where "earn more through QuRa" or "buy GE" becomes naturally relevant.
 
 ## 9. Store UX principle
 
-For any expensive item show:
+Для дорогой покупки показывать:
 - current balance;
 - missing GE;
 - estimated earned path;
 - **Earn GE** CTA;
 - **Buy GE** CTA.
 
-Earn GE should route to:
+Кнопка «Заработать GE» ведёт к:
 - useful QuRa actions;
 - quests;
 - available mini-games;
@@ -183,7 +183,7 @@ Earn GE should route to:
 
 ## 10. Следующая калибровка
 
-Need broader cohort data:
+Нужны данные большей выборки пользователей:
 - low activity payer
 - median payer
 - high activity payer
@@ -197,7 +197,7 @@ Recalculate:
 - time-to-goal
 - retention vs frustration
 
-The current snapshot is a valid first calibration, not a population-wide final price model.
+Нынешняя выгрузка полезна для первичной калибровки, но недостаточна для итоговой модели цен всех пользователей.
 
 ## 11. Сверка экономики — 29.10.2026 (D)
 
