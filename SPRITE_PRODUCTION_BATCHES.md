@@ -513,6 +513,54 @@ G01 = 20 общих предметов L4–L6. G02 = 18 родных аксес
 
 **Промпт G02:** «Render 18 SPECIFIED native gear items G02_01..G02_18, 3 per approved founder, keeping native visual identity consistent with approved character master; export ICON/CARD/PERCH/NEST alignment variants with exact attachment anchors and alpha background. No text, no changing body proportions, no added weapons.»
 
+### Пообъектные ID стартовой экипировки
+
+**G01 — общие предметы (20):**
+
+1. `G01_01` — соломенная шляпа; иконка ICON + overlays CARD/PERCH/NEST.
+2. `G01_02` — лёгкий берет; иконка ICON + overlays CARD/PERCH/NEST.
+3. `G01_03` — кепка фермера; иконка ICON + overlays CARD/PERCH/NEST.
+4. `G01_04` — шляпа с широкими полями; иконка ICON + overlays CARD/PERCH/NEST.
+5. `G01_05` — круглые очки; иконка ICON + overlays CARD/PERCH/NEST.
+6. `G01_06` — защитные очки; иконка ICON + overlays CARD/PERCH/NEST.
+7. `G01_07` — золотое пенсне; иконка ICON + overlays CARD/PERCH/NEST.
+8. `G01_08` — платок на шею; иконка ICON + overlays CARD/PERCH/NEST.
+9. `G01_09` — бархатная лента; иконка ICON + overlays CARD/PERCH/NEST.
+10. `G01_10` — деревянный амулет; иконка ICON + overlays CARD/PERCH/NEST.
+11. `G01_11` — рабочий жилет; иконка ICON + overlays CARD/PERCH/NEST.
+12. `G01_12` — хлопковая накидка; иконка ICON + overlays CARD/PERCH/NEST.
+13. `G01_13` — простой нагрудник; иконка ICON + overlays CARD/PERCH/NEST.
+14. `G01_14` — сумочка на крыло; иконка ICON + overlays CARD/PERCH/NEST.
+15. `G01_15` — мини-рюкзак; иконка ICON + overlays CARD/PERCH/NEST.
+16. `G01_16` — плетёная корзинка на крыло; иконка ICON + overlays CARD/PERCH/NEST.
+17. `G01_17` — кожаные ботинки; иконка ICON + overlays CARD/PERCH/NEST.
+18. `G01_18` — резиновые сапожки; иконка ICON + overlays CARD/PERCH/NEST.
+19. `G01_19` — сандалии с ремешками; иконка ICON + overlays CARD/PERCH/NEST.
+20. `G01_20` — пояс с пряжкой; иконка ICON + overlays CARD/PERCH/NEST.
+
+**G02 — родная экипировка (18):**
+
+1. `G02_01` — Ряба: кокошник золотой; ICON + CARD/PERCH/NEST.
+2. `G02_02` — Ряба: скорлупный нагрудник; ICON + CARD/PERCH/NEST.
+3. `G02_03` — Ряба: лента с золотым яйцом; ICON + CARD/PERCH/NEST.
+4. `G02_04` — Боевик: боевые перчатки; ICON + CARD/PERCH/NEST.
+5. `G02_05` — Боевик: защитный жилет; ICON + CARD/PERCH/NEST.
+6. `G02_06` — Боевик: плотная кепка; ICON + CARD/PERCH/NEST.
+7. `G02_07` — Дурочка: разноцветные башмачки; ICON + CARD/PERCH/NEST.
+8. `G02_08` — Дурочка: колпак с бубенцами; ICON + CARD/PERCH/NEST.
+9. `G02_09` — Дурочка: пёстрый шарф; ICON + CARD/PERCH/NEST.
+10. `G02_10` — Профессор: очки аналитика; ICON + CARD/PERCH/NEST.
+11. `G02_11` — Профессор: профессорская мантия; ICON + CARD/PERCH/NEST.
+12. `G02_12` — Профессор: сумочка с тетрадями; ICON + CARD/PERCH/NEST.
+13. `G02_13` — Монах: чётки тишины; ICON + CARD/PERCH/NEST.
+14. `G02_14` — Монах: сдержанный капюшон; ICON + CARD/PERCH/NEST.
+15. `G02_15` — Монах: пояс с деревянной бусиной; ICON + CARD/PERCH/NEST.
+16. `G02_16` — Гламурочка: звёздные очки; ICON + CARD/PERCH/NEST.
+17. `G02_17` — Гламурочка: жемчужное ожерелье; ICON + CARD/PERCH/NEST.
+18. `G02_18` — Гламурочка: клатч на крыло; ICON + CARD/PERCH/NEST.
+
+Любой item с конфликтующими якорями помечается OPEN и не экспортируется как готовый. Никаких чисел урона/боевой силы в PNG.
+
 ### AEX01 — эксклюзивы Arena
 
 25 объектов: 5 рамок, 5 баннеров, 5 гербов, 5 эмоций победы, 5 скинов «Гладиатор Арены». `arena_exclusive=true`, `sellback_pct=0`, `battle_power_delta=0`. **Промпт:** «25 distinct Arena-exclusive cosmetic assets in a 5×5 grid: five card frames, five banners, five crests, five victory emotes, five Gladiator Arena cosmetic skins; warm wood, amber gold, soft dimensional QuRa style, transparent background, no texts, no game stats, 12% padding, no duplicate objects.»
