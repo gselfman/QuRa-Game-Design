@@ -425,6 +425,10 @@ Working v0.1 store prices при D=100:
 
 Купленная дополнительная курочка всегда приходит как **L1 egg**, а не взрослой.
 
+### Гарантированные вехи второй и третьей курочки
+
+**PROTOTYPE BALANCE:** второе яйцо выдаётся за достижение L6 главной курочки, третье — за главу «Хозяйство» Пути QuRa при второй курочке L4. Альтернатива — ускоренная покупка в магазине по §15.2. Никакого обязательного доната для 3×3. Каждое яйцо попадает в коллекцию L1; при полной вместимости используется «В гостях».
+
 ## 15.3. Chicken pricing logic
 
 Цена конкретной курочки зависит от:
@@ -636,6 +640,10 @@ Cannot be directly bought with GE in v1.
 Working range:
 -15%…+15%.
 
+### Источники будущей эмиссии: корм и кланы
+
+Корм — временный effect от квалифицирующей операции, **не отдельная валюта и не GE faucet сам по себе**. Прямое начисление XP/GE за операции не меняется; если FeedEffect улучшает яйценоскость или награды, дополнительная GE-эмиссия учитывается в бюджетах `FEED_BONUS` и `CLAN_REWARD`. Дневные caps и максимальный uplift — OPEN / PROTOTYPE BALANCE. Для оценки §35 добавить сценарии: один плательщик с кормом, группа с недельной целью клана, большой реферальный клан и злоупотребления повторными операциями. Скидки на сервисы (включая Лукойл) учитывать отдельной строкой как **использованное GE-обязательство**, а не только source/sink.
+
 ## 29. GE budget buckets
 
 Recommended accounting buckets:
@@ -644,10 +652,12 @@ Recommended accounting buckets:
 - CHEST
 - REFERRAL
 - PASSIVE
-- ARENA_PAYOUT
+- ARENA_PRIZE (нет прямого начисления GE)
 - EVENT
 - PROMO
 - COMPENSATION
+- FEED_BONUS
+- CLAN_REWARD
 
 Every credit uses one bucket.
 
@@ -760,15 +770,7 @@ Need numeric tables later for:
 
 See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
 
-## B1. Гарантированные вехи для первых трёх курочек
-
-**PROTOTYPE BALANCE:** второе яйцо выдаётся за достижение L6 главной курочки, третье — за главу «Хозяйство» Пути QuRa при второй курочке L4. Альтернатива — ускоренная покупка в магазине по §15.2. Никакого обязательного доната для 3×3. Каждое яйцо попадает в коллекцию L1; при полной вместимости используется «В гостях».
-
-## C/D. Корм, кланы и GE-эмиссия
-
-Корм — временный effect от квалифицирующей операции, **не отдельная валюта и не GE faucet сам по себе**. Прямое начисление XP/GE за операции не меняется; если FeedEffect улучшает яйценоскость или награды, дополнительная GE-эмиссия учитывается в бюджетах `FEED_BONUS` и `CLAN_REWARD`. Дневные caps и максимальный uplift — OPEN / PROTOTYPE BALANCE. Для оценки §35 добавить сценарии: один плательщик с кормом, группа с недельной целью клана, большой реферальный клан и злоупотребления повторными операциями. Скидки на сервисы (включая Лукойл) учитывать отдельной строкой как **использованное GE-обязательство**, а не только source/sink.
-
-## D. Сверка экономики 29.10.2026
+## 38. Сверка экономики 29.10.2026
 
 | Проверка | Установленный вывод |
 |---|---|
