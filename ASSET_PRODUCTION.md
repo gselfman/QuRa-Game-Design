@@ -8,7 +8,7 @@
 Создавать повторно используемые ассеты, которые:
 - fit QuRa visual language;
 - support all runtime poses;
-- are technically sliceable;
+- технически пригодны для нарезки;
 - preserve character identity;
 - work in responsive web/mobile;
 - minimize re-generation.
@@ -18,7 +18,7 @@
 Core:
 - warm wood/gold;
 - soft 3D volume;
-- light from upper-left;
+- свет направлен сверху слева;
 - cozy but polished;
 - readable silhouettes;
 - Onest font for UI;
@@ -120,9 +120,9 @@ Used:
 Need:
 - 64px UI
 - 128px
-- vector/master if custom.
+- исходный векторный мастер для авторских значков.
 
-## 8. Arena action icons
+## 8. Иконки действий Arena
 
 Required:
 - Attack
@@ -137,7 +137,7 @@ Required:
 - Rematch
 - Timer
 - Reconnect
-- Surrender if approved
+- Сдаться, если механика утверждена
 
 States:
 - normal
@@ -165,7 +165,7 @@ States:
 - Intercept
 - Double Power
 
-## 10. Buff item art
+## 10. Графика предметов-бафов
 
 Для каждого бафа нужен комплект:
 - inventory icon
@@ -177,7 +177,7 @@ Rarity frames:
 - Rare
 - Epic
 - Legendary
-- Artifact if buff family supports it.
+- Artifact, если семейство бафа поддерживает такой уровень.
 
 ## 11. Preparation Buff art
 
@@ -239,7 +239,7 @@ Examples:
 - equipped sprite by visible poses
 - store preview
 - rarity frame
-- set identity if applicable.
+- обозначение принадлежности к комплекту при необходимости.
 
 ## 16. Gear category visual QA
 
@@ -250,7 +250,7 @@ Examples:
 - neck
 - scarf
 - body
-- bag/wing item
+- сумка или предмет на крыле
 - shoes
 - skin
 - tail
@@ -275,7 +275,7 @@ Examples:
 - frame/detail density;
 - material;
 - subtle FX;
-- not only color.
+- не только цветом.
 
 Accessibility:
 не полагаться только на цвет.
@@ -310,7 +310,7 @@ L3:
 
 Need:
 - mystery/known variants
-- special egg skins future
+- особые скины яиц в будущем
 
 ## 21. 3D embodiment assets
 
