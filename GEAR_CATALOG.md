@@ -175,7 +175,7 @@ Set can define:
 
 Permanent stats/effects → BP.
 
-Temporary proc from item:
+Временное срабатывание эффекта предмета:
 - if deterministic/always available, expected постоянный value enters BP;
 - if conditional, BP uses simulated expected marginal value.
 
@@ -299,7 +299,7 @@ Combat:
 
 ## 20. Visibility
 
-Opponent should be able to inspect:
+Сопернику должны быть доступны для осмотра:
 - visible equipped экипировка;
 - relevant active постоянный effects.
 
@@ -334,7 +334,7 @@ Hidden combat stats from visible экипировка are discouraged.
 
 ## 23. Initial catalog production plan
 
-Create numeric catalog only after:
+Числовой каталог создаётся только после:
 1. Скорость rule locked;
 2. BP weights simulated;
 3. active equipment slots visually validated;
