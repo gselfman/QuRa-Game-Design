@@ -32,7 +32,7 @@
 
 Final active slot set фиксируется после визуальный QA.
 
-## 2. Level gates
+## 2. Ограничения по уровням
 
 - стандартный экипировка: min_level >= 4;
 - можно носить предмет своего уровня и ниже;
@@ -50,13 +50,13 @@ Final active slot set фиксируется после визуальный QA.
 Rarity влияет на:
 - scarcity;
 - визуальный prestige;
-- effect budget;
-- drop rate;
-- price band.
+- допустимая сила эффекта;
+- вероятность выпадения;
+- ценовой диапазон.
 
 Rarity не является автоматическим combat multiplier.
 
-## 4. Core combat stats
+## 4. Основные боевые характеристики
 
 Разрешены:
 - HP
@@ -64,7 +64,7 @@ Rarity не является автоматическим combat multiplier.
 - Защита
 - Скорость
 
-## 5. Advanced effects
+## 5. Специальные эффекты
 
 Разрешены только существующие hooks:
 - Щит bonus
@@ -93,7 +93,7 @@ Rarity не является автоматическим combat multiplier.
 - Особый приём Защита
 - abstract Особый приём +X
 
-## 7. Item schema
+## 7. Структура предмета
 
 Каждая запись:
 - id/code
@@ -103,19 +103,19 @@ Rarity не является автоматическим combat multiplier.
 - category/slot
 - визуальный description
 - Крутость
-- core stats
-- advanced effects
-- native archetype nullable
+- основные характеристики
+- специальные эффекты
+- родной тип или пусто
 - set id nullable
 - источник
 - цена в GE при продаже
-- drop availability
+- доступность в наградах
 - asset id
-- engine hooks
+- обработчики движка
 - BP contribution
 - stacking/лимит notes
 
-## 8. Native synergy
+## 8. Родная синергия
 
 Если предмет родной для archetype:
 - даёт explicit native effect;
@@ -123,21 +123,21 @@ Rarity не является автоматическим combat multiplier.
 - учитывается в BP;
 - не должен делать предмет бесполезным другим archetypes.
 
-## 9. Set thresholds
+## 9. Пороги комплекта
 
 Комплект может задавать:
 - 2-piece
 - 4-piece
 - 6-piece
-- custom thresholds
+- другие пороги
 
 Каждый threshold:
 - named;
-- explicit effect;
+- явно описанный эффект;
 - лимит;
-- engine hook.
+- обработчик движка.
 
-## 10. Build diversity
+## 10. Разнообразие сборок
 
 Цель:
 один archetype должен поддерживать >1 разумного build.
@@ -152,15 +152,15 @@ Rarity не является автоматическим combat multiplier.
 ### Fighter
 - Атака pressure
 - Защита/counter
-- next-hit setup
+- подготовка следующего удара
 
 ### Fool
 - Скорость
 - Манёвр/Атака
-- controlled risk
+- контролируемый риск
 
 ### Professor
-- charge control
+- управление зарядом Особого приёма
 - точность урон
 
 ### Monk
@@ -173,7 +173,7 @@ Rarity не является автоматическим combat multiplier.
 
 ## 11. BP contribution
 
-Permanent stats/effects → BP.
+Постоянные характеристики и эффекты учитываются в Боевой силе (BP).
 
 Временное срабатывание эффекта предмета:
 - если эффект гарантированно действует, его вклад учитывается в BP;
@@ -185,7 +185,7 @@ Permanent stats/effects → BP.
 
 Нельзя утверждать крупные бонусы Скорости до определения порядка действий в Arena.
 
-## 13. Example Common items
+## 13. Примеры обычных предметов
 
 ### Соломенная шляпа
 - L4
@@ -214,7 +214,7 @@ Permanent stats/effects → BP.
 
 Точные значения ещё открыты.
 
-## 14. Example Rare items
+## 14. Примеры редких предметов
 
 ### Золотая брошь
 - Rare
@@ -222,38 +222,38 @@ Permanent stats/effects → BP.
 - небольшой бонус Щита при наличии утверждённого механизма
 
 ### Боевые перчатки
-- Fighter native
+- родной предмет Боевика
 - +Атака
 - native next-Атака boost modifier
 
 ### Очки аналитика
-- Professor native
+- родной предмет Профессора
 - +Скорость or control effect
 - уменьшение заряда enhancement
 
 ### Чётки тишины
-- Monk native
+- родной предмет Монаха
 - +Защита
 - лечение modifier
 
 ### Звёздные очки
-- Glamour native
+- родной предмет Гламурочки
 - +Скорость
-- weaken modifier
+- модификатор ослабления
 
 ### Башмачки «Авось»
-- Fool native
+- родной предмет Дурочки
 - +Скорость
 - Манёвр modifier
 
-## 15. Legendary/Artifact design
+## 15. Разработка легендарных и артефактных предметов
 
 Легендарный предмет должен:
-- alter build;
-- create trade-off or synergy;
-- not simply stack huge raw stats.
+- менять стиль сборки;
+- создавать компромисс или синергию;
+- не просто давать огромные прибавки к базовым характеристикам.
 
-Artifact may:
+Артефакт может:
 - ignore normal уровень gate;
 - have unique визуальный;
 - иметь один утверждённый уникальный эффект движка.
@@ -277,9 +277,9 @@ Combat:
 - редкость;
 - визуальный desirability;
 - Крутость;
-- simulated combat value;
+- ценность, измеренная симуляцией;
 - native synergy;
-- set value.
+- ценность комплекта.
 
 ## 18. Дубликаты и Arena-эксклюзивы
 
@@ -295,7 +295,7 @@ Combat:
 - season
 - event
 - promo
-- legacy special
+- наследственный особый предмет
 
 ## 20. Visibility
 
@@ -305,7 +305,7 @@ Combat:
 
 Hidden combat stats from visible экипировка are discouraged.
 
-## 21. Content production template
+## 21. Шаблон производства контента
 
 Для каждого предмета указать:
 1. визуальный;
@@ -313,9 +313,9 @@ Hidden combat stats from visible экипировка are discouraged.
 3. уровень;
 4. редкость;
 5. Крутость;
-6. core stat;
-7. advanced effect;
-8. native/set relation;
+6. основная характеристика;
+7. специальный эффект;
+8. связь с родным типом или комплектом;
 9. engine hook;
 10. BP;
 11. источник;
@@ -325,18 +325,18 @@ Hidden combat stats from visible экипировка are discouraged.
 ## 22. Критерии приёмки
 
 Предмет не проходит проверку, если:
-- stat has no engine hook;
-- effect duplicates another without purpose;
-- creates dominant mandatory build;
-- introduces hidden pay-to-win;
+- характеристика не участвует в расчётах движка;
+- эффект без причины дублирует другой;
+- создаёт единственную обязательную сборку;
+- создаёт скрытое преимущество за деньги;
 - breaks визуальный readability;
 - has no clear источник/sink role.
 
-## 23. Initial catalog production plan
+## 23. План выпуска первого каталога
 
 Числовой каталог создаётся только после:
 1. Скорость rule locked;
-2. BP weights simulated;
-3. active equipment slots visually validated;
-4. economy price bands modeled.
+2. веса BP рассчитаны симуляцией;
+3. активные слоты экипировки визуально проверены;
+4. ценовые диапазоны проверены экономической моделью.
 
