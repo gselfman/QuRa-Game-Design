@@ -1403,54 +1403,13 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 ---
 
-# 50. Morale dependency
+# 50. Боевой дух
 
-Sources:
+Боевой дух — временный модификатор, не входит в BP. В MVP нет рейтингового алгоритма Glory/лейдербордов. Рейтинг, награды сезонов и влияние Glory — FUTURE.
 
-- win/loss streaks;
-- decay toward 0.
+# 51. FUTURE — Слава
 
-Affects:
-
-- temporary battle effectiveness.
-
-Excluded from:
-
-- BP.
-
-Visible:
-
-- opponent sees positive/negative state.
-
-Exact formula belongs Economy/Arena balance.
-
----
-
-# 51. Glory dependency
-
-Sources:
-
-- ranked results;
-- limited async defense bonus.
-
-Depends on:
-
-- opponent rating;
-- result;
-- anti-farm coefficient;
-- season rules.
-
-Not sourced by:
-
-- Friendly;
-- Training.
-
-Outputs:
-
-- league;
-- leaderboard;
-- Hall of Fame;
-- season reward eligibility.
+Рейтинговый результат → Слава → лига → сезон → Зал славы. Случайный async-подбор старта не использует рейтинг. В будущей ranked Arena действует фильтр ±10% BP (PROTOTYPE BALANCE), расширение окна и анти-фарм повторных пар.
 
 ---
 
