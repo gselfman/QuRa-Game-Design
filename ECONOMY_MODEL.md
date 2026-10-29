@@ -804,3 +804,10 @@ Need numeric tables later for:
 ## 38. Approved LiveOps monetization expansion
 
 See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
+
+
+## 39. Pass 2 — XP emission caps and 3D cost gate (P8)
+
+XP is separate from GE but cannot be an uncapped farming loop. Add **versioned source-level and account-level XP ceilings** for async-defense results, repeatable encounters, events, quests, and mini-games. Store independent event IDs, defender IDs, claim periods and cooldowns in the server ledger; prevent repeated payouts on replay or duplicate resolution. One-time «Настрой защиту» onboarding is credited once per account/eligible chicken as specified by the quest definition. Exact XP ceiling values are **OPEN** until progression simulation; they must not be invented in UI or treated as production defaults. Async defense never awards GE in the first release.
+
+**3D cost status: OPEN.** Before green-lighting assets or a 3D implementation, estimate by asset family the authoring/edit time, rigging, animations, source file size, device memory, frame time, CDN storage and delivery, maintenance of variants, and review cost. Compare CARD+2D FX baseline vs hybrid 2.5D vs full 3D on representative devices. No numeric cost, production commitment, or publishing claim without estimates and tested evidence.
