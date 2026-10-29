@@ -10,7 +10,7 @@
 - давать ощутимые награды;
 - создавать GE sinks;
 - не создавать бесконечный arbitrage;
-- учитывать, что GE имеет потенциальную реальную стоимость.
+- учитывать, что GE имеет реальную стоимость.
 
 ## 1. Ресурсы
 
@@ -61,9 +61,9 @@ The game itself is a retention and engagement layer, not the primary unlimited G
 For a typical active non-paying user, the majority of repeatable earned GE should come from qualifying QuRa product activity.
 
 Initial modeling target:
-- **50–70%** earned GE — qualifying wallet/product operations;
-- **15–30%** — mini-games;
-- **10–20%** — quests/events/achievements/passive sources.
+- **50–65%** — операции QuRa;
+- **30–45%** — мини-игры;
+- остальное — quests/events/passive. Цели **PROTOTYPE BALANCE** по ECONOMY_CALIBRATION_2026-10.md §5, доли не являются гарантией выплат.
 
 These ranges are hypotheses and can be recalibrated from real behavior, but the invariant is:
 
@@ -254,45 +254,20 @@ Per game configure:
 
 For "Wolf catches eggs" current reward matrices live in game-specific docs, not duplicated here.
 
-## 8. Arena 2-player entry
+## 8. Экономика аренды Arena — D-02 / D-02a
 
-LOCKED:
-- Player A: -10 GE
-- Player B: -10 GE
-- Pool: 20 GE
-- Winner: +15 GE
-- Arena/system sink: 5 GE
+Два игрока платят по 10 GE аренды (PROTOTYPE BALANCE), не ставки и не передача GE. Победителю выдаётся Arena-сундук. В асинхронной атаке 10 GE платит атакующий; тренировочный бой бесплатен. Ячейка 1 сундука — продаваемый трофей из ограниченного пула; средняя ценность при выкупе **7,5 GE**, верхний предел **12,5 GE**. Ячейка 2 — XP/Боевой дух/сезон, выкуп 0; ячейка 3 — эксклюзивная непродаваемая косметика, выкуп 0.
 
-Net:
-- winner: +5 relative to own entry;
-- loser: -10;
-- system: +5 sink.
+**Ожидаемый сток:** для пары суммарный расход 20 GE, средний выкуп 7,5 GE → **12,5 GE/бой**; асинхронная атака при 50% побед: расход 10 GE и средний выкуп 3,75 GE → **6,25 GE/попытку**. Не включены другие sinks / стоимость сервера. Лимит призовых боёв одной пары — пример три в сутки (PROTOTYPE BALANCE). Отмена до начала/платформенный сбой — возврат. Двойной KO — без сундука/возврата. Поражение по таймеру — обычный результат.
 
-## 9. Arena draw / cancellation settlement
+## 9. Защита от договорного фарма
 
-OPEN decisions, but production must choose explicit rules.
+Сундук не содержит GE, дорогую продаваемую экипировку и передаваемые активы. Трофеи дороже пяти аренд не входят в пул. Отслеживать пары, капы, повторные бои, выкуп. Платёж за аренду и возврат проводить по ledger.
 
-Recommended baseline for simulation:
-- server/platform failure before meaningful battle → full refund;
-- lobby cancellation before match lock → full refund;
-- player disconnect/timeout after match lock → no refund, opponent gets result according to rules;
-- double KO → either split/refund or defined winner/tiebreak; do not ship without explicit rule.
+## 10. Четыре игрока — FUTURE
 
-## 10. Arena 4-player
+Никаких тарифов и «пула 80 GE» в правилах запуска. Цена/награда будущего режима — OPEN.
 
-LOCKED entry:
-- 20 GE/player
-- Pool 80 GE
-
-OPEN payout.
-
-Candidate models to simulate:
-- FFA winner-takes-majority + fee;
-- top-2 payout;
-- 2×2 winning team split;
-- fixed platform fee.
-
-Do not finalize until expected sink and incentives are modeled.
 
 ## 11. Tactical services pricing
 
@@ -480,25 +455,10 @@ UI у дорогой покупки может прямо показывать:
 
 Это соединяет игровой спрос с основной fintech-активностью без принуждения.
 
-## 15.5. Suggested GE Store bundle ladder
+## 15.5. Актуальная витрина покупки GE
 
-Размеры bundle могут быть:
-- 100 GE;
-- 500 GE;
-- 1,200 GE;
-- 3,000 GE;
-- 7,500 GE;
-- 15,000 GE.
+Только реальные backend-пакеты: **300/1575/3300/18000 GE за базовые 99/499/999/4999 ₽** (см. §2.4). Прежние предложения 100/500/1200/3000/7500/15000 не являются тарифами и сняты.
 
-Fiat price/currency and bonus percentage определяются финансовым продуктом и **не фиксируются игровой документацией**.
-
-Bundle ladder должен позволять:
-- micro purchase;
-- one useful gear purchase;
-- chicken acceleration;
-- large Coop/collection purchase.
-
-Не использовать dark patterns “не хватает ровно 1 GE”; остаток после покупки должен оставаться полезным.
 
 ## 16. Coop upgrades
 
@@ -571,15 +531,10 @@ Define per chest family:
 
 OPEN until Reward Tables.
 
-## 20. Duplicate gear
+## 20. Дубли — выкуп за GE (LOCKED D-09)
 
-Bible direction:
-- duplicates remain inventory-limited;
-- future sell/trade-in value can exist.
+Любой допустимый к продаже дубль выкупается за **25%** актуальной магазинной цены в GE (`duplicate_sellback_pct=25`). Точная дробная цена может требовать учёта долей GE или фиксированного округления — OPEN; при неделимых GE нужен согласованный rounding policy. Arena-эксклюзивы непродаваемы (`sellback_pct=0`). Выкуп фиксируется ledger, нельзя выкупить экипированный предмет без снятия.
 
-If duplicate conversion is enabled:
-- must be a sink/partial refund;
-- never restore full purchase EV repeatedly.
 
 ## 21. Passive laying
 
