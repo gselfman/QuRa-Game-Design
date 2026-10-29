@@ -5,6 +5,8 @@ on:
     branches: ["main"]
     paths:
       - "arena/**"
+      - "arena-live/**"
+      - "arena-live-3x3/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -34,6 +36,8 @@ jobs:
         run: |
           mkdir -p _site
           cp arena/index.html _site/index.html
+          cp -r arena-live _site/arena-live
+          cp -r arena-live-3x3 _site/arena-live-3x3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
