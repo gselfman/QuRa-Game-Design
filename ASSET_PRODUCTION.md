@@ -530,3 +530,10 @@ Do not make gameplay rule depend on a visual file.
 ## 37. Sprite batch library — approved production plan
 
 See **SPRITE_PRODUCTION_BATCHES.md**: 12 sheets × 25 assets = 300 concrete objects, each with a stable ID, exact grid cell and shared generation instructions. Generate/QA/upload/slice one sheet at a time; keep existing 'Wolf catches eggs' art unless a replacement has been approved. New monetization visual elements (chests, Season Pass, Piggy Bank, store and offers) are included. All objects must be separately exportable for Figma and runtime.
+
+
+## 38. Pass 2 — runtime animation instead of per-action character poses (P6)
+
+The default content plan should **not** require a separately painted static full-body pose for every Arena combat action. Treat the existing **CARD** character illustration as the identity/source of truth; implement attack/defense/maneuver/special feedback through reusable overlays, motion, hit effects, particles, screen-space cues and animation states. Additional complete poses are optional only when needed for silhouette readability and explicitly approved.
+
+Asset contract per animation: `asset_id`, source CARD, skeleton/layer anchors, event trigger, start/end state, duration, orientation/mirroring, reduced-motion alternative, mobile performance budget and fallback. Never mirror asymmetrical equipment/text incorrectly. Visual state must follow Battle Engine events rather than predict hidden enemy actions. For a hit, provide windup, active frame, impact, recovery; for a status effect, enter/active/exit. Save layered FX and CARD as separable exports. Sprite-sheet inventory of 300 distinct objects is an asset-production target, not 300 unique full-body combat poses.
