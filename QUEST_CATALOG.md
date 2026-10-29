@@ -132,9 +132,9 @@ Long-term:
 
 ## 10. XP targeting
 
-Account quest XP goes to main chicken at actual completion time.
+XP за задание аккаунта получает главная курочка в момент фактического завершения.
 
-Claim button does not allow changing target after completion.
+Нажатие «Забрать» не меняет получателя XP задним числом.
 
 CHICKEN_ONCE XP can target that specific chicken if quest definition explicitly says so; otherwise follow main-chicken rule.
 
@@ -170,7 +170,7 @@ Good:
 
 ## 14. Example ежедневный set
 
-For adult player with Arena enabled:
+Для игрока со взрослой курочкой и открытой Arena:
 1. Play one mini-game.
 2. Complete 2 useful actions in QuRa.
 3. Play one Arena match.
@@ -189,7 +189,7 @@ Allowed:
 - возвращение в бой;
 - Friendly social.
 
-Do not incentivize:
+Не следует поощрять:
 - intentional losing;
 - stalling;
 - farming same friend;
@@ -217,7 +217,7 @@ CHICKEN_ONCE:
 
 Can награда small XP/cosmetic.
 
-If user keeps default system name, quest may count as completed through explicit confirm.
+Если игрок сохраняет имя по умолчанию, подтверждение тоже засчитывает задание.
 
 ## 19. Доступность функций
 
@@ -236,8 +236,8 @@ period day.
 Weekly:
 period week.
 
-Completed but unclaimed policy should be explicit:
-recommended auto-deliver or grace period to avoid loss.
+Правило получения выполненных, но не забранных наград должно быть явным:
+рекомендуется автоматическая доставка или резервный срок, чтобы награда не терялась.
 
 ## 21. Claim philosophy
 
@@ -292,7 +292,7 @@ Possible:
 - seasonal missions;
 - co-op/social missions.
 
-All require economy review.
+Каждая из этих функций требует проверки экономики.
 
 ## C. Новые задания
 
