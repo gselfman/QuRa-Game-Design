@@ -155,7 +155,7 @@ small buff/сундук chance.
 Временный штраф синергии, Монах может смягчить.
 
 ### BIRTHDAY
-Reward/social event.
+Наградное или социальное событие.
 
 ### LOST_ITEM
 Can trigger mini quest/награда.
@@ -163,7 +163,7 @@ Can trigger mini quest/награда.
 ## 10. Редкие и магические
 
 ### GOLDEN_MOON
-Rare laying/drop bonus.
+Редкое усиление яйценоскости/шанса предмета.
 
 ### FALLING_STAR
 Chance special сундук/buff.
@@ -172,7 +172,7 @@ Chance special сундук/buff.
 Mystery временный modifier.
 
 ### BLESSING_DAY
-Monk synergy interaction.
+Усиление синергии благодаря Монаху.
 
 ## 11. Примеры Lucky Flip
 
@@ -190,27 +190,27 @@ Threat → chickens discover hidden stash while hiding.
 ### Wind
 Roof damaged → old hidden сундук exposed.
 
-Each flip is authored, not generic.
+Для каждого Lucky Flip создаётся отдельная авторская история.
 
 ## 12. Полное противодействие
 
-Gift families can hard-counter category.
+Дары соответствующих семейств могут полностью предотвратить событие.
 
 Boevik:
 - threat protection.
 
-Future archetypes/buildings may counter:
+В будущем новые курочки/постройки смогут противодействовать:
 - weather;
 - food;
 - magic.
 
-Do not create counter if no system hook.
+Нельзя добавлять защиту без реальной механики.
 
 ## 13. Смягчение
 
-Mitigation reduces final penalty.
+Смягчение уменьшает итоговый негативный эффект.
 
-Possible sources:
+Возможные источники:
 - Monk Grace if approved for event family;
 - building;
 - set;
@@ -226,7 +226,7 @@ Suggested:
 - Rare
 - Epic
 
-No exact percentages yet.
+Точные проценты пока открыты.
 
 Need задержка повторного применения preventing repetition.
 
@@ -243,15 +243,15 @@ Can overlap to total 60–80.
 
 ## 16. Варианты повествования
 
-Each base event:
+Каждое базовое событие:
 - 2–3 wording variants;
 - character reaction hooks.
 
-Variation should not change mechanics unless explicitly variant-coded.
+Смена формулировки не меняет механику, если вариант специально не определён кодом.
 
 ## 17. Интеграция наград
 
-Events can grant:
+События могут выдавать:
 - GE small capped
 - сундук
 - buff
@@ -260,11 +260,11 @@ Events can grant:
 - item
 - временный modifier
 
-All server-authoritative.
+Все результаты подтверждаются сервером.
 
 ## 18. Arena interaction
 
-If Daily Event affects Arena:
+Если событие дня влияет на Arena:
 - временный;
 - visible;
 - not in BP;
@@ -285,11 +285,11 @@ Track:
 
 ## 20. Доступность функций
 
-Event referencing disabled product feature must not be selected.
+Событие с выключенной функцией не должно выбираться.
 
 ## 21. Шаблон заполнения
 
-For every event:
+Для каждого события:
 1. code
 2. title
 3. category
@@ -307,7 +307,7 @@ For every event:
 
 ## 22. Правило внедрения
 
-This document defines framework and examples.
+Этот документ содержит правила и примеры.
 
 Full 60–80 authored rows should be generated as content production batch after Data Model/admin tooling, not hardcoded in client.
 
