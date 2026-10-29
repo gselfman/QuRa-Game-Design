@@ -15,7 +15,7 @@
 Задание существует только если:
 - связанная функция включена feature flag;
 - событие можно серверно подтвердить;
-- reward budget разрешён.
+- награда budget разрешён.
 
 Нельзя создавать quest на выключенную функцию.
 
@@ -29,23 +29,23 @@
 
 Per instance.
 
-Examples:
+Примеры:
 - дать личное имя;
 - впервые экипировать;
 - впервые собрать native threshold;
 - впервые выиграть этой курочкой;
-- впервые использовать Maneuver;
-- впервые применить Special;
+- впервые использовать Манёвр;
+- впервые применить Особый приём;
 - впервые сработал Gift;
-- reach level milestone;
+- reach уровень milestone;
 - participate in 1×1;
 - L15 embodiment eligibility.
 
 ## 4. DAILY_ACCOUNT
 
-One daily pool per account.
+Один набор ежедневных заданий на аккаунт.
 
-Example templates:
+Примеры шаблонов:
 - выполнить N полезных действий;
 - сыграть 1 mini-game;
 - закончить 1 quest;
@@ -62,13 +62,13 @@ Avoid:
 
 ## 5. WEEKLY_ACCOUNT
 
-Examples:
-- complete N daily quests;
+Примеры:
+- complete N ежедневный quests;
 - win N Arena matches;
 - play N distinct mini-games;
 - earn XP across several days;
 - use 3 different chicken archetypes;
-- collect/open N chests;
+- collect/open N сундуки;
 - participate in social/Friendly once.
 
 ## 6. ACHIEVEMENT_ACCOUNT
@@ -79,7 +79,7 @@ Long-term:
 - L20 chicken;
 - L15 embodiment;
 - N Arena wins;
-- comeback 1×3;
+- возвращение в бой 1×3;
 - win with 1 HP;
 - win using each archetype;
 - collect set;
@@ -123,8 +123,8 @@ Long-term:
 - XP
 - GE
 - ticket
-- chest
-- gear
+- сундук
+- экипировка
 - buff
 - egg/chicken
 - cosmetic
@@ -140,35 +140,35 @@ CHICKEN_ONCE XP can target that specific chicken if quest definition explicitly 
 
 ## 11. Daily generation
 
-Server picks from eligible pool based on:
+Сервер выбирает из доступного пула, учитывая:
 - feature flags;
 - player progression;
 - inventory/state;
 - recent quest history;
-- repetition cooldown.
+- repetition задержка повторного применения.
 
-Do not offer impossible task.
+Нельзя предлагать невыполнимое задание.
 
 ## 12. Weekly generation
 
-Similar but broader.
+Аналогичные правила, но более широкая цель.
 
-Must avoid dependence on rare RNG:
+Нельзя ставить цель в зависимость от крайне редкой случайной награды:
 bad:
-> get Legendary chest item this week.
+> get Legendary сундук item this week.
 
 Good:
-> open 5 chests.
+> open 5 сундуки.
 
 ## 13. Difficulty bands
 
 - Easy: one action
 - Medium: several actions
-- Long: weekly/milestone
+- Long: недельный/milestone
 
-Reward scales by effort and budget.
+Награда зависит от усилия и допустимого бюджета.
 
-## 14. Example daily set
+## 14. Example ежедневный set
 
 For adult player with Arena enabled:
 1. Play one mini-game.
@@ -177,16 +177,16 @@ For adult player with Arena enabled:
 4. Visit Coop and collect/inspect.
 5. Optional bonus: use a different chicken than yesterday.
 
-Exact reward numbers in Reward Tables/Economy.
+Exact награда numbers in Reward Tables/Economy.
 
 ## 15. Arena quests
 
 Allowed:
 - play;
 - win;
-- use Maneuver;
-- use Special;
-- comeback;
+- use Манёвр;
+- use Особый приём;
+- возвращение в бой;
 - Friendly social.
 
 Do not incentivize:
@@ -198,24 +198,24 @@ Do not incentivize:
 ## 16. Friendly anti-farm
 
 Quest "play with friend":
-- reward once per period;
-- same friend repeated does not farm reward.
+- награда once per period;
+- same friend repeated does not farm награда.
 
 ## 17. Financial action quests
 
-Only use confirmed backend events.
+Учитывать только подтверждённые сервером события.
 
 Never:
-- reward pending payment;
+- награда pending payment;
 - require harmful/excessive spending;
-- hide fee/financial terms behind game reward.
+- hide fee/financial terms behind game награда.
 
 ## 18. Personal naming quest
 
 CHICKEN_ONCE:
 **«Дай имя новой курочке»**
 
-Can reward small XP/cosmetic.
+Can награда small XP/cosmetic.
 
 If user keeps default system name, quest may count as completed through explicit confirm.
 
@@ -242,10 +242,10 @@ recommended auto-deliver or grace period to avoid loss.
 ## 21. Claim philosophy
 
 Prefer:
-- completion immediately records reward entitlement;
-- claim animation is UX, not economic source of truth.
+- completion immediately records награда entitlement;
+- claim animation is UX, not economic источник of truth.
 
-Avoid losing earned reward because user forgot tap.
+Уже заработанная награда не должна исчезать, если пользователь не нажал кнопку.
 
 ## 22. Quest analytics
 
@@ -257,7 +257,7 @@ Track:
 - rerolled if feature exists;
 - time to complete;
 - abandoned;
-- reward cost.
+- награда cost.
 
 ## 23. Quest authoring template
 
@@ -271,8 +271,8 @@ Track:
 - eligibility
 - feature gate
 - period
-- reward
-- cooldown
+- награда
+- задержка повторного применения
 - analytics tags
 
 ## 24. Content rules
@@ -281,7 +281,7 @@ Track:
 - one primary verb;
 - avoid ambiguous progress;
 - show progress numerically;
-- show reward before completion;
+- show награда before completion;
 - localized.
 
 ## 25. Future
