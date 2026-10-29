@@ -550,3 +550,16 @@ Highest priority:
 
 These are not missing documentation; they are balance/implementation decisions requiring simulation.
 
+## 34. Monetization + sprite production track
+
+Sources: MONETIZATION_LIVEOPS_SPEC.md and SPRITE_PRODUCTION_BATCHES.md.
+
+1. Confirm economy EV, GE real-world bonus liability, compliance for paid randomized rewards.
+2. Implement Season Pass free track → premium entitlement.
+3. Implement chest odds, pity, duplicate protection and exact-once reward claim.
+4. Starter Bundle and non-intrusive contextual offers.
+5. Golden Piggy Bank with clearly defined guaranteed reward and no blocking of earned GE.
+6. Progressively produce 12 sheets (25 sprites each), upload to Figma, slice, QA and map by asset ID.
+7. Add release gates for client/server consistency, pricing versions, refund logic and no pay-to-win.
+
+**DoD:** every monetized item has a clear price, entitlement, source/sink, audit, cancellation/refund policy, and approved images; every asset has a stable Figma/component mapping.
