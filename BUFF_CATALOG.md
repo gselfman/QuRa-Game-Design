@@ -1,4 +1,4 @@
-# QuRa Buff Catalog v1
+# QuRa — каталог бафов v1
 
 **Статус:** catalog framework + approved tactical archetypes  
 **Sources:** Game Bible §26, Arena Spec
@@ -49,7 +49,7 @@ Activated inside match; finite one-use item.
 - N_MATCHES
 - CONDITIONAL
 
-## 4. Sources
+## 4. Источники
 
 - mini-games
 - chests
@@ -324,7 +324,7 @@ Comeback buffs can be strong because condition restricts use.
 11. consume
 12. chronicle
 
-## 20. Acceptance test
+## 20. Критерии приёмки
 
 Buff must answer:
 - when can use?
