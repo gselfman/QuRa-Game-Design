@@ -1243,7 +1243,7 @@ Channels:
 - Команда;
 - Лично.
 
-Enemy cannot see team chat.
+Противник не видит командный чат.
 
 UI обязан явно показывать active recipient/channel.
 
@@ -1251,7 +1251,7 @@ UI обязан явно показывать active recipient/channel.
 
 # 37. Quick chat
 
-Prototype examples:
+Примеры прототипа:
 
 - ✅ Да
 - ❌ Нет
@@ -1384,7 +1384,7 @@ Dead chicken:
 - next Атака weaken;
 - Особый приём уменьшение заряда.
 
-Future effects can be added only with:
+Новые эффекты допустимы только при наличии:
 
 - data definition;
 - duration;
@@ -1396,7 +1396,7 @@ Future effects can be added only with:
 
 # 43. Stacking
 
-Every modifier needs:
+Каждый модификатор должен иметь:
 
 - источник;
 - target;
@@ -1421,14 +1421,14 @@ Every modifier needs:
 - included in BP;
 - visible pre-battle or according to rules.
 
-Tactical consumable:
+Тактический расходник:
 
 - временный;
 - not included in BP;
 - finite inventory;
 - activated during battle.
 
-Preparation buff:
+Подготовительный баф:
 
 - временный;
 - pre-battle;
@@ -1468,7 +1468,7 @@ Ranked:
 
 # 47. Reconnect and authoritative server
 
-Production Battle Engine must be server-authoritative.
+Боевой движок в production должен быть серверно-авторитетным.
 
 Client:
 
@@ -1484,7 +1484,7 @@ Server:
 - persists;
 - distributes state.
 
-Commands require:
+Для команды обязательны поля:
 
 - matchId;
 - round;
@@ -1493,19 +1493,19 @@ Commands require:
 - action payload;
 - version.
 
-Duplicate commandId is idempotent.
+Повтор команды с тем же commandId не создаёт новую операцию.
 
 ---
 
 # 48. Hidden information
 
-During Decision Phase opponent must not receive hidden action payload.
+На этапе выбора противник не должен получать содержимое скрытого действия.
 
-Not enough to hide via CSS.
+Недостаточно скрыть информацию стилями CSS.
 
-Server view must omit opponent action until reveal.
+Сервер не передаёт действие противника до раскрытия.
 
-Same applies to:
+Это также относится к:
 
 - hidden team pick before both ready;
 - private team chat;
