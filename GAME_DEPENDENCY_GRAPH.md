@@ -933,7 +933,7 @@ Potentially:
 
 `Harmful Secondary Effect = blocked`
 
-Does not affect:
+Не влияет на:
 
 - Gods Lightning;
 - server technical result.
@@ -954,7 +954,7 @@ These affect:
 - pairings;
 - target routes.
 
-Especially important in Wall mode.
+Особенно важно для режима «Стенка на стенку».
 
 They must resolve **before** pairing calculation for the round.
 
@@ -1005,7 +1005,7 @@ Does not read:
 
 - contextual recommendation.
 
-Must switch strategy for:
+Обязательна смена стратегии при соотношениях:
 
 - 3×3;
 - 3×2;
@@ -1032,9 +1032,9 @@ Uses:
 
 - counterfactual outcomes.
 
-Does not access actual hidden action.
+Не получает доступа к реальному скрытому действию.
 
-This is essential fairness boundary.
+Это принципиальная граница честности.
 
 ---
 
@@ -1052,13 +1052,13 @@ This is essential fairness boundary.
 
 - one recommended/selected optimal move.
 
-Autobattle must share simulation rules with:
+Автобой использует общие правила симуляции с:
 
 - Battle Engine;
 - All-Seeing;
 - Hint analysis.
 
-No duplicate formulas.
+Формулы не должны дублироваться.
 
 ---
 
@@ -1093,13 +1093,13 @@ Death changes:
 
 - будущий pairings.
 
-One fighter may map to multiple collisions.
+Одна курочка может участвовать в нескольких столкновениях за раунд.
 
-Critical dependency:
+Критическая зависимость:
 
 `One selected action → multiple collision resolutions`
 
-Need once-per-action vs once-per-collision rules.
+Нужно разделить эффекты на однократные за действие и повторяемые для каждого столкновения.
 
 ---
 
@@ -1111,14 +1111,14 @@ Need once-per-action vs once-per-collision rules.
 - selected targets;
 - action.
 
-Potential dependencies:
+Потенциальные зависимости:
 
 - focus fire;
 - Скорость order;
 - death before action;
 - retarget rule.
 
-Open production decisions:
+Решения, которые нужно утвердить до выпуска:
 
 - simultaneous vs sequential resolution;
 - action cancellation;
@@ -1134,7 +1134,7 @@ Open production decisions:
 - affects Манёвр×Манёвр;
 - affects JRPG action ordering.
 
-Potential problem:
+Возможная проблема:
 
 `Speed ↑ → act earlier → kill target → cancel target action`
 
@@ -1153,11 +1153,11 @@ Before Экипировка Catalog:
 
 In Wall 1×N, one action may cause multiple collision calls.
 
-Need explicit scope for each effect:
+Каждому эффекту нужна явная область действия:
 
 ### Once per action
 
-Candidate examples:
+Возможные примеры:
 
 - self лечение;
 - self щит gain;
@@ -1167,7 +1167,7 @@ Candidate examples:
 
 ### Once per collision
 
-Candidate examples:
+Возможные примеры:
 
 - outgoing урон;
 - target-specific debuff;
@@ -1175,7 +1175,7 @@ Candidate examples:
 
 **OPEN until Arena balance decision.**
 
-This must be resolved before implementation extraction.
+Это нужно решить до выделения общего движка.
 
 ---
 
@@ -1204,7 +1204,7 @@ Mini-game награда must be server-authoritative.
 
 # 40. Chest dependency graph
 
-Chest can produce:
+Из сундука можно получить:
 
 - GE;
 - экипировка;
@@ -1213,7 +1213,7 @@ Chest can produce:
 - egg/chicken;
 - временный bonus.
 
-Chest depends on:
+Содержимое сундука зависит от:
 
 - редкость table;
 - player progression;
@@ -1249,11 +1249,11 @@ No награда may silently disappear due capacity.
 
 # 42. Coop dependency graph
 
-Coop capacity controls:
+Вместимость Курятника ограничивает:
 
 - number of chicken instances.
 
-More chickens enable:
+Большее число курочек открывает:
 
 - collection;
 - more Gifts;
@@ -1261,7 +1261,7 @@ More chickens enable:
 - more Arena options;
 - more passive production potential.
 
-Coop upgrade depends on:
+Улучшение Курятника зависит от:
 
 - GE;
 - progression;
@@ -1273,7 +1273,7 @@ Does not directly increase Боевая сила.
 
 # 43. Passive laying dependency
 
-Inputs may include:
+Входные параметры могут включать:
 
 - adult residents;
 - уровень/progression;
@@ -1286,7 +1286,7 @@ Inputs may include:
 
 - GE or defined passive награда.
 
-Because GE has real value:
+Поскольку GE имеют реальную бонусную стоимость:
 
 - ежедневный лимит required;
 - emission budget required.
@@ -1324,7 +1324,7 @@ flowchart TD
 - Профессор → XP;
 - Ряба → laying.
 
-Gift should not silently stack without family rule.
+Дары не должны незаметно складываться без правил совместимости семейств.
 
 ---
 
@@ -1354,7 +1354,7 @@ Quest outputs:
 - ticket;
 - achievement/progression.
 
-Feature gate required:
+Нужна проверка доступности функции:
 
 > no quest for disabled product feature.
 
@@ -1362,18 +1362,18 @@ Feature gate required:
 
 # 47. Main Chicken dependency
 
-Main Chicken determines:
+Главная курочка определяет:
 
 - target for account XP at action completion.
 
-Does not determine:
+Главная курочка не определяет:
 
 - ownership;
 - экипировка availability of other chickens;
 - Gift activation by residents;
 - collection state.
 
-Switching Main Chicken:
+Смена главной курочки:
 
 - free;
 - будущий XP goes to new main;
@@ -1435,19 +1435,19 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 # 55. Reconnect dependency
 
-Reconnect affects:
+Переподключение влияет на:
 
 - timer;
 - action lock;
 - settlement;
 - technical loss.
 
-Production must distinguish:
+Система должна различать:
 
 - player disconnect;
 - platform failure.
 
-Platform failure must not silently create paid loss.
+Сбой платформы не должен незаметно приводить к потере оплаченной аренды.
 
 ---
 
@@ -1463,11 +1463,11 @@ Platform failure must not silently create paid loss.
 - Team;
 - Private.
 
-Visibility is server-enforced.
+Доступ к данным обеспечивается сервером.
 
-Team/private message must not be delivered to enemy client.
+Командные и личные сообщения не передаются клиенту противника.
 
-Chat does not affect Battle Engine.
+Чат не влияет на расчёты боя.
 
 ---
 
@@ -1493,13 +1493,13 @@ Outputs:
 
 Chronicle must use the **same result object** as Battle Engine.
 
-Never regenerate battle facts independently.
+Нельзя заново вычислять факты боя независимо от движка.
 
 ---
 
 # 58. Identity dependency
 
-Display identity:
+Отображаемая идентичность:
 
 `Crest + Type + Personal Name`
 
@@ -1507,7 +1507,7 @@ Display identity:
 
 `🐺 Профессор Иванов`
 
-This identity appears in:
+Эта идентичность используется в:
 
 - Arena cards;
 - Chronicle;
@@ -1551,17 +1551,17 @@ Stores tactical/preparation расходники.
 
 ## Chicken capacity
 
-Controlled by Coop slots.
+Ограничено числом мест Курятника.
 
-These are different capacities.
+Это независимые ограничения вместимости.
 
-Do not reuse one generic count without explicit data model.
+Нельзя использовать один общий счётчик без определения в модели данных.
 
 ---
 
 # 61. Overflow dependency
 
-Reward delivery must check capacity.
+При доставке награды обязательно проверяется вместимость.
 
 If full:
 
@@ -1579,7 +1579,7 @@ Applies to:
 
 # 62. Feature Flags
 
-Feature flags gate:
+Флаги доступности управляют:
 
 - financial quests;
 - Arena modes;
@@ -1596,7 +1596,7 @@ Dependencies:
 
 # 63. Server authority boundaries
 
-Server authoritative for:
+Сервер самостоятельно подтверждает:
 
 - XP;
 - GE;
@@ -1612,7 +1612,7 @@ Server authoritative for:
 - Слава;
 - подбор соперника.
 
-Client may calculate previews, but server result is authoritative.
+Клиент может рассчитывать прогнозы, но итоговое решение принадлежит серверу.
 
 ---
 
@@ -1620,7 +1620,7 @@ Client may calculate previews, but server result is authoritative.
 
 Every significant state change requires источник context.
 
-Minimum generic event fields:
+Минимальные общие поля события:
 
 - user/account;
 - entity;
@@ -1659,7 +1659,7 @@ Client animation/result is not источник of truth.
 
 # 66. No hidden cross-system power
 
-Forbidden examples:
+Запрещённые примеры:
 
 - Крутость secretly increases Arena урон;
 - personal name changes RNG;
@@ -1668,7 +1668,7 @@ Forbidden examples:
 - tactical buff changes BP after подбор соперника;
 - cosmetic редкость gives hidden combat bonus.
 
-All combat power must have explicit dependency.
+Любое боевое усиление должно иметь явно описанную зависимость.
 
 ---
 
@@ -1707,7 +1707,7 @@ All combat power must have explicit dependency.
 
 # 69. Battle calculation dependency order
 
-Target production order:
+Целевой порядок расчёта в production:
 
 ```text
 Base archetype stats
@@ -1743,7 +1743,7 @@ Base archetype stats
 
 # 70. Shared Battle Engine consumers
 
-The same deterministic Battle Engine must serve:
+Один детерминированный боевой движок используется для:
 
 - живой Arena;
 - асинхронный Arena;
@@ -1760,11 +1760,11 @@ No subsystem may implement a separate урон formula.
 
 # 71. Documents produced from this graph
 
-This graph directly feeds:
+Этот граф непосредственно используется в:
 
 ## GAME_DATA_MODEL.md
 
-Needs entities for:
+Необходимы сущности:
 
 - account;
 - chicken instance;
@@ -1796,7 +1796,7 @@ Needs:
 
 ## GEAR_CATALOG.md
 
-Must reference only approved combat hooks.
+Допустимы только утверждённые механизмы боевого движка.
 
 ## BUFF_CATALOG.md
 
@@ -1806,7 +1806,7 @@ Must reference only approved временный hooks.
 
 # 72. Open dependency decisions
 
-Before production data model is frozen:
+До окончательного утверждения модели данных:
 
 1. Скорость resolution model.
 2. JRPG retarget behavior.
@@ -1826,7 +1826,7 @@ Before production data model is frozen:
 
 # 73. Dependency invariants
 
-These must always remain true.
+Следующие правила действуют всегда.
 
 1. **Крутость never drives подбор соперника.**
 2. **Temporary бафы never enter Боевая сила.**
@@ -1853,7 +1853,7 @@ These must always remain true.
 
 # 75. Documentation package status
 
-The downstream documentation is now created:
+Зависимые документы уже созданы.
 - GAME_DATA_MODEL.md
 - ECONOMY_MODEL.md
 - CHICKEN_CATALOG.md
