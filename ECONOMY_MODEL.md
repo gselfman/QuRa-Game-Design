@@ -1,4 +1,4 @@
-# QuRa Economy Model v1
+# QuRa — модель экономики v1
 
 **Статус:** экономическая спецификация / значения без окончательного balance table помечены OPEN  
 **Источники:** Game Bible, Dependency Graph, Arena Spec
@@ -177,7 +177,7 @@ This makes GE both:
 
 ## 3. GE Faucets
 
-### Mini-games
+### Мини-играs
 - free ticket attempts;
 - score/milestone rewards;
 - daily caps.
@@ -205,7 +205,7 @@ Allowed only with daily/account/coop cap.
 ### Events/Achievements
 Limited, configured rewards.
 
-## 4. GE Sinks
+## 4. GE Расходы
 
 - gear purchase;
 - Coop upgrades;
@@ -231,7 +231,7 @@ LOCKED:
 
 Ticket accrual should use server date/time policy.
 
-## 6. Mini-game paid attempt rule
+## 6. Мини-игра paid attempt rule
 
 For any repeatable GE-paid attempt:
 
@@ -243,7 +243,7 @@ unless:
 
 No guaranteed profitable loop.
 
-## 7. Mini-game emission budget
+## 7. Мини-игра emission budget
 
 Per game configure:
 - daily account cap;
@@ -491,7 +491,7 @@ Working v0.1 prices при D=100:
 
 Все GE числа пересчитываются после измерения фактического D.
 
-## 17. Chest economy
+## 17. Экономика сундуков
 
 Each chest has:
 - price/source;
@@ -508,7 +508,7 @@ Paid chest expected value must account for:
 - ticket value;
 - rare chicken value.
 
-## 18. Rarity starting hypothesis
+## 18. Редкость starting hypothesis
 
 From Bible:
 - Common ~60%
@@ -662,7 +662,7 @@ Every credit uses one bucket.
 - TACTICAL_SERVICE
 - COSMETIC
 
-## 31. Economy telemetry
+## 31. Аналитика экономики
 
 Daily dashboard:
 - GE minted by source;
@@ -678,7 +678,7 @@ Daily dashboard:
 - passive issuance;
 - anomalous accounts.
 
-## 32. Economy guardrails
+## 32. Ограничители экономики
 
 Alert if:
 - net issuance exceeds budget;
@@ -690,7 +690,7 @@ Alert if:
 - negative balance;
 - duplicate reward correlation id.
 
-## 33. Refund policy framework
+## 33. Принципы возвратов
 
 Every paid action declares:
 - lock point;
@@ -701,7 +701,7 @@ Every paid action declares:
 
 No paid feature ships without refund matrix.
 
-## 34. Price configuration
+## 34. Настройка цен
 
 All prices server-configurable.
 
@@ -714,7 +714,7 @@ Do not hardcode in client:
 - retry price;
 - Coop upgrade price.
 
-## 35. Scenario modeling required
+## 35. Обязательные экономические сценарии
 
 Before production run:
 1. low-engagement user;
@@ -732,7 +732,7 @@ For each:
 - inventory growth;
 - expected real-world bonus liability.
 
-## 36. Open balance tables
+## 36. Открытые таблицы баланса
 
 Need numeric tables later for:
 - XP curve L1–20;
@@ -746,7 +746,7 @@ Need numeric tables later for:
 - pity;
 - season rewards.
 
-## 37. Invariants
+## 37. Инварианты
 
 1. No guaranteed repeatable positive GE arbitrage.
 2. GE source always audited.
