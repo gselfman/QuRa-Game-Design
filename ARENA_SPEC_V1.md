@@ -1932,3 +1932,13 @@ Arena-related follow-up is no longer another document creation step. The next wo
 - BP weights;
 - draw/refund settlement.
 
+
+## Pass 2 clarification — first-release async matchmaking (P3/P4; 2026-10-30)
+
+**Implementation intent:** on the first visit to asynchronous Arena, show «Настрой защиту» as a one-time onboarding task. Persist defensive team, equipment snapshot policy, and defensive strategy before matching. A defender need not be online. The setup task may award XP/achievement progress only under the central quest/reward ledger; it does not issue GE.
+
+**Opponent selection:** search human defenders within **±2 chicken levels** and **close Battle Power**. Define the exact BP tolerance and queue wait as versioned OPEN config, not hardcoded silently. Filter self-match, blocked or repeated abuse pairings. If no eligible human exists after a configurable timeout, assign an explicitly labeled **bot** and record the fallback reason. Server selects the opponent and snapshots roster, equipment, BP, ruleset and defensive policy before resolution; changes made afterwards affect only future matches.
+
+**Defense settlement:** award defender XP and achievement progress under idempotent, capped source keys, including while offline; **no GE for defense**. Freeze result, replay/chronicle, and reward identity in the same audit trail. Avoid re-awarding XP when replaying or retrying result publication. Set numeric XP cap OPEN pending economy validation.
+
+**Release boundary:** first-release async play is not ranked. Ranked matchmaking, Glory adjustment and ranked season rewards remain **Future** and must not be implicitly enabled by these rules. Do not reinterpret or change D-19/D-20 in implementation.
