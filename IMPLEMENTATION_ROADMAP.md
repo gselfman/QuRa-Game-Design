@@ -1,8 +1,8 @@
-# QuRa Game Implementation Roadmap v1
+# QuRa — план реализации v1
 
 **Статус:** implementation sequence from documentation to production
 
-## 0. Goal
+## 0. Цель
 
 Ship QuRa game systems incrementally without:
 - breaking financial product;
@@ -29,7 +29,7 @@ Completed core docs:
 - ASSET_PRODUCTION.md
 - IMPLEMENTATION_ROADMAP.md
 
-## 2. Phase A — Configuration Foundation
+## 2. Этап A — Configuration Foundation
 
 Backend:
 - feature flags
@@ -49,7 +49,7 @@ DoD:
 - server can grant XP/GE/reward exactly once
 - all changes auditable
 
-## 3. Phase B — Chicken/Data Foundation
+## 3. Этап B — Chicken/Data Foundation
 
 Implement:
 - ChickenArchetype
@@ -71,7 +71,7 @@ DoD:
 - unique personal names supported
 - rename does not affect mechanics
 
-## 4. Phase C — Quests and progression
+## 4. Этап C — Quests and progression
 
 Implement:
 - quest definitions
@@ -92,7 +92,7 @@ DoD:
 - CHICKEN_ONCE per instance
 - XP goes correct chicken at completion
 
-## 5. Phase D — Reward/Chest system
+## 5. Этап D — Reward/Chest system
 
 Implement:
 - RewardDefinition
@@ -110,7 +110,7 @@ DoD:
 - exactly-once delivery
 - no lost reward on capacity full
 
-## 6. Phase E — Inventory and Gear
+## 6. Этап E — Inventory and Gear
 
 Implement:
 - GearDefinition
@@ -135,7 +135,7 @@ DoD:
 - every combat stat has engine hook
 - BP calculated server-side
 
-## 7. Phase F — Mini-game integration
+## 7. Этап F — Mini-game integration
 
 Integrate existing mini-games with:
 - tickets
@@ -149,7 +149,7 @@ DoD:
 - daily caps
 - paid EV guardrail
 
-## 8. Phase G — Daily Events
+## 8. Этап G — Daily Events
 
 Implement:
 - global event selection
@@ -167,7 +167,7 @@ DoD:
 - personalized result deterministic
 - never changes Coolness
 
-## 9. Phase H — Battle Engine extraction
+## 9. Этап H — Battle Engine extraction
 
 Before production Arena UI:
 - extract deterministic engine
@@ -190,7 +190,7 @@ DoD:
 - unit tests
 - simulation harness
 
-## 10. Phase I — Arena 1×1
+## 10. Этап I — Arena 1×1
 
 Implement:
 - Duel
@@ -205,7 +205,7 @@ DoD:
 - replayable engine log
 - no client-authoritative result
 
-## 11. Phase J — Arena 2×2 / 3×3
+## 11. Этап J — Arena 2×2 / 3×3
 
 Implement:
 - team selection
@@ -224,7 +224,7 @@ DoD:
 - remapping
 - same-name disambiguation
 
-## 12. Phase K — Online transport
+## 12. Этап K — Online transport
 
 Production architecture:
 - authenticated rooms
@@ -239,7 +239,7 @@ DoD:
 - packet loss/retry tests
 - hidden state security
 
-## 13. Phase L — Arena buffs
+## 13. Этап L — Arena buffs
 
 Implement:
 - BuffDefinition
@@ -261,7 +261,7 @@ DoD:
 - Chronicle integration
 - telemetry
 
-## 14. Phase M — Tactical services
+## 14. Этап M — Tactical services
 
 Implement:
 - Hint
@@ -278,7 +278,7 @@ DoD:
 - deterministic simulations
 - fairness tests
 
-## 15. Phase N — Arena economy
+## 15. Этап N — Arena economy
 
 Implement:
 - 10 GE entry
@@ -294,7 +294,7 @@ DoD:
 - no partial debit
 - server incident refunds
 
-## 16. Phase O — Timer / Gods Lightning
+## 16. Этап O — Timer / Gods Lightning
 
 Implement:
 - 3-minute standard timer
@@ -311,7 +311,7 @@ DoD:
 - timer server-authoritative
 - reconnect policy tested
 
-## 17. Phase P — Ranked / Glory / Seasons
+## 17. Этап P — Ranked / Glory / Seasons
 
 Implement:
 - enrollment
@@ -328,7 +328,7 @@ DoD:
 - rating rules
 - season close snapshot
 
-## 18. Phase Q — Async defense
+## 18. Этап Q — Async defense
 
 Implement:
 - defense team
@@ -341,7 +341,7 @@ DoD:
 - same Battle Engine
 - no offline farming dominance
 
-## 19. Phase R — Social
+## 19. Этап R — Social
 
 Implement:
 - friends
@@ -355,7 +355,7 @@ Implement:
 4-player later:
 - All/Team/Private channels
 
-## 20. Phase S — 4-player Arena
+## 20. Этап S — 4-player Arena
 
 Only after 2-player stable.
 
@@ -372,7 +372,7 @@ DoD:
 - private team chat
 - settlement
 
-## 21. Phase T — Passive laying
+## 21. Этап T — Passive laying
 
 Implement only after Economy Model numbers approved.
 
@@ -386,7 +386,7 @@ DoD:
 - emission dashboard
 - anti-bot
 
-## 22. Phase U — Legacy / 3D
+## 22. Этап U — Legacy / 3D
 
 Implement:
 - L15 eligibility
@@ -396,7 +396,7 @@ Implement:
 - heir generation
 - capacity handling
 
-## 23. Phase V — Content expansion
+## 23. Этап V — Content expansion
 
 - seventh founder
 - rare/seasonal chickens
