@@ -766,6 +766,25 @@ Need numeric tables later for:
 6. Real-value GE emissions always capped/budgeted.
 7. Server owns reward roll.
 
+## 38.1. Полная себестоимость 3D-фигурки: сценарный расчёт (P8)
+
+Цена фигурки — **17 000 ₽** (утверждено); изготовление — **около 15 000 ₽** (ориентир владельца).
+
+| Статья | Рабочий пример |
+|---|---:|
+| Производство | 15 000 ₽, ориентир |
+| Доставка | 800 ₽ — PROTOTYPE BALANCE |
+| Упаковка | 250 ₽ — PROTOTYPE BALANCE |
+| Эквайринг, условно 2,5% от 17 000 | 425 ₽ — PROTOTYPE BALANCE |
+| Сервис и резерв возвратов | 350 ₽ — PROTOTYPE BALANCE |
+| Налоги, условная упрощённая модель 6% выручки | 1 020 ₽ — PROTOTYPE BALANCE, режим налогообложения не установлен |
+| **Итого затрат в таком сценарии** | **17 845 ₽** |
+| **Результат на заказ в таком сценарии** | **−845 ₽** |
+
+Без гипотетического налога 1 020 ₽ условная маржа была бы **+175 ₽**, до прочих издержек. Это **не бухгалтерская калькуляция и не прогноз**, так как неизвестны продавец, ставка и база налога, тариф доставки, фактическая комиссия, доля возвратов, расходы поддержки и производство брака. Доставка может быть оплачена покупателем отдельно — это тоже OPEN.
+
+**Вопрос владельцу:** фигурка намеренно продаётся около себестоимости/с убытком как marketing/retention или нужно увеличить цену/выставить доставку отдельно? До ответа не менять установленную цену 17 000 ₽.
+
 ## 38. Approved LiveOps monetization expansion
 
 See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
