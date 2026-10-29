@@ -1,4 +1,4 @@
-# QuRa Game Data Model v1
+# QuRa — модель игровых данных v1
 
 **Статус:** системная модель данных  
 **Источники:** GAME_BIBLE_V1.md, ARENA_SPEC_V1.md, GAME_DEPENDENCY_GRAPH.md
@@ -698,7 +698,7 @@ Quest/reward generation references flags.
 - generation
 - legacy_bonus_json
 
-## 50. State machines
+## 50. Машины состояний
 
 ### Chicken lifecycle
 EGG_L1 → EGG_L2 → CHICK_L3 → ADULT_L4 → PROGRESSION → L15_ELIGIBLE → L20_MAX
@@ -721,7 +721,7 @@ AVAILABLE → IN_PROGRESS → COMPLETED → CLAIMED
 ### Buff activation
 PENDING → VALIDATED → APPLIED → CONSUMED
 
-## 51. Required identifiers
+## 51. Обязательные идентификаторы
 
 Use immutable ids for:
 - account
@@ -739,7 +739,7 @@ Use immutable ids for:
 
 Display names are never keys.
 
-## 52. Versioning
+## 52. Версионирование
 
 Version independently:
 - Battle Engine
@@ -753,7 +753,7 @@ Version independently:
 
 Match stores versions used at start.
 
-## 53. Audit invariants
+## 53. Инварианты аудита
 
 1. GE balance reconciles to GE Ledger.
 2. XP reconciles to XP Ledger.
@@ -766,7 +766,7 @@ Match stores versions used at start.
 9. Temporary modifier never persists into permanent stat row.
 10. Any paid canceled activity must have settlement record.
 
-## 54. Next document dependency
+## 54. Следующий документ dependency
 
 ECONOMY_MODEL.md consumes:
 - ledgers;
