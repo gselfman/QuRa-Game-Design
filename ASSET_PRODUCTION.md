@@ -234,7 +234,7 @@ Examples:
 
 ## 15. Gear art
 
-Every GearDefinition needs:
+Для каждого GearDefinition обязательны:
 - inventory icon
 - equipped sprite by visible poses
 - store preview
@@ -243,7 +243,7 @@ Every GearDefinition needs:
 
 ## 16. Gear category visual QA
 
-Check overlap/readability for:
+Проверить наложения и читаемость для:
 - hats
 - glasses
 - earrings
@@ -257,11 +257,11 @@ Check overlap/readability for:
 - medals
 - aura
 
-Deactivate slots that produce unreadable stacking.
+Отключить слоты, где предметы перекрывают друг друга.
 
 ## 17. Native sets
 
-Each archetype should get a coherent visual family:
+У каждого архетипа должна быть цельная визуальная линейка:
 - Ryaba: gold/shell/folk
 - Fighter: rugged/protective
 - Fool: colorful/unpredictable
@@ -271,14 +271,14 @@ Each archetype should get a coherent visual family:
 
 ## 18. Редкость presentation
 
-Rarity should use:
+Редкость передаётся через:
 - frame/detail density;
 - material;
 - subtle FX;
 - not only color.
 
 Accessibility:
-do not rely solely on hue.
+не полагаться только на цвет.
 
 ## 19. Coop environments
 
@@ -322,9 +322,9 @@ L15 flow:
 
 ## 22. Мини-игра assets
 
-Existing mini-game packs remain separate production tracks.
+Уже существующие спрайты мини-игр производятся отдельно.
 
-Shared QuRa assets:
+Общие ассеты QuRa:
 - GE icon
 - tickets
 - UI buttons
@@ -334,7 +334,7 @@ Shared QuRa assets:
 
 ## 23. Responsive requirements
 
-For every key screen:
+Для каждого основного экрана:
 - desktop
 - tablet
 - mobile portrait
@@ -366,11 +366,11 @@ Examples:
 - buff_invulnerability_icon_v01.svg
 - fx_gods_lightning_frame_01.webp
 
-No random filenames.
+Никаких случайных имён файлов.
 
 ## 26. Разрешение
 
-Store masters larger than runtime.
+Хранить мастер-изображения с большим разрешением, чем рабочие ассеты.
 
 Typical:
 - icons: master 512
@@ -381,18 +381,18 @@ Typical:
 
 ## 27. Прозрачность
 
-Character/accessory/FX sprite:
+Спрайт курочки, аксессуара или эффекта:
 - transparent background unless intentionally environmental.
 
 ## 28. Защитные поля
 
-Characters must not crop:
+При кадрировании курочек нельзя обрезать:
 - headwear
 - tail
 - shoes
 - aura
 
-Document bounding box.
+Зафиксировать границы объекта.
 
 ## 29. Анимация Arena без отдельных поз (LOCKED D-20)
 
@@ -421,7 +421,7 @@ Document bounding box.
 
 ## 31. Audio
 
-Separate layers:
+Разделить слои:
 - UI
 - battle SFX
 - music
@@ -434,7 +434,7 @@ User controls:
 
 ## 32. Реестр ассетов
 
-Need table/entity:
+Нужна сущность/таблица:
 - asset_id
 - type
 - owner entity
@@ -472,7 +472,7 @@ Every asset:
 
 ## 35. Структура Figma
 
-Recommended pages:
+Рекомендуемые страницы:
 - Foundations
 - Chickens
 - Gear
@@ -504,7 +504,7 @@ Figma/library.
 Behavior:
 Specs/code.
 
-Do not make gameplay rule depend on a visual file.
+Игровое правило не должно зависеть от графического файла.
 
 ## 37. Sprite batch library — approved production plan
 
