@@ -78,29 +78,12 @@ If slot invisible in pose:
 - no sprite required;
 - effect remains active.
 
-## 5. Archetype asset packs
+## 5. Пакеты шести основательниц — D-20
 
-For each:
-- Ryaba
-- Fighter
-- Fool
-- Professor
-- Monk
-- Glamour
-- future seventh founder
+Каждый из шести архетипов (Ряба, Боевик, Дурочка, Профессор, Монах, Гламурочка) получает единый утверждённый master reference и **только** CARD/PERCH/NEST, portrait/roster crop и четыре выразительные эмоции лица, которые не меняют точки крепления.
 
-Produce:
-- base adult CARD
-- PERCH
-- NEST
-- selected battle reactions
-- Maneuver key frame
-- Special key frame
-- hurt
-- defend
-- victory
-- defeat/death
-- portrait/icon
+В бою отображается **CARD с теми же аксессуарами, что в гардеробе**, плюс независимые FX-слои. Не генерировать отдельные attack, defend, maneuver, special, hurt, victory, defeat/death позы. Седьмая — только скрытый силуэт до community unlock. Пакеты C01–C06, E01, G01, G02, FX01 описаны в SPRITE_PRODUCTION_BATCHES.md.
+
 
 ## 6. Personal name
 
@@ -233,19 +216,10 @@ Need visible pre-match badge.
 ### Swap/Reform
 - positional arrows
 
-## 13. Gods Lightning
+## 13. Молния богов
 
-High-priority production effect.
+Серверный таймер: 45 секунд (конфиг 30–60). При первом пропуске короткий FX «замешкалась и закрылась»: CARD слегка дёргается, затем поверх появляется иконка Защиты. При **втором пропуске подряд**: небо темнеет, предупреждающая вспышка, FX01_24–25, CARD темнеет/падает трансформацией; летопись пишет причину. Все анимации могут быть пропущены/уменьшены по accessibility; результат определяет Battle Engine, не визуальный тайминг.
 
-Sequence:
-1. timer expires
-2. sky/field darkens
-3. warning flash
-4. lightning strike
-5. defeated team effect
-6. Chronicle/result card
-
-Must feel humorous/mythic, not punitive system error.
 
 ## 14. Летопись боя visuals
 
@@ -420,16 +394,21 @@ Characters must not crop:
 
 Document bounding box.
 
-## 29. Подход к анимации
+## 29. Анимация Arena без отдельных поз (LOCKED D-20)
 
-Prefer:
-- short sprite/state sequences
-- CSS/transform for UI
-- video only for cinematic moments if justified
+- Базовая стойка — одна CARD; позиция и текущие overlays экипировки сохраняются при всех действиях.
+- **Атака:** сдвиг CARD к цели на 8–15% локальной ширины (PROTOTYPE BALANCE), небольшой наклон, удар FX01_01/02 и возврат в исходную позицию.
+- **Защита:** сдвиг/сжатие CARD на 3–6% (PROTOTYPE BALANCE), полупрозрачный щит FX01_03 поверх; контратака отдельным эффектом.
+- **Манёвр:** быстрый короткий sidestep по оси X и FX01_05/06, без перерисовки тела.
+- **Особый приём:** на CARD остаётся исходная форма; проигрывается характерный FX01_07..12 соответствующего архетипа и effect overlay.
+- **Попадание:** короткий отскок, вспышка и уменьшение HP по UI, текст «урон» отдельно.
+- **Лечение:** glow/particles FX01_15 + увеличение показанного HP до серверного значения.
+- **Выбывание:** затемнение CARD, смещение вниз/наклон, FX01_23 и исчезновение; не создавать позу смерти.
+- **Таймаут:** FX01_22 → Защита; второй подряд → FX01_24/25.
+- Состояния Shield/heal/attack buff/debuff показываются FX + status icon, не новой позой.
+- Продолжительность последовательностей и easing — PROTOTYPE BALANCE после UI-плейтеста; логика боя **не зависит** от длительности эффектов.
+- `prefers-reduced-motion`: минимальный сдвиг, мягкая прозрачность, без тряски, доступный текст результата.
 
-Arena actions:
-- readable timing;
-- mechanics resolved server-side independent of animation.
 
 ## 30. Доступность
 
@@ -529,8 +508,8 @@ Do not make gameplay rule depend on a visual file.
 
 ## 37. Sprite batch library — approved production plan
 
-See **SPRITE_PRODUCTION_BATCHES.md**: 12 sheets × 25 assets = 300 concrete objects, each with a stable ID, exact grid cell and shared generation instructions. Generate/QA/upload/slice one sheet at a time; keep existing 'Wolf catches eggs' art unless a replacement has been approved. New monetization visual elements (chests, Season Pass, Piggy Bank, store and offers) are included. All objects must be separately exportable for Figma and runtime.
+См. **SPRITE_PRODUCTION_BATCHES.md**: базовые 12 листов × 25 объектов и специальные пакеты C01–C06, E01, G01/G02 и FX01, each with a stable ID, exact grid cell and shared generation instructions. Generate/QA/upload/slice one sheet at a time; keep existing 'Wolf catches eggs' art unless a replacement has been approved. New monetization visual elements (chests, Season Pass, Piggy Bank, store and offers) are included. All objects must be separately exportable for Figma and runtime.
 
-## C. Визуалы для нового MVP
+## 38. Приоритеты визуалов для MVP
 
 P0: корм зерно/кукуруза/червячки/особый корм/деликатес, состояния FED/HAPPY и возврат в NEUTRAL; 20 событий дня с **двумя** вариантами; пустой силуэт седьмой и шкала общей цели. P1: клановый герб/баннер/вклад/доска лидеров и значок официального token-клана. Позиции генерации — новые листы в SPRITE_PRODUCTION_BATCHES.md.
