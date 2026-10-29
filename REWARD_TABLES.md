@@ -100,7 +100,7 @@ Avoid stream of unusable L20 экипировка to L4 player.
 
 ## 6. Pity
 
-Paid/high-value сундук families need:
+Для платных и дорогих сундуков необходимо:
 - pity counter;
 - threshold;
 - guaranteed minimum редкость;
@@ -119,7 +119,7 @@ Paid/high-value сундук families need:
 Если вместимость заполнена:
 - награда entitlement recorded;
 - OverflowPackage created;
-- user can resolve;
+- игрок может выбрать способ устранения переполнения;
 - expiry policy shown.
 
 Chicken/egg overflow uses «В гостях» flow.
@@ -131,17 +131,17 @@ Chicken/egg overflow uses «В гостях» flow.
 Table fields:
 - score/milestone
 - награда
-- probability if random
+- вероятность, если награда случайна
 - ежедневный лимит
 - global budget
 - source_type
 
 GE paid retry:
-expected convertible награда value < price unless subsidized/capped.
+ожидаемая конвертируемая стоимость награды ниже цены, если нет явного бюджета субсидирования или жёсткого лимита.
 
 ## 10. Wolf game
 
-Specific current награда matrix remains in mini-game-specific documentation/prototype.
+Действующая матрица наград остаётся в документации конкретной мини-игры.
 
 Таблицы наград отсылают к отдельной матрице мини-игры, не создавая новые значения.
 
@@ -164,13 +164,13 @@ Specific current награда matrix remains in mini-game-specific documentati
 
 No standard repeatable Arena payout/Слава.
 
-Quest can grant one limited social награда.
+Задание может выдавать ограниченную разовую социальную награду.
 
 ## 13. Training награды
 
 No standard Слава.
 
-Can give capped tutorial/quest награда.
+Допускается ограниченная обучающая награда за задание.
 
 ## 14. Quest награда bands
 
@@ -192,7 +192,7 @@ Can give capped tutorial/quest награда.
 
 ### Achievement
 - milestone-specific
-- cosmetic/item/сундук/GE depending редкость
+- косметика, предмет, сундук или GE в зависимости от редкости
 
 ## 15. баф награда pools
 
@@ -246,10 +246,10 @@ Never spawn adult directly unless special documented награда.
 
 ## 18. Ticket награды
 
-Ticket grant must respect stock лимит or define overflow conversion/pending claim.
+Начисление билетов учитывает лимит запасов и правило временного хранения переполнения.
 
 Default:
-do not silently discard earned ticket; use награда pending if лимит full or explicitly documented лимит behavior.
+Нельзя незаметно удалять заработанный билет при заполнении запаса; используйте отложенное получение или явно описанное правило ограничения.
 
 ## 19. GE награды
 
@@ -280,7 +280,7 @@ Server:
 Show:
 - price;
 - probability by relevant редкость/награда class;
-- pity if user-facing policy;
+- pity, если политика показывается игроку;
 - duplicate possibility.
 
 ## 23. Reward table versioning
