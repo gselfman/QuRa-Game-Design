@@ -56,26 +56,26 @@
 
 Игра служит удержанию и вовлечённости, но не превращается в безлимитный источник GE.
 
-### Working источник-mix target
+### Целевые доли источников заработка
 
 У обычного активного пользователя без покупок большая часть регулярно заработанных GE должна приходить от квалифицирующих действий QuRa.
 
 Начальные целевые значения для моделирования:
 - **50–65%** — операции QuRa;
 - **30–45%** — мини-игры;
-- остальное — quests/events/passive. Цели **PROTOTYPE BALANCE** по ECONOMY_CALIBRATION_2026-10.md §5, доли не являются гарантией выплат.
+- остальное — задания, события и пассивные награды. Цели **PROTOTYPE BALANCE** по ECONOMY_CALIBRATION_2026-10.md §5, доли не являются гарантией выплат.
 
 Эти диапазоны — гипотезы; их можно пересчитать по реальному поведению, но сохраняется правило:
 
-> repeatable game faucets must not make core QuRa activity economically irrelevant.
+> регулярные игровые награды не должны делать финансовые действия QuRa экономически ненужными.
 
-Rare jackpots, seasonal награды and one-time progression награды are excluded from источник-mix comparison.
+Редкие джекпоты, сезонные и разовые награды развития исключаются из сравнения источников GE.
 
-If mini-game realized GE/hour materially exceeds normal product-earned GE without a hard лимит, reduce game emission or raise relevant sink prices.
+Если постоянный заработок GE в мини-игре за час выше обычного заработка от полезных операций QuRa без жёсткого ограничения, следует уменьшить эмиссию игры или пересмотреть цены.
 
-## 2.2. Production GE accrual formula from QuRa code
+## 2.2. Формула начисления GE из реального кода QuRa
 
-Current QuRa backend implements operation GE in `app/services/eggs.py`.
+Начисление GE за операции реализовано в серверном коде `app/services/eggs.py`.
 
 Для подтверждённых операций поддерживаемых видов:
 
@@ -83,16 +83,16 @@ Current QuRa backend implements operation GE in `app/services/eggs.py`.
 
 Текущие значения по умолчанию:
 - `eggs_rate_pct = 1` → **1% of RUB amount in GE**;
-- `eggs_fact = 10` → **+10 GE** bonus for an eligible operation;
-- `eggs_fact_min_rub = 100` → fact bonus only from **100 ₽**;
+- `eggs_fact = 10` → **+10 GE** бонус за квалифицирующую операцию;
+- `eggs_fact_min_rub = 100` → бонус за факт операции только от **100 ₽**;
 - `eggs_fact_daily_max = 10` → at most **10 fact bonuses per Moscow day**.
 
 Бонус +10 GE за факт операции не начисляется, если:
-- same payee already received a fact-bonus operation from this user in the previous 24 hours;
+- за последние 24 часа уже была операция с бонусом за факт тому же получателю;
 - ежедневный fact-bonus limit is exhausted.
 
 После исчерпания лимита или повторного получателя:
-- the 1% amount-based GE still applies.
+- начисление 1% GE от суммы сохраняется.
 
 В текущем backend поддерживаются следующие типы операций:
 - QR payment;
@@ -112,7 +112,7 @@ Current QuRa backend implements operation GE in `app/services/eggs.py`.
 
 Формула и лимиты управляются серверными настройками и могут изменяться через конфигурацию или админку.
 
-## 2.3. Referral GE — production rule
+## 2.3. Партнёрские GE — действующее правило
 
 Актуальные уровни партнёрской программы:
 - Level 1: **10%**
