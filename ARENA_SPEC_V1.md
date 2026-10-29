@@ -3,7 +3,7 @@
 **Статус:** рабочая продуктовая спецификация / основной источник истины по боевой системе Arena  
 **Дата:** 29.10.2026  
 **Основание:** QuRa Game Bible v1 + решения, проверенные на интерактивном прототипе Arena 3×3  
-**Область:** Battle Engine, действия, режимы, характеристики, персонажи, аксессуары, buffs, Battle Power, online/async/bot, экономика входа, таймеры, чат, летопись и социальные функции.
+**Область:** Battle Engine, действия, режимы, характеристики, персонажи, аксессуары, бафы, Боевая сила, online/асинхронный/bot, экономика входа, таймеры, чат, летопись и социальные функции.
 
 > Если этот документ противоречит старому Arena-разделу Game Bible, по механике боя приоритет имеет Arena Spec. Game Bible остаётся источником истины по общей игровой системе QuRa.
 
@@ -34,9 +34,9 @@ Arena должна создавать не «автоматическое сра
 - чтение поведения соперника;
 - позиционирование;
 - работа с численным большинством/меньшинством;
-- накопление Special;
+- накопление Особый приём;
 - экипировка;
-- tactical buffs;
+- tactical бафы;
 - риск;
 - социальное взаимодействие;
 - литературная история боя.
@@ -44,18 +44,18 @@ Arena должна создавать не «автоматическое сра
 Arena должна давать реальное применение:
 
 - HP;
-- Attack;
-- Defense;
-- Speed;
-- Maneuver;
-- Special;
-- Shield;
-- Heal;
-- Special charge;
-- buffs/debuffs;
+- Атака;
+- Защита;
+- Скорость;
+- Манёвр;
+- Особый приём;
+- Щит;
+- Лечение;
+- Особый приём charge;
+- бафы/debuffs;
 - аксессуарам;
 - комплектам;
-- Arena consumables.
+- Arena расходники.
 
 **LOCKED:** в QuRa не должно существовать combat-stat, который показывается на предмете, но не участвует ни в одном реальном расчёте Battle Engine.
 
@@ -80,17 +80,17 @@ Arena должна давать реальное применение:
 Тип определяет:
 
 - базовые stats;
-- Maneuver;
-- Special;
+- Манёвр;
+- Особый приём;
 - character-specific effects;
-- native gear;
+- native экипировка;
 - set synergies.
 
 Личное имя не влияет на механику.
 
 ## 2.1. Герб команды
 
-В live Arena игрок выбирает герб команды.
+В живой Arena игрок выбирает герб команды.
 
 Примеры доступных гербов прототипа:
 
@@ -167,9 +167,9 @@ Arena должна давать реальное применение:
 - действие;
 - при необходимости цель.
 
-Attack / Maneuver / Special требуют живую цель.
+Атака / Манёвр / Особый приём требуют живую цель.
 
-Defense цели не требует.
+Защита цели не требует.
 
 Можно:
 
@@ -189,10 +189,10 @@ Defense цели не требует.
 
 - живых бойцов;
 - HP;
-- Shield;
-- Special charge;
+- Щит;
+- Особый приём charge;
 - временные statuses;
-- buffs;
+- бафы;
 - позиции;
 - доступные actions/targets.
 
@@ -229,7 +229,7 @@ Battle Engine рассчитывает весь раунд.
 - эффекты;
 - победителей столкновений;
 - новый HP;
-- Special charge;
+- Особый приём charge;
 - deaths;
 - team score;
 - литературную летопись.
@@ -248,10 +248,10 @@ Battle Engine рассчитывает весь раунд.
 
 У каждой живой курочки каждый раунд одно действие из четырёх:
 
-1. ⚔️ Attack
-2. 🛡️ Defense
-3. 🎯 Maneuver
-4. ✨ Special
+1. ⚔️ Атака
+2. 🛡️ Защита
+3. 🎯 Манёвр
+4. ✨ Особый приём
 
 ---
 
@@ -259,36 +259,36 @@ Battle Engine рассчитывает весь раунд.
 
 Основной психологический треугольник:
 
-**Attack > Maneuver**  
-**Maneuver > Defense**  
-**Defense > Attack**
+**Атака > Манёвр**  
+**Манёвр > Защита**  
+**Защита > Атака**
 
 Это не единственный фактор, но базовая структура mind-game.
 
-## 7.1. Attack vs Maneuver
+## 7.1. Атака vs Манёвр
 
-Attack ловит бойца во время подготовки Maneuver.
+Атака ловит бойца во время подготовки Манёвр.
 
-В prototype balance Attack получает усиленный коэффициент урона.
+В prototype balance Атака получает усиленный коэффициент урона.
 
-## 7.2. Maneuver vs Defense
+## 7.2. Манёвр vs Защита
 
-Defense ждёт прямой удар.
+Защита ждёт прямой удар.
 
-Maneuver обходит обычный блок и реализует character-specific эффект.
+Манёвр обходит обычный блок и реализует character-specific эффект.
 
-## 7.3. Defense vs Attack
+## 7.3. Защита vs Атака
 
-Defense существенно уменьшает прямой Attack и создаёт контратаку.
+Защита существенно уменьшает прямой Атака и создаёт контратаку.
 
-## 7.4. Special
+## 7.4. Особый приём
 
-Special находится поверх треугольника.
+Особый приём находится поверх треугольника.
 
-Defense обычно снижает его прямой эффект, но:
+Защита обычно снижает его прямой эффект, но:
 
 - не обязательно отменяет secondary effect;
-- не всегда полностью останавливает heal/shield/debuff;
+- не всегда полностью останавливает лечение/щит/debuff;
 - конкретное поведение зависит от персонажа.
 
 ---
@@ -303,47 +303,47 @@ HP = 0 → курочка погибает/выбывает.
 
 Аксессуары могут давать HP только потому, что HP реально участвует в survivability.
 
-## 8.2. Attack
+## 8.2. Атака
 
-Определяет силу обычной Attack и может участвовать в отдельных derived effects.
+Определяет силу обычной Атака и может участвовать в отдельных derived effects.
 
-Prototype formula:
+Формула прототипа:
 
 `BaseDamage = max(5, (20 + 1.15 × ATK - 0.72 × DEF) × multiplier)`
 
 **PROTOTYPE BALANCE.**
 
-Attack не обязан усиливать каждый Maneuver и каждый Special.
+Атака не обязан усиливать каждый Манёвр и каждый Особый приём.
 
-## 8.3. Defense
+## 8.3. Защита
 
-Уменьшает обычный Attack damage и участвует в counter damage.
+Уменьшает обычный Атака урон и участвует в counter урон.
 
-Prototype counter:
+Формула контратаки в прототипе:
 
 `CounterDamage ≈ 15 + 0.45 × defender.DEF - 0.18 × attacker.DEF`
 
 **PROTOTYPE BALANCE.**
 
-Defense не является универсальной защитой от всего.
+Защита не является универсальной защитой от всего.
 
 Это важно:
 
-- Maneuver специально умеет обходить Defense action;
-- Special имеет собственную логику;
-- Shield — отдельный слой.
+- Манёвр специально умеет обходить Защита action;
+- Особый приём имеет собственную логику;
+- Щит — отдельный слой.
 
-## 8.4. Speed
+## 8.4. Скорость
 
-Speed должна давать тактическое преимущество, но **не становиться абсолютным god-stat**.
+Скорость должна давать тактическое преимущество, но **не становиться абсолютным god-stat**.
 
 В текущем prototype:
 
-- Attack × Attack → более быстрый получает небольшой бонус;
-- Maneuver × Maneuver → более быстрый получает преимущество;
-- JRPG prototype также сортирует действия по Speed.
+- Атака × Атака → более быстрый получает небольшой бонус;
+- Манёвр × Манёвр → более быстрый получает преимущество;
+- JRPG prototype также сортирует действия по Скорость.
 
-### OPEN: Speed и отмена уже выбранного действия
+### OPEN: Скорость и отмена уже выбранного действия
 
 Перед production надо решить:
 
@@ -351,12 +351,12 @@ Speed должна давать тактическое преимущество,
 
 Предпочтительное направление:
 
-> скрыто выбранные действия раунда должны считаться зафиксированными; Speed влияет на качество/инициативу столкновения, но не должен автоматически превращаться в «убил раньше — враг вообще не походил».
+> скрыто выбранные действия раунда должны считаться зафиксированными; Скорость влияет на качество/инициативу столкновения, но не должен автоматически превращаться в «убил раньше — враг вообще не походил».
 
 Причина:
 
-- иначе Speed резко доминирует над HP/Attack/Defense;
-- аксессуары +Speed становятся непропорционально сильными;
+- иначе Скорость резко доминирует над HP/Атака/Защита;
+- аксессуары +Скорость становятся непропорционально сильными;
 - мета упрощается до speed race.
 
 Это решение должно быть закрыто симуляцией.
@@ -365,66 +365,66 @@ Speed должна давать тактическое преимущество,
 
 ## 8.5. Уровень курочки и боевая сила
 
-**Рекомендуемая PROTOTYPE BALANCE модель:** между L4 и L20 HP/Attack/Defense получают суммарный прирост около 25–30%, Speed — меньший. Постоянные надбавки входят в Battle Power. Сначала симуляцией проверить, что gear остаётся главным инструментом build. Альтернатива: уровень открывает предметы, но сам не усиливает бой. До численной симуляции модель не считается LOCKED.
+**Рекомендуемая PROTOTYPE BALANCE модель:** между L4 и L20 HP/Атака/Защита получают суммарный прирост около 25–30%, Скорость — меньший. Постоянные надбавки входят в Боевая сила. Сначала симуляцией проверить, что экипировка остаётся главным инструментом build. Альтернатива: уровень открывает предметы, но сам не усиливает бой. До численной симуляции модель не считается LOCKED.
 
-# 9. Shield
+# 9. Щит
 
-Shield — временный запас защиты поверх HP.
+Щит — временный запас защиты поверх HP.
 
 Порядок prototype:
 
-1. входящий damage сначала снимает Shield;
+1. входящий урон сначала снимает Щит;
 2. остаток снимает HP.
 
-Shield не является Defense stat.
+Щит не является Защита stat.
 
 Источники:
 
 - Ряба;
-- buffs;
-- gear effects;
-- future sets.
+- бафы;
+- экипировка effects;
+- будущий sets.
 
 ---
 
-# 10. Heal
+# 10. Лечение
 
-Heal восстанавливает HP, но не выше max HP.
+Лечение восстанавливает HP, но не выше max HP.
 
-Heal может быть:
+Лечение может быть:
 
 - instant;
-- частью Maneuver;
-- частью Special;
+- частью Манёвр;
+- частью Особый приём;
 - buff effect;
-- gear modifier.
+- экипировка modifier.
 
 ---
 
-# 11. Special Charge
+# 11. Особый приём Charge
 
-Каждая курочка имеет Special meter:
+Каждая курочка имеет Особый приём meter:
 
 **0–100.**
 
-Special доступен при 100.
+Особый приём доступен при 100.
 
 После применения заряд сбрасывается.
 
-Prototype charge model:
+Модель зарядки в прототипе:
 
 - выигранное столкновение: +35;
 - проигранное: +15;
 - нейтральное: +20;
-- Defense в JRPG prototype: +18.
+- Защита в JRPG prototype: +18.
 
 **PROTOTYPE BALANCE.**
 
 Открытые вопросы:
 
 - единая ли таблица для всех режимов;
-- может ли gear изменять charge gain;
-- есть ли hard cap на charge modifiers;
+- может ли экипировка изменять получение заряда;
+- есть ли hard лимит на charge modifiers;
 - сколько charge даёт участие сразу в нескольких столкновениях.
 
 ---
@@ -437,55 +437,55 @@ Prototype charge model:
 
 ## 12.1. Ряба
 
-Prototype stats:
+Характеристики прототипа:
 
 - HP 108
 - ATK 24
 - DEF 21
 - SPD 18
 
-Maneuver — **Скорлупа**
+Манёвр — **Скорлупа**
 
-- 24 damage;
-- +10 Shield.
+- 24 урон;
+- +10 Щит.
 
-Narrative:
+Литературное описание:
 
 Ряба разбивает золотую скорлупу крылом; мелкие острые осколки летят в противника, крупные остаются вокруг неё как броня.
 
-Special — **Золотая скорлупа**
+Особый приём — **Золотая скорлупа**
 
-Prototype:
+В прототипе:
 
-- ~25 damage;
-- +18 Shield;
-- против Defense ~11 damage и +14 Shield.
+- ~25 урон;
+- +18 Щит;
+- против Защита ~11 урон и +14 Щит.
 
 Роль:
 
-- sustain;
-- comeback;
+- выживаемость;
+- возвращение в бой;
 - 1×N потенциал;
-- shield.
+- щит.
 
 ## 12.2. Боевик
 
-Stats:
+Характеристики:
 
 - HP 112
 - ATK 26
 - DEF 23
 - SPD 14
 
-Maneuver — **Провокация**
+Манёвр — **Провокация**
 
-- 25 damage;
-- следующая Attack +18%.
+- 25 урон;
+- следующая Атака +18%.
 
-Special — **Ответочка**
+Особый приём — **Ответочка**
 
-- ~46 damage;
-- Defense значительно режет прямой удар.
+- ~46 урон;
+- Защита значительно режет прямой удар.
 
 Роль:
 
@@ -495,21 +495,21 @@ Special — **Ответочка**
 
 ## 12.3. Дурочка
 
-Stats:
+Характеристики:
 
 - HP 102
 - ATK 24
 - DEF 17
 - SPD 26
 
-Maneuver — **Финт**
+Манёвр — **Финт**
 
-- 31 damage;
-- следующая Attack +20%.
+- 31 урон;
+- следующая Атака +20%.
 
-Special — **Авось!**
+Особый приём — **Авось!**
 
-Prototype RNG:
+Вероятности прототипа:
 
 - 10% → 0;
 - 65% → ~43;
@@ -519,77 +519,77 @@ Prototype RNG:
 
 - speed;
 - unpredictability;
-- risk/reward.
+- risk/награда.
 
 ## 12.4. Профессор
 
-Stats:
+Характеристики:
 
 - HP 102
 - ATK 25
 - DEF 19
 - SPD 22
 
-Maneuver — **Анализ**
+Манёвр — **Анализ**
 
-- 26 damage;
-- -18 Special charge цели.
+- 26 урон;
+- -18 Особый приём charge цели.
 
-Special — **Расчёт**
+Особый приём — **Расчёт**
 
-- ~45 damage;
-- Defense снижает прямой эффект.
+- ~45 урон;
+- Защита снижает прямой эффект.
 
 Роль:
 
 - control;
 - charge denial;
-- precision.
+- точность.
 
 ## 12.5. Монах
 
-Stats:
+Характеристики:
 
 - HP 110
 - ATK 21
 - DEF 24
 - SPD 15
 
-Maneuver — **Медитация**
+Манёвр — **Медитация**
 
-- 24 damage;
-- heal до 12 HP.
+- 24 урон;
+- лечение до 12 HP.
 
-Special — **Благодать**
+Особый приём — **Благодать**
 
-- heal до 27 HP себе;
-- ~18 damage цели.
+- лечение до 27 HP себе;
+- ~18 урон цели.
 
 Роль:
 
-- sustain;
-- heal;
+- выживаемость;
+- лечение;
 - attrition;
-- comeback.
+- возвращение в бой.
 
 ## 12.6. Гламурочка
 
-Stats:
+Характеристики:
 
 - HP 102
 - ATK 23
 - DEF 19
 - SPD 24
 
-Maneuver — **Позирование**
+Манёвр — **Позирование**
 
-- 27 damage;
-- следующая Attack цели -22%.
+- 27 урон;
+- следующая Атака цели -22%.
 
-Special — **Ослепительный выход**
+Особый приём — **Ослепительный выход**
 
-- ~41 damage;
-- следующая Attack цели -30%.
+- ~41 урон;
+- следующая Атака цели -30%.
 
 Роль:
 
@@ -603,15 +603,15 @@ Special — **Ослепительный выход**
 
 Arena уже использует следующие реальные effect families:
 
-- damage;
-- shield;
-- heal;
-- attack boost;
-- attack weaken;
-- special charge reduce;
+- урон;
+- щит;
+- лечение;
+- усиление Атаки;
+- ослабление Атаки;
+- заряд Особого приёма reduce;
 - RNG outcome.
 
-Это значит, что gear и buffs могут работать с этими семьями.
+Это значит, что экипировка и бафы могут работать с этими семьями.
 
 Нельзя добавлять новый эффект только потому, что он красиво называется.
 
@@ -619,14 +619,14 @@ Arena уже использует следующие реальные effect fam
 
 # 14. Урон и multipliers
 
-Prototype uses contextual multipliers.
+В прототипе используются коэффициенты, зависящие от ситуации.
 
 Примеры:
 
-- Attack vs Maneuver → примерно ×1.45;
-- Attack vs Attack при speed edge → примерно ×1.10;
-- Attack сквозь Special → примерно ×0.35;
-- Attack в Defense → примерно ×0.22.
+- Атака vs Манёвр → примерно ×1.45;
+- Атака vs Атака при speed edge → примерно ×1.10;
+- Атака сквозь Особый приём → примерно ×0.35;
+- Атака в Защита → примерно ×0.22.
 
 **PROTOTYPE BALANCE.**
 
@@ -635,8 +635,8 @@ Production числа должны пройти:
 - simulation;
 - matchup analysis;
 - average rounds;
-- 1×N comeback analysis;
-- gear sensitivity;
+- 1×N возвращение в бой analysis;
+- экипировка sensitivity;
 - buff sensitivity.
 
 ---
@@ -645,21 +645,21 @@ Production числа должны пройти:
 
 Столкновение может иметь:
 
-- winner A;
-- winner B;
+- победитель A;
+- победитель B;
 - neutral.
 
-Winner collision — не то же самое, что death.
+Победа в столкновении не обязательно означает гибель соперника.
 
 Можно:
 
 - выиграть столкновение, не убив;
 - проиграть столкновение и остаться в живых;
-- получить neutral при взаимном damage.
+- получить neutral при взаимном урон.
 
-Prototype fallback:
+Резервное правило прототипа:
 
-если разница фактически нанесённого damage больше ~5 HP, преимущество может присваиваться стороне с большим damage.
+если разница фактически нанесённого урон больше ~5 HP, преимущество может присваиваться стороне с большим урон.
 
 **PROTOTYPE BALANCE.**
 
@@ -676,13 +676,13 @@ Prototype fallback:
 
 Раунд выигрывает команда с большим числом побед в столкновениях.
 
-Round score:
+Счёт раунда:
 
 **2:1**
 
 При равенстве — team draw.
 
-Round win не завершает match автоматически.
+Победа в раунде не завершает бой автоматически.
 
 ---
 
@@ -694,7 +694,7 @@ Round win не завершает match автоматически.
 
 Возможен double knockout.
 
-Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
+Правила расчёта аренды при ничьей пока открыты — см. ECONOMY_MODEL.
 
 ---
 
@@ -707,16 +707,16 @@ Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
 - выбирает одно действие;
 - в «Стенке» оно работает во всех её столкновениях;
 - может правильно законтрить несколько одинаковых действий;
-- может применить Special;
-- может использовать comeback buff.
+- может применить Особый приём;
+- может использовать возвращение в бой buff.
 
 Это создаёт драматические 1×2 / 1×3 ситуации.
 
-Особенно сильные comeback identities:
+Особенно сильные возвращение в бой identities:
 
-- Ряба — Shield + Special;
-- Монах — heal/sustain;
-- Дурочка — high variance Special.
+- Ряба — Щит + Особый приём;
+- Монах — лечение/выживаемость;
+- Дурочка — high variance Особый приём.
 
 ---
 
@@ -728,7 +728,7 @@ Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
 
 ## JRPG
 
-Если выбранная цель умерла до отдельного позднего action resolution — production rule должен быть определён вместе со Speed decision.
+Если выбранная цель умерла до отдельного позднего action resolution — production rule должен быть определён вместе со Скорость decision.
 
 Варианты:
 
@@ -746,12 +746,12 @@ Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
 
 ## 20.1. Разрешённые базовые stats предметов
 
-Базовый combat gear использует:
+Базовый combat экипировка использует:
 
 - HP;
-- Attack;
-- Defense;
-- Speed.
+- Атака;
+- Защита;
+- Скорость.
 
 Это четыре основных numeric combat stats.
 
@@ -763,30 +763,30 @@ Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
 - Charisma;
 - Magic;
 - Luck stat;
-- Special Attack;
-- Special Defense;
+- Особый приём Атака;
+- Особый приём Защита;
 - Crit stat;
 - Accuracy;
 - Evasion.
 
 Если когда-нибудь появляется соответствующая реальная механика — это отдельное изменение Battle Engine.
 
-## 20.3. Advanced gear effects
+## 20.3. Advanced экипировка effects
 
 Редкие/родные/set items могут модифицировать существующие effects.
 
 Примеры:
 
-- Shield +N;
-- Heal +N;
-- Maneuver damage +%;
-- Special damage +%;
-- Special shield +N;
-- Special heal +N;
-- Special debuff +%;
-- Special charge gain +N;
-- enemy Special charge reduction +N;
-- next Attack boost +%;
+- Щит +N;
+- Лечение +N;
+- Манёвр урон +%;
+- Особый приём урон +%;
+- Особый приём щит +N;
+- Особый приём лечение +N;
+- Особый приём debuff +%;
+- Особый приём получение заряда +N;
+- enemy Особый приём уменьшение заряда +N;
+- next Атака boost +%;
 - weaken effect +%.
 
 Каждый эффект должен ссылаться на конкретный engine hook.
@@ -795,39 +795,39 @@ Rules for paid-match draw settlement — OPEN / ECONOMY_MODEL.
 
 Плохо:
 
-> Special +10
+> Особый приём +10
 
 Непонятно, что это значит для Монаха, Рябы и Боевика.
 
 Хорошо:
 
-> Special damage +5%  
-> Special heal +4 HP  
-> Special shield +3  
-> Special weaken +5%
+> Особый приём урон +5%  
+> Особый приём лечение +4 HP  
+> Особый приём щит +3  
+> Особый приём weaken +5%
 
 ---
 
-# 21. Native gear и sets
+# 21. Native экипировка и sets
 
-У каждого archetype может быть родная линейка gear.
+У каждого archetype может быть родная линейка экипировка.
 
 Native synergy должна:
 
 - усиливать характер персонажа;
-- не делать чужой gear бесполезным;
+- не делать чужой экипировка бесполезным;
 - не создавать mandatory single build.
 
 Пример:
 
 Ряба:
-- shield build;
-- HP sustain build;
-- aggressive Attack build.
+- щит build;
+- HP выживаемость build;
+- aggressive Атака build.
 
 Профессор:
 - charge control build;
-- precision build.
+- точность build.
 
 Гламурочка:
 - debuff build;
@@ -835,32 +835,32 @@ Native synergy должна:
 
 ---
 
-# 22. Battle Power
+# 22. Боевая сила
 
-Battle Power нужен для matchmaking.
+Боевая сила нужен для подбор соперника.
 
 Он учитывает только **постоянную силу**:
 
 - base stats;
-- level-derived permanent stats;
-- gear stats;
-- permanent set bonuses;
+- уровень-derived постоянный stats;
+- экипировка stats;
+- постоянный set bonuses;
 - разрешённые legacy modifiers.
 
 Не учитывает:
 
 - morale;
-- temporary Arena buffs;
-- tactical consumables;
+- временный Arena бафы;
+- tactical расходники;
 - Daily Event modifier;
 - текущий HP;
-- текущий Special charge.
+- текущий Особый приём charge.
 
 ## 22.1. BP weights
 
 Нельзя считать:
 
-> +1 HP = +1 BP = +1 Speed.
+> +1 HP = +1 BP = +1 Скорость.
 
 Вес каждого stat должен быть выведен через simulation:
 
@@ -870,7 +870,7 @@ Battle Power нужен для matchmaking.
 - survival;
 - first-action advantage.
 
-Особенно нужно проверить Speed.
+Особенно нужно проверить Скорость.
 
 ---
 
@@ -894,31 +894,31 @@ Battle Power нужен для matchmaking.
 
 # 24. Arena Buffs
 
-Buff system делится на:
+баф system делится на:
 
-1. Preparation Buff;
+1. Preparation баф;
 2. Tactical Consumable.
 
 Подробный каталог задаётся Game Bible §26 и будущим BUFF_CATALOG.
 
-## 24.1. Preparation Buff
+## 24.1. Preparation баф
 
 Активируется до боя.
 
 Примеры:
 
 - HP bonus;
-- Defense bonus;
-- Speed bonus;
-- Special modifier.
+- Защита bonus;
+- Скорость bonus;
+- Особый приём modifier.
 
 ## 24.2. Tactical Consumable
 
-Берётся в ограниченный Arena Buff Loadout.
+Берётся в ограниченный Arena баф Loadout.
 
 Рабочая гипотеза:
 
-- до 3 consumables в бой;
+- до 3 расходники в бой;
 - один consumable экземпляр — одно использование;
 - обычно не более одного activation buff за раунд.
 
@@ -929,7 +929,7 @@ Buff system делится на:
 - Battle;
 - Conditional.
 
-## 24.4. Buff targets
+## 24.4. баф targets
 
 - SELF_CHICKEN;
 - ALLY_CHICKEN;
@@ -940,25 +940,25 @@ Buff system делится на:
 
 ## 24.5. Approved effect hooks
 
-Buff может менять только существующую механику:
+баф может менять только существующую механику:
 
 - HP;
-- Attack;
-- Defense;
-- Speed;
-- Shield;
-- Heal;
-- Special charge;
+- Атака;
+- Защита;
+- Скорость;
+- Щит;
+- Лечение;
+- Особый приём charge;
 - action multiplier;
 - targetability;
 - action availability;
-- buffs/debuffs;
+- бафы/debuffs;
 - survival condition;
 - position.
 
 ---
 
-# 25. Ключевые tactical buffs
+# 25. Ключевые tactical бафы
 
 ## 25.1. Двойная сила
 
@@ -975,7 +975,7 @@ Comeback buff.
 
 ## 25.2. Неуязвимость
 
-Одна курочка не получает damage один раунд.
+Одна курочка не получает урон один раунд.
 
 Не защищает от системной «Молнии богов».
 
@@ -989,15 +989,15 @@ Comeback buff.
 
 ## 25.5. Боевой купол
 
-Team shield на один раунд.
+Team щит на один раунд.
 
 ## 25.6. Заряд
 
-Добавляет Special charge.
+Добавляет Особый приём charge.
 
 ## 25.7. Тишина
 
-Временно запрещает Special выбранной цели.
+Временно запрещает Особый приём выбранной цели.
 
 Hard-control; должен быть редким.
 
@@ -1009,7 +1009,7 @@ Hard-control; должен быть редким.
 
 ---
 
-# 26. Buff processing order
+# 26. баф processing order
 
 Production engine должен иметь жёсткий priority stack.
 
@@ -1022,7 +1022,7 @@ Production engine должен иметь жёсткий priority stack.
 5. hidden actions locked;
 6. action modifiers;
 7. collision resolution;
-8. on-hit/on-damage triggers;
+8. on-hit/on-урон triggers;
 9. survival triggers;
 10. end-round effects;
 11. consume item;
@@ -1039,13 +1039,13 @@ Production engine должен иметь жёсткий priority stack.
 - 3×3 / 3×2 / 2×1 / 1×3 и т.д.;
 - конкретных живых бойцов;
 - HP;
-- Shield;
+- Щит;
 - charge;
-- Special readiness;
+- Особый приём readiness;
 - mode;
 - positional pressure;
 - history patterns;
-- buffs;
+- бафы;
 - known debuffs.
 
 Запрещено выдавать нерелевантный совет.
@@ -1058,12 +1058,12 @@ Production engine должен иметь жёсткий priority stack.
 
 ## 27.1. 1×N hint strategy
 
-Для one-survivor state подсказка должна переходить в comeback mode.
+Для one-survivor state подсказка должна переходить в возвращение в бой mode.
 
 Примеры:
 
-- Ряба → shield/survival/Special;
-- Монах → heal/sustain;
+- Ряба → щит/survival/Особый приём;
+- Монах → лечение/выживаемость;
 - Боевик → provocation + finishing;
 - Дурочка → speed/RNG;
 - Профессор → charge denial;
@@ -1089,10 +1089,10 @@ Future paid buff/service: **Всевидящий**.
 
 если opponent выберет:
 
-- Attack;
-- Defense;
-- Maneuver;
-- Special.
+- Атака;
+- Защита;
+- Манёвр;
+- Особый приём.
 
 Показывается:
 
@@ -1100,8 +1100,8 @@ Future paid buff/service: **Всевидящий**.
 - predicted HP;
 - death;
 - double KO;
-- Shield/heal/debuff;
-- невозможность Special при charge < 100.
+- Щит/лечение/debuff;
+- невозможность Особый приём при charge < 100.
 
 ## 28.1. Wall
 
@@ -1123,7 +1123,7 @@ Future paid buff/service: **Всевидящий**.
 
 Future:
 
-- paid async feature;
+- paid асинхронный feature;
 - reveal intent/action одной defensive chicken;
 - strict limits;
 - GE sink.
@@ -1141,12 +1141,12 @@ Future:
 - HP;
 - stats;
 - status;
-- Special;
-- buffs;
+- Особый приём;
+- бафы;
 - expected outcomes;
 - выбирает математически лучший ход.
 
-Не читает фактически выбранный скрытый ход другого live player.
+Не читает фактически выбранный скрытый ход другого живой player.
 
 Отличается от Hint:
 
@@ -1195,7 +1195,7 @@ Future:
 ### Подбор
 
 1. Атакующий выбирает свою взрослую курочку L4+; приложение сообщает стоимость аренды и условия призов.
-2. Сервер случайно выбирает одну активную `ArenaDefenseSetup` без рейтинга/лиги/Glory.
+2. Сервер случайно выбирает одну активную `ArenaDefenseSetup` без рейтинга/лиги/Слава.
 3. Стартовый фильтр: `abs(attacker.level - defender.level) ≤ 2` (**PROTOTYPE BALANCE**), затем близость `BattlePower` (порог OPEN).
 4. Если нет кандидатов, окно уровней и допустимой боевой силы постепенно расширяется (конкретные интервалы и timeouts OPEN / PROTOTYPE BALANCE).
 5. При полном отсутствии подходящих игроков подставляется бот аналогичного уровня, **явно обозначенный как бот до списания аренды**; награда за победу над ним — только ячейка «Опыт» без продаваемой и эксклюзивной ячеек (**PROTOTYPE BALANCE**). Цена аренды должна быть показана до согласия; отказаться от такого боя можно без списания.
@@ -1206,13 +1206,13 @@ Future:
 `ArenaDefenseSetup.policy_code`:
 - **Агрессивная** — повышает вес Атаки и атакующих Манёвров;
 - **Осторожная** — чаще выбирает Защиту при риске выбывания;
-- **Хитрая** — учитывает последние открытые действия атакующего, заряд Special и возможности контр-действия.
+- **Хитрая** — учитывает последние открытые действия атакующего, заряд Особый приём и возможности контр-действия.
 
 Каждая политика задаёт распределение только легальных действий, использует seeded randomness; точные веса/порог HP — OPEN. AI-защитник не получает доступ к скрытому текущему действию атакующего до reveal.
 
 ### Награда и журнал защиты
 
-Выигрыш атакующего против реального защитника: стандартный Arena-сундук без гарантированного GE. Успешная защита реального игрока: **XP именно курочке-защитнику**, достижение «Неприступный курятник», с дневным cap, без GE и без сундука (**PROTOTYPE BALANCE**, вынесено на утверждение). Проигравший защитник ничего не теряет. Журнал показывает противника, ход, результат, летопись и XP/достижения; уведомление с подробностями.
+Выигрыш атакующего против реального защитника: стандартный Arena-сундук без гарантированного GE. Успешная защита реального игрока: **XP именно курочке-защитнику**, достижение «Неприступный курятник», с дневным лимит, без GE и без сундука (**PROTOTYPE BALANCE**, вынесено на утверждение). Проигравший защитник ничего не теряет. Журнал показывает противника, ход, результат, летопись и XP/достижения; уведомление с подробностями.
 
 ### Анти-фарм
 
@@ -1283,7 +1283,7 @@ Prototype examples:
 - те же команды;
 - те же позиции;
 - HP reset;
-- Special reset;
+- Особый приём reset;
 - statuses reset;
 - chronicle нового боя начинается заново;
 - chat может сохраняться.
@@ -1306,26 +1306,26 @@ Prototype examples:
 
 - actions;
 - HP before/after;
-- damage;
-- buffs;
+- урон;
+- бафы;
 - effects;
 - engine result.
 
 ## 39.1. Character-specific prose
 
-Каждый Maneuver/Special имеет свои action templates.
+Каждый Манёвр/Особый приём имеет свои action templates.
 
 Не:
 
-> «Attack поймал Maneuver».
+> «Атака поймал Манёвр».
 
 А:
 
 > 🐺 Дурочка Мурочка начала безумный Финт, но 🌙 Боевик Петров не стал угадывать направление и пошёл напролом, сорвав подготовку прямым ударом.
 
-## 39.2. Buff narrative
+## 39.2. баф narrative
 
-Buff тоже обязан попадать в рассказ.
+баф тоже обязан попадать в рассказ.
 
 Пример:
 
@@ -1337,7 +1337,7 @@ Chronicle:
 
 - Copy;
 - Share;
-- potentially battle replay/link in future.
+- potentially battle replay/link in будущий.
 
 ---
 
@@ -1371,18 +1371,18 @@ Dead chicken:
 - removed from living targets;
 - affects positional reassignment.
 
-Chronicle must narrate death.
+Летопись обязательно описывает выбывание персонажа.
 
 ---
 
 # 42. Status effects
 
-Current prototype statuses:
+Текущие статусы прототипа:
 
-- Shield;
-- next Attack boost;
-- next Attack weaken;
-- Special charge reduction.
+- Щит;
+- next Атака boost;
+- next Атака weaken;
+- Особый приём уменьшение заряда.
 
 Future effects can be added only with:
 
@@ -1398,39 +1398,39 @@ Future effects can be added only with:
 
 Every modifier needs:
 
-- source;
+- источник;
 - target;
 - duration;
 - stack group;
-- cap;
+- лимит;
 - priority.
 
-Default principle:
+Основной принцип:
 
-same-family effects should not stack infinitely.
+Эффекты одного семейства не могут складываться бесконечно.
 
-Use strongest or capped aggregation according to catalog.
+Используется сильнейший эффект либо сумма в пределах лимит по правилам каталога.
 
 ---
 
-# 44. Gear ↔ Buff boundary
+# 44. Экипировка ↔ баф boundary
 
-Gear:
+Экипировка:
 
-- permanent;
+- постоянный;
 - included in BP;
 - visible pre-battle or according to rules.
 
 Tactical consumable:
 
-- temporary;
+- временный;
 - not included in BP;
 - finite inventory;
 - activated during battle.
 
 Preparation buff:
 
-- temporary;
+- временный;
 - pre-battle;
 - not BP;
 - visible after match begins.
@@ -1439,18 +1439,18 @@ Preparation buff:
 
 # 45. Fairness and pay-to-win control
 
-Arena uses GE sinks, but paid tools must not collapse skill.
+Arena расходует GE, но платные инструменты не должны устранять значение навыка игрока.
 
-Requirements:
+Требования:
 
-- strong consumables obtainable through gameplay;
+- strong расходники obtainable through gameplay;
 - ranked allowlist/banlist possible;
 - usage caps;
 - no unlimited stacking;
 - effects visible when activated;
-- Scout banned in live PvP;
+- Scout banned in живой PvP;
 - Autobattle/Hint/All-Seeing cannot read hidden move;
-- matchmaking ignores temporary buffs in BP but server audits loadout.
+- подбор соперника ignores временный бафы in BP but server audits loadout.
 
 ---
 
@@ -1460,8 +1460,8 @@ Ranked:
 
 - recent opponent memory;
 - repeat-opponent coefficient;
-- daily/season caps where needed;
-- rating-difference reward scaling;
+- ежедневный/season caps where needed;
+- rating-difference награда scaling;
 - no manual selection of weak ranked opponent.
 
 ---
@@ -1509,7 +1509,7 @@ Same applies to:
 
 - hidden team pick before both ready;
 - private team chat;
-- future secret consumables if design allows them.
+- будущий secret расходники if design allows them.
 
 ---
 
@@ -1539,18 +1539,18 @@ Every battle should log:
 - format;
 - team composition;
 - stats;
-- gear;
-- buffs/loadout;
+- экипировка;
+- бафы/loadout;
 - actions per round;
 - targets;
-- damage;
-- heal;
+- урон;
+- лечение;
 - shields;
 - charge;
 - deaths;
 - collision winners;
 - round winners;
-- battle winner;
+- battle победитель;
 - duration;
 - timeout;
 - hint use;
@@ -1571,12 +1571,12 @@ Core metrics:
 - mode advantage;
 - average rounds;
 - average battle duration;
-- 3×1 comeback rate;
-- 2×1 comeback rate;
-- Special usage rate;
+- 3×1 возвращение в бой rate;
+- 2×1 возвращение в бой rate;
+- Особый приём usage rate;
 - action distribution;
-- Speed sensitivity;
-- gear stat marginal value;
+- Скорость sensitivity;
+- экипировка stat marginal value;
 - buff marginal value;
 - timeout rate;
 - surrender/quit rate.
@@ -1591,33 +1591,33 @@ Design intent:
 
 - no single archetype universally best;
 - no single action dominates;
-- no mandatory gear stat;
+- no mandatory экипировка stat;
 - no mandatory buff;
-- 1×3 comeback possible but uncommon;
+- 1×3 возвращение в бой possible but uncommon;
 - 3×1 remains advantaged but not guaranteed;
 - fights brisk enough to remain readable;
-- Special meaningful but not automatic win;
+- Особый приём meaningful but not automatic win;
 - prepared player can beat slightly stronger raw stats through decisions.
 
 ---
 
-# 53. Known prototype risk: Speed
+# 53. Known prototype risk: Скорость
 
 Highest-priority balance question.
 
 Current JRPG ordering can cause a faster unit to kill a slower one before slower action executes.
 
-This may make Speed disproportionately valuable.
+This may make Скорость disproportionately valuable.
 
-Before gear catalog finalization:
+Before экипировка catalog finalization:
 
 1. simulate current sequential model;
 2. simulate simultaneous-commit model;
-3. compare win-rate elasticity of +1 Speed;
+3. compare win-rate elasticity of +1 Скорость;
 4. choose model;
 5. freeze BP weight.
 
-Until this is closed, **do not finalize Speed values on production gear.**
+Until this is closed, **do not finalize Скорость values on production экипировка.**
 
 ---
 
@@ -1625,10 +1625,10 @@ Until this is closed, **do not finalize Speed values on production gear.**
 
 Wall 1×N is strategically interesting but must be checked for:
 
-- duplicated Special effect;
-- duplicated heal;
-- duplicated shield gain;
-- duplicated charge gain;
+- duplicated Особый приём effect;
+- duplicated лечение;
+- duplicated щит gain;
+- duplicated получение заряда;
 - boost consumption;
 - weaken consumption.
 
@@ -1647,11 +1647,11 @@ Focus fire can create strong snowball.
 Test:
 
 - 3→1 kill probability round 1;
-- survivability with Defense;
+- survivability with Защита;
 - target retarget;
 - action cancellation;
-- Speed interaction;
-- protection/intercept buffs.
+- Скорость interaction;
+- protection/intercept бафы.
 
 ---
 
@@ -1662,7 +1662,7 @@ Every combat property in GEAR_CATALOG must answer:
 1. Which engine variable/effect does it change?
 2. At what stage?
 3. Does it affect BP?
-4. What is its cap?
+4. What is its лимит?
 5. How does it stack?
 6. Is it visible to opponent?
 7. Does it work in all modes?
@@ -1678,8 +1678,8 @@ Every BUFF_CATALOG entry must define:
 
 - id;
 - name;
-- rarity;
-- source;
+- редкость;
+- источник;
 - target scope;
 - activation window;
 - duration;
@@ -1687,7 +1687,7 @@ Every BUFF_CATALOG entry must define:
 - effect;
 - engine hook;
 - stacking;
-- cap;
+- лимит;
 - visibility;
 - ranked legality;
 - consumable behavior;
@@ -1695,11 +1695,11 @@ Every BUFF_CATALOG entry must define:
 
 ---
 
-# 58. Rules for Maneuver/Special design
+# 58. Rules for Манёвр/Особый приём design
 
 New archetype cannot ship with generic:
 
-> +X damage.
+> +X урон.
 
 It should have character identity.
 
@@ -1715,18 +1715,18 @@ Process:
 
 # 59. Open decisions before Arena production
 
-1. Final Speed resolution model.
+1. Final Скорость resolution model.
 2. Retarget after death in JRPG.
-3. Special charge exact table.
+3. Особый приём charge exact table.
 4. Multi-collision once-per-action vs once-per-collision effects.
 5. Draw settlement.
 6. Paid Arena cancellation/refund.
 7. BP formula/weights.
 8. Morale formula.
-9. Gear caps.
-10. Buff loadout exact size.
-11. Buff ranked allowlist.
-12. 4-player reward split.
+9. Экипировка caps.
+10. баф loadout exact size.
+11. баф ranked allowlist.
+12. 4-player награда split.
 13. surrender rules.
 14. disconnect grace period.
 15. seven-founder Arena definition.
@@ -1760,13 +1760,13 @@ When prototype discovers a better rule:
 
 The complete v1 documentation package is now created.
 
-See **DOCUMENTATION_INDEX.md** for reading order and source-of-truth mapping.
+See **DOCUMENTATION_INDEX.md** for reading order and источник-of-truth mapping.
 
 Arena-related follow-up is no longer another document creation step. The next work is to close the explicit OPEN balance/implementation decisions through simulation and production engineering:
-- Speed resolution;
+- Скорость resolution;
 - multi-collision semantics;
 - JRPG retarget;
-- Special charge table;
+- Особый приём charge table;
 - BP weights;
 - draw/refund settlement.
 
