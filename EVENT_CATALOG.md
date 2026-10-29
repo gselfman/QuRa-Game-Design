@@ -3,7 +3,7 @@
 **Статус:** content framework for Daily Events  
 **Целевой объём:** 60–80 базовых событий и их варианты.
 
-## 0. Global rule
+## 0. Общее правило
 
 Ежедневно для всех пользователей выбирается одно общее событие.
 
@@ -11,17 +11,17 @@
 - Gifts;
 - counters;
 - mitigation;
-- collection state.
+- состояния коллекции.
 
 Событие дня никогда не меняет Крутость.
 
 ## 1. Разрешение order for negative event
 
-**Новый обязательный первый шаг:** игрок выбирает один из двух вариантов (`options[2]`), каждый вариант определяет свой исход, Lucky Flip и доступные Дары. Затем Lucky Flip → hard counter → mitigation → final временный effect. Выбор до конца московских суток; A — явно обозначенный default.
+**Новый обязательный первый шаг:** игрок выбирает один из двух вариантов (`options[2]`), каждый вариант определяет свой исход, Lucky Flip и доступные Дары. Затем Lucky Flip → полное противодействие → mitigation → final временный effect. Выбор до конца московских суток; A — явно обозначенный default.
 
-1. global event selected
+1. выбрано глобальное событие
 2. Lucky Flip
-3. hard counter
+3. полное противодействие
 4. mitigation
 5. final временный modifier
 
@@ -30,8 +30,8 @@
 - weather
 - threats
 - food/harvest
-- outside world
-- internal Coop
+- внешний мир
+- события внутри Курятника
 - rare/magical
 
 ## 3. Поля события
@@ -44,22 +44,22 @@
 - редкость
 - задержка повторного применения
 - negative/positive
-- base narrative
-- narrative variants
-- base effect
-- Lucky Flip alternative
-- hard counters
-- mitigation hooks
+- основной текст истории
+- варианты повествования
+- базовый эффект
+- положительный вариант Lucky Flip
+- полное противодействиеs
+- механизмы смягчения
 - duration
-- affected systems
-- feature gates
+- затронутые системы
+- ограничитель доступностиs
 
 ## 4. Разрешённые системы воздействия
 
-- passive laying
+- пассивная яйценоскость
 - game магазин/discount
 - XP bonus
-- drop chance
+- вероятность выпадения
 - Arena временный stats
 - tickets/награды
 - будущий explicit systems
@@ -67,7 +67,7 @@
 Not:
 - постоянный Крутость
 - постоянный экипировка stat
-- financial transaction status
+- статус финансовой операции
 
 ## 5. Примеры погоды
 
@@ -75,7 +75,7 @@ Not:
 Base:
 Курятник подтопило.
 Effect:
-passive laying -10% hypothesis.
+пассивная яйценоскость -10% hypothesis.
 
 Lucky Flip:
 после дождя вылезли черви → positive laying +5%.
@@ -117,7 +117,7 @@ Counter:
 Защита Боевика.
 
 ### STRAY_DOG
-Threat event.
+Событие категории «угроза».
 Вариант исхода:
 fight off / lost supplies / found friend будущий.
 
@@ -176,15 +176,15 @@ Mystery временный modifier.
 
 ## 11. Примеры Lucky Flip
 
-Negative → separate positive story, not merely zero.
+Негативный исход превращается в самостоятельную положительную историю, а не просто отменяется.
 
 ### Rain
-Flood → worms feast.
+Подтопление → появились черви → пир для курочек.
 
-### Broken cart
+### Сломанная телега
 Поставка задержалась → под телегой найден редкий предмет.
 
-### Fox tracks
+### Лисьи следы
 Угроза → прячась, курочки находят тайник.
 
 ### Wind
@@ -197,7 +197,7 @@ Roof damaged → old hidden сундук exposed.
 Дары соответствующих семейств могут полностью предотвратить событие.
 
 Boevik:
-- threat protection.
+- защита от угроз.
 
 В будущем новые курочки/постройки смогут противодействовать:
 - weather;
@@ -232,11 +232,11 @@ Suggested:
 
 ## 15. Объём контента
 
-Target library:
+Целевой объём каталога:
 - 20 weather/food
 - 15 threat
 - 15 internal
-- 15 outside world
+- 15 внешний мир
 - 10 rare/magical
 
 Категории могут пересекаться; общий объём 60–80.
@@ -244,15 +244,15 @@ Target library:
 ## 16. Варианты повествования
 
 Каждое базовое событие:
-- 2–3 wording variants;
-- character reaction hooks.
+- 2–3 варианта формулировок;
+- реакции персонажей.
 
 Смена формулировки не меняет механику, если вариант специально не определён кодом.
 
 ## 17. Интеграция наград
 
 События могут выдавать:
-- GE small capped
+- малое начисление GE под cap
 - сундук
 - buff
 - ticket
@@ -262,7 +262,7 @@ Target library:
 
 Все результаты подтверждаются сервером.
 
-## 18. Arena interaction
+## 18. Взаимодействие с Arena
 
 Если событие дня влияет на Arena:
 - временный;
@@ -275,13 +275,13 @@ Avoid large ежедневный modifier that invalidates подбор сопе
 ## 19. Аналитика событий
 
 Track:
-- event shown;
+- событие показано;
 - base vs flip;
 - counter источник;
 - mitigation;
-- final effect;
+- итоговый эффект;
 - награда;
-- engagement reaction.
+- реакция пользователя.
 
 ## 20. Доступность функций
 
@@ -295,7 +295,7 @@ Track:
 3. category
 4. редкость
 5. story
-6. base effect
+6. базовый эффект
 7. negative?
 8. Lucky Flip
 9. counter
@@ -303,7 +303,7 @@ Track:
 11. duration
 12. награда
 13. variants
-14. analytics tags
+14. метки аналитики
 
 ## 22. Правило внедрения
 
