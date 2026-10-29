@@ -1,4 +1,4 @@
-# QuRa Reward Tables v1
+# QuRa — таблицы наград v1
 
 **Статус:** reward framework + initial hypotheses  
 **Важно:** все числовые вероятности/amounts, если не помечены LOCKED, требуют Economy validation.
@@ -12,7 +12,7 @@
 - progression-aware;
 - anti-arbitrage.
 
-## 1. Reward types
+## 1. Типы наград
 
 - XP
 - GE
@@ -124,7 +124,7 @@ If capacity full:
 
 Chicken/egg overflow uses «В гостях» flow.
 
-## 9. Mini-game rewards
+## 9. Мини-игра rewards
 
 Each game has separate table.
 
@@ -260,11 +260,11 @@ Every GE reward:
 - ledger record
 - cap context
 
-## 20. Reward correlation
+## 20. Идентификатор награды
 
 Use correlation_id to enforce exactly-once reward delivery.
 
-## 21. Random roll
+## 21. Случайный выбор награды
 
 Server:
 - chooses table version;
@@ -275,7 +275,7 @@ Server:
 
 Client only animates.
 
-## 22. Paid chest disclosure
+## 22. Раскрытие шансов платного сундука
 
 Show:
 - price;
