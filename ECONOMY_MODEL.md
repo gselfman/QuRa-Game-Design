@@ -801,3 +801,6 @@ Need numeric tables later for:
 6. Real-value GE emissions always capped/budgeted.
 7. Server owns reward roll.
 
+## 38. Approved LiveOps monetization expansion
+
+See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
