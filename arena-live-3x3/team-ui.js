@@ -32,11 +32,59 @@ function specialDesc(c){
  if(c.id==='m')return'<b>Что происходит:</b> Монах собирает Благодать и на короткое время будто успокаивает само поле боя. Он восстанавливает собственные силы, а противницу накрывает ответная волна этой энергии.<br><b>Эффект:</b> восстановление до 27 HP себе + около 18 урона цели. Защита цели снижает урон примерно до 9, но лечение Монаха сохраняется.';
  return'<b>Что происходит:</b> Гламурочка устраивает Ослепительный выход — настолько эффектный и наглый, что соперница теряет темп и на следующую атаку ей уже не хватает концентрации.<br><b>Эффект:</b> около 41 урона + следующая Атака цели слабее на 30%. Защита снижает прямой урон примерно до 20, но эффект сбитой концентрации остаётся.';
 }
-function actionHelp(c,move,target){if(!move)return'<div class="actionhelp muted">Выберите действие — здесь появится объяснение последствий.</div>';var b=expectedBase(c,target),name=target?target.n:'соперница';if(move==='attack')return'<div class="actionhelp"><b>⚔️ Выбрана Атака</b><p>Базовый удар по '+name+(b?' ≈ <b>'+b+' HP</b>.':' зависит от её Защиты.')+'</p><ul><li>против ⚔️ Атаки — обе получают урон; более быстрая получает небольшой бонус;</li><li>против 🛡️ Защиты — проходит лишь слабая часть удара, затем вы получаете контратаку;</li><li>против 🎯 Манёвра — <b>лучший сценарий</b>: Атака усиливается примерно ×1,45;</li><li>против ✨ Special — часть удара проходит, но Special соперницы не отменяется.</li></ul></div>';if(move==='defend')return'<div class="actionhelp"><b>🛡️ Выбрана Защита</b><p>Курочка не выбирает цель и готовится принять входящие действия.</p><ul><li>против ⚔️ Атаки — <b>лучший сценарий</b>: почти весь удар блокируется и вы контратакуете;</li><li>против 🛡️ Защиты — обе стороны теряют ход без урона;</li><li>против 🎯 Манёвра — <b>плохой сценарий</b>: Манёвр обходит блок и срабатывает полностью;</li><li>против ✨ Special — прямой урон Special уменьшается примерно вдвое.</li></ul></div>';if(move==='maneuver')return'<div class="actionhelp"><b>🎯 '+c.m+'</b><p>'+maneuverDesc(c)+'</p><ul><li>против 🛡️ Защиты — <b>лучший сценарий</b>: Манёвр проходит полностью;</li><li>против ⚔️ Атаки — опасно: Атака ловит вас во время подготовки;</li><li>против 🎯 Манёвра — преимущество у более быстрой курочки;</li><li>против ✨ Special — Манёвр срабатывает, но Special противника тоже может пройти.</li></ul></div>';return'<div class="actionhelp"><b>✨ '+c.x+'</b><p>'+specialDesc(c)+'</p><ul><li>против 🛡️ Защиты — эффект заметно слабее;</li><li>против остальных действий — Special проходит с полным прямым эффектом;</li><li>готовый Special виден сопернику, поэтому можно блефовать и вместо него выбрать Манёвр.</li></ul></div>'}
+function actionHelp(c,move,target){
+ if(!move)return'<details class="actionhelp"><summary>ℹ️ Что делает выбранное действие</summary><div class="muted">Сначала выберите Атаку, Защиту, Манёвр или Special.</div></details>';
+ var base=expectedBase(c,target),name=target?target.n:'соперница',title='',body='';
+ if(move==='attack'){
+   title='⚔️ Атака';
+   body='<p>Базовый удар по '+name+(base?' ≈ <b>'+base+' HP</b>.':' зависит от защиты цели.')+'</p><ul><li>против ⚔️ Атаки — обмен ударами, скорость даёт небольшой перевес;</li><li>против 🛡️ Защиты — большая часть удара блокируется, вы рискуете получить контратаку;</li><li>против 🎯 Манёвра — <b>лучший сценарий</b>: удар усиливается примерно ×1,45;</li><li>против ✨ Special — часть удара проходит, но Special не отменяется.</li></ul>';
+ }else if(move==='defend'){
+   title='🛡️ Защита';
+   body='<p>Курочка принимает защитную стойку. Цель не выбирается.</p><ul><li>против ⚔️ Атаки — <b>лучший сценарий</b>: блок + контратака;</li><li>против 🛡️ Защиты — никто не получает урон;</li><li>против 🎯 Манёвра — <b>опасно</b>: Манёвр обходит блок;</li><li>против ✨ Special — прямой урон Special заметно уменьшается.</li></ul>';
+ }else if(move==='maneuver'){
+   title='🎯 '+c.m;body='<p>'+maneuverDesc(c)+'</p><ul><li>против 🛡️ Защиты — Манёвр раскрывается полностью;</li><li>против ⚔️ Атаки — подготовку могут сорвать прямым давлением;</li><li>против 🎯 Манёвра — важна скорость;</li><li>против ✨ Special — ваш приём срабатывает, но Special тоже может пройти.</li></ul>';
+ }else{
+   title='✨ '+c.x;body='<p>'+specialDesc(c)+'</p><ul><li>против 🛡️ Защиты — прямой эффект слабее;</li><li>против остальных действий — Special проходит сильнее;</li><li>заряженный Special виден сопернику, поэтому сам факт готовности создаёт возможность для блефа.</li></ul>';
+ }
+ return'<details class="actionhelp" open><summary>'+title+' — описание эффекта</summary>'+body+'</details>';
+}
+function copyFighter(c){return JSON.parse(JSON.stringify(c))}
+function wallOpponents(c){
+ var pairs=pairings(S),op=ROLE===1?2:1,out=[];
+ pairs.forEach(function(p){if(ROLE===1&&p.a&&p.a.pos===c.pos&&p.b&&!p.b.dead)out.push(p.b);if(ROLE===2&&p.b&&p.b.pos===c.pos&&p.a&&!p.a.dead)out.push(p.a)});
+ return out.filter(function(x,i,a){return a.findIndex(function(y){return y.pos===x.pos})===i});
+}
+function previewTargets(c){
+ var op=ROLE===1?2:1;
+ return S.mode==='target'?(S.f[op]||[]).filter(function(x){return x&&!x.dead}):wallOpponents(c);
+}
+function previewOutcome(c,e,myMove,enemyMove){
+ if(enemyMove==='special'&&e.q<100)return{unavailable:true,text:'Special недоступен — заряд '+e.q+'/100'};
+ var mc=copyFighter(c),ec=copyFighter(e),r,myAfter,enemyAfter,win=false,lose=false;
+ try{
+  if(S.mode==='wall'){
+    if(ROLE===1){r=clash(mc,ec,myMove,enemyMove,.5);myAfter=r.after[0];enemyAfter=r.after[1];win=r.w===1;lose=r.w===2}
+    else{r=clash(ec,mc,enemyMove,myMove,.5);myAfter=r.after[1];enemyAfter=r.after[0];win=r.w===2;lose=r.w===1}
+  }else if(myMove==='defend'){
+    r=targetOutcome(ec,mc,enemyMove,'defend',.5);myAfter=r.after[1];enemyAfter=r.after[0];win=r.w===2;lose=r.w===1
+  }else{
+    r=targetOutcome(mc,ec,myMove,enemyMove,.5);myAfter=r.after[0];enemyAfter=r.after[1];win=r.w===1;lose=r.w===2
+  }
+ }catch(err){return{text:'прогноз недоступен: '+escHtml(err.message||err)}}
+ var verdict=enemyAfter<=0&&myAfter<=0?'💥 двойной нокаут':enemyAfter<=0?'💀 вы добиваете '+e.n:myAfter<=0?'☠️ ваша '+c.n+' погибнет':win?'✅ вы выигрываете столкновение':lose?'❌ вы проигрываете столкновение':'➖ без чистого победителя';
+ var suffix=(c.id==='f'&&myMove==='special')?' · «Авось!» вероятностный, показан средний сценарий':'';
+ return{text:verdict+' · '+c.n+' ❤️'+myAfter+' · '+e.n+' ❤️'+enemyAfter+suffix};
+}
+function clairvoyancePanel(c,myMove){
+ if(!clairvoyanceOn||!myMove)return'';
+ var targets=previewTargets(c);if(!targets.length)return'<div class="clairpanel">🔮 Нет доступных столкновений для прогноза.</div>';
+ var moves=['attack','defend','maneuver','special'];
+ return'<div class="clairpanel"><div class="clairtitle">🔮 Ясновидение — возможные исходы</div><div class="tiny">Прототип будущего бафа «Всевидящий». Прогноз считается тем же Battle Engine.</div>'+targets.map(function(e){return'<div class="clairtarget"><b>'+chickenLabel(e.n,ROLE===1?2:1)+' ❤️'+e.hp+'</b>'+moves.map(function(em){var p=previewOutcome(c,e,myMove,em),lbl=em==='attack'?'⚔️ Атака':em==='defend'?'🛡️ Защита':em==='maneuver'?'🎯 '+e.m:'✨ '+e.x;return'<div class="clairrow '+(p.unavailable?'muted':'')+'"><span>'+lbl+'</span><strong>'+p.text+'</strong></div>'}).join('')+'</div>'}).join('')+'</div>';
+}
 function targetPicker(c){if(S.mode!=='target')return'';var move=localMoves[c.pos],need=move&&move!=='defend';if(!need)return move==='defend'?'<div class="targetbox">🛡️ Защите цель не нужна.</div>':'<div class="targetbox muted">После выбора Атаки / Манёвра / Special выберите цель.</div>';var op=ROLE===1?2:1,targets=(S.f[op]||[]).filter(function(x){return x&&!x.dead});return'<div class="targetbox"><b>Цель:</b><div class="targetbuttons">'+targets.map(function(t){return'<button data-target-pos="'+c.pos+'" data-target="'+t.pos+'" class="'+(localTargets[c.pos]===t.pos?'on':'')+'">'+t.i+' '+t.n+' ❤️'+t.hp+'</button>'}).join('')+'</div></div>'}
 function currentTarget(c){if(S.mode!=='target')return autoTarget(c);var op=ROLE===1?2:1,pos=localTargets[c.pos];return (S.f[op]||[]).find(function(x){return x&&!x.dead&&x.pos===pos})||null}
 function autoTarget(c){var op=ROLE===1?2:1,a=S.f[op]||[],same=a[c.pos];if(same&&!same.dead)return same;for(var k=0;k<3;k++){var p=(c.pos+k)%3,t=a[p];if(t&&!t.dead)return t}return null}
-function moveButtons(c){var m=localMoves[c.pos],locked=S.p[ROLE].moved,target=currentTarget(c);return'<div class="moves">'+['attack','defend','maneuver','special'].map(function(x){var text=x==='attack'?'⚔️ Атака':x==='defend'?'🛡️ Защита':x==='maneuver'?'🎯 '+c.m:'✨ '+c.x;var dis=locked||(x==='special'&&c.q<100);return'<button data-pos="'+c.pos+'" data-move="'+x+'" class="'+(m===x?'on':'')+'" '+(dis?'disabled':'')+'>'+text+'</button>'}).join('')+'</div>'+targetPicker(c)+actionHelp(c,m,target)}
+function moveButtons(c){var m=localMoves[c.pos],locked=S.p[ROLE].moved,target=currentTarget(c);return'<div class="moves">'+['attack','defend','maneuver','special'].map(function(x){var text=x==='attack'?'⚔️ Атака':x==='defend'?'🛡️ Защита':x==='maneuver'?'🎯 '+c.m:'✨ '+c.x;var dis=locked||(x==='special'&&c.q<100);return'<button data-pos="'+c.pos+'" data-move="'+x+'" class="'+(m===x?'on':'')+'" '+(dis?'disabled':'')+'>'+text+'</button>'}).join('')+'</div>'+targetPicker(c)+actionHelp(c,m,target)+clairvoyancePanel(c,m)}
 function teamRoundClass(side){if(!S.last||!S.last.teamWinner)return'';return S.last.teamWinner===side?'team-round-win':'team-round-lose'}
 function fighterRoundClass(c,side){
  if(!S.last||!S.last.clashes)return'';var w=0,l=0;
