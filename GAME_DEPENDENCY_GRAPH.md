@@ -154,7 +154,7 @@ XP не расходуется.
 
 XP → Level.
 
-Level → unlocks, награды, экипировка access, Arena access.
+Уровень → открытие наград, экипировки и допуска к Arena.
 
 ### Forbidden
 
@@ -291,7 +291,7 @@ flowchart LR
 
 ---
 
-# 6. Level dependency graph
+# 6. Зависимости уровня курочки
 
 ```mermaid
 flowchart TD
@@ -310,8 +310,8 @@ flowchart TD
 Важно:
 
 - уровень itself is not Боевая сила unless it changes постоянный stats;
-- уровень gate and stat value are separate concepts;
-- high уровень item may be stronger, but уровень number is not automatically combat strength.
+- порог уровня и значение боевой характеристики — разные понятия;
+- предмет высокого уровня может быть сильнее, но само значение уровня не равно боевой силе.
 
 ---
 
@@ -419,7 +419,7 @@ flowchart TD
 - Защита;
 - Скорость.
 
-Advanced постоянный effects are allowed only if tied to real engine hooks:
+Продвинутые постоянные эффекты допустимы только при наличии реального механизма боевого движка:
 
 - Щит bonus;
 - Лечение bonus;
@@ -480,8 +480,8 @@ Set bonus:
 
 Правила:
 
-- native synergy must be explicit;
-- set effects must be explicit;
+- родная синергия должна быть описана явно;
+- эффекты комплекта должны быть описаны явно;
 - no invisible synergy;
 - no uncapped same-family stacking.
 
@@ -620,7 +620,7 @@ flowchart TD
 
 ---
 
-# 17. Action dependency graph
+# 17. Зависимости боевых действий
 
 ## Атака
 
@@ -643,8 +643,8 @@ flowchart TD
 
 Зависит от:
 
-- selected action state;
-- target/incoming action;
+- состояние выбранного действия;
+- действие цели и входящая атака;
 - defender Защита;
 - specific Особый приём rules.
 
@@ -844,10 +844,10 @@ flowchart TD
 
 Свойства:
 
-- activated before match;
+- активируется до боя;
 - временный;
 - not BP;
-- visible after battle starts;
+- виден после начала боя;
 - limited duration or N matches.
 
 ---
