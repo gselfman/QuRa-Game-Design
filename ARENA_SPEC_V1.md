@@ -82,7 +82,7 @@ Arena должна давать реальное применение:
 - базовые stats;
 - Манёвр;
 - Особый приём;
-- character-specific effects;
+- уникальные эффекты персонажей;
 - native экипировка;
 - set synergies.
 
@@ -231,7 +231,7 @@ Battle Engine рассчитывает весь раунд.
 - новый HP;
 - Особый приём charge;
 - deaths;
-- team score;
+- счёт команды;
 - литературную летопись.
 
 ## 5.6. End of Round
@@ -396,7 +396,7 @@ HP = 0 → курочка погибает/выбывает.
 - instant;
 - частью Манёвр;
 - частью Особый приём;
-- buff effect;
+- эффект бафа;
 - экипировка modifier.
 
 ---
@@ -543,7 +543,7 @@ HP = 0 → курочка погибает/выбывает.
 Роль:
 
 - control;
-- charge denial;
+- снижение заряда;
 - точность.
 
 ## 12.5. Монах
@@ -599,7 +599,7 @@ HP = 0 → курочка погибает/выбывает.
 
 ---
 
-# 13. Character effect types
+# 13. Типы эффектов персонажей
 
 Arena уже использует следующие реальные effect families:
 
@@ -609,7 +609,7 @@ Arena уже использует следующие реальные effect fam
 - усиление Атаки;
 - ослабление Атаки;
 - заряд Особого приёма reduce;
-- RNG outcome.
+- случайный исход.
 
 Это значит, что экипировка и бафы могут работать с этими семьями.
 
@@ -633,11 +633,11 @@ Arena уже использует следующие реальные effect fam
 Production числа должны пройти:
 
 - simulation;
-- matchup analysis;
-- average rounds;
+- анализ противостояний;
+- среднее число раундов;
 - 1×N возвращение в бой analysis;
 - экипировка sensitivity;
-- buff sensitivity.
+- чувствительность к бафам.
 
 ---
 
@@ -720,7 +720,7 @@ Production числа должны пройти:
 
 ---
 
-# 19. Target reassignment
+# 19. Переназначение целей
 
 ## Wall
 
@@ -762,10 +762,10 @@ Production числа должны пройти:
 - Intelligence;
 - Charisma;
 - Magic;
-- Luck stat;
+- характеристика Удачи;
 - Особый приём Атака;
 - Особый приём Защита;
-- Crit stat;
+- характеристика критического удара;
 - Accuracy;
 - Evasion.
 
@@ -787,7 +787,7 @@ Production числа должны пройти:
 - Особый приём получение заряда +N;
 - enemy Особый приём уменьшение заряда +N;
 - next Атака boost +%;
-- weaken effect +%.
+- процент усиления ослабления.
 
 Каждый эффект должен ссылаться на конкретный engine hook.
 
@@ -826,12 +826,12 @@ Native synergy должна:
 - aggressive Атака build.
 
 Профессор:
-- charge control build;
+- сборка для контроля заряда;
 - точность build.
 
 Гламурочка:
-- debuff build;
-- speed/tempo build.
+- сборка на ослабления;
+- сборка на скорость и темп.
 
 ---
 
@@ -844,7 +844,7 @@ Native synergy должна:
 - base stats;
 - уровень-derived постоянный stats;
 - экипировка stats;
-- постоянный set bonuses;
+- постоянный бонусы комплекта;
 - разрешённые legacy modifiers.
 
 Не учитывает:
@@ -868,7 +868,7 @@ Native synergy должна:
 - matchup spread;
 - round length;
 - survival;
-- first-action advantage.
+- преимущество первого действия.
 
 Особенно нужно проверить Скорость.
 
@@ -892,7 +892,7 @@ Native synergy должна:
 
 ---
 
-# 24. Arena Buffs
+# 24. Бафы Arena
 
 баф system делится на:
 
@@ -922,7 +922,7 @@ Native synergy должна:
 - один consumable экземпляр — одно использование;
 - обычно не более одного activation buff за раунд.
 
-## 24.3. Duration classes
+## 24.3. Виды длительности
 
 - Instant;
 - Round;
@@ -938,7 +938,7 @@ Native synergy должна:
 - ENEMY_TEAM;
 - BATTLEFIELD.
 
-## 24.5. Approved effect hooks
+## 24.5. Разрешённые эффекты движка
 
 баф может менять только существующую механику:
 
@@ -949,11 +949,11 @@ Native synergy должна:
 - Щит;
 - Лечение;
 - Особый приём charge;
-- action multiplier;
+- множитель действия;
 - targetability;
-- action availability;
+- доступность действия;
 - бафы/debuffs;
-- survival condition;
+- условие выживания;
 - position.
 
 ---
@@ -971,7 +971,7 @@ Native synergy должна:
 - выбранное действие получает примерно ×2 к основному effect;
 - точные ограничения зависят от типа действия.
 
-Comeback buff.
+Баф возвращения в бой.
 
 ## 25.2. Неуязвимость
 
@@ -1016,21 +1016,21 @@ Hard-control; должен быть редким.
 Черновой порядок:
 
 1. eligibility;
-2. reserve consumable;
-3. pre-round position changes;
-4. pre-round stats/shields;
-5. hidden actions locked;
-6. action modifiers;
-7. collision resolution;
+2. зарезервировать расходник;
+3. переставить позиции перед раундом;
+4. применить предварительные показатели и щиты;
+5. зафиксировать скрытые действия;
+6. применить модификаторы действий;
+7. рассчитать столкновения;
 8. on-hit/on-урон triggers;
-9. survival triggers;
-10. end-round effects;
-11. consume item;
-12. chronicle log.
+9. применить эффекты спасения;
+10. применить эффекты конца раунда;
+11. списать расходник;
+12. записать в летопись.
 
 ---
 
-# 27. Tactical Hint
+# 27. Тактическая подсказка
 
 Подсказка — анализ открытой информации.
 
@@ -1043,10 +1043,10 @@ Hard-control; должен быть редким.
 - charge;
 - Особый приём readiness;
 - mode;
-- positional pressure;
-- history patterns;
+- давление позиций;
+- повторяющиеся действия по истории;
 - бафы;
-- known debuffs.
+- известные ослабления.
 
 Запрещено выдавать нерелевантный совет.
 
@@ -1056,7 +1056,7 @@ Hard-control; должен быть редким.
 
 если у игрока осталась одна курочка.
 
-## 27.1. 1×N hint strategy
+## 27.1. Тактика подсказки в меньшинстве 1×N
 
 Для one-survivor state подсказка должна переходить в возвращение в бой mode.
 
@@ -1066,7 +1066,7 @@ Hard-control; должен быть редким.
 - Монах → лечение/выживаемость;
 - Боевик → provocation + finishing;
 - Дурочка → speed/RNG;
-- Профессор → charge denial;
+- Профессор → снижение заряда;
 - Гламурочка → debuff dangerous attacker.
 
 ## 27.2. Monetization
@@ -1125,7 +1125,7 @@ Future:
 
 - paid асинхронный feature;
 - раскрыть намерение либо действие одной обороняющейся курочки;
-- strict limits;
+- жёсткие ограничения;
 - GE sink.
 
 ---
@@ -1143,7 +1143,7 @@ Future:
 - status;
 - Особый приём;
 - бафы;
-- expected outcomes;
+- ожидаемые исходы;
 - выбирает математически лучший ход.
 
 Не читает фактически выбранный скрытый ход другого живой player.
@@ -1224,16 +1224,16 @@ Future:
 
 ## 2-player
 
-- public match chat;
-- quick phrases;
+- общий чат матча;
+- готовые фразы;
 - emoji/emotes;
-- short text;
+- короткий текст.
 - mute/report in production.
 
-## 4-player FFA
+## Четыре игрока — каждый за себя (FUTURE)
 
 - public;
-- possible private DM if rules permit diplomacy.
+- возможны личные сообщения, если правила разрешают переговоры.
 
 ## 4-player 2×2
 
@@ -1249,7 +1249,7 @@ UI обязан явно показывать active recipient/channel.
 
 ---
 
-# 37. Quick chat
+# 37. Быстрые сообщения
 
 Примеры прототипа:
 
@@ -1284,7 +1284,7 @@ UI обязан явно показывать active recipient/channel.
 - те же позиции;
 - HP reset;
 - Особый приём reset;
-- statuses reset;
+- сброс статусов;
 - chronicle нового боя начинается заново;
 - chat может сохраняться.
 
@@ -1309,9 +1309,9 @@ UI обязан явно показывать active recipient/channel.
 - урон;
 - бафы;
 - effects;
-- engine result.
+- результат движка.
 
-## 39.1. Character-specific prose
+## 39.1. Литературные описания персонажей
 
 Каждый Манёвр/Особый приём имеет свои action templates.
 
@@ -1345,17 +1345,17 @@ Chronicle:
 
 Библиотека шаблонов **archetype × action × outcome**, плюс смертельный удар, buff, дебафф, Молния. В LLM отправляется только `BattleEngineResult` (участники, Type+Name, гербы, действия, HP before/after, эффекты, победитель). LLM связывает утверждённые события в рассказ; **не вправе придумывать факты**. Проверка обязательных сущностей и чисел; при сбое модели/валидации — детерминированные шаблоны. Тренировка и бесплатные бои используют шаблоны без LLM. Стоимость LLM должна покрываться арендой — конкретный бюджет OPEN. Поделиться: Telegram-карточка лучшего момента + ссылка.
 
-# 40. Action explanation UI
+# 40. Описание действий в интерфейсе
 
 После выбора action игрок может открыть описание под spoiler.
 
 Описание включает:
 
 - что делает action;
-- character narrative;
+- особенности персонажа в тексте;
 - effect;
-- strong matchup;
-- weak matchup.
+- сильное взаимодействие;
+- слабое взаимодействие.
 
 Это education layer без необходимости читать отдельные правила.
 
@@ -1369,17 +1369,17 @@ Chronicle:
 
 HP reaches 0 → dead.
 
-Dead chicken:
+Выбывшая курочка:
 
-- no longer chooses action;
-- removed from living targets;
-- affects positional reassignment.
+- больше не выбирает действие;
+- удаляется из списка живых целей;
+- влияет на переназначение позиций.
 
 Летопись обязательно описывает выбывание персонажа.
 
 ---
 
-# 42. Status effects
+# 42. Эффекты состояния
 
 Текущие статусы прототипа:
 
@@ -1390,9 +1390,9 @@ Dead chicken:
 
 Новые эффекты допустимы только при наличии:
 
-- data definition;
+- определение данных;
 - duration;
-- stacking rule;
+- правило суммирования;
 - priority;
 - clear UI.
 
@@ -1405,7 +1405,7 @@ Dead chicken:
 - источник;
 - target;
 - duration;
-- stack group;
+- группа суммирования;
 - лимит;
 - priority.
 
@@ -1423,37 +1423,37 @@ Dead chicken:
 
 - постоянный;
 - included in BP;
-- visible pre-battle or according to rules.
+- видимы до боя либо согласно правилам.
 
 Тактический расходник:
 
 - временный;
-- not included in BP;
-- finite inventory;
-- activated during battle.
+- не входят в BP;
+- конечный запас в инвентаре;
+- применяются во время боя.
 
 Подготовительный баф:
 
 - временный;
 - pre-battle;
 - not BP;
-- visible after match begins.
+- видимы после начала матча.
 
 ---
 
-# 45. Fairness and pay-to-win control
+# 45. Честность и защита от преимущества за деньги
 
 Arena расходует GE, но платные инструменты не должны устранять значение навыка игрока.
 
 Требования:
 
 - strong расходники obtainable through gameplay;
-- ranked allowlist/banlist possible;
-- usage caps;
-- no unlimited stacking;
-- effects visible when activated;
+- возможны списки разрешённых/запрещённых в рейтинге предметов;
+- ограничения использования;
+- нельзя бесконечно складывать эффекты;
+- эффекты видимы при активации;
 - Scout banned in живой PvP;
-- Autobattle/Hint/All-Seeing cannot read hidden move;
+- Автобой/Подсказка/Всевидящий не читают скрытый ход;
 - подбор соперника ignores временный бафы in BP but server audits loadout.
 
 ---
@@ -1462,15 +1462,15 @@ Arena расходует GE, но платные инструменты не д�
 
 Ranked:
 
-- recent opponent memory;
-- repeat-opponent coefficient;
+- учёт недавних соперников;
+- коэффициент повторных встреч;
 - ежедневный/season caps where needed;
 - rating-difference награда scaling;
-- no manual selection of weak ranked opponent.
+- нельзя вручную выбрать слабого рейтингового соперника.
 
 ---
 
-# 47. Reconnect and authoritative server
+# 47. Переподключение и авторитетный сервер
 
 Боевой движок в production должен быть серверно-авторитетным.
 
@@ -1478,7 +1478,7 @@ Client:
 
 - displays;
 - chooses;
-- sends command.
+- отправляет команду.
 
 Server:
 
@@ -1486,7 +1486,7 @@ Server:
 - locks;
 - resolves;
 - persists;
-- distributes state.
+- рассылает состояние.
 
 Для команды обязательны поля:
 
@@ -1494,14 +1494,14 @@ Server:
 - round;
 - playerId;
 - commandId;
-- action payload;
+- содержимое команды;
 - version.
 
 Повтор команды с тем же commandId не создаёт новую операцию.
 
 ---
 
-# 48. Hidden information
+# 48. Скрытая информация
 
 На этапе выбора противник не должен получать содержимое скрытого действия.
 
@@ -1511,27 +1511,27 @@ Server:
 
 Это также относится к:
 
-- hidden team pick before both ready;
-- private team chat;
+- скрытый состав до готовности обоих;
+- закрытый командный чат;
 - будущий secret расходники if design allows them.
 
 ---
 
-# 49. Prototype transport vs production
+# 49. Транспорт прототипа и production
 
 Тестовый прототип может использовать публичный MQTT/WebSocket, но это не производственная инфраструктура.
 
-This is **not production security architecture**.
+Это **не защищённая production-архитектура**.
 
 Для production обязательны:
 
 - auth;
-- private room;
-- server authority;
+- закрытая игровая комната;
+- полномочия сервера;
 - anti-cheat;
-- authenticated state;
-- rate limits;
-- abuse controls.
+- аутентифицированное состояние;
+- лимиты запросов;
+- защита от злоупотреблений.
 
 ---
 
@@ -1541,49 +1541,49 @@ This is **not production security architecture**.
 
 - mode;
 - format;
-- team composition;
+- состав команды;
 - stats;
 - экипировка;
 - бафы/loadout;
-- actions per round;
+- действия по раундам;
 - targets;
 - урон;
 - лечение;
 - shields;
 - charge;
 - deaths;
-- collision winners;
-- round winners;
+- победители столкновений;
+- победители раундов;
 - battle победитель;
 - duration;
 - timeout;
-- hint use;
-- clairvoyance use;
-- autobattle use;
+- использование Подсказки;
+- использование Всевидящего;
+- использование Автобоя;
 - rematch;
 - GE settlement.
 
 ---
 
-# 51. Balance metrics
+# 51. Метрики баланса
 
-Core metrics:
+Основные показатели:
 
-- win rate by archetype;
-- win rate by team composition;
-- first-slot advantage;
-- mode advantage;
-- average rounds;
-- average battle duration;
+- доля побед по архетипам;
+- win rate by состав команды;
+- преимущество первой позиции;
+- преимущество режима;
+- среднее число раундов;
+- средняя длительность боя;
 - 3×1 возвращение в бой rate;
 - 2×1 возвращение в бой rate;
 - Особый приём usage rate;
-- action distribution;
+- распределение выбранных действий;
 - Скорость sensitivity;
 - экипировка stat marginal value;
-- buff marginal value;
-- timeout rate;
-- surrender/quit rate.
+- предельная ценность бафов;
+- частота пропуска хода;
+- частота сдачи/выхода из боя.
 
 ---
 
@@ -1591,17 +1591,17 @@ Core metrics:
 
 Это пока не окончательные численные параметры для выпуска.
 
-Design intent:
+Целевое поведение игры:
 
-- no single archetype universally best;
-- no single action dominates;
+- нет универсально лучшего архетипа;
+- нет одного доминирующего действия;
 - no mandatory экипировка stat;
-- no mandatory buff;
+- нет обязательного бафа;
 - 1×3 возвращение в бой possible but uncommon;
-- 3×1 remains advantaged but not guaranteed;
-- fights brisk enough to remain readable;
+- численное преимущество 3×1 ощутимо, но не гарантирует победу;
+- бои динамичные, но понятные;
 - Особый приём meaningful but not automatic win;
-- prepared player can beat slightly stronger raw stats through decisions.
+- умелый игрок может решениями победить немного более сильного соперника.
 
 ---
 
@@ -1693,7 +1693,7 @@ Every BUFF_CATALOG entry must define:
 - stacking;
 - лимит;
 - visibility;
-- ranked legality;
+- допустимость в рейтинге;
 - consumable behavior;
 - chronicle template.
 
@@ -1769,7 +1769,7 @@ See **DOCUMENTATION_INDEX.md** for reading order and источник-of-truth m
 Следующий этап — не создание нового документа, а закрытие открытых вопросов баланса через симуляцию и инженерную проверку.
 - Скорость resolution;
 - multi-collision semantics;
-- JRPG retarget;
+- перенацеливание JRPG;
 - Особый приём charge table;
 - BP weights;
 - draw/refund settlement.
