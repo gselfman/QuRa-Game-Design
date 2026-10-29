@@ -1918,20 +1918,17 @@ When prototype discovers a better rule:
 
 ---
 
-# 62. Next documentation after Arena Spec
+# 62. Documentation package status
 
-After Arena Spec stabilizes:
+The complete v1 documentation package is now created.
 
-1. **GAME_DEPENDENCY_GRAPH.md**
-2. **GAME_DATA_MODEL.md**
-3. **ECONOMY_MODEL.md**
-4. **CHICKEN_CATALOG.md**
-5. **GEAR_CATALOG.md**
-6. **BUFF_CATALOG.md**
-7. **EVENT_CATALOG.md**
-8. **QUEST_CATALOG.md**
-9. **REWARD_TABLES.md**
-10. **SCREENS.md**
-11. **ASSET_PRODUCTION.md**
-12. **IMPLEMENTATION_ROADMAP.md**
+See **DOCUMENTATION_INDEX.md** for reading order and source-of-truth mapping.
+
+Arena-related follow-up is no longer another document creation step. The next work is to close the explicit OPEN balance/implementation decisions through simulation and production engineering:
+- Speed resolution;
+- multi-collision semantics;
+- JRPG retarget;
+- Special charge table;
+- BP weights;
+- draw/refund settlement.
 
