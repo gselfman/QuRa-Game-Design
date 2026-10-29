@@ -4,21 +4,21 @@
 
 ## 1. Порядок чтения
 
-1. **GAME_BIBLE_V1.md** — overall product/game truth
-2. **ARENA_SPEC_V1.md** — combat/Arena truth
-3. **GAME_DEPENDENCY_GRAPH.md** — cross-system dependencies
-4. **GAME_DATA_MODEL.md** — entities/state machines/audit
-5. **ECONOMY_MODEL.md** — resources, GE sources/sinks, pricing architecture, EV and guardrails
-6. **ECONOMY_CALIBRATION_2026-10.md** — real-user GE accrual calibration and time-to-goal
+1. **GAME_BIBLE_V1.md** — общая логика продукта и игры
+2. **ARENA_SPEC_V1.md** — правила боя и Arena
+3. **GAME_DEPENDENCY_GRAPH.md** — межсистемные зависимости
+4. **GAME_DATA_MODEL.md** — сущности, машины состояний и аудит
+5. **ECONOMY_MODEL.md** — ресурсы, источники и расходы GE, цены, ожидаемая выгода и ограничения
+6. **ECONOMY_CALIBRATION_2026-10.md** — калибровка начислений GE по реальному пользователю и сроки накопления
 7. **CHICKEN_CATALOG.md** — archetypes, naming, Gifts, Maneuver, Special
-8. **GEAR_CATALOG.md** — equipment rules and engine-linked stats
-9. **BUFF_CATALOG.md** — preparation/tactical buff system
-10. **EVENT_CATALOG.md** — Daily Event content framework
-11. **QUEST_CATALOG.md** — scopes, triggers and quest templates
-12. **REWARD_TABLES.md** — reward/chest/pity framework
-13. **SCREENS.md** — complete screen/flow inventory
-14. **ASSET_PRODUCTION.md** — visual asset production requirements
-15. **IMPLEMENTATION_ROADMAP.md** — build sequence and rollout
+8. **GEAR_CATALOG.md** — правила экипировки и характеристики, влияющие на движок
+9. **BUFF_CATALOG.md** — система бафов подготовки и тактических расходников
+10. **EVENT_CATALOG.md** — правила контента События дня
+11. **QUEST_CATALOG.md** — охват, триггеры и шаблоны заданий
+12. **REWARD_TABLES.md** — система наград, сундуков и гарантий выпадения
+13. **SCREENS.md** — полный перечень экранов и сценариев
+14. **ASSET_PRODUCTION.md** — требования к изготовлению визуальных ассетов
+15. **IMPLEMENTATION_ROADMAP.md** — порядок разработки и внедрения
 
 ### Дополнения аудита 29.10.2026
 
@@ -28,13 +28,13 @@
 
 ## 2. Источники истины по темам
 
-### Overall game
+### Общая игра
 GAME_BIBLE_V1.md
 
-### Arena mechanics
+### Механика Arena
 ARENA_SPEC_V1.md
 
-### Cross-system relations
+### Межсистемные связи
 GAME_DEPENDENCY_GRAPH.md
 
 ### Database/entities/state
@@ -43,10 +43,10 @@ GAME_DATA_MODEL.md
 ### Economy
 ECONOMY_MODEL.md
 
-### Economy calibration / real observed earning pace
+### Калибровка экономики по фактическим начислениям
 ECONOMY_CALIBRATION_2026-10.md
 
-### Chicken definitions
+### Определения курочек
 CHICKEN_CATALOG.md
 
 ### Gear
@@ -55,7 +55,7 @@ GEAR_CATALOG.md
 ### Buffs
 BUFF_CATALOG.md
 
-### Daily events
+### События дня
 EVENT_CATALOG.md
 
 ### Quests
@@ -67,48 +67,48 @@ REWARD_TABLES.md
 ### UX/screens
 SCREENS.md
 
-### Visual production
+### Производство графики
 ASSET_PRODUCTION.md
 
-### Engineering sequence
+### Инженерная последовательность
 IMPLEMENTATION_ROADMAP.md
 
 ## 3. Текущий статус документации
 
-Core documentation package: **complete v1**.
+Core documentation package: **готовый пакет v1**.
 
 Некоторые параметры намеренно остаются открытыми, поскольку для них требуются:
 - simulation;
-- financial/economy validation;
+- финансовая и экономическая проверка;
 - visual QA;
-- production technical decisions.
+- технические решения для запуска.
 
 Открытые параметры относятся к конфигурации и балансу, а не к отсутствующим механизмам.
 
 ## 4. Приоритетные открытые решения
 
 Arena:
-- Speed resolution
-- JRPG retarget
-- multi-collision effect scope
-- Special charge exact table
+- модель Скорости
+- перенацеливание JRPG
+- область эффектов при нескольких столкновениях
+- точная таблица заряда Особого приёма
 - BP weights
 - draw/double-KO settlement
 
 Economy:
 - XP curve
-- gear prices
-- Coop prices
-- tactical service prices
-- passive laying cap
-- chest pity
-- 4-player payout
+- цены экипировки
+- цены улучшения Курятника
+- цены тактических услуг
+- лимит пассивной яйценоскости
+- гарантии сундуков
+- награды режима для четырёх игроков
 
 Content:
-- seventh founder mechanics
-- full 60–80 event authored batch
-- numeric Gear Catalog
-- full reward numeric tables
+- механика седьмой основательницы
+- полная библиотека 60–80 авторских событий
+- числовой каталог экипировки
+- полные числовые таблицы наград
 
 ## 5. Протокол изменений
 
@@ -124,10 +124,10 @@ Content:
 
 ## 6. Новые утверждённые системы (29.10.2026)
 
-- **MONETIZATION_LIVEOPS_SPEC.md** — Season Pass, chests/odds/pity, Golden Piggy Bank, starter bundle, personal offers, fintech earning paths and fairness.
-- **SPRITE_PRODUCTION_BATCHES.md** — 12 ready-to-generate 5×5 sheets, 300 named assets, Figma slicing/QA contract.
+- **MONETIZATION_LIVEOPS_SPEC.md** — сезонный пропуск, шансы сундуков и гарантии, Золотая копилка, стартовый набор, персональные предложения, заработок через QuRa и честность.
+- **SPRITE_PRODUCTION_BATCHES.md** — 12 листов 5×5 для генерации, 300 ассетов с именами и правилами нарезки/проверки Figma.
 
-Both are part of v1 documentation and should be read after ECONOMY_MODEL.md and ASSET_PRODUCTION.md respectively.
+Оба документа входят в пакет v1: читать после ECONOMY_MODEL.md и ASSET_PRODUCTION.md соответственно.
 
 ## 7. Аудит и дополнения 29.10.2026
 
@@ -153,7 +153,7 @@ Both are part of v1 documentation and should be read after ECONOMY_MODEL.md and 
 8. Визуальные ассеты — **ASSET_PRODUCTION.md** и **SPRITE_PRODUCTION_BATCHES.md**.
 9. Удержание — **RETENTION_NOTIFICATIONS.md**; тестирование баланса — **ARENA_SIMULATION_RESULTS.md**.
 
-**Открытые вопросы:** Speed, multi-collision, JRPG retarget, level→power (две модели), юрлицо/доставка/возврат 3D, общий сезон 28 дней vs два цикла, N для седьмой, сохранение/сброс тестовой Рябы, округление 25% выкупа.
+**Открытые вопросы:** Speed, multi-collision, перенацеливание JRPG, level→power (две модели), юрлицо/доставка/возврат 3D, общий сезон 28 дней vs два цикла, N для седьмой, сохранение/сброс тестовой Рябы, округление 25% выкупа.
 
 ## Второй проход P1–P8
 
