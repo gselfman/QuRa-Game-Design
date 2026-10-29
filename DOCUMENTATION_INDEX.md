@@ -1,8 +1,8 @@
-# QuRa Game Documentation Index
+# QuRa — индекс игровой документации
 
 **Статус:** navigation / documentation map
 
-## 1. Read order
+## 1. Порядок чтения
 
 1. **GAME_BIBLE_V1.md** — overall product/game truth
 2. **ARENA_SPEC_V1.md** — combat/Arena truth
@@ -20,7 +20,7 @@
 14. **ASSET_PRODUCTION.md** — visual asset production requirements
 15. **IMPLEMENTATION_ROADMAP.md** — build sequence and rollout
 
-## 2. Source of truth by subject
+## 2. Источники истины по темам
 
 ### Overall game
 GAME_BIBLE_V1.md
@@ -67,7 +67,7 @@ ASSET_PRODUCTION.md
 ### Engineering sequence
 IMPLEMENTATION_ROADMAP.md
 
-## 3. Current documentation status
+## 3. Текущий статус документации
 
 Core documentation package: **complete v1**.
 
@@ -79,7 +79,7 @@ Some values intentionally remain OPEN because they require:
 
 OPEN values are configuration/balance decisions, not missing architecture.
 
-## 4. Highest-priority OPEN decisions
+## 4. Приоритетные открытые решения
 
 Arena:
 - Speed resolution
@@ -116,7 +116,7 @@ Content:
 Нельзя допускать, чтобы поведение в коде незаметно отличалось от документов.
 
 
-## 6. Approved new systems (29.10.2026)
+## 6. Новые утверждённые системы (29.10.2026)
 
 - **MONETIZATION_LIVEOPS_SPEC.md** — Season Pass, chests/odds/pity, Golden Piggy Bank, starter bundle, personal offers, fintech earning paths and fairness.
 - **SPRITE_PRODUCTION_BATCHES.md** — 12 ready-to-generate 5×5 sheets, 300 named assets, Figma slicing/QA contract.
