@@ -96,7 +96,7 @@ Player награда pool filtered by:
 
 Avoid stream of unusable L20 экипировка to L4 player.
 
-Small aspirational preview allowed if overflow/equip rules clear.
+Можно показывать желаемый предмет выше текущего уровня, если понятны правила хранения и экипировки.
 
 ## 6. Pity
 
@@ -107,7 +107,7 @@ Paid/high-value сундук families need:
 - reset rule;
 - visible or documented behavior.
 
-Exact thresholds OPEN.
+Точные пороги OPEN.
 
 ## 7. Дубли — утверждённая механика
 
@@ -143,7 +143,7 @@ expected convertible награда value < price unless subsidized/capped.
 
 Specific current награда matrix remains in mini-game-specific documentation/prototype.
 
-Reward Tables references it rather than inventing new values.
+Таблицы наград отсылают к отдельной матрице мини-игры, не создавая новые значения.
 
 ## 11. Arena-сундук победителя — D-02a
 
@@ -174,7 +174,7 @@ Can give capped tutorial/quest награда.
 
 ## 14. Quest награда bands
 
-No exact amounts yet.
+Точные значения ещё не утверждены.
 
 ### Easy ежедневный
 - small XP
@@ -214,7 +214,7 @@ Epic:
 - Swap/Reform
 - Mirror
 
-Legendary candidate:
+Кандидаты в Legendary:
 - Phoenix
 - Особый приём Echo
 - powerful conditional effects
@@ -230,8 +230,8 @@ Weight by:
 - duplicate rate;
 - owned set completion.
 
-Optional smart-drop:
-slightly improve chance of useful item without guaranteeing set completion.
+Дополнительный «полезный» дроп:
+немного повышать шанс подходящего предмета, не гарантируя готовый комплект.
 
 ## 17. Egg/Chicken награды
 
@@ -240,7 +240,7 @@ Can be:
 - mystery egg;
 - special/seasonal egg.
 
-Always enters as L1.
+Всегда поступает как яйцо L1.
 
 Never spawn adult directly unless special documented награда.
 
@@ -273,7 +273,7 @@ Server:
 - updates pity;
 - grants.
 
-Client only animates.
+Клиент только воспроизводит анимацию.
 
 ## 22. Раскрытие шансов платного сундука
 
@@ -285,7 +285,7 @@ Show:
 
 ## 23. Reward table versioning
 
-Any probability/amount change:
+Изменение любой вероятности или размера награды:
 - new version;
 - effective time;
 - preserve historical audit.
@@ -321,7 +321,7 @@ Track:
 - passive laying
 - item/buff drop weights
 
-These are configuration tables, not missing mechanics.
+Это таблицы конфигурации, а не недостающие механики.
 
 ## 27. Season Pass / monetization награды
 
