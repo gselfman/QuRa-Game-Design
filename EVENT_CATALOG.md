@@ -1,4 +1,4 @@
-# QuRa Event Catalog v1
+# QuRa — каталог событий v1
 
 **Статус:** content framework for Daily Events  
 **Target volume:** 60–80 base events + variants
@@ -15,7 +15,7 @@ Individual result differs due:
 
 Daily Event never changes Coolness.
 
-## 1. Resolution order for negative event
+## 1. Разрешение order for negative event
 
 **Новый обязательный первый шаг:** игрок выбирает один из двух вариантов (`options[2]`), каждый вариант определяет свой исход, Lucky Flip и доступные Дары. Затем Lucky Flip → hard counter → mitigation → final temporary effect. Выбор до конца московских суток; A — явно обозначенный default.
 
@@ -34,7 +34,7 @@ Daily Event never changes Coolness.
 - internal Coop
 - rare/magical
 
-## 3. Event fields
+## 3. Поля события
 
 Каждый event содержит ровно `options[2]` с `code`, `title`, `narrative`, `outcome`, `gift_hooks`, `lucky_flip`, `mitigation`.
 
@@ -54,7 +54,7 @@ Daily Event never changes Coolness.
 - affected systems
 - feature gates
 
-## 4. Allowed affected systems
+## 4. Разрешённые системы воздействия
 
 - passive laying
 - game shop/discount
@@ -69,7 +69,7 @@ Not:
 - permanent gear stat
 - financial transaction status
 
-## 5. Weather examples
+## 5. Примеры погоды
 
 ### HEAVY_RAIN
 Base:
@@ -102,7 +102,7 @@ temporary production penalty.
 Positive:
 production/XP minor bonus.
 
-## 6. Threat examples
+## 6. Примеры угроз
 
 ### FOX_AT_NIGHT
 Negative threat.
@@ -121,7 +121,7 @@ Threat event.
 Could yield branch:
 fight off / lost supplies / found friend future.
 
-## 7. Food/harvest
+## 7. Еда и урожай
 
 ### GRAIN_DELIVERY
 Positive:
@@ -135,7 +135,7 @@ production down.
 Rare:
 small buff/chest chance.
 
-## 8. Outside world
+## 8. Внешний мир
 
 ### FAIR_DAY
 Shop discount/category bonus.
@@ -146,7 +146,7 @@ Temporary catalog/price modifier.
 ### NEWS_FROM_CITY
 XP/quest thematic modifier.
 
-## 9. Internal Coop
+## 9. Жизнь Курятника
 
 ### CLEAN_COOP
 Positive synergy.
@@ -160,7 +160,7 @@ Reward/social event.
 ### LOST_ITEM
 Can trigger mini quest/reward.
 
-## 10. Rare/magical
+## 10. Редкие и магические
 
 ### GOLDEN_MOON
 Rare laying/drop bonus.
@@ -174,7 +174,7 @@ Mystery temporary modifier.
 ### BLESSING_DAY
 Monk synergy interaction.
 
-## 11. Lucky Flip examples
+## 11. Примеры Lucky Flip
 
 Negative → separate positive story, not merely zero.
 
@@ -192,7 +192,7 @@ Roof damaged → old hidden chest exposed.
 
 Each flip is authored, not generic.
 
-## 12. Hard counters
+## 12. Полное противодействие
 
 Gift families can hard-counter category.
 
@@ -206,7 +206,7 @@ Future archetypes/buildings may counter:
 
 Do not create counter if no system hook.
 
-## 13. Mitigation
+## 13. Смягчение
 
 Mitigation reduces final penalty.
 
@@ -218,7 +218,7 @@ Possible sources:
 
 Must have cap.
 
-## 14. Rarity
+## 14. Редкость
 
 Suggested:
 - Common
@@ -230,7 +230,7 @@ No exact percentages yet.
 
 Need cooldown preventing repetition.
 
-## 15. Content target
+## 15. Объём контента
 
 Target library:
 - 20 weather/food
@@ -241,7 +241,7 @@ Target library:
 
 Can overlap to total 60–80.
 
-## 16. Narrative variants
+## 16. Варианты повествования
 
 Each base event:
 - 2–3 wording variants;
@@ -249,7 +249,7 @@ Each base event:
 
 Variation should not change mechanics unless explicitly variant-coded.
 
-## 17. Reward integration
+## 17. Интеграция наград
 
 Events can grant:
 - GE small capped
@@ -272,7 +272,7 @@ If Daily Event affects Arena:
 
 Avoid large daily modifier that invalidates matchmaking.
 
-## 19. Event analytics
+## 19. Аналитика событий
 
 Track:
 - event shown;
@@ -283,11 +283,11 @@ Track:
 - reward;
 - engagement reaction.
 
-## 20. Feature gates
+## 20. Доступность функций
 
 Event referencing disabled product feature must not be selected.
 
-## 21. Authoring template
+## 21. Шаблон заполнения
 
 For every event:
 1. code
@@ -305,7 +305,7 @@ For every event:
 13. variants
 14. analytics tags
 
-## 22. Production rule
+## 22. Правило внедрения
 
 This document defines framework and examples.
 
