@@ -563,3 +563,7 @@ Sources: MONETIZATION_LIVEOPS_SPEC.md and SPRITE_PRODUCTION_BATCHES.md.
 7. Add release gates for client/server consistency, pricing versions, refund logic and no pay-to-win.
 
 **DoD:** every monetized item has a clear price, entitlement, source/sink, audit, cancellation/refund policy, and approved images; every asset has a stable Figma/component mapping.
+
+## Обязательная корректировка MVP — B/A4
+
+**Этот Roadmap — единственный источник порядка разработки.** Все шесть основательниц и Дары доступны и работают при запуске. Вместе с фундаментом должны работать: daily egg/яйценоскость Рябы, GE-магазин/скидка Гламурочки, ежедневные события и Lucky Flip Дурочки, Охрана Боевика, синергия Монаха, XP bonus Профессора, корм за полезные операции. Arena стартует с 1×1 live friend, bot training и async defense; 2×2 и 3×3 — видимые заблокированные карточки; 4-player — Future. Кланы — после запуска live friend. Полный производственный порядок и DoD пересматриваются по этим зависимостям, а не по старым номерам фаз.
