@@ -58,14 +58,14 @@
 
 ### Working источник-mix target
 
-For a typical active non-paying user, the majority of repeatable earned GE should come from qualifying QuRa product activity.
+У обычного активного пользователя без покупок большая часть регулярно заработанных GE должна приходить от квалифицирующих действий QuRa.
 
 Начальные целевые значения для моделирования:
 - **50–65%** — операции QuRa;
 - **30–45%** — мини-игры;
 - остальное — quests/events/passive. Цели **PROTOTYPE BALANCE** по ECONOMY_CALIBRATION_2026-10.md §5, доли не являются гарантией выплат.
 
-These ranges are hypotheses and can be recalibrated from real behavior, but the invariant is:
+Эти диапазоны — гипотезы; их можно пересчитать по реальному поведению, но сохраняется правило:
 
 > repeatable game faucets must not make core QuRa activity economically irrelevant.
 
@@ -77,7 +77,7 @@ If mini-game realized GE/hour materially exceeds normal product-earned GE withou
 
 Current QuRa backend implements operation GE in `app/services/eggs.py`.
 
-For supported successful operations:
+Для подтверждённых операций поддерживаемых видов:
 
 `GE = floor(RUB × eggs_rate_pct / 100) + fact_bonus`
 
@@ -194,7 +194,7 @@ Public tariff explicitly treats this as **магазин purchase price**, not i
 Актуальные доли в production:
 - 10% / 5% / 2% by levels for qualifying operation GE.
 
-Exact eligible base and caps require financial-product configuration.
+Точная база вознаграждений и лимиты задаются конфигурацией финансового продукта.
 
 ### Passive laying
 Allowed only with ежедневный/account/coop лимит.
@@ -229,11 +229,11 @@ LOCKED:
 - 1 награда-bearing mini-game attempt = 1 ticket;
 - Arena does not consume ticket.
 
-Ticket accrual should use server date/time policy.
+Начисление билетов должно следовать серверной политике календарного дня.
 
 ## 6. Мини-игра paid attempt rule
 
-For any repeatable GE-paid attempt:
+Для любой повторяемой попытки за GE:
 
 `EV(GE reward + convertible reward value) < GE entry cost`
 
@@ -245,7 +245,7 @@ unless:
 
 ## 7. Мини-игра emission budget
 
-Per game configure:
+Для каждой игры на сервере настраиваются:
 - ежедневный account лимит;
 - global ежедневный budget;
 - max single награда;
@@ -273,7 +273,7 @@ For "Wolf catches eggs" current награда matrices живой in game-speci
 
 Цены ещё не утверждены.
 
-Need separate price ladder for:
+Нужна отдельная лестница цен для:
 - Hint;
 - All-Seeing;
 - Autobattle;
@@ -310,7 +310,7 @@ Strong возвращение в бой бафы should not be unlimited direct-
 Рабочая гипотеза:
 - up to 3 расходники per match.
 
-Economic levers:
+Инструменты управления экономикой:
 - inventory acquisition;
 - scarcity;
 - loadout capacity;
@@ -521,7 +521,7 @@ From Bible:
 - Legendary ~2.5%
 - Artifact ~0.5%
 
-These are modeling hypotheses, not final production rates.
+Это гипотезы модели, а не окончательные производственные вероятности.
 
 ## 19. Pity
 
@@ -533,7 +533,7 @@ Pity counter needed for expensive paid сундук families.
 - reset rule;
 - cross-сундук sharing or isolation.
 
-OPEN until Reward Tables.
+Открыто до утверждения таблиц наград.
 
 ## 20. Дубли — выкуп за GE (LOCKED D-09)
 
@@ -542,7 +542,7 @@ OPEN until Reward Tables.
 
 ## 21. Passive laying
 
-Output depends on:
+Результат зависит от:
 - adult residents;
 - уровень/progression;
 - Ryaba Gift;
@@ -560,7 +560,7 @@ Output depends on:
 
 ## 22. XP economy
 
-XP is non-monetary progression.
+XP — немонетарный ресурс развития.
 
 Требования:
 - L3/L4 early;
