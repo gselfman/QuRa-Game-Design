@@ -1,4 +1,4 @@
-# QuRa Arena Spec v1
+# QuRa — спецификация Arena v1
 
 **Статус:** рабочая продуктовая спецификация / основной источник истины по боевой системе Arena  
 **Дата:** 29.10.2026  
@@ -196,7 +196,7 @@ Defense цели не требует.
 - позиции;
 - доступные actions/targets.
 
-## 5.2. Decision Phase
+## 5.2. Decision Этап
 
 Игроки одновременно и скрытно выбирают действия.
 
@@ -1268,7 +1268,7 @@ Prototype examples:
 
 ---
 
-# 39. Battle Chronicle
+# 39. Летопись боя
 
 Летопись — не technical log.
 
@@ -1557,7 +1557,7 @@ Core metrics:
 
 ---
 
-# 52. Balance targets
+# 52. Цели баланса
 
 Not hard production numbers yet.
 
@@ -1712,7 +1712,7 @@ Process:
 Единственный актуальный порядок фаз, DoD и MVP-ограничения приведены в **IMPLEMENTATION_ROADMAP.md**. Здесь фиксируются только боевые правила, проверки и незакрытые балансные решения.
 
 
-# 61. Source of truth
+# 61. Источник истины
 
 For Arena combat:
 
