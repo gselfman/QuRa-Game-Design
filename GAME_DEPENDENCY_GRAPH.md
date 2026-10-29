@@ -125,6 +125,10 @@ GE имеет двойную роль:
 
 ---
 
+## 2.3. Новые межсистемные связи
+
+`Confirmed QuRa operation → XP + GE (не меняются) + FeedEffect (temporary)`; `FeedEffect → egg laying / Morale / Preparation Buff / event bonus`, но **никогда** не Боевая сила. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Один financial event не учитывается дважды благодаря correlation_id. `Clan membership → invitations/goals/cosmetics`, без GE transfer и combat power. `DailyEventChoice → LuckyFlip → hardCounter → mitigation → temporary result`; без выбора — default option. Не создавать вторую валюту «корм».
+
 # 3. Главные игровые ресурсы
 
 ## 3.1. XP
@@ -1863,7 +1867,3 @@ The downstream documentation is now created:
 - IMPLEMENTATION_ROADMAP.md
 
 See DOCUMENTATION_INDEX.md for the complete map.
-
-# C. Связи новых систем
-
-`Confirmed QuRa operation → XP + GE (не меняются) + FeedEffect (temporary)`; `FeedEffect → egg laying / Morale / Preparation Buff / event bonus`, но **никогда** не Боевая сила. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Один financial event не учитывается дважды благодаря correlation_id. `Clan membership → invitations/goals/cosmetics`, без GE transfer и combat power. `DailyEventChoice → LuckyFlip → hardCounter → mitigation → temporary result`; без выбора — default option. Не создавать вторую валюту «корм».
