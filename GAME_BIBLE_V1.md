@@ -1810,27 +1810,29 @@ Morale, buff и Daily Event не должны навсегда менять item
 
 # 40. Следующие обязательные документы
 
-После утверждения Game Bible последовательно создаются:
+Актуальный порядок после Game Bible:
 
-1. **GAME_DEPENDENCY_GRAPH.md** — граф всех связей: кто на что влияет, порядок modifiers, sinks/faucets.
-2. **GAME_DATA_MODEL.md** — сущности, таблицы, ключи, state machines.
-3. **ECONOMY_MODEL.md** — XP curve, GE emission, prices, tickets, passive laying, drop EV, caps.
-4. **CHICKEN_CATALOG.md** — 7 founders, gifts, Special, progression, future rarity.
-5. **GEAR_CATALOG.md** — L4–20 items, slots, sets, stats, native synergy.
-6. **EVENT_CATALOG.md** — 60–80 событий + Lucky Flip + counters.
-7. **QUEST_CATALOG.md** — Path/Daily/Achievements.
-8. **ARENA_SPEC.md** — formulas, AI tactics, BP, Morale, buffs, seasons.
-9. **REWARD_TABLES.md** — chests, pity, level rewards.
-10. **SCREENS.md** — полный screen inventory и UX flows.
-11. **ASSET_PRODUCTION.md** — master poses, accessory pose variants, icons, animation requirements.
-12. **IMPLEMENTATION_ROADMAP.md** — backend/frontend/admin/Figma migrations и rollout.
+1. **ARENA_SPEC_V1.md** — подробный источник истины по Battle Engine, форматам боя, действиям, формулам, персонажам, Battle Power, аксессуарам, buffs, tactical services, таймерам, GE entry, social и balance risks. **Создан.**
+2. **GAME_DEPENDENCY_GRAPH.md** — граф всех связей: кто на что влияет, порядок modifiers, sinks/faucets.
+3. **GAME_DATA_MODEL.md** — сущности, таблицы, ключи, state machines.
+4. **ECONOMY_MODEL.md** — XP curve, GE emission, prices, Arena entry/payout/refunds, tickets, passive laying, drop EV, caps.
+5. **CHICKEN_CATALOG.md** — founders, personal names, gifts, Maneuver, Special, progression, future rarity.
+6. **GEAR_CATALOG.md** — L4–20 items, slots, sets, реальные combat stats, native synergy.
+7. **BUFF_CATALOG.md** — preparation buffs, tactical consumables, rarity, scopes, activation windows, engine hooks, stacking/caps.
+8. **EVENT_CATALOG.md** — 60–80 событий + Lucky Flip + counters.
+9. **QUEST_CATALOG.md** — Path/Daily/Achievements.
+10. **REWARD_TABLES.md** — chests, pity, level rewards.
+11. **SCREENS.md** — полный screen inventory и UX flows.
+12. **ASSET_PRODUCTION.md** — master poses, accessory pose variants, icons, animation requirements.
+13. **IMPLEMENTATION_ROADMAP.md** — backend/frontend/admin/Figma migrations и rollout.
 
 ---
 
 # 41. Источник правды
 
 До появления последующих документов:
-- этот Game Bible является источником правды по игровой концепции;
+- этот Game Bible является источником правды по общей игровой концепции;
+- по боевой механике Arena источником истины является **ARENA_SPEC_V1.md**;
 - конкретные цифры, явно названные «гипотезой», не являются production balance;
 - Economy/DB/Arena Specs смогут уточнять числа, но не должны менять принципы без нового decision record.
 
