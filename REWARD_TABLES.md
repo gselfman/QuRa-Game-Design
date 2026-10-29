@@ -1,6 +1,6 @@
 # QuRa — таблицы наград v1
 
-**Статус:** reward framework + initial hypotheses  
+**Статус:** награда framework + initial hypotheses  
 **Важно:** все числовые вероятности/amounts, если не помечены LOCKED, требуют Economy validation.
 
 ## 0. Reward principles
@@ -17,29 +17,29 @@
 - XP
 - GE
 - Tickets
-- Gear
-- Buff
+- Экипировка
+- баф
 - Chest
 - Egg/Chicken
 - Cosmetic
 - Achievement/Medal
 
-## 2. Level-up reward
+## 2. Level-up награда
 
-Every level is reward moment.
+Каждый уровень сопровождается наградой.
 
-Possible payload:
-- chest;
+Возможный состав награды:
+- сундук;
 - GE;
 - ticket;
-- gear;
+- экипировка;
 - buff;
 - special egg;
 - cosmetic.
 
-Exact per-level table OPEN until XP curve is locked.
+Таблица наград по уровням открыта до утверждения кривой XP.
 
-## 3. Chest rarity hypothesis
+## 3. Chest редкость hypothesis
 
 Starting model:
 - Common ~60%
@@ -48,62 +48,62 @@ Starting model:
 - Legendary ~2.5%
 - Artifact ~0.5%
 
-For paid chest probabilities shown before purchase.
+Шансы платного сундука показываются до покупки.
 
 ## 4. Chest tiers
 
 ### Basic Chest
-Sources:
-- daily/quest/early progression
+Источники:
+- ежедневный/quest/early progression
 
 Focus:
-- Common/Rare gear
-- common buffs
+- Common/Rare экипировка
+- common бафы
 - small GE
 - tickets
 
 ### Advanced Chest
-Sources:
-- weekly/mid progression
+Источники:
+- недельный/mid progression
 - paid option possible
 
 Focus:
 - Rare/Epic
-- stronger buffs
+- stronger бафы
 - meaningful GE chance
 
 ### Arena Chest
-Sources:
+Источники:
 - season/Arena milestones
 
 Focus:
-- Arena gear
-- tactical buffs
+- Arena экипировка
+- tactical бафы
 - cosmetics
 - limited GE
 
 ### Legendary Chest
-Rare source / expensive
+Редкий источник получения / высокая цена
 Requires pity.
 
 ## 5. Progression pools
 
-Player reward pool filtered by:
-- chicken/gear level access;
+Player награда pool filtered by:
+- chicken/экипировка уровень access;
 - owned features;
 - inventory;
 - content availability.
 
-Avoid stream of unusable L20 gear to L4 player.
+Avoid stream of unusable L20 экипировка to L4 player.
 
 Small aspirational preview allowed if overflow/equip rules clear.
 
 ## 6. Pity
 
-Paid/high-value chest families need:
+Paid/high-value сундук families need:
 - pity counter;
 - threshold;
-- guaranteed minimum rarity;
+- guaranteed minimum редкость;
 - reset rule;
 - visible or documented behavior.
 
@@ -116,32 +116,32 @@ Exact thresholds OPEN.
 
 ## 8. Overflow
 
-If capacity full:
-- reward entitlement recorded;
+Если вместимость заполнена:
+- награда entitlement recorded;
 - OverflowPackage created;
 - user can resolve;
 - expiry policy shown.
 
 Chicken/egg overflow uses «В гостях» flow.
 
-## 9. Мини-игра rewards
+## 9. Мини-игра награды
 
-Each game has separate table.
+Для каждой игры предусмотрена отдельная таблица.
 
 Table fields:
 - score/milestone
-- reward
+- награда
 - probability if random
-- daily cap
+- ежедневный лимит
 - global budget
 - source_type
 
 GE paid retry:
-expected convertible reward value < price unless subsidized/capped.
+expected convertible награда value < price unless subsidized/capped.
 
 ## 10. Wolf game
 
-Specific current reward matrix remains in mini-game-specific documentation/prototype.
+Specific current награда matrix remains in mini-game-specific documentation/prototype.
 
 Reward Tables references it rather than inventing new values.
 
@@ -160,41 +160,41 @@ Reward Tables references it rather than inventing new values.
 Для прозрачности: редкая косметика может иметь высокую коллекционную ценность, но её нельзя продать, передать или обменять на GE. XP из арендного сундука ограничен конфигурацией `arena_chest_xp_daily_cap` (величина OPEN) и имеет дневной кап, чтобы не обходить запрет прямой покупки XP.
 
 
-## 12. Friendly rewards
+## 12. Friendly награды
 
-No standard repeatable Arena payout/Glory.
+No standard repeatable Arena payout/Слава.
 
-Quest can grant one limited social reward.
+Quest can grant one limited social награда.
 
-## 13. Training rewards
+## 13. Training награды
 
-No standard Glory.
+No standard Слава.
 
-Can give capped tutorial/quest reward.
+Can give capped tutorial/quest награда.
 
-## 14. Quest reward bands
+## 14. Quest награда bands
 
 No exact amounts yet.
 
-### Easy daily
+### Easy ежедневный
 - small XP
 - optional small GE/ticket
 
-### Medium daily
+### Medium ежедневный
 - medium XP
-- buff/basic chest
+- buff/basic сундук
 
 ### Weekly
 - larger XP
-- chest
+- сундук
 - GE under budget
 - higher-tier buff
 
 ### Achievement
 - milestone-specific
-- cosmetic/item/chest/GE depending rarity
+- cosmetic/item/сундук/GE depending редкость
 
-## 15. Buff reward pools
+## 15. баф награда pools
 
 Common pool:
 - Second Wind
@@ -205,7 +205,7 @@ Common pool:
 Rare:
 - Battle Dome
 - Battle Cry
-- Shield Breaker
+- Щит Breaker
 - Clear Mind
 
 Epic:
@@ -216,16 +216,16 @@ Epic:
 
 Legendary candidate:
 - Phoenix
-- Special Echo
+- Особый приём Echo
 - powerful conditional effects
 
-Final rarity by simulation.
+Final редкость by simulation.
 
-## 16. Gear reward pool rules
+## 16. Экипировка награда pool rules
 
 Weight by:
-- level;
-- rarity;
+- уровень;
+- редкость;
 - native archetype opportunities;
 - duplicate rate;
 - owned set completion.
@@ -233,7 +233,7 @@ Weight by:
 Optional smart-drop:
 slightly improve chance of useful item without guaranteeing set completion.
 
-## 17. Egg/Chicken rewards
+## 17. Egg/Chicken награды
 
 Can be:
 - known archetype egg;
@@ -242,27 +242,27 @@ Can be:
 
 Always enters as L1.
 
-Never spawn adult directly unless special documented reward.
+Never spawn adult directly unless special documented награда.
 
-## 18. Ticket rewards
+## 18. Ticket награды
 
-Ticket grant must respect stock cap or define overflow conversion/pending claim.
+Ticket grant must respect stock лимит or define overflow conversion/pending claim.
 
 Default:
-do not silently discard earned ticket; use reward pending if cap full or explicitly documented cap behavior.
+do not silently discard earned ticket; use награда pending if лимит full or explicitly documented лимит behavior.
 
-## 19. GE rewards
+## 19. GE награды
 
-Every GE reward:
+Every GE награда:
 - amount
 - source_type
 - budget bucket
 - ledger record
-- cap context
+- лимит context
 
 ## 20. Идентификатор награды
 
-Use correlation_id to enforce exactly-once reward delivery.
+Use correlation_id to enforce exactly-once награда delivery.
 
 ## 21. Случайный выбор награды
 
@@ -279,7 +279,7 @@ Client only animates.
 
 Show:
 - price;
-- probability by relevant rarity/reward class;
+- probability by relevant редкость/награда class;
 - pity if user-facing policy;
 - duplicate possibility.
 
@@ -292,10 +292,10 @@ Any probability/amount change:
 
 ## 24. Compensation
 
-Operational compensation uses separate source:
+Operational compensation uses separate источник:
 COMPENSATION
 
-Must not disguise compensation as random reward.
+Must not disguise compensation as random награда.
 
 ## 25. Reward analytics
 
@@ -303,26 +303,26 @@ Track:
 - table/version
 - expected value
 - realized value
-- rarity
+- редкость
 - duplicates
 - pity state
-- source
+- источник
 - claim/overflow
 - GE cost vs value
 
 ## 26. Production tables still to calibrate
 
 - XP per quest
-- XP level-up
-- GE daily/weekly
-- chest rates by tier
+- XP уровень-up
+- GE ежедневный/недельный
+- сундук rates by tier
 - pity thresholds
-- season rewards
+- season награды
 - passive laying
 - item/buff drop weights
 
 These are configuration tables, not missing mechanics.
 
-## 27. Season Pass / monetization rewards
+## 27. Season Pass / monetization награды
 
-Approved direction: Season Pass has free and premium tracks; late premium purchase claims previously unlocked milestones. Every reward is a versioned entitlement. Paid chest must display odds pre-purchase; pity per chest family, disclosed threshold, duplicate compensation and server-side roll. Golden Piggy Bank offers a clearly stated **guaranteed** award at purchase (not a deposit or already earned GE). Exact numerical reward tables, frequency, price and EV remain OPEN pending economy review; see **MONETIZATION_LIVEOPS_SPEC.md**.
+Approved direction: Season Pass has free and premium tracks; late premium purchase claims previously unlocked milestones. Every награда is a versioned entitlement. Paid сундук must display odds pre-purchase; pity per сундук family, disclosed threshold, duplicate compensation and server-side roll. Golden Piggy Bank offers a clearly stated **guaranteed** award at purchase (not a deposit or already earned GE). Exact numerical награда tables, frequency, price and EV remain OPEN pending economy review; see **MONETIZATION_LIVEOPS_SPEC.md**.
