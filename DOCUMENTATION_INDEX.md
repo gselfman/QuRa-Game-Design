@@ -115,3 +115,9 @@ When a rule changes:
 
 Do not allow code to silently become the only documentation.
 
+## 6. Approved new systems (29.10.2026)
+
+- **MONETIZATION_LIVEOPS_SPEC.md** — Season Pass, chests/odds/pity, Golden Piggy Bank, starter bundle, personal offers, fintech earning paths and fairness.
+- **SPRITE_PRODUCTION_BATCHES.md** — 12 ready-to-generate 5×5 sheets, 300 named assets, Figma slicing/QA contract.
+
+Both are part of v1 documentation and should be read after ECONOMY_MODEL.md and ASSET_PRODUCTION.md respectively.
