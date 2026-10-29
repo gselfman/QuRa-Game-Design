@@ -3,11 +3,11 @@
 **Статус:** награда framework + initial hypotheses  
 **Важно:** все числовые вероятности/amounts, если не помечены LOCKED, требуют Economy validation.
 
-## 0. Reward principles
+## 0. Принципы наград
 
 - server-authoritative;
 - auditable;
-- no silent loss;
+- нельзя незаметно терять награду;
 - feature-gated;
 - progression-aware;
 - anti-arbitrage.
@@ -34,14 +34,14 @@
 - ticket;
 - экипировка;
 - buff;
-- special egg;
+- особое яйцо;
 - cosmetic.
 
 Таблица наград по уровням открыта до утверждения кривой XP.
 
 ## 3. Chest редкость hypothesis
 
-Starting model:
+Начальная модель:
 - Common ~60%
 - Rare ~28%
 - Epic ~9%
@@ -50,9 +50,9 @@ Starting model:
 
 Шансы платного сундука показываются до покупки.
 
-## 4. Chest tiers
+## 4. Виды сундуков
 
-### Basic Chest
+### Обычный сундук
 Источники:
 - ежедневный/quest/early progression
 
@@ -62,19 +62,19 @@ Focus:
 - small GE
 - tickets
 
-### Advanced Chest
+### Улучшенный сундук
 Источники:
 - недельный/mid progression
-- paid option possible
+- возможна платная версия
 
 Focus:
 - Rare/Epic
 - stronger бафы
 - meaningful GE chance
 
-### Arena Chest
+### Сундук Arena
 Источники:
-- season/Arena milestones
+- сезонные достижения Arena
 
 Focus:
 - Arena экипировка
@@ -82,17 +82,17 @@ Focus:
 - cosmetics
 - limited GE
 
-### Legendary Chest
+### Легендарный сундук
 Редкий источник получения / высокая цена
-Requires pity.
+Нужна гарантия выпадения по счётчику.
 
-## 5. Progression pools
+## 5. Пулы по прогрессу
 
 Player награда pool filtered by:
 - chicken/экипировка уровень access;
-- owned features;
+- доступные игроку функции;
 - inventory;
-- content availability.
+- доступность контента.
 
 Avoid stream of unusable L20 экипировка to L4 player.
 
@@ -101,11 +101,11 @@ Avoid stream of unusable L20 экипировка to L4 player.
 ## 6. Pity
 
 Для платных и дорогих сундуков необходимо:
-- pity counter;
+- счётчик гарантии;
 - threshold;
 - guaranteed minimum редкость;
-- reset rule;
-- visible or documented behavior.
+- правило сброса;
+- понятное или раскрытое в правилах поведение.
 
 Точные пороги OPEN.
 
@@ -118,9 +118,9 @@ Avoid stream of unusable L20 экипировка to L4 player.
 
 Если вместимость заполнена:
 - награда entitlement recorded;
-- OverflowPackage created;
+- создаётся пакет временного хранения;
 - игрок может выбрать способ устранения переполнения;
-- expiry policy shown.
+- срок хранения явно показан.
 
 Chicken/egg overflow uses «В гостях» flow.
 
@@ -128,18 +128,18 @@ Chicken/egg overflow uses «В гостях» flow.
 
 Для каждой игры предусмотрена отдельная таблица.
 
-Table fields:
+Поля таблицы:
 - score/milestone
 - награда
 - вероятность, если награда случайна
 - ежедневный лимит
-- global budget
+- общий бюджет
 - source_type
 
-GE paid retry:
+Платный повтор за GE:
 ожидаемая конвертируемая стоимость награды ниже цены, если нет явного бюджета субсидирования или жёсткого лимита.
 
-## 10. Wolf game
+## 10. Игра «Волк ловит яйца»
 
 Действующая матрица наград остаётся в документации конкретной мини-игры.
 
@@ -178,7 +178,7 @@ No standard Слава.
 
 ### Easy ежедневный
 - small XP
-- optional small GE/ticket
+- необязательная небольшая награда GE/билет
 
 ### Medium ежедневный
 - medium XP
@@ -187,8 +187,8 @@ No standard Слава.
 ### Weekly
 - larger XP
 - сундук
-- GE under budget
-- higher-tier buff
+- GE в пределах бюджета
+- баф более высокой редкости
 
 ### Achievement
 - milestone-specific
@@ -196,20 +196,20 @@ No standard Слава.
 
 ## 15. баф награда pools
 
-Common pool:
-- Second Wind
-- Stone Skin
+Обычный пул:
+- «Второе дыхание»
+- «Каменная кожа»
 - Adrenaline
 - Charge
 
 Rare:
-- Battle Dome
-- Battle Cry
+- «Боевой купол»
+- «Боевой клич»
 - Щит Breaker
-- Clear Mind
+- «Чистая голова»
 
 Epic:
-- Double Power
+- «Двойная сила»
 - Silence
 - Swap/Reform
 - Mirror
@@ -217,7 +217,7 @@ Epic:
 Кандидаты в Legendary:
 - Phoenix
 - Особый приём Echo
-- powerful conditional effects
+- сильные условные эффекты
 
 Final редкость by simulation.
 
@@ -226,9 +226,9 @@ Final редкость by simulation.
 Weight by:
 - уровень;
 - редкость;
-- native archetype opportunities;
-- duplicate rate;
-- owned set completion.
+- совместимость с родным типом;
+- частота дублей;
+- степень комплектации уже начатых комплектов.
 
 Дополнительный «полезный» дроп:
 немного повышать шанс подходящего предмета, не гарантируя готовый комплект.
@@ -236,9 +236,9 @@ Weight by:
 ## 17. Egg/Chicken награды
 
 Can be:
-- known archetype egg;
-- mystery egg;
-- special/seasonal egg.
+- яйцо известной основательницы;
+- загадочное яйцо;
+- особое или сезонное яйцо.
 
 Всегда поступает как яйцо L1.
 
@@ -256,8 +256,8 @@ Default:
 Every GE награда:
 - amount
 - source_type
-- budget bucket
-- ledger record
+- бюджетная статья
+- запись в реестре начислений
 - лимит context
 
 ## 20. Идентификатор награды
@@ -267,10 +267,10 @@ Use correlation_id to enforce exactly-once награда delivery.
 ## 21. Случайный выбор награды
 
 Server:
-- chooses table version;
+- выбирает версию таблицы;
 - RNG;
-- stores result;
-- updates pity;
+- сохраняет результат;
+- обновляет счётчик гарантии;
 - grants.
 
 Клиент только воспроизводит анимацию.
@@ -281,14 +281,14 @@ Show:
 - price;
 - probability by relevant редкость/награда class;
 - pity, если политика показывается игроку;
-- duplicate possibility.
+- возможность дубля.
 
-## 23. Reward table versioning
+## 23. Версионирование таблиц наград
 
 Изменение любой вероятности или размера награды:
-- new version;
-- effective time;
-- preserve historical audit.
+- новая версия;
+- время вступления в силу;
+- сохранить историю начислений.
 
 ## 24. Compensation
 
@@ -297,29 +297,29 @@ COMPENSATION
 
 Must not disguise compensation as random награда.
 
-## 25. Reward analytics
+## 25. Аналитика наград
 
 Track:
 - table/version
-- expected value
-- realized value
+- ожидаемая стоимость
+- реальная полученная стоимость
 - редкость
 - duplicates
-- pity state
+- состояние счётчика гарантии
 - источник
 - claim/overflow
 - GE cost vs value
 
-## 26. Production tables still to calibrate
+## 26. Таблицы, требующие калибровки
 
-- XP per quest
+- XP за задание
 - XP уровень-up
 - GE ежедневный/недельный
 - сундук rates by tier
-- pity thresholds
+- пороги гарантии
 - season награды
-- passive laying
-- item/buff drop weights
+- пассивная яйценоскость
+- веса выпадения предметов и бафов
 
 Это таблицы конфигурации, а не недостающие механики.
 
