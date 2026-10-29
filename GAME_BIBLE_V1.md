@@ -1626,97 +1626,10 @@ Morale, buff и Daily Event не должны навсегда менять item
 
 ---
 
-# 39. Поэтапная реализация
+# 39. Этапы реализации
 
-## Phase A — System Foundation
-Сначала документация и data model:
-- Game Bible;
-- dependency graph;
-- DB model;
-- economy tables;
-- content catalogs;
-- feature flags.
+Единственный актуальный порядок разработки, критерии готовности, зависимости MVP, сроки внедрения Arena, кормления, Даров, кланов и монетизации см. **IMPLEMENTATION_ROADMAP.md**. Старый отдельный список фаз удалён во избежание противоречий.
 
-## Phase B — Progression MVP
-- L1–L4 визуальный lifecycle;
-- выбор 1/7;
-- XP;
-- main chicken;
-- Путь;
-- daily quests;
-- level-up reward;
-- Крутость;
-- Дар;
-- Курятник 2 места;
-- 2 билета/день, cap 8;
-- существующие мини-игры подключаются к tickets/rewards.
-
-## Phase C — Gear
-- L4–20 catalog;
-- магазин;
-- карточка товара;
-- примерка;
-- гардероб;
-- Сундук;
-- capacity/upgrade;
-- duplicates 25%;
-- native sets;
-- synergies;
-- затемнённые Arena stats;
-- бесплатный upgrade Курятника 2→4.
-
-## Phase D — Living Coop
-- 60–80 event library;
-- global daily event;
-- Lucky Flip;
-- Gifts interaction;
-- News feed;
-- passive laying economy;
-- upgrades 4→6→10→16→24;
-- Coolness rankings.
-
-## Phase E — Arena Foundation
-- 1×1;
-- bot;
-- battle formulas;
-- Attack/Defend/Special;
-- permanent Arena stats;
-- BP;
-- Morale;
-- one active GE buff.
-
-## Phase F — Ranked Arena + Social PvP
-- 2×2;
-- 3×3;
-- explicit season enrollment;
-- defense strategy;
-- matchmaking;
-- friends/random/bot;
-- Online Friendly с живым пошаговым PvP;
-- Friend Challenge / приглашения;
-- turn timer и reconnect;
-- единый Battle Engine для online / async / bot;
-- Glory;
-- leagues;
-- TOP-3 medals;
-- Hall of Fame;
-- season rewards.
-
-## Phase G — Legacy
-- L15 3D flow;
-- passport/QR;
-- one-time heir claim;
-- genetics/visual inheritance;
-- LegacyBonus;
-- generation cap.
-
-## Future Research
-- blockchain embodiment;
-- P2P chicken market;
-- Arena prediction/betting module;
-- deeper combat types/classes.
-
----
 
 # 40. Комплект документации
 
@@ -1741,22 +1654,10 @@ Morale, buff и Daily Event не должны навсегда менять item
 
 ---
 
-# 41. Источник правды
+# 41. Источники истины
 
-После создания полного пакета документации:
-- этот Game Bible остаётся источником правды по общей игровой концепции;
-- по боевой механике Arena источником истины является **ARENA_SPEC_V1.md**;
-- по cross-system dependencies — **GAME_DEPENDENCY_GRAPH.md**;
-- по data entities/state machines — **GAME_DATA_MODEL.md**;
-- по экономическим числам после их утверждения — **ECONOMY_MODEL.md**;
-- навигация по всем документам — **DOCUMENTATION_INDEX.md**;
-- конкретные цифры, явно названные «гипотезой», не являются production balance;
-- Economy/DB/Arena Specs смогут уточнять числа, но не должны менять принципы без нового decision record.
+Единая иерархия описана в **DOCUMENTATION_INDEX.md**. Числа с пометками PROTOTYPE BALANCE и OPEN не являются утверждённым production balance. Изменение правил оформляется через decision record и связанные документы.
 
-**Главный критерий любой новой механики:** она должна либо повышать удержание, помогать пользователю освоить QuRa, создавать осмысленный GE sink/collection goal или давать социальную/соревновательную ценность. Если механика не делает ничего из этого — она не нужна.
-
-
----
 
 # 42. Монетизация и библиотека спрайтов (утверждено 29.10.2026)
 
