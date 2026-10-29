@@ -25,12 +25,12 @@ Arena:
 - title;
 - визуальный identity;
 - Gift;
-- base Arena stats;
+- базовые характеристики Arena;
 - Манёвр;
 - Особый приём;
 - role;
 - native экипировка direction;
-- narrative vocabulary.
+- особенности описания в летописи.
 
 ## 2. Ряба
 
@@ -43,7 +43,7 @@ Arena:
 
 Дар:
 **Золотая несушка**
-- усиливает passive laying по Economy Model.
+- усиливает пассивная яйценоскость по Economy Model.
 
 Характеристики Arena в прототипе:
 - HP 108
@@ -72,7 +72,7 @@ Arena:
 - щит;
 - HP;
 - Особый приём щит;
-- controlled aggressive variant.
+- контролируемая атакующая сборка.
 
 Глаголы для летописи:
 - разбивает;
@@ -112,14 +112,14 @@ Arena:
 
 Игровая роль:
 - pressure;
-- heavy hit;
+- сильный удар;
 - counterplay.
 
 Родная экипировка:
 - Атака;
 - Защита;
 - next-Атака boost;
-- counter support.
+- поддержка контратаки.
 
 Литературное описание:
 - идёт напролом;
@@ -139,7 +139,7 @@ Arena:
 
 Дар:
 **Везучая дурочка**
-- Lucky Flip negative Coop event → prepared positive alternative.
+- Lucky Flip заменяет негативное событие Курятника заранее подготовленным положительным.
 
 Характеристики прототипа:
 - HP 102
@@ -167,7 +167,7 @@ Arena:
 Родная экипировка:
 - Скорость;
 - Атака;
-- controlled RNG support;
+- контролируемое усиление случайных эффектов;
 - Манёвр synergy.
 
 Литературное описание:
@@ -204,15 +204,15 @@ Arena:
 Особый приём:
 **Расчёт**
 - ~45 урон;
-- precise direct strike.
+- точный прямой удар.
 
 Игровая роль:
 - control;
-- charge denial;
+- снижение заряда Особого приёма;
 - точность.
 
 Родная экипировка:
-- charge denial;
+- снижение заряда Особого приёма;
 - Особый приём точность;
 - moderate Скорость;
 - control.
@@ -235,7 +235,7 @@ Arena:
 
 Дар:
 **Благодать**
-- amplifies Coop synergy, capped.
+- усиливает синергию Курятника в установленных пределах.
 
 Характеристики прототипа:
 - HP 110
@@ -344,9 +344,9 @@ Arena:
 - Гламурочка Анжелла.
 
 Rename:
-- allowed later;
-- does not affect mechanics;
-- moderation required.
+- доступно позднее;
+- не меняет механику;
+- нужна модерация.
 
 ## 10. Lifecycle
 
@@ -373,26 +373,26 @@ Base archetype is not редкость.
 
 Легендарная курочка должна менять стратегию, а не просто получать +50% ко всем параметрам.
 
-## 12. New archetype acceptance rules
+## 12. Критерии принятия нового типа
 
 Новый архетип должен иметь:
 1. clear визуальный silhouette;
-2. real Gift outside Arena or explicitly defined role;
+2. реальный Дар вне Arena либо явно определённая роль;
 3. distinct Манёвр;
 4. distinct Особый приём;
-5. role not redundant;
-6. approved engine hooks;
+5. роль не дублирует существующих;
+6. утверждённые обработчики боевого движка;
 7. логическое объяснение действия персонажа;
-8. balance simulation;
+8. симуляция баланса;
 9. native экипировка direction.
 
 ## 13. Манёвр design rule
 
 First:
-- character action.
+- характерное действие персонажа.
 
 Then:
-- natural effect.
+- естественный игровой эффект.
 
 Then:
 - numbers.
@@ -404,23 +404,23 @@ Then:
 
 Особый приём должен:
 - be memorable;
-- justify charge;
-- create counterplay;
+- оправдывать необходимость накопления заряда;
+- предоставлять сопернику варианты противодействия.
 - have Защита interaction;
 - be narratable.
 
-## 15. Base-stat rule
+## 15. Правило базовых характеристик
 
 Характеристики не утверждены до симуляции.
 
 Значения прототипа служат ориентиром, а не окончательным балансом.
 
-## 16. Gift rule
+## 16. Правило Дара
 
 Дар:
 - постоянный;
-- character identity;
-- primarily outside Arena unless explicitly bridged;
+- индивидуальность персонажа;
+- преимущественно вне Arena, если не прописано отдельное боевое взаимодействие;
 - должен изменять реальную механику;
 - stacking family/лимит required.
 
@@ -429,7 +429,7 @@ Then:
 Heir:
 - starts L1;
 - inherits lineage/визуальный traits;
-- gets controlled LegacyBonus;
+- получает ограниченный наследственный бонус;
 - progresses faster under лимит;
 - does not inherit L15 уровень.
 
@@ -438,9 +438,9 @@ Heir:
 Право на воплощение открывается с L15.
 
 Embodiment:
-- original leaves digital Coop;
-- physical passport/identifier;
-- one-time heir claim capability.
+- исходная курочка покидает цифровой Курятник;
+- физический паспорт/идентификатор;
+- возможность однократного получения наследника.
 
 ## 19. UI identity
 
@@ -459,7 +459,7 @@ Arena:
 - Особый приём charge;
 - statuses.
 
-## 20. Chronicle identity
+## 20. Обозначение персонажей в летописи
 
 Не использовать одно слово «Дурочка», если персонажей можно спутать.
 
@@ -470,14 +470,14 @@ Use:
 Пример:
 > 🐺 Дурочка Мурочка провела Финт против 🌙 Дурочки Соньки.
 
-## 21. Catalog extension process
+## 21. Порядок расширения каталога
 
 Каждый новый тип требует:
-- Game Bible decision;
-- catalog entry;
-- Arena Spec update;
+- согласованное решение в Game Bible;
+- запись в каталоге;
+- обновление Arena Spec;
 - Экипировка compatibility;
-- asset plan;
+- план производства ассетов;
 - localization;
-- analytics code;
-- migration version.
+- код аналитики;
+- версия миграции.
