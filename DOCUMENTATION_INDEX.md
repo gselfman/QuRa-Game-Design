@@ -20,6 +20,12 @@
 14. **ASSET_PRODUCTION.md** — visual asset production requirements
 15. **IMPLEMENTATION_ROADMAP.md** — build sequence and rollout
 
+### Дополнения аудита 29.10.2026
+
+- **RETENTION_NOTIFICATIONS.md** — Telegram/PWA push, триггеры, частота, стрики, метрики.
+- **ARENA_SIMULATION_RESULTS.md** — методика расчётов, статус тестов и незакрытые численные решения.
+- **DOC_FIX_AUDIT_REPORT_2026-10-29.md** — сводный отчёт, статусы пунктов A–E и список OPEN.
+
 ## 2. Источники истины по темам
 
 ### Overall game
