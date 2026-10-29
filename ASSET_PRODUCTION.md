@@ -1,9 +1,9 @@
-# QuRa Asset Production v1
+# QuRa — производство ассетов v1
 
 **Статус:** production specification for game visual assets  
 **Sources:** Game Bible, Arena Spec, Screens
 
-## 0. Goal
+## 0. Цель
 
 Create reusable assets that:
 - fit QuRa visual language;
@@ -247,7 +247,7 @@ Sequence:
 
 Must feel humorous/mythic, not punitive system error.
 
-## 14. Battle Chronicle visuals
+## 14. Летопись боя visuals
 
 Optional but useful:
 - round divider
@@ -295,7 +295,7 @@ Each archetype should get a coherent visual family:
 - Monk: calm/spiritual
 - Glamour: stylish/showy
 
-## 18. Rarity presentation
+## 18. Редкость presentation
 
 Rarity should use:
 - frame/detail density;
@@ -346,7 +346,7 @@ L15 flow:
 - passport visual
 - QR claim packaging UI
 
-## 22. Mini-game assets
+## 22. Мини-игра assets
 
 Existing mini-game packs remain separate production tracks.
 
@@ -371,7 +371,7 @@ Arena 3×3:
 - chat can collapse/dock
 - Chronicle remains long-scroll readable
 
-## 24. File formats
+## 24. Форматы файлов
 
 Masters:
 - SVG for icons where practical
@@ -383,7 +383,7 @@ Runtime:
 - PNG only where alpha/quality requires
 - SVG icons optimized
 
-## 25. Naming convention
+## 25. Правила именования
 
 Examples:
 - chicken_ryaba_card_base_v01.webp
@@ -394,7 +394,7 @@ Examples:
 
 No random filenames.
 
-## 26. Resolution
+## 26. Разрешение
 
 Store masters larger than runtime.
 
@@ -405,12 +405,12 @@ Typical:
 - backgrounds: desktop 4K master
 - UI exported at density variants if needed
 
-## 27. Transparency
+## 27. Прозрачность
 
 Character/accessory/FX sprite:
 - transparent background unless intentionally environmental.
 
-## 28. Safe areas
+## 28. Защитные поля
 
 Characters must not crop:
 - headwear
@@ -420,7 +420,7 @@ Characters must not crop:
 
 Document bounding box.
 
-## 29. Animation strategy
+## 29. Подход к анимации
 
 Prefer:
 - short sprite/state sequences
@@ -431,7 +431,7 @@ Arena actions:
 - readable timing;
 - mechanics resolved server-side independent of animation.
 
-## 30. Accessibility
+## 30. Доступность
 
 - sufficient contrast
 - no information encoded by color alone
@@ -453,7 +453,7 @@ User controls:
 - music
 - vibration
 
-## 32. Asset registry
+## 32. Реестр ассетов
 
 Need table/entity:
 - asset_id
@@ -466,7 +466,7 @@ Need table/entity:
 - runtime path
 - status
 
-## 33. Production statuses
+## 33. Статусы производства
 
 - CONCEPT
 - APPROVED
@@ -477,7 +477,7 @@ Need table/entity:
 - QA_APPROVED
 - DEPRECATED
 
-## 34. QA checklist
+## 34. Контрольный список качества
 
 Every asset:
 - correct archetype
@@ -491,7 +491,7 @@ Every asset:
 - mobile readability
 - no duplicate
 
-## 35. Figma structure
+## 35. Структура Figma
 
 Recommended pages:
 - Foundations
@@ -517,7 +517,7 @@ Components:
 - modal
 - reward card
 
-## 36. Source of truth
+## 36. Источник истины
 
 Visual source:
 Figma/library.
