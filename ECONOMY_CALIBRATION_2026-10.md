@@ -1,16 +1,16 @@
 # QuRa — калибровка экономики, октябрь 2026
 
 **Статус:** calibration snapshot based on real GE accrual history + user-reported sustainable mini-game result  
-**Purpose:** validate price bands and time-to-goal against actual product usage.
+**Цель:** проверить ценовые диапазоны и время накопления по реальному использованию продукта.
 
 ## 1. Период наблюдения
 
 Основной период сравнения:
 - 14 Oct 2026 through 29 Oct 2026
-- 16 calendar days
+- 16 календарных дней
 
 Исключены из обычного заработка GE:
-- 300 GE welcome bonus
+- 300 GE приветственного бонуса
 - 300 GE purchased in GE Shop
 
 ## 2. Наблюдаемые начисления
@@ -25,23 +25,23 @@
 | Wolf rewards in raw history | 7 | 610 | 38.1 over calendar window |
 
 Important:
-- Wolf raw history includes unusually large test/game rewards and is not used as sustainable daily baseline.
-- Sustainable user estimate for "Wolf catches eggs": **+40 GE net/day** after paid attempts/costs.
+- В истории «Волка» есть необычно крупные тестовые награды; они не используются как устойчивый дневной доход.
+- Оценка устойчивого заработка в «Волке» — **+40 GE чистыми в день** после расходов на попытки.
 
 ## 3. Калибровка финтех-активности
 
-Own operations:
-- 845 GE / 16 calendar days = **52.8 GE/day**
-- 12 days with at least one own operation
-- average on active operation day = **70.4 GE**
-- median active operation day = **53 GE**
-- 26 QR payment rewards = 823 GE
+Собственные операции:
+- 845 GE / 16 календарных дней = **52.8 GE/day**
+- 12 дней с хотя бы одной собственной операцией
+- среднее за день с операциями = **70.4 GE**
+- медиана дня с операциями = **53 GE**
+- 26 начислений за QR-платежи = 823 GE
 - average QR reward = **31.7 GE**
 - median QR reward = **21.5 GE**
 
 Interpretation:
-- a normal actively-paying user already earns roughly 50–55 GE/day from core QuRa usage;
-- this gives a strong foundation for a game economy that encourages core fintech activity.
+- обычный активный плательщик получает примерно 50–55 GE в день за основные операции QuRa;
+- это даёт основу игровой экономике, стимулирующей использование финансовых сервисов.
 
 ## 4. Сценарии дневного заработка
 
@@ -54,28 +54,28 @@ Interpretation:
 | Operations + Wolf + daily + observed partner | **98.4** |
 
 Conclusion:
-- modeling unit **D ≈ 100 GE/day** is supported by the observed active-user scenario;
-- core fintech operations alone remain a larger repeatable source than one light mini-game session.
+- модельная величина **D ≈ 100 GE/день** соответствует наблюдаемому активному сценарию;
+- только финансовые операции приносят больше, чем одна лёгкая игровая сессия.
 
 ## 5. Целевые доли источников
 
 Для игрока, который активно оплачивает через QuRa и ежедневно играет в «Волка»:
 
-- core operations: ~56%
+- операции QuRa: около 56%
 - Wolf: ~43%
-- daily egg: ~1%
+- ежедневное яйцо: около 1%
 
-This suggests a more realistic target than the earlier 15–30% mini-game hypothesis:
+Это более реалистичный ориентир, чем прежняя гипотеза 15–30% от мини-игр:
 
-**Working target for a highly active player:**
-- 50–65% repeatable earned GE from core QuRa operations;
-- 30–45% from mini-games;
-- 5–15% from quests/events/passive/other small sources.
+**Рабочая цель для очень активного игрока:**
+- 50–65% регулярного заработка GE из финансовых операций QuRa;
+- 30–45% из мини-игр;
+- 5–15% из заданий, событий, пассивных и других небольших источников.
 
 Партнёрский доход учитывается отдельно, потому что он есть не у каждого.
 
 Invariant:
-> No single repeatable mini-game should sustainably outperform normal core QuRa usage for the target active payer unless it is strongly capped.
+> Ни одна повторяемая мини-игра не должна устойчиво обгонять обычные финансовые операции активного плательщика без жёсткого ограничения.
 
 ## 6. Рабочая лестница цен
 
@@ -110,7 +110,7 @@ Invariant:
 
 Купленная курочка всегда поступает яйцом L1.
 
-### Coop upgrades
+### Улучшения Курятника
 
 | Upgrade | Price GE |
 |---|---:|
@@ -145,51 +145,51 @@ Invariant:
 Эта лестница формирует четыре временных горизонта:
 
 ### Immediate: < 3 days
-- Common gear
-- Rare gear for combined active user
-- small buffs/services
+- обычная экипировка
+- редкая экипировка для пользователя, который платит и играет
+- небольшие бафы и сервисы
 
-### Short goal: ~1 week
-- Epic gear for active combined user
-- second/third chicken acceleration
-- first paid Coop upgrade
+### Краткосрочная цель: около недели
+- эпическая экипировка для активного плательщика-игрока
+- ускоренное получение второй/третьей курочки
+- первое платное расширение Курятника
 
-### Medium goal: 2–4 weeks
-- standard founder chicken
-- Rare/seasonal chicken for highly active user
+### Средняя цель: 2–4 недели
+- обычная курочка-основательница
+- редкая/сезонная курочка для очень активного пользователя
 - 6→10 Coop
 
-### Long / monetization pressure
-- Legendary/Artifact gear
-- Epic/Legendary chicken
-- large Coop tiers
+### Долгосрочная цель / стимул к покупке
+- легендарная и артефактная экипировка
+- эпическая или легендарная курочка
+- крупные улучшения Курятника
 
-This is where "earn more through QuRa" or "buy GE" becomes naturally relevant.
+На этом горизонте естественно возникает выбор: активнее пользоваться QuRa или купить GE.
 
 ## 9. Store UX principle
 
 Для дорогой покупки показывать:
-- current balance;
+- текущий баланс;
 - missing GE;
-- estimated earned path;
+- прогноз накопления;
 - **Earn GE** CTA;
 - **Buy GE** CTA.
 
 Кнопка «Заработать GE» ведёт к:
-- useful QuRa actions;
+- полезные действия в QuRa;
 - quests;
-- available mini-games;
-- other legitimate sources.
+- доступные мини-игры;
+- другие разрешённые источники.
 
 ## 10. Следующая калибровка
 
 Нужны данные большей выборки пользователей:
-- low activity payer
-- median payer
-- high activity payer
-- non-payer gamer
+- малоактивный плательщик
+- средний плательщик
+- очень активный плательщик
+- игрок без финансовых операций
 - payer + gamer
-- partner-heavy user
+- пользователь с высоким партнёрским доходом
 
 Recalculate:
 - P25 / P50 / P75 GE/day
