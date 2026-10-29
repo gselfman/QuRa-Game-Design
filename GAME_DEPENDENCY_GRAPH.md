@@ -121,7 +121,7 @@ GE имеет двойную роль:
 - amount;
 - timestamp;
 - budget/лимит;
-- anti-fraud context.
+- контекст проверки на злоупотребления.
 
 ---
 
@@ -135,8 +135,8 @@ GE имеет двойную роль:
 
 ### Sources
 
-- account quests;
-- chicken quests;
+- задания аккаунта;
+- личные задания курочки;
 - полезные действия QuRa;
 - achievements;
 - отдельные events;
@@ -175,24 +175,24 @@ XP нельзя:
 - quests;
 - сундуки;
 - achievements;
-- partner program;
+- партнёрская программа;
 - passive systems, если включены;
-- Arena payout;
+- награды Arena;
 - events.
 
 ### Sinks
 
 - экипировка;
-- Coop upgrades;
-- paid mini-game attempts;
+- улучшения Курятника;
+- платные попытки мини-игр;
 - сундуки;
-- Arena entry;
-- Arena tactical services;
+- аренда Arena;
+- тактические сервисы Arena;
 - preparation бафы;
 - tactical расходники;
 - будущий cosmetic services.
 
-### Critical loop rule
+### Запрет гарантированного прибыльного цикла
 
 Запрещён гарантированный цикл:
 
@@ -207,14 +207,14 @@ XP нельзя:
 ### Source
 
 - ежедневный accrual: +2/day;
-- max stock: 8;
+- максимальный запас: 8;
 - other explicit награды.
 
 ### Consumer
 
 - награда-bearing mini-game attempt.
 
-### Not used by
+### Не используется для
 
 - Arena;
 - general navigation;
@@ -260,15 +260,15 @@ flowchart LR
 
 Определяет:
 
-- base stats;
+- базовые характеристики;
 - Gift;
 - Манёвр;
 - Особый приём;
 - native экипировка;
-- character mechanics;
-- animation/lore hooks.
+- механика персонажа;
+- связи с анимациями и историей персонажа.
 
-## Personal name
+## Личное имя
 
 Определяет только identity/presentation.
 
@@ -326,12 +326,12 @@ flowchart TD
 - SetBonus;
 - LegacyBonus;
 - AchievementBonus;
-- Coop collection/system bonuses.
+- бонусы коллекции и Курятника.
 
 Используется для:
 
-- collection rankings;
-- Coop progression requirements;
+- коллекционные рейтинги;
+- требования развития Курятника;
 - визуальный status;
 - achievements.
 
@@ -345,7 +345,7 @@ flowchart TD
 
 ---
 
-# 8. Gift dependency graph
+# 8. Зависимости Даров
 
 Gift is a постоянный passive identity **outside Arena** unless a specific Arena rule explicitly creates a separate combat effect.
 
@@ -451,30 +451,30 @@ flowchart TD
 Каждая боевая характеристика предмета должна пройти цепочку:
 
 ```text
-Item property
+Характеристика предмета
   ↓
-Known engine hook
+Поддерживаемый обработчик движка
   ↓
-Real battle calculation
+Реальный боевой расчёт
   ↓
-Measurable marginal effect
+Измеримый вклад характеристики
   ↓
-Battle Power weight
+Вес в Боевой силе
   ↓
-Balance cap
+Балансное ограничение
 ```
 
 Если хотя бы одно звено отсутствует, характеристику нельзя выпускать.
 
 ---
 
-# 12. Native synergy dependency
+# 12. Зависимости родных предметов
 
 Родная экипировка:
 
 `Gear Type Match → Native Synergy → Permanent Effect → Battle Engine + BP`
 
-Set bonus:
+Бонус комплекта:
 
 `Equipped Set Threshold → Set Bonus → Permanent Effect → Battle Engine + BP`
 
@@ -482,8 +482,8 @@ Set bonus:
 
 - родная синергия должна быть описана явно;
 - эффекты комплекта должны быть описаны явно;
-- no invisible synergy;
-- no uncapped same-family stacking.
+- никаких скрытых синергий;
+- запрет суммирования однотипных эффектов без ограничения.
 
 ---
 
@@ -519,11 +519,11 @@ flowchart TD
 
 Примеры:
 
-- base stats;
+- базовые характеристики;
 - уровень-derived stats;
 - экипировка;
-- set bonuses;
-- Legacy modifiers.
+- бонусы комплектов;
+- наследственные модификаторы.
 
 Свойства:
 
@@ -531,20 +531,20 @@ flowchart TD
 - persist in DB;
 - used in подбор соперника.
 
-## Temporary pre-battle
+## Временные эффекты перед боем
 
 Примеры:
 
 - Preparation баф;
-- Daily Event Arena modifier;
+- модификатор Arena от События дня;
 - Morale.
 
 Свойства:
 
-- not included in BP;
+- не входит в Боевую силу (BP);
 - expire;
-- visible according to rules;
-- affect actual battle.
+- видимость определяется правилами;
+- влияет на фактический бой.
 
 ## Temporary in-battle
 
@@ -553,46 +553,46 @@ flowchart TD
 - Щит;
 - boost;
 - weaken;
-- tactical consumable;
+- тактический расходник;
 - Особый приём charge;
-- round effects.
+- эффекты текущего раунда.
 
 Свойства:
 
-- not included in BP;
-- stored in battle state;
-- cleared/expired by engine rules.
+- не входит в Боевую силу (BP);
+- хранится в состоянии боя;
+- удаляется или истекает по правилам движка.
 
 ---
 
-# 15. Modifier processing order
+# 15. Порядок применения модификаторов
 
 Общий порядок применения:
 
-1. base archetype stats;
+1. базовые характеристики типа;
 2. уровень-derived постоянный stats;
 3. постоянный экипировка stats;
-4. native/set effects;
+4. эффекты родных предметов и комплектов;
 5. legacy постоянный effects;
 6. compute Боевая сила snapshot;
 7. подбор соперника;
-8. create battle snapshot;
-9. apply Morale;
-10. apply Daily Event modifier;
+8. создать снимок состояния боя;
+9. применить Боевой дух;
+10. применить модификатор События дня;
 11. apply Preparation баф;
-12. start battle;
-13. apply Tactical Consumables according to activation window;
-14. resolve actions;
+12. начать бой;
+13. применить тактические расходники в допустимый момент;
+14. рассчитать действия;
 15. apply on-hit/on-урон;
-16. apply survival triggers;
-17. apply end-round effects;
-18. expire round effects.
+16. применить механики спасения от смерти;
+17. применить эффекты конца раунда;
+18. expire эффекты текущего раунда.
 
 **Важно:** steps 9–18 do not retroactively change BP.
 
 ---
 
-# 16. Arena Battle Engine dependencies
+# 16. Зависимости боевого движка Arena
 
 ```mermaid
 flowchart TD
@@ -628,7 +628,7 @@ flowchart TD
 
 - attacker Атака;
 - target Защита;
-- contextual multiplier;
+- коэффициент ситуации;
 - усиление Атаки;
 - ослабление Атаки;
 - Щит.
@@ -636,7 +636,7 @@ flowchart TD
 Создаёт:
 
 - урон;
-- possible collision win;
+- возможная победа в столкновении;
 - charge.
 
 ## Защита
@@ -660,8 +660,8 @@ flowchart TD
 Зависит от:
 
 - archetype;
-- opposing action;
-- character-specific effect;
+- действие противника;
+- уникальный эффект персонажа;
 - Скорость in some matchups.
 
 Создаёт сочетания:
@@ -680,7 +680,7 @@ flowchart TD
 - charge = 100;
 - archetype;
 - Защита action interaction;
-- character logic.
+- логика персонажа.
 
 Создаёт:
 
@@ -688,12 +688,12 @@ flowchart TD
 - лечение;
 - щит;
 - debuff;
-- RNG outcome;
-- charge reset.
+- случайный исход;
+- сброс заряда.
 
 ---
 
-# 18. Core combat triangle
+# 18. Основной треугольник действий
 
 ```text
 Attack > Maneuver
@@ -720,11 +720,11 @@ Defense > Attack
 
 Источники:
 
-- collision result;
+- исход столкновения;
 - Защита action;
 - экипировка effect;
-- buff effect;
-- character effect.
+- эффект бафа;
+- эффект персонажа.
 
 Получатели эффектов:
 
@@ -732,7 +732,7 @@ Defense > Attack
 
 Modifiers:
 
-- Professor Analysis;
+- «Анализ» Профессора;
 - будущий экипировка;
 - tactical бафы.
 
@@ -762,7 +762,7 @@ Ordering:
 
 - not Защита;
 - not постоянный;
-- usually battle-state.
+- обычно существует только в состоянии боя.
 
 ---
 
@@ -787,7 +787,7 @@ Cap:
 
 ---
 
-# 22. Status dependency families
+# 22. Семейства эффектов состояния
 
 Текущие семейства эффектов:
 
@@ -801,11 +801,11 @@ Cap:
 - источник;
 - target;
 - duration;
-- stack group;
+- группа суммирования;
 - лимит;
 - priority;
 - visibility;
-- cleanup rule.
+- правило завершения действия.
 
 ---
 
@@ -848,11 +848,11 @@ flowchart TD
 - временный;
 - not BP;
 - виден после начала боя;
-- limited duration or N matches.
+- ограниченная длительность или число матчей.
 
 ---
 
-# 25. Tactical Consumable dependency
+# 25. Зависимости тактических расходников
 
 Источники:
 
@@ -861,11 +861,11 @@ flowchart TD
 
 Возможность активации зависит от:
 
-- timing window;
+- допустимый момент активации;
 - condition;
-- target scope;
-- remaining inventory;
-- ranked legality.
+- область применения;
+- остаток расходников;
+- допустимость в рейтинговом режиме.
 
 Эффекты могут изменять:
 
@@ -875,7 +875,7 @@ flowchart TD
 - Лечение;
 - charge;
 - targetability;
-- action availability;
+- доступность действий;
 - position;
 - survival.
 
@@ -885,11 +885,11 @@ flowchart TD
 
 Рабочая гипотеза:
 
-- inventory unlimited by battle rules;
-- loadout limited;
+- коллекция не ограничена правилами конкретного боя;
+- боевой набор ограничен;
 - ~3 расходники per match;
-- one use per item;
-- usually max one activation per round.
+- один расходник — одно применение;
+- как правило, не более одного применения за раунд.
 
 Dependency:
 
@@ -917,13 +917,13 @@ Then:
 
 ---
 
-# 28. Invulnerability dependency
+# 28. Зависимости Неуязвимости
 
 Activation:
 
-- valid target;
-- valid round;
-- consumable available.
+- допустимая цель;
+- допустимый раунд;
+- расходник есть в наличии.
 
 Effect:
 
@@ -935,8 +935,8 @@ Potentially:
 
 Не влияет на:
 
-- Gods Lightning;
-- server technical result.
+- Молния богов;
+- технический результат сервера.
 
 ---
 
@@ -948,19 +948,19 @@ Potentially:
 - Reformation;
 - Intercept.
 
-These affect:
+Они влияют на:
 
 - positions;
 - pairings;
-- target routes.
+- маршрутизацию целей.
 
 Особенно важно для режима «Стенка на стенку».
 
-They must resolve **before** pairing calculation for the round.
+Эти эффекты рассчитываются **до** определения пар столкновений в раунде.
 
 ---
 
-# 30. Tactical services dependency graph
+# 30. Зависимости тактических сервисов
 
 ```mermaid
 flowchart LR
@@ -982,28 +982,28 @@ flowchart LR
 
 ---
 
-# 31. Hint dependencies
+# 31. Зависимости Подсказки
 
-Reads only:
+Читает только:
 
 - visible HP;
 - visible Щит;
-- visible charge;
-- living counts;
+- видимый заряд Особого приёма;
+- количество живых бойцов;
 - mode;
 - position;
-- known statuses;
+- известные статусы;
 - history;
-- own available actions;
+- доступные свои действия;
 - known бафы.
 
-Does not read:
+Не читает:
 
-- hidden current enemy action.
+- скрытое текущее действие соперника.
 
 Создаёт:
 
-- contextual recommendation.
+- совет с учётом ситуации.
 
 Обязательна смена стратегии при соотношениях:
 
@@ -1016,21 +1016,21 @@ Does not read:
 
 ---
 
-# 32. All-Seeing dependencies
+# 32. Зависимости Всевидящего
 
 Входные данные:
 
-- visible battle state;
-- selected own action;
-- legal opponent action space.
+- открытое состояние боя;
+- выбранное собственное действие;
+- множество допустимых ответных действий соперника.
 
 Uses:
 
-- same Battle Engine.
+- тот же боевой движок.
 
 Создаёт:
 
-- counterfactual outcomes.
+- исходы альтернативных сценариев.
 
 Не получает доступа к реальному скрытому действию.
 
@@ -1038,31 +1038,31 @@ Uses:
 
 ---
 
-# 33. Autobattle dependencies
+# 33. Зависимости Автобоя
 
 Входные данные:
 
-- visible state;
-- legal actions;
-- legal targets;
-- Battle Engine simulation;
-- expected-value policy.
+- открытое состояние;
+- допустимые действия;
+- допустимые цели;
+- симуляция боевым движком;
+- правило оптимизации ожидаемого результата.
 
 Результат:
 
-- one recommended/selected optimal move.
+- одно рекомендованное или выбранное оптимальное действие.
 
 Автобой использует общие правила симуляции с:
 
 - Battle Engine;
 - All-Seeing;
-- Hint analysis.
+- анализ Подсказки.
 
 Формулы не должны дублироваться.
 
 ---
 
-# 34. Scout dependencies
+# 34. Зависимости Разведки
 
 Входные данные:
 
@@ -1070,7 +1070,7 @@ Uses:
 
 Allowed:
 
-- asynchronous Arena only.
+- только асинхронная Arena.
 
 Запрещено:
 
@@ -1078,18 +1078,18 @@ Allowed:
 
 ---
 
-# 35. Mode dependency: Wall
+# 35. Зависимости режима «Стенка на стенку»
 
 Входные данные:
 
 - positions;
-- living fighters.
+- живых бойцов.
 
 Создаёт:
 
 - pairings.
 
-Death changes:
+Смерть меняет:
 
 - будущий pairings.
 
@@ -1103,19 +1103,19 @@ Death changes:
 
 ---
 
-# 36. Mode dependency: JRPG
+# 36. Зависимости режима JRPG
 
 Входные данные:
 
 - living fighters;
-- selected targets;
+- выбранные цели;
 - action.
 
 Потенциальные зависимости:
 
-- focus fire;
+- сосредоточение атак на одной цели;
 - Скорость order;
-- death before action;
+- смерть до выполнения действия;
 - retarget rule.
 
 Решения, которые нужно утвердить до выпуска:
@@ -1271,14 +1271,14 @@ Does not directly increase Боевая сила.
 
 ---
 
-# 43. Passive laying dependency
+# 43. Пассивная яйценоскость dependency
 
 Входные параметры могут включать:
 
-- adult residents;
+- взрослые жители;
 - уровень/progression;
 - Ряба Gift;
-- Daily Event;
+- Событие дня;
 - allowed set/effect modifiers;
 - Coop economic лимит.
 
@@ -1817,9 +1817,9 @@ Must reference only approved временный hooks.
 7. Draw/double-KO GE settlement.
 8. Disconnect refund logic.
 9. баф loadout exact size.
-10. баф ranked allowlist.
+10. баф перечень разрешённых в рейтинге эффектов.
 11. 4-player награда split.
-12. Passive laying exact output/лимит.
+12. Пассивная яйценоскость exact output/лимит.
 13. Seventh founder Arena mechanics.
 
 ---
@@ -1830,7 +1830,7 @@ Must reference only approved временный hooks.
 
 1. **Крутость never drives подбор соперника.**
 2. **Temporary бафы never enter Боевая сила.**
-3. **Personal name never changes mechanics.**
+3. **Личное имя never changes mechanics.**
 4. **Every экипировка combat stat has an engine hook.**
 5. **Every GE faucet has a источник and лимит/budget.**
 6. **Every paid activity has settlement/refund rules before production.**
