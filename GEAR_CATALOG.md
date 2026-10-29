@@ -8,7 +8,7 @@
 Каждый combat property предмета обязан:
 - иметь engine hook;
 - иметь реальный эффект;
-- иметь cap/stacking;
+- иметь лимит/stacking;
 - входить в BP, если постоянный;
 - быть понятным игроку.
 
@@ -30,13 +30,13 @@
 
 Не все одновременно обязаны быть gameplay slots.
 
-Final active slot set фиксируется после visual QA.
+Final active slot set фиксируется после визуальный QA.
 
 ## 2. Level gates
 
-- стандартный gear: min_level >= 4;
+- стандартный экипировка: min_level >= 4;
 - можно носить предмет своего уровня и ниже;
-- higher level blocked;
+- higher уровень blocked;
 - special item может иметь ignore_level_gate=true, но adult form L4+ обязательна.
 
 ## 3. Редкость
@@ -49,7 +49,7 @@ Final active slot set фиксируется после visual QA.
 
 Rarity влияет на:
 - scarcity;
-- visual prestige;
+- визуальный prestige;
 - effect budget;
 - drop rate;
 - price band.
@@ -60,24 +60,24 @@ Rarity не является автоматическим combat multiplier.
 
 Разрешены:
 - HP
-- Attack
-- Defense
-- Speed
+- Атака
+- Защита
+- Скорость
 
 ## 5. Advanced effects
 
 Разрешены только существующие hooks:
-- Shield bonus
-- Heal bonus
-- Maneuver damage modifier
-- Special damage modifier
-- Special shield modifier
-- Special heal modifier
-- Special debuff modifier
-- Special charge gain
-- enemy charge reduction
-- next Attack boost
-- next Attack weaken
+- Щит bonus
+- Лечение bonus
+- Манёвр урон modifier
+- Особый приём урон modifier
+- Особый приём щит modifier
+- Особый приём лечение modifier
+- Особый приём debuff modifier
+- Особый приём получение заряда
+- enemy уменьшение заряда
+- next Атака boost
+- next Атака weaken
 - survival trigger if explicitly defined
 
 ## 6. Запрещённые абстрактные stats
@@ -89,37 +89,37 @@ Rarity не является автоматическим combat multiplier.
 - Accuracy
 - Evasion
 - Crit
-- Special Attack
-- Special Defense
-- abstract Special +X
+- Особый приём Атака
+- Особый приём Защита
+- abstract Особый приём +X
 
 ## 7. Item schema
 
 Каждая запись:
 - id/code
 - name
-- level
-- rarity
+- уровень
+- редкость
 - category/slot
-- visual description
-- Coolness
+- визуальный description
+- Крутость
 - core stats
 - advanced effects
 - native archetype nullable
 - set id nullable
-- source
+- источник
 - GE price if sold
 - drop availability
 - asset id
 - engine hooks
 - BP contribution
-- stacking/cap notes
+- stacking/лимит notes
 
 ## 8. Native synergy
 
 Если предмет родной для archetype:
 - даёт explicit native effect;
-- effect permanent while equipped;
+- effect постоянный while equipped;
 - учитывается в BP;
 - не должен делать предмет бесполезным другим archetypes.
 
@@ -134,7 +134,7 @@ Set can define:
 Каждый threshold:
 - named;
 - explicit effect;
-- cap;
+- лимит;
 - engine hook.
 
 ## 10. Build diversity
@@ -142,48 +142,48 @@ Set can define:
 Цель:
 один archetype должен поддерживать >1 разумного build.
 
-Examples:
+Примеры:
 
 ### Ryaba
-- HP/Shield sustain
-- Special shield
-- Attack hybrid
+- HP/Щит выживаемость
+- Особый приём щит
+- Атака hybrid
 
 ### Fighter
-- Attack pressure
-- Defense/counter
+- Атака pressure
+- Защита/counter
 - next-hit setup
 
 ### Fool
-- Speed
-- Maneuver/Attack
+- Скорость
+- Манёвр/Атака
 - controlled risk
 
 ### Professor
 - charge control
-- precision damage
+- точность урон
 
 ### Monk
-- HP/Defense
-- heal amplification
+- HP/Защита
+- лечение amplification
 
 ### Glamour
-- Speed/debuff
-- Special weaken
+- Скорость/debuff
+- Особый приём weaken
 
 ## 11. BP contribution
 
 Permanent stats/effects → BP.
 
 Temporary proc from item:
-- if deterministic/always available, expected permanent value enters BP;
+- if deterministic/always available, expected постоянный value enters BP;
 - if conditional, BP uses simulated expected marginal value.
 
-Exact weights after simulation.
+Точные веса рассчитываются после симуляций.
 
-## 12. Speed warning
+## 12. Скорость warning
 
-Do not finalize high Speed values before Arena Speed resolution is frozen.
+Do not finalize high Скорость values before Arena Скорость resolution is frozen.
 
 ## 13. Example Common items
 
@@ -192,91 +192,91 @@ Do not finalize high Speed values before Arena Speed resolution is frozen.
 - Common
 - Head
 - +HP small
-- Coolness small
+- Крутость small
 
 ### Простые ботинки
 - L4
 - Common
 - Shoes
-- +Speed small
+- +Скорость small
 
 ### Рабочий жилет
 - L5
 - Common
 - Body
-- +Defense small
+- +Защита small
 
 ### Кожаный ремешок
 - L5
 - Common
 - Body/Accessory
-- +Attack small
+- +Атака small
 
-Exact numbers TBD.
+Точные значения ещё открыты.
 
 ## 14. Example Rare items
 
 ### Золотая брошь
 - Rare
 - +HP
-- small Shield bonus if hook approved
+- small Щит bonus if hook approved
 
 ### Боевые перчатки
 - Fighter native
-- +Attack
-- native next-Attack boost modifier
+- +Атака
+- native next-Атака boost modifier
 
 ### Очки аналитика
 - Professor native
-- +Speed or control effect
-- charge reduction enhancement
+- +Скорость or control effect
+- уменьшение заряда enhancement
 
 ### Чётки тишины
 - Monk native
-- +Defense
-- heal modifier
+- +Защита
+- лечение modifier
 
 ### Звёздные очки
 - Glamour native
-- +Speed
+- +Скорость
 - weaken modifier
 
 ### Башмачки «Авось»
 - Fool native
-- +Speed
-- Maneuver modifier
+- +Скорость
+- Манёвр modifier
 
 ## 15. Legendary/Artifact design
 
-Legendary should:
+Легендарный предмет должен:
 - alter build;
 - create trade-off or synergy;
 - not simply stack huge raw stats.
 
 Artifact may:
-- ignore normal level gate;
-- have unique visual;
+- ignore normal уровень gate;
+- have unique визуальный;
 - have one unique approved engine effect.
 
-## 16. Coolness vs combat
+## 16. Крутость vs combat
 
-Every item can have Coolness and combat values.
+Каждый предмет может иметь отдельно Крутость и боевые характеристики.
 
-Coolness:
+Крутость:
 - collection/status.
 
 Combat:
 - Arena.
 
-They are separate columns.
+Это отдельные показатели.
 
 ## 17. Факторы цены
 
-Price band from:
-- level;
-- rarity;
-- visual desirability;
-- Coolness;
+Ценовой диапазон зависит от:
+- уровень;
+- редкость;
+- визуальный desirability;
+- Крутость;
 - simulated combat value;
 - native synergy;
 - set value.
@@ -288,8 +288,8 @@ Price band from:
 
 ## 19. Источники экипировки
 
-- shop
-- chest
+- магазин
+- сундук
 - quest
 - achievement
 - season
@@ -300,42 +300,42 @@ Price band from:
 ## 20. Visibility
 
 Opponent should be able to inspect:
-- visible equipped gear;
-- relevant active permanent effects.
+- visible equipped экипировка;
+- relevant active постоянный effects.
 
-Hidden combat stats from visible gear are discouraged.
+Hidden combat stats from visible экипировка are discouraged.
 
 ## 21. Content production template
 
-For every item define:
-1. visual;
+Для каждого предмета указать:
+1. визуальный;
 2. slot;
-3. level;
-4. rarity;
-5. Coolness;
+3. уровень;
+4. редкость;
+5. Крутость;
 6. core stat;
 7. advanced effect;
 8. native/set relation;
 9. engine hook;
 10. BP;
-11. source;
+11. источник;
 12. price/drop;
 13. asset.
 
 ## 22. Критерии приёмки
 
-An item fails if:
+Предмет не проходит проверку, если:
 - stat has no engine hook;
 - effect duplicates another without purpose;
 - creates dominant mandatory build;
 - introduces hidden pay-to-win;
-- breaks visual readability;
-- has no clear source/sink role.
+- breaks визуальный readability;
+- has no clear источник/sink role.
 
 ## 23. Initial catalog production plan
 
 Create numeric catalog only after:
-1. Speed rule locked;
+1. Скорость rule locked;
 2. BP weights simulated;
 3. active equipment slots visually validated;
 4. economy price bands modeled.
