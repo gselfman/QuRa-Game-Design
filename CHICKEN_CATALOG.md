@@ -23,25 +23,25 @@ Arena:
 Каждый тип обязан определить:
 - code;
 - title;
-- visual identity;
+- визуальный identity;
 - Gift;
 - base Arena stats;
-- Maneuver;
-- Special;
+- Манёвр;
+- Особый приём;
 - role;
-- native gear direction;
+- native экипировка direction;
 - narrative vocabulary.
 
 ## 2. Ряба
 
-Code: ryaba
+Код: ryaba
 
 Образ:
 - золотая тема;
 - хозяйственность;
 - защитная магия скорлупы.
 
-Gift:
+Дар:
 **Золотая несушка**
 - усиливает passive laying по Economy Model.
 
@@ -51,30 +51,30 @@ Prototype Arena stats:
 - DEF 21
 - SPD 18
 
-Maneuver:
+Манёвр:
 **Скорлупа**
-- 24 damage;
-- +10 Shield.
+- 24 урон;
+- +10 Щит.
 
-Special:
+Особый приём:
 **Золотая скорлупа**
-- ~25 damage;
-- +18 Shield;
-- Defense scenario ~11 damage +14 Shield.
+- ~25 урон;
+- +18 Щит;
+- Защита scenario ~11 урон +14 Щит.
 
-Role:
-- sustain;
-- shield;
-- comeback;
+Игровая роль:
+- выживаемость;
+- щит;
+- возвращение в бой;
 - 1×N specialist.
 
-Native gear directions:
-- shield;
+Направления родной экипировки:
+- щит;
 - HP;
-- Special shield;
+- Особый приём щит;
 - controlled aggressive variant.
 
-Narrative verbs:
+Глаголы для летописи:
 - разбивает;
 - осыпает осколками;
 - закрывается панцирем;
@@ -82,7 +82,7 @@ Narrative verbs:
 
 ## 3. Боевик
 
-Code: fighter
+Код: fighter
 
 Образ:
 - силовой fighter;
@@ -90,38 +90,38 @@ Code: fighter
 - давление;
 - защита через toughness.
 
-Gift:
+Дар:
 **Охрана**
 - блокирует часть threat-events вне Arena.
 
-Prototype stats:
+Характеристики прототипа:
 - HP 112
 - ATK 26
 - DEF 23
 - SPD 14
 
-Maneuver:
+Манёвр:
 **Провокация**
-- 25 damage;
-- next Attack +18%.
+- 25 урон;
+- next Атака +18%.
 
-Special:
+Особый приём:
 **Ответочка**
-- ~46 damage;
-- Defense sharply reduces direct damage.
+- ~46 урон;
+- Защита sharply reduces direct урон.
 
-Role:
+Игровая роль:
 - pressure;
 - heavy hit;
 - counterplay.
 
-Native gear:
-- Attack;
-- Defense;
-- next-Attack boost;
+Родная экипировка:
+- Атака;
+- Защита;
+- next-Атака boost;
 - counter support.
 
-Narrative:
+Литературное описание:
 - идёт напролом;
 - толкает;
 - провоцирует;
@@ -129,7 +129,7 @@ Narrative:
 
 ## 4. Дурочка
 
-Code: fool
+Код: fool
 
 Образ:
 - яркая;
@@ -137,40 +137,40 @@ Code: fool
 - хаотичная;
 - смешная непредсказуемость.
 
-Gift:
+Дар:
 **Везучая дурочка**
 - Lucky Flip negative Coop event → prepared positive alternative.
 
-Prototype stats:
+Характеристики прототипа:
 - HP 102
 - ATK 24
 - DEF 17
 - SPD 26
 
-Maneuver:
+Манёвр:
 **Финт**
-- 31 damage;
-- next Attack +20%.
+- 31 урон;
+- next Атака +20%.
 
-Special:
+Особый приём:
 **Авось!**
 - 10% 0;
 - 65% ~43;
 - 25% ~58.
 
-Role:
+Игровая роль:
 - speed;
 - variance;
 - bluff;
-- high-risk comeback.
+- high-risk возвращение в бой.
 
-Native gear:
-- Speed;
-- Attack;
+Родная экипировка:
+- Скорость;
+- Атака;
 - controlled RNG support;
-- Maneuver synergy.
+- Манёвр synergy.
 
-Narrative:
+Литературное описание:
 - спотыкается;
 - внезапно разворачивается;
 - появляется не там;
@@ -178,7 +178,7 @@ Narrative:
 
 ## 5. Профессор
 
-Code: professor
+Код: professor
 
 Образ:
 - интеллект;
@@ -186,38 +186,38 @@ Code: professor
 - анализ;
 - контроль.
 
-Gift:
+Дар:
 **Научный подход**
-- XP boost within global cap.
+- XP boost within global лимит.
 
-Prototype stats:
+Характеристики прототипа:
 - HP 102
 - ATK 25
 - DEF 19
 - SPD 22
 
-Maneuver:
+Манёвр:
 **Анализ**
-- 26 damage;
-- enemy Special charge -18.
+- 26 урон;
+- enemy Особый приём charge -18.
 
-Special:
+Особый приём:
 **Расчёт**
-- ~45 damage;
+- ~45 урон;
 - precise direct strike.
 
-Role:
+Игровая роль:
 - control;
 - charge denial;
-- precision.
+- точность.
 
-Native gear:
+Родная экипировка:
 - charge denial;
-- Special precision;
-- moderate Speed;
+- Особый приём точность;
+- moderate Скорость;
 - control.
 
-Narrative:
+Литературное описание:
 - считывает стойку;
 - вычисляет;
 - сбивает подготовку;
@@ -225,46 +225,46 @@ Narrative:
 
 ## 6. Монах
 
-Code: monk
+Код: monk
 
 Образ:
 - спокойствие;
 - благодать;
-- sustain;
+- выживаемость;
 - внутреннее равновесие.
 
-Gift:
+Дар:
 **Благодать**
 - amplifies Coop synergy, capped.
 
-Prototype stats:
+Характеристики прототипа:
 - HP 110
 - ATK 21
 - DEF 24
 - SPD 15
 
-Maneuver:
+Манёвр:
 **Медитация**
-- 24 damage;
-- heal up to 12.
+- 24 урон;
+- лечение up to 12.
 
-Special:
+Особый приём:
 **Благодать**
-- heal up to 27;
-- ~18 damage.
+- лечение up to 27;
+- ~18 урон.
 
-Role:
-- sustain;
+Игровая роль:
+- выживаемость;
 - attrition;
-- healing comeback.
+- healing возвращение в бой.
 
-Native gear:
+Родная экипировка:
 - HP;
-- Defense;
-- heal;
-- Special heal.
+- Защита;
+- лечение;
+- Особый приём лечение.
 
-Narrative:
+Литературное описание:
 - замирает;
 - восстанавливает равновесие;
 - собирает благодать;
@@ -272,7 +272,7 @@ Narrative:
 
 ## 7. Гламурочка
 
-Code: glamour
+Код: glamour
 
 Образ:
 - стиль;
@@ -280,38 +280,38 @@ Code: glamour
 - отвлечение;
 - tempo.
 
-Gift:
+Дар:
 **Шопинг с характером**
-- discount on configured game purchases/upgrades with cap.
+- discount on configured game purchases/upgrades with лимит.
 
-Prototype stats:
+Характеристики прототипа:
 - HP 102
 - ATK 23
 - DEF 19
 - SPD 24
 
-Maneuver:
+Манёвр:
 **Позирование**
-- 27 damage;
-- target next Attack -22%.
+- 27 урон;
+- target next Атака -22%.
 
-Special:
+Особый приём:
 **Ослепительный выход**
-- ~41 damage;
-- target next Attack -30%.
+- ~41 урон;
+- target next Атака -30%.
 
-Role:
+Игровая роль:
 - debuff;
 - tempo;
 - disruption.
 
-Native gear:
-- Speed;
+Родная экипировка:
+- Скорость;
 - weaken;
-- Special debuff;
+- Особый приём debuff;
 - fashion/cosmetic value.
 
-Narrative:
+Литературное описание:
 - позирует;
 - ослепляет;
 - отвлекает;
@@ -328,16 +328,16 @@ Catalog fields reserved:
 - title
 - Gift
 - stats
-- Maneuver
-- Special
+- Манёвр
+- Особый приём
 - role
-- native gear
+- native экипировка
 
 ## 9. Personal name
 
 После получения/раскрытия игрок задаёт personal name.
 
-Examples:
+Примеры:
 - Профессор Иванов;
 - Боевик Петров;
 - Дурочка Мурочка;
@@ -353,15 +353,15 @@ Rename:
 L1 Egg  
 L2 Developing Egg  
 L3 Chick / type reveal  
-L4 Adult + gear + Arena 1×1  
+L4 Adult + экипировка + Arena 1×1  
 L5–14 progression  
 L15 3D eligibility  
 L16–19 prestige  
-L20 cap
+L20 лимит
 
-## 11. Archetype vs rarity
+## 11. Archetype vs редкость
 
-Base archetype is not rarity.
+Base archetype is not редкость.
 
 Future chicken can be:
 - Rare;
@@ -376,17 +376,17 @@ Legendary should alter strategy, not simply +50% everything.
 ## 12. New archetype acceptance rules
 
 New archetype must have:
-1. clear visual silhouette;
+1. clear визуальный silhouette;
 2. real Gift outside Arena or explicitly defined role;
-3. distinct Maneuver;
-4. distinct Special;
+3. distinct Манёвр;
+4. distinct Особый приём;
 5. role not redundant;
 6. approved engine hooks;
 7. narrative action logic;
 8. balance simulation;
-9. native gear direction.
+9. native экипировка direction.
 
-## 13. Maneuver design rule
+## 13. Манёвр design rule
 
 First:
 - character action.
@@ -400,13 +400,13 @@ Then:
 Do not start with:
 > need another -20% debuff character.
 
-## 14. Special design rule
+## 14. Особый приём design rule
 
-Special must:
+Особый приём должен:
 - be memorable;
 - justify charge;
 - create counterplay;
-- have Defense interaction;
+- have Защита interaction;
 - be narratable.
 
 ## 15. Base-stat rule
@@ -417,21 +417,21 @@ Current prototype values are reference only.
 
 ## 16. Gift rule
 
-Gift:
-- permanent;
+Дар:
+- постоянный;
 - character identity;
 - primarily outside Arena unless explicitly bridged;
 - must affect real system;
-- stacking family/cap required.
+- stacking family/лимит required.
 
 ## 17. Heirs
 
 Heir:
 - starts L1;
-- inherits lineage/visual traits;
+- inherits lineage/визуальный traits;
 - gets controlled LegacyBonus;
-- progresses faster under cap;
-- does not inherit L15 level.
+- progresses faster under лимит;
+- does not inherit L15 уровень.
 
 ## 18. 3D embodiment
 
@@ -444,19 +444,19 @@ Embodiment:
 
 ## 19. UI identity
 
-Card:
+Карточка:
 - Type + Personal Name;
 - Level;
-- rarity if applicable;
+- редкость if applicable;
 - Gift;
-- Coolness;
+- Крутость;
 - Arena stats when unlocked;
 - equipment.
 
 Arena:
 - Crest + Type + Personal Name;
 - HP;
-- Special charge;
+- Особый приём charge;
 - statuses.
 
 ## 20. Chronicle identity
@@ -467,7 +467,7 @@ Use:
 - crest;
 - full Type+Name.
 
-Example:
+Пример:
 > 🐺 Дурочка Мурочка провела Финт против 🌙 Дурочки Соньки.
 
 ## 21. Catalog extension process
@@ -476,7 +476,7 @@ Any new type requires:
 - Game Bible decision;
 - catalog entry;
 - Arena Spec update;
-- Gear compatibility;
+- Экипировка compatibility;
 - asset plan;
 - localization;
 - analytics code;
@@ -484,6 +484,6 @@ Any new type requires:
 
 ## B2 и A4. Дары с запуска, прогрессия силы
 
-Все шесть стартовых основательниц доступны с их Дарами без ограничений: Ряба — daily egg/яйценоскость; Гламурочка — скидка на яйца, gear и расширения (под cap); Дурочка — Lucky Flip; Боевик — защита от событий-угроз; Монах — синергии и положительные события; Профессор — XP boost. Силы Дара OPEN.
+Все шесть стартовых основательниц доступны с их Дарами без ограничений: Ряба — ежедневный egg/яйценоскость; Гламурочка — скидка на яйца, экипировка и расширения (под лимит); Дурочка — Lucky Flip; Боевик — защита от событий-угроз; Монах — синергии и положительные события; Профессор — XP boost. Силы Дара OPEN.
 
-Модель роста HP/ATK/DEF на +25–30% от L4 до L20 (Speed медленнее) — **PROTOTYPE BALANCE**; альтернатива «уровень лишь открывает gear» OPEN. Седьмая — скрыта до community event.
+Модель роста HP/ATK/DEF на +25–30% от L4 до L20 (Скорость медленнее) — **PROTOTYPE BALANCE**; альтернатива «уровень лишь открывает экипировка» OPEN. Седьмая — скрыта до community event.
