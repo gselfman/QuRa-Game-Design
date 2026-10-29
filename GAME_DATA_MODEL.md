@@ -21,12 +21,9 @@
 - timezone
 - created_at
 - main_chicken_id nullable
-- coop_tier
-- coop_capacity
 - coolness_total_cached
 - glory_current
 - league_id
-- arena_enrolled
 - settings_json
 - feature_flags_snapshot optional
 
@@ -417,7 +414,7 @@ Unique key depends on scope.
 
 ## 29. Coop
 
-Можно хранить tier на Account, а расширенную конфигурацию отдельно:
+Единственная изменяемая запись tier/capacity хранится в Coop; Account не содержит независимых полей tier/capacity:
 - coop_id
 - account_id
 - tier
@@ -766,6 +763,86 @@ Match stores versions used at start.
 9. Temporary modifier never persists into permanent stat row.
 10. Any paid canceled activity must have settlement record.
 
+## 53.1. Недостающие сущности и связи
+
+### 55. EggOffer
+
+id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
+
+### 56. ChickenPurchase
+
+id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
+
+### 57. ChickenInstance.acquired_source
+
+START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
+
+### 58. ArenaDefenseSetup
+
+id, account_id, roster, positions, policy_code, policy_params, version.
+
+### 59. ArenaSeasonEnrollment
+
+account_id, season_id, defense_setup_id, joined_at, state. Вместо одного `arena_enrolled`.
+
+### 60. AchievementDefinition
+
+id, condition_json, reward_id, feature_gate, version.
+
+### 61. AchievementProgress
+
+account_id, achievement_id, progress, completed_at, claimed_at.
+
+### 62. FriendRelation
+
+account_a, account_b, status, created_at.
+
+### 63. MiniGameDefinition
+
+code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
+
+### 64. FigurineOrder
+
+order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
+
+### 65. FeedEvent
+
+id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
+
+### 66. FeedState
+
+account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
+
+### 67. Clan
+
+id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
+
+### 68. ClanMember
+
+clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
+
+### 69. ClanGoal
+
+id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
+
+### 70. ClanContribution
+
+clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
+
+### 71. CommunityGoal
+
+id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
+
+### 72. CommunityContribution
+
+goal_id, account_id, feed_event_id, amount, unique correlation_id.
+
+### 73. DailyEventChoice
+
+id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
+
+**Только тестовые аккаунты:** миграция игровой прогрессии идемпотентна, не затрагивает GE Ledger. Сохранить или сбросить Рябу — OPEN.
+
 ## 54. Следующий документ dependency
 
 ECONOMY_MODEL.md consumes:
@@ -775,32 +852,3 @@ ECONOMY_MODEL.md consumes:
 - mini-game attempt;
 - passive emission;
 - chest EV.
-
-## B1–B6. Обязательные новые таблицы
-
-- `EggOffer`: id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
-- `ChickenPurchase`: id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
-- `ChickenInstance.acquired_source`: START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
-- `ArenaDefenseSetup`: id, account_id, roster, positions, policy_code, policy_params, version.
-- `ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, state. Вместо одного `arena_enrolled`.
-- `AchievementDefinition`: id, condition_json, reward_id, feature_gate, version.
-- `AchievementProgress`: account_id, achievement_id, progress, completed_at, claimed_at.
-- `FriendRelation`: account_a, account_b, status, created_at.
-- `MiniGameDefinition`: code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
-- `NotificationRule`, `NotificationLog`, `StreakState` — см. RETENTION_NOTIFICATIONS.md.
-- `FigurineOrder`: order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
-- `Clan`, `ClanMember`, `ClanGoal`, `FeedEvent`, `FeedState`, `CommunityGoal`, `DailyEventChoice` — добавляются в блоке C.
-
-**Coop:** только Coop является источником tier/capacity; Account.coop_tier и Account.coop_capacity должны быть удалены или пересчитываемыми кэшами, не независимыми изменяемыми полями.
-
-## C. Социальные события и клановые сущности
-
-- `FeedEvent`: id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
-- `FeedState`: account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
-- `Clan`: id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
-- `ClanMember`: clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
-- `ClanGoal`: id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
-- `ClanContribution`: clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
-- `CommunityGoal`: id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
-- `CommunityContribution`: goal_id, account_id, feed_event_id, amount, unique correlation_id.
-- `DailyEventChoice`: id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
