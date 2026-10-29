@@ -6,10 +6,10 @@
 ## 0. Two classes
 
 ### Preparation баф
-Activated before battle; duration time/N matches.
+Активируется до боя, действует ограниченное время или число матчей.
 
 ### Tactical Consumable
-Activated inside match; finite one-use item.
+Активируется во время боя; предмет расходуется при применении.
 
 ## 1. Required fields
 
@@ -62,7 +62,7 @@ Activated inside match; finite one-use item.
 ## 5. Loadout
 
 Рабочая гипотеза:
-- 3 tactical расходники per match;
+- до трёх тактических расходников на матч;
 - one instance one use;
 - usually max one activation per round.
 
@@ -72,9 +72,9 @@ Activated inside match; finite one-use item.
 Name: Двойная сила
 Редкость: возможные варианты Epic/Legendary
 Scope: SELF_CHICKEN
-Condition: living mine =1 and living enemy >=2
+Условие: один живой союзник и не менее двух живых противников
 Duration: ROUND
-Effect: primary selected action effect ~×2 with per-action caps
+Эффект: основное действие усиливается примерно вдвое с ограничениями для каждого типа
 Chronicle: «печать Двойной силы вспыхнула...»
 
 ### LAST_FEATHER
@@ -132,7 +132,7 @@ Duration: ROUND
 Адреналин
 Scope: ALLY_CHICKEN
 Duration: ROUND
-Effect: Атака and/or Скорость up
+Эффект: повышение Атаки и/или Скорости
 
 ### BATTLE_CRY
 Боевой клич
@@ -155,7 +155,7 @@ Effect: remove part of active Щит
 Метка охотника
 Scope: ENEMY_CHICKEN
 Duration: ROUND
-Effect: target receives increased team урон
+Эффект: отмеченная цель получает повышенный урон от команды
 
 ### RETRIBUTION
 Возмездие
@@ -214,7 +214,7 @@ Scope: ENEMY_CHICKEN
 ### SMOKE
 Дымовая завеса
 JRPG:
-- target cannot be manually selected if alternative legal targets exist
+- нельзя выбрать цель вручную, пока есть другие допустимые цели
 Wall:
 - not active until explicit positional rule
 
@@ -264,7 +264,7 @@ character-specific Особый приём modifier
 
 ## 14. Stacking
 
-Each buff defines stack_group.
+Каждый баф определяет группу совместимости эффектов.
 
 Default:
 - same group not infinite;
@@ -299,12 +299,12 @@ Strong control/revive бафы require balance validation.
 - condition strictness;
 - ranked legality.
 
-Comeback бафы can be strong because condition restricts use.
+Бафы для возвращения в бой могут быть сильнее, поскольку имеют строгое условие активации.
 
 ## 18. Anti-pay-to-win
 
 - strong бафы obtainable via gameplay;
-- per-match limit;
+- ограничение применений на матч;
 - ranked allowlist;
 - no unlimited direct purchase advantage;
 - telemetry by buff win-rate uplift.
@@ -327,7 +327,7 @@ Comeback бафы can be strong because condition restricts use.
 ## 20. Критерии приёмки
 
 баф must answer:
-- when can use?
+- когда разрешено использовать?
 - who targeted?
 - duration?
 - exact engine hook?
