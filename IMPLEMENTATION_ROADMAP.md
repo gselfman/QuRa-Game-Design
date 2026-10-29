@@ -1,562 +1,143 @@
-# QuRa — план реализации v1
-
-**Статус:** implementation sequence from documentation to production
-
-## 0. Цель
-
-Ship QuRa game systems incrementally without:
-- breaking financial product;
-- creating unbounded GE issuance;
-- duplicating Battle Engine;
-- hardcoding balance in UI;
-- shipping dead stats.
-
-## 1. Documentation baseline
-
-Completed core docs:
-- GAME_BIBLE_V1.md
-- ARENA_SPEC_V1.md
-- GAME_DEPENDENCY_GRAPH.md
-- GAME_DATA_MODEL.md
-- ECONOMY_MODEL.md
-- CHICKEN_CATALOG.md
-- GEAR_CATALOG.md
-- BUFF_CATALOG.md
-- EVENT_CATALOG.md
-- QUEST_CATALOG.md
-- REWARD_TABLES.md
-- SCREENS.md
-- ASSET_PRODUCTION.md
-- IMPLEMENTATION_ROADMAP.md
-
-## 2. Этап A — Configuration Foundation
-
-Backend:
-- feature flags
-- config/version tables
-- GE/XP/Ticket ledgers
-- Reward Ledger
-- content definitions
-- audit/correlation ids
-
-Admin:
-- feature flag controls
-- reward config
-- quest config
-- economy config
-
-DoD:
-- server can grant XP/GE/reward exactly once
-- all changes auditable
-
-## 3. Этап B — Chicken/Data Foundation
-
-Implement:
-- ChickenArchetype
-- ChickenInstance
-- lifecycle
-- personal naming
-- main chicken
-- XP/level
-- Coop capacity
-
-UI:
-- chicken card
-- rename
-- Coop
-- main selection
-
-DoD:
-- multiple instances same archetype
-- unique personal names supported
-- rename does not affect mechanics
-
-## 4. Этап C — Quests and progression
-
-Implement:
-- quest definitions
-- scopes
-- progress events
-- daily/weekly periods
-- achievements
-- feature gates
-
-UI:
-- Path
-- daily
-- weekly
-- achievements
-
-DoD:
-- no duplicate ACCOUNT_ONCE
-- CHICKEN_ONCE per instance
-- XP goes correct chicken at completion
-
-## 5. Этап D — Reward/Chest system
-
-Implement:
-- RewardDefinition
-- RewardLedger
-- chest roll
-- pity
-- overflow
-
-UI:
-- reward claim
-- chest open
-- overflow resolution
-
-DoD:
-- exactly-once delivery
-- no lost reward on capacity full
-
-## 6. Этап E — Inventory and Gear
-
-Implement:
-- GearDefinition
-- GearInstance/stack model
-- equipment
-- slots
-- set/native effects
-- Coolness
-
-Before numeric production:
-- freeze Speed rule
-- simulate BP weights
-
-UI:
-- shop
-- item detail
-- wardrobe
-- compare
-- try-on
-
-DoD:
-- every combat stat has engine hook
-- BP calculated server-side
-
-## 7. Этап F — Mini-game integration
-
-Integrate existing mini-games with:
-- tickets
-- GE paid attempts
-- reward tables
-- anti-fraud
-- buff drops
-
-DoD:
-- reward result server-authoritative
-- daily caps
-- paid EV guardrail
-
-## 8. Этап G — Daily Events
-
-Implement:
-- global event selection
-- Lucky Flip
-- hard counters
-- mitigation
-- temporary modifiers
-
-UI:
-- News/Today
-- personal outcome
-
-DoD:
-- event same globally
-- personalized result deterministic
-- never changes Coolness
-
-## 9. Этап H — Battle Engine extraction
-
-Before production Arena UI:
-- extract deterministic engine
-- define immutable battle snapshot
-- actions
-- statuses
-- charge
-- damage/heal/shield
-- Wall pairing
-- JRPG targeting
-
-Close OPEN:
-1. Speed resolution
-2. JRPG retarget
-3. multi-collision semantics
-4. charge exact rules
-
-DoD:
-- engine pure/deterministic given seed/state/actions
-- unit tests
-- simulation harness
-
-## 10. Этап I — Arena 1×1
-
-Implement:
-- Duel
-- bot/training
-- base actions
-- Maneuver/Special
-- Chronicle
-- Hint
-
-DoD:
-- complete match
-- replayable engine log
-- no client-authoritative result
-
-## 11. Этап J — Arena 2×2 / 3×3
-
-Implement:
-- team selection
-- crests
-- Wall
-- JRPG
-- 1×N states
-- target UI
-- action descriptions
-- Chronicle literary layer
-
-DoD:
-- all pairings
-- focus fire
-- deaths
-- remapping
-- same-name disambiguation
-
-## 12. Этап K — Online transport
-
-Production architecture:
-- authenticated rooms
-- server-authoritative lock
-- hidden actions
-- command idempotency
-- reconnect
-- heartbeat/state sync
-
-DoD:
-- two-browser E2E
-- packet loss/retry tests
-- hidden state security
-
-## 13. Этап L — Arena buffs
-
-Implement:
-- BuffDefinition
-- inventory
-- loadout
-- activation windows
-- processing priority
-
-Start with small approved set:
-- Double Power
-- Invulnerability
-- Last Feather
-- Battle Dome
-- Charge
-- Swap
-
-DoD:
-- consumable transaction safe
-- Chronicle integration
-- telemetry
-
-## 14. Этап M — Tactical services
-
-Implement:
-- Hint
-- All-Seeing
-- Autobattle
-- async Scout
-
-Requirements:
-- shared engine
-- no hidden live action access
-- GE charging only after successful service result
-
-DoD:
-- deterministic simulations
-- fairness tests
-
-## 15. Этап N — экономика аренды Arena
-
-Реализовать серверное списание аренды 10 GE/игрока в live (PROTOTYPE BALANCE) или 10 GE с атакующего в async, выдачу одного трёхъячеечного Arena-сундука победителю, ограничение призов одной паре, возврат при отмене/сбое, двойной KO без приза и выкуп продаваемого трофея за 25%. **Не реализовывать прежний payout 15 GE.** DoD: точная идемпотентность ArenaRentalFee и ArenaPrizeGrant, reconciliation, никаких переводов между игроками.
-
-
-## 16. Этап O — Timer / Gods Lightning
-
-Implement:
-- 3-minute standard timer
-- warnings
-- technical loss
-- FX
-- Chronicle
-
-4-player:
-- 1-minute timeout
-- random legal action
-
-DoD:
-- timer server-authoritative
-- reconnect policy tested
-
-## 17. Этап P — Ranked / Glory / Seasons
-
-Implement:
-- enrollment
-- BP matchmaking
-- Glory
-- leagues
-- anti-farm
-- season
-- top 3 medals
-- Hall of Fame
-
-DoD:
-- repeat opponent guard
-- rating rules
-- season close snapshot
-
-## 18. Этап Q — Async defense
-
-Implement:
-- defense team
-- defensive strategy
-- AI action source
-- limited defense Glory
-- async Scout
-
-DoD:
-- same Battle Engine
-- no offline farming dominance
-
-## 19. Этап R — Social
-
-Implement:
-- friends
-- Friendly invite
-- chat
-- quick messages/emotes
-- rematch
-- report/mute
-- Chronicle share
-
-4-player later:
-- All/Team/Private channels
-
-## 20. Этап S — 4-player Arena
-
-Only after 2-player stable.
-
-Implement:
-- FFA
-- 2×2
-- Wall/target variants
-- 20 GE entry
-- reward split after economy simulation
-
-DoD:
-- concurrency
-- timeout random action
-- private team chat
-- settlement
-
-## 21. Этап T — Passive laying
-
-Implement only after Economy Model numbers approved.
-
-- production formula
-- caps
-- Ryaba Gift
-- Daily Event
-- collection
-
-DoD:
-- emission dashboard
-- anti-bot
-
-## 22. Этап U — Legacy / 3D
-
-Implement:
-- L15 eligibility
-- embodiment
-- physical passport
-- one-time heir claim
-- heir generation
-- capacity handling
-
-## 23. Этап V — Content expansion
-
-- seventh founder
-- rare/seasonal chickens
-- more gear
-- more buffs
-- 60–80 events
-- character quest chains
-- new mini-games
-
-All through catalogs/config.
-
-## 24. Admin tooling
-
-Must support:
-- archetypes
-- gear
-- buffs
-- quests
-- rewards
-- chests
-- events
-- prices
-- feature flags
-- Arena balance
-- season rules
-- moderation
-
-Avoid direct DB editing for live content.
-
-## 25. Testing strategy
-
-### Unit
-- formulas
-- ledgers
-- state machines
-- eligibility
-- stacking
-
-### Simulation
-- Arena win rates
-- BP weights
-- gear value
-- buff value
-- GE EV
-
-### Integration
-- reward delivery
-- feature flags
-- mini-game
-- Arena settlement
-
-### E2E
-- lifecycle
-- naming
-- gear
-- quest
-- Arena online
-- reconnect
-- paid flows
-
-## 26. Arena simulation gates
-
-Before production:
-- no archetype gross dominance
-- action distribution healthy
-- Speed elasticity acceptable
-- 1×3 comeback uncommon but real
-- focus fire not automatic round-1 solve
-- buff uplift bounded
-- gear marginal values sane
-
-## 27. Economy gates
-
-Before launch:
-- no positive arbitrage
-- daily issuance budget
-- paid chest EV checked
-- Arena ledger balanced
-- referral anti-fraud
-- passive cap
-
-## 28. Security/abuse
-
-- authoritative server
-- hidden moves
-- input validation
-- rate limit
-- chat moderation
-- name moderation
-- reward idempotency
-- anti-bot mini-games
-- referral anti-fraud
-
-## 29. Observability
-
-Dashboards:
-- GE source/sink
-- Arena match health
-- reconnect
-- timeouts
-- crash/error
-- reward delivery
-- quest completion
-- item/buff usage
-- win-rate balance
-
-## 30. Rollout
-
-Use feature flags.
-
-Suggested:
-1. internal
-2. closed testers
-3. training Arena
-4. Friendly
-5. limited paid Arena
-6. ranked
-7. async
-8. expanded buffs/services
-9. 4-player
-
-## 31. Migration principle
-
-Prototype is experiment.
-
-Production:
-- recreate logic in shared server engine;
-- do not copy MQTT prototype architecture as backend.
-
-## 32. Definition of Done for documentation-to-build transition
-
-Ready to build when:
-- core documents created;
-- all LOCKED rules represented;
-- OPEN decisions have owner/test;
-- entities defined;
-- engine hooks defined;
-- economy unresolved numbers isolated as config;
-- screens inventoried;
-- assets specified.
-
-## 33. Immediate next engineering decisions
-
-Highest priority:
-1. Speed model
-2. multi-collision once-per-action semantics
-3. JRPG retarget
-4. Special charge table
-5. BP weights
-6. Arena draw/refund
-
-These are not missing documentation; they are balance/implementation decisions requiring simulation.
-
-## 34. Monetization + sprite production track
-
-Sources: MONETIZATION_LIVEOPS_SPEC.md and SPRITE_PRODUCTION_BATCHES.md.
-
-1. Confirm economy EV, GE real-world bonus liability, compliance for paid randomized rewards.
-2. Implement Season Pass free track → premium entitlement.
-3. Implement chest odds, pity, duplicate protection and exact-once reward claim.
-4. Starter Bundle and non-intrusive contextual offers.
-5. Golden Piggy Bank with clearly defined guaranteed reward and no blocking of earned GE.
-6. Progressively produce 12 sheets (25 sprites each), upload to Figma, slice, QA and map by asset ID.
-7. Add release gates for client/server consistency, pricing versions, refund logic and no pay-to-win.
-
-**DoD:** every monetized item has a clear price, entitlement, source/sink, audit, cancellation/refund policy, and approved images; every asset has a stable Figma/component mapping.
-
-## Обязательная корректировка MVP — B/A4
-
-**Этот Roadmap — единственный источник порядка разработки.** Все шесть основательниц и Дары доступны и работают при запуске. Вместе с фундаментом должны работать: daily egg/яйценоскость Рябы, GE-магазин/скидка Гламурочки, ежедневные события и Lucky Flip Дурочки, Охрана Боевика, синергия Монаха, XP bonus Профессора, корм за полезные операции. Arena стартует с 1×1 live friend, bot training и async defense; 2×2 и 3×3 — видимые заблокированные карточки; 4-player — Future. Кланы — после запуска live friend. Полный производственный порядок и DoD пересматриваются по этим зависимостям, а не по старым номерам фаз.
-
-## C. Обязательные этапы старта
-
-В ранний MVP включить: корм (из успешных операций), все стартовые Дары и соответствующие системы, события с выбором, глобальную цель седьмой. Кланы — отдельный слой после рабочего боя с другом, с анти-фарм и moderation. Живой бой 1×1/бот/async — первыми форматами, 2×2/3×3 только витрина прогресса до следующей фазы, 4-player Future.
+# QuRa — единый план разработки v2
+
+**Статус:** продуктовый план внедрения по D-01–D-20. **Единственный источник порядка работ.**  
+**Главное правило:** стартовый контур должен работать с **шестью основательницами и всеми шестью Дарами**, без отключения выбора. Production QuRa не менять до согласованного инженерного PR.
+
+## 0. Область и контроль изменений
+
+- **Старт** — завершённый пользовательский маршрут: QuRa полезная операция → XP/GE и корм → курочка / Курятник → события, задания, магазин, сундуки, мини-игры.
+- **Arena старта** — живой 1×1 с другом, бесплатная тренировка, асинхронная атака 1×1 на случайную защиту игрока своего уровня; Arena-сундук, аренда GE, таймер 45 секунд.
+- **После запуска** — кланы, сезонные системы монетизации, 2×2/3×3 с другом, затем рейтинг/Слава/лиги.
+- **FUTURE** — 4 игрока, клановая Arena, P2P-маркет, ставки, NFT и расширенные тактические сервисы.
+
+Параметры, не утверждённые владельцем, помечены **PROTOTYPE BALANCE** или **OPEN**.
+
+## 1. Этапы стартовой игры
+
+### S01. Фундамент финансово-игровых событий
+
+**Работы:** серверная конфигурация, kill switches, feature flags, единый idempotent ledger XP/GE/билетов, событие успешной операции QuRa, transaction source/correlation ID, бюджет эмиссии и сверка баланса. Операции не меняют денежные статусы ради игры.  
+**DoD:** повторный callback не начисляет повторные XP/GE/корм; выдача вознаграждения и аудит восстанавливаемы; реальная бухгалтерия GE не зависит от анимации.
+
+### S02. Шесть основательниц и жизненный цикл
+
+**Работы:** L1 яйцо → L2 → L3 цыплёнок → L4 взрослая, отдельный `ChickenInstance`, тип/титул + имя (например, Профессор Иванов), главный персонаж, XP/уровни, Курятник с вместимостью, система «В гостях». Шесть типов доступны одновременно. Седьмая не выдается до Community Goal.  
+**DoD:** любой из шести выбирается на первом раскрытии; отдельные экземпляры сохраняют собственный XP; имя изменяется без изменения механики; нельзя потерять курочку при переполнении.
+
+### S03. Все шесть Даров и зависимые системы — обязательны до запуска
+
+**Работы:** Ряба — ежедневное яйцо + пассивная яйценоскость под cap; Гламурочка — скидки за GE в магазине яиц, экипировки, улучшений Курятника; Дурочка — Lucky Flip; Боевик — защита от угроз; Монах — положительная синергия/смягчение в событиях; Профессор — XP boost. Дары видимы и работают на первом релизе, а не включаются позже. Числовая сила эффектов OPEN / PROTOTYPE BALANCE.  
+**DoD:** шесть независимых тестов «Дар → подтверждённое действие → эффект → аудит», family stacking и caps, нет зависимости выбора курочки от feature gate.
+
+### S04. Корм за операции
+
+**Работы:** карта типов операций → вид корма и временный эффект (зерно/кукуруза/червячки/особый корм/деликатес); neutral/fed/happy внешний статус, анти-фарм по условиям начисления fact-бонуса, тот же финансовый event используется один раз. Корм НЕ вторая валюта.  
+**DoD:** начисление корма при успешной квалифицирующей операции, cap на временный эффект; без операций состояние нейтральное, нет наказания за отсутствие платежей; GE и XP начисляются независимо.
+
+### S05. Событие дня с двумя выборами
+
+**Работы:** глобальный один event на московские сутки, ровно два варианта, default A без дополнительного штрафа, Lucky Flip/Боевик/Монах/Ряба/Профессор/Гламурочка в соответствующих ситуациях, 20 полноценных событий для контентного MVP, 60–80 в последующем расширении.  
+**DoD:** один и тот же event всем; итоги персональные, воспроизводимые; не меняется Крутость; событие можно пройти за ~10 секунд (**PROTOTYPE BALANCE**).
+
+### S06. Задания, Путь QuRa, XP и ранняя коллекция
+
+**Работы:** `ACCOUNT_ONCE`, `CHICKEN_ONCE`, ежедневные/недельные задания, проверка активных сервисов. Бесплатный гарантированный путь: второе яйцо при L6 главной курочки, третье за главу «Хозяйство» и L4 второй (**PROTOTYPE BALANCE**), возможна ускоренная покупка.  
+**DoD:** первое действие аккаунта не выдается повторно новой курочке; XP получает нужная курочка при выполнении, не при позднем claim; пользователь может получить 3 взрослых без обязательного доната.
+
+### S07. Магазин, экипировка, Курятник
+
+**Работы:** магазин GE с реальными серверными тарифами; покупка известного или mystery-яйца; экипировка L4+, стартовые слоты, native sets, отображение Крутости/BP, апгрейды вместимости 2→4→6→10→16→24, выкуп продаваемых дублей за 25% магазинной GE-цены.  
+**DoD:** ни одного «мёртвого» combat stat; покупки атомарны и идемпотентны; overflow с сохранением прав на награду; ограничения комплектов и скидок проверяются сервером.
+
+### S08. Сундуки, награды и мини-игры
+
+**Работы:** таблицы выпадения, прозрачные шансы платных сундуков, pity, защита дублей, mini-games с наградными попытками; билеты +2/сутки с cap 8; интеграция «Волка»; отдельный GE emission budget и source type.  
+**DoD:** roll только серверный и сохранён в ledger; оплаченный сундук не может исчезнуть; повтор попытки не приносит гарантированной прибыли в GE; курочка из сундука всегда стартует L1.
+
+### S09. Седьмая основательница — событие сообщества
+
+**Работы:** общий счёт квалифицированных кормлений по `CommunityGoal`, шкала, промежуточные награды, teaser silhouette, защитa от повторного начисления. Значение N — **OPEN**, имя/Дар/боевой набор седьмой не придумывать.  
+**DoD:** вклад одного события учитывается один раз; игрок видит прогресс; после N происходит versioned unlock, без повторной эмиссии.
+
+### S10. Уведомления, стрики и возврат игрока
+
+**Работы:** Telegram и PWA push с согласия, выбор дня, переполнение билетов, приглашения, сундуки, общий прогресс; тихие часы, opt-out, дедупликация; streak с weekly freeze.  
+**DoD:** лимиты отправки серверные, нет SMS игровой серии, нет маскировки финансовых уведомлений, наблюдается D1/D7/D30.
+
+## 2. Arena стартового релиза
+
+### A01. Общий детерминированный Battle Engine
+
+**Работы:** четыре действия, HP/ATK/DEF/SPD, Shield, Heal, Special charge, эффекты, фиксированный seed; одна функция расчёта для online/async/bot/preview. Перед внедрением закрыть выбор модели Speed, retarget, once-per-action в multi-collision, веса BP и рост уровня.  
+**DoD:** одинаковые inputs/seed → одинаковый результат; unit/regression тесты, нет расхождения с летописью.
+
+### A02. 1×1 бой с другом
+
+**Работы:** приглашение, фиксация immutable snapshot обеих курочек/экипировки после подбора, герб + тип + личное имя, скрытые действия, 45-секундный таймер с автоматической Защитой и Молнией при двух пропусках подряд; chat и защита reconnect.  
+**DoD:** две сессии браузера завершают бой; скрытые ходы не уходят чужому клиенту; сетевые повторы не удваивают ход.
+
+### A03. Тренировка с ботом
+
+**Работы:** 1×1 с ботом, понятный статус «бот», бесплатно и без Arena-сундука, шаблонная летопись.  
+**DoD:** минимум три учебных сценария, нет списания GE/Славы, поведение бота законно и детерминированно при seed.
+
+### A04. Асинхронная атака на случайного защитника — D-19
+
+**Работы:** первый вход в Arena → «Настрой защиту» с Осторожной политикой по умолчанию; открытие пула только после явного save; случайный матч с курочкой ±2 уровня (**PROTOTYPE BALANCE**) и близким BP, последующее расширение окна; fallback явно обозначенный бот. После выбора заморозить snapshots. Отдельный журнал защиты.  
+**DoD:** противник выбирается сервером, нельзя выбрать конкретную цель, мульти-аккаунты и повторный фарм блокируются; атакующий играет против защищающей AI policy; проигравший защитник ничего не теряет.
+
+### A05. Аренда, приз, журнал
+
+**Работы:** `ArenaRentalFee` вместо ставки; live 10 GE/участник и async 10 GE/атакующий (**PROTOTYPE BALANCE**), победителю один Arena-сундук с малым трофеем, XP/прогрессом и крайне редкой эксклюзивной косметикой; у защитника успешная защита даёт XP/достижение с cap (**PROTOTYPE BALANCE**), GE/сундук не даются. Отмена до начала/платформенный сбой → refund, двойной KO → без сундука.  
+**DoD:** ledger reconciliation, выкуп трофея в среднем 7,5 GE, максимум 12,5 GE, нет перевода между игроками; cap повторных пар; дубль награды не создаётся.
+
+### A06. Летопись и будущие форматы в витрине
+
+**Работы:** шаблоны и LLM-связка для оплаченного боя, проверка фактов, deterministic fallback; Telegram-карточка. Arena Home показывает 2×2 и 3×3 как **заблокированные** цели с необходимыми курочками/вместимостью, но не допускает начать.  
+**DoD:** даже при сбое LLM результат сохраняется, текст не выдумывает исход; прогресс к 3×3 указан корректно.
+
+## 3. После старта
+
+### L01. Кланы-фермы
+
+Открытые и партнёрские кланы, роли, banner/crest, contribution, недельные цели и награды с анти-фарм.  
+**DoD:** вступление добровольное, GE не переводятся, вклад подтверждён и ограничен.
+
+### L02. Season Pass / LiveOps / магазин
+
+Free и Premium дорожки, привязка к будущему сезону Arena, сундуки с прозрачными odds, «Золотая копилка», стартеры, персональные предложения и сезонные косметические коллекции. Cycle 28 дней — **PROTOTYPE BALANCE**, общий ли с Arena — **OPEN**.  
+**DoD:** экономика EV/юридическая проверка, refund/entitlement, odds, pity и cap в версии таблиц.
+
+### L03. 2×2 и 3×3 с другом
+
+Стенка на стенку и JRPG, дополнительные карты/эффекты, team builds, remake/replay.  
+**DoD:** корректная коллизия 1×N, targetability, объединённая боевая система; нет потери действия при скорости без утверждения.
+
+### L04. Рейтинговая Arena, Слава и сезоны
+
+Вводятся только после стабильной дружеской Arena: подбор по BP, лига, Glory, seasonal leaderboard, Hall of Fame, capped defense rewards; не менять правила стартовой случайной async Arena без решения.  
+**DoD:** анти-фарм пар, проверка BP и league buckets, season close/rewards идемпотентны.
+
+### L05. 3D воплощение и наследники
+
+Заказ 17 000 ₽, стоимость производства ~15 000 ₽ без доставки/налогов; статус, паспорт/QR, L15, переход цифровой курочки, наследник L1; правовые условия/логистика — **OPEN**.  
+**DoD:** нет дублирования QR наследника, нет потери цифрового персонажа до признанной передачи/доставки, возвраты документированы.
+
+## 4. FUTURE (не входят в старт)
+
+1. Arena 4-player, FFA и 2×2 командная, отдельный timer/economy/chat.
+2. Клановая Arena и клановые сезоны.
+3. Расширенные тактические услуги: платные Hint/All-Seeing/Autobattle/async Scout (в пределах fairness).
+4. P2P рынок курочек / обмен, ставки Arena и blockchain/NFT — только после отдельного решения, юридического review и антифрод-архитектуры.
+5. Седьмая основательница как полноценный игровой тип — после достижения Community Goal и утверждения механики.
+6. Полная библиотека 60–80 двухвариантных Daily Events и новая волна персонажей.
+
+## 5. Инженерные стандарты и этапы выпуска
+
+Только сервер начисляет награды и производит расчёты. Все paid actions идемпотентны, имеют refund и балансные caps. Не внедрять GE, купленные за деньги, как «ставку» Arena. Боевое ядро одинаковое для всех режимов. Вносить изменения через feature flags, миграции с rollback, tests/CI, closed testing и отдельно контролируемый rollout.
+
+Каждый этап выше имеет собственный DoD. До production необходимо закрыть числовые OPEN-балансы и подтвердить, что все шесть Даров функционируют.
+
+## 6. Открытые решения перед кодом
+
+Speed, multi-collision, retarget, Special charge, BP weights; награда защитника и бота при отсутствии противника; level→stats; стоимость полного цикла 3D; N CommunityGoal; точный PvE лимит, reward tables, season durations и редкие вероятности.
