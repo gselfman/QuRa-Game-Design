@@ -563,3 +563,21 @@ Sources: MONETIZATION_LIVEOPS_SPEC.md and SPRITE_PRODUCTION_BATCHES.md.
 7. Add release gates for client/server consistency, pricing versions, refund logic and no pay-to-win.
 
 **DoD:** every monetized item has a clear price, entitlement, source/sink, audit, cancellation/refund policy, and approved images; every asset has a stable Figma/component mapping.
+
+
+## 35. Pass 2 — implementation order (P2, 2026-10-30)
+
+This pass supersedes the sequential A→V interpretation for release scheduling; previous phase descriptions remain a capability checklist, **not** a mandate to ship every system before Arena. No production code changes in this pass.
+
+| Gate | Scope | Blocking acceptance criterion |
+|---|---|---|
+| R0 — documentation contract | Close P1–P8 contradictions, track OPEN decisions without changing D-19/D-20 | Single consistent Arena/XP/GE/asset terminology; no undocumented production assumption |
+| R1 — backend foundations | Versioned configs, feature flags, XP/GE/reward ledgers, idempotency, identity and chicken roster, immutable battle snapshots | Concurrent reward claims cannot duplicate grants; rollback supported |
+| R2 — Arena vertical slice | Shared deterministic Battle Engine, 1×1 then 3×3, action legality and replay, bot with explicit disclosure | Server-owned deterministic result; replay matches original; every stat has engine meaning |
+| R3 — async Arena | Defense setup on first entry, matchmaking level ±2 and close Battle Power, bot fallback, defense XP/achievement events **without GE** | Queue timeout/fallback configurable; no self-match or duplicate reward; defender need not be online |
+| R4 — content/metagame | 20 validated events, chicken journey, quest/achievement integration, inventory, equipment and reward delivery | One daily global event resolved consistently, no hidden GE emissions |
+| R5 — UI, language and assets | RU-first copy inventory with complete EN translation, CARD art plus runtime attack FX/animation, stable asset IDs | No untranslated user-facing string; visual state matches engine; responsive QA |
+| R6 — closed economy/LiveOps | XP caps, GE liability, chest EV/odds, premium entitlements, paywall legal review, 3D cost estimation | No uncapped XP farming, no profitable guaranteed GE loop; uncosted 3D remains OPEN |
+| R7 — release | Feature-flagged staging, simulated match/economy tests, real devices, observability, published prototype URLs | Public prototype links verified; production unchanged until explicit release approval |
+
+**Ranked, Glory and competitive seasons remain Future in the first async release**; do not award ranked currency merely for playing defense. For each gate record owner, version, acceptance test, and evidence. D-19 and D-20 are frozen and must not be reopened by this pass.
