@@ -8,8 +8,8 @@
 - сервер является источником истины;
 - каждая игровая сущность имеет стабильный id;
 - личное имя курочки хранится на instance, тип — на archetype;
-- временное состояние боя не смешивается с permanent profile state;
-- все GE/XP/reward изменения имеют audit/source;
+- временное состояние боя не смешивается с постоянный profile state;
+- все GE/XP/награда изменения имеют audit/источник;
 - все state machines хранятся явно.
 
 ## 1. Account
@@ -75,7 +75,7 @@
 - archetype_id
 - personal_name
 - lifecycle_stage
-- level
+- уровень
 - xp
 - xp_total
 - is_main
@@ -150,7 +150,7 @@ Gift по умолчанию не влияет на Arena без explicit hook.
 - name
 - category
 - slot
-- rarity
+- редкость
 - min_level
 - ignore_level_gate
 - coolness_value
@@ -201,11 +201,11 @@ Unique:
 
 Разделяется логически:
 
-### Gear inventory
-- unequipped gear
+### Экипировка inventory
+- unequipped экипировка
 
-### Buff inventory
-- consumables
+### баф inventory
+- расходники
 
 ### Reward overflow
 - временная доставка при переполнении
@@ -217,7 +217,7 @@ Unique:
 - buff_id
 - code
 - name
-- rarity
+- редкость
 - class: preparation / tactical
 - duration_type: instant / round / battle / timed / matches
 - target_scope
@@ -280,7 +280,7 @@ Unique:
 - completed_at
 - claimed_at
 
-Unique key depends on scope.
+Уникальный ключ зависит от области действия.
 
 ## 18. RewardDefinition
 
@@ -376,7 +376,7 @@ Unique key depends on scope.
 - chest_open_id
 - account_id
 - chest_id
-- source
+- источник
 - rng_seed_server
 - result_json
 - pity_before
@@ -388,7 +388,7 @@ Unique key depends on scope.
 - event_id
 - code
 - category
-- rarity
+- редкость
 - base_outcome_json
 - negative
 - lucky_flip_outcome_json nullable
@@ -438,11 +438,11 @@ Unique key depends on scope.
 - `active`, `last_defended_at`, `daily_defenses_count`;
 - `antifraud_relation_hashes` / refs для исключения связанных аккаунтов (без раскрытия сырых персональных данных).
 
-Поиск: случайный среди level ±2 (PROTOTYPE BALANCE) и близкого BP (OPEN), расширение окна, при отсутствии — `opponent_kind=BOT` с явной пометкой и уменьшенным призом. Нельзя выбрать определённого защитника. После подбора обе стороны фиксируются в `ArenaFighterSnapshot`.
+Поиск: случайный среди уровень ±2 (PROTOTYPE BALANCE) и близкого BP (OPEN), расширение окна, при отсутствии — `opponent_kind=BOT` с явной пометкой и уменьшенным призом. Нельзя выбрать определённого защитника. После подбора обе стороны фиксируются в `ArenaFighterSnapshot`.
 
 ## 29.3. FUTURE — ArenaSeasonEnrollment
 
-`ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, status. Не применяется для MVP async и не нужен для участия без рейтинга.
+`ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, status. Не применяется для MVP асинхронный и не нужен для участия без рейтинга.
 
 ## 30. ArenaMatch
 
@@ -452,7 +452,7 @@ Unique key depends on scope.
 - status
 - ranked
 - friendly
-- async
+- асинхронный
 - created_at
 - started_at
 - ended_at
@@ -492,20 +492,20 @@ Unique key depends on scope.
 - personal_name_snapshot
 - position
 - max_hp
-- attack
-- defense
+- атака
+- защита
 - speed
 - gear_snapshot_json
 - permanent_effects_json
 
-После старта permanent snapshot не мутирует.
+После старта постоянный snapshot не мутирует.
 
 ## 33. ArenaFighterState
 
 Текущее battle-state:
 - fighter_id
 - hp
-- shield
+- щит
 - special_charge
 - alive
 - statuses_json
@@ -598,7 +598,7 @@ Normalized option if statuses need queryability:
 - template_version
 - created_at
 
-Narrative is derived from engine facts, never source of truth.
+Летопись формируется из фактов движка и не служит источником результата.
 
 ## 40. ArenaChatMessage
 
@@ -611,7 +611,7 @@ Narrative is derived from engine facts, never source of truth.
 - created_at
 - moderation_status
 
-Server controls visibility.
+Доступ к сообщениям регулируется сервером.
 
 ## 41. ArenaRentalFee и ArenaPrizeGrant
 
@@ -676,7 +676,7 @@ Server controls visibility.
 - reward_id
 - inviter_account_id
 - referred_account_id
-- level
+- уровень
 - qualifying_event_id
 - ge_amount
 - status
@@ -689,7 +689,7 @@ Server controls visibility.
 - valid_from
 - valid_to
 
-Quest/reward generation references flags.
+Quest/награда generation references flags.
 
 ## 48. OverflowPackage
 
@@ -738,40 +738,40 @@ START → DECISION → LOCKED → RESOLVE → REVEAL → END
 ### Quest
 AVAILABLE → IN_PROGRESS → COMPLETED → CLAIMED
 
-### Buff activation
+### баф activation
 PENDING → VALIDATED → APPLIED → CONSUMED
 
 ## 51. Обязательные идентификаторы
 
-Use immutable ids for:
+Использовать неизменяемые идентификаторы для:
 - account
 - chicken
 - archetype
-- gear
+- экипировка
 - buff
 - quest
-- reward
+- награда
 - match
 - participant
 - round
 - action
 - ledger tx
 
-Display names are never keys.
+Отображаемые имена не используются как ключи.
 
 ## 52. Версионирование
 
-Version independently:
+Версионировать независимо:
 - Battle Engine
 - archetype definitions
-- gear definitions
+- экипировка definitions
 - buff definitions
 - quest definitions
-- reward tables
+- награда tables
 - economy config
 - season rules
 
-Match stores versions used at start.
+Матч сохраняет версии правил, применённые при старте.
 
 ## 53. Инварианты аудита
 
@@ -783,7 +783,7 @@ Match stores versions used at start.
 6. Match snapshots immutable after start.
 7. Hidden action not exposed before resolve.
 8. Personal rename cannot alter archetype.
-9. Temporary modifier never persists into permanent stat row.
+9. Temporary modifier never persists into постоянный stat row.
 10. Any paid canceled activity must have settlement record.
 
 ## 53.1. Недостающие сущности и связи
@@ -870,8 +870,8 @@ id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_defa
 
 ECONOMY_MODEL.md consumes:
 - ledgers;
-- reward sources;
+- награда sources;
 - Arena settlement;
 - mini-game attempt;
 - passive emission;
-- chest EV.
+- сундук EV.
