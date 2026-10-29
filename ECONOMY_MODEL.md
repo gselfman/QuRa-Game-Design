@@ -73,6 +73,108 @@ Rare jackpots, seasonal rewards and one-time progression rewards are excluded fr
 
 If mini-game realized GE/hour materially exceeds normal product-earned GE without a hard cap, reduce game emission or raise relevant sink prices.
 
+## 2.2. Production GE accrual formula from QuRa code
+
+Current QuRa backend implements operation GE in `app/services/eggs.py`.
+
+For supported successful operations:
+
+`GE = floor(RUB × eggs_rate_pct / 100) + fact_bonus`
+
+Current defaults:
+- `eggs_rate_pct = 1` → **1% of RUB amount in GE**;
+- `eggs_fact = 10` → **+10 GE** bonus for an eligible operation;
+- `eggs_fact_min_rub = 100` → fact bonus only from **100 ₽**;
+- `eggs_fact_daily_max = 10` → at most **10 fact bonuses per Moscow day**.
+
+The +10 fact bonus is not awarded when:
+- same payee already received a fact-bonus operation from this user in the previous 24 hours;
+- daily fact-bonus limit is exhausted.
+
+After limit/repeat-payee:
+- the 1% amount-based GE still applies.
+
+Supported operation families in the current backend:
+- QR payment;
+- card payout;
+- crypto withdrawal;
+- service order;
+- internal QuRa transfer.
+
+Examples under current settings:
+- 100 ₽ eligible operation → 1 + 10 = **11 GE**;
+- 200 ₽ → **12 GE**;
+- 500 ₽ → **15 GE**;
+- 1,000 ₽ → **20 GE**;
+- 3,000 ₽ → **40 GE**;
+- 5,000 ₽ → **60 GE**;
+- 10,000 ₽ → **110 GE**.
+
+The formula and limits are runtime settings and can be changed through configuration/admin.
+
+## 2.3. Referral GE — production rule
+
+Current configured referral levels are:
+- Level 1: **10%**
+- Level 2: **5%**
+- Level 3: **2%**
+
+Referral reward is calculated from the friend's **actual awarded operation GE**, not directly from RUB turnover.
+
+Formula:
+`partner_GE = floor(base_operation_GE × pct / 100)`
+
+If base GE > 0 and pct > 0 but floor gives 0, backend awards **1 GE minimum**.
+
+Anti-fraud can withhold rewards for:
+- same device;
+- same payout card;
+- same deposit sender wallet.
+
+Historical 20/10/4 values are legacy seed values and are not the current production configuration.
+
+## 2.4. GE Shop — production packs and pricing
+
+Current GE packs in backend:
+
+| Pack | GE | Base price, Oct 2026 |
+|---|---:|---:|
+| Горсть | 300 | 99 ₽ |
+| Корзинка | 1,575 | 499 ₽ |
+| Лукошко | 3,300 | 999 ₽ |
+| Сундук | 18,000 | 4,999 ₽ |
+
+Pack bonus labels:
+- 300 GE: no bonus;
+- 1,575 GE: +5% / +75 GE;
+- 3,300 GE: +10% / +300 GE;
+- 18,000 GE: +20% / +3,000 GE.
+
+Price index:
+- baseline `ge_price_index_bps = 10000`;
+- monthly bump default **+10%**;
+- first scheduled bump **1 Dec 2026**;
+- admin can pause or override shelf prices.
+
+Public tariff explicitly treats this as **shop purchase price**, not investment yield.
+
+## 2.5. Lukoil GE integration
+
+Current fuel service has two modes.
+
+### Earn
+- user pays full fuel amount in USDT;
+- **10% of actual fuel cost in RUB** is converted to GE at current GE shop price.
+
+### Spend
+- **5% of fuel cost** is paid with GE;
+- rest is paid in USDT;
+- if GE balance is insufficient, shortfall returns to USDT charge.
+
+This makes GE both:
+- earnable through a real product action;
+- spendable as a real discount mechanism.
+
 ## 3. GE Faucets
 
 ### Mini-games
@@ -89,8 +191,8 @@ If mini-game realized GE/hour materially exceeds normal product-earned GE withou
 - EV included in chest EV.
 
 ### Partner program
-Current Bible ratio:
-- 20% / 10% / 4% by levels for qualifying real actions.
+Current production ratio:
+- 10% / 5% / 2% by levels for qualifying operation GE.
 
 Exact eligible base and caps require financial-product configuration.
 
@@ -532,7 +634,7 @@ GE rewards from quests have per-period budget.
 
 ## 25. Referral economy
 
-Current ratio 20/10/4.
+Current production ratio 10/5/2.
 
 Qualifying action must be real and anti-fraud checked.
 
