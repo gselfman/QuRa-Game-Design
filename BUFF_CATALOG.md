@@ -1,11 +1,11 @@
 # QuRa — каталог бафов v1
 
 **Статус:** catalog framework + approved tactical archetypes  
-**Sources:** Game Bible §26, Arena Spec
+**Источники:** Game Bible §26, Arena Spec
 
 ## 0. Two classes
 
-### Preparation Buff
+### Preparation баф
 Activated before battle; duration time/N matches.
 
 ### Tactical Consumable
@@ -15,9 +15,9 @@ Activated inside match; finite one-use item.
 
 - id
 - name
-- rarity
+- редкость
 - class
-- source
+- источник
 - target_scope
 - activation_window
 - duration
@@ -52,21 +52,21 @@ Activated inside match; finite one-use item.
 ## 4. Источники
 
 - mini-games
-- chests
+- сундуки
 - quests
 - events
-- season rewards
+- season награды
 - achievements
-- GE shop
+- GE магазин
 
 ## 5. Loadout
 
-Working hypothesis:
-- 3 tactical consumables per match;
+Рабочая гипотеза:
+- 3 tactical расходники per match;
 - one instance one use;
 - usually max one activation per round.
 
-## 6. Catalog: comeback
+## 6. Catalog: возвращение в бой
 
 ### DOUBLE_POWER
 Name: Двойная сила
@@ -80,7 +80,7 @@ Chronicle: «печать Двойной силы вспыхнула...»
 ### LAST_FEATHER
 Последнее перо
 Scope: SELF_CHICKEN
-Trigger: lethal damage
+Trigger: lethal урон
 Effect: survive at 1 HP once
 Duration: trigger
 Rule for repeated same-round lethal collision: OPEN
@@ -92,39 +92,39 @@ Trigger: death
 Effect: revive once with limited HP
 Ranked legality: requires simulation
 
-## 7. Catalog: defense
+## 7. Catalog: защита
 
 ### INVULNERABILITY
 Неуязвимость
 Scope: SELF_CHICKEN
 Duration: ROUND
-Effect: incoming damage=0; harmful secondary effects baseline blocked
+Effect: incoming урон=0; harmful secondary effects baseline blocked
 Does not block Gods Lightning
 
 ### BATTLE_DOME
 Боевой купол
 Scope: MY_TEAM
 Duration: ROUND
-Effect: temporary Shield all living allies
+Effect: временный Щит all living allies
 
 ### STONE_SKIN
 Каменная кожа
 Scope: SELF_CHICKEN
 Duration: ROUND/BATTLE depending item
-Effect: Defense boost
+Effect: Защита boost
 
 ### TURTLE_FORMATION
 Черепаший строй
 Scope: MY_TEAM
 Duration: ROUND
-Effect: Defense up, possible Speed down
+Effect: Защита up, possible Скорость down
 
 ### MIRROR
 Зеркало
 Scope: SELF_CHICKEN
 Duration: ROUND
 Effect: first harmful debuff reflected or canceled
-Final variant TBD
+Окончательный вариант ещё не выбран
 
 ## 8. Catalog: offense
 
@@ -132,76 +132,76 @@ Final variant TBD
 Адреналин
 Scope: ALLY_CHICKEN
 Duration: ROUND
-Effect: Attack and/or Speed up
+Effect: Атака and/or Скорость up
 
 ### BATTLE_CRY
 Боевой клич
 Scope: MY_TEAM
 Duration: ROUND
-Effect: Attack up
+Effect: Атака up
 
 ### SHIELD_BREAKER
 Щитолом
 Scope: SELF_CHICKEN
-Duration: next Attack
-Effect: partially ignores Shield
+Duration: next Атака
+Effect: partially ignores Щит
 
 ### ANTI_SHIELD
 Антищит
 Scope: ENEMY_CHICKEN
-Effect: remove part of active Shield
+Effect: remove part of active Щит
 
 ### HUNTER_MARK
 Метка охотника
 Scope: ENEMY_CHICKEN
 Duration: ROUND
-Effect: target receives increased team damage
+Effect: target receives increased team урон
 
 ### RETRIBUTION
 Возмездие
 Scope: SELF_CHICKEN
 Duration: ROUND
-Effect: source of incoming damage receives response damage
+Effect: источник of incoming урон receives response урон
 
-## 9. Catalog: sustain
+## 9. Catalog: выживаемость
 
 ### SECOND_WIND
 Второе дыхание
 Scope: ALLY_CHICKEN
-Effect: instant HP heal
+Effect: instant HP лечение
 
 ### TEAM_MEDIC
 Общий медик
 Scope: MY_TEAM
-Effect: small heal all living allies
+Effect: small лечение all living allies
 
 ### CLEAR_MIND
 Чистая голова
 Scope: ALLY_CHICKEN
 Effect: remove weaken/debuff
 
-## 10. Catalog: Special control
+## 10. Catalog: Особый приём control
 
 ### CHARGE
 Заряд
 Scope: ALLY_CHICKEN
-Effect: +Special charge
+Effect: +Особый приём charge
 
 ### OVERLOAD
 Перегрузка
-Condition: Special ready
-Effect: Special direct effect up, optional post-penalty
+Condition: Особый приём ready
+Effect: Особый приём direct effect up, optional post-penalty
 
 ### SPECIAL_ECHO
-Эхо Special
-Effect: repeat portion of Special at reduced coefficient
+Эхо Особый приём
+Effect: repeat portion of Особый приём at reduced coefficient
 No recursive echo
 
 ### SILENCE
 Тишина
 Scope: ENEMY_CHICKEN
 Duration: ROUND
-Effect: Special unavailable
+Effect: Особый приём unavailable
 Rare hard-control
 
 ### BREAK_CONCENTRATION
@@ -248,19 +248,19 @@ No hidden impossible jackpot
 
 ### BATTLE_BREAKFAST
 Боевой завтрак
-+HP temporary across duration
++HP временный across duration
 
 ### COOP_CHARM
 Оберег Курятника
-+Defense
++Защита
 
 ### STRONG_COFFEE
 Крепкий кофе
-+Speed
++Скорость
 
 ### BLESSING
 Благословение
-character-specific Special modifier
+character-specific Особый приём modifier
 
 ## 14. Stacking
 
@@ -277,7 +277,7 @@ When activated:
 - effect shown to both players unless specifically secret by design;
 - Chronicle records it.
 
-Secret live hidden buffs require explicit fairness review.
+Secret живой hidden бафы require explicit fairness review.
 
 ## 16. Ranked legality
 
@@ -288,22 +288,22 @@ Possible values:
 - ASYNC_ONLY
 - BANNED
 
-Strong control/revive buffs require balance validation.
+Strong control/revive бафы require balance validation.
 
 ## 17. Economy
 
 Value depends on:
 - win-rate uplift;
 - activation flexibility;
-- rarity;
+- редкость;
 - condition strictness;
 - ranked legality.
 
-Comeback buffs can be strong because condition restricts use.
+Comeback бафы can be strong because condition restricts use.
 
 ## 18. Anti-pay-to-win
 
-- strong buffs obtainable via gameplay;
+- strong бафы obtainable via gameplay;
 - per-match limit;
 - ranked allowlist;
 - no unlimited direct purchase advantage;
@@ -326,13 +326,13 @@ Comeback buffs can be strong because condition restricts use.
 
 ## 20. Критерии приёмки
 
-Buff must answer:
+баф must answer:
 - when can use?
 - who targeted?
 - duration?
 - exact engine hook?
 - stacking?
-- cap?
+- лимит?
 - visible?
 - ranked?
 - consumed when?
