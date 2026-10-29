@@ -6,30 +6,30 @@
 ## 0. Цель
 
 Создавать повторно используемые ассеты, которые:
-- fit QuRa visual language;
-- support all runtime poses;
+- соответствовать визуальному языку QuRa;
+- поддерживать все игровые позы;
 - технически пригодны для нарезки;
-- preserve character identity;
-- work in responsive web/mobile;
+- сохранять индивидуальность персонажа;
+- работать на адаптивных экранах компьютера и телефона;
 - minimize re-generation.
 
-## 1. Visual language
+## 1. Визуальный язык
 
 Core:
-- warm wood/gold;
+- тёплое дерево и золото;
 - soft 3D volume;
 - свет направлен сверху слева;
-- cozy but polished;
-- readable silhouettes;
-- Onest font for UI;
-- no visual noise covering gameplay.
+- уютный, но тщательно проработанный стиль;
+- хорошо различимые силуэты;
+- шрифт Onest для интерфейса;
+- никаких лишних деталей, закрывающих игровой процесс.
 
-## 2. Chicken master poses
+## 2. Мастер-позы курочек
 
 Каждому архетипу нужны стандартизированные мастер-позы.
 
 ### CARD
-3/4 standing pose.
+Стоящая поза в ракурсе три четверти.
 Used:
 - profile;
 - store;
@@ -52,7 +52,7 @@ Used:
 Used:
 - marketing/reference.
 
-## 3. Attachment anchors
+## 3. Точки крепления аксессуаров
 
 Для каждой отображаемой позы есть стандартные точки крепления:
 - head
@@ -60,23 +60,23 @@ Used:
 - ears
 - neck
 - body
-- left/right wing
+- левое/правое крыло
 - tail
-- left/right foot
-- aura center
+- левая/правая лапа
+- центр ауры
 
 Точки крепления зафиксированы отдельно для каждой позы.
 
-## 4. Accessory pose variants
+## 4. Варианты предмета для поз
 
 Один предмет может требовать:
-- CARD variant
-- PERCH variant
-- NEST variant
+- вариант для CARD
+- вариант для PERCH
+- вариант для NEST
 
 Если слот не виден в позе:
-- no sprite required;
-- effect remains active.
+- отдельный спрайт не нужен;
+- эффект предмета продолжает действовать.
 
 ## 5. Пакеты шести основательниц — D-20
 
@@ -90,13 +90,13 @@ Used:
 Для имени не требуется отдельный графический ассет.
 Имя отображается интерфейсом.
 
-## 7. Crest assets
+## 7. Графика гербов
 
 В прототипе временно допустимы эмодзи-гербы.
 
 Варианты исполнения:
-- emoji-style icons;
-- custom QuRa crest set.
+- иконки в стиле эмодзи;
+- оригинальный набор гербов QuRa.
 
 Необходимые символы:
 - wolf
@@ -146,75 +146,75 @@ States:
 - disabled
 - selected
 
-## 9. Status icons
+## 9. Иконки статусов
 
 - Shield
 - Heal
 - Attack Up
-- Attack Down
+- Ослабление Атаки
 - Defense Up
 - Speed Up
-- Special Ready
-- Charge Down
+- Особый приём готов
+- Снижение заряда
 - Silence
 - Invulnerability
-- Last Feather
+- «Последнее перо»
 - Phoenix
-- Hunter Mark
+- «Метка охотника»
 - Smoke
 - Intercept
-- Double Power
+- «Двойная сила»
 
 ## 10. Графика предметов-бафов
 
 Для каждого бафа нужен комплект:
-- inventory icon
+- иконка инвентаря
 - activation FX
-- optional Chronicle illustration hook
+- необязательная привязка иллюстрации летописи
 
-Rarity frames:
+Рамки редкости:
 - Common
 - Rare
 - Epic
 - Legendary
 - Artifact, если семейство бафа поддерживает такой уровень.
 
-## 11. Preparation Buff art
+## 11. Графика бафов подготовки
 
 Examples:
-- Battle Breakfast
-- Coop Charm
-- Strong Coffee
+- «Боевой завтрак»
+- «Оберег Курятника»
+- «Крепкий кофе»
 - Blessing
 
 Перед боем нужен видимый значок активного эффекта.
 
-## 12. Tactical buff FX
+## 12. Эффекты тактических бафов
 
-### Double Power
-- seal breaking
-- energy amplification
+### «Двойная сила»
+- разрушение печати
+- усиление энергии
 
 ### Invulnerability
-- transparent protective shell
+- прозрачная защитная оболочка
 
-### Last Feather
-- glowing feather catches lethal blow
+### «Последнее перо»
+- светящееся перо принимает смертельный удар
 
 ### Phoenix
 - flame/rebirth
 
 ### Battle Dome
-- team barrier
+- общий барьер команды
 
 ### Charge
-- Special meter energy burst
+- вспышка энергии шкалы Особого приёма
 
 ### Silence
-- muted/locked Special symbol
+- приглушённый/заблокированный знак Особого приёма
 
 ### Swap/Reform
-- positional arrows
+- стрелки перемещения
 
 ## 13. Молния богов
 
@@ -224,24 +224,24 @@ Examples:
 ## 14. Летопись боя visuals
 
 Необязательно, но полезно:
-- round divider
+- разделитель раундов
 - crest
-- character portraits
-- buff icons
-- victory/death symbols
+- портреты персонажей
+- иконки бафов
+- значки победы/выбывания
 
 Летопись читается даже без иллюстраций.
 
-## 15. Gear art
+## 15. Графика экипировки
 
 Для каждого GearDefinition обязательны:
-- inventory icon
-- equipped sprite by visible poses
-- store preview
-- rarity frame
+- иконка инвентаря
+- спрайт экипировки под каждую видимую позу
+- предпросмотр магазина
+- рамка редкости
 - обозначение принадлежности к комплекту при необходимости.
 
-## 16. Gear category visual QA
+## 16. Проверка графики категорий экипировки
 
 Проверить наложения и читаемость для:
 - hats
@@ -259,7 +259,7 @@ Examples:
 
 Отключить слоты, где предметы перекрывают друг друга.
 
-## 17. Native sets
+## 17. Родные комплекты
 
 У каждого архетипа должна быть цельная визуальная линейка:
 - Ryaba: gold/shell/folk
@@ -272,7 +272,7 @@ Examples:
 ## 18. Редкость presentation
 
 Редкость передаётся через:
-- frame/detail density;
+- плотность деталей рамки;
 - material;
 - subtle FX;
 - не только цветом.
@@ -280,27 +280,27 @@ Examples:
 Accessibility:
 не полагаться только на цвет.
 
-## 19. Coop environments
+## 19. Локации Курятника
 
 Tiers:
 - Nest 2
 - Coop 4
-- Poultry Yard 6
+- Птичий двор — 6 мест
 - Estate 10
-- Golden Yard 16
-- Ryaba Palace 24
+- Золотой двор — 16 мест
+- Дворец Рябы — 24 места
 
-Each tier:
-- wide background
-- mobile crop
-- perch/nest zones
+Для каждого уровня Курятника:
+- широкоформатный фон
+- кадрирование для мобильного
+- места насестов и гнёзд
 - lighting
-- upgrade preview
+- предпросмотр улучшения
 
-## 20. Egg lifecycle assets
+## 20. Графика жизненного цикла яйца
 
 L1:
-- intact egg
+- целое яйцо
 
 L2:
 - developing/cracked
@@ -309,16 +309,16 @@ L3:
 - chick
 
 Need:
-- mystery/known variants
+- загадочные и известные варианты
 - особые скины яиц в будущем
 
-## 21. 3D embodiment assets
+## 21. Графика воплощения в 3D
 
 L15 flow:
-- premium turntable/render
-- figure preview
-- passport visual
-- QR claim packaging UI
+- качественный круговой просмотр/рендер
+- предпросмотр фигурки
+- оформление паспорта
+- интерфейс оформления QR наследника
 
 ## 22. Мини-игра assets
 
@@ -328,34 +328,34 @@ L15 flow:
 - GE icon
 - tickets
 - UI buttons
-- rarity frames
-- buff icons
+- рамка редкостиs
+- иконки бафов
 - character masters
 
-## 23. Responsive requirements
+## 23. Адаптивность интерфейса
 
 Для каждого основного экрана:
 - desktop
 - tablet
-- mobile portrait
-- mobile landscape where game requires it
+- вертикальный экран телефона
+- горизонтальный экран телефона там, где этого требует игра
 
 Arena 3×3:
-- mobile cards stack/readable
-- chat can collapse/dock
-- Chronicle remains long-scroll readable
+- карточки читаемы и адаптивно размещаются
+- чат сворачивается или прикрепляется
+- летопись удобна для длинной прокрутки
 
 ## 24. Форматы файлов
 
 Masters:
-- SVG for icons where practical
-- PNG/WebP transparent for characters/accessories
-- source design retained in Figma
+- SVG для иконок, когда возможно
+- PNG/WebP с прозрачностью для персонажей и аксессуаров
+- исходный дизайн сохраняется в Figma
 
 Runtime:
-- WebP/AVIF where supported for large raster
-- PNG only where alpha/quality requires
-- SVG icons optimized
+- WebP/AVIF для крупных растровых изображений, где поддерживается
+- PNG, если этого требует прозрачность или качество
+- оптимизированные SVG-иконки
 
 ## 25. Правила именования
 
@@ -374,15 +374,15 @@ Examples:
 
 Typical:
 - icons: master 512
-- character CARD: master >=2048 height where feasible
+- основной CARD персонажа желательно не менее 2048 пикселей в высоту
 - promo: 4K
 - backgrounds: desktop 4K master
-- UI exported at density variants if needed
+- при необходимости экспорт интерфейса для разных плотностей экранов
 
 ## 27. Прозрачность
 
 Спрайт курочки, аксессуара или эффекта:
-- transparent background unless intentionally environmental.
+- прозрачный фон, кроме намеренно фоновых изображений.
 
 ## 28. Защитные поля
 
@@ -412,22 +412,22 @@ Typical:
 
 ## 30. Доступность
 
-- sufficient contrast
-- no information encoded by color alone
-- reduced-motion mode
-- animation skip
-- captions/text for major effects
-- status icons + labels
+- достаточная контрастность
+- не передавать смысл только цветом
+- режим уменьшенной анимации
+- пропуск анимации
+- подписи и текст к важным эффектам
+- иконки статусов и подписи
 
 ## 31. Audio
 
 Разделить слои:
 - UI
-- battle SFX
+- звуки боя
 - music
-- character reactions
+- реакции персонажей
 
-User controls:
+Настройки пользователя:
 - sound
 - music
 - vibration
@@ -437,12 +437,12 @@ User controls:
 Нужна сущность/таблица:
 - asset_id
 - type
-- owner entity
+- связанная игровая сущность
 - pose
 - variant
 - version
-- source Figma node
-- runtime path
+- исходный узел Figma
+- путь к игровому файлу
 - status
 
 ## 33. Статусы производства
@@ -458,16 +458,16 @@ User controls:
 
 ## 34. Контрольный список качества
 
-Every asset:
-- correct archetype
-- no accidental crop
-- transparent clean edge
-- consistent light
-- correct pose anchor
-- correct file name
-- correct dimensions
-- no text baked unless required
-- mobile readability
+Для каждого ассета:
+- верный тип курочки
+- нет случайного обрезания
+- чистый край прозрачности
+- одинаковое освещение
+- правильная точка крепления
+- правильное имя файла
+- правильные размеры
+- не встраивать текст в изображение без необходимости
+- читаемость на телефоне
 - no duplicate
 
 ## 35. Структура Figma
@@ -485,16 +485,16 @@ Every asset:
 - Archive
 
 Components:
-- rarity frame
-- item card
-- chicken card
-- stat chip
-- status chip
-- action button
+- рамка редкости
+- карточка предмета
+- карточка курочки
+- плашка характеристики
+- плашка статуса
+- кнопка действия
 - chat
 - Chronicle
 - modal
-- reward card
+- карточка награды
 
 ## 36. Источник истины
 
