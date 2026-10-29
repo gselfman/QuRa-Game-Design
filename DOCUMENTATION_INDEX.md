@@ -154,3 +154,9 @@ Both are part of v1 documentation and should be read after ECONOMY_MODEL.md and 
 9. Удержание — **RETENTION_NOTIFICATIONS.md**; тестирование баланса — **ARENA_SIMULATION_RESULTS.md**.
 
 **Открытые вопросы:** Speed, multi-collision, JRPG retarget, level→power (две модели), юрлицо/доставка/возврат 3D, общий сезон 28 дней vs два цикла, N для седьмой, сохранение/сброс тестовой Рябы, округление 25% выкупа.
+
+## Второй проход P1–P8
+
+Основной план исправлений: `QURA_GAME_DOCS_PASS2_INSTRUCTION.md` (предоставлен в задаче). Цепочка PR P1→P2→P3→P4→P5→P6→P8→P7 на базе `docs/fix-2026-10-29-E`; PR A–E ещё не объединены в main. Актуальная проверка: `DOC_FIX_AUDIT_REPORT_2026-10-29.md` раздел «Второй проход».
+
+**OPEN:** стоимость/награда fallback-бота, награда защитника XP, фактические референсы шести героинь, полная стоимость/юнит-экономика 3D, рост уровня, BP weights, параметры сезонности, CommunityGoal N, продакшен-ready симуляции. **LOCKED:** D-19 random async opponent, D-20 CARD+FX.
