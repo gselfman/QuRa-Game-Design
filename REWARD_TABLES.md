@@ -335,3 +335,6 @@ Track:
 
 These are configuration tables, not missing mechanics.
 
+## 27. Season Pass / monetization rewards
+
+Approved direction: Season Pass has free and premium tracks; late premium purchase claims previously unlocked milestones. Every reward is a versioned entitlement. Paid chest must display odds pre-purchase; pity per chest family, disclosed threshold, duplicate compensation and server-side roll. Golden Piggy Bank offers a clearly stated **guaranteed** award at purchase (not a deposit or already earned GE). Exact numerical reward tables, frequency, price and EV remain OPEN pending economy review; see **MONETIZATION_LIVEOPS_SPEC.md**.
