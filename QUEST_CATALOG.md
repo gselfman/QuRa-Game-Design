@@ -314,3 +314,6 @@ Possible:
 
 All require economy review.
 
+## C. Новые задания
+
+`FEED_TRIGGERED` — выполнить квалифицирующую полезную операцию QuRa (XP/GE и корм независимы), `NEW_SERVICE_DISCOVERED` — впервые воспользоваться включённым сервисом, `CLAN_GOAL_CONTRIBUTED` — вклад с caps, `COMMUNITY_GOAL_CONTRIBUTED` — общий прогресс, `DAILY_EVENT_CHOICE` — выбрать один из двух вариантов. Задания не должны принуждать к финансовому расходу. Корм не является отдельной валютой. Все triggers строго feature-gated и idempotent.
