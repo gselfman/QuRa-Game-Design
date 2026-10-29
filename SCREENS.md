@@ -7,7 +7,7 @@
 - mobile-first;
 - financial actions remain serious/clear;
 - game surfaces do not obscure money status;
-- state/reward always explicit;
+- состояние и награда всегда понятны;
 - no hidden irreversible loss;
 - feature flags remove unavailable flows.
 
@@ -44,7 +44,7 @@ Shows:
 ## 3. Rename Chicken
 
 Fields:
-- current full identity;
+- полная идентичность курочки;
 - personal name input;
 - validation/moderation;
 - preview Type + Name;
@@ -63,7 +63,7 @@ Fields:
 
 ## 5. Coop Upgrade
 
-- current tier/capacity
+- текущий уровень Курятника и вместимость
 - next tier
 - requirements
 - GE price
@@ -75,11 +75,11 @@ Fields:
 
 Если награда не помещается:
 - reward preview
-- countdown if applicable
+- обратный отсчёт при необходимости
 - expand Coop
 - free place
 - resolve later
-- decline with double confirmation if allowed
+- отказ с двойным подтверждением, если разрешён
 
 ## 7. Path / QuRa Journey
 
@@ -139,14 +139,14 @@ Per chicken:
 - probabilities for paid chest
 - opening animation
 - result
-- pity state if shown
+- состояние pity, если показывается
 - duplicate/overflow resolution
 
 ## 15. Gear Shop
 
-- filters level/category/rarity
+- фильтры уровня, категории и редкости
 - usable/locked
-- dim future items
+- будущие предметы показаны затемнёнными
 - GE price
 - Coolness/combat stats
 - native tag
@@ -156,7 +156,7 @@ Per chicken:
 
 Тип: известная основательница либо загадочное яйцо с раскрытием шансов. Цена GE, нехватка и варианты **«Заработать GE / Купить GE / Продолжить копить»**. При переполнении — «В гостях»; экземпляр всегда начинается L1.
 
-## 16. Gear Item Detail
+## 16. Карточка предмета экипировки
 
 - visual
 - level
@@ -185,7 +185,7 @@ Per chicken:
 ## 19. Treasure Chest Inventory Capacity
 
 - used/capacity
-- upgrade/trade-in if implemented
+- улучшить или сдать предмет, если функция реализована
 - overflow packages
 
 ## 20. Мини-игра Hub
