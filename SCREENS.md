@@ -1,4 +1,4 @@
-# QuRa Game Screens v1
+# QuRa — реестр экранов v1
 
 **Статус:** полный inventory основных игровых экранов и flows
 
@@ -184,7 +184,7 @@ Visual preview of item/combination.
 - upgrade/trade-in if implemented
 - overflow packages
 
-## 20. Mini-game Hub
+## 20. Мини-игра Hub
 
 - games
 - ticket stock
@@ -192,7 +192,7 @@ Visual preview of item/combination.
 - daily limits
 - paid retry info
 
-## 21. Mini-game Result
+## 21. Мини-игра Result
 
 - score
 - reward
@@ -356,7 +356,7 @@ tabs/recipient:
 - compact explanation
 - next round state
 
-## 40. Battle Chronicle
+## 40. Летопись боя
 
 - literary story
 - round accordion
@@ -498,7 +498,7 @@ Required:
 - moderation
 - analytics
 
-## 58. Screen state contract
+## 58. Состояния экранов
 
 Every screen defines:
 - loading
@@ -509,7 +509,7 @@ Every screen defines:
 - offline
 - permission/feature gated
 
-## 59. Navigation
+## 59. Навигация
 
 Primary game navigation should not exceed a small stable set:
 - Home
@@ -521,7 +521,7 @@ Primary game navigation should not exceed a small stable set:
 
 Final IA after UX prototype.
 
-## 60. New monetization screens
+## 60. Новые экраны монетизации
 
 Source: **MONETIZATION_LIVEOPS_SPEC.md**.
 
