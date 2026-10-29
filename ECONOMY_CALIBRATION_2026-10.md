@@ -1,9 +1,9 @@
-# QuRa Economy Calibration — October 2026
+# QuRa — калибровка экономики, октябрь 2026
 
 **Статус:** calibration snapshot based on real GE accrual history + user-reported sustainable mini-game result  
 **Purpose:** validate price bands and time-to-goal against actual product usage.
 
-## 1. Observation window
+## 1. Период наблюдения
 
 Core comparison window:
 - 14 Oct 2026 through 29 Oct 2026
@@ -13,7 +13,7 @@ Excluded from normal earned GE:
 - 300 GE welcome bonus
 - 300 GE purchased in GE Shop
 
-## 2. Observed earned sources
+## 2. Наблюдаемые начисления
 
 | Source | Events | GE | Calendar GE/day |
 |---|---:|---:|---:|
@@ -28,7 +28,7 @@ Important:
 - Wolf raw history includes unusually large test/game rewards and is not used as sustainable daily baseline.
 - Sustainable user estimate for "Wolf catches eggs": **+40 GE net/day** after paid attempts/costs.
 
-## 3. Fintech behavior calibration
+## 3. Калибровка финтех-активности
 
 Own operations:
 - 845 GE / 16 calendar days = **52.8 GE/day**
@@ -43,7 +43,7 @@ Interpretation:
 - a normal actively-paying user already earns roughly 50–55 GE/day from core QuRa usage;
 - this gives a strong foundation for a game economy that encourages core fintech activity.
 
-## 4. Working daily scenarios
+## 4. Сценарии дневного заработка
 
 | Scenario | GE/day |
 |---|---:|
@@ -57,7 +57,7 @@ Conclusion:
 - modeling unit **D ≈ 100 GE/day** is supported by the observed active-user scenario;
 - core fintech operations alone remain a larger repeatable source than one light mini-game session.
 
-## 5. Product source-mix target
+## 5. Целевые доли источников
 
 For a user who both actively pays with QuRa and plays Wolf daily:
 
@@ -77,7 +77,7 @@ Partner income is treated separately because it is not representative for every 
 Invariant:
 > No single repeatable mini-game should sustainably outperform normal core QuRa usage for the target active payer unless it is strongly capped.
 
-## 6. Working price ladder
+## 6. Рабочая лестница цен
 
 ### Gear
 
@@ -120,7 +120,7 @@ Purchased chicken arrives as L1 egg.
 | 10→16 | 4,000 |
 | 16→24 | 9,000 |
 
-## 7. Time-to-goal — days
+## 7. Срок накопления — days
 
 | Goal | GE | Only operations | Only Wolf | Operations + Wolf + daily |
 |---|---:|---:|---:|---:|
@@ -140,7 +140,7 @@ Purchased chicken arrives as L1 egg.
 | Coop 10→16 | 4,000 | 75.7 | 100.0 | 42.6 |
 | Coop 16→24 | 9,000 | 170.4 | 225.0 | 95.9 |
 
-## 8. Interpretation
+## 8. Интерпретация
 
 The current ladder creates four useful horizons:
 
@@ -181,7 +181,7 @@ Earn GE should route to:
 - available mini-games;
 - other legitimate sources.
 
-## 10. Next calibration
+## 10. Следующая калибровка
 
 Need broader cohort data:
 - low activity payer
