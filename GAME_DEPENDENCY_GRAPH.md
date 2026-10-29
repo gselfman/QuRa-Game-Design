@@ -1466,76 +1466,21 @@ Outputs:
 
 ---
 
-# 52. Arena GE dependency
+# 52. Arena: аренда → сундук
 
-2-player paid Arena:
+`аренда 10 GE с каждого (PROTOTYPE BALANCE) → победа → ArenaPrizeGrant(сундук) → трофей(средний выкуп 7,5 GE) + XP/прогресс + очень редкая непродаваемая косметика`.
 
-`Player A -10 GE`  
-`Player B -10 GE`  
-`Pool = 20 GE`
+При дружеском бою сток 20 − 7,5 = 12,5 GE на пару; в async (50% побед) 10 − 3,75 = 6,25 GE на попытку. Ни GE-пула, ни прямого GE-приза, ни transfer между игроками.
 
-Win:
+# 53. Четыре игрока — Future
 
-`Winner +15 GE`
+Стоимость аренды и распределение будущих наград OPEN; старый «пул 80 GE» отменён.
 
-System:
 
-`Arena Sink = 5 GE`
+# 54. Таймер: 45 секунд (D-05)
 
-Open dependencies:
+`45s decision (config 30–60) → timeout → автоматическая Защита → consecutiveMisses+1`. Два подряд → Молния богов/техническое поражение. Подтверждённый ход сбрасывает счётчик. Платформенный сбой требует защиты. Массовая Arena — Future.
 
-- draw;
-- canceled match;
-- reconnect failure;
-- server failure;
-- double KO.
-
-Must be closed in Economy Model before production.
-
----
-
-# 53. 4-player GE dependency
-
-Entry:
-
-`4 × 20 GE = 80 GE`
-
-Reward split:
-
-OPEN.
-
-Must define for:
-
-- FFA;
-- 2×2;
-- technical cancellation;
-- tie.
-
----
-
-# 54. Timer dependency
-
-## 2-player
-
-Timer = 3 minutes.
-
-If no locked action:
-
-`Timeout → Technical Loss → Gods Lightning → Chronicle → Settlement`
-
-## 4-player
-
-Timer = 1 minute.
-
-If no action:
-
-`Timeout → Random Legal Action → Continue`
-
-Important:
-
-Random timeout action ≠ Autobattle.
-
----
 
 # 55. Reconnect dependency
 
