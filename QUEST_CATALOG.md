@@ -109,6 +109,10 @@ Long-term:
 - PASSIVE_COLLECTED
 - EVENT_RESOLVED
 
+## 7.1. Дополнительные подтверждённые события
+
+`FEED_TRIGGERED` — выполнить квалифицирующую полезную операцию QuRa (XP/GE и корм независимы), `NEW_SERVICE_DISCOVERED` — впервые воспользоваться включённым сервисом, `CLAN_GOAL_CONTRIBUTED` — вклад с caps, `COMMUNITY_GOAL_CONTRIBUTED` — общий прогресс, `DAILY_EVENT_CHOICE` — выбрать один из двух вариантов. Задания не должны принуждать к финансовому расходу. Корм не является отдельной валютой. Все triggers строго feature-gated и idempotent.
+
 ## 8. Модели прогресса
 
 - BOOLEAN
@@ -293,7 +297,3 @@ Possible:
 - co-op/social missions.
 
 Каждая из этих функций требует проверки экономики.
-
-## C. Новые задания
-
-`FEED_TRIGGERED` — выполнить квалифицирующую полезную операцию QuRa (XP/GE и корм независимы), `NEW_SERVICE_DISCOVERED` — впервые воспользоваться включённым сервисом, `CLAN_GOAL_CONTRIBUTED` — вклад с caps, `COMMUNITY_GOAL_CONTRIBUTED` — общий прогресс, `DAILY_EVENT_CHOICE` — выбрать один из двух вариантов. Задания не должны принуждать к финансовому расходу. Корм не является отдельной валютой. Все triggers строго feature-gated и idempotent.
