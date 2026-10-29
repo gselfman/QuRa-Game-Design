@@ -93,6 +93,21 @@ Invariant:
 - archetype_id не меняется rename-flow;
 - одна instance занимает одно место Coop независимо от lifecycle stage.
 
+## 3.1. Покупка яйца и создание курочки
+
+### EggOffer
+
+id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
+
+### ChickenPurchase
+
+id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
+
+### ChickenInstance.acquired_source
+
+START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
+
+Покупка идемпотентна по `correlation_id`, полученное яйцо создаёт отдельный ChickenInstance L1; переполнение использует «В гостях».
 ## 4. ChickenNamingHistory
 
 Для moderation/audit:
@@ -282,6 +297,17 @@ Unique:
 
 Уникальный ключ зависит от области действия.
 
+## 17.1. Определения и прогресс достижений
+
+### AchievementDefinition
+
+id, condition_json, reward_id, feature_gate, version.
+
+### AchievementProgress
+
+account_id, achievement_id, progress, completed_at, claimed_at.
+
+Связь: AchievementDefinition 1:N AchievementProgress, уникальность(account_id, achievement_id).
 ## 18. RewardDefinition
 
 - reward_id
@@ -346,6 +372,13 @@ Unique:
 - after
 - created_at
 
+## 22.1. Описание мини-игры
+
+### MiniGameDefinition
+
+code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
+
+MiniGameDefinition 1:N MiniGameAttempt; награды и цена настраиваются сервером.
 ## 23. MiniGameAttempt
 
 - attempt_id
@@ -412,6 +445,21 @@ Unique:
 - applied_modifiers_json
 - source_gifts_json
 
+## 28.1. Корм и выбор события дня
+
+### FeedEvent
+
+id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
+
+### FeedState
+
+account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
+
+### DailyEventChoice
+
+id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
+
+FeedEvent коррелируется с подтверждённой операцией; DailyEventChoice уникален по (account_id, msk_day). Корм не новая валюта.
 ## 29. Coop
 
 Единственная изменяемая запись tier/capacity хранится в Coop; Account не содержит независимых полей tier/capacity:
@@ -681,6 +729,37 @@ or REJECTED/ROLLED_BACK.
 - ge_amount
 - status
 
+## 46.1. Друзья, кланы, цель сообщества
+
+### FriendRelation
+
+account_a, account_b, status, created_at.
+
+### Clan
+
+id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
+
+### ClanMember
+
+clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
+
+### ClanGoal
+
+id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
+
+### ClanContribution
+
+clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
+
+### CommunityGoal
+
+id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
+
+### CommunityContribution
+
+goal_id, account_id, feed_event_id, amount, unique correlation_id.
+
+ClanMember связывает Clan и Account; вклады идемпотентны, прямая передача GE между игроками запрещена. Сообщество открывает седьмую только после N (OPEN).
 ## 47. FeatureFlag
 
 - flag
@@ -690,6 +769,20 @@ or REJECTED/ROLLED_BACK.
 - valid_to
 
 Quest/награда generation references flags.
+
+## 47.1. Уведомления и стрики
+
+### NotificationRule
+
+notification_rule_id, trigger, channel (TELEGRAM/PWA_PUSH), template, cooldown, quiet_hours, enabled, version.
+
+### NotificationLog
+
+notification_id, account_id, rule_id, dedupe_key, state, delivered_at, opened_at, failure_reason.
+
+### StreakState
+
+account_id, current_days, last_action_day_msk, weekly_freeze_used.
 
 ## 48. OverflowPackage
 
@@ -718,6 +811,13 @@ Quest/награда generation references flags.
 - generation
 - legacy_bonus_json
 
+## 49.1. Заказ 3D-фигурки
+
+### FigurineOrder
+
+order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
+
+FigurineOrder относится к ChickenInstance и хранит паспорт, QR наследника и refund state. Цена 17 000 ₽, себестоимость ~15 000 ₽, логистика OPEN.
 ## 50. Машины состояний
 
 ### Chicken lifecycle
@@ -786,87 +886,7 @@ PENDING → VALIDATED → APPLIED → CONSUMED
 9. Temporary modifier never persists into постоянный stat row.
 10. Для отменённой платной операции обязателен журнал возврата.
 
-## 53.1. Недостающие сущности и связи
-
-### 55. EggOffer
-
-id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
-
-### 56. ChickenPurchase
-
-id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
-
-### 57. ChickenInstance.acquired_source
-
-START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
-
-### 58. ArenaDefenseSetup
-
-id, account_id, roster, positions, policy_code, policy_params, version.
-
-### 59. ArenaSeasonEnrollment
-
-account_id, season_id, defense_setup_id, joined_at, state. Вместо одного `arena_enrolled`.
-
-### 60. AchievementDefinition
-
-id, condition_json, reward_id, feature_gate, version.
-
-### 61. AchievementProgress
-
-account_id, achievement_id, progress, completed_at, claimed_at.
-
-### 62. FriendRelation
-
-account_a, account_b, status, created_at.
-
-### 63. MiniGameDefinition
-
-code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
-
-### 64. FigurineOrder
-
-order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
-
-### 65. FeedEvent
-
-id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
-
-### 66. FeedState
-
-account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
-
-### 67. Clan
-
-id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
-
-### 68. ClanMember
-
-clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
-
-### 69. ClanGoal
-
-id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
-
-### 70. ClanContribution
-
-clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
-
-### 71. CommunityGoal
-
-id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
-
-### 72. CommunityContribution
-
-goal_id, account_id, feed_event_id, amount, unique correlation_id.
-
-### 73. DailyEventChoice
-
-id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
-
-**Только тестовые аккаунты:** миграция игровой прогрессии идемпотентна, не затрагивает GE Ledger. Сохранить или сбросить Рябу — OPEN.
-
-## 54. Следующий документ dependency
+## 54. Связь с экономической моделью
 
 ECONOMY_MODEL.md consumes:
 - ledgers;
