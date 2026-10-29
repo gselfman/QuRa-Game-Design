@@ -5,7 +5,7 @@
 
 ## 0. Цель
 
-Create reusable assets that:
+Создавать повторно используемые ассеты, которые:
 - fit QuRa visual language;
 - support all runtime poses;
 - are technically sliceable;
@@ -26,7 +26,7 @@ Core:
 
 ## 2. Chicken master poses
 
-Each archetype needs standardized master poses.
+Каждому архетипу нужны стандартизированные мастер-позы.
 
 ### CARD
 3/4 standing pose.
@@ -38,23 +38,23 @@ Used:
 - selection.
 
 ### PERCH
-Sitting on perch.
+Сидит на насесте.
 Used:
 - Coop.
 
 ### NEST
-Rendered inside nest.
+Находится в гнезде.
 Used:
 - Home.
 
 ### PROMO MAX
-Ideal full native set.
+Полный родной комплект для эталонного образа.
 Used:
 - marketing/reference.
 
 ## 3. Attachment anchors
 
-Every runtime pose has standardized anchors:
+Для каждой отображаемой позы есть стандартные точки крепления:
 - head
 - eyes
 - ears
@@ -65,16 +65,16 @@ Every runtime pose has standardized anchors:
 - left/right foot
 - aura center
 
-Anchors documented per pose.
+Точки крепления зафиксированы отдельно для каждой позы.
 
 ## 4. Accessory pose variants
 
-One logical item can need:
+Один предмет может требовать:
 - CARD variant
 - PERCH variant
 - NEST variant
 
-If slot invisible in pose:
+Если слот не виден в позе:
 - no sprite required;
 - effect remains active.
 
@@ -87,18 +87,18 @@ If slot invisible in pose:
 
 ## 6. Personal name
 
-No visual asset dependency.
-Name rendered by UI.
+Для имени не требуется отдельный графический ассет.
+Имя отображается интерфейсом.
 
 ## 7. Crest assets
 
-Current prototype emoji can remain for testing.
+В прототипе временно допустимы эмодзи-гербы.
 
-Production options:
+Варианты исполнения:
 - emoji-style icons;
 - custom QuRa crest set.
 
-Required meanings:
+Необходимые символы:
 - wolf
 - lion
 - rat
@@ -167,7 +167,7 @@ States:
 
 ## 10. Buff item art
 
-Each BuffDefinition needs:
+Для каждого бафа нужен комплект:
 - inventory icon
 - activation FX
 - optional Chronicle illustration hook
@@ -187,7 +187,7 @@ Examples:
 - Strong Coffee
 - Blessing
 
-Need visible pre-match badge.
+Перед боем нужен видимый значок активного эффекта.
 
 ## 12. Tactical buff FX
 
@@ -223,14 +223,14 @@ Need visible pre-match badge.
 
 ## 14. Летопись боя visuals
 
-Optional but useful:
+Необязательно, но полезно:
 - round divider
 - crest
 - character portraits
 - buff icons
 - victory/death symbols
 
-Chronicle remains readable without images.
+Летопись читается даже без иллюстраций.
 
 ## 15. Gear art
 
