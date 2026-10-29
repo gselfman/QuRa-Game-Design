@@ -281,16 +281,10 @@ Price band from:
 - native synergy;
 - set value.
 
-## 18. Duplicate policy
+## 18. Дубликаты и Arena-эксклюзивы
 
-Duplicates occupy inventory unless equipped.
+**LOCKED:** дубль продаваемого gear можно продать за **25% текущей магазинной GE-цены** (`duplicate_sellback_pct=25`), с серверным ledger; округление неделимых GE — OPEN. `arena_exclusive=true` имеет `sellback_pct=0`, не передаётся и не продаётся. Из Arena-сундука не выпадают магазинные предметы дороже 5×аренды.
 
-Future options:
-- sell back;
-- trade-in;
-- conversion.
-
-If sell-back enabled, value < original purchase expected value.
 
 ## 19. Gear source types
 
