@@ -23,7 +23,7 @@
 - main_chicken_id nullable
 - coolness_total_cached
 - glory_current
-- league_id
+- league_id (FUTURE)
 - settings_json
 - feature_flags_snapshot optional
 
@@ -420,6 +420,29 @@ Unique key depends on scope.
 - tier
 - capacity
 - upgrade_history_json
+
+## 29.1. ArenaDefenseSetup — сохранённая защита (MVP)
+
+- `defense_setup_id` — первичный ключ;
+- `account_id`, `chicken_id` (взрослая L4+);
+- `equipment_snapshot_json` для просмотра, но в бою формируется отдельный immutable `ArenaFighterSnapshot`;
+- `policy_code`: AGGRESSIVE | CAUTIOUS | CUNNING;
+- `policy_parameters_json`, `policy_version`, `updated_at`;
+- `active` — только после явного сохранения игроком.
+
+Одна активная защита на аккаунт для стартового 1×1; изменение настроек влияет лишь на последующие бои. Политика по умолчанию CAUTIOUS.
+
+## 29.2. ArenaDefensePool — индекс доступности
+
+- `account_id`, `defense_setup_id`, `chicken_id`, `level`, `battle_power`;
+- `active`, `last_defended_at`, `daily_defenses_count`;
+- `antifraud_relation_hashes` / refs для исключения связанных аккаунтов (без раскрытия сырых персональных данных).
+
+Поиск: случайный среди level ±2 (PROTOTYPE BALANCE) и близкого BP (OPEN), расширение окна, при отсутствии — `opponent_kind=BOT` с явной пометкой и уменьшенным призом. Нельзя выбрать определённого защитника. После подбора обе стороны фиксируются в `ArenaFighterSnapshot`.
+
+## 29.3. FUTURE — ArenaSeasonEnrollment
+
+`ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, status. Не применяется для MVP async и не нужен для участия без рейтинга.
 
 ## 30. ArenaMatch
 
