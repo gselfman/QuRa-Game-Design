@@ -95,30 +95,30 @@ warm Coop upgrade/будущий effect.
 ### HEAT
 Base:
 жара снижает активность.
-Possible effect:
+Возможный эффект:
 временный production penalty.
 
 ### PERFECT_SUN
 Positive:
-production/XP minor bonus.
+Небольшое усиление яйценоскости или XP.
 
 ## 6. Примеры угроз
 
 ### FOX_AT_NIGHT
-Negative threat.
-Boevik Gift may hard-counter.
+Событие категории «угроза», отрицательный исход.
+Дар Боевика может полностью отменить угрозу.
 
-Possible result:
+Возможный результат:
 награда loss prevention / временный penalty avoided.
 
 ### RAT_RAID
 Threat to storage/награда.
 Counter:
-Boevik protection.
+Защита Боевика.
 
 ### STRAY_DOG
 Threat event.
-Could yield branch:
+Вариант исхода:
 fight off / lost supplies / found friend будущий.
 
 ## 7. Еда и урожай
@@ -129,7 +129,7 @@ Positive:
 
 ### BAD_FEED
 Negative:
-production down.
+Снижение яйценоскости.
 
 ### GOLDEN_CORN
 Rare:
@@ -138,21 +138,21 @@ small buff/сундук chance.
 ## 8. Внешний мир
 
 ### FAIR_DAY
-Shop discount/category bonus.
+Скидка магазина или бонус категории.
 
 ### TRAVELLING_MERCHANT
-Temporary catalog/price modifier.
+Временный эффект на ассортимент или цены.
 
 ### NEWS_FROM_CITY
-XP/quest thematic modifier.
+Тематическое изменение XP или прогресса задания.
 
 ## 9. Жизнь Курятника
 
 ### CLEAN_COOP
-Positive synergy.
+Положительный бонус к синергии.
 
 ### ARGUMENT
-Temporary synergy penalty, Monk mitigation possible.
+Временный штраф синергии, Монах может смягчить.
 
 ### BIRTHDAY
 Reward/social event.
