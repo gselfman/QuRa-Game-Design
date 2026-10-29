@@ -1833,9 +1833,13 @@ Morale, buff и Daily Event не должны навсегда менять item
 
 # 41. Источник правды
 
-До появления последующих документов:
-- этот Game Bible является источником правды по общей игровой концепции;
+После создания полного пакета документации:
+- этот Game Bible остаётся источником правды по общей игровой концепции;
 - по боевой механике Arena источником истины является **ARENA_SPEC_V1.md**;
+- по cross-system dependencies — **GAME_DEPENDENCY_GRAPH.md**;
+- по data entities/state machines — **GAME_DATA_MODEL.md**;
+- по экономическим числам после их утверждения — **ECONOMY_MODEL.md**;
+- навигация по всем документам — **DOCUMENTATION_INDEX.md**;
 - конкретные цифры, явно названные «гипотезой», не являются production balance;
 - Economy/DB/Arena Specs смогут уточнять числа, но не должны менять принципы без нового decision record.
 
