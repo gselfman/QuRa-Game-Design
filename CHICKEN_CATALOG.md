@@ -282,7 +282,7 @@ Arena:
 
 Дар:
 **Шопинг с характером**
-- discount on configured game purchases/upgrades with лимит.
+- скидка на определённые игровые покупки и улучшения в пределах лимита.
 
 Характеристики прототипа:
 - HP 102
@@ -309,7 +309,7 @@ Arena:
 - Скорость;
 - weaken;
 - Особый приём debuff;
-- fashion/cosmetic value.
+- визуальная и косметическая ценность.
 
 Литературное описание:
 - позирует;
@@ -371,7 +371,7 @@ Base archetype is not редкость.
 - Partner;
 - Heir.
 
-Legendary should alter strategy, not simply +50% everything.
+Легендарная курочка должна менять стратегию, а не просто получать +50% ко всем параметрам.
 
 ## 12. New archetype acceptance rules
 
@@ -382,7 +382,7 @@ Legendary should alter strategy, not simply +50% everything.
 4. distinct Особый приём;
 5. role not redundant;
 6. approved engine hooks;
-7. narrative action logic;
+7. логическое объяснение действия персонажа;
 8. balance simulation;
 9. native экипировка direction.
 
@@ -398,7 +398,7 @@ Then:
 - numbers.
 
 Не следует начинать с:
-> need another -20% debuff character.
+> нужен ещё один персонаж со штрафом −20%.
 
 ## 14. Особый приём design rule
 
@@ -421,7 +421,7 @@ Then:
 - постоянный;
 - character identity;
 - primarily outside Arena unless explicitly bridged;
-- must affect real system;
+- должен изменять реальную механику;
 - stacking family/лимит required.
 
 ## 17. Heirs
@@ -450,7 +450,7 @@ Embodiment:
 - редкость if applicable;
 - Gift;
 - Крутость;
-- Arena stats when unlocked;
+- боевые характеристики после открытия Arena;
 - equipment.
 
 Arena:
@@ -461,7 +461,7 @@ Arena:
 
 ## 20. Chronicle identity
 
-Never say only “Дурочка” when ambiguous.
+Не использовать одно слово «Дурочка», если персонажей можно спутать.
 
 Use:
 - crest;
