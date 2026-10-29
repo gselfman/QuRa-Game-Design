@@ -21,7 +21,7 @@
 - neck;
 - scarf;
 - body/armor;
-- wing-item/bag;
+- предмет на крыле или сумочка;
 - shoes;
 - skin/feathers;
 - tail;
@@ -37,7 +37,7 @@ Final active slot set фиксируется после визуальный QA.
 - стандартный экипировка: min_level >= 4;
 - можно носить предмет своего уровня и ниже;
 - higher уровень blocked;
-- special item может иметь ignore_level_gate=true, но adult form L4+ обязательна.
+- особый предмет может игнорировать проверку уровня через `ignore_level_gate=true`, но взрослая форма L4+ обязательна.
 
 ## 3. Редкость
 
@@ -78,7 +78,7 @@ Rarity не является автоматическим combat multiplier.
 - enemy уменьшение заряда
 - next Атака boost
 - next Атака weaken
-- survival trigger if explicitly defined
+- триггер выживания при явном описании механики
 
 ## 6. Запрещённые абстрактные stats
 
@@ -108,7 +108,7 @@ Rarity не является автоматическим combat multiplier.
 - native archetype nullable
 - set id nullable
 - источник
-- GE price if sold
+- цена в GE при продаже
 - drop availability
 - asset id
 - engine hooks
@@ -119,13 +119,13 @@ Rarity не является автоматическим combat multiplier.
 
 Если предмет родной для archetype:
 - даёт explicit native effect;
-- effect постоянный while equipped;
+- эффект действует постоянно, пока предмет экипирован;
 - учитывается в BP;
 - не должен делать предмет бесполезным другим archetypes.
 
 ## 9. Set thresholds
 
-Set can define:
+Комплект может задавать:
 - 2-piece
 - 4-piece
 - 6-piece
@@ -176,14 +176,14 @@ Set can define:
 Permanent stats/effects → BP.
 
 Временное срабатывание эффекта предмета:
-- if deterministic/always available, expected постоянный value enters BP;
-- if conditional, BP uses simulated expected marginal value.
+- если эффект гарантированно действует, его вклад учитывается в BP;
+- если эффект условный, BP использует ожидаемый вклад по симуляциям.
 
 Точные веса рассчитываются после симуляций.
 
 ## 12. Скорость warning
 
-Do not finalize high Скорость values before Arena Скорость resolution is frozen.
+Нельзя утверждать крупные бонусы Скорости до определения порядка действий в Arena.
 
 ## 13. Example Common items
 
@@ -219,7 +219,7 @@ Do not finalize high Скорость values before Arena Скорость resol
 ### Золотая брошь
 - Rare
 - +HP
-- small Щит bonus if hook approved
+- небольшой бонус Щита при наличии утверждённого механизма
 
 ### Боевые перчатки
 - Fighter native
@@ -256,7 +256,7 @@ Do not finalize high Скорость values before Arena Скорость resol
 Artifact may:
 - ignore normal уровень gate;
 - have unique визуальный;
-- have one unique approved engine effect.
+- иметь один утверждённый уникальный эффект движка.
 
 ## 16. Крутость vs combat
 
