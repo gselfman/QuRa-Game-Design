@@ -8,16 +8,17 @@
 2. **ARENA_SPEC_V1.md** — combat/Arena truth
 3. **GAME_DEPENDENCY_GRAPH.md** — cross-system dependencies
 4. **GAME_DATA_MODEL.md** — entities/state machines/audit
-5. **ECONOMY_MODEL.md** — resources, GE sources/sinks, EV and guardrails
-6. **CHICKEN_CATALOG.md** — archetypes, naming, Gifts, Maneuver, Special
-7. **GEAR_CATALOG.md** — equipment rules and engine-linked stats
-8. **BUFF_CATALOG.md** — preparation/tactical buff system
-9. **EVENT_CATALOG.md** — Daily Event content framework
-10. **QUEST_CATALOG.md** — scopes, triggers and quest templates
-11. **REWARD_TABLES.md** — reward/chest/pity framework
-12. **SCREENS.md** — complete screen/flow inventory
-13. **ASSET_PRODUCTION.md** — visual asset production requirements
-14. **IMPLEMENTATION_ROADMAP.md** — build sequence and rollout
+5. **ECONOMY_MODEL.md** — resources, GE sources/sinks, pricing architecture, EV and guardrails
+6. **ECONOMY_CALIBRATION_2026-10.md** — real-user GE accrual calibration and time-to-goal
+7. **CHICKEN_CATALOG.md** — archetypes, naming, Gifts, Maneuver, Special
+8. **GEAR_CATALOG.md** — equipment rules and engine-linked stats
+9. **BUFF_CATALOG.md** — preparation/tactical buff system
+10. **EVENT_CATALOG.md** — Daily Event content framework
+11. **QUEST_CATALOG.md** — scopes, triggers and quest templates
+12. **REWARD_TABLES.md** — reward/chest/pity framework
+13. **SCREENS.md** — complete screen/flow inventory
+14. **ASSET_PRODUCTION.md** — visual asset production requirements
+15. **IMPLEMENTATION_ROADMAP.md** — build sequence and rollout
 
 ## 2. Source of truth by subject
 
@@ -35,6 +36,9 @@ GAME_DATA_MODEL.md
 
 ### Economy
 ECONOMY_MODEL.md
+
+### Economy calibration / real observed earning pace
+ECONOMY_CALIBRATION_2026-10.md
 
 ### Chicken definitions
 CHICKEN_CATALOG.md
