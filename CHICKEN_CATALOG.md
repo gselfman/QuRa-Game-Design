@@ -45,7 +45,7 @@ Arena:
 **Золотая несушка**
 - усиливает passive laying по Economy Model.
 
-Prototype Arena stats:
+Характеристики Arena в прототипе:
 - HP 108
 - ATK 24
 - DEF 21
@@ -323,7 +323,7 @@ Prototype Arena stats:
 
 Запрещено придумывать её Arena/Gift mechanics без отдельного утверждения.
 
-Catalog fields reserved:
+Для каталога зарезервированы поля:
 - code
 - title
 - Gift
@@ -351,11 +351,11 @@ Rename:
 ## 10. Lifecycle
 
 L1 Egg  
-L2 Developing Egg  
-L3 Chick / type reveal  
+L2 — развивающееся яйцо  
+L3 — цыплёнок / открытие типа  
 L4 Adult + экипировка + Arena 1×1  
 L5–14 progression  
-L15 3D eligibility  
+L15 — право на 3D-воплощение  
 L16–19 prestige  
 L20 лимит
 
@@ -363,7 +363,7 @@ L20 лимит
 
 Base archetype is not редкость.
 
-Future chicken can be:
+Будущая курочка может относиться к категориям:
 - Rare;
 - Epic;
 - Legendary;
@@ -375,7 +375,7 @@ Legendary should alter strategy, not simply +50% everything.
 
 ## 12. New archetype acceptance rules
 
-New archetype must have:
+Новый архетип должен иметь:
 1. clear визуальный silhouette;
 2. real Gift outside Arena or explicitly defined role;
 3. distinct Манёвр;
@@ -397,7 +397,7 @@ Then:
 Then:
 - numbers.
 
-Do not start with:
+Не следует начинать с:
 > need another -20% debuff character.
 
 ## 14. Особый приём design rule
@@ -411,9 +411,9 @@ Do not start with:
 
 ## 15. Base-stat rule
 
-Stats are not final until simulation.
+Характеристики не утверждены до симуляции.
 
-Current prototype values are reference only.
+Значения прототипа служат ориентиром, а не окончательным балансом.
 
 ## 16. Gift rule
 
@@ -435,7 +435,7 @@ Heir:
 
 ## 18. 3D embodiment
 
-At L15 eligible.
+Право на воплощение открывается с L15.
 
 Embodiment:
 - original leaves digital Coop;
@@ -472,7 +472,7 @@ Use:
 
 ## 21. Catalog extension process
 
-Any new type requires:
+Каждый новый тип требует:
 - Game Bible decision;
 - catalog entry;
 - Arena Spec update;
