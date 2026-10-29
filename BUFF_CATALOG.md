@@ -207,7 +207,7 @@ Effect: Особый приём unavailable
 ### BREAK_CONCENTRATION
 Сбить концентрацию
 Scope: ENEMY_CHICKEN
-Effect: reduce charge
+Эффект: уменьшить заряд Special
 
 ## 11. Catalog: positional
 
@@ -220,29 +220,29 @@ Wall:
 
 ### INTERCEPT
 Перехват
-Scope: ALLY relation
-Effect: one fighter receives action intended for ally
+Область: союзная курочка
+Эффект: одна курочка принимает действие, направленное на союзницу
 JRPG-focused
 
 ### SWAP
 Обмен местами
-Scope: own two fighters
-Window: before action lock
-Effect: swap positions
+Область: две свои курочки
+Момент: до фиксации действий
+Эффект: поменять позиции
 Strong in Wall
 
 ### REFORM
 Перестройка
 Scope: MY_TEAM
-Effect: reorder living fighters before next round
+Эффект: изменить позиции живых курочек перед следующим раундом
 
 ## 12. Catalog: randomness
 
 ### JOKER
 Джокер
-Effect from transparent controlled table
-Must be simulation-safe
-No hidden impossible jackpot
+Эффект из опубликованной таблицы случайных исходов
+Должен быть проверяем в симуляции
+Без скрытого или недостижимого джекпота
 
 ## 13. Preparation Buffs
 
@@ -281,7 +281,7 @@ Secret живой hidden бафы require explicit fairness review.
 
 ## 16. Ranked legality
 
-Possible values:
+Возможные значения:
 - ALLOWED
 - LIMITED
 - FRIENDLY_ONLY
@@ -292,7 +292,7 @@ Strong control/revive бафы require balance validation.
 
 ## 17. Economy
 
-Value depends on:
+Ценность зависит от:
 - win-rate uplift;
 - activation flexibility;
 - редкость;
