@@ -1707,61 +1707,10 @@ Process:
 
 ---
 
-# 60. Implementation sequence
+# 60. Последовательность реализации (справочно)
 
-## A. Freeze core rules
+Единственный актуальный порядок фаз, DoD и MVP-ограничения приведены в **IMPLEMENTATION_ROADMAP.md**. Здесь фиксируются только боевые правила, проверки и незакрытые балансные решения.
 
-- actions;
-- modes;
-- speed model;
-- multi-collision semantics;
-- charge.
-
-## B. Extract shared Battle Engine
-
-One deterministic engine for:
-
-- online;
-- async;
-- bot;
-- clairvoyance simulation;
-- hint analysis;
-- autobattle evaluation.
-
-## C. Add gear layer
-
-- stats;
-- modifiers;
-- BP.
-
-## D. Add buff layer
-
-- loadout;
-- activation;
-- priority.
-
-## E. Add production networking
-
-- authoritative room;
-- commands;
-- reconnect;
-- hidden state.
-
-## F. Add economy
-
-- entry;
-- payout;
-- refunds;
-- fees.
-
-## G. Add social
-
-- chat;
-- private team chat;
-- rematch;
-- chronicle sharing.
-
----
 
 # 61. Source of truth
 
