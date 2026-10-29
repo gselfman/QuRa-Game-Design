@@ -1,4 +1,4 @@
-# QuRa Game Dependency Graph v1
+# QuRa — граф игровых зависимостей v1
 
 **Статус:** системная карта зависимостей / второй уровень документации после Game Bible и Arena Spec  
 **Дата:** 29.10.2026  
@@ -1721,7 +1721,7 @@ All combat power must have explicit dependency.
 
 ---
 
-# 67. Source/Sink matrix
+# 67. Источник / расход matrix
 
 | Resource | Main Sources | Main Sinks |
 |---|---|---|
