@@ -188,34 +188,34 @@ function moveLead(n,m){
 }
 function deathLine(n){return'<span class="deathline">💀 '+n+' не выдержала натиска, пошатнулась и выбыла из боя.</span>'}
 function literaryClash(x){
- var A=x.a,B=x.b,ma=x.ma,mb=x.mb,gw=x.globalWinner||x.w,parts=[];
+ var A0=x.a,B0=x.b,A=chickenLabel(A0,x.sideA),B=chickenLabel(B0,x.sideB),ma=x.ma,mb=x.mb,gw=x.globalWinner||x.w,parts=[];
  if(ma==='attack'&&mb==='maneuver'){
-   parts.push(moveLead(B,'maneuver')+'. Но '+A+' не дала трюку раскрыться: '+moveLead(A,'attack')+'. Манёвр оказался прерван прямым давлением.');
+   parts.push(moveLead(B0,'maneuver')+'. Но '+A+' не дала трюку раскрыться: '+moveLead(A0,'attack')+'. Манёвр оказался прерван прямым давлением.');
  }else if(ma==='maneuver'&&mb==='attack'){
-   parts.push(moveLead(A,'maneuver')+'. Однако '+B+' не стала разгадывать замысел и просто пошла вперёд: '+moveLead(B,'attack')+'. Подготовка манёвра была сорвана.');
+   parts.push(moveLead(A0,'maneuver')+'. Однако '+B+' не стала разгадывать замысел и пошла вперёд: '+moveLead(B0,'attack')+'. Подготовка манёвра была сорвана.');
  }else if(ma==='maneuver'&&mb==='defend'){
-   parts.push(moveLead(B,'defend')+'. Именно этого и ждала '+A+': '+moveLead(A,'maneuver')+'. Обычная защита оказалась рассчитана на прямой удар и не спасла от хитрости.');
+   parts.push(moveLead(B0,'defend')+'. Именно этого и ждала '+A+': '+moveLead(A0,'maneuver')+'. Обычная защита не спасла от нестандартного приёма.');
  }else if(ma==='defend'&&mb==='maneuver'){
-   parts.push(moveLead(A,'defend')+'. Но '+B+' отказалась бить в лоб: '+moveLead(B,'maneuver')+'. Защитная стойка не успела перестроиться под нестандартный приём.');
+   parts.push(moveLead(A0,'defend')+'. Но '+B+' отказалась бить в лоб: '+moveLead(B0,'maneuver')+'. Защитная стойка не успела перестроиться.');
  }else if(ma==='attack'&&mb==='defend'){
-   parts.push(moveLead(A,'attack')+'. '+B+' прочитала намерение заранее: '+moveLead(B,'defend')+'. Удар вязнет в блоке, а ответная контратака заставляет атакующую пожалеть о прямолинейности.');
+   parts.push(moveLead(A0,'attack')+'. '+B+' прочитала намерение заранее: '+moveLead(B0,'defend')+'. Удар вязнет в блоке, и тут же следует контратака.');
  }else if(ma==='defend'&&mb==='attack'){
-   parts.push(moveLead(B,'attack')+'. '+A+' встретила удар именно так, как готовилась: '+moveLead(A,'defend')+'. Большая часть атаки гасится, и тут же следует ответ.');
+   parts.push(moveLead(B0,'attack')+'. '+A+' встретила удар подготовленной защитой. Большая часть атаки гасится, и тут же приходит ответ.');
  }else if(ma==='attack'&&mb==='attack'){
-   parts.push(moveLead(A,'attack')+', а '+B+' в ту же секунду ответила собственной атакой. Они сошлись без хитростей — чистый обмен ударами, где быстрота решала, кому достанется лишняя доля преимущества.');
+   parts.push(moveLead(A0,'attack')+', а '+B+' в ту же секунду ответила собственной атакой. Они сошлись без хитростей — чистый обмен ударами, где скорость дала небольшой перевес.');
  }else if(ma==='defend'&&mb==='defend'){
-   parts.push(moveLead(A,'defend')+', и '+B+' сделала то же самое. Несколько долгих мгновений обе выжидали чужую ошибку — но никто не решился первым раскрыться.');
+   parts.push(A+' и '+B+' обе закрылись. Несколько долгих мгновений каждая ждала чужой ошибки — но никто не захотел раскрыться первой.');
  }else if(ma==='maneuver'&&mb==='maneuver'){
-   parts.push(moveLead(A,'maneuver')+'. Навстречу '+moveLead(B,'maneuver')+'. На поле столкнулись две хитрости сразу; преимущество досталось той, кто быстрее довела свой замысел до конца.');
+   parts.push(moveLead(A0,'maneuver')+'. Навстречу — '+moveLead(B0,'maneuver')+'. На поле столкнулись две хитрости сразу; быстрее доведённый замысел получил преимущество.');
  }else if(ma==='special'&&mb==='defend'){
-   parts.push(moveLead(A,'special')+'. '+B+' успела подготовиться: '+moveLead(B,'defend')+'. Special всё же прорвался сквозь оборону, но потерял значительную часть своей силы.');
+   parts.push(moveLead(A0,'special')+'. '+B+' успела подготовиться и встретила главный приём Защитой. Special прорвался, но потерял значительную часть силы.');
  }else if(ma==='defend'&&mb==='special'){
-   parts.push(moveLead(B,'special')+'. '+A+' увидела угрозу и '+moveLead(A,'defend')+'. Защита смягчила страшный удар, но полностью остановить его не смогла.');
+   parts.push(moveLead(B0,'special')+'. '+A+' увидела угрозу и успела закрыться. Защита смягчила страшный удар, но полностью остановить его не смогла.');
  }else if(ma==='special'||mb==='special'){
-   var sn=ma==='special'?A:B,om=ma==='special'?B:A;
-   parts.push(moveLead(sn,'special')+'. '+om+' не сумела полностью погасить этот момент — на поле развернулся главный приём '+sn+'.');
+   var sn0=ma==='special'?A0:B0,sn=ma==='special'?A:B,om=ma==='special'?B:A;
+   parts.push(moveLead(sn0,'special')+'. '+om+' не сумела полностью погасить этот момент — на поле развернулся главный приём '+sn+'.');
  }else{
-   parts.push(moveLead(A,ma)+'. '+moveLead(B,mb)+'. '+x.why);
+   parts.push(moveLead(A0,ma)+'. '+moveLead(B0,mb)+'.');
  }
  if(x.before&&x.after){
    var lossA=x.before[0]-x.after[0],lossB=x.before[1]-x.after[1];
@@ -227,26 +227,26 @@ function literaryClash(x){
  return parts.join(' ');
 }
 function pressureIntro(r){
- if(r.mode!=='target')return'';
- var counts={},names={};
- (r.clashes||[]).forEach(function(x){var k=x.sideB+'-'+x.posB;counts[k]=(counts[k]||0)+1;names[k]=x.b});
+ var counts={},names={},sides={};
+ (r.clashes||[]).forEach(function(x){var k=x.sideB+'-'+x.posB;counts[k]=(counts[k]||0)+1;names[k]=x.b;sides[k]=x.sideB});
  var hot=Object.keys(counts).filter(function(k){return counts[k]>=2}).sort(function(a,b){return counts[b]-counts[a]})[0];
  if(!hot)return'';
- var n=counts[hot],who=names[hot];return'<p class="pressure">⚡ В этом раунде '+who+' оказалась в центре настоящей охоты: '+(n===2?'две':'три')+' атаки сошлись на одной цели. Ей пришлось одним выбранным решением отвечать сразу на несколько угроз.</p>';
+ var n=counts[hot],who=chickenLabel(names[hot],sides[hot]);
+ return'<p class="pressure">⚡ '+who+' оказалась в центре настоящей охоты: '+(n===2?'две':'три')+' угрозы сошлись на одной курочке. Ей пришлось одним выбранным решением отвечать сразу на несколько столкновений.</p>';
 }
 function epicRound(r){
- var title=r.teamWinner?'Раунд '+r.round+'. Инициатива у команды '+sideName(r.teamWinner)+'.':'Раунд '+r.round+'. Ни одна сторона не смогла вырвать явный перевес.';
+ var title=r.teamWinner?'Раунд '+r.round+'. Инициатива у команды '+teamLabel(r.teamWinner)+'.':'Раунд '+r.round+'. Ни одна сторона не смогла вырвать явный перевес.';
  var scenes=(r.clashes||[]).map(function(x){return'<p class="epicscene">'+literaryClash(x)+'</p>'}).join('');
- var finale=r.teamWinner?'<p class="roundfinal">К концу раунда поле осталось за командой <b>'+sideName(r.teamWinner)+'</b>. Счёт столкновений — '+r.wins[0]+':'+r.wins[1]+'.</p>':'<p class="roundfinal">Раунд закончился без явного хозяина поля: '+r.wins[0]+':'+r.wins[1]+'.</p>';
+ var finale=r.teamWinner?'<p class="roundfinal">К концу раунда поле осталось за командой <b>'+teamLabel(r.teamWinner)+'</b>. Счёт столкновений — '+r.wins[0]+':'+r.wins[1]+'.</p>':'<p class="roundfinal">Раунд закончился без явного хозяина поля: '+r.wins[0]+':'+r.wins[1]+'.</p>';
  return'<article class="epicround"><h3>⚔️ '+title+'</h3>'+pressureIntro(r)+scenes+finale+'</article>';
 }
 function tacticsRound(r){
- return'<details class="tactics"><summary>⚙️ Тактика и расчёт раунда '+r.round+'</summary>'+(r.clashes||[]).map(function(x){var gw=x.globalWinner||x.w,winner=gw?(gw===x.sideA?x.a:x.b):'без чистой победы',tip=x.tipsBySide?x.tipsBySide[ROLE]:(x.tips&&x.tips[ROLE]?x.tips[ROLE]:'');return'<div class="historyclash"><b>'+x.a+' '+x.la+' VS '+x.b+' '+x.lb+'</b><div>Результат: '+winner+'. '+x.why+'</div><div class="tiny">'+x.a+' ❤️ '+x.before[0]+'→'+x.after[0]+' · '+x.b+' ❤️ '+x.before[1]+'→'+x.after[1]+'</div>'+(x.details&&x.details.length?'<div class="tiny">'+x.details.join(' · ')+'</div>':'')+(tip?'<div class="historytip">На будущее: '+tip+'</div>':'')+'</div>'}).join('')+'</details>';
+ return'<details class="tactics"><summary>⚙️ Тактика и расчёт раунда '+r.round+'</summary>'+(r.clashes||[]).map(function(x){var gw=x.globalWinner||x.w,winner=gw?(gw===x.sideA?chickenLabel(x.a,x.sideA):chickenLabel(x.b,x.sideB)):'без чистой победы',tip=x.tipsBySide?x.tipsBySide[ROLE]:(x.tips&&x.tips[ROLE]?x.tips[ROLE]:'');return'<div class="historyclash"><b>'+chickenLabel(x.a,x.sideA)+' '+x.la+' VS '+chickenLabel(x.b,x.sideB)+' '+x.lb+'</b><div>Результат: '+winner+'. '+x.why+'</div><div class="tiny">'+chickenLabel(x.a,x.sideA)+' ❤️ '+x.before[0]+'→'+x.after[0]+' · '+chickenLabel(x.b,x.sideB)+' ❤️ '+x.before[1]+'→'+x.after[1]+'</div>'+(x.details&&x.details.length?'<div class="tiny">'+x.details.join(' · ')+'</div>':'')+(tip?'<div class="historytip">На будущее: '+tip+'</div>':'')+'</div>'}).join('')+'</details>';
 }
 function epicPlainText(){
  var h=(S.history||[]);if(!h.length)return'Летопись боя пока пуста.';
  var box=document.createElement('div');box.innerHTML=h.map(function(r){return epicRound(r)}).join('');
- return'🐔 QuRa Arena — летопись боя\n\n'+box.innerText.trim()+'\n\nИтог: '+(S.winner===3?'двойной нокаут':S.winner?('победила команда '+sideName(S.winner)):'бой продолжается');
+ return'🐔 QuRa Arena — летопись боя\n\n'+box.innerText.trim()+'\n\nИтог: '+(S.winner===3?'двойной нокаут':S.winner?('победила команда '+teamLabel(S.winner)):'бой продолжается');
 }
 function battleHistory(){
  var h=(S.history||[]).slice().reverse();if(!h.length)return'<div class="history"><h2>📜 Летопись боя</h2><div class="muted">После первого раунда здесь начнёт складываться история сражения.</div></div>';
