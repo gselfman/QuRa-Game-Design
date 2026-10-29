@@ -44,6 +44,35 @@
 - fulfillment condition;
 - analytics event.
 
+## 2.1. Product objective of GE economy
+
+GE economy serves the core fintech product.
+
+The intended user choice is:
+
+**хочу игровой объект → не хватает GE →**
+1. **заработать GE полезной активностью в QuRa**, или
+2. **купить GE**, если хочу ускорить получение.
+
+The game itself is a retention and engagement layer, not the primary unlimited GE farm.
+
+### Working source-mix target
+
+For a typical active non-paying user, the majority of repeatable earned GE should come from qualifying QuRa product activity.
+
+Initial modeling target:
+- **50–70%** earned GE — qualifying wallet/product operations;
+- **15–30%** — mini-games;
+- **10–20%** — quests/events/achievements/passive sources.
+
+These ranges are hypotheses and can be recalibrated from real behavior, but the invariant is:
+
+> repeatable game faucets must not make core QuRa activity economically irrelevant.
+
+Rare jackpots, seasonal rewards and one-time progression rewards are excluded from source-mix comparison.
+
+If mini-game realized GE/hour materially exceeds normal product-earned GE without a hard cap, reduce game emission or raise relevant sink prices.
+
 ## 3. GE Faucets
 
 ### Mini-games
