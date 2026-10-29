@@ -548,3 +548,10 @@ Source: **MONETIZATION_LIVEOPS_SPEC.md**.
 - Purchase history, refunds and recovery/entitlement pending states.
 
 Use **SPRITE_PRODUCTION_BATCHES.md** for referenced icons and objects; no price text burned into images.
+
+
+## 61. Pass 2 — complete language coverage (P7)
+
+**Required languages:** RU and EN throughout the game UI, Arena, quests, events, monetization and system feedback. No user-facing hardcoded mixed-language strings. Each message has stable `i18n_key`, RU source, reviewed EN translation, interpolation parameters, pluralization rules, maximum layout length and fallback. Do not embed text in art/sprite sheets.
+
+Coverage includes menus, tooltips, first-time defense setup, matchmaking (human/bot distinction), combat actions, failure/timeout, XP/GE reward statements, shop/checkout, odds, consent, claim/refund, season pass, piggy bank, chronicle, event variants, push notifications and screen-reader labels. Display personal chicken names unchanged; translate archetype/system labels. Dates, prices, currencies and numbers use locale-aware formatting. Release gate: automated missing-key audit, truncation screenshots for mobile and a human review of gameplay/legal vocabulary in both languages.
