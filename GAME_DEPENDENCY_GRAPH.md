@@ -217,7 +217,7 @@ XP нельзя:
 ### Не используется для
 
 - Arena;
-- general navigation;
+- общая навигация;
 - Coop.
 
 ---
@@ -364,7 +364,7 @@ Gift is a постоянный passive identity **outside Arena** unless a speci
 - events;
 - XP;
 - магазин;
-- Coop synergies.
+- синергии Курятника.
 
 Дар не влияет на Arena автоматически.
 
@@ -499,7 +499,7 @@ flowchart TD
 
     F[Morale] -. excluded .-> BP
     G[Preparation Buff] -. excluded .-> BP
-    H[Tactical Consumable] -. excluded .-> BP
+    H[тактический расходник] -. excluded .-> BP
     I[Daily Event] -. excluded .-> BP
     J[Current HP] -. excluded .-> BP
     K[Current Special Charge] -. excluded .-> BP
@@ -653,7 +653,7 @@ flowchart TD
 - reduced урон;
 - counterattack;
 - charge;
-- possible collision win.
+- возможная победа в столкновении.
 
 ## Манёвр
 
@@ -813,7 +813,7 @@ Cap:
 
 ```mermaid
 flowchart TD
-    A[Mini-games] --> B[Buff Inventory]
+    A[Mini-games] --> B[Инвентарь бафов]
     C[Chests] --> B
     D[Quests] --> B
     E[Events] --> B
@@ -893,7 +893,7 @@ flowchart TD
 
 Dependency:
 
-`Buff Inventory → Selected Loadout → Match Snapshot → Activation → Consume`
+`Инвентарь бафов → Selected Loadout → Match Snapshot → Activation → Consume`
 
 Расходник окончательно списывается только после подтверждения применения сервером.
 
@@ -1107,7 +1107,7 @@ Allowed:
 
 Входные данные:
 
-- living fighters;
+- живые бойцы;
 - выбранные цели;
 - action.
 
@@ -1116,12 +1116,12 @@ Allowed:
 - сосредоточение атак на одной цели;
 - Скорость order;
 - смерть до выполнения действия;
-- retarget rule.
+- правило перенацеливания.
 
 Решения, которые нужно утвердить до выпуска:
 
-- simultaneous vs sequential resolution;
-- action cancellation;
+- одновременный или последовательный расчёт;
+- отмена выбранного действия;
 - auto-retarget.
 
 ---
@@ -1132,7 +1132,7 @@ Allowed:
 
 - affects Атака×Атака;
 - affects Манёвр×Манёвр;
-- affects JRPG action ordering.
+- влияет на порядок действий в JRPG.
 
 Возможная проблема:
 
@@ -1144,42 +1144,42 @@ Before Экипировка Catalog:
 
 - simulate +1 Скорость marginal win rate;
 - compare to +1 Атака/Защита/HP;
-- lock resolution model;
+- зафиксировать модель расчёта;
 - only then assign экипировка values/BP weight.
 
 ---
 
-# 38. Multi-collision dependency risk
+# 38. Риск зависимостей при нескольких столкновениях
 
-In Wall 1×N, one action may cause multiple collision calls.
+В режиме «Стенка на стенку» одно действие 1×N может участвовать в нескольких расчётах столкновений.
 
 Каждому эффекту нужна явная область действия:
 
-### Once per action
+### Один раз за действие
 
 Возможные примеры:
 
 - self лечение;
 - self щит gain;
-- charge reset;
-- one-time buff consumption;
+- сброс заряда;
+- однократное расходование бафа;
 - next Атака boost consumption.
 
-### Once per collision
+### Один раз на столкновение
 
 Возможные примеры:
 
 - outgoing урон;
-- target-specific debuff;
-- collision result.
+- ослабление конкретной цели;
+- результат столкновения.
 
-**OPEN until Arena balance decision.**
+**OPEN until баланс Arena decision.**
 
 Это нужно решить до выделения общего движка.
 
 ---
 
-# 39. Mini-game dependency graph
+# 39. Зависимости мини-игр
 
 ```mermaid
 flowchart TD
@@ -1202,7 +1202,7 @@ Mini-game награда must be server-authoritative.
 
 ---
 
-# 40. Chest dependency graph
+# 40. Зависимости сундуков
 
 Из сундука можно получить:
 
@@ -1216,16 +1216,16 @@ Mini-game награда must be server-authoritative.
 Содержимое сундука зависит от:
 
 - редкость table;
-- player progression;
+- прогресс игрока;
 - награда pool;
-- pity counter;
-- inventory capacity/overflow.
+- счётчик гарантии выпадения;
+- вместимость инвентаря и переполнение.
 
 Paid сундук must show probabilities.
 
 ---
 
-# 41. Reward dependency graph
+# 41. Зависимости наград
 
 ```text
 Trigger
@@ -1247,19 +1247,19 @@ No награда may silently disappear due capacity.
 
 ---
 
-# 42. Coop dependency graph
+# 42. Зависимости Курятника
 
 Вместимость Курятника ограничивает:
 
-- number of chicken instances.
+- количество экземпляров курочек.
 
 Большее число курочек открывает:
 
 - collection;
-- more Gifts;
-- more team combinations;
-- more Arena options;
-- more passive production potential.
+- больше Даров;
+- больше вариантов команд;
+- больше возможностей Arena;
+- выше потенциал пассивного производства.
 
 Улучшение Курятника зависит от:
 
@@ -1279,7 +1279,7 @@ Does not directly increase Боевая сила.
 - уровень/progression;
 - Ряба Gift;
 - Событие дня;
-- allowed set/effect modifiers;
+- разрешённые модификаторы комплектов и эффектов;
 - Coop economic лимит.
 
 Результат:
@@ -1289,11 +1289,11 @@ Does not directly increase Боевая сила.
 Поскольку GE имеют реальную бонусную стоимость:
 
 - ежедневный лимит required;
-- emission budget required.
+- требуется бюджет эмиссии.
 
 ---
 
-# 44. Daily Event dependency graph
+# 44. Зависимости События дня
 
 ```mermaid
 flowchart TD
@@ -1314,7 +1314,7 @@ flowchart TD
 
 ---
 
-# 45. Gift ↔ Event dependencies
+# 45. Связи Дара и события
 
 Примеры:
 
@@ -1328,9 +1328,9 @@ flowchart TD
 
 ---
 
-# 46. Quest dependency graph
+# 46. Зависимости заданий
 
-Quest scopes:
+Области действия заданий:
 
 - ACCOUNT_ONCE;
 - CHICKEN_ONCE;
@@ -1338,13 +1338,13 @@ Quest scopes:
 - WEEKLY_ACCOUNT;
 - ACHIEVEMENT_ACCOUNT.
 
-Quest reads:
+Задание использует:
 
-- confirmed events;
+- подтверждённые события;
 - progression;
-- feature flags.
+- флаги функций.
 
-Quest outputs:
+Задание выдаёт:
 
 - XP;
 - GE;
@@ -1356,32 +1356,32 @@ Quest outputs:
 
 Нужна проверка доступности функции:
 
-> no quest for disabled product feature.
+> не создавать задания на отключённую функцию.
 
 ---
 
-# 47. Main Chicken dependency
+# 47. Зависимости главной курочки
 
 Главная курочка определяет:
 
-- target for account XP at action completion.
+- получателя XP за действие аккаунта в момент его завершения.
 
 Главная курочка не определяет:
 
 - ownership;
 - экипировка availability of other chickens;
-- Gift activation by residents;
-- collection state.
+- активацию Даров жителей;
+- состояние коллекции.
 
 Смена главной курочки:
 
 - free;
 - будущий XP goes to new main;
-- past XP does not move.
+- уже полученный XP не переносится.
 
 ---
 
-# 48. Arena unlock dependency
+# 48. Зависимости открытия Arena
 
 L4 adult chicken → 1×1 available.
 
@@ -1433,29 +1433,29 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 `45s decision (config 30–60) → timeout → автоматическая Защита → consecutiveMisses+1`. Два подряд → Молния богов/техническое поражение. Подтверждённый ход сбрасывает счётчик. Платформенный сбой требует защиты. Массовая Arena — Future.
 
 
-# 55. Reconnect dependency
+# 55. Зависимости переподключения
 
 Переподключение влияет на:
 
 - timer;
-- action lock;
+- фиксацию действий;
 - settlement;
-- technical loss.
+- техническое поражение.
 
 Система должна различать:
 
-- player disconnect;
-- platform failure.
+- отключение игрока;
+- сбой платформы.
 
 Сбой платформы не должен незаметно приводить к потере оплаченной аренды.
 
 ---
 
-# 56. Chat dependency graph
+# 56. Зависимости чата
 
 2-player:
 
-- match public chat.
+- общий чат матча.
 
 4-player:
 
@@ -1471,7 +1471,7 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 ---
 
-# 57. Chronicle dependency graph
+# 57. Зависимости летописи
 
 Входные данные:
 
@@ -1482,22 +1482,22 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 - effects;
 - бафы;
 - deaths;
-- round result;
-- battle result.
+- результат раунда;
+- результат боя.
 
 Outputs:
 
-- literary story;
-- technical spoiler;
-- shareable artifact.
+- литературный рассказ;
+- сворачиваемый технический расчёт;
+- материал, которым можно поделиться.
 
-Chronicle must use the **same result object** as Battle Engine.
+Летопись использует **тот же объект результата**, что и боевой движок.
 
 Нельзя заново вычислять факты боя независимо от движка.
 
 ---
 
-# 58. Identity dependency
+# 58. Зависимости отображения личности
 
 Отображаемая идентичность:
 
@@ -1509,37 +1509,37 @@ Chronicle must use the **same result object** as Battle Engine.
 
 Эта идентичность используется в:
 
-- Arena cards;
+- карточки Arena;
 - Chronicle;
-- battle result;
-- chat context;
+- результат боя;
+- контекст чата;
 - profile/share.
 
 ---
 
-# 59. Legacy dependency
+# 59. Зависимости наследования
 
 L15 → 3D eligibility.
 
 Embodiment:
 
-- original digital chicken leaves Coop;
-- spot freed;
-- physical identifier/passport;
-- heir claim possible.
+- исходная цифровая курочка покидает Курятник;
+- освобождается место;
+- физический паспорт/идентификатор;
+- доступно получение наследника.
 
 Heir:
 
 - new L1;
-- legacy bonus;
+- наследственный бонус;
 - inherited визуальный/gene traits;
-- controlled faster progression.
+- контролируемое ускоренное развитие.
 
 Legacy постоянный combat modifier, if allowed, can affect BP.
 
 ---
 
-# 60. Inventory boundaries
+# 60. Границы инвентаря
 
 ## Chest/экипировка inventory
 
@@ -1549,7 +1549,7 @@ Stores unequipped экипировка.
 
 Stores tactical/preparation расходники.
 
-## Chicken capacity
+## Вместимость для курочек
 
 Ограничено числом мест Курятника.
 
@@ -1559,15 +1559,15 @@ Stores tactical/preparation расходники.
 
 ---
 
-# 61. Overflow dependency
+# 61. Зависимости переполнения
 
 При доставке награды обязательно проверяется вместимость.
 
 If full:
 
 - временный overflow/package;
-- player decision;
-- no silent deletion.
+- решение игрока;
+- нет скрытого удаления.
 
 Applies to:
 
@@ -1577,16 +1577,16 @@ Applies to:
 
 ---
 
-# 62. Feature Flags
+# 62. Флаги функций
 
 Флаги доступности управляют:
 
-- financial quests;
-- Arena modes;
-- paid services;
+- финансовые задания;
+- режимы Arena;
+- платные сервисы;
 - бафы;
 - mini-games;
-- store categories.
+- категории магазина.
 
 Dependencies:
 
@@ -1594,7 +1594,7 @@ Dependencies:
 
 ---
 
-# 63. Server authority boundaries
+# 63. Границы полномочий сервера
 
 Сервер самостоятельно подтверждает:
 
@@ -1604,11 +1604,11 @@ Dependencies:
 - tickets;
 - уровень;
 - inventory;
-- battle lock;
-- battle result;
+- фиксация боя;
+- результат боя;
 - charge;
 - бафы;
-- Arena settlement;
+- расчёт аренды и наград Arena;
 - Слава;
 - подбор соперника.
 
@@ -1616,7 +1616,7 @@ Dependencies:
 
 ---
 
-# 64. Analytics dependency
+# 64. Зависимости аналитики
 
 Every significant state change requires источник context.
 
@@ -1632,23 +1632,23 @@ Every significant state change requires источник context.
 - timestamp;
 - correlation/match/quest id.
 
-This enables:
+Это позволяет:
 
-- economy audit;
-- balance analysis;
+- аудит экономики;
+- анализ баланса;
 - anti-fraud;
-- bug recovery.
+- восстановление после ошибок.
 
 ---
 
-# 65. Anti-fraud dependencies
+# 65. Зависимости антифрода
 
 Protect:
 
 - GE faucets;
-- paid retries;
+- платные повторы;
 - сундук награды;
-- Arena payouts;
+- награды Arena;
 - referrals;
 - passive laying;
 - achievements.
@@ -1813,7 +1813,7 @@ Must reference only approved временный hooks.
 3. Multi-collision once-per-action/once-per-collision semantics.
 4. Особый приём charge exact rules.
 5. BP weights.
-6. Morale formula.
+6. Формула Боевого духа.
 7. Draw/double-KO GE settlement.
 8. Disconnect refund logic.
 9. баф loadout exact size.
@@ -1851,7 +1851,7 @@ Must reference only approved временный hooks.
 Единственная иерархия — **DOCUMENTATION_INDEX.md §2**. Здесь описаны зависимости, но не дублируются правила приоритета.
 
 
-# 75. Documentation package status
+# 75. Состояние комплекта документации
 
 Зависимые документы уже созданы.
 - GAME_DATA_MODEL.md
