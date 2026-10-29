@@ -1,4 +1,4 @@
-# QuRa Quest Catalog v1
+# QuRa — каталог заданий v1
 
 **Статус:** системный каталог типов заданий, триггеров и шаблонов
 
@@ -108,7 +108,7 @@ Long-term:
 - legendary item;
 - seasonal medals.
 
-## 7. Quest trigger taxonomy
+## 7. Типы триггеров заданий
 
 - PROFILE_UPDATED
 - FEATURE_CONNECTED
@@ -129,7 +129,7 @@ Long-term:
 - PASSIVE_COLLECTED
 - EVENT_RESOLVED
 
-## 8. Progress models
+## 8. Модели прогресса
 
 - BOOLEAN
 - COUNTER
@@ -138,7 +138,7 @@ Long-term:
 - STREAK
 - THRESHOLD
 
-## 9. Reward types
+## 9. Типы наград
 
 - XP
 - GE
@@ -239,7 +239,7 @@ Can reward small XP/cosmetic.
 
 If user keeps default system name, quest may count as completed through explicit confirm.
 
-## 19. Feature gates
+## 19. Доступность функций
 
 Quest definition has feature_gate.
 
