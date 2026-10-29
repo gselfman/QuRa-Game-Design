@@ -1515,11 +1515,11 @@ Server:
 
 # 49. Prototype transport vs production
 
-Current prototype may use public MQTT/WebSocket infrastructure for testing.
+Тестовый прототип может использовать публичный MQTT/WebSocket, но это не производственная инфраструктура.
 
 This is **not production security architecture**.
 
-Production requires:
+Для production обязательны:
 
 - auth;
 - private room;
@@ -1533,7 +1533,7 @@ Production requires:
 
 # 50. Telemetry
 
-Every battle should log:
+Для каждого боя необходимо регистрировать:
 
 - mode;
 - format;
@@ -1585,7 +1585,7 @@ Core metrics:
 
 # 52. Цели баланса
 
-Not hard production numbers yet.
+Это пока не окончательные численные параметры для выпуска.
 
 Design intent:
 
@@ -1603,9 +1603,9 @@ Design intent:
 
 # 53. Known prototype risk: Скорость
 
-Highest-priority balance question.
+Главный нерешённый вопрос игрового баланса.
 
-Current JRPG ordering can cause a faster unit to kill a slower one before slower action executes.
+В текущей модели JRPG быстрая курочка может уничтожить медленную до выполнения уже выбранного действия.
 
 This may make Скорость disproportionately valuable.
 
@@ -1632,17 +1632,17 @@ Wall 1×N is strategically interesting but must be checked for:
 - boost consumption;
 - weaken consumption.
 
-Need explicit rule:
+Необходимо зафиксировать правило:
 
 > which effects apply once per action and which apply once per collision.
 
-This is critical before production.
+Это обязательно решить до выпуска.
 
 ---
 
 # 55. Known prototype risk: JRPG focus fire
 
-Focus fire can create strong snowball.
+Концентрированный урон по одной цели может чрезмерно усиливать преимущество команды.
 
 Test:
 
@@ -1697,11 +1697,11 @@ Every BUFF_CATALOG entry must define:
 
 # 58. Rules for Манёвр/Особый приём design
 
-New archetype cannot ship with generic:
+Новый архетип нельзя выпускать с шаблонным эффектом:
 
 > +X урон.
 
-It should have character identity.
+У него должна быть собственная индивидуальность.
 
 Process:
 
@@ -1740,15 +1740,15 @@ Process:
 
 # 61. Источник истины
 
-For Arena combat:
+Для боевой системы Arena:
 
 1. **ARENA_SPEC_V1.md**
 2. Game Bible
 3. prototype implementation as executable experiment
 
-Prototype numbers do not silently override this document.
+Числа из прототипа не изменяют правила этого документа автоматически.
 
-When prototype discovers a better rule:
+Если прототип подтвердил более удачное решение:
 
 - update spec;
 - record reason;
@@ -1758,11 +1758,11 @@ When prototype discovers a better rule:
 
 # 62. Documentation package status
 
-The complete v1 documentation package is now created.
+Полный пакет документации версии 1 создан.
 
 See **DOCUMENTATION_INDEX.md** for reading order and источник-of-truth mapping.
 
-Arena-related follow-up is no longer another document creation step. The next work is to close the explicit OPEN balance/implementation decisions through simulation and production engineering:
+Следующий этап — не создание нового документа, а закрытие открытых вопросов баланса через симуляцию и инженерную проверку.
 - Скорость resolution;
 - multi-collision semantics;
 - JRPG retarget;
