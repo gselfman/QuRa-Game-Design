@@ -1808,23 +1808,26 @@ Morale, buff и Daily Event не должны навсегда менять item
 
 ---
 
-# 40. Следующие обязательные документы
+# 40. Комплект документации
 
-Актуальный порядок после Game Bible:
+Полный пакет v1 создан.
 
-1. **ARENA_SPEC_V1.md** — подробный источник истины по Battle Engine, форматам боя, действиям, формулам, персонажам, Battle Power, аксессуарам, buffs, tactical services, таймерам, GE entry, social и balance risks. **Создан.**
-2. **GAME_DEPENDENCY_GRAPH.md** — граф всех связей: кто на что влияет, порядок modifiers, sinks/faucets. **Создан.**
-3. **GAME_DATA_MODEL.md** — сущности, таблицы, ключи, state machines. **Следующий документ.**
-4. **ECONOMY_MODEL.md** — XP curve, GE emission, prices, Arena entry/payout/refunds, tickets, passive laying, drop EV, caps.
-5. **CHICKEN_CATALOG.md** — founders, personal names, gifts, Maneuver, Special, progression, future rarity.
-6. **GEAR_CATALOG.md** — L4–20 items, slots, sets, реальные combat stats, native synergy.
-7. **BUFF_CATALOG.md** — preparation buffs, tactical consumables, rarity, scopes, activation windows, engine hooks, stacking/caps.
-8. **EVENT_CATALOG.md** — 60–80 событий + Lucky Flip + counters.
-9. **QUEST_CATALOG.md** — Path/Daily/Achievements.
-10. **REWARD_TABLES.md** — chests, pity, level rewards.
-11. **SCREENS.md** — полный screen inventory и UX flows.
-12. **ASSET_PRODUCTION.md** — master poses, accessory pose variants, icons, animation requirements.
-13. **IMPLEMENTATION_ROADMAP.md** — backend/frontend/admin/Figma migrations и rollout.
+1. **ARENA_SPEC_V1.md** — Battle Engine, режимы, действия, формулы, buffs, tactical services, таймеры, GE entry, social. **Создан.**
+2. **GAME_DEPENDENCY_GRAPH.md** — все cross-system dependencies, modifier order, sinks/faucets. **Создан.**
+3. **GAME_DATA_MODEL.md** — сущности, ledgers, state machines, battle snapshots. **Создан.**
+4. **ECONOMY_MODEL.md** — GE/XP/tickets, Arena settlement, EV, caps, economy guardrails. **Создан.**
+5. **CHICKEN_CATALOG.md** — archetypes, Type+Personal Name, Gifts, Maneuver, Special. **Создан.**
+6. **GEAR_CATALOG.md** — equipment, slots, rarity, real combat stats, native/set synergy. **Создан.**
+7. **BUFF_CATALOG.md** — preparation buffs и tactical consumables. **Создан.**
+8. **EVENT_CATALOG.md** — Daily Events framework, Lucky Flip, counters, mitigation. **Создан.**
+9. **QUEST_CATALOG.md** — quest scopes, triggers, generation, feature gates. **Создан.**
+10. **REWARD_TABLES.md** — rewards, chests, pity, overflow, reward delivery. **Создан.**
+11. **SCREENS.md** — полный screen/flow inventory. **Создан.**
+12. **ASSET_PRODUCTION.md** — production requirements for characters, gear, buffs, Arena, Coop. **Создан.**
+13. **IMPLEMENTATION_ROADMAP.md** — implementation sequence, testing, rollout. **Создан.**
+14. **DOCUMENTATION_INDEX.md** — точка входа и карта источников истины. **Создан.**
+
+Числовые параметры, помеченные OPEN/PROTOTYPE BALANCE, не являются отсутствующей документацией: они требуют симуляции, economy validation или production test и должны храниться как versioned configuration после утверждения.
 
 ---
 
