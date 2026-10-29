@@ -1,7 +1,7 @@
 # QuRa — каталог событий v1
 
 **Статус:** content framework for Daily Events  
-**Target volume:** 60–80 base events + variants
+**Целевой объём:** 60–80 базовых событий и их варианты.
 
 ## 0. Global rule
 
@@ -158,7 +158,7 @@ small buff/сундук chance.
 Наградное или социальное событие.
 
 ### LOST_ITEM
-Can trigger mini quest/награда.
+Может запускать небольшое задание или награду.
 
 ## 10. Редкие и магические
 
@@ -182,10 +182,10 @@ Negative → separate positive story, not merely zero.
 Flood → worms feast.
 
 ### Broken cart
-Supplies delayed → rare item found under cart.
+Поставка задержалась → под телегой найден редкий предмет.
 
 ### Fox tracks
-Threat → chickens discover hidden stash while hiding.
+Угроза → прячась, курочки находят тайник.
 
 ### Wind
 Roof damaged → old hidden сундук exposed.
@@ -211,7 +211,7 @@ Boevik:
 Смягчение уменьшает итоговый негативный эффект.
 
 Возможные источники:
-- Monk Grace if approved for event family;
+- Дар Монаха «Благодать», если он подходит этому типу события;
 - building;
 - set;
 - временный event item.
@@ -228,7 +228,7 @@ Suggested:
 
 Точные проценты пока открыты.
 
-Need задержка повторного применения preventing repetition.
+Нужен период ожидания, исключающий частые повторы.
 
 ## 15. Объём контента
 
@@ -239,7 +239,7 @@ Target library:
 - 15 outside world
 - 10 rare/magical
 
-Can overlap to total 60–80.
+Категории могут пересекаться; общий объём 60–80.
 
 ## 16. Варианты повествования
 
@@ -268,7 +268,7 @@ Can overlap to total 60–80.
 - временный;
 - visible;
 - not in BP;
-- snapshot at match start.
+- фиксация эффекта в снимке на старте матча.
 
 Avoid large ежедневный modifier that invalidates подбор соперника.
 
@@ -309,7 +309,7 @@ Track:
 
 Этот документ содержит правила и примеры.
 
-Full 60–80 authored rows should be generated as content production batch after Data Model/admin tooling, not hardcoded in client.
+Остальные авторские события до полного объёма 60–80 добавляются через серверный каталог и админку после создания модели данных, без жёсткой записи в клиент.
 
 
 ## 23. Первая партия: 20 авторских событий дня (P5)
