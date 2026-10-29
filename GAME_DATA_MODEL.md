@@ -792,3 +792,15 @@ ECONOMY_MODEL.md consumes:
 - `Clan`, `ClanMember`, `ClanGoal`, `FeedEvent`, `FeedState`, `CommunityGoal`, `DailyEventChoice` — добавляются в блоке C.
 
 **Coop:** только Coop является источником tier/capacity; Account.coop_tier и Account.coop_capacity должны быть удалены или пересчитываемыми кэшами, не независимыми изменяемыми полями.
+
+## C. Социальные события и клановые сущности
+
+- `FeedEvent`: id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
+- `FeedState`: account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
+- `Clan`: id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
+- `ClanMember`: clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
+- `ClanGoal`: id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
+- `ClanContribution`: clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
+- `CommunityGoal`: id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
+- `CommunityContribution`: goal_id, account_id, feed_event_id, amount, unique correlation_id.
+- `DailyEventChoice`: id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
