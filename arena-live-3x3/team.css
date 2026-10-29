@@ -20,3 +20,10 @@
 .quickchat button:first-child{background:#1f5d34;border-color:#4ea66a}.quickchat button:nth-child(2){background:#5b2528;border-color:#b14d55}
 
 .movestatus{margin:12px 0;padding:11px 13px;border-radius:11px;background:#15191f;border:1px solid #404854;font-size:14px;line-height:1.5}.movestatus b{display:block;margin-bottom:4px;color:#e5b94f}.syncboth{margin-top:6px;padding:7px 9px;border-radius:8px;background:#1c3927;color:#bde9c8;font-weight:800}.retrymove{margin-top:7px;width:100%;background:#3b3320;border-color:#846f35}
+
+.cresthelp{margin:6px 0 10px;color:#aeb5bf;font-size:13px}.crestgrid{display:grid;grid-template-columns:repeat(9,minmax(38px,1fr));gap:6px;margin:8px 0 12px}.crestbtn{font-size:25px;padding:8px;min-height:46px}.crestbtn.sel{outline:2px solid #e5b94f;background:#3a301b}.crestbtn.occupied{opacity:.25;filter:grayscale(1)}.crestlarge{font-size:22px}.cresterror{margin:7px 0;padding:8px 10px;border-radius:8px;background:#4a2225;color:#ffd1d4;border:1px solid #9c4d53}.fightername{display:block;font-size:18px;margin:3px 0}
+.actionhelp summary{cursor:pointer;font-weight:800;color:#e5b94f;font-size:15px}.actionhelp[open] summary{margin-bottom:7px}
+#clairBtn.on{background:#4b3470;border-color:#8e6ac4;box-shadow:0 0 0 2px rgba(142,106,196,.16)}.clairpanel{margin-top:8px;padding:10px;border-radius:10px;background:#171329;border:1px solid #5d4a82;text-align:left}.clairtitle{font-weight:900;color:#d8c3ff;margin-bottom:4px}.clairtarget{margin-top:9px;padding-top:8px;border-top:1px solid #3d3158}.clairrow{display:grid;grid-template-columns:minmax(120px,.8fr) 1.7fr;gap:8px;padding:6px 0;border-bottom:1px dashed #302741;font-size:12px}.clairrow strong{font-weight:700;color:#e9e4f5}.clairrow.muted strong{color:#7f788d}
+.battletools{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.crestgrid{grid-template-columns:repeat(6,1fr)}.battletools{grid-template-columns:1fr 1fr}.clairrow{grid-template-columns:1fr}}
+@media(max-width:560px){.crestgrid{grid-template-columns:repeat(5,1fr)}.battletools{grid-template-columns:1fr}}
