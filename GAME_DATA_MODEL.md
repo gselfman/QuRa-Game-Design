@@ -176,7 +176,7 @@ Gift по умолчанию не влияет на Arena без explicit hook.
 - locked
 - metadata_json
 
-Если item не имеет individual properties, можно оптимизировать stackable inventory, но data contract должен сохранять provenance.
+Если у предмета нет уникальных свойств экземпляра, допускается хранение стопкой, но источник получения должен сохраняться.
 
 ## 10. EquipmentSlot
 
@@ -210,7 +210,7 @@ Unique:
 ### Reward overflow
 - временная доставка при переполнении
 
-Не объединять chicken capacity с item capacity.
+Не смешивать вместимость Курятника и инвентаря.
 
 ## 13. BuffDefinition
 
@@ -576,7 +576,7 @@ or REJECTED/ROLLED_BACK.
 
 ## 38. ArenaStatusEffect
 
-Normalized option if statuses need queryability:
+Нормализованное хранение возможно, если статусы нужно искать по базе:
 - status_id
 - match_id
 - fighter_id
@@ -777,14 +777,14 @@ PENDING → VALIDATED → APPLIED → CONSUMED
 
 1. GE balance reconciles to GE Ledger.
 2. XP reconciles to XP Ledger.
-3. Reward delivered once per correlation id.
-4. Battle result generated only server-side.
-5. Action command id idempotent.
-6. Match snapshots immutable after start.
-7. Hidden action not exposed before resolve.
+3. Награда выдаётся один раз на correlation_id.
+4. Итог боя рассчитывается только сервером.
+5. Повтор идентификатора команды не создаёт новый ход.
+6. Снимки матча неизменяемы после старта.
+7. Скрытые действия не передаются сопернику до расчёта.
 8. Personal rename cannot alter archetype.
 9. Temporary modifier never persists into постоянный stat row.
-10. Any paid canceled activity must have settlement record.
+10. Для отменённой платной операции обязателен журнал возврата.
 
 ## 53.1. Недостающие сущности и связи
 
