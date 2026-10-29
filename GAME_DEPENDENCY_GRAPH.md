@@ -1895,27 +1895,10 @@ These must always remain true.
 
 ---
 
-# 74. Source of truth priority
+# 74. Иерархия источников истины
 
-For cross-system rules:
+Единственная иерархия — **DOCUMENTATION_INDEX.md §2**. Здесь описаны зависимости, но не дублируются правила приоритета.
 
-1. `GAME_DEPENDENCY_GRAPH.md`
-2. `GAME_BIBLE_V1.md`
-3. specific catalogs/specs when created
-
-For Arena combat internals:
-
-1. `ARENA_SPEC_V1.md`
-2. `GAME_DEPENDENCY_GRAPH.md`
-3. Game Bible
-
-For future economy numbers:
-
-1. `ECONOMY_MODEL.md`
-2. Dependency Graph
-3. Game Bible
-
----
 
 # 75. Documentation package status
 
