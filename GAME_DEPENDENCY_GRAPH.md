@@ -1972,13 +1972,20 @@ For future economy numbers:
 
 ---
 
-# 75. Next document
+# 75. Documentation package status
 
-Next:
+The downstream documentation is now created:
+- GAME_DATA_MODEL.md
+- ECONOMY_MODEL.md
+- CHICKEN_CATALOG.md
+- GEAR_CATALOG.md
+- BUFF_CATALOG.md
+- EVENT_CATALOG.md
+- QUEST_CATALOG.md
+- REWARD_TABLES.md
+- SCREENS.md
+- ASSET_PRODUCTION.md
+- IMPLEMENTATION_ROADMAP.md
 
-**GAME_DATA_MODEL.md**
-
-Purpose:
-
-turn these dependencies into explicit entities, tables, keys, ownership, state machines and audit records.
+See DOCUMENTATION_INDEX.md for the complete map.
 
