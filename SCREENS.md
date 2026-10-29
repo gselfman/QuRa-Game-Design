@@ -52,7 +52,7 @@ Fields:
 
 ## 4. Coop
 
-Shows residents:
+Показывает жителей:
 - eggs/chicks/adults;
 - main indicator;
 - capacity;
@@ -73,7 +73,7 @@ Shows residents:
 
 ## 6. Overflow / Guest Chicken
 
-When reward exceeds capacity:
+Если награда не помещается:
 - reward preview
 - countdown if applicable
 - expand Coop
@@ -83,7 +83,7 @@ When reward exceeds capacity:
 
 ## 7. Path / QuRa Journey
 
-Account-level onboarding chapters.
+Главы знакомства с QuRa на уровне аккаунта.
 
 - steps
 - progress
@@ -108,7 +108,7 @@ Per chicken:
 
 ## 10. Weekly Quests
 
-Similar with weekly summary.
+Аналогично, с недельной сводкой.
 
 ## 11. Achievements
 
@@ -125,7 +125,7 @@ Similar with weekly summary.
 - source
 - inventory/overflow result
 
-Economic entitlement exists server-side before animation.
+Право на награду регистрируется сервером до анимации.
 
 ## 13. Chest Inventory
 
@@ -176,7 +176,7 @@ Economic entitlement exists server-side before animation.
 
 ## 18. Try-on
 
-Visual preview of item/combination.
+Предпросмотр предмета или сочетания в гардеробе.
 
 ## 19. Treasure Chest Inventory Capacity
 
@@ -216,7 +216,7 @@ Visual preview of item/combination.
 
 ## 24. Friend Chicken/Coop View
 
-Privacy-limited:
+С учётом ограничений приватности:
 - public identity
 - Coolness
 - allowed collection
@@ -281,7 +281,7 @@ Privacy-limited:
 
 ## 33. Arena Battle
 
-Per own fighter:
+Для своего бойца:
 - crest + Type + Name
 - HP
 - Shield
@@ -314,18 +314,18 @@ Spoiler:
 
 ## 35. All-Seeing Panel
 
-For selected action:
+Для выбранного действия:
 - opponent legal response
 - predicted winner
 - HP after
 - death/double KO
 - effects
 
-Clearly says prediction, not revealed move.
+Явно сказано, что это прогноз, а не раскрытие чужого хода.
 
 ## 36. Hint Panel
 
-Contextual advice based on actual board state.
+Контекстная подсказка по актуальному состоянию поля.
 
 ## 37. Buff Activation Modal
 
@@ -504,7 +504,7 @@ Required:
 
 ## 58. Состояния экранов
 
-Every screen defines:
+Каждый экран имеет состояния:
 - loading
 - success
 - empty
@@ -515,7 +515,7 @@ Every screen defines:
 
 ## 59. Навигация
 
-Primary game navigation should not exceed a small stable set:
+Основная навигация не должна содержать слишком много разделов:
 - Home
 - Coop
 - Quests
@@ -523,7 +523,7 @@ Primary game navigation should not exceed a small stable set:
 - Arena
 - Inventory/Profile via secondary navigation
 
-Final IA after UX prototype.
+Окончательная навигация утверждается после UX-прототипа.
 
 ## 60. Новые экраны монетизации
 
