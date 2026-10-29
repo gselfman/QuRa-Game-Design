@@ -278,21 +278,10 @@ DoD:
 - deterministic simulations
 - fairness tests
 
-## 15. Этап N — Arena economy
+## 15. Этап N — экономика аренды Arena
 
-Implement:
-- 10 GE entry
-- 15 GE winner payout
-- 5 GE sink
-- refunds
-- cancellation
-- double KO rule
-- timeout settlement
+Реализовать серверное списание аренды 10 GE/игрока в live (PROTOTYPE BALANCE) или 10 GE с атакующего в async, выдачу одного трёхъячеечного Arena-сундука победителю, ограничение призов одной паре, возврат при отмене/сбое, двойной KO без приза и выкуп продаваемого трофея за 25%. **Не реализовывать прежний payout 15 GE.** DoD: точная идемпотентность ArenaRentalFee и ArenaPrizeGrant, reconciliation, никаких переводов между игроками.
 
-DoD:
-- ledger reconciliation
-- no partial debit
-- server incident refunds
 
 ## 16. Этап O — Timer / Gods Lightning
 
