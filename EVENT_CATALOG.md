@@ -307,3 +307,32 @@ This document defines framework and examples.
 
 Full 60–80 authored rows should be generated as content production batch after Data Model/admin tooling, not hardcoded in client.
 
+
+## 23. Pass 2 — 20 authored event cards (P5)
+
+The rows below are **design-ready event definitions**, not approved numeric payouts. Server config owns amount, duration, frequency, eligibility and caps. Each negative event must specify Lucky Flip and explicit counter/mitigation hooks before activation. No event creates GE merely for logging in.
+
+| ID | Player-facing event (RU) | Category | Resolution and eligible hooks |
+|---|---|---|---|
+| HEAVY_RAIN | Проливной дождь | Weather | Temporary production loss; Lucky Flip: worms after rain; weather protection |
+| FROST | Первый заморозок | Weather | Temporary output penalty; warm-coop mitigation |
+| HEAT | Жаркий полдень | Weather | Temporary activity loss; shade/water mitigation |
+| PERFECT_SUN | Солнечное утро | Weather | Capped temporary production boost |
+| FOX_AT_NIGHT | Лиса у курятника | Threat | Potential supply loss; Боевик counters; flip: hidden cache |
+| RAT_RAID | Крысы в амбаре | Threat | Storage pressure; protection counter; flip: recovered grain |
+| STRAY_DOG | Незваный пёс | Threat | Short defense task/penalty; protection counter; flip: found supplies |
+| GRAIN_DELIVERY | Привезли зерно | Harvest | Capped temporary production boost |
+| BAD_FEED | Неудачный корм | Harvest | Temporary production loss; feed-quality mitigation; flip: ingredient for quest |
+| GOLDEN_CORN | Золотая кукуруза | Harvest | Rare chance at predefined non-GE reward |
+| FAIR_DAY | Ярмарочный день | Outside | Configured category discount with purchase limit |
+| TRAVELLING_MERCHANT | Странствующий торговец | Outside | Rotating shop offer, normal entitlement checks |
+| NEWS_FROM_CITY | Вести из города | Outside | Specific quest progress or capped XP modifier |
+| CLEAN_COOP | Большая уборка | Coop | Capped temporary synergy boost |
+| ARGUMENT | Ссора на насесте | Coop | Temporary synergy reduction; Монах mitigation; flip: reconciliation bonus |
+| BIRTHDAY | День рождения курочки | Coop | One-per-instance celebration quest/reward |
+| LOST_ITEM | Потерянная вещица | Coop | Limited mini-quest; idempotent item reward; flip: rare find |
+| GOLDEN_MOON | Золотая луна | Magical | Rare bounded laying/drop modifier |
+| FALLING_STAR | Падающая звезда | Magical | Server-rolled chest/buff from bounded reward table |
+| STRANGE_FOG | Таинственный туман | Magical | Temporary mystery modifier; flip: discover cache |
+
+**Production checklist per row:** stable event ID; RU and EN copy; common daily event seed; variant; audience; exact affected stat; formula and cap; duration; counter; mitigation; Lucky Flip if negative; reward table and budget; version; audit tags; moderation and accessibility review. `BLESSING_DAY` remains an additional example outside this 20-card starter set. Approval of these rows does **not** mean the broader 60–80 event content target is complete.
