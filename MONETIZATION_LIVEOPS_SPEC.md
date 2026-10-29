@@ -42,7 +42,7 @@ QuRa — финансовый продукт с увлекательной иг�
 - Рабочая гипотеза: 3–4 стадии; один выкуп/цикл; возможна небольшая бесплатная награда за закрытый цикл.
 - Вместимость, стоимость, EV и расписание — OPEN до экономической симуляции.
 
-## First Purchase / Starter Bundle
+## Первая покупка / стартовый набор
 - Один раз на аккаунт.
 - Небольшой набор GE + тематический cosmetic/полезный сундук.
 - Явно показывать реальную экономию и ограничение.
@@ -66,18 +66,18 @@ QuRa — финансовый продукт с увлекательной иг�
 ## Каталог изображений
 Season Pass, сундуки, копилка, витрины, монетизация, предметы и косметика требуют отдельной библиотеки спрайтов. Источник постановки: **SPRITE_PRODUCTION_BATCHES.md**. Задачи для Figma: хранить исходные листы, 1 объект = 1 экспортированный asset, сохранять id, прозрачность и версии.
 
-## Data model
+## Модель данных
 SeasonPassDefinition/Progress/Purchase/Claim; ChestDropTableVersion/PityState/DuplicatePolicy; PiggyBankCycle/Offer/Purchase; StoreOffer/Eligibility/Impression; PurchaseLedger/Refund/EntitlementDelivery; ExperimentAssignment. Все покупки идемпотентны, состояния/шансы версионированы.
 
 ## Метрики
-Conversion to first purchase, payer rate, ARPPU, purchased GE vs earned GE, net issuance/sink, season completion, chest conversion, piggy-bank purchase, repeat purchase, wallet usage retention, refunds and complaints.
+Конверсия в первую покупку, доля платящих, ARPPU, купленные и заработанные GE, чистая эмиссия/расход, завершение сезона, покупки сундуков и копилки, повторные покупки, удержание кошелька, возвраты и жалобы.
 
 ## Последовательность внедрения
 1. Simulation, бюджет эмиссии, legal review.
 2. Season Pass free, затем premium.
-3. Chests odds + pity + protection.
+3. Шансы сундуков, гарантии выпадения и защита от дублей.
 4. Starter bundle и персональные предложения.
-5. Piggy Bank.
+5. Золотая копилка.
 6. Seasonal collections и live-ops.
 
 **Не меняем production-код, пока решение не прошло review и реализацию в отдельном PR.**
