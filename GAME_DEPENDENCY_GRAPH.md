@@ -428,7 +428,7 @@ Advanced постоянный effects are allowed only if tied to real engine ho
 - уменьшение заряда;
 - next Атака boost/weaken.
 
-Forbidden as dead stats unless engine exists:
+Недопустимые неработающие характеристики без нового движка:
 
 - Intelligence;
 - Charisma;
@@ -511,7 +511,7 @@ flowchart TD
 
 ## Permanent
 
-Persist between battles.
+Сохраняется между боями.
 
 Примеры:
 
@@ -785,14 +785,14 @@ Cap:
 
 # 22. Status dependency families
 
-Current families:
+Текущие семейства эффектов:
 
 - Щит;
 - Атака Boost;
 - Атака Weaken;
 - Особый приём Charge Reduction.
 
-Future status requires:
+Для нового статуса нужны:
 
 - источник;
 - target;
@@ -855,7 +855,7 @@ flowchart TD
 - inventory;
 - loadout.
 
-Activation depends on:
+Возможность активации зависит от:
 
 - timing window;
 - condition;
@@ -863,7 +863,7 @@ Activation depends on:
 - remaining inventory;
 - ranked legality.
 
-Effects may alter:
+Эффекты могут изменять:
 
 - HP;
 - stats;
@@ -891,7 +891,7 @@ Dependency:
 
 `Buff Inventory → Selected Loadout → Match Snapshot → Activation → Consume`
 
-Item should only be permanently consumed after server accepts activation.
+Расходник окончательно списывается только после подтверждения применения сервером.
 
 ---
 
@@ -907,9 +907,9 @@ Then:
 
 `Selected Action → Action Multiplier`
 
-Cannot activate if condition false.
+Нельзя активировать при невыполненном условии.
 
-This pattern must be server-side.
+Эта проверка должна выполняться сервером.
 
 ---
 
