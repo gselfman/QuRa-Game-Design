@@ -77,13 +77,13 @@ IMPLEMENTATION_ROADMAP.md
 
 Core documentation package: **complete v1**.
 
-Some values intentionally remain OPEN because they require:
+Некоторые параметры намеренно остаются открытыми, поскольку для них требуются:
 - simulation;
 - financial/economy validation;
 - visual QA;
 - production technical decisions.
 
-OPEN values are configuration/balance decisions, not missing architecture.
+Открытые параметры относятся к конфигурации и балансу, а не к отсутствующим механизмам.
 
 ## 4. Приоритетные открытые решения
 
