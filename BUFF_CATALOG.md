@@ -3,15 +3,15 @@
 **Статус:** catalog framework + approved tactical archetypes  
 **Источники:** Game Bible §26, Arena Spec
 
-## 0. Two classes
+## 0. Два класса
 
 ### Preparation баф
 Активируется до боя, действует ограниченное время или число матчей.
 
-### Tactical Consumable
+### Тактический расходник
 Активируется во время боя; предмет расходуется при применении.
 
-## 1. Required fields
+## 1. Обязательные поля
 
 - id
 - name
@@ -31,7 +31,7 @@
 - consumable
 - chronicle_template
 
-## 2. Target scopes
+## 2. Области применения
 
 - SELF_CHICKEN
 - ALLY_CHICKEN
@@ -63,8 +63,8 @@
 
 Рабочая гипотеза:
 - до трёх тактических расходников на матч;
-- one instance one use;
-- usually max one activation per round.
+- один экземпляр — одно применение;
+- обычно не более одной активации за раунд.
 
 ## 6. Catalog: возвращение в бой
 
@@ -216,7 +216,7 @@ Scope: ENEMY_CHICKEN
 JRPG:
 - нельзя выбрать цель вручную, пока есть другие допустимые цели
 Wall:
-- not active until explicit positional rule
+- не используется до утверждения позиционного правила
 
 ### INTERCEPT
 Перехват
@@ -244,7 +244,7 @@ Scope: MY_TEAM
 Должен быть проверяем в симуляции
 Без скрытого или недостижимого джекпота
 
-## 13. Preparation Buffs
+## 13. Бафы подготовки
 
 ### BATTLE_BREAKFAST
 Боевой завтрак
@@ -267,19 +267,19 @@ character-specific Особый приём modifier
 Каждый баф определяет группу совместимости эффектов.
 
 Default:
-- same group not infinite;
-- strongest or capped sum;
-- absolute effects usually non-stackable.
+- эффекты одной группы не накапливаются бесконечно;
+- сильнейший эффект либо сумма в пределах ограничения;
+- абсолютные эффекты, как правило, не суммируются.
 
 ## 15. Visibility
 
-When activated:
-- effect shown to both players unless specifically secret by design;
-- Chronicle records it.
+При применении:
+- эффект видят оба игрока, если для него специально не утверждена скрытность;
+- летопись фиксирует применение.
 
 Secret живой hidden бафы require explicit fairness review.
 
-## 16. Ranked legality
+## 16. Допуск в рейтинговые бои
 
 Возможные значения:
 - ALLOWED
@@ -294,9 +294,9 @@ Strong control/revive бафы require balance validation.
 
 Ценность зависит от:
 - win-rate uplift;
-- activation flexibility;
+- гибкость применения;
 - редкость;
-- condition strictness;
+- жёсткость условия активации;
 - ranked legality.
 
 Бафы для возвращения в бой могут быть сильнее, поскольку имеют строгое условие активации.
@@ -305,18 +305,18 @@ Strong control/revive бафы require balance validation.
 
 - strong бафы obtainable via gameplay;
 - ограничение применений на матч;
-- ranked allowlist;
-- no unlimited direct purchase advantage;
-- telemetry by buff win-rate uplift.
+- список бафов, разрешённых в рейтинге;
+- покупка не должна давать неограниченного преимущества;
+- аналитика прироста побед из-за бафа.
 
-## 19. Processing order
+## 19. Порядок обработки
 
 1. eligibility
-2. reserve item
+2. зарезервировать расходник
 3. pre-position
 4. pre-round
-5. action lock
-6. action modifiers
+5. зафиксировать действие
+6. модификаторы действия
 7. resolve
 8. on-hit
 9. survival
@@ -328,13 +328,13 @@ Strong control/revive бафы require balance validation.
 
 баф must answer:
 - когда разрешено использовать?
-- who targeted?
+- какая выбрана цель?
 - duration?
-- exact engine hook?
+- какой именно обработчик движка?
 - stacking?
 - лимит?
 - visible?
 - ranked?
-- consumed when?
-- Chronicle text?
+- когда расходник списывается?
+- какой текст попадёт в летопись?
 
