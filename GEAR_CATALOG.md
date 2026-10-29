@@ -1,4 +1,4 @@
-# QuRa Gear Catalog v1
+# QuRa — каталог экипировки v1
 
 **Статус:** каталог правил экипировки и шаблонов предметов  
 **Источники:** Game Bible, Arena Spec, Dependency Graph
@@ -39,7 +39,7 @@ Final active slot set фиксируется после visual QA.
 - higher level blocked;
 - special item может иметь ignore_level_gate=true, но adult form L4+ обязательна.
 
-## 3. Rarity
+## 3. Редкость
 
 - Common
 - Rare
@@ -270,7 +270,7 @@ Combat:
 
 They are separate columns.
 
-## 17. Pricing inputs
+## 17. Факторы цены
 
 Price band from:
 - level;
@@ -286,7 +286,7 @@ Price band from:
 **LOCKED:** дубль продаваемого gear можно продать за **25% текущей магазинной GE-цены** (`duplicate_sellback_pct=25`), с серверным ledger; округление неделимых GE — OPEN. `arena_exclusive=true` имеет `sellback_pct=0`, не передаётся и не продаётся. Из Arena-сундука не выпадают магазинные предметы дороже 5×аренды.
 
 
-## 19. Gear source types
+## 19. Источники экипировки
 
 - shop
 - chest
@@ -322,7 +322,7 @@ For every item define:
 12. price/drop;
 13. asset.
 
-## 22. Acceptance test
+## 22. Критерии приёмки
 
 An item fails if:
 - stat has no engine hook;
