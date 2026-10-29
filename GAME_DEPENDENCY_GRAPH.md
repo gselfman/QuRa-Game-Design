@@ -16,11 +16,11 @@
 - не допустить «мертвых» характеристик;
 - не допустить циклов бесконечной выгоды;
 - разделить постоянные и временные модификаторы;
-- сделать Боевая сила воспроизводимым;
-- сделать GE economy аудируемой;
-- определить порядок обработки effects;
+- сделать расчёт Боевой силы воспроизводимым;
+- сделать экономику GE проверяемой;
+- определить порядок обработки эффектов;
 - подготовить базу для `GAME_DATA_MODEL.md`;
-- показать, какие системы обязаны логировать источник/target/result.
+- показать, какие системы обязаны фиксировать источник, цель и результат.
 
 Главный принцип:
 
@@ -36,26 +36,26 @@ flowchart TD
     A --> C[Прогресс заданий]
     A --> D[GE по разрешённым правилам]
 
-    C --> E[Quest Rewards]
+    C --> E[Награды за задания]
     E --> B
     E --> D
-    E --> F[Сундуки / предметы / билеты / buffs]
+    E --> F[Сундуки / предметы / билеты / бафы]
 
     B --> G[Уровень главной курочки]
-    G --> H[Unlocks]
-    G --> I[Level-up rewards]
+    G --> H[Открытие функций]
+    G --> I[Награды за уровень]
     I --> F
 
     F --> J[Аксессуары]
-    F --> K[Arena Buffs]
+    F --> K[Бафы Arena]
     F --> L[Новые курочки / яйца]
     F --> M[Игровые билеты]
 
-    J --> N[Постоянные Arena stats]
+    J --> N[Постоянные характеристики Arena]
     J --> O[Крутость]
-    K --> P[Временные Arena modifiers]
+    K --> P[Временные модификаторы Arena]
     L --> Q[Коллекция / Курятник]
-    M --> R[Наградные mini-games]
+    M --> R[Наградные мини-игры]
 
     R --> D
     R --> K
@@ -64,15 +64,15 @@ flowchart TD
     Q --> O
     Q --> S[Пассивная яйценоскость]
 
-    N --> T[Battle Power]
-    N --> U[Battle Engine]
+    N --> T[Боевая сила]
+    N --> U[Боевой движок]
     P --> U
-    T --> V[Matchmaking]
+    T --> V[Подбор соперника]
     U --> W[Результат Arena]
 
-    W --> X[Glory / сезонный прогресс]
-    W --> Y[GE payout / fee]
-    W --> Z[Летопись / social]
+    W --> X[Слава / сезонный прогресс — FUTURE]
+    W --> Y[Аренда Arena / сундук победителя]
+    W --> Z[Летопись / социальные функции]
 ```
 
 ---
@@ -93,7 +93,7 @@ flowchart TD
 
 - начислить XP;
 - закрыть quest;
-- выдать награда;
+- выдать награду;
 - начислить GE, если это отдельно разрешено экономикой.
 
 Игровая система **не может**:
@@ -109,13 +109,13 @@ flowchart TD
 GE имеет двойную роль:
 
 - игровой ресурс;
-- потенциальный бонус/discount resource вне игры.
+- действующие бонусные баллы для частичной оплаты ограниченных сервисов QuRa.
 
 Следствие:
 
-> Любой GE faucet в игре имеет экономическую стоимость.
+> Любой источник выдачи GE в игре имеет экономическую стоимость.
 
-Поэтому все GE sources требуют:
+Поэтому каждый источник GE должен фиксировать:
 
 - `source_type`;
 - amount;
@@ -127,36 +127,36 @@ GE имеет двойную роль:
 
 ## 2.3. Новые межсистемные связи
 
-`Confirmed QuRa operation → XP + GE (не меняются) + FeedEffect (temporary)`; `FeedEffect → egg laying / Morale / Preparation Buff / event bonus`, но **никогда** не Боевая сила. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Один financial event не учитывается дважды благодаря correlation_id. `Clan membership → invitations/goals/cosmetics`, без GE transfer и combat power. `DailyEventChoice → LuckyFlip → hardCounter → mitigation → temporary result`; без выбора — default option. Не создавать вторую валюту «корм».
+`Подтверждённая операция QuRa → XP + GE + временный FeedEffect`; `FeedEffect → яйценоскость / Боевой дух / баф подготовки / бонус события`, но **никогда** не Боевая сила. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Одно финансовое событие не учитывается дважды благодаря correlation_id. `Участие в клане → приглашения / цели / косметика`, без передачи GE и изменения Боевой силы. `DailyEventChoice → LuckyFlip → защита от угрозы → смягчение → временный результат`; без выбора — вариант по умолчанию. Не создавать вторую валюту «корм».
 
 # 3. Главные игровые ресурсы
 
 ## 3.1. XP
 
-### Sources
+### Источники
 
 - задания аккаунта;
 - личные задания курочки;
 - полезные действия QuRa;
-- achievements;
-- отдельные events;
-- mini-games / Arena, если разрешено.
+- достижения;
+- отдельные события;
+- мини-игры и Arena, если это разрешено.
 
-### Target
+### Получатель
 
 Только главная курочка на момент подтверждённого завершения действия.
 
-### Consumers
+### Использование
 
 XP не расходуется.
 
-### Effects
+### Результаты
 
-XP → Level.
+XP повышает уровень курочки.
 
 Уровень → открытие наград, экипировки и допуска к Arena.
 
-### Forbidden
+### Запрещено
 
 XP нельзя:
 
@@ -169,18 +169,18 @@ XP нельзя:
 
 ## 3.2. GE
 
-### Faucets
+### Источники GE
 
-- mini-games;
-- quests;
+- мини-игры;
+- задания;
 - сундуки;
-- achievements;
+- достижения;
 - партнёрская программа;
-- passive systems, если включены;
+- пассивное производство, если включено;
 - награды Arena;
 - events.
 
-### Sinks
+### Расходование GE
 
 - экипировка;
 - улучшения Курятника;
@@ -226,7 +226,7 @@ XP нельзя:
 
 ```mermaid
 flowchart LR
-    A[Chicken Instance] --> B[Type / Title]
+    A[Курочка как экземпляр] --> B[Тип / титул]
     A --> C[Personal Name]
     A --> D[Level / XP]
     A --> E[Gear]
@@ -376,7 +376,7 @@ Gift is a постоянный passive identity **outside Arena** unless a speci
 
 ```mermaid
 flowchart TD
-    A[Gear Item] --> B[Level Gate]
+    A[Предмет экипировки] --> B[Ограничение уровня]
     A --> C[Rarity]
     A --> D[Coolness]
     A --> E[Combat Stats]
@@ -491,18 +491,18 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Base chicken stats] --> BP[Battle Power]
-    B[Level-derived permanent stats] --> BP
-    C[Gear stats] --> BP
-    D[Permanent set effects] --> BP
-    E[Allowed Legacy modifiers] --> BP
+    A[Базовые статы курочки] --> BP[Боевая сила]
+    B[Постоянные статы уровня] --> BP
+    C[Характеристики экипировки] --> BP
+    D[Постоянные бонусы комплекта] --> BP
+    E[Разрешённые наследственные эффекты] --> BP
 
     F[Morale] -. excluded .-> BP
-    G[Preparation Buff] -. excluded .-> BP
+    G[Баф подготовки] -. не входит .-> BP
     H[тактический расходник] -. excluded .-> BP
-    I[Daily Event] -. excluded .-> BP
+    I[Событие дня] -. не входит .-> BP
     J[Current HP] -. excluded .-> BP
-    K[Current Special Charge] -. excluded .-> BP
+    K[Текущий заряд Особого приёма] -. не входит .-> BP
 
     BP --> MM[Matchmaking]
 ```
@@ -1585,7 +1585,7 @@ Applies to:
 - режимы Arena;
 - платные сервисы;
 - бафы;
-- mini-games;
+- мини-игры;
 - категории магазина.
 
 Dependencies:
