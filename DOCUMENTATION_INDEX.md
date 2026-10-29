@@ -104,16 +104,17 @@ Content:
 - numeric Gear Catalog
 - full reward numeric tables
 
-## 5. Change protocol
+## 5. Протокол изменений
 
-When a rule changes:
-1. update source-of-truth spec;
-2. update dependent docs;
-3. version config/data;
-4. update prototype/production;
-5. add migration if required.
+1. Сначала правится документ-источник истины.
+2. Затем все зависимые документы и таблицы.
+3. Изменения логики разделяются на блоки и отдельные ветки/PR.
+4. Изменение конфигурации и данных фиксируется версией.
+5. Прототип и production меняются отдельно, только после соответствующего решения и тестирования.
+6. При миграции готовится сценарий перехода и обратного восстановления.
 
-Do not allow code to silently become the only documentation.
+Нельзя допускать, чтобы поведение в коде незаметно отличалось от документов.
+
 
 ## 6. Approved new systems (29.10.2026)
 
@@ -121,3 +122,29 @@ Do not allow code to silently become the only documentation.
 - **SPRITE_PRODUCTION_BATCHES.md** — 12 ready-to-generate 5×5 sheets, 300 named assets, Figma slicing/QA contract.
 
 Both are part of v1 documentation and should be read after ECONOMY_MODEL.md and ASSET_PRODUCTION.md respectively.
+
+## 7. Аудит и дополнения 29.10.2026
+
+| Блок | Документы | Статус |
+|---|---|---|
+| A | Bible, Arena, Economy, Rewards, Graph, Data, Gear, Screens | исправления правил представлены в отдельном PR |
+| B | Retention, Simulation, Chicken, 3D, Data, Sprite | документация; код и массовая симуляция ещё не готовы |
+| C | Feed, Clan, Community, 20 Daily Events | механики документированы |
+| D | Economy calibration, Shop index, Arena sink | проверка и расчёт |
+| E | согласование источников истины и русских разделов | редакционная вычитка |
+
+Новые файлы: **RETENTION_NOTIFICATIONS.md**, **ARENA_SIMULATION_RESULTS.md**. Приоритеты: Chicken/Gear/Anchors P0, универсальные листы только после Figma-аудита.
+
+## 8. Единая иерархия источников истины
+
+1. Общая модель продукта — **GAME_BIBLE_V1.md**.
+2. Бой и Arena — **ARENA_SPEC_V1.md**.
+3. Межсистемные зависимости — **GAME_DEPENDENCY_GRAPH.md**.
+4. Сущности и данные — **GAME_DATA_MODEL.md**.
+5. Экономика и цены — **ECONOMY_MODEL.md** (production-пакеты всегда из backend runtime).
+6. Содержимое игровых каталогов — соответствующие каталоги (CHICKEN/GEAR/BUFF/EVENT/QUEST/REWARD).
+7. Этапы реализации — **IMPLEMENTATION_ROADMAP.md**, единственный Roadmap.
+8. Визуальные ассеты — **ASSET_PRODUCTION.md** и **SPRITE_PRODUCTION_BATCHES.md**.
+9. Удержание — **RETENTION_NOTIFICATIONS.md**; тестирование баланса — **ARENA_SIMULATION_RESULTS.md**.
+
+**Открытые вопросы:** Speed, multi-collision, JRPG retarget, level→power (две модели), юрлицо/доставка/возврат 3D, общий сезон 28 дней vs два цикла, N для седьмой, сохранение/сброс тестовой Рябы, округление 25% выкупа.
