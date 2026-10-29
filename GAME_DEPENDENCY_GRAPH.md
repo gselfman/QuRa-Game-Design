@@ -1389,29 +1389,17 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 ---
 
-# 49. Matchmaking dependency
+# 49. Асинхронный подбор и snapshot (MVP)
 
-Inputs:
+Источник: активные `ArenaDefenseSetup`, где курочка L4+, защита **вручную сохранена**, статус не заблокирован. Случайный серверный выбор среди подходящих: уровень атакующей ±2 (**PROTOTYPE BALANCE**) и близкий BP (OPEN). При отсутствии — расширение окна; затем явно помеченный бот с урезанной наградой. Нет рейтинга/Славы/лиги, нет самостоятельного выбора противника.
 
-- format;
-- league/rating;
-- Battle Power;
-- anti-farm history;
-- availability.
+После подбора `ChickenInstance + Level + Gear + Permanent Stats + BP + DefensePolicyVersion → immutable ArenaFighterSnapshot`. Любое изменение экипировки после snapshot не меняет текущий матч.
 
-Excluded:
+Подбор исключает себя, linked accounts по antifraud и чрезмерные повторы одного защитника.
 
-- temporary buff;
-- Morale;
-- Daily Event;
-- current HP;
-- charge.
+## 49.1. FUTURE — рейтинговый подбор
 
-Output:
-
-- opponent/match.
-
-Then server creates immutable battle snapshot.
+Будущая рейтинговая система использует одинаковый формат, лигу и BP в рабочем диапазоне ±10% (**PROTOTYPE BALANCE**), расширение окна и явно названного бота. Она не используется в стартовом асинхронном режиме. Glory/лига/сезоны находятся в Future.
 
 ---
 
