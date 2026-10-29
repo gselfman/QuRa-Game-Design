@@ -776,3 +776,19 @@ ECONOMY_MODEL.md consumes:
 - passive emission;
 - chest EV.
 
+## B1–B6. Обязательные новые таблицы
+
+- `EggOffer`: id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
+- `ChickenPurchase`: id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
+- `ChickenInstance.acquired_source`: START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
+- `ArenaDefenseSetup`: id, account_id, roster, positions, policy_code, policy_params, version.
+- `ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, state. Вместо одного `arena_enrolled`.
+- `AchievementDefinition`: id, condition_json, reward_id, feature_gate, version.
+- `AchievementProgress`: account_id, achievement_id, progress, completed_at, claimed_at.
+- `FriendRelation`: account_a, account_b, status, created_at.
+- `MiniGameDefinition`: code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
+- `NotificationRule`, `NotificationLog`, `StreakState` — см. RETENTION_NOTIFICATIONS.md.
+- `FigurineOrder`: order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
+- `Clan`, `ClanMember`, `ClanGoal`, `FeedEvent`, `FeedState`, `CommunityGoal`, `DailyEventChoice` — добавляются в блоке C.
+
+**Coop:** только Coop является источником tier/capacity; Account.coop_tier и Account.coop_capacity должны быть удалены или пересчитываемыми кэшами, не независимыми изменяемыми полями.
