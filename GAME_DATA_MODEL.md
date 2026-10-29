@@ -593,17 +593,25 @@ Narrative is derived from engine facts, never source of truth.
 
 Server controls visibility.
 
-## 41. ArenaGEEntry
+## 41. ArenaRentalFee и ArenaPrizeGrant
 
-Settlement can use GE ledger + domain record:
-- match_id
-- participant_id
-- entry_amount
-- debit_tx_id
-- payout_amount
-- payout_tx_id nullable
-- refund_tx_id nullable
-- status
+### ArenaRentalFee
+- rental_fee_id
+- match_id, participant_id, account_id
+- amount_ge
+- debit_ledger_tx_id, refund_ledger_tx_id nullable
+- state: PENDING | DEBITED | REFUNDED | SETTLED
+- correlation_id
+
+### ArenaPrizeGrant
+- prize_grant_id, match_id, winner_participant_id
+- chest_definition_id, chest_open_id nullable
+- reward_ledger_id nullable
+- correlation_id (unique)
+- status: PENDING | GRANTED | FAILED_RETRY
+
+Прямой GE payout другому участнику не создаётся. Повторный callback не должен выдавать второй сундук.
+
 
 ## 42. GloryLedger
 
