@@ -110,5 +110,11 @@ A → B → C → D → E. PR являются **цепочкой**: B осно�
 ### Контроль старых правил
 Действующие условия: таймер 45 секунд, никакой прямой выплаты 15 GE за победу, no 4-player launch, шесть основательниц на старте, случайная асинхронная Arena без Glory. Старые значения 3 минуты, прежний GE pool и прежние уровни партнёрки упоминаются только как **история отменённых решений**.
 
+### Итоговая техническая проверка PR
+
+Цепочка подтверждена сравнением веток: каждый следующий PR содержит только добавленные коммиты, `behind=0`. Ссылки: [P1 #6](https://github.com/gselfman/QuRa-Game-Design/pull/6), [P2 #7](https://github.com/gselfman/QuRa-Game-Design/pull/7), [P3 #8](https://github.com/gselfman/QuRa-Game-Design/pull/8), [P4 #9](https://github.com/gselfman/QuRa-Game-Design/pull/9), [P5 #10](https://github.com/gselfman/QuRa-Game-Design/pull/10), [P6 #11](https://github.com/gselfman/QuRa-Game-Design/pull/11), [P8 #12](https://github.com/gselfman/QuRa-Game-Design/pull/12), [P7 #13](https://github.com/gselfman/QuRa-Game-Design/pull/13).
+
+Проверено: в Bible есть D-19/D-20; 20 новых двухвариантных событий; D-20 задаёт CARD+FX; P8 включает `arena_chest_xp_daily_cap` и два каталога прототипов в Pages; больше нет активной схемы «GE payout победителю» в графе зависимостей. Исторические «3 минуты», «15 GE» и ставки остаются только в истории отменённых решений или Future с пометкой. Визуальная Figma-сверка, настоящая сборка GitHub Pages и симуляции **не проводились**.
+
 ### Ветки и порядок слияния
 Документация первого прохода A→E остаётся вне `main`. Второй проход построен на ветке `docs/fix-2026-10-29-E`; PR второго прохода должны идти **P1→P2→P3→P4→P5→P6→P8→P7**. Сливать в `main` только в указанном порядке после проверки, не удаляя ветку E до завершения.
