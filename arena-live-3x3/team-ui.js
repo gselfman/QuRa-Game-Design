@@ -91,21 +91,66 @@ function fighterRoundClass(c,side){
  S.last.clashes.forEach(function(x){var involved=(x.sideA===side&&x.posA===c.pos)||(x.sideB===side&&x.posB===c.pos);if(!involved)return;var gw=x.globalWinner||x.w;if(!gw)return;if(gw===side)w++;else l++});
  return w>l?'chicken-round-win':l>w?'chicken-round-lose':'';
 }
+function survivorStrategy(ch,enemy){
+ var low=ch.hp/ch.max<.38,ready=ch.q>=100,weak=enemy.slice().sort(function(a,b){return a.hp-b.hp})[0];
+ if(ch.id==='r'){
+   if(ready)return'🐔 Ряба осталась одна, но это её сильнейший камбэк-сценарий. Золотая скорлупа уже готова: Special сейчас особенно ценен, потому что в «Стенке» один выбор может отработать сразу против нескольких соперниц. Если играете JRPG — добивайте самую раненую цель ('+weak.n+', '+weak.hp+' HP), если это безопасно.';
+   return low?'🐔 Ряба критически ранена. Ищите выживание через Защиту или «Скорлупу»: щит сейчас важнее чистого урона. Цель — дожить до заряда Special.':'🐔 Ряба одна против нескольких: не спешите с обычной Атакой. «Скорлупа» одновременно наносит урон и создаёт щит — это лучший способ нарастить шанс на камбэк и зарядить Special.';
+ }
+ if(ch.id==='m'){
+   if(ready&&ch.hp<ch.max)return'🧘 Монах остался один и ранен: «Благодать» уже готова. Это лучший момент совместить лечение и урон, чтобы пережить ещё один цикл атак.';
+   return low?'🧘 Монах на грани. Ставка на выживание: Медитация/Защита и накопление Special. Сейчас лечение ценнее попытки быстро добить здоровую цель.':'🧘 Монах может тянуть бой. Используйте Медитацию, когда ожидаете Защиту соперника, и берегите HP — его сила в затяжном камбэке.';
+ }
+ if(ch.id==='b'){
+   if(ready)return'🥊 Боевик один против нескольких, но «Ответочка» заряжена. Ищите цель, которую Special способен добить; если соперники ждут Special и закрываются, Провокация наказывает их Защиту и усиливает следующую Атаку.';
+   return low?'🥊 Боевик сильно ранен. Не разменивайтесь вслепую: Защита против ожидаемой Атаки даст контрудар, а Провокация полезна против защитного соперника.':'🥊 Боевик любит силовые размены, но против численного большинства важно сначала создать выгодный следующий удар через Провокацию.';
+ }
+ if(ch.id==='f'){
+   if(ready)return'🤪 Дурочка осталась одна. «Авось!» даёт реальный шанс перевернуть бой, но это риск: если есть почти добитая цель, Special оправдан; против полной команды учитывайте шанс промаха.';
+   return'🤪 Дурочка должна использовать скорость и непредсказуемость: Атака хороша против ожидаемого Манёвра, Финт — против Защиты. Не повторяйте один паттерн два раунда подряд.';
+ }
+ if(ch.id==='p'){
+   if(ready)return'🤓 Профессор остался один и «Расчёт» готов. Ищите самую раненую цель для гарантированного давления; если у опасного врага почти готов Special, «Анализ» может быть ценнее обычного урона.';
+   return'🤓 Профессор в меньшинстве должен играть от информации: «Анализ» снижает заряд Special врага. Приоритет — сбить самый опасный заряженный приём, а не просто бить ближайшего.';
+ }
+ if(ready)return'😎 Гламурочка одна, но «Ослепительный выход» готов: удар одновременно ослабляет следующую Атаку цели. Выбирайте самого опасного атакующего соперника.';
+ return low?'😎 Гламурочка сильно ранена. Позирование полезно, если надо ослабить следующую Атаку опасной цели; против прямого давления рассмотрите Защиту.':'😎 Гламурочка может пережить численный перевес через контроль: Позирование уменьшает следующую Атаку врага, поэтому выбирайте самого опасного атакующего.';
+}
 function tacticalHint(){
- var op=ROLE===1?2:1,mine=(S.f[ROLE]||[]).filter(function(x){return !x.dead}),enemy=(S.f[op]||[]).filter(function(x){return !x.dead}),tips=[];
- if(!mine.length||!enemy.length)return'Бой уже завершён.';
- var danger=enemy.filter(function(x){return x.q>=100}),weak=enemy.slice().sort(function(a,b){return a.hp-b.hp})[0],myWeak=mine.slice().sort(function(a,b){return a.hp-b.hp})[0],ready=mine.filter(function(x){return x.q>=100});
- if(danger.length)tips.push('⚠️ У соперника заряжен Special: '+danger.map(function(x){return x.n}).join(', ')+'. Курочке с низким HP стоит рассмотреть Защиту, но помните: соперник может блефовать Манёвром.');
- if(ready.length)tips.push('✨ У вас готов Special: '+ready.map(function(x){return x.n}).join(', ')+'. Если цель уже сильно ранена — это шанс добить; против здоровой цели не жмите Special автоматически, потому что заряд виден и провоцирует Защиту.');
- if(S.mode==='target'&&weak)tips.push('🎯 JRPG: самая уязвимая цель сейчас — '+weak.n+' (❤️ '+weak.hp+'). Фокус двух курочек может быстро создать численное преимущество.');
- if(enemy.length===1&&mine.length>1)tips.push('🧠 У соперника осталась одна курочка. Не выбирайте всем троим одинаковое действие: разнесите Атаку / Защиту / Манёвр, чтобы один удачный ответ не законтрил всю команду.');
- if(myWeak&&myWeak.hp/myWeak.max<.35)tips.push('❤️ '+myWeak.n+' критически ранена ('+myWeak.hp+' HP). Если её потеря ломает план команды, Защита сейчас ценнее лишнего небольшого урона.');
+ var op=ROLE===1?2:1,mine=(S.f[ROLE]||[]).filter(function(x){return x&&!x.dead}),enemy=(S.f[op]||[]).filter(function(x){return x&&!x.dead}),tips=[];
+ if(!mine.length||!enemy.length)return'<b>Тактический разбор</b><ul><li>Бой уже завершён.</li></ul>';
+ var score=mine.length+'×'+enemy.length,enemyReady=enemy.filter(function(x){return x.q>=100}),myReady=mine.filter(function(x){return x.q>=100});
+ tips.push('📍 Состояние поля: <b>'+score+'</b>. У вас '+mine.length+' живых курочек, у соперника '+enemy.length+'.');
+
+ if(mine.length===1){
+   tips.push(survivorStrategy(mine[0],enemy));
+   if(enemyReady.length)tips.push('⚠️ У соперника заряжены Special: '+enemyReady.map(function(x){return chickenLabel(x.n,op)}).join(', ')+'. С одной оставшейся курочкой нельзя позволить себе случайно принять несколько мощных ударов без Защиты.');
+ }else if(enemy.length===1){
+   var lone=enemy[0];
+   tips.push('🎯 У соперника осталась одна '+chickenLabel(lone.n,op)+'. Не выбирайте всей командой одинаковое действие: одиночная курочка одним удачным контрходом может наказать сразу несколько ваших.');
+   if(lone.q>=100)tips.push('🚨 У одиночной '+lone.n+' Special 100/100. Разведите Атаку / Защиту / Манёвр между своими курочками, чтобы один её Special или контрход не выиграл весь раунд.');
+   if(S.mode==='target')tips.push('В JRPG все живые курочки могут давить одну цель, но действия лучше разнообразить: фокус цели ≠ одинаковые кнопки.');
+ }else{
+   if(S.mode==='target'){
+     var weak=enemy.slice().sort(function(a,b){return a.hp-b.hp})[0];
+     if(mine.length>=2&&weak.hp/weak.max<.55)tips.push('🎯 Есть реальная цель для фокуса: '+chickenLabel(weak.n,op)+' — '+weak.hp+' HP. Двумя курочками можно попробовать создать численное преимущество, но третью не обязательно отправлять туда же.');
+     else tips.push('🎯 В JRPG сейчас нет очевидной почти добитой цели. Не фокусируйте всех автоматически: распределение целей может лучше защищать от контрходов.');
+   }
+   if(myReady.length)tips.push('✨ Ваши готовые Special: '+myReady.map(function(x){return chickenLabel(x.n,ROLE)}).join(', ')+'. Смотрите прежде всего на возможность добивания и на ожидаемую Защиту соперника.');
+   if(enemyReady.length)tips.push('⚠️ У соперника готовы Special: '+enemyReady.map(function(x){return chickenLabel(x.n,op)}).join(', ')+'. Курочка с низким HP напротив такого врага особенно уязвима.');
+ }
+
+ if(S.mode==='wall'){
+   var ps=pairings(S),incoming={};
+   ps.forEach(function(p){var me=ROLE===1?p.a:p.b;if(me)incoming[me.pos]=(incoming[me.pos]||0)+1});
+   Object.keys(incoming).forEach(function(pos){if(incoming[pos]>1){var ch=(S.f[ROLE]||[])[+pos];if(ch&&!ch.dead)tips.push('🧱 '+chickenLabel(ch.n,ROLE)+' в следующем раунде участвует сразу в '+incoming[pos]+' столкновениях. Её один выбранный ход будет проверен против нескольких соперниц — выбирайте действие с учётом всех линий, а не одной.') }});
+ }
+
  var counts={attack:0,defend:0,maneuver:0,special:0},seen={};
  (S.history||[]).forEach(function(r){(r.clashes||[]).forEach(function(x){[['sideA','posA','ma'],['sideB','posB','mb']].forEach(function(k){if(x[k[0]]===op){var key=r.round+'-'+x[k[1]];if(!seen[key]){seen[key]=1;counts[x[k[2]]]++}}})})});
  var total=counts.attack+counts.defend+counts.maneuver+counts.special,top=Object.keys(counts).sort(function(a,b){return counts[b]-counts[a]})[0];
- if(total>=3&&counts[top]/total>=.45){var counterMove=top==='attack'?'Защита':top==='defend'?'Манёвр':top==='maneuver'?'Атака':'Защита';tips.push('📊 По истории соперник чаще выбирает «'+(top==='attack'?'Атака':top==='defend'?'Защита':top==='maneuver'?'Манёвр':'Special')+'» ('+counts[top]+' из '+total+'). Базовый ответ — '+counterMove+', но не становитесь предсказуемым.')}
- if(!tips.length)tips.push('Сейчас явного тактического перевеса нет. Разведите действия по команде и постарайтесь получить информацию о привычках соперника, не повторяя один и тот же паттерн.');
- return'<b>Тактический разбор</b><ul>'+tips.map(function(t){return'<li>'+t+'</li>'}).join('')+'</ul>';
+ if(total>=4&&counts[top]/total>=.5){var cn=top==='attack'?'Защита':top==='defend'?'Манёвр':top==='maneuver'?'Атака':'Защита';tips.push('📊 Замеченный паттерн: соперник использовал «'+(top==='attack'?'Атаку':top==='defend'?'Защиту':top==='maneuver'?'Манёвр':'Special')+'» '+counts[top]+' раз из '+total+'. Базовый контрответ — '+cn+', но повторять его автоматически опасно: соперник тоже видит историю.')}
+ return'<b>Тактический разбор</b><ul>'+tips.slice(0,5).map(function(t){return'<li>'+t+'</li>'}).join('')+'</ul>';
 }
 function charByName(n){return R.find(function(c){return c.n===n})||{n:n,id:'?',m:'Манёвр',x:'Special'}}
 function moveLead(n,m){
