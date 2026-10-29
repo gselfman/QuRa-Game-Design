@@ -759,3 +759,7 @@ Need numeric tables later for:
 ## 38. Approved LiveOps monetization expansion
 
 See **MONETIZATION_LIVEOPS_SPEC.md**. New optional sinks: premium Season Pass, paid chest tiers, Golden Piggy Bank, starter bundles, seasonal cosmetic collections and contextual offers. Prices, pity thresholds and reward EV are OPEN until forecast and compliance review; do not present design ranges as actual shop tariffs. Every mechanism must be measured for conversion, GE emission liability, net sink, retention of core fintech actions, refunds and potential arbitrage. Real GE packs/price index remain controlled by the QuRa backend.
+
+## B1. Гарантированные вехи для первых трёх курочек
+
+**PROTOTYPE BALANCE:** второе яйцо выдаётся за достижение L6 главной курочки, третье — за главу «Хозяйство» Пути QuRa при второй курочке L4. Альтернатива — ускоренная покупка в магазине по §15.2. Никакого обязательного доната для 3×3. Каждое яйцо попадает в коллекцию L1; при полной вместимости используется «В гостях».
