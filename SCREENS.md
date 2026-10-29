@@ -535,3 +535,16 @@ Primary game navigation should not exceed a small stable set:
 
 Final IA after UX prototype.
 
+## 60. New monetization screens
+
+Source: **MONETIZATION_LIVEOPS_SPEC.md**.
+
+- GE shortfall decision: earn through QuRa / purchase GE / keep saving.
+- Season Pass hub, free/premium tracks, pass purchase, retrospective claim, season completion.
+- Paid chest detail: full odds, pity progress, duplicate policy, confirmed purchase and result.
+- Golden Piggy Bank progress, guaranteed offer contents, purchase and claim.
+- Starter Bundle one-time offer.
+- Contextual offers strip (max 3–5, hide option), collection preview, season cosmetics.
+- Purchase history, refunds and recovery/entitlement pending states.
+
+Use **SPRITE_PRODUCTION_BATCHES.md** for referenced icons and objects; no price text burned into images.
