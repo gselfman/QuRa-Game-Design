@@ -1813,8 +1813,8 @@ Morale, buff и Daily Event не должны навсегда менять item
 Актуальный порядок после Game Bible:
 
 1. **ARENA_SPEC_V1.md** — подробный источник истины по Battle Engine, форматам боя, действиям, формулам, персонажам, Battle Power, аксессуарам, buffs, tactical services, таймерам, GE entry, social и balance risks. **Создан.**
-2. **GAME_DEPENDENCY_GRAPH.md** — граф всех связей: кто на что влияет, порядок modifiers, sinks/faucets.
-3. **GAME_DATA_MODEL.md** — сущности, таблицы, ключи, state machines.
+2. **GAME_DEPENDENCY_GRAPH.md** — граф всех связей: кто на что влияет, порядок modifiers, sinks/faucets. **Создан.**
+3. **GAME_DATA_MODEL.md** — сущности, таблицы, ключи, state machines. **Следующий документ.**
 4. **ECONOMY_MODEL.md** — XP curve, GE emission, prices, Arena entry/payout/refunds, tickets, passive laying, drop EV, caps.
 5. **CHICKEN_CATALOG.md** — founders, personal names, gifts, Maneuver, Special, progression, future rarity.
 6. **GEAR_CATALOG.md** — L4–20 items, slots, sets, реальные combat stats, native synergy.
