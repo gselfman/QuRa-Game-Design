@@ -3,7 +3,7 @@
 **Статус:** системная карта зависимостей / второй уровень документации после Game Bible и Arena Spec  
 **Дата:** 29.10.2026  
 **Источники истины:** `GAME_BIBLE_V1.md`, `ARENA_SPEC_V1.md`  
-**Область:** игровые сущности, ресурсы, progression, rewards, gear, buffs, Arena, события, социальные связи, sinks/faucets и порядок модификаторов.
+**Область:** игровые сущности, ресурсы, progression, награды, экипировка, бафы, Arena, события, социальные связи, sinks/faucets и порядок модификаторов.
 
 > Этот документ не вводит новый баланс. Он фиксирует, **кто на что влияет**, какие связи разрешены и какие связи запрещены.
 
@@ -16,11 +16,11 @@
 - не допустить «мертвых» характеристик;
 - не допустить циклов бесконечной выгоды;
 - разделить постоянные и временные модификаторы;
-- сделать Battle Power воспроизводимым;
+- сделать Боевая сила воспроизводимым;
 - сделать GE economy аудируемой;
 - определить порядок обработки effects;
 - подготовить базу для `GAME_DATA_MODEL.md`;
-- показать, какие системы обязаны логировать source/target/result.
+- показать, какие системы обязаны логировать источник/target/result.
 
 Главный принцип:
 
@@ -93,7 +93,7 @@ flowchart TD
 
 - начислить XP;
 - закрыть quest;
-- выдать reward;
+- выдать награда;
 - начислить GE, если это отдельно разрешено экономикой.
 
 Игровая система **не может**:
@@ -120,7 +120,7 @@ GE имеет двойную роль:
 - `source_type`;
 - amount;
 - timestamp;
-- budget/cap;
+- budget/лимит;
 - anti-fraud context.
 
 ---
@@ -150,7 +150,7 @@ XP не расходуется.
 
 XP → Level.
 
-Level → unlocks, rewards, gear access, Arena access.
+Level → unlocks, награды, экипировка access, Arena access.
 
 ### Forbidden
 
@@ -169,7 +169,7 @@ XP нельзя:
 
 - mini-games;
 - quests;
-- chests;
+- сундуки;
 - achievements;
 - partner program;
 - passive systems, если включены;
@@ -178,15 +178,15 @@ XP нельзя:
 
 ### Sinks
 
-- gear;
+- экипировка;
 - Coop upgrades;
 - paid mini-game attempts;
-- chests;
+- сундуки;
 - Arena entry;
 - Arena tactical services;
-- preparation buffs;
-- tactical consumables;
-- future cosmetic services.
+- preparation бафы;
+- tactical расходники;
+- будущий cosmetic services.
 
 ### Critical loop rule
 
@@ -194,7 +194,7 @@ XP нельзя:
 
 `GE spend → action → guaranteed GE > spend`
 
-Любой такой цикл требует EV < cost или hard cap.
+Любой такой цикл требует EV < cost или hard лимит.
 
 ---
 
@@ -202,13 +202,13 @@ XP нельзя:
 
 ### Source
 
-- daily accrual: +2/day;
+- ежедневный accrual: +2/day;
 - max stock: 8;
-- other explicit rewards.
+- other explicit награды.
 
 ### Consumer
 
-- reward-bearing mini-game attempt.
+- награда-bearing mini-game attempt.
 
 ### Not used by
 
@@ -258,9 +258,9 @@ flowchart LR
 
 - base stats;
 - Gift;
-- Maneuver;
-- Special;
-- native gear;
+- Манёвр;
+- Особый приём;
+- native экипировка;
 - character mechanics;
 - animation/lore hooks.
 
@@ -274,10 +274,10 @@ flowchart LR
 - BP;
 - drop;
 - AI;
-- rarity;
-- rewards.
+- редкость;
+- награды.
 
-Full display:
+Полное отображаемое имя:
 
 `[Crest] Type PersonalName`
 
@@ -303,19 +303,19 @@ flowchart TD
     E --> H[Chest / GE / Item / Ticket / Egg / Buff]
 ```
 
-Important:
+Важно:
 
-- level itself is not Battle Power unless it changes permanent stats;
-- level gate and stat value are separate concepts;
-- high level item may be stronger, but level number is not automatically combat strength.
+- уровень itself is not Боевая сила unless it changes постоянный stats;
+- уровень gate and stat value are separate concepts;
+- high уровень item may be stronger, but уровень number is not automatically combat strength.
 
 ---
 
-# 7. Coolness dependency graph
+# 7. Крутость dependency graph
 
-Coolness = collection/progression status.
+Крутость = collection/progression status.
 
-Sources:
+Источники:
 
 - LevelScore;
 - GearCoolness;
@@ -324,51 +324,51 @@ Sources:
 - AchievementBonus;
 - Coop collection/system bonuses.
 
-Used by:
+Используется для:
 
 - collection rankings;
 - Coop progression requirements;
-- visual status;
+- визуальный status;
 - achievements.
 
-Not used by:
+Не применяется в:
 
-- Arena matchmaking;
-- Battle Engine damage;
-- temporary combat calculation.
+- Arena подбор соперника;
+- Battle Engine урон;
+- временный combat calculation.
 
-**Hard rule:** Coolness ≠ Battle Power.
+**Hard rule:** Крутость ≠ Боевая сила.
 
 ---
 
 # 8. Gift dependency graph
 
-Gift is a permanent passive identity **outside Arena** unless a specific Arena rule explicitly creates a separate combat effect.
+Gift is a постоянный passive identity **outside Arena** unless a specific Arena rule explicitly creates a separate combat effect.
 
-Examples:
+Примеры:
 
 - Ряба → passive laying;
-- Гламурочка → shop discount;
+- Гламурочка → магазин discount;
 - Дурочка → Lucky Flip;
 - Боевик → event protection;
 - Монах → synergy amplification;
 - Профессор → XP boost.
 
-Gift can affect:
+Дар может влиять на:
 
 - economy;
 - events;
 - XP;
-- shop;
+- магазин;
 - Coop synergies.
 
-Gift does **not automatically** affect Arena.
+Дар не влияет на Arena автоматически.
 
-This prevents hidden cross-system power.
+Так исключается скрытое усиление между игровыми системами.
 
 ---
 
-# 9. Gear dependency graph
+# 9. Экипировка dependency graph
 
 ```mermaid
 flowchart TD
@@ -406,27 +406,27 @@ flowchart TD
 
 ---
 
-# 10. Allowed permanent combat stats
+# 10. Allowed постоянный combat stats
 
-Core numeric stats:
+Основные числовые боевые характеристики:
 
 - HP;
-- Attack;
-- Defense;
-- Speed.
+- Атака;
+- Защита;
+- Скорость.
 
-Advanced permanent effects are allowed only if tied to real engine hooks:
+Advanced постоянный effects are allowed only if tied to real engine hooks:
 
-- Shield bonus;
-- Heal bonus;
-- Maneuver modifier;
-- Special damage;
-- Special heal;
-- Special shield;
-- Special debuff;
-- charge gain;
-- charge reduction;
-- next Attack boost/weaken.
+- Щит bonus;
+- Лечение bonus;
+- Манёвр modifier;
+- Особый приём урон;
+- Особый приём лечение;
+- Особый приём щит;
+- Особый приём debuff;
+- получение заряда;
+- уменьшение заряда;
+- next Атака boost/weaken.
 
 Forbidden as dead stats unless engine exists:
 
@@ -436,15 +436,15 @@ Forbidden as dead stats unless engine exists:
 - Accuracy;
 - Evasion;
 - Crit;
-- Special Attack;
-- Special Defense;
-- abstract “Special +10”.
+- Особый приём Атака;
+- Особый приём Защита;
+- abstract “Особый приём +10”.
 
 ---
 
-# 11. Gear design validation chain
+# 11. Экипировка design validation chain
 
-Every combat stat on item must satisfy:
+Каждая боевая характеристика предмета должна пройти цепочку:
 
 ```text
 Item property
@@ -460,13 +460,13 @@ Battle Power weight
 Balance cap
 ```
 
-If any link is missing → stat cannot ship.
+Если хотя бы одно звено отсутствует, характеристику нельзя выпускать.
 
 ---
 
 # 12. Native synergy dependency
 
-Native gear:
+Родная экипировка:
 
 `Gear Type Match → Native Synergy → Permanent Effect → Battle Engine + BP`
 
@@ -474,7 +474,7 @@ Set bonus:
 
 `Equipped Set Threshold → Set Bonus → Permanent Effect → Battle Engine + BP`
 
-Rules:
+Правила:
 
 - native synergy must be explicit;
 - set effects must be explicit;
@@ -483,7 +483,7 @@ Rules:
 
 ---
 
-# 13. Battle Power dependency graph
+# 13. Боевая сила dependency graph
 
 ```mermaid
 flowchart TD
@@ -503,39 +503,39 @@ flowchart TD
     BP --> MM[Matchmaking]
 ```
 
-Battle Power is not final battle outcome.
+Боевая сила не определяет результат боя автоматически.
 
 ---
 
-# 14. Permanent vs temporary modifiers
+# 14. Permanent vs временный modifiers
 
 ## Permanent
 
 Persist between battles.
 
-Examples:
+Примеры:
 
 - base stats;
-- level-derived stats;
-- gear;
+- уровень-derived stats;
+- экипировка;
 - set bonuses;
 - Legacy modifiers.
 
-Properties:
+Свойства:
 
 - included in BP;
 - persist in DB;
-- used in matchmaking.
+- used in подбор соперника.
 
 ## Temporary pre-battle
 
-Examples:
+Примеры:
 
-- Preparation Buff;
+- Preparation баф;
 - Daily Event Arena modifier;
 - Morale.
 
-Properties:
+Свойства:
 
 - not included in BP;
 - expire;
@@ -544,16 +544,16 @@ Properties:
 
 ## Temporary in-battle
 
-Examples:
+Примеры:
 
-- Shield;
+- Щит;
 - boost;
 - weaken;
 - tactical consumable;
-- Special charge;
+- Особый приём charge;
 - round effects.
 
-Properties:
+Свойства:
 
 - not included in BP;
 - stored in battle state;
@@ -563,28 +563,28 @@ Properties:
 
 # 15. Modifier processing order
 
-High-level ordering:
+Общий порядок применения:
 
 1. base archetype stats;
-2. level-derived permanent stats;
-3. permanent gear stats;
+2. уровень-derived постоянный stats;
+3. постоянный экипировка stats;
 4. native/set effects;
-5. legacy permanent effects;
-6. compute Battle Power snapshot;
-7. matchmaking;
+5. legacy постоянный effects;
+6. compute Боевая сила snapshot;
+7. подбор соперника;
 8. create battle snapshot;
 9. apply Morale;
 10. apply Daily Event modifier;
-11. apply Preparation Buff;
+11. apply Preparation баф;
 12. start battle;
 13. apply Tactical Consumables according to activation window;
 14. resolve actions;
-15. apply on-hit/on-damage;
+15. apply on-hit/on-урон;
 16. apply survival triggers;
 17. apply end-round effects;
 18. expire round effects.
 
-**Important:** steps 9–18 do not retroactively change BP.
+**Важно:** steps 9–18 do not retroactively change BP.
 
 ---
 
@@ -618,71 +618,71 @@ flowchart TD
 
 # 17. Action dependency graph
 
-## Attack
+## Атака
 
-Depends on:
+Зависит от:
 
-- attacker Attack;
-- target Defense;
+- attacker Атака;
+- target Защита;
 - contextual multiplier;
-- attack boost;
-- attack weaken;
-- Shield.
+- усиление Атаки;
+- ослабление Атаки;
+- Щит.
 
-Produces:
+Создаёт:
 
-- damage;
+- урон;
 - possible collision win;
 - charge.
 
-## Defense
+## Защита
 
-Depends on:
+Зависит от:
 
 - selected action state;
 - target/incoming action;
-- defender Defense;
-- specific Special rules.
+- defender Защита;
+- specific Особый приём rules.
 
-Produces:
+Создаёт:
 
-- reduced damage;
+- reduced урон;
 - counterattack;
 - charge;
 - possible collision win.
 
-## Maneuver
+## Манёвр
 
-Depends on:
+Зависит от:
 
 - archetype;
 - opposing action;
 - character-specific effect;
-- Speed in some matchups.
+- Скорость in some matchups.
 
-Produces combinations of:
+Создаёт сочетания:
 
-- damage;
-- Shield;
-- heal;
+- урон;
+- Щит;
+- лечение;
 - boost;
 - weaken;
-- charge reduction.
+- уменьшение заряда.
 
-## Special
+## Особый приём
 
-Depends on:
+Зависит от:
 
 - charge = 100;
 - archetype;
-- Defense action interaction;
+- Защита action interaction;
 - character logic.
 
-Produces:
+Создаёт:
 
-- damage;
-- heal;
-- shield;
+- урон;
+- лечение;
+- щит;
 - debuff;
 - RNG outcome;
 - charge reset.
@@ -697,79 +697,79 @@ Maneuver > Defense
 Defense > Attack
 ```
 
-Special is outside the triangle and has character-specific resolution.
+Особый приём находится вне треугольника и обрабатывается по правилам конкретного персонажа.
 
-This dependency is important for:
+Эта зависимость важна для:
 
 - action UI;
 - Hint;
 - All-Seeing;
 - Autobattle;
 - bot AI;
-- async defense strategy.
+- асинхронный защита strategy.
 
-All those systems must use the same matrix.
+Все перечисленные системы используют одну боевую матрицу.
 
 ---
 
-# 19. Special Charge dependencies
+# 19. Особый приём Charge dependencies
 
-Sources:
+Источники:
 
 - collision result;
-- Defense action;
-- gear effect;
+- Защита action;
+- экипировка effect;
 - buff effect;
 - character effect.
 
-Consumers:
+Получатели эффектов:
 
-- Special.
+- Особый приём.
 
 Modifiers:
 
 - Professor Analysis;
-- future gear;
-- tactical buffs.
+- будущий экипировка;
+- tactical бафы.
 
-Charge is battle-state only.
+Заряд хранится только в состоянии боя.
 
-Not Battle Power.
+Not Боевая сила.
 
 ---
 
-# 20. Shield dependency
+# 20. Щит dependency
 
-Sources:
+Источники:
 
-- Ряба Maneuver/Special;
-- gear effects;
-- tactical buffs.
+- Ряба Манёвр/Особый приём;
+- экипировка effects;
+- tactical бафы.
 
 Consumes:
 
-- incoming damage.
+- incoming урон.
 
 Ordering:
 
 `Incoming Damage → Shield → HP`
 
-Shield:
+Щит:
 
-- not Defense;
-- not permanent;
+- not Защита;
+- not постоянный;
 - usually battle-state.
 
 ---
 
-# 21. Heal dependency
+# 21. Лечение dependency
 
-Sources:
+Источники:
 
 - Монах;
-- tactical buffs;
-- gear modifiers;
-- future effects.
+- tactical бафы;
+- экипировка modifiers;
+- будущий effects.
 
 Target:
 
@@ -779,7 +779,7 @@ Cap:
 
 `HP <= MaxHP`
 
-Heal cannot create permanent max HP unless effect explicitly modifies max HP.
+Лечение cannot create постоянный max HP unless effect explicitly modifies max HP.
 
 ---
 
@@ -787,25 +787,25 @@ Heal cannot create permanent max HP unless effect explicitly modifies max HP.
 
 Current families:
 
-- Shield;
-- Attack Boost;
-- Attack Weaken;
-- Special Charge Reduction.
+- Щит;
+- Атака Boost;
+- Атака Weaken;
+- Особый приём Charge Reduction.
 
 Future status requires:
 
-- source;
+- источник;
 - target;
 - duration;
 - stack group;
-- cap;
+- лимит;
 - priority;
 - visibility;
 - cleanup rule.
 
 ---
 
-# 23. Buff system dependency graph
+# 23. баф system dependency graph
 
 ```mermaid
 flowchart TD
@@ -829,19 +829,19 @@ flowchart TD
 
 ---
 
-# 24. Preparation Buff dependency
+# 24. Preparation баф dependency
 
-Examples:
+Примеры:
 
 - HP bonus;
-- Defense bonus;
-- Speed bonus;
-- Special modifier.
+- Защита bonus;
+- Скорость bonus;
+- Особый приём modifier.
 
-Properties:
+Свойства:
 
 - activated before match;
-- temporary;
+- временный;
 - not BP;
 - visible after battle starts;
 - limited duration or N matches.
@@ -850,7 +850,7 @@ Properties:
 
 # 25. Tactical Consumable dependency
 
-Sources:
+Источники:
 
 - inventory;
 - loadout.
@@ -867,8 +867,8 @@ Effects may alter:
 
 - HP;
 - stats;
-- Shield;
-- Heal;
+- Щит;
+- Лечение;
 - charge;
 - targetability;
 - action availability;
@@ -877,13 +877,13 @@ Effects may alter:
 
 ---
 
-# 26. Tactical Buff loadout
+# 26. Tactical баф loadout
 
-Working hypothesis:
+Рабочая гипотеза:
 
 - inventory unlimited by battle rules;
 - loadout limited;
-- ~3 consumables per match;
+- ~3 расходники per match;
 - one use per item;
 - usually max one activation per round.
 
@@ -895,9 +895,9 @@ Item should only be permanently consumed after server accepts activation.
 
 ---
 
-# 27. Comeback Buff dependencies
+# 27. Comeback баф dependencies
 
-Example: Double Power.
+Пример: Double Power.
 
 Eligibility:
 
@@ -936,9 +936,9 @@ Does not affect:
 
 ---
 
-# 29. Positional Buff dependencies
+# 29. Positional баф dependencies
 
-Examples:
+Примеры:
 
 - Swap;
 - Reformation;
@@ -983,7 +983,7 @@ flowchart LR
 Reads only:
 
 - visible HP;
-- visible Shield;
+- visible Щит;
 - visible charge;
 - living counts;
 - mode;
@@ -991,13 +991,13 @@ Reads only:
 - known statuses;
 - history;
 - own available actions;
-- known buffs.
+- known бафы.
 
 Does not read:
 
 - hidden current enemy action.
 
-Produces:
+Создаёт:
 
 - contextual recommendation.
 
@@ -1014,7 +1014,7 @@ Must switch strategy for:
 
 # 32. All-Seeing dependencies
 
-Input:
+Входные данные:
 
 - visible battle state;
 - selected own action;
@@ -1024,7 +1024,7 @@ Uses:
 
 - same Battle Engine.
 
-Produces:
+Создаёт:
 
 - counterfactual outcomes.
 
@@ -1036,7 +1036,7 @@ This is essential fairness boundary.
 
 # 33. Autobattle dependencies
 
-Input:
+Входные данные:
 
 - visible state;
 - legal actions;
@@ -1044,7 +1044,7 @@ Input:
 - Battle Engine simulation;
 - expected-value policy.
 
-Output:
+Результат:
 
 - one recommended/selected optimal move.
 
@@ -1060,34 +1060,34 @@ No duplicate formulas.
 
 # 34. Scout dependencies
 
-Input:
+Входные данные:
 
-- hidden async defensive action/intent.
+- hidden асинхронный defensive action/intent.
 
 Allowed:
 
 - asynchronous Arena only.
 
-Forbidden:
+Запрещено:
 
-- live synchronous hidden-turn mode.
+- живой synchronous hidden-turn mode.
 
 ---
 
 # 35. Mode dependency: Wall
 
-Inputs:
+Входные данные:
 
 - positions;
 - living fighters.
 
-Produces:
+Создаёт:
 
 - pairings.
 
 Death changes:
 
-- future pairings.
+- будущий pairings.
 
 One fighter may map to multiple collisions.
 
@@ -1101,7 +1101,7 @@ Need once-per-action vs once-per-collision rules.
 
 # 36. Mode dependency: JRPG
 
-Inputs:
+Входные данные:
 
 - living fighters;
 - selected targets;
@@ -1110,7 +1110,7 @@ Inputs:
 Potential dependencies:
 
 - focus fire;
-- Speed order;
+- Скорость order;
 - death before action;
 - retarget rule.
 
@@ -1122,26 +1122,26 @@ Open production decisions:
 
 ---
 
-# 37. Speed dependency risk
+# 37. Скорость dependency risk
 
-Current prototype:
+Текущий прототип:
 
-- affects Attack×Attack;
-- affects Maneuver×Maneuver;
+- affects Атака×Атака;
+- affects Манёвр×Манёвр;
 - affects JRPG action ordering.
 
 Potential problem:
 
 `Speed ↑ → act earlier → kill target → cancel target action`
 
-This compounds Speed value.
+This compounds Скорость value.
 
-Before Gear Catalog:
+Before Экипировка Catalog:
 
-- simulate +1 Speed marginal win rate;
-- compare to +1 Attack/Defense/HP;
+- simulate +1 Скорость marginal win rate;
+- compare to +1 Атака/Защита/HP;
 - lock resolution model;
-- only then assign gear values/BP weight.
+- only then assign экипировка values/BP weight.
 
 ---
 
@@ -1155,17 +1155,17 @@ Need explicit scope for each effect:
 
 Candidate examples:
 
-- self heal;
-- self shield gain;
+- self лечение;
+- self щит gain;
 - charge reset;
 - one-time buff consumption;
-- next Attack boost consumption.
+- next Атака boost consumption.
 
 ### Once per collision
 
 Candidate examples:
 
-- outgoing damage;
+- outgoing урон;
 - target-specific debuff;
 - collision result.
 
@@ -1194,7 +1194,7 @@ flowchart TD
     F --> K[Daily Emission Cap]
 ```
 
-Mini-game reward must be server-authoritative.
+Mini-game награда must be server-authoritative.
 
 ---
 
@@ -1203,21 +1203,21 @@ Mini-game reward must be server-authoritative.
 Chest can produce:
 
 - GE;
-- gear;
+- экипировка;
 - buff;
 - ticket;
 - egg/chicken;
-- temporary bonus.
+- временный bonus.
 
 Chest depends on:
 
-- rarity table;
+- редкость table;
 - player progression;
-- reward pool;
+- награда pool;
 - pity counter;
 - inventory capacity/overflow.
 
-Paid chest must show probabilities.
+Paid сундук must show probabilities.
 
 ---
 
@@ -1239,7 +1239,7 @@ Overflow if needed
 Audit Log
 ```
 
-No reward may silently disappear due capacity.
+No награда may silently disappear due capacity.
 
 ---
 
@@ -1261,9 +1261,9 @@ Coop upgrade depends on:
 
 - GE;
 - progression;
-- Coolness / collection gates.
+- Крутость / collection gates.
 
-Does not directly increase Battle Power.
+Does not directly increase Боевая сила.
 
 ---
 
@@ -1272,19 +1272,19 @@ Does not directly increase Battle Power.
 Inputs may include:
 
 - adult residents;
-- level/progression;
+- уровень/progression;
 - Ряба Gift;
 - Daily Event;
 - allowed set/effect modifiers;
-- Coop economic cap.
+- Coop economic лимит.
 
-Output:
+Результат:
 
-- GE or defined passive reward.
+- GE or defined passive награда.
 
 Because GE has real value:
 
-- daily cap required;
+- ежедневный лимит required;
 - emission budget required.
 
 ---
@@ -1312,7 +1312,7 @@ flowchart TD
 
 # 45. Gift ↔ Event dependencies
 
-Examples:
+Примеры:
 
 - Дурочка Lucky Flip → event outcome;
 - Боевик Protection → threat events;
@@ -1344,7 +1344,7 @@ Quest outputs:
 
 - XP;
 - GE;
-- chest;
+- сундук;
 - buff;
 - item;
 - ticket;
@@ -1365,14 +1365,14 @@ Main Chicken determines:
 Does not determine:
 
 - ownership;
-- gear availability of other chickens;
+- экипировка availability of other chickens;
 - Gift activation by residents;
 - collection state.
 
 Switching Main Chicken:
 
 - free;
-- future XP goes to new main;
+- будущий XP goes to new main;
 - past XP does not move.
 
 ---
@@ -1399,17 +1399,17 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 ## 49.1. FUTURE — рейтинговый подбор
 
-Будущая рейтинговая система использует одинаковый формат, лигу и BP в рабочем диапазоне ±10% (**PROTOTYPE BALANCE**), расширение окна и явно названного бота. Она не используется в стартовом асинхронном режиме. Glory/лига/сезоны находятся в Future.
+Будущая рейтинговая система использует одинаковый формат, лигу и BP в рабочем диапазоне ±10% (**PROTOTYPE BALANCE**), расширение окна и явно названного бота. Она не используется в стартовом асинхронном режиме. Слава/лига/сезоны находятся в Future.
 
 ---
 
 # 50. Боевой дух
 
-Боевой дух — временный модификатор, не входит в BP. В MVP нет рейтингового алгоритма Glory/лейдербордов. Рейтинг, награды сезонов и влияние Glory — FUTURE.
+Боевой дух — временный модификатор, не входит в BP. В MVP нет рейтингового алгоритма Слава/лейдербордов. Рейтинг, награды сезонов и влияние Слава — FUTURE.
 
 # 51. FUTURE — Слава
 
-Рейтинговый результат → Слава → лига → сезон → Зал славы. Случайный async-подбор старта не использует рейтинг. В будущей ranked Arena действует фильтр ±10% BP (PROTOTYPE BALANCE), расширение окна и анти-фарм повторных пар.
+Рейтинговый результат → Слава → лига → сезон → Зал славы. Случайный асинхронный-подбор старта не использует рейтинг. В будущей ranked Arena действует фильтр ±10% BP (PROTOTYPE BALANCE), расширение окна и анти-фарм повторных пар.
 
 ---
 
@@ -1417,7 +1417,7 @@ Season/main ranked format → 3×3 unless changed by Arena rules.
 
 `аренда 10 GE с каждого (PROTOTYPE BALANCE) → победа → ArenaPrizeGrant(сундук) → трофей(средний выкуп 7,5 GE) + XP/прогресс + очень редкая непродаваемая косметика`.
 
-При дружеском бою сток 20 − 7,5 = 12,5 GE на пару; в async (50% побед) 10 − 3,75 = 6,25 GE на попытку. Ни GE-пула, ни прямого GE-приза, ни transfer между игроками.
+При дружеском бою сток 20 − 7,5 = 12,5 GE на пару; в асинхронный (50% побед) 10 − 3,75 = 6,25 GE на попытку. Ни GE-пула, ни прямого GE-приза, ни transfer между игроками.
 
 # 53. Четыре игрока — Future
 
@@ -1469,14 +1469,14 @@ Chat does not affect Battle Engine.
 
 # 57. Chronicle dependency graph
 
-Inputs:
+Входные данные:
 
 - archetypes;
 - personal names;
 - crests;
 - actions;
 - effects;
-- buffs;
+- бафы;
 - deaths;
 - round result;
 - battle result.
@@ -1499,7 +1499,7 @@ Display identity:
 
 `Crest + Type + Personal Name`
 
-Example:
+Пример:
 
 `🐺 Профессор Иванов`
 
@@ -1528,22 +1528,22 @@ Heir:
 
 - new L1;
 - legacy bonus;
-- inherited visual/gene traits;
+- inherited визуальный/gene traits;
 - controlled faster progression.
 
-Legacy permanent combat modifier, if allowed, can affect BP.
+Legacy постоянный combat modifier, if allowed, can affect BP.
 
 ---
 
 # 60. Inventory boundaries
 
-## Chest/gear inventory
+## Chest/экипировка inventory
 
-Stores unequipped gear.
+Stores unequipped экипировка.
 
-## Buff inventory
+## баф inventory
 
-Stores tactical/preparation consumables.
+Stores tactical/preparation расходники.
 
 ## Chicken capacity
 
@@ -1561,15 +1561,15 @@ Reward delivery must check capacity.
 
 If full:
 
-- temporary overflow/package;
+- временный overflow/package;
 - player decision;
 - no silent deletion.
 
 Applies to:
 
-- gear;
+- экипировка;
 - chickens;
-- other capacity-limited rewards.
+- other capacity-limited награды.
 
 ---
 
@@ -1580,7 +1580,7 @@ Feature flags gate:
 - financial quests;
 - Arena modes;
 - paid services;
-- buffs;
+- бафы;
 - mini-games;
 - store categories.
 
@@ -1596,17 +1596,17 @@ Server authoritative for:
 
 - XP;
 - GE;
-- reward rolls;
+- награда rolls;
 - tickets;
-- level;
+- уровень;
 - inventory;
 - battle lock;
 - battle result;
 - charge;
-- buffs;
+- бафы;
 - Arena settlement;
-- Glory;
-- matchmaking.
+- Слава;
+- подбор соперника.
 
 Client may calculate previews, but server result is authoritative.
 
@@ -1614,13 +1614,13 @@ Client may calculate previews, but server result is authoritative.
 
 # 64. Analytics dependency
 
-Every significant state change requires source context.
+Every significant state change requires источник context.
 
 Minimum generic event fields:
 
 - user/account;
 - entity;
-- source;
+- источник;
 - action;
 - amount/value;
 - before;
@@ -1643,13 +1643,13 @@ Protect:
 
 - GE faucets;
 - paid retries;
-- chest rewards;
+- сундук награды;
 - Arena payouts;
 - referrals;
 - passive laying;
 - achievements.
 
-Client animation/result is not source of truth.
+Client animation/result is not источник of truth.
 
 ---
 
@@ -1657,12 +1657,12 @@ Client animation/result is not source of truth.
 
 Forbidden examples:
 
-- Coolness secretly increases Arena damage;
+- Крутость secretly increases Arena урон;
 - personal name changes RNG;
 - Gift secretly modifies Arena unless documented;
-- Daily Event permanently changes gear;
-- tactical buff changes BP after matchmaking;
-- cosmetic rarity gives hidden combat bonus.
+- Daily Event permanently changes экипировка;
+- tactical buff changes BP after подбор соперника;
+- cosmetic редкость gives hidden combat bonus.
 
 All combat power must have explicit dependency.
 
@@ -1741,8 +1741,8 @@ Base archetype stats
 
 The same deterministic Battle Engine must serve:
 
-- live Arena;
-- async Arena;
+- живой Arena;
+- асинхронный Arena;
 - Training bot;
 - All-Seeing preview;
 - Autobattle simulation;
@@ -1750,7 +1750,7 @@ The same deterministic Battle Engine must serve:
 - balance simulation;
 - replay/chronicle technical reconstruction.
 
-No subsystem may implement a separate damage formula.
+No subsystem may implement a separate урон formula.
 
 ---
 
@@ -1765,15 +1765,15 @@ Needs entities for:
 - account;
 - chicken instance;
 - chicken archetype;
-- gear;
-- equipped gear;
+- экипировка;
+- equipped экипировка;
 - buff inventory;
 - battle;
 - battle participant;
 - battle round;
 - action;
 - status;
-- reward;
+- награда;
 - quest;
 - event;
 - ledger.
@@ -1787,7 +1787,7 @@ Needs:
 - entry/payout;
 - caps;
 - EV;
-- chest economy;
+- сундук economy;
 - passive emission.
 
 ## GEAR_CATALOG.md
@@ -1796,7 +1796,7 @@ Must reference only approved combat hooks.
 
 ## BUFF_CATALOG.md
 
-Must reference only approved temporary hooks.
+Must reference only approved временный hooks.
 
 ---
 
@@ -1804,18 +1804,18 @@ Must reference only approved temporary hooks.
 
 Before production data model is frozen:
 
-1. Speed resolution model.
+1. Скорость resolution model.
 2. JRPG retarget behavior.
 3. Multi-collision once-per-action/once-per-collision semantics.
-4. Special charge exact rules.
+4. Особый приём charge exact rules.
 5. BP weights.
 6. Morale formula.
 7. Draw/double-KO GE settlement.
 8. Disconnect refund logic.
-9. Buff loadout exact size.
-10. Buff ranked allowlist.
-11. 4-player reward split.
-12. Passive laying exact output/cap.
+9. баф loadout exact size.
+10. баф ranked allowlist.
+11. 4-player награда split.
+12. Passive laying exact output/лимит.
 13. Seventh founder Arena mechanics.
 
 ---
@@ -1824,19 +1824,19 @@ Before production data model is frozen:
 
 These must always remain true.
 
-1. **Coolness never drives matchmaking.**
-2. **Temporary buffs never enter Battle Power.**
+1. **Крутость never drives подбор соперника.**
+2. **Temporary бафы never enter Боевая сила.**
 3. **Personal name never changes mechanics.**
-4. **Every gear combat stat has an engine hook.**
-5. **Every GE faucet has a source and cap/budget.**
+4. **Every экипировка combat stat has an engine hook.**
+5. **Every GE faucet has a источник and лимит/budget.**
 6. **Every paid activity has settlement/refund rules before production.**
 7. **Every hidden action is hidden server-side, not CSS-side.**
 8. **All battle simulations use one engine.**
-9. **Client is never authoritative for rewards or battle outcome.**
+9. **Client is never authoritative for награды or battle outcome.**
 10. **Feature-off mechanics cannot appear in quests.**
-11. **No reward disappears silently due inventory capacity.**
+11. **No награда disappears silently due inventory capacity.**
 12. **No same-family modifier stacks infinitely.**
-13. **Arena tactical services cannot read hidden live action.**
+13. **Arena tactical services cannot read hidden живой action.**
 14. **Battle Chronicle cannot invent facts not present in engine result.**
 15. **No stat exists only for decoration while presented as gameplay-relevant.**
 
@@ -1866,4 +1866,4 @@ See DOCUMENTATION_INDEX.md for the complete map.
 
 # C. Связи новых систем
 
-`Confirmed QuRa operation → XP + GE (не меняются) + FeedEffect (temporary)`; `FeedEffect → egg laying / Morale / Preparation Buff / event bonus`, но **никогда** не Battle Power. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Один financial event не учитывается дважды благодаря correlation_id. `Clan membership → invitations/goals/cosmetics`, без GE transfer и combat power. `DailyEventChoice → LuckyFlip → hardCounter → mitigation → temporary result`; без выбора — default option. Не создавать вторую валюту «корм».
+`Confirmed QuRa operation → XP + GE (не меняются) + FeedEffect (temporary)`; `FeedEffect → egg laying / Morale / Preparation Buff / event bonus`, но **никогда** не Боевая сила. `FeedEvents → CommunityGoal.progress + ClanGoal.progress`. Один financial event не учитывается дважды благодаря correlation_id. `Clan membership → invitations/goals/cosmetics`, без GE transfer и combat power. `DailyEventChoice → LuckyFlip → hardCounter → mitigation → temporary result`; без выбора — default option. Не создавать вторую валюту «корм».
