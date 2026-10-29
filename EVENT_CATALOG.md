@@ -5,25 +5,25 @@
 
 ## 0. Global rule
 
-One global event per day for all users.
+Ежедневно для всех пользователей выбирается одно общее событие.
 
-Individual result differs due:
+Личный результат различается из-за:
 - Gifts;
 - counters;
 - mitigation;
 - collection state.
 
-Daily Event never changes Coolness.
+Событие дня никогда не меняет Крутость.
 
 ## 1. Разрешение order for negative event
 
-**Новый обязательный первый шаг:** игрок выбирает один из двух вариантов (`options[2]`), каждый вариант определяет свой исход, Lucky Flip и доступные Дары. Затем Lucky Flip → hard counter → mitigation → final temporary effect. Выбор до конца московских суток; A — явно обозначенный default.
+**Новый обязательный первый шаг:** игрок выбирает один из двух вариантов (`options[2]`), каждый вариант определяет свой исход, Lucky Flip и доступные Дары. Затем Lucky Flip → hard counter → mitigation → final временный effect. Выбор до конца московских суток; A — явно обозначенный default.
 
 1. global event selected
 2. Lucky Flip
 3. hard counter
 4. mitigation
-5. final temporary modifier
+5. final временный modifier
 
 ## 2. Categories
 
@@ -41,8 +41,8 @@ Daily Event never changes Coolness.
 - code
 - title
 - category
-- rarity
-- cooldown
+- редкость
+- задержка повторного применения
 - negative/positive
 - base narrative
 - narrative variants
@@ -57,16 +57,16 @@ Daily Event never changes Coolness.
 ## 4. Разрешённые системы воздействия
 
 - passive laying
-- game shop/discount
+- game магазин/discount
 - XP bonus
 - drop chance
-- Arena temporary stats
-- tickets/rewards
-- future explicit systems
+- Arena временный stats
+- tickets/награды
+- будущий explicit systems
 
 Not:
-- permanent Coolness
-- permanent gear stat
+- постоянный Крутость
+- постоянный экипировка stat
 - financial transaction status
 
 ## 5. Примеры погоды
@@ -81,22 +81,22 @@ Lucky Flip:
 после дождя вылезли черви → positive laying +5%.
 
 Mitigation:
-future shelter/gear/building.
+будущий shelter/экипировка/building.
 
 ### FROST
 Base:
 холод slows production.
 Possible:
-laying down / temporary event.
+laying down / временный event.
 
 Counter:
-warm Coop upgrade/future effect.
+warm Coop upgrade/будущий effect.
 
 ### HEAT
 Base:
 жара снижает активность.
 Possible effect:
-temporary production penalty.
+временный production penalty.
 
 ### PERFECT_SUN
 Positive:
@@ -109,23 +109,23 @@ Negative threat.
 Boevik Gift may hard-counter.
 
 Possible result:
-reward loss prevention / temporary penalty avoided.
+награда loss prevention / временный penalty avoided.
 
 ### RAT_RAID
-Threat to storage/reward.
+Threat to storage/награда.
 Counter:
 Boevik protection.
 
 ### STRAY_DOG
 Threat event.
 Could yield branch:
-fight off / lost supplies / found friend future.
+fight off / lost supplies / found friend будущий.
 
 ## 7. Еда и урожай
 
 ### GRAIN_DELIVERY
 Positive:
-temporary laying boost.
+временный laying boost.
 
 ### BAD_FEED
 Negative:
@@ -133,7 +133,7 @@ production down.
 
 ### GOLDEN_CORN
 Rare:
-small buff/chest chance.
+small buff/сундук chance.
 
 ## 8. Внешний мир
 
@@ -158,7 +158,7 @@ Temporary synergy penalty, Monk mitigation possible.
 Reward/social event.
 
 ### LOST_ITEM
-Can trigger mini quest/reward.
+Can trigger mini quest/награда.
 
 ## 10. Редкие и магические
 
@@ -166,10 +166,10 @@ Can trigger mini quest/reward.
 Rare laying/drop bonus.
 
 ### FALLING_STAR
-Chance special chest/buff.
+Chance special сундук/buff.
 
 ### STRANGE_FOG
-Mystery temporary modifier.
+Mystery временный modifier.
 
 ### BLESSING_DAY
 Monk synergy interaction.
@@ -188,7 +188,7 @@ Supplies delayed → rare item found under cart.
 Threat → chickens discover hidden stash while hiding.
 
 ### Wind
-Roof damaged → old hidden chest exposed.
+Roof damaged → old hidden сундук exposed.
 
 Each flip is authored, not generic.
 
@@ -214,9 +214,9 @@ Possible sources:
 - Monk Grace if approved for event family;
 - building;
 - set;
-- temporary event item.
+- временный event item.
 
-Must have cap.
+Must have лимит.
 
 ## 14. Редкость
 
@@ -228,7 +228,7 @@ Suggested:
 
 No exact percentages yet.
 
-Need cooldown preventing repetition.
+Need задержка повторного применения preventing repetition.
 
 ## 15. Объём контента
 
@@ -253,34 +253,34 @@ Variation should not change mechanics unless explicitly variant-coded.
 
 Events can grant:
 - GE small capped
-- chest
+- сундук
 - buff
 - ticket
 - XP
 - item
-- temporary modifier
+- временный modifier
 
 All server-authoritative.
 
 ## 18. Arena interaction
 
 If Daily Event affects Arena:
-- temporary;
+- временный;
 - visible;
 - not in BP;
 - snapshot at match start.
 
-Avoid large daily modifier that invalidates matchmaking.
+Avoid large ежедневный modifier that invalidates подбор соперника.
 
 ## 19. Аналитика событий
 
 Track:
 - event shown;
 - base vs flip;
-- counter source;
+- counter источник;
 - mitigation;
 - final effect;
-- reward;
+- награда;
 - engagement reaction.
 
 ## 20. Доступность функций
@@ -293,7 +293,7 @@ For every event:
 1. code
 2. title
 3. category
-4. rarity
+4. редкость
 5. story
 6. base effect
 7. negative?
@@ -301,7 +301,7 @@ For every event:
 9. counter
 10. mitigation
 11. duration
-12. reward
+12. награда
 13. variants
 14. analytics tags
 
@@ -314,7 +314,7 @@ Full 60–80 authored rows should be generated as content production batch after
 
 ## 23. Первая партия: 20 авторских событий дня (P5)
 
-**Схема** каждого события: `code`, `category`, `story`, `options[2]`, `default_option=A`, `lucky_flip_by_negative_branch`, `gift_hooks`, `duration`, `reward_caps`. Вариант A используется, если до 23:59:59 МСК выбор не сделан. Никаких дополнительных штрафов за пропуск. Варианты имеют различные последствия; Lucky Flip выполняется только для негативного/пустого исхода выбранной ветки. Указанные проценты и сроки — **PROTOTYPE BALANCE**; числовые лимиты rewards — OPEN. Боевик применяется **только** к угрозам, Монах **никогда** не ослабляет положительные эффекты. Вся случайность фиксируется серверным seed.
+**Схема** каждого события: `code`, `category`, `story`, `options[2]`, `default_option=A`, `lucky_flip_by_negative_branch`, `gift_hooks`, `duration`, `reward_caps`. Вариант A используется, если до 23:59:59 МСК выбор не сделан. Никаких дополнительных штрафов за пропуск. Варианты имеют различные последствия; Lucky Flip выполняется только для негативного/пустого исхода выбранной ветки. Указанные проценты и сроки — **PROTOTYPE BALANCE**; числовые лимиты награды — OPEN. Боевик применяется **только** к угрозам, Монах **никогда** не ослабляет положительные эффекты. Вся случайность фиксируется серверным seed.
 
 ### EV01. Лиса у забора — Угроза
 
@@ -336,7 +336,7 @@ Full 60–80 authored rows should be generated as content production batch after
 
 **B — «Собрать дождевую воду».** Запас воды даёт +5% яйценоскости на 24 ч; неудача — сырость, -5% на сутки. **Удачный поворот:** Вода смывает грязь и открывает червей — вместо сырости +10% яйценоскости на сутки.
 
-**Дары:** Ряба: усиливает положительный бонус яйценоскости в пределах cap; Дурочка: переворот сырости.
+**Дары:** Ряба: усиливает положительный бонус яйценоскости в пределах лимит; Дурочка: переворот сырости.
 
 **После выбора:** «Закрыть ставни» или «Собрать дождевую воду» → конкретное событие → временный эффект/награда, записанные в журнал.
 
@@ -452,11 +452,11 @@ Full 60–80 authored rows should be generated as content production batch after
 
 *Сцена:* У дороги застряла телега с мешками. Помочь возчику или заглянуть под колесо?
 
-**A (по умолчанию) — «Починить колесо».** Небольшое XP за полезный поступок; награда фиксированная и под дневным cap. **Удачный поворот:** Возчик благодарит схемой механизма — дополнительное XP по лимиту.
+**A (по умолчанию) — «Починить колесо».** Небольшое XP за полезный поступок; награда фиксированная и под дневным лимит. **Удачный поворот:** Возчик благодарит схемой механизма — дополнительное XP по лимиту.
 
 **B — «Посмотреть под телегой».** Шанс обычного сундука; при неудаче только пустая находка. **Удачный поворот:** В пыли оказался забытый ключ: гарантированный обычный сундук.
 
-**Дары:** Профессор усиливает только XP в общем cap; Дурочка — Flip пустой находки.
+**Дары:** Профессор усиливает только XP в общем лимит; Дурочка — Flip пустой находки.
 
 **После выбора:** «Починить колесо» или «Посмотреть под телегой» → конкретное событие → временный эффект/награда, записанные в журнал.
 
@@ -464,11 +464,11 @@ Full 60–80 authored rows should be generated as content production batch after
 
 *Сцена:* На площади зазвенели колокольчики. На что потратить немного свободного времени?
 
-**A (по умолчанию) — «Выбрать нужный товар».** Одноразовая скидка на разрешённую игровую покупку за GE в течение суток, под cap. **Удачный поворот:** Торговец выдаёт купон на маленький аксессуар без боевого преимущества.
+**A (по умолчанию) — «Выбрать нужный товар».** Одноразовая скидка на разрешённую игровую покупку за GE в течение суток, под лимит. **Удачный поворот:** Торговец выдаёт купон на маленький аксессуар без боевого преимущества.
 
 **B — «Смотреть представление».** Шанс получить ограниченный декоративный предмет; при неудаче только воспоминания. **Удачный поворот:** Артист приглашает курочку на сцену — косметическая лента в награду.
 
-**Дары:** Гламурочка усиливает только разрешённую скидку в рамках cap; Дурочка Flip пустого исхода.
+**Дары:** Гламурочка усиливает только разрешённую скидку в рамках лимит; Дурочка Flip пустого исхода.
 
 **После выбора:** «Выбрать нужный товар» или «Смотреть представление» → конкретное событие → временный эффект/награда, записанные в журнал.
 
@@ -476,11 +476,11 @@ Full 60–80 authored rows should be generated as content production batch after
 
 *Сцена:* Странник потерял дорогу. Курочки спорят, подсказать маршрут или проводить его.
 
-**A (по умолчанию) — «Показать маршрут».** Небольшое XP за знание местности, без риска потери ресурсов. **Удачный поворот:** Странник оказывается картографом и оставляет учебный свиток: дополнительное XP под cap.
+**A (по умолчанию) — «Показать маршрут».** Небольшое XP за знание местности, без риска потери ресурсов. **Удачный поворот:** Странник оказывается картографом и оставляет учебный свиток: дополнительное XP под лимит.
 
 **B — «Проводить до моста».** Небольшой шанс сувенира, при неудаче временная усталость без экономического штрафа. **Удачный поворот:** У моста гость дарит необычный герб — косметическая находка.
 
-**Дары:** Профессор усиливает XP в общем cap; Дурочка переворачивает пустой исход.
+**Дары:** Профессор усиливает XP в общем лимит; Дурочка переворачивает пустой исход.
 
 **После выбора:** «Показать маршрут» или «Проводить до моста» → конкретное событие → временный эффект/награда, записанные в журнал.
 
@@ -500,11 +500,11 @@ Full 60–80 authored rows should be generated as content production batch after
 
 *Сцена:* Утром возле двери лежало яркое перо. Кому оно принадлежит?
 
-**A (по умолчанию) — «Вернуть хозяйке».** Небольшое XP за доброе дело, без риска. **Удачный поворот:** Хозяйка делится историей своего рода — дополнительное XP под cap.
+**A (по умолчанию) — «Вернуть хозяйке».** Небольшое XP за доброе дело, без риска. **Удачный поворот:** Хозяйка делится историей своего рода — дополнительное XP под лимит.
 
 **B — «Провести конкурс красоты».** Шанс небольшого косметического сувенира; при неудаче без награды. **Удачный поворот:** Перышко получает золотую кайму: редкий декоративный аксессуар.
 
-**Дары:** Профессор усиливает XP в cap; Гламурочка может получить родной косметический вариант, но не скрытый боевой бонус; Дурочка Flip пустого исхода.
+**Дары:** Профессор усиливает XP в лимит; Гламурочка может получить родной косметический вариант, но не скрытый боевой бонус; Дурочка Flip пустого исхода.
 
 **После выбора:** «Вернуть хозяйке» или «Провести конкурс красоты» → конкретное событие → временный эффект/награда, записанные в журнал.
 
@@ -526,9 +526,9 @@ Full 60–80 authored rows should be generated as content production batch after
 
 **A (по умолчанию) — «Загадать желание».** Небольшой шанс косметического предмета; при неудаче только красивый сон. **Удачный поворот:** Луна оставляет серебристую звезду — косметический статусный знак.
 
-**B — «Охранять гнёзда».** Временная защита пассивной яйценоскости от отрицательного события на сутки. **Удачный поворот:** В лунном свете скорлупа уплотняется: положительный бонус Shield в первом бою суток (временный, без BP).
+**B — «Охранять гнёзда».** Временная защита пассивной яйценоскости от отрицательного события на сутки. **Удачный поворот:** В лунном свете скорлупа уплотняется: положительный бонус Щит в первом бою суток (временный, без BP).
 
-**Дары:** Дурочка — Flip пустого желания; Ряба усиливает положительный эффект защиты яйца, но не Battle Power.
+**Дары:** Дурочка — Flip пустого желания; Ряба усиливает положительный эффект защиты яйца, но не Боевая сила.
 
 **После выбора:** «Загадать желание» или «Охранять гнёзда» → конкретное событие → временный эффект/награда, записанные в журнал.
 
