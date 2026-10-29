@@ -84,7 +84,7 @@ Arena должна давать реальное применение:
 - Особый приём;
 - уникальные эффекты персонажей;
 - native экипировка;
-- set synergies.
+- синергии комплектов.
 
 Личное имя не влияет на механику.
 
@@ -841,7 +841,7 @@ Native synergy должна:
 
 Он учитывает только **постоянную силу**:
 
-- base stats;
+- базовые характеристики;
 - уровень-derived постоянный stats;
 - экипировка stats;
 - постоянный бонусы комплекта;
@@ -852,7 +852,7 @@ Native synergy должна:
 - morale;
 - временный Arena бафы;
 - tactical расходники;
-- Daily Event modifier;
+- модификатор События дня;
 - текущий HP;
 - текущий Особый приём charge.
 
@@ -865,8 +865,8 @@ Native synergy должна:
 Вес каждого stat должен быть выведен через simulation:
 
 - изменение win rate;
-- matchup spread;
-- round length;
+- разброс результатов между типами;
+- длительность раунда;
 - survival;
 - преимущество первого действия.
 
@@ -897,7 +897,7 @@ Native synergy должна:
 баф system делится на:
 
 1. Preparation баф;
-2. Tactical Consumable.
+2. тактический расходник.
 
 Подробный каталог задаётся Game Bible §26 и будущим BUFF_CATALOG.
 
@@ -912,7 +912,7 @@ Native synergy должна:
 - Скорость bonus;
 - Особый приём modifier.
 
-## 24.2. Tactical Consumable
+## 24.2. тактический расходник
 
 Берётся в ограниченный Arena баф Loadout.
 
@@ -1137,7 +1137,7 @@ Future:
 Автобой:
 
 - рассматривает legal actions;
-- legal targets;
+- допустимые цели;
 - HP;
 - stats;
 - status;
@@ -1615,68 +1615,68 @@ This may make Скорость disproportionately valuable.
 
 Before экипировка catalog finalization:
 
-1. simulate current sequential model;
-2. simulate simultaneous-commit model;
+1. проверить симуляцией текущую последовательную модель;
+2. проверить модель одновременного исполнения зафиксированных ходов;
 3. compare win-rate elasticity of +1 Скорость;
-4. choose model;
+4. выбрать модель;
 5. freeze BP weight.
 
 Until this is closed, **do not finalize Скорость values on production экипировка.**
 
 ---
 
-# 54. Known prototype risk: multi-collision
+# 54. Известный риск прототипа: несколько столкновений
 
-Wall 1×N is strategically interesting but must be checked for:
+Режим 1×N интересен стратегически, но требует проверки следующих эффектов:
 
 - duplicated Особый приём effect;
 - duplicated лечение;
 - duplicated щит gain;
 - duplicated получение заряда;
-- boost consumption;
-- weaken consumption.
+- расход усиления;
+- расход эффекта ослабления.
 
 Необходимо зафиксировать правило:
 
-> which effects apply once per action and which apply once per collision.
+> какие эффекты выполняются один раз на действие, а какие — в каждом столкновении.
 
 Это обязательно решить до выпуска.
 
 ---
 
-# 55. Known prototype risk: JRPG focus fire
+# 55. Известный риск прототипа: фокус атак в JRPG
 
 Концентрированный урон по одной цели может чрезмерно усиливать преимущество команды.
 
 Test:
 
-- 3→1 kill probability round 1;
+- вероятность уничтожения одной цели тремя бойцами в первом раунде;
 - survivability with Защита;
-- target retarget;
-- action cancellation;
+- переназначение цели;
+- отмена выбранного действия;
 - Скорость interaction;
 - protection/intercept бафы.
 
 ---
 
-# 56. Rules for accessory design
+# 56. Требования к дизайну аксессуаров
 
-Every combat property in GEAR_CATALOG must answer:
+Каждое боевое свойство в GEAR_CATALOG должно отвечать на вопросы:
 
-1. Which engine variable/effect does it change?
-2. At what stage?
+1. Какую переменную или эффект боевого движка оно изменяет?
+2. На каком этапе расчёта?
 3. Does it affect BP?
 4. What is its лимит?
-5. How does it stack?
+5. Как суммируется с другими?
 6. Is it visible to opponent?
-7. Does it work in all modes?
-8. Does it create a dead stat for some archetypes?
+7. Работает ли во всех режимах?
+8. Не создаёт ли характеристику, бесполезную некоторым типам?
 
-No answer → stat cannot ship.
+Нет ответа — характеристику нельзя выпускать.
 
 ---
 
-# 57. Rules for buff design
+# 57. Требования к дизайну бафов
 
 Every BUFF_CATALOG entry must define:
 
@@ -1684,18 +1684,18 @@ Every BUFF_CATALOG entry must define:
 - name;
 - редкость;
 - источник;
-- target scope;
-- activation window;
+- область применения;
+- момент активации;
 - duration;
 - condition;
 - effect;
-- engine hook;
+- обработчик игрового движка;
 - stacking;
 - лимит;
 - visibility;
 - допустимость в рейтинге;
-- consumable behavior;
-- chronicle template.
+- порядок расходования;
+- шаблон летописи.
 
 ---
 
@@ -1709,31 +1709,31 @@ Every BUFF_CATALOG entry must define:
 
 Process:
 
-1. invent physical/character action;
-2. derive natural mechanical effect;
-3. assign number;
+1. придумать характерное физическое действие;
+2. вывести из него естественный игровой эффект;
+3. назначить числовое значение;
 4. simulate;
-5. write Chronicle prose.
+5. написать литературное описание для летописи.
 
 ---
 
-# 59. Open decisions before Arena production
+# 59. Открытые решения до запуска Arena
 
 1. Final Скорость resolution model.
-2. Retarget after death in JRPG.
+2. Переназначение цели после смерти в JRPG.
 3. Особый приём charge exact table.
-4. Multi-collision once-per-action vs once-per-collision effects.
-5. Draw settlement.
-6. Paid Arena cancellation/refund.
+4. Эффекты один раз на действие или на каждое столкновение.
+5. Расчёт аренды при ничьей.
+6. Отмена платного боя и возврат аренды.
 7. BP formula/weights.
-8. Morale formula.
+8. Формула Боевого духа.
 9. Экипировка caps.
 10. баф loadout exact size.
 11. баф ranked allowlist.
 12. 4-player награда split.
-13. surrender rules.
-14. disconnect grace period.
-15. seven-founder Arena definition.
+13. Правила добровольной сдачи.
+14. Льготное время при разрыве связи.
+15. Боевые параметры седьмой основательницы после её открытия.
 
 ---
 
@@ -1748,19 +1748,19 @@ Process:
 
 1. **ARENA_SPEC_V1.md**
 2. Game Bible
-3. prototype implementation as executable experiment
+3. прототип как исполняемый эксперимент
 
 Числа из прототипа не изменяют правила этого документа автоматически.
 
 Если прототип подтвердил более удачное решение:
 
-- update spec;
-- record reason;
-- then update production.
+- обновить спецификацию;
+- зафиксировать причину;
+- после этого обновлять production.
 
 ---
 
-# 62. Documentation package status
+# 62. Состояние комплекта документации
 
 Полный пакет документации версии 1 создан.
 
@@ -1768,9 +1768,9 @@ See **DOCUMENTATION_INDEX.md** for reading order and источник-of-truth m
 
 Следующий этап — не создание нового документа, а закрытие открытых вопросов баланса через симуляцию и инженерную проверку.
 - Скорость resolution;
-- multi-collision semantics;
+- правила эффектов при нескольких столкновениях;
 - перенацеливание JRPG;
 - Особый приём charge table;
 - BP weights;
-- draw/refund settlement.
+- правила возвратов при ничьей.
 
