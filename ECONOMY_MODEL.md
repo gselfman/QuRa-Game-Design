@@ -573,7 +573,7 @@ Exact curve belongs будущий balance table inside this model.
 
 ## 23. XP Boost лимит
 
-Sources can include:
+Источниками могут быть:
 - Professor Gift;
 - экипировка/event effects;
 - special campaigns.
@@ -587,15 +587,15 @@ Daily/недельный награды should target:
 - feature education;
 - diversified use.
 
-No task should force a financially harmful action.
+Задание не должно побуждать к финансово невыгодной операции.
 
 GE награды from quests have per-period budget.
 
 ## 25. Referral economy
 
-Current production ratio 10/5/2.
+Текущие параметры партнёрки: 10/5/2.
 
-Qualifying action must be real and anti-fraud checked.
+Квалифицирующая операция должна быть реальной и проходить антифрод-проверку.
 
 Registration alone gives no награда.
 
@@ -624,7 +624,7 @@ No direct GE purchase of Слава.
 
 Крутость is status/progression.
 
-No direct exchange to GE.
+Прямой обмен на GE не предусмотрен.
 
 It can gate:
 - Coop upgrade;
@@ -635,7 +635,7 @@ It can gate:
 
 Morale is временный Arena state.
 
-Cannot be directly bought with GE in v1.
+В версии 1 нельзя купить напрямую за GE.
 
 Working range:
 -15%…+15%.
@@ -646,7 +646,7 @@ Working range:
 
 ## 29. GE budget buckets
 
-Recommended accounting buckets:
+Рекомендуемые категории учёта:
 - MINI_GAME
 - QUEST
 - CHEST
@@ -659,7 +659,7 @@ Recommended accounting buckets:
 - FEED_BONUS
 - CLAN_REWARD
 
-Every credit uses one bucket.
+Каждое начисление относится к одной категории.
 
 ## 30. Sink buckets
 
@@ -674,7 +674,7 @@ Every credit uses one bucket.
 
 ## 31. Аналитика экономики
 
-Daily dashboard:
+Ежедневная аналитическая панель:
 - GE minted by источник;
 - GE burned by sink;
 - net issuance;
@@ -702,20 +702,20 @@ Alert if:
 
 ## 33. Принципы возвратов
 
-Every paid action declares:
+Для каждой платной операции определяются:
 - lock point;
 - fulfillment point;
 - cancellation window;
 - server-failure behavior;
 - user-failure behavior.
 
-No paid feature ships without refund matrix.
+Платную функцию нельзя выпускать без правил возврата.
 
 ## 34. Настройка цен
 
-All prices server-configurable.
+Все цены должны настраиваться на сервере.
 
-Do not hardcode in client:
+Не зашивать в клиент:
 - GE prices;
 - Arena fees;
 - buff cost;
@@ -726,7 +726,7 @@ Do not hardcode in client:
 
 ## 35. Обязательные экономические сценарии
 
-Before production run:
+Перед запуском выполнить:
 1. low-engagement user;
 2. ежедневный active;
 3. power user;
@@ -744,7 +744,7 @@ For each:
 
 ## 36. Открытые таблицы баланса
 
-Need numeric tables later for:
+Позднее потребуются числовые таблицы для:
 - XP curve L1–20;
 - экипировка prices;
 - Coop prices;
