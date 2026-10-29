@@ -50,10 +50,10 @@ Per instance.
 - сыграть 1 mini-game;
 - закончить 1 quest;
 - открыть/проверить Курятник;
-- сыграть Arena if feature active;
-- использовать buff if inventory available;
+- сыграть в Arena, если она доступна;
+- применить баф, если он есть в инвентаре;
 - экипировать/осмотреть item;
-- collect passive output if enabled.
+- собрать пассивную награду, если функция включена.
 
 Avoid:
 - forcing paid financial transaction;
@@ -80,8 +80,8 @@ Long-term:
 - L15 embodiment;
 - N Arena wins;
 - возвращение в бой 1×3;
-- win with 1 HP;
-- win using each archetype;
+- победить с 1 HP;
+- победить каждым архетипом;
 - collect set;
 - max Coop tier;
 - Hall of Fame;
@@ -140,7 +140,7 @@ XP за задание аккаунта получает главная куро
 
 Нажатие «Забрать» не меняет получателя XP задним числом.
 
-CHICKEN_ONCE XP can target that specific chicken if quest definition explicitly says so; otherwise follow main-chicken rule.
+XP за задание CHICKEN_ONCE может получить конкретная курочка, если это указано в настройках; иначе действует правило главной.
 
 ## 11. Daily generation
 
@@ -159,14 +159,14 @@ CHICKEN_ONCE XP can target that specific chicken if quest definition explicitly 
 
 Нельзя ставить цель в зависимость от крайне редкой случайной награды:
 bad:
-> get Legendary сундук item this week.
+> получить легендарный предмет из сундука на этой неделе.
 
 Good:
 > open 5 сундуки.
 
 ## 13. Difficulty bands
 
-- Easy: one action
+- Лёгкое: одно действие
 - Medium: several actions
 - Long: недельный/milestone
 
@@ -177,11 +177,11 @@ Good:
 Для игрока со взрослой курочкой и открытой Arena:
 1. Play one mini-game.
 2. Complete 2 useful actions in QuRa.
-3. Play one Arena match.
-4. Visit Coop and collect/inspect.
+3. Сыграть один бой Arena.
+4. Посетить Курятник и собрать/проверить награды.
 5. Optional bonus: use a different chicken than yesterday.
 
-Exact награда numbers in Reward Tables/Economy.
+Точные значения наград — в Reward Tables и Economy.
 
 ## 15. Arena quests
 
