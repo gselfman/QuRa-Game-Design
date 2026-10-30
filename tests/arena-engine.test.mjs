@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings,resolveTarget,resolveClash} from '../tools/arena-engine.mjs';
+import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings,resolveTarget} from '../tools/arena-engine.mjs';
 test('six prototype founders',()=>assert.equal(HEROES.length,6));
 test('legal Special only at 100 charge',()=>{const f=createFighter('r');assert.equal(legal(f).includes('special'),false);f.q=100;assert.equal(legal(f).includes('special'),true)});
 test('deterministic fight',()=>assert.deepEqual(fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'}),fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'})));
