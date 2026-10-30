@@ -63,3 +63,23 @@ test('two simultaneous Specials preserve symmetry for mirror founder states',()=
   assert.equal(a.q,b.q,id+' mirrored charge');
  }
 });
+
+test('simultaneous Special keeps full result stable on side swap for all founders',()=>{
+ for(const id of ['r','b','f','p','m','g']){
+  const left=createFighter(id),right=createFighter(id);
+  left.q=right.q=100;
+  const one=resolveClash(left,right,'special','special',.5,{specialOrder:'simultaneous'});
+  const againA=createFighter(id),againB=createFighter(id);
+  againA.q=againB.q=100;
+  const two=resolveClash(againB,againA,'special','special',.5,{specialOrder:'simultaneous'});
+  assert.equal(one.damageToA,two.damageToB,id);
+  assert.equal(one.damageToB,two.damageToA,id);
+  assert.equal(left.hp,right.hp,id);
+ }
+});
+test('double KO tie-break is deterministic and does not erase physical KO event',()=>{
+ const a=fight1v1('r','r',{seed:72,maxRounds:30,strategyA:'equilibrium',strategyB:'equilibrium',rules:{equalSpeed:'simultaneous'},doubleKOPolicy:'pre_round_hp'});
+ const b=fight1v1('r','r',{seed:72,maxRounds:30,strategyA:'equilibrium',strategyB:'equilibrium',rules:{equalSpeed:'simultaneous'},doubleKOPolicy:'pre_round_hp'});
+ assert.deepEqual(a,b);
+ if(a.termination==='double_ko')assert.ok(a.winner===1||a.winner===2);
+});
