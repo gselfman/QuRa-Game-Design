@@ -195,3 +195,14 @@ Content:
 - `tests/ge-economy-simulator.test.mjs` — тесты инвариантов GE и расчётов; запуск `node --test tests/ge-economy-simulator.test.mjs` (не подтверждён в данном сеансе).
 
 **Следующая зависимость:** моделирование XP/возраста и покупки обычных яиц с временем взросления, затем когорты и интерфейс админки. Изменение production QuRa не производилось.
+
+
+## Файлы для дизайна и симуляции в GitHub (30.10.2026)
+
+- `docs/visual/QuRa_sprite_prompt_pack_and_figma_map_v02.md` — 23 самостоятельных copy-paste промпта с полным составом из `SPRITE_PRODUCTION_BATCHES.md`, страницами Figma и именами файлов. Это заменяет локальный ChatGPT-only v01.
+- `docs/simulator/QuRa_full_behavior_simulator_plan_v02.md` — архитектура M2 и следующие требования M3.
+- `tools/behavior-simulator.mjs` — исследовательский поведенческий прототип XP/GE, три сценария.
+- `tests/behavior-simulator.test.mjs` — тестовые сценарии M2.
+- `tools/behavior-demo.mjs` — пример вывода сценариев.
+
+**Запуск локально:** `node --test tests/behavior-simulator.test.mjs` и `node tools/behavior-demo.mjs`. Файлы проверены чтением из GitHub; CI/Node-тесты после этой загрузки ещё не подтверждены. Figma-файл не создан автоматически, ссылки на Figma-страницы — план размещения.
