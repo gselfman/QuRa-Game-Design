@@ -57,3 +57,27 @@ test('legacy online Wall clash parity for 6x6, legal 4-action pairs and determin
    }
  }
 });
+
+test('both browser prototypes use the shared Arena Engine',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const single=readFileSync(new URL('../arena/index.html',import.meta.url),'utf8');
+ const multiplayer=readFileSync(new URL('../arena-live-3x3/team-core.js',import.meta.url),'utf8');
+ assert.ok(single.includes("import {resolveClash as sharedClash} from '../tools/arena-engine.mjs'"));
+ assert.ok(single.includes('sharedClash(ax,by,ca,cb,Math.random())'));
+ assert.ok(multiplayer.includes("import('../tools/arena-engine.mjs')"));
+ assert.ok(multiplayer.includes('eng.resolveClash('));
+ assert.ok(multiplayer.includes('eng.resolveTarget('));
+});
+test('Arena CLI exports complete matrix with round histograms',async()=>{
+ const {mkdtempSync,readFileSync,rmSync}=await import('node:fs');
+ const {tmpdir}=await import('node:os'),{join}=await import('node:path'),{execFileSync}=await import('node:child_process');
+ const dir=mkdtempSync(join(tmpdir(),'qura-arena-'));
+ try{
+ execFileSync(process.execPath,['tools/arena-sim-cli.mjs','--per-pair','2','--seed','7','--out',dir],{cwd:new URL('..',import.meta.url),timeout:90000});
+ const result=JSON.parse(readFileSync(join(dir,'matrix.json'),'utf8'));
+ assert.equal(result.rows.length,36);assert.equal(result.totalBattles,72);
+ assert.ok(result.rows.every(r=>r.fights===2&&r.medianRounds>=1));
+ assert.ok(result.team3x3.battles>=100);
+ assert.ok(readFileSync(join(dir,'matrix.csv'),'utf8').startsWith('heroA,heroB'));
+ }finally{rmSync(dir,{recursive:true,force:true})}
+});
