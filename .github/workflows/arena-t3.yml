@@ -1,0 +1,32 @@
+name: Arena T3 mirror experiments
+on:
+  push:
+    branches: [arena/t3-rule-experiments-2026-10-30]
+    paths:
+      - 'tools/arena-engine.mjs'
+      - 'tools/arena-t3-experiment.mjs'
+      - 'tests/arena-t3-experiment.test.mjs'
+      - '.github/workflows/arena-t3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mirror-rules:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run regression and T3 tests
+        run: node --test tests/
+      - name: Compare 2 rules × 6 mirrors × 2000 fights
+        run: node tools/arena-t3-experiment.mjs --per-hero 2000 --seed 20261030 --out arena-t3-results > arena-t3-console.json
+      - name: Upload experiment evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: arena-t3-mirror-variants
+          path: |
+            arena-t3-results/
+            arena-t3-console.json
