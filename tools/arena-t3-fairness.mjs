@@ -1,4 +1,4 @@
-// T3 fairness audit: same hero pairs, side-swapped seeds and independent special order.
+// T3 fairness audit: same-hero matches using seeded trials and two Special policies.
 import {writeFileSync,mkdirSync} from 'node:fs';
 import {HEROES,fight1v1} from './arena-engine.mjs';
 const argv=process.argv.slice(2);
@@ -13,7 +13,7 @@ for(const {name,rules} of policies){
  for(const hero of HEROES){
   let scoreA=0,draws=0,doubleKO=0,rounds=0;
   for(let i=0;i<N;i++){
-   // Two independent orientation trials per seed; confidence comes from replication.
+   // Single seeded mirror match; repeated trials estimate first-side bias.
    const match=fight1v1(hero.id,hero.id,{seed:(seed+Math.imul(i+1,2654435761)+hero.id.charCodeAt(0))>>>0,strategyA:'equilibrium',strategyB:'equilibrium',rules});
    scoreA+=match.winner===1?1:match.winner===3?.5:0;
    draws+=match.winner===3?1:0;
