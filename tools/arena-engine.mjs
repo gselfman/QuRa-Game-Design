@@ -50,8 +50,25 @@ export function resolveClash(a,b,ma,mb,randomValue=.5,options={}){
  if(!legal(a).includes(ma)||!legal(b).includes(mb))throw Error('illegal or dead fighter action');
  let da=0,db=0,w=0;const hpA=a.hp,hpB=b.hp;
  if(ma==='special'||mb==='special'){
-  if(ma==='special')da+=special(a,b,mb==='defend',randomValue);
-  if(mb==='special')db+=special(b,a,ma==='defend',1-randomValue);
+  if(ma==='special'&&mb==='special'&&options.specialOrder==='simultaneous'){
+   const beforeA={...a},beforeB={...b};
+   const ownA={...beforeA},targetB={...beforeB};
+   const ownB={...beforeB},targetA={...beforeA};
+   special(ownA,targetB,false,randomValue);
+   special(ownB,targetA,false,1-randomValue);
+   const merge=(f,before,own,target)=>{
+    f.hp=Math.max(0,Math.min(f.maxHp,before.hp+(own.hp-before.hp)+(target.hp-before.hp)));
+    f.shield=Math.max(0,before.shield+(own.shield-before.shield)+(target.shield-before.shield));
+    f.q=Math.max(0,Math.min(100,before.q+(own.q-before.q)+(target.q-before.q)));
+    f.boost=Math.max(own.boost,target.boost);f.weaken=Math.max(own.weaken,target.weaken);
+    f.dead=f.hp===0;
+   };
+   merge(a,beforeA,ownA,targetA);merge(b,beforeB,ownB,targetB);
+   da=Math.max(0,beforeB.hp-b.hp);db=Math.max(0,beforeA.hp-a.hp);
+  }else{
+   if(ma==='special')da+=special(a,b,mb==='defend',randomValue);
+   if(mb==='special')db+=special(b,a,ma==='defend',1-randomValue);
+  }
   if(ma==='attack')da+=hit(a,b,.35);
   if(mb==='attack')db+=hit(b,a,.35);
   if(ma==='maneuver')da+=maneuver(a,b);
