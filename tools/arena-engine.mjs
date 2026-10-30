@@ -107,7 +107,7 @@ export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strateg
 }
 function evaluate(a,b,actA,actB){
  const ca={...a},cb={...b};resolveClash(ca,cb,actA,actB,.5);
- return ((cb.hp-b.hp)-(ca.hp-a.hp)) + .28*(ca.hp-a.hp-cb.hp+b.hp) + .22*(ca.shield-a.shield-cb.shield+b.shield) + .09*(ca.q-a.q-cb.q+b.q) + (cb.dead?50:0)-(ca.dead?50:0);
+ return ((b.hp-cb.hp)-(a.hp-ca.hp)) + .28*(ca.hp-a.hp-cb.hp+b.hp) + .22*(ca.shield-a.shield-cb.shield+b.shield) + .09*(ca.q-a.q-cb.q+b.q) + (cb.dead?50:0)-(ca.dead?50:0);
 }
 export function equilibrium(a,b,iterations=24){
  const la=legal(a),lb=legal(b),scores=la.map(x=>lb.map(y=>evaluate(a,b,x,y)));
