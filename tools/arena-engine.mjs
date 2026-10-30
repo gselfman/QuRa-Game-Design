@@ -1,0 +1,131 @@
+// QuRa Arena deterministic research engine — T2; no browser, network or ledger.
+// PROTOTYPE parity target: arena-live-3x3/team-core.js; numbers are unchanged.
+export const HEROES = Object.freeze([
+{id:'r',name:'Ряба',hp:108,attack:24,defense:21,speed:18},
+{id:'b',name:'Боевик',hp:112,attack:26,defense:23,speed:14},
+{id:'f',name:'Дурочка',hp:102,attack:24,defense:17,speed:26},
+{id:'p',name:'Профессор',hp:102,attack:25,defense:19,speed:22},
+{id:'m',name:'Монах',hp:110,attack:21,defense:24,speed:15},
+{id:'g',name:'Гламурочка',hp:102,attack:23,defense:19,speed:24}
+]);
+export const ACTIONS=Object.freeze(['attack','defend','maneuver','special']);
+const num=v=>Math.max(0,Math.round(v));
+export function seeded(seed=20261030){let x=seed>>>0;return()=>((x=Math.imul(x,1664525)+1013904223>>>0)/4294967296)}
+export function createFighter(id,{level=4,stats={}}={}){
+ const hero=HEROES.find(h=>h.id===id);if(!hero)throw Error('unknown hero');
+ return {id,name:hero.name,hp:stats.hp??hero.hp,maxHp:stats.hp??hero.hp,a:stats.attack??hero.attack,d:stats.defense??hero.defense,s:stats.speed??hero.speed,q:0,shield:0,boost:0,weaken:0,dead:false,level};
+}
+export function legal(f){return f&&!f.dead&&f.hp>0?(f.q>=100?ACTIONS:ACTIONS.slice(0,3)):[]}
+export function take(f,raw){
+ let n=Math.max(0,raw);if(f.shield>0){const absorbed=Math.min(f.shield,n);f.shield-=absorbed;n-=absorbed}
+ const hp=num(n);f.hp=Math.max(0,f.hp-hp);f.dead=f.hp===0;return hp
+}
+function charge(f,v){f.q=Math.min(100,Math.max(0,f.q+v))}
+function baseDamage(a,d,m=1){
+ let value=(20+1.15*a.a-.72*d.d)*m;
+ if(a.boost){value*=1+a.boost;a.boost=0}
+ if(a.weaken){value*=1-a.weaken;a.weaken=0}
+ return Math.max(5,value);
+}
+function hit(a,d,m=1){return take(d,baseDamage(a,d,m))}
+function counter(d,a){return take(a,15+.45*d.d-.18*a.d)}
+export function maneuver(c,e){
+ if(c.id==='r'){c.shield+=10;return take(e,24)}
+ if(c.id==='b'){c.boost=Math.max(c.boost,.18);return take(e,25)}
+ if(c.id==='f'){c.boost=Math.max(c.boost,.20);return take(e,31)}
+ if(c.id==='p'){e.q=Math.max(0,e.q-18);return take(e,26)}
+ if(c.id==='m'){c.hp=Math.min(c.maxHp,c.hp+12);return take(e,24)}
+ e.weaken=Math.max(e.weaken,.22);return take(e,27)
+}
+export function special(c,e,defended,rng){
+ c.q=0;
+ if(c.id==='r'){c.shield+=defended?14:18;return take(e,defended?11:25)}
+ if(c.id==='b')return take(e,46*(defended?.45:1));
+ if(c.id==='f')return take(e,(rng<.10?0:rng<.35?58:43)*(defended?.45:1));
+ if(c.id==='p')return take(e,45*(defended?.5:1));
+ if(c.id==='m'){c.hp=Math.min(c.maxHp,c.hp+27);return take(e,18*(defended?.5:1))}
+ e.weaken=Math.max(e.weaken,.30);return take(e,41*(defended?.5:1))
+}
+export function resolveClash(a,b,ma,mb,randomValue=.5){
+ if(!legal(a).includes(ma)||!legal(b).includes(mb))throw Error('illegal or dead fighter action');
+ let da=0,db=0,w=0;const hpA=a.hp,hpB=b.hp;
+ if(ma==='special'||mb==='special'){
+  if(ma==='special')da+=special(a,b,mb==='defend',randomValue);
+  if(mb==='special')db+=special(b,a,ma==='defend',1-randomValue);
+  if(ma==='attack')da+=hit(a,b,.35);
+  if(mb==='attack')db+=hit(b,a,.35);
+  if(ma==='maneuver')da+=maneuver(a,b);
+  if(mb==='maneuver')db+=maneuver(b,a);
+ }else if(ma===mb){
+  if(ma==='attack'){da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
+  if(ma==='maneuver'){
+   if(a.s>=b.s){da+=maneuver(a,b);db+=hit(b,a,.45);w=1}
+   else{db+=maneuver(b,a);da+=hit(a,b,.45);w=2}
+  }
+ }else{
+  const k=ma[0]+mb[0];
+  if(k==='am'){da=hit(a,b,1.45);w=1}
+  else if(k==='ma'){db=hit(b,a,1.45);w=2}
+  else if(k==='md'){da=maneuver(a,b);w=1}
+  else if(k==='dm'){db=maneuver(b,a);w=2}
+  else if(k==='da'){db=hit(b,a,.22);da=counter(a,b);w=1}
+  else if(k==='ad'){da=hit(a,b,.22);db=counter(b,a);w=2}
+ }
+ if(!w){if(da>db+5)w=1;else if(db>da+5)w=2}
+ charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);
+ return {ma,mb,w,damageToA:hpA-a.hp,damageToB:hpB-b.hp,after:[a.hp,b.hp],charge:[a.q,b.q]};
+}
+export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random'}={}){
+ const a=createFighter(idA),b=createFighter(idB),rng=seeded(seed);const history=[];let winner=0;
+ for(let round=1;round<=maxRounds;round++){
+  const ma=choose(a,b,strategyA,rng),mb=choose(b,a,strategyB,rng);
+  const outcome=resolveClash(a,b,ma,mb,rng());history.push({round,...outcome});
+  if(a.dead||b.dead){winner=a.dead&&b.dead?3:a.dead?2:1;break}
+ }
+ if(!winner){winner=a.hp/a.maxHp>b.hp/b.maxHp?1:b.hp/b.maxHp>a.hp/a.maxHp?2:3}
+ return {winner,rounds:history.length,history,remaining:[a.hp,b.hp]};
+}
+function evaluate(a,b,actA,actB){
+ const ca={...a},cb={...b};resolveClash(ca,cb,actA,actB,.5);
+ return ((cb.hp-b.hp)-(ca.hp-a.hp)) + .28*(ca.hp-a.hp-cb.hp+b.hp) + .22*(ca.shield-a.shield-cb.shield+b.shield) + .09*(ca.q-a.q-cb.q+b.q) + (cb.dead?50:0)-(ca.dead?50:0);
+}
+export function equilibrium(a,b,iterations=24){
+ const la=legal(a),lb=legal(b),scores=la.map(x=>lb.map(y=>evaluate(a,b,x,y)));
+ // approximate mixed minimax via simultaneous multiplicative weights.
+ let pa=la.map(()=>1/la.length),pb=lb.map(()=>1/lb.length),avgA=pa.map(()=>0),avgB=pb.map(()=>0);
+ for(let t=0;t<iterations;t++){
+  for(let i=0;i<pa.length;i++)avgA[i]+=pa[i]/iterations;
+  for(let j=0;j<pb.length;j++)avgB[j]+=pb[j]/iterations;
+  const va=pa.map((_,i)=>scores[i].reduce((z,s,j)=>z+s*pb[j],0));
+  const vb=pb.map((_,j)=>-scores.reduce((z,row,i)=>z+row[j]*pa[i],0));
+  const eta=.025;const na=va.map(v=>Math.exp(Math.max(-20,Math.min(20,eta*v)))),nb=vb.map(v=>Math.exp(Math.max(-20,Math.min(20,eta*v))));
+  pa=pa.map((p,i)=>p*na[i]);pb=pb.map((p,j)=>p*nb[j]);
+  let za=pa.reduce((x,y)=>x+y),zb=pb.reduce((x,y)=>x+y);
+  pa=pa.map(x=>x/za);pb=pb.map(x=>x/zb);
+ }
+ return {actions:la,probabilities:avgA};
+}
+export function choose(a,b,style,rng){
+ const choices=legal(a);if(!choices.length)throw Error('dead fighter');
+ if(style==='random')return choices[Math.floor(rng()*choices.length)];
+ if(style==='greedy'){
+  return choices.map(x=>({x,value:legal(b).reduce((sum,y)=>sum+evaluate(a,b,x,y),0)/legal(b).length})).sort((u,v)=>v.value-u.value)[0].x;
+ }
+ if(style==='equilibrium'){const mix=equilibrium(a,b),v=rng();let sum=0;for(let i=0;i<mix.actions.length;i++){sum+=mix.probabilities[i];if(v<=sum)return mix.actions[i]}return mix.actions.at(-1)}
+ throw Error('unknown strategy');
+}
+export function createTeam(ids){if(ids.length<1||ids.length>3)throw Error('team size 1..3');return ids.map((id,pos)=>Object.assign(createFighter(id),{pos}))}
+export function pairings(teamA,teamB){
+ const alive=t=>t.filter(c=>!c.dead);const a=alive(teamA),b=alive(teamB);
+ if(!a.length||!b.length)return[];
+ const anchor=a.length>=b.length?1:2,other=anchor===1?b:a;
+ return (anchor===1?a:b).map(c=>{const target=other.find(x=>x.pos===c.pos)||other.slice().sort((u,v)=>((u.pos-c.pos+3)%3)-((v.pos-c.pos+3)%3))[0];return anchor===1?[c,target]:[target,c]})
+}
+export function resolveWall(teamA,teamB,movesA,movesB,rng=seeded(1)){
+ const results=[];for(const [a,b] of pairings(teamA,teamB)){
+  if(a.dead||b.dead)continue;
+  results.push(resolveClash(a,b,movesA[a.pos],movesB[b.pos],rng()));
+ }
+ return results
+}
+export function assertInvariants(team){for(const f of team){if(f.hp<0||f.hp>f.maxHp||f.q<0||f.q>100||Boolean(f.dead)!==(f.hp===0))throw Error('bad fighter state')}}
