@@ -87,6 +87,7 @@ test('JRPG single-target action parity with legacy targetOutcome (12 cases)',asy
  const original=readFileSync(new URL('../arena-live-3x3/team-core.js',import.meta.url),'utf8');
  const ctx=vm.createContext({Math,JSON,URLSearchParams});
  vm.runInContext(original.slice(original.indexOf('var R=['),original.indexOf('var sharedArenaEngine=')),ctx);
+ vm.runInContext(readFileSync(new URL('./fixtures/arena-legacy-jrpg.js',import.meta.url),'utf8'),ctx);
  for(const move of ['attack','maneuver','special'])
  for(const enemyMove of ['attack','defend','maneuver','special']){
   const oldA=ctx.clone(ctx.C('f'),0),oldB=ctx.clone(ctx.C('b'),0);
