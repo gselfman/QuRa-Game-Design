@@ -1,113 +1,107 @@
-# QuRa Reward Tables v1
+# QuRa — таблицы наград v1
 
-**Статус:** reward framework + initial hypotheses  
+**Статус:** награда framework + initial hypotheses  
 **Важно:** все числовые вероятности/amounts, если не помечены LOCKED, требуют Economy validation.
 
-## 0. Reward principles
+## 0. Принципы наград
 
 - server-authoritative;
 - auditable;
-- no silent loss;
+- нельзя незаметно терять награду;
 - feature-gated;
 - progression-aware;
 - anti-arbitrage.
 
-## 1. Reward types
+## 1. Типы наград
 
 - XP
 - GE
 - Tickets
-- Gear
-- Buff
+- Экипировка
+- баф
 - Chest
 - Egg/Chicken
 - Cosmetic
 - Achievement/Medal
 
-## 2. Level-up reward
+## 2. Level-up награда
 
-Every level is reward moment.
+Каждый уровень сопровождается наградой.
 
-Possible payload:
-- chest;
+Возможный состав награды:
+- сундук;
 - GE;
 - ticket;
-- gear;
+- экипировка;
 - buff;
-- special egg;
+- особое яйцо;
 - cosmetic.
 
-Exact per-level table OPEN until XP curve is locked.
+Таблица наград по уровням открыта до утверждения кривой XP.
 
-## 3. Chest rarity hypothesis
+## 3. Chest редкость hypothesis
 
-Starting model:
+Начальная модель:
 - Common ~60%
 - Rare ~28%
 - Epic ~9%
 - Legendary ~2.5%
 - Artifact ~0.5%
 
-For paid chest probabilities shown before purchase.
+Шансы платного сундука показываются до покупки.
 
-## 4. Chest tiers
+## 4. Виды сундуков
 
-### Basic Chest
-Sources:
-- daily/quest/early progression
+### Обычный сундук
+Источники:
+- ежедневный/quest/early progression
 
 Focus:
-- Common/Rare gear
-- common buffs
+- Common/Rare экипировка
+- common бафы
 - small GE
 - tickets
 
-### Advanced Chest
-Sources:
-- weekly/mid progression
-- paid option possible
+### Улучшенный сундук
+Источники:
+- недельный/mid progression
+- возможна платная версия
 
 Focus:
 - Rare/Epic
-- stronger buffs
+- stronger бафы
 - meaningful GE chance
 
-### Arena Chest
-Sources:
-- season/Arena milestones
+### Сезонный сундук Arena — FUTURE
 
-Focus:
-- Arena gear
-- tactical buffs
-- cosmetics
-- limited GE
+Это **отдельный сезонный сундук**, не приз победителя текущего арендного боя. Он может содержать сезонные украшения, расходники, специальные трофеи; конкретные шансы, правила продажи и любые выплаты GE — OPEN до отдельной экономики. **Arena-сундук победителя** имеет строгое содержание по §11: три ячейки, без прямого GE-приза и без дорогих продаваемых предметов.
 
-### Legendary Chest
-Rare source / expensive
-Requires pity.
+### Легендарный сундук
+Редкий источник получения / высокая цена
+Нужна гарантия выпадения по счётчику.
 
-## 5. Progression pools
+## 5. Пулы по прогрессу
 
-Player reward pool filtered by:
-- chicken/gear level access;
-- owned features;
+Player награда pool filtered by:
+- chicken/экипировка уровень access;
+- доступные игроку функции;
 - inventory;
-- content availability.
+- доступность контента.
 
-Avoid stream of unusable L20 gear to L4 player.
+Avoid stream of unusable L20 экипировка to L4 player.
 
-Small aspirational preview allowed if overflow/equip rules clear.
+Можно показывать желаемый предмет выше текущего уровня, если понятны правила хранения и экипировки.
 
 ## 6. Pity
 
-Paid/high-value chest families need:
-- pity counter;
+Для платных и дорогих сундуков необходимо:
+- счётчик гарантии;
 - threshold;
-- guaranteed minimum rarity;
-- reset rule;
-- visible or documented behavior.
+- guaranteed minimum редкость;
+- правило сброса;
+- понятное или раскрытое в правилах поведение.
 
-Exact thresholds OPEN.
+Точные пороги OPEN.
 
 ## 7. Дубли — утверждённая механика
 
@@ -116,213 +110,213 @@ Exact thresholds OPEN.
 
 ## 8. Overflow
 
-If capacity full:
-- reward entitlement recorded;
-- OverflowPackage created;
-- user can resolve;
-- expiry policy shown.
+Если вместимость заполнена:
+- награда entitlement recorded;
+- создаётся пакет временного хранения;
+- игрок может выбрать способ устранения переполнения;
+- срок хранения явно показан.
 
 Chicken/egg overflow uses «В гостях» flow.
 
-## 9. Mini-game rewards
+## 9. Мини-игра награды
 
-Each game has separate table.
+Для каждой игры предусмотрена отдельная таблица.
 
-Table fields:
+Поля таблицы:
 - score/milestone
-- reward
-- probability if random
-- daily cap
-- global budget
+- награда
+- вероятность, если награда случайна
+- ежедневный лимит
+- общий бюджет
 - source_type
 
-GE paid retry:
-expected convertible reward value < price unless subsidized/capped.
+Платный повтор за GE:
+ожидаемая конвертируемая стоимость награды ниже цены, если нет явного бюджета субсидирования или жёсткого лимита.
 
-## 10. Wolf game
+## 10. Игра «Волк ловит яйца»
 
-Specific current reward matrix remains in mini-game-specific documentation/prototype.
+Действующая матрица наград остаётся в документации конкретной мини-игры.
 
-Reward Tables references it rather than inventing new values.
+Таблицы наград отсылают к отдельной матрице мини-игры, не создавая новые значения.
 
 ## 11. Arena-сундук победителя — D-02a
 
-В платном бою с другом и асинхронной атаке победитель получает **один Arena-сундук** без гарантированного GE. Бой с ботом и тренировочный бой с другом — без сундука.
+В платном бою с другом и асинхронной атаке победитель получает **один Arena-сундук** без гарантированного GE. Бесплатный тренировочный бой с ботом и тренировочный бой с другом — без сундука. **Fallback-бот в платной асинхронной Arena** получает только уменьшенную ячейку «Опыт» с дневным XP cap; это PROTOTYPE BALANCE по Arena Spec §35.
 
 | Ячейка | Награда | Продажа | GE-ценность |
 |---|---|---|---|
 | 1. Трофей — всегда | расходник/малый предмет из Arena-пула, цена магазина 20–50 GE | 25% | средняя 7,5; максимум 12,5 |
-| 2. Опыт — всегда | XP главной курочке (с cap), Боевой дух, сезон/achievement | нет | 0 |
+| 2. Опыт — всегда | XP главной курочке (`arena_chest_xp_daily_cap`, OPEN: серверный дневной cap), Боевой дух, сезон/achievement | нет | 0 |
 | 3. Редкость — очень редко | эксклюзивные рамка, баннер, герб, скин, эмоция, FX | нет | 0 |
 
 **PROTOTYPE BALANCE** распределения ячейки 1: цена магазина 20 GE — 40%; 30 GE — 30%; 40 GE — 20%; 50 GE — 10%. **Средний выкуп:** 0,4×5 + 0,3×7,5 + 0,2×10 + 0,1×12,5 = **7,5 GE**. Эксклюзивная косметика: шанс **1–2% PROTOTYPE BALANCE**, при дубле даётся усиленный сезонный прогресс, не GE. Только предметы ценой ≤5×аренды; дорогие магазинные предметы исключены. В продаже Arena-сундук как способ покупки дорогой экипировки не используется.
 
-Для прозрачности: редкая косметика может иметь высокую коллекционную ценность, но её нельзя продать, передать или обменять на GE. XP из арендного сундука имеет дневной кап, чтобы не обходить запрет прямой покупки XP.
+Для прозрачности: редкая косметика может иметь высокую коллекционную ценность, но её нельзя продать, передать или обменять на GE. XP из арендного сундука ограничен конфигурацией `arena_chest_xp_daily_cap` (величина OPEN) и имеет дневной кап, чтобы не обходить запрет прямой покупки XP.
 
 
-## 12. Friendly rewards
+## 12. Friendly награды
 
-No standard repeatable Arena payout/Glory.
+Нет стандартной повторяемой выдачи GE или Славы в бесплатном дружеском бою.
 
-Quest can grant one limited social reward.
+Задание может выдавать ограниченную разовую социальную награду.
 
-## 13. Training rewards
+## 13. Training награды
 
-No standard Glory.
+Слава в тренировке не начисляется.
 
-Can give capped tutorial/quest reward.
+Допускается ограниченная обучающая награда за задание.
 
-## 14. Quest reward bands
+## 14. Quest награда bands
 
-No exact amounts yet.
+Точные значения ещё не утверждены.
 
-### Easy daily
+### Easy ежедневный
 - small XP
-- optional small GE/ticket
+- необязательная небольшая награда GE/билет
 
-### Medium daily
+### Medium ежедневный
 - medium XP
-- buff/basic chest
+- buff/basic сундук
 
 ### Weekly
 - larger XP
-- chest
-- GE under budget
-- higher-tier buff
+- сундук
+- GE в пределах бюджета
+- баф более высокой редкости
 
 ### Achievement
 - milestone-specific
-- cosmetic/item/chest/GE depending rarity
+- косметика, предмет, сундук или GE в зависимости от редкости
 
-## 15. Buff reward pools
+## 15. баф награда pools
 
-Common pool:
-- Second Wind
-- Stone Skin
+Обычный пул:
+- «Второе дыхание»
+- «Каменная кожа»
 - Adrenaline
 - Charge
 
 Rare:
-- Battle Dome
-- Battle Cry
-- Shield Breaker
-- Clear Mind
+- «Боевой купол»
+- «Боевой клич»
+- Щит Breaker
+- «Чистая голова»
 
 Epic:
-- Double Power
+- «Двойная сила»
 - Silence
 - Swap/Reform
 - Mirror
 
-Legendary candidate:
+Кандидаты в Legendary:
 - Phoenix
-- Special Echo
-- powerful conditional effects
+- Особый приём Echo
+- сильные условные эффекты
 
-Final rarity by simulation.
+Final редкость by simulation.
 
-## 16. Gear reward pool rules
+## 16. Экипировка награда pool rules
 
 Weight by:
-- level;
-- rarity;
-- native archetype opportunities;
-- duplicate rate;
-- owned set completion.
+- уровень;
+- редкость;
+- совместимость с родным типом;
+- частота дублей;
+- степень комплектации уже начатых комплектов.
 
-Optional smart-drop:
-slightly improve chance of useful item without guaranteeing set completion.
+Дополнительный «полезный» дроп:
+немного повышать шанс подходящего предмета, не гарантируя готовый комплект.
 
-## 17. Egg/Chicken rewards
+## 17. Egg/Chicken награды
 
 Can be:
-- known archetype egg;
-- mystery egg;
-- special/seasonal egg.
+- яйцо известной основательницы;
+- загадочное яйцо;
+- особое или сезонное яйцо.
 
-Always enters as L1.
+Всегда поступает как яйцо L1.
 
-Never spawn adult directly unless special documented reward.
+Never spawn adult directly unless special documented награда.
 
-## 18. Ticket rewards
+## 18. Ticket награды
 
-Ticket grant must respect stock cap or define overflow conversion/pending claim.
+Начисление билетов учитывает лимит запасов и правило временного хранения переполнения.
 
 Default:
-do not silently discard earned ticket; use reward pending if cap full or explicitly documented cap behavior.
+Нельзя незаметно удалять заработанный билет при заполнении запаса; используйте отложенное получение или явно описанное правило ограничения.
 
-## 19. GE rewards
+## 19. GE награды
 
-Every GE reward:
+Every GE награда:
 - amount
 - source_type
-- budget bucket
-- ledger record
-- cap context
+- бюджетная статья
+- запись в реестре начислений
+- лимит context
 
-## 20. Reward correlation
+## 20. Идентификатор награды
 
-Use correlation_id to enforce exactly-once reward delivery.
+Use correlation_id to enforce exactly-once награда delivery.
 
-## 21. Random roll
+## 21. Случайный выбор награды
 
 Server:
-- chooses table version;
+- выбирает версию таблицы;
 - RNG;
-- stores result;
-- updates pity;
+- сохраняет результат;
+- обновляет счётчик гарантии;
 - grants.
 
-Client only animates.
+Клиент только воспроизводит анимацию.
 
-## 22. Paid chest disclosure
+## 22. Раскрытие шансов платного сундука
 
 Show:
 - price;
-- probability by relevant rarity/reward class;
-- pity if user-facing policy;
-- duplicate possibility.
+- probability by relevant редкость/награда class;
+- pity, если политика показывается игроку;
+- возможность дубля.
 
-## 23. Reward table versioning
+## 23. Версионирование таблиц наград
 
-Any probability/amount change:
-- new version;
-- effective time;
-- preserve historical audit.
+Изменение любой вероятности или размера награды:
+- новая версия;
+- время вступления в силу;
+- сохранить историю начислений.
 
 ## 24. Compensation
 
-Operational compensation uses separate source:
+Operational compensation uses separate источник:
 COMPENSATION
 
-Must not disguise compensation as random reward.
+Must not disguise compensation as random награда.
 
-## 25. Reward analytics
+## 25. Аналитика наград
 
 Track:
 - table/version
-- expected value
-- realized value
-- rarity
+- ожидаемая стоимость
+- реальная полученная стоимость
+- редкость
 - duplicates
-- pity state
-- source
+- состояние счётчика гарантии
+- источник
 - claim/overflow
 - GE cost vs value
 
-## 26. Production tables still to calibrate
+## 26. Таблицы, требующие калибровки
 
-- XP per quest
-- XP level-up
-- GE daily/weekly
-- chest rates by tier
-- pity thresholds
-- season rewards
-- passive laying
-- item/buff drop weights
+- XP за задание
+- XP уровень-up
+- GE ежедневный/недельный
+- сундук rates by tier
+- пороги гарантии
+- season награды
+- пассивная яйценоскость
+- веса выпадения предметов и бафов
 
-These are configuration tables, not missing mechanics.
+Это таблицы конфигурации, а не недостающие механики.
 
-## 27. Season Pass / monetization rewards
+## 27. Season Pass / monetization награды
 
-Approved direction: Season Pass has free and premium tracks; late premium purchase claims previously unlocked milestones. Every reward is a versioned entitlement. Paid chest must display odds pre-purchase; pity per chest family, disclosed threshold, duplicate compensation and server-side roll. Golden Piggy Bank offers a clearly stated **guaranteed** award at purchase (not a deposit or already earned GE). Exact numerical reward tables, frequency, price and EV remain OPEN pending economy review; see **MONETIZATION_LIVEOPS_SPEC.md**.
+Approved direction: Season Pass has free and premium tracks; late premium purchase claims previously unlocked milestones. Every награда is a versioned entitlement. Paid сундук must display odds pre-purchase; pity per сундук family, disclosed threshold, duplicate compensation and server-side roll. Golden Piggy Bank offers a clearly stated **guaranteed** award at purchase (not a deposit or already earned GE). Exact numerical награда tables, frequency, price and EV remain OPEN pending economy review; see **MONETIZATION_LIVEOPS_SPEC.md**.

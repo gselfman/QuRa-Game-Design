@@ -1,8 +1,8 @@
-# QuRa Quest Catalog v1
+# QuRa — каталог заданий v1
 
 **Статус:** системный каталог типов заданий, триггеров и шаблонов
 
-## 0. Scope types
+## 0. Виды охвата задания
 
 - ACCOUNT_ONCE
 - CHICKEN_ONCE
@@ -15,100 +15,80 @@
 Задание существует только если:
 - связанная функция включена feature flag;
 - событие можно серверно подтвердить;
-- reward budget разрешён.
+- награда budget разрешён.
 
 Нельзя создавать quest на выключенную функцию.
 
-## 2. ACCOUNT_ONCE
+## 2. ACCOUNT_ONCE — задания один раз на аккаунт
 
-Цель:
-onboarding QuRa один раз на аккаунт.
+Вводные шаги обучения QuRa выполняются один раз: профиль, PWA, Telegram, первая подтверждённая полезная операция, первый сундук и Arena. **Обязательное задание стартовой Arena:** «Настрой защиту курочки» — сохраняется только после явного выбора/подтверждения `ArenaDefenseSetup`. Награда — небольшой XP/сувенир (**PROTOTYPE BALANCE**, точное значение OPEN), GE не требуются. При изменении защитной политики задание не повторяется. Проверять на сервере по `ACCOUNT_ONCE`.
 
-Examples:
-- заполнить профиль;
-- включить уведомления;
-- установить PWA;
-- подключить Telegram;
-- первое пополнение;
-- первая QR-оплата;
-- первый доступный сервис;
-- первая mini-game;
-- открыть Курятник;
-- первый аксессуар;
-- первый друг/referral;
-- первый Friendly Battle.
-
-Reward:
-- XP main chicken;
-- small fixed reward;
-- tutorial item/buff.
-
-Never repeats for new chicken.
+---
 
 ## 3. CHICKEN_ONCE
 
-Per instance.
+Для каждого экземпляра отдельно.
 
-Examples:
+Примеры:
 - дать личное имя;
 - впервые экипировать;
 - впервые собрать native threshold;
 - впервые выиграть этой курочкой;
-- впервые использовать Maneuver;
-- впервые применить Special;
+- впервые использовать Манёвр;
+- впервые применить Особый приём;
 - впервые сработал Gift;
-- reach level milestone;
+- reach уровень milestone;
 - participate in 1×1;
-- L15 embodiment eligibility.
+- доступность воплощения на L15.
 
 ## 4. DAILY_ACCOUNT
 
-One daily pool per account.
+Один набор ежедневных заданий на аккаунт.
 
-Example templates:
+Примеры шаблонов:
 - выполнить N полезных действий;
 - сыграть 1 mini-game;
 - закончить 1 quest;
 - открыть/проверить Курятник;
-- сыграть Arena if feature active;
-- использовать buff if inventory available;
+- сыграть в Arena, если она доступна;
+- применить баф, если он есть в инвентаре;
 - экипировать/осмотреть item;
-- collect passive output if enabled.
+- собрать пассивную награду, если функция включена.
 
 Avoid:
-- forcing paid financial transaction;
-- requiring unavailable resource;
-- repetitive spam.
+- принуждение к платной финансовой операции;
+- требование недоступного ресурса;
+- повторяющийся спам.
 
 ## 5. WEEKLY_ACCOUNT
 
-Examples:
-- complete N daily quests;
-- win N Arena matches;
-- play N distinct mini-games;
-- earn XP across several days;
-- use 3 different chicken archetypes;
-- collect/open N chests;
-- participate in social/Friendly once.
+Примеры:
+- complete N ежедневный quests;
+- победить в N боях Arena;
+- сыграть в N разных мини-игр;
+- получать XP на протяжении нескольких дней;
+- использовать курочек трёх разных типов;
+- collect/open N сундуки;
+- один раз поучаствовать в дружеском матче.
 
 ## 6. ACHIEVEMENT_ACCOUNT
 
 Long-term:
-- first 3 adult chickens;
-- full founder collection;
+- первые три взрослые курочки;
+- полная коллекция основательниц;
 - L20 chicken;
 - L15 embodiment;
-- N Arena wins;
-- comeback 1×3;
-- win with 1 HP;
-- win using each archetype;
-- collect set;
-- max Coop tier;
+- N побед в Arena;
+- возвращение в бой 1×3;
+- победить с 1 HP;
+- победить каждым архетипом;
+- собрать комплект;
+- максимальный уровень Курятника;
 - Hall of Fame;
-- legendary item;
-- seasonal medals.
+- легендарный предмет;
+- сезонные медали.
 
-## 7. Quest trigger taxonomy
+## 7. Типы триггеров заданий
 
 - PROFILE_UPDATED
 - FEATURE_CONNECTED
@@ -129,7 +109,11 @@ Long-term:
 - PASSIVE_COLLECTED
 - EVENT_RESOLVED
 
-## 8. Progress models
+## 7.1. Дополнительные подтверждённые события
+
+`FEED_TRIGGERED` — выполнить квалифицирующую полезную операцию QuRa (XP/GE и корм независимы), `NEW_SERVICE_DISCOVERED` — впервые воспользоваться включённым сервисом, `CLAN_GOAL_CONTRIBUTED` — вклад с caps, `COMMUNITY_GOAL_CONTRIBUTED` — общий прогресс, `DAILY_EVENT_CHOICE` — выбрать один из двух вариантов. Задания не должны принуждать к финансовому расходу. Корм не является отдельной валютой. Все triggers строго feature-gated и idempotent.
+
+## 8. Модели прогресса
 
 - BOOLEAN
 - COUNTER
@@ -138,179 +122,178 @@ Long-term:
 - STREAK
 - THRESHOLD
 
-## 9. Reward types
+## 9. Типы наград
 
 - XP
 - GE
 - ticket
-- chest
-- gear
+- сундук
+- экипировка
 - buff
 - egg/chicken
 - cosmetic
-- achievement badge
+- значок достижения
 
 ## 10. XP targeting
 
-Account quest XP goes to main chicken at actual completion time.
+XP за задание аккаунта получает главная курочка в момент фактического завершения.
 
-Claim button does not allow changing target after completion.
+Нажатие «Забрать» не меняет получателя XP задним числом.
 
-CHICKEN_ONCE XP can target that specific chicken if quest definition explicitly says so; otherwise follow main-chicken rule.
+XP за задание CHICKEN_ONCE может получить конкретная курочка, если это указано в настройках; иначе действует правило главной.
 
-## 11. Daily generation
+## 11. Формирование ежедневных заданий
 
-Server picks from eligible pool based on:
-- feature flags;
-- player progression;
+Сервер выбирает из доступного пула, учитывая:
+- флаги доступных функций;
+- прогресс игрока;
 - inventory/state;
-- recent quest history;
-- repetition cooldown.
+- история недавних заданий;
+- repetition задержка повторного применения.
 
-Do not offer impossible task.
+Нельзя предлагать невыполнимое задание.
 
-## 12. Weekly generation
+## 12. Формирование еженедельных заданий
 
-Similar but broader.
+Аналогичные правила, но более широкая цель.
 
-Must avoid dependence on rare RNG:
+Нельзя ставить цель в зависимость от крайне редкой случайной награды:
 bad:
-> get Legendary chest item this week.
+> получить легендарный предмет из сундука на этой неделе.
 
 Good:
-> open 5 chests.
+> open 5 сундуки.
 
-## 13. Difficulty bands
+## 13. Уровни сложности
 
-- Easy: one action
-- Medium: several actions
-- Long: weekly/milestone
+- Лёгкое: одно действие
+- Среднее: несколько действий
+- Long: недельный/milestone
 
-Reward scales by effort and budget.
+Награда зависит от усилия и допустимого бюджета.
 
-## 14. Example daily set
+## 14. Example ежедневный set
 
-For adult player with Arena enabled:
-1. Play one mini-game.
-2. Complete 2 useful actions in QuRa.
-3. Play one Arena match.
-4. Visit Coop and collect/inspect.
-5. Optional bonus: use a different chicken than yesterday.
+Для игрока со взрослой курочкой и открытой Arena:
+1. Сыграть в одну мини-игру.
+2. Выполнить два полезных действия QuRa.
+3. Сыграть один бой Arena.
+4. Посетить Курятник и собрать/проверить награды.
+5. Необязательный бонус: использовать курочку другого типа, чем вчера.
 
-Exact reward numbers in Reward Tables/Economy.
+Точные значения наград — в Reward Tables и Economy.
 
-## 15. Arena quests
+## 15. Задания Arena
 
 Allowed:
 - play;
 - win;
-- use Maneuver;
-- use Special;
-- comeback;
-- Friendly social.
+- use Манёвр;
+- use Особый приём;
+- возвращение в бой;
+- социальный дружеский бой.
 
-Do not incentivize:
-- intentional losing;
+Не следует поощрять:
+- намеренный проигрыш;
 - stalling;
-- farming same friend;
-- spending tactical service every match.
+- фарм с одним и тем же другом;
+- обязательная покупка тактической услуги в каждом бою.
 
-## 16. Friendly anti-farm
+## 16. Защита дружеских боёв от фарма
 
-Quest "play with friend":
-- reward once per period;
-- same friend repeated does not farm reward.
+Задание «Сыграть с другом»:
+- награда once per period;
+- same friend repeated does not farm награда.
 
-## 17. Financial action quests
+## 17. Задания на финансовые действия
 
-Only use confirmed backend events.
+Учитывать только подтверждённые сервером события.
 
 Never:
-- reward pending payment;
-- require harmful/excessive spending;
-- hide fee/financial terms behind game reward.
+- награда pending payment;
+- требовать вредных или чрезмерных трат;
+- hide fee/financial terms behind game награда.
 
-## 18. Personal naming quest
+## 18. Задание на имя курочки
 
 CHICKEN_ONCE:
 **«Дай имя новой курочке»**
 
-Can reward small XP/cosmetic.
+Can награда small XP/cosmetic.
 
-If user keeps default system name, quest may count as completed through explicit confirm.
+Если игрок сохраняет имя по умолчанию, подтверждение тоже засчитывает задание.
 
-## 19. Feature gates
+## 19. Доступность функций
 
-Quest definition has feature_gate.
+Определение задания содержит ограничитель доступности функции.
 
 If false:
-- not generated;
-- not shown;
-- not counted.
+- не создаётся;
+- не показывается;
+- не засчитывается.
 
 ## 20. Expiration
 
 Daily:
-period day.
+период — сутки.
 
 Weekly:
-period week.
+период — неделя.
 
-Completed but unclaimed policy should be explicit:
-recommended auto-deliver or grace period to avoid loss.
+Правило получения выполненных, но не забранных наград должно быть явным:
+рекомендуется автоматическая доставка или резервный срок, чтобы награда не терялась.
 
-## 21. Claim philosophy
+## 21. Принцип выдачи наград
 
 Prefer:
-- completion immediately records reward entitlement;
-- claim animation is UX, not economic source of truth.
+- completion immediately records награда entitlement;
+- claim animation is UX, not economic источник of truth.
 
-Avoid losing earned reward because user forgot tap.
+Уже заработанная награда не должна исчезать, если пользователь не нажал кнопку.
 
-## 22. Quest analytics
+## 22. Аналитика заданий
 
 Track:
 - offered;
 - started;
 - completed;
 - claimed;
-- rerolled if feature exists;
+- заменено на новое, если такая функция включена;
 - time to complete;
 - abandoned;
-- reward cost.
+- награда cost.
 
-## 23. Quest authoring template
+## 23. Шаблон задания
 
 - code
 - scope
 - title
 - description
 - trigger
-- progress model
+- модель прогресса
 - target
 - eligibility
-- feature gate
+- ограничитель доступности
 - period
-- reward
-- cooldown
-- analytics tags
+- награда
+- задержка повторного применения
+- метки аналитики
 
-## 24. Content rules
+## 24. Правила контента
 
-- understandable without hidden docs;
-- one primary verb;
-- avoid ambiguous progress;
-- show progress numerically;
-- show reward before completion;
+- понятно без дополнительной документации;
+- один главный глагол действия;
+- избегать неоднозначного прогресса;
+- показывать прогресс числами;
+- show награда before completion;
 - localized.
 
 ## 25. Future
 
 Possible:
-- quest reroll;
-- character quest chains;
-- seasonal missions;
-- co-op/social missions.
+- перевыбор задания;
+- цепочки личных заданий курочки;
+- сезонные задания;
+- совместные и социальные задания.
 
-All require economy review.
-
+Каждая из этих функций требует проверки экономики.
