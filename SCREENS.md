@@ -1,114 +1,114 @@
-# QuRa Game Screens v1
+# QuRa — реестр экранов v1
 
 **Статус:** полный inventory основных игровых экранов и flows
 
 ## 0. UX principles
 
 - mobile-first;
-- financial actions remain serious/clear;
-- game surfaces do not obscure money status;
-- state/reward always explicit;
-- no hidden irreversible loss;
-- feature flags remove unavailable flows.
+- финансовые действия остаются понятными и серьёзными;
+- игровые экраны не скрывают состояние денежных операций;
+- состояние и награда всегда понятны;
+- нельзя допускать скрытой необратимой потери;
+- флаги функций скрывают недоступные сценарии.
 
-## 1. Game Home / Coop entry
+## 1. Главная игры / переход в Курятник
 
 Shows:
-- main chicken Type+Name;
+- главная курочка: тип и личное имя;
 - level/XP;
-- quick Coolness;
+- краткая информация о Крутости;
 - GE;
 - tickets;
-- active event;
-- quests summary;
-- Coop entry;
-- Arena entry;
+- активное событие;
+- сводка заданий;
+- вход в Курятник;
+- вход в Arena;
 - mini-games.
 
-## 2. Chicken Card
+## 2. Карточка курочки
 
 Shows:
 - type/title;
-- personal name;
+- личное имя;
 - rename;
 - lifecycle/level;
 - XP;
 - Gift;
 - Coolness;
 - gear;
-- Arena stats;
+- боевые характеристики Arena;
 - Maneuver/Special;
-- native set progress;
-- legacy info.
+- прогресс родного комплекта;
+- информация о наследовании.
 
-## 3. Rename Chicken
+## 3. Переименование курочки
 
 Fields:
-- current full identity;
-- personal name input;
+- полная идентичность курочки;
+- поле ввода личного имени;
 - validation/moderation;
-- preview Type + Name;
+- предпросмотр «Тип Имя»;
 - confirm.
 
 ## 4. Coop
 
-Shows residents:
+Показывает жителей:
 - eggs/chicks/adults;
-- main indicator;
+- признак главной курочки;
 - capacity;
 - Coolness;
-- passive production;
-- Daily Event;
+- пассивное производство;
+- Событие дня;
 - upgrade.
 
-## 5. Coop Upgrade
+## 5. Улучшение Курятника
 
-- current tier/capacity
-- next tier
+- текущий уровень Курятника и вместимость
+- следующий уровень Курятника
 - requirements
 - GE price
 - benefits
 - confirm
-- insufficient state
+- состояние «недостаточно ресурсов»
 
-## 6. Overflow / Guest Chicken
+## 6. Переполнение / курочка «В гостях»
 
-When reward exceeds capacity:
-- reward preview
-- countdown if applicable
-- expand Coop
-- free place
-- resolve later
-- decline with double confirmation if allowed
+Если награда не помещается:
+- предпросмотр награды
+- обратный отсчёт при необходимости
+- расширить Курятник
+- освободить место
+- решить позднее
+- отказ с двойным подтверждением, если разрешён
 
-## 7. Path / QuRa Journey
+## 7. Путь QuRa
 
-Account-level onboarding chapters.
+Главы знакомства с QuRa на уровне аккаунта.
 
 - steps
 - progress
-- feature-gated tasks
+- задания только для доступных функций
 - rewards
 
-## 8. Chicken Journey
+## 8. Личный путь курочки
 
-Per chicken:
-- level milestones
+Для каждой курочки:
+- вехи уровней
 - CHICKEN_ONCE
-- gear/Arena/Gift tasks
-- legacy milestone
+- задания на предметы, Arena и Дар
+- веха наследования
 
-## 9. Daily Quests
+## 9. Ежедневные задания
 
-- quest cards
+- карточки заданий
 - progress
 - reward
 - expiration
-- completion state
+- состояние выполнения
 
-## 10. Weekly Quests
+## 10. Еженедельные задания
 
-Similar with weekly summary.
+Аналогично, с недельной сводкой.
 
 ## 11. Achievements
 
@@ -118,108 +118,116 @@ Similar with weekly summary.
 - badges
 - rewards
 
-## 12. Reward Claim
+## 12. Получение награды
 
 - animation
-- reward payload
+- содержимое награды
 - source
-- inventory/overflow result
+- результат доставки в инвентарь или временное хранение
 
-Economic entitlement exists server-side before animation.
+Право на награду регистрируется сервером до анимации.
 
-## 13. Chest Inventory
+## 13. Инвентарь сундуков
 
-- chest types
+- виды сундуков
 - count
 - source
-- open button
+- кнопка открытия
 
-## 14. Chest Open
+## 14. Открытие сундука
 
-- probabilities for paid chest
-- opening animation
+- вероятности выпадения для платного сундука
+- анимация открытия
 - result
-- pity state if shown
-- duplicate/overflow resolution
+- состояние pity, если показывается
+- разрешение ситуации с дублем или переполнением
 
-## 15. Gear Shop
+## 15. Магазин экипировки
 
-- filters level/category/rarity
+- фильтры уровня, категории и редкости
 - usable/locked
-- dim future items
+- будущие предметы показаны затемнёнными
 - GE price
-- Coolness/combat stats
-- native tag
-- set tag
+- Крутость и боевые характеристики
+- отметка родного типа
+- отметка комплекта
 
-## 16. Gear Item Detail
+### Покупка дополнительного яйца
+
+Тип: известная основательница либо загадочное яйцо с раскрытием шансов. Цена GE, нехватка и варианты **«Заработать GE / Купить GE / Продолжить копить»**. При переполнении — «В гостях»; экземпляр всегда начинается L1.
+
+## 16. Карточка предмета экипировки
 
 - visual
 - level
 - rarity
 - Coolness
 - HP/ATK/DEF/SPD
-- advanced effects
-- exact engine meaning
-- native synergy
-- set bonuses
+- специальные эффекты
+- точное механическое значение
+- родная синергия
+- бонусы комплекта
 - buy/equip
 
 ## 17. Wardrobe
 
-- selected chicken
+- выбранная курочка
 - slots
 - equipped
 - inventory
 - compare
-- resulting stats/BP/Coolness
+- итоговые характеристики, BP и Крутость
 
 ## 18. Try-on
 
-Visual preview of item/combination.
+Предпросмотр предмета или сочетания в гардеробе.
 
-## 19. Treasure Chest Inventory Capacity
+## 19. Treasure Инвентарь сундуков Capacity
 
 - used/capacity
-- upgrade/trade-in if implemented
-- overflow packages
+- улучшить или сдать предмет, если функция реализована
+- пакеты временного хранения
 
-## 20. Mini-game Hub
+## 20. Мини-игра Hub
 
 - games
-- ticket stock
-- reward eligibility
-- daily limits
-- paid retry info
+- запас билетов
+- доступность наград
+- дневные лимиты
+- условия платного повтора
 
-## 21. Mini-game Result
+## 21. Мини-игра Result
 
 - score
 - reward
 - milestone
-- daily cap
-- retry ticket/GE
+- дневное ограничение
+- повтор за билет/GE
 
-## 22. Daily Event / News
+## 22. Событие дня / Новости Курятника
 
-- global story
-- personal outcome
-- Gift/counter explanation
-- modifier duration
+- общая история
+- личный исход
+- объяснение влияния Дара и защиты
+- длительность модификатора
+
+### Кормление, кланы и общая цель — дополнительные экраны
+
+**Платежи как корм:** после подтверждённой операции — ненавязчивая анимация «Корм доставлен», тип корма, эффект и срок; на курочке FED/HAPPY, без красного голода. **Кланы-фермы:** создать/найти/вступить, приветствие для реферала без авто-вступления, список участников и ролей, общие цели/наградная вкладка/рейтинг, клан токен-проекта. **Community:** прогресс-бар N кормлений, силуэт седьмой, вехи, вклад. **Событие дня:** два понятных выбора, кнопка «Решить», анимированная развязка до 10 секунд и Lucky Flip; по окончании московских суток default без дополнительного штрафа. **Arena Home:** locked 2×2/3×3; four-player Future.
 
 ## 23. Friends
 
-- referral friends
-- public cards
+- друзья из партнёрской программы
+- публичные карточки
 - visit
 - challenge
 
-## 24. Friend Chicken/Coop View
+## 24. Просмотр курочки/Курятника друга
 
-Privacy-limited:
-- public identity
+С учётом ограничений приватности:
+- публичная информация о персонаже
 - Coolness
-- allowed collection
+- разрешённая к просмотру коллекция
 - challenge
 
 ## 25. Главная Arena (старт)
@@ -227,118 +235,118 @@ Privacy-limited:
 Доступны: **1×1 с другом**, **бот-тренировка**, **асинхронный вызов защитной тактики**. Заблокированные превью 2×2 и 3×3: показывают прогресс (например 2/3 взрослых, 2/4 места), требования и кнопки «Получить курочку» / «Расширить Курятник». 4-player — Future, в стартовом UI не предлагать.
 
 
-## 26. Arena Enrollment
+## 26. Вступление в сезонную Arena (FUTURE)
 
-- season rules
-- ranked format
-- defense team
-- defensive strategy
+- правила сезона
+- рейтинговый формат
+- защитная команда
+- защитная стратегия
 - confirm
 
-## 27. Arena Matchmaking
+## 27. Подбор соперника Arena
 
 - format
 - BP range
 - searching
-- cancel before lock
-- bot vs human indication
+- отмена до фиксации
+- отметка «человек» или «бот»
 
 ## 28. Вызов друга и аренда
 
 Перед оплатой показывать **10 GE аренды/игрок (PROTOTYPE BALANCE)**, приз победителю — сундук без гарантированного GE, лимит призовых матчей пары и возможность **бесплатной тренировки без награды**. Скрытых ставок и переводов GE нет.
 
 
-## 29. Arena Mode Selection
+## 29. Выбор режима Arena (командные режимы FUTURE)
 
 - Wall
 - JRPG
-- future formats
+- будущие форматы
 - descriptions
 
-## 30. Arena Crest Selection
+## 30. Выбор герба Arena
 
-- available crests
-- opponent occupied crest disabled
-- selected preview
+- доступные гербы
+- герб, занятый соперником, недоступен
+- предпросмотр выбора
 
-## 31. Arena Team Selection
+## 31. Выбор команды Arena (2×2/3×3 FUTURE)
 
 - roster
 - 3 slots
 - stats
-- personal names
-- lock team
-- opponent hidden until both ready
+- личные имена
+- зафиксировать команду
+- команда противника скрыта до готовности обеих сторон
 
-## 32. Arena Buff Loadout
+## 32. Боевой набор бафов
 
-- owned consumables
-- selected max slots
+- имеющиеся расходники
+- занятые и свободные слоты набора
 - rarity
-- activation condition
-- ranked legality
-- buy/source shortcuts if allowed
+- условие активации
+- допустимость в рейтинге
+- ссылки на покупку/получение, если разрешено
 
-## 33. Arena Battle
+## 33. Бой Arena (1×1 на старте, командные режимы FUTURE)
 
-Per own fighter:
+Для своего бойца:
 - crest + Type + Name
 - HP
 - Shield
 - charge
 - statuses
-- four actions
-- target picker in JRPG
-- collapsible action description
+- четыре действия
+- выбор цели в JRPG
+- сворачиваемое описание действия
 
 Opponent:
-- same visible public combat state
-- no hidden current action.
+- те же открытые боевые показатели
+- без раскрытия скрытого текущего хода.
 
 Controls:
 - Hint
 - All-Seeing
-- Autobattle when enabled
-- tactical buff activation
-- chat
-- timer
-- surrender if implemented
+- Автобой, когда включён
+- активация тактического бафа
+- чат
+- таймер
+- сдача, если она будет реализована
 
-## 34. Arena Action Explanation
+## 34. Описание действия Arena
 
 Spoiler:
 - narrative
-- exact effect
-- strong matchup
-- weak matchup
+- точный эффект
+- сильное взаимодействие
+- слабое взаимодействие
 
-## 35. All-Seeing Panel
+## 35. Панель Всевидящего
 
-For selected action:
-- opponent legal response
-- predicted winner
+Для выбранного действия:
+- допустимый ответ противника
+- прогноз победителя
 - HP after
 - death/double KO
 - effects
 
-Clearly says prediction, not revealed move.
+Явно сказано, что это прогноз, а не раскрытие чужого хода.
 
-## 36. Hint Panel
+## 36. Панель Подсказки
 
-Contextual advice based on actual board state.
+Контекстная подсказка по актуальному состоянию поля.
 
-## 37. Buff Activation Modal
+## 37. Окно применения бафа
 
 - buff
-- eligible target
+- доступная цель
 - condition
 - duration
-- consume confirm
+- подтверждение расходования
 
-## 38. Arena Chat
+## 38. Чат Arena
 
 2-player:
-- quick replies
+- быстрые ответы
 - emoji
 - text
 
@@ -348,19 +356,19 @@ tabs/recipient:
 - Team
 - Private
 
-## 39. Arena Round Result
+## 39. Итоги раунда Arena
 
-- team score
+- счёт команды
 - collisions
 - visuals
-- compact explanation
-- next round state
+- краткое объяснение
+- состояние следующего раунда
 
-## 40. Battle Chronicle
+## 40. Летопись боя
 
-- literary story
-- round accordion
-- Technical calculation spoiler
+- литературная история
+- раскрывающиеся разделы раундов
+- сворачиваемый блок технического расчёта
 - copy/share
 
 ## 41. Итоги боя
@@ -368,65 +376,73 @@ tabs/recipient:
 Победа: выдача **Arena-сундука**, предпросмотр трёх ячеек (трофей, опыт, шанс эксклюзивной косметики). Проигрыш: без сундука. Отмена до начала/ошибка платформы — возврат аренды; двойной KO — без сундука/возврата. Отдельно показать XP, Боевой дух и прогресс сезона; не показывать старый GE payout 15.
 
 
-## 42. Rematch Prompt
+## 42. Предложение реванша
 
 - proposal
 - Yes
 - No
-- same mode/team explanation
+- объяснение сохранения режима и команды
 
-## 43. Timeout / Gods Lightning
+## 43. Пропуск хода / Молния богов
 
 - countdown
-- warning thresholds
-- lightning animation
-- technical loss reason
-- Chronicle entry
+- пороги предупреждения
+- анимация молнии
+- причина технического поражения
+- запись в летописи
 
 ## 44. Reconnect
 
-- connection state
-- reconnect countdown/grace
-- action status
-- no duplicate submit
-- server incident handling
+- состояние соединения
+- время переподключения и льготный период
+- статус действия
+- отсутствие повторной фиксации одного хода
+- поведение при сбое сервера
 
-## 45. Async Arena Defense
+## 45. Асинхронная Arena: поиск и защита
 
-- defensive team
-- strategy
-- allowed Scout context
-- defense result log
+**Первое посещение:** экран «Настрой защиту» (взрослая курочка → экипировка → политика «Осторожная»/«Агрессивная»/«Хитрая» → «Сохранить»). Прогресс однократного задания «Настрой защиту курочки» показывается рядом.
 
-## 46. Training
+**Атака:** Arena Home → «Найти соперника» → подбор случайного защитника уровня ±2 (**PROTOTYPE BALANCE**) и близкого BP → расширение поиска при отсутствии → матч. Не давать выбор конкретного имени.
 
-- bot difficulty
-- free
-- no Glory
-- teaching tips
+**Если только бот:** явно обозначить «Бот» и **сокращённый приз — только опыт**, без продаваемого трофея и эксклюзивной косметики, ещё до принятия аренды. Кнопка «Отмена без оплаты».
 
-## 47. Glory / League
+**Моя защита:** текущая курочка, её экипировка и тактика, включить/приостановить участие, список атак, победы и поражения, XP/достижения, подробная летопись, Telegram/PWA уведомления. После фиксирования боя поздние правки защиты не меняют его snapshot.
 
-- current Glory
+
+### Настройка асинхронной защиты
+
+Выбор roster, позиций, Агрессивной/Осторожной/Хитрой тактики и объяснения вероятностного выбора; отдельный журнал защитных боёв, летопись, награды.
+
+## 46. Тренировка с ботом
+
+- сложность бота
+- бесплатно
+- без Славы
+- учебные советы
+
+## 47. Слава и лига (FUTURE)
+
+- текущая Слава
 - league
 - movement
-- season remaining
-- reward preview
+- до конца сезона
+- предпросмотр награды
 
-## 48. Leaderboard
+## 48. Таблица лидеров (FUTURE)
 
-- season ranking
-- top 3 medals
-- own position
+- место в сезонном рейтинге
+- медали трёх лидеров
+- собственная позиция
 
-## 49. Hall of Fame
+## 49. Зал славы (FUTURE)
 
-- seasons
-- champions
-- team snapshot
-- medals
+- сезоны
+- чемпионы
+- снимок команды
+- медали
 
-## 50. Buff Inventory
+## 50. Инвентарь бафов
 
 - Preparation
 - Tactical
@@ -434,30 +450,34 @@ tabs/recipient:
 - rarity
 - sources
 - effect
-- legal modes
+- разрешённые режимы
 
-## 51. Preparation Buff
+## 51. Баф подготовки
 
-- select
-- duration
-- active status
-- visibility rules
+- выбор
+- длительность
+- активный статус
+- правила видимости
 
-## 52. Legacy / L15
+## 52. Наследование / L15
 
-- eligibility
-- 3D preview
-- consequences
-- original leaves digital Coop
-- heir concept
-- explicit confirmation
+- доступность
+- предпросмотр 3D
+- последствия
+- исходная курочка покидает цифровой Курятник
+- механика наследника
+- явное подтверждение
 
-## 53. Physical Passport / Heir Claim
+## 53. Физический паспорт / получение наследника
 
 - scan/claim
-- one-time status
-- account destination
-- capacity handling
+- статус однократного использования
+- аккаунт получателя
+- обработка нехватки места
+
+### Заказ физической 3D-фигурки
+
+17 000 ₽; понятный путь заказа, паспорт и QR, статус доставки, условия отмены/возврата, судьба цифровой курочки.
 
 ## 54. Settings
 
@@ -465,79 +485,76 @@ Game:
 - sound
 - music
 - vibration
-- chat mute
+- отключение чата
 - accessibility
 
 ## 55. Moderation/report
 
-- report player/chat/name
-- block/mute where supported
+- жалоба на игрока, чат или имя
+- блокировка или отключение сообщений, если предусмотрено
 
-## 56. Empty/error states
+## 56. Пустые состояния и ошибки
 
 Required:
 - no chicken
 - no gear
 - no buff
 - no tickets
-- full inventory
-- full Coop
-- network error
-- feature unavailable
-- reward delivery pending
-- Arena settlement pending
+- заполненный инвентарь
+- переполненный Курятник
+- сетевая ошибка
+- функция недоступна
+- награда ожидает выдачи
+- списание или возврат аренды ожидает завершения
 
-## 57. Admin screens future
+## 57. Административные экраны (FUTURE)
 
-- content catalog
+- каталог контента
 - quests
-- reward tables
-- economy config
-- feature flags
-- Arena balance
+- таблицы наград
+- настройки экономики
+- флаги функций
+- баланс Arena
 - moderation
 - analytics
 
-## 58. Screen state contract
+## 58. Состояния экранов
 
-Every screen defines:
+Каждый экран имеет состояния:
 - loading
 - success
 - empty
 - disabled
 - error
 - offline
-- permission/feature gated
+- недоступно по правам или флагам
 
-## 59. Navigation
+## 59. Навигация
 
-Primary game navigation should not exceed a small stable set:
+Основная навигация не должна содержать слишком много разделов:
 - Home
 - Coop
 - Quests
 - Games
 - Arena
-- Inventory/Profile via secondary navigation
+- Инвентарь и профиль во вторичной навигации
 
-Final IA after UX prototype.
+Окончательная навигация утверждается после UX-прототипа.
 
-## 60. New monetization screens
+### Актуальные цены GE, индексация и прозрачность
+
+Служебный блок витрины: «1 000 GE = текущая цена покупки в ₽» и «следующее изменение с 01.12.2026 (+10%), если индексация включена»; показывать график из настоящего `ge_price.public_tariff`, уважать pause/admin override. Отдельное пояснение: это **цена покупки GE, не доходность GE**. Платный Season Pass, сундук и 3D-заказ показывают фактические тарифы сервера и возврат, не гипотетические значения.
+
+## 60. Новые экраны монетизации
 
 Source: **MONETIZATION_LIVEOPS_SPEC.md**.
 
-- GE shortfall decision: earn through QuRa / purchase GE / keep saving.
-- Season Pass hub, free/premium tracks, pass purchase, retrospective claim, season completion.
-- Paid chest detail: full odds, pity progress, duplicate policy, confirmed purchase and result.
-- Golden Piggy Bank progress, guaranteed offer contents, purchase and claim.
-- Starter Bundle one-time offer.
-- Contextual offers strip (max 3–5, hide option), collection preview, season cosmetics.
-- Purchase history, refunds and recovery/entitlement pending states.
+- Недостаток GE: заработать через QuRa, купить GE или продолжить копить.
+- Раздел Season Pass: бесплатная и премиальная дорожки, покупка, получение ранее открытых наград, завершение сезона.
+- Подробности платного сундука: все вероятности, прогресс гарантии, политика дублей, подтверждение покупки и результат.
+- «Золотая копилка»: прогресс, гарантированное содержимое, покупка и выдача.
+- Одноразовое стартовое предложение.
+- Лента уместных предложений (не более 3–5, можно скрыть), предпросмотр коллекций и сезонной косметики.
+- История покупок, возвраты, восстановление и ожидание выдачи прав на награду.
 
-Use **SPRITE_PRODUCTION_BATCHES.md** for referenced icons and objects; no price text burned into images.
-
-
-## 61. Pass 2 — complete language coverage (P7)
-
-**Required languages:** RU and EN throughout the game UI, Arena, quests, events, monetization and system feedback. No user-facing hardcoded mixed-language strings. Each message has stable `i18n_key`, RU source, reviewed EN translation, interpolation parameters, pluralization rules, maximum layout length and fallback. Do not embed text in art/sprite sheets.
-
-Coverage includes menus, tooltips, first-time defense setup, matchmaking (human/bot distinction), combat actions, failure/timeout, XP/GE reward statements, shop/checkout, odds, consent, claim/refund, season pass, piggy bank, chronicle, event variants, push notifications and screen-reader labels. Display personal chicken names unchanged; translate archetype/system labels. Dates, prices, currencies and numbers use locale-aware formatting. Release gate: automated missing-key audit, truncation screenshots for mobile and a human review of gameplay/legal vocabulary in both languages.
+Использовать **SPRITE_PRODUCTION_BATCHES.md** для иконок и предметов; цены не должны быть частью изображения.

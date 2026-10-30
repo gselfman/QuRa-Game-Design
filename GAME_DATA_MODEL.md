@@ -1,4 +1,4 @@
-# QuRa Game Data Model v1
+# QuRa — модель игровых данных v1
 
 **Статус:** системная модель данных  
 **Источники:** GAME_BIBLE_V1.md, ARENA_SPEC_V1.md, GAME_DEPENDENCY_GRAPH.md
@@ -8,8 +8,8 @@
 - сервер является источником истины;
 - каждая игровая сущность имеет стабильный id;
 - личное имя курочки хранится на instance, тип — на archetype;
-- временное состояние боя не смешивается с permanent profile state;
-- все GE/XP/reward изменения имеют audit/source;
+- временное состояние боя не смешивается с постоянный profile state;
+- все GE/XP/награда изменения имеют audit/источник;
 - все state machines хранятся явно.
 
 ## 1. Account
@@ -21,12 +21,9 @@
 - timezone
 - created_at
 - main_chicken_id nullable
-- coop_tier
-- coop_capacity
 - coolness_total_cached
 - glory_current
-- league_id
-- arena_enrolled
+- league_id (FUTURE)
 - settings_json
 - feature_flags_snapshot optional
 
@@ -78,7 +75,7 @@
 - archetype_id
 - personal_name
 - lifecycle_stage
-- level
+- уровень
 - xp
 - xp_total
 - is_main
@@ -96,6 +93,21 @@ Invariant:
 - archetype_id не меняется rename-flow;
 - одна instance занимает одно место Coop независимо от lifecycle stage.
 
+## 3.1. Покупка яйца и создание курочки
+
+### EggOffer
+
+id, archetype_id nullable, mystery_pool_id nullable, price_ge, version, active.
+
+### ChickenPurchase
+
+id, account_id, offer_id, chicken_id, ge_ledger_tx_id, correlation_id, state.
+
+### ChickenInstance.acquired_source
+
+START | PATH_QUEST | SHOP_SPECIFIC | SHOP_MYSTERY | CHEST | EVENT | LEGACY.
+
+Покупка идемпотентна по `correlation_id`, полученное яйцо создаёт отдельный ChickenInstance L1; переполнение использует «В гостях».
 ## 4. ChickenNamingHistory
 
 Для moderation/audit:
@@ -153,7 +165,7 @@ Gift по умолчанию не влияет на Arena без explicit hook.
 - name
 - category
 - slot
-- rarity
+- редкость
 - min_level
 - ignore_level_gate
 - coolness_value
@@ -179,7 +191,7 @@ Gift по умолчанию не влияет на Arena без explicit hook.
 - locked
 - metadata_json
 
-Если item не имеет individual properties, можно оптимизировать stackable inventory, но data contract должен сохранять provenance.
+Если у предмета нет уникальных свойств экземпляра, допускается хранение стопкой, но источник получения должен сохраняться.
 
 ## 10. EquipmentSlot
 
@@ -204,23 +216,23 @@ Unique:
 
 Разделяется логически:
 
-### Gear inventory
-- unequipped gear
+### Экипировка inventory
+- unequipped экипировка
 
-### Buff inventory
-- consumables
+### баф inventory
+- расходники
 
 ### Reward overflow
 - временная доставка при переполнении
 
-Не объединять chicken capacity с item capacity.
+Не смешивать вместимость Курятника и инвентаря.
 
 ## 13. BuffDefinition
 
 - buff_id
 - code
 - name
-- rarity
+- редкость
 - class: preparation / tactical
 - duration_type: instant / round / battle / timed / matches
 - target_scope
@@ -283,8 +295,19 @@ Unique:
 - completed_at
 - claimed_at
 
-Unique key depends on scope.
+Уникальный ключ зависит от области действия.
 
+## 17.1. Определения и прогресс достижений
+
+### AchievementDefinition
+
+id, condition_json, reward_id, feature_gate, version.
+
+### AchievementProgress
+
+account_id, achievement_id, progress, completed_at, claimed_at.
+
+Связь: AchievementDefinition 1:N AchievementProgress, уникальность(account_id, achievement_id).
 ## 18. RewardDefinition
 
 - reward_id
@@ -349,6 +372,13 @@ Unique key depends on scope.
 - after
 - created_at
 
+## 22.1. Описание мини-игры
+
+### MiniGameDefinition
+
+code, ticket_cost, retry_price_ge, reward_table_id, caps, version.
+
+MiniGameDefinition 1:N MiniGameAttempt; награды и цена настраиваются сервером.
 ## 23. MiniGameAttempt
 
 - attempt_id
@@ -379,7 +409,7 @@ Unique key depends on scope.
 - chest_open_id
 - account_id
 - chest_id
-- source
+- источник
 - rng_seed_server
 - result_json
 - pity_before
@@ -391,7 +421,7 @@ Unique key depends on scope.
 - event_id
 - code
 - category
-- rarity
+- редкость
 - base_outcome_json
 - negative
 - lucky_flip_outcome_json nullable
@@ -415,14 +445,52 @@ Unique key depends on scope.
 - applied_modifiers_json
 - source_gifts_json
 
+## 28.1. Корм и выбор события дня
+
+### FeedEvent
+
+id, account_id, operation_source_type, operation_source_id, feed_type, effect_family, effect_json, applied_at, expires_at, correlation_id(unique).
+
+### FeedState
+
+account_id/chicken_id, status: NEUTRAL | FED | HAPPY, active_effects, expires_at. Не ресурс/валюта.
+
+### DailyEventChoice
+
+id, account_id, msk_day, event_id, choice_code, chosen_at nullable, applied_default, outcome_json, unique(account_id,msk_day).
+
+FeedEvent коррелируется с подтверждённой операцией; DailyEventChoice уникален по (account_id, msk_day). Корм не новая валюта.
 ## 29. Coop
 
-Можно хранить tier на Account, а расширенную конфигурацию отдельно:
+Единственная изменяемая запись tier/capacity хранится в Coop; Account не содержит независимых полей tier/capacity:
 - coop_id
 - account_id
 - tier
 - capacity
 - upgrade_history_json
+
+## 29.1. ArenaDefenseSetup — сохранённая защита (MVP)
+
+- `defense_setup_id` — первичный ключ;
+- `account_id`, `chicken_id` (взрослая L4+);
+- `equipment_snapshot_json` для просмотра, но в бою формируется отдельный immutable `ArenaFighterSnapshot`;
+- `policy_code`: AGGRESSIVE | CAUTIOUS | CUNNING;
+- `policy_parameters_json`, `policy_version`, `updated_at`;
+- `active` — только после явного сохранения игроком.
+
+Одна активная защита на аккаунт для стартового 1×1; изменение настроек влияет лишь на последующие бои. Политика по умолчанию CAUTIOUS.
+
+## 29.2. ArenaDefensePool — индекс доступности
+
+- `account_id`, `defense_setup_id`, `chicken_id`, `level`, `battle_power`;
+- `active`, `last_defended_at`, `daily_defenses_count`;
+- `antifraud_relation_hashes` / refs для исключения связанных аккаунтов (без раскрытия сырых персональных данных).
+
+Поиск: случайный среди уровень ±2 (PROTOTYPE BALANCE) и близкого BP (OPEN), расширение окна, при отсутствии — `opponent_kind=BOT` с явной пометкой и уменьшенным призом. Нельзя выбрать определённого защитника. После подбора обе стороны фиксируются в `ArenaFighterSnapshot`.
+
+## 29.3. FUTURE — ArenaSeasonEnrollment
+
+`ArenaSeasonEnrollment`: account_id, season_id, defense_setup_id, joined_at, status. Не применяется для MVP асинхронный и не нужен для участия без рейтинга.
 
 ## 30. ArenaMatch
 
@@ -432,7 +500,7 @@ Unique key depends on scope.
 - status
 - ranked
 - friendly
-- async
+- асинхронный
 - created_at
 - started_at
 - ended_at
@@ -472,20 +540,20 @@ Unique key depends on scope.
 - personal_name_snapshot
 - position
 - max_hp
-- attack
-- defense
+- атака
+- защита
 - speed
 - gear_snapshot_json
 - permanent_effects_json
 
-После старта permanent snapshot не мутирует.
+После старта постоянный snapshot не мутирует.
 
 ## 33. ArenaFighterState
 
 Текущее battle-state:
 - fighter_id
 - hp
-- shield
+- щит
 - special_charge
 - alive
 - statuses_json
@@ -556,7 +624,7 @@ or REJECTED/ROLLED_BACK.
 
 ## 38. ArenaStatusEffect
 
-Normalized option if statuses need queryability:
+Нормализованное хранение возможно, если статусы нужно искать по базе:
 - status_id
 - match_id
 - fighter_id
@@ -578,7 +646,7 @@ Normalized option if statuses need queryability:
 - template_version
 - created_at
 
-Narrative is derived from engine facts, never source of truth.
+Летопись формируется из фактов движка и не служит источником результата.
 
 ## 40. ArenaChatMessage
 
@@ -591,7 +659,7 @@ Narrative is derived from engine facts, never source of truth.
 - created_at
 - moderation_status
 
-Server controls visibility.
+Доступ к сообщениям регулируется сервером.
 
 ## 41. ArenaRentalFee и ArenaPrizeGrant
 
@@ -656,11 +724,42 @@ Server controls visibility.
 - reward_id
 - inviter_account_id
 - referred_account_id
-- level
+- уровень
 - qualifying_event_id
 - ge_amount
 - status
 
+## 46.1. Друзья, кланы, цель сообщества
+
+### FriendRelation
+
+account_a, account_b, status, created_at.
+
+### Clan
+
+id, name, crest, banner, partner_token_project_id nullable, visibility, max_members, owner_id, created_at, moderation_status.
+
+### ClanMember
+
+clan_id, account_id, role: OWNER | ELDER | MEMBER, joined_at, contribution_window, state.
+
+### ClanGoal
+
+id, clan_id, week_key, goal_type, target, progress, reward_id, cap_per_member, version.
+
+### ClanContribution
+
+clan_goal_id, account_id, confirmed_source_id, amount, idempotency_key.
+
+### CommunityGoal
+
+id, code, target_n, progress, milestone_json, status, starts_at, achieved_at, version.
+
+### CommunityContribution
+
+goal_id, account_id, feed_event_id, amount, unique correlation_id.
+
+ClanMember связывает Clan и Account; вклады идемпотентны, прямая передача GE между игроками запрещена. Сообщество открывает седьмую только после N (OPEN).
 ## 47. FeatureFlag
 
 - flag
@@ -669,7 +768,21 @@ Server controls visibility.
 - valid_from
 - valid_to
 
-Quest/reward generation references flags.
+Quest/награда generation references flags.
+
+## 47.1. Уведомления и стрики
+
+### NotificationRule
+
+notification_rule_id, trigger, channel (TELEGRAM/PWA_PUSH), template, cooldown, quiet_hours, enabled, version.
+
+### NotificationLog
+
+notification_id, account_id, rule_id, dedupe_key, state, delivered_at, opened_at, failure_reason.
+
+### StreakState
+
+account_id, current_days, last_action_day_msk, weekly_freeze_used.
 
 ## 48. OverflowPackage
 
@@ -698,7 +811,14 @@ Quest/reward generation references flags.
 - generation
 - legacy_bonus_json
 
-## 50. State machines
+## 49.1. Заказ 3D-фигурки
+
+### FigurineOrder
+
+order_id, account_id, chicken_id, price_rub=17000, status, payment_id, logistics, passport_id, qr_claim_id, refund_status.
+
+FigurineOrder относится к ChickenInstance и хранит паспорт, QR наследника и refund state. Цена 17 000 ₽, себестоимость ~15 000 ₽, логистика OPEN.
+## 50. Машины состояний
 
 ### Chicken lifecycle
 EGG_L1 → EGG_L2 → CHICK_L3 → ADULT_L4 → PROGRESSION → L15_ELIGIBLE → L20_MAX
@@ -718,61 +838,60 @@ START → DECISION → LOCKED → RESOLVE → REVEAL → END
 ### Quest
 AVAILABLE → IN_PROGRESS → COMPLETED → CLAIMED
 
-### Buff activation
+### баф activation
 PENDING → VALIDATED → APPLIED → CONSUMED
 
-## 51. Required identifiers
+## 51. Обязательные идентификаторы
 
-Use immutable ids for:
+Использовать неизменяемые идентификаторы для:
 - account
 - chicken
 - archetype
-- gear
+- экипировка
 - buff
 - quest
-- reward
+- награда
 - match
 - participant
 - round
 - action
 - ledger tx
 
-Display names are never keys.
+Отображаемые имена не используются как ключи.
 
-## 52. Versioning
+## 52. Версионирование
 
-Version independently:
+Версионировать независимо:
 - Battle Engine
 - archetype definitions
-- gear definitions
+- экипировка definitions
 - buff definitions
 - quest definitions
-- reward tables
+- награда tables
 - economy config
 - season rules
 
-Match stores versions used at start.
+Матч сохраняет версии правил, применённые при старте.
 
-## 53. Audit invariants
+## 53. Инварианты аудита
 
 1. GE balance reconciles to GE Ledger.
 2. XP reconciles to XP Ledger.
-3. Reward delivered once per correlation id.
-4. Battle result generated only server-side.
-5. Action command id idempotent.
-6. Match snapshots immutable after start.
-7. Hidden action not exposed before resolve.
+3. Награда выдаётся один раз на correlation_id.
+4. Итог боя рассчитывается только сервером.
+5. Повтор идентификатора команды не создаёт новый ход.
+6. Снимки матча неизменяемы после старта.
+7. Скрытые действия не передаются сопернику до расчёта.
 8. Personal rename cannot alter archetype.
-9. Temporary modifier never persists into permanent stat row.
-10. Any paid canceled activity must have settlement record.
+9. Temporary modifier never persists into постоянный stat row.
+10. Для отменённой платной операции обязателен журнал возврата.
 
-## 54. Next document dependency
+## 54. Связь с экономической моделью
 
 ECONOMY_MODEL.md consumes:
 - ledgers;
-- reward sources;
+- награда sources;
 - Arena settlement;
 - mini-game attempt;
 - passive emission;
-- chest EV.
-
+- сундук EV.

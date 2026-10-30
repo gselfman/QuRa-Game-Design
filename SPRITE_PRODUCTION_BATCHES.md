@@ -436,3 +436,171 @@
 5. Назначить каждому компоненту ID и semantic name.
 6. Связать asset с definition в каталоге / screen inventory.
 7. Принимать изменения только новой версией, сохраняя старые артефакты.
+
+
+## P6. Решение D-20 — боевой персонаж только из CARD
+
+**В бою используется одна базовая CARD-поза с текущими overlay аксессуарами.** Отдельные кадры атаки, защиты, манёвра, Special, ранения и смерти **не рисуются**. Смещение/наклон/отскок/исчезновение — анимации трансформаций CARD; удары, щиты, лечение, Special и смерть — отдельные FX-слои. Для PERCH и NEST сохраняются отдельные позы Курятника, но они не используются как battle actor.
+
+### P0. Пакеты героинь C01–C06
+
+Нужен утверждённый master-reference из Figma/реализованной Рябы. **Сверка Figma в этом проходе не выполнена: file key не указан; внешность ниже — ЧЕРНОВИК, НЕ ДЛЯ ГЕНЕРАЦИИ до утверждения.** Нельзя создавать новый силуэт на основе словесного черновика, если существует исходное изображение.
+
+Каждый пакет = **9 статичных элементов**:
+1. `_01` CARD взрослая L4, нейтрально;
+2. `_02` PERCH;
+3. `_03` NEST;
+4. `_04` портрет (кроп CARD);
+5. `_05` иконка ростера (кроп CARD);
+6. `_06` радость (мимика поверх CARD);
+7. `_07` удивление (мимика поверх CARD);
+8. `_08` решимость (мимика поверх CARD);
+9. `_09` огорчение (мимика поверх CARD).
+
+Эмоции не меняют геометрию якорей. Девять визуальных экспортов на архетип ×6 = **54** (портрет/ростер могут вычисляться как crop и не требовать отдельной генерации).
+
+#### C01. Ряба — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** тёплые золотисто-пшеничные перья (ЧЕРНОВИК), округлая крепкая форма, заботливые глаза, народная лента/кокошник условно.
+- **Избегать:** Не добавлять оружия, злобного хищного клюва, реалистичных лап.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Ряба, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+#### C02. Боевик — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** приглушённая коричнево-рыжая палитра (ЧЕРНОВИК), коренастая осанка, уверенный взгляд, практичный жилет.
+- **Избегать:** Не превращать курочку в человека, не делать милитаристскую жёсткость.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Боевик, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+#### C03. Дурочка — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** яркое сочетание разноцветных перьев (ЧЕРНОВИК), подвижный силуэт, большие удивлённые глаза, неровная забавная лента.
+- **Избегать:** Не делать персонажа неприятно глупым, не вводить новый анатомический тип.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Дурочка, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+#### C04. Профессор — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** натуральная светло-коричневая палитра (ЧЕРНОВИК), аккуратная осанка, очки, маленький академический аксессуар.
+- **Избегать:** Не делать птицу пожилой карикатурой или отдельным видом птиц.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Профессор, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+#### C05. Монах — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** спокойные тёплые кремовые тона (ЧЕРНОВИК), мягкий округлый силуэт, сосредоточенные глаза, сдержанная одежда.
+- **Избегать:** Не использовать точную религиозную символику без утверждённого оригинала.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Монах, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+#### C06. Гламурочка — визуальная карточка, ЧЕРНОВИК — утвердить владельцу
+
+- **Цвет, силуэт, лицо и базовая одежда:** светлые сливочные перья с розовыми деталями (ЧЕРНОВИК), изящный силуэт, выразительные глаза, элегантная лента.
+- **Избегать:** Не делать антропоморфную модель взрослого человека или нечитабельные украшения.
+- **Источник истины:** утверждённый master в Figma/QuRa; при несовпадении черновик отменяется.
+- **Готовый промпт пакета:** «Using the APPROVED master reference of QuRa Гламурочка, generate a consistency-locked character sheet with 9 named cells: adult CARD, PERCH, NEST, portrait crop, roster crop, happy face overlay, surprised face overlay, determined face overlay, disappointed face overlay. Preserve exact anatomy, feather coloring, eye shape, base clothing, and attachment anchors from reference, same lighting and scale, transparent background, no text, no gear changes, no action or fighting poses. Do not invent appearance details not visible in approved source.»
+
+### E01 — жизненный цикл яйца
+
+**22 объекта:** для шести архетипов по три стадии L1 яйцо, L2 развивается/трещина, L3 цыплёнок (=18); загадочные L1/L2/L3 (=3); силуэт-тизер седьмой (=1). Седьмая не раскрывается визуально или механически. **Промпт:** «Use approved QuRa chicken masters for 6 founders, render 18 matching lifecycle assets in order archetype × (L1 egg, L2 cracked developing egg, L3 chick), plus 3 mysterious lifecycle assets and one opaque seventh-founder silhouette, stable warm QuRa 3D art style, transparent background, clean cell isolation, no labels, no extra states.»
+  
+### G01 / G02 — аксессуары
+
+G01 = 20 общих предметов L4–L6. G02 = 18 родных аксессуаров (по три на каждую основательницу). Каждый item включает `ICON`, `CARD`, `PERCH`, `NEST` = **152 экспортных варианта** для 38 items. Состав конкретных предметов указан ниже и может быть уменьшен после проверки слотов, но ID сохраняются.
+
+**Промпт G01:** «Render 20 SPECIFIED QuRa starter gear items G01_01..G01_20, one icon per item, with per-pose overlay versions CARD/PERCH/NEST in separate matching sheets. Approved slots and attachment anchors control perspective. No chicken visible in overlay assets, transparent PNG, safe padding, warm QuRa style, no labels, no unsolicited objects.»
+
+**Промпт G02:** «Render 18 SPECIFIED native gear items G02_01..G02_18, 3 per approved founder, keeping native visual identity consistent with approved character master; export ICON/CARD/PERCH/NEST alignment variants with exact attachment anchors and alpha background. No text, no changing body proportions, no added weapons.»
+
+### Пообъектные ID стартовой экипировки
+
+**G01 — общие предметы (20):**
+
+1. `G01_01` — соломенная шляпа; иконка ICON + overlays CARD/PERCH/NEST.
+2. `G01_02` — лёгкий берет; иконка ICON + overlays CARD/PERCH/NEST.
+3. `G01_03` — кепка фермера; иконка ICON + overlays CARD/PERCH/NEST.
+4. `G01_04` — шляпа с широкими полями; иконка ICON + overlays CARD/PERCH/NEST.
+5. `G01_05` — круглые очки; иконка ICON + overlays CARD/PERCH/NEST.
+6. `G01_06` — защитные очки; иконка ICON + overlays CARD/PERCH/NEST.
+7. `G01_07` — золотое пенсне; иконка ICON + overlays CARD/PERCH/NEST.
+8. `G01_08` — платок на шею; иконка ICON + overlays CARD/PERCH/NEST.
+9. `G01_09` — бархатная лента; иконка ICON + overlays CARD/PERCH/NEST.
+10. `G01_10` — деревянный амулет; иконка ICON + overlays CARD/PERCH/NEST.
+11. `G01_11` — рабочий жилет; иконка ICON + overlays CARD/PERCH/NEST.
+12. `G01_12` — хлопковая накидка; иконка ICON + overlays CARD/PERCH/NEST.
+13. `G01_13` — простой нагрудник; иконка ICON + overlays CARD/PERCH/NEST.
+14. `G01_14` — сумочка на крыло; иконка ICON + overlays CARD/PERCH/NEST.
+15. `G01_15` — мини-рюкзак; иконка ICON + overlays CARD/PERCH/NEST.
+16. `G01_16` — плетёная корзинка на крыло; иконка ICON + overlays CARD/PERCH/NEST.
+17. `G01_17` — кожаные ботинки; иконка ICON + overlays CARD/PERCH/NEST.
+18. `G01_18` — резиновые сапожки; иконка ICON + overlays CARD/PERCH/NEST.
+19. `G01_19` — сандалии с ремешками; иконка ICON + overlays CARD/PERCH/NEST.
+20. `G01_20` — пояс с пряжкой; иконка ICON + overlays CARD/PERCH/NEST.
+
+**G02 — родная экипировка (18):**
+
+1. `G02_01` — Ряба: кокошник золотой; ICON + CARD/PERCH/NEST.
+2. `G02_02` — Ряба: скорлупный нагрудник; ICON + CARD/PERCH/NEST.
+3. `G02_03` — Ряба: лента с золотым яйцом; ICON + CARD/PERCH/NEST.
+4. `G02_04` — Боевик: боевые перчатки; ICON + CARD/PERCH/NEST.
+5. `G02_05` — Боевик: защитный жилет; ICON + CARD/PERCH/NEST.
+6. `G02_06` — Боевик: плотная кепка; ICON + CARD/PERCH/NEST.
+7. `G02_07` — Дурочка: разноцветные башмачки; ICON + CARD/PERCH/NEST.
+8. `G02_08` — Дурочка: колпак с бубенцами; ICON + CARD/PERCH/NEST.
+9. `G02_09` — Дурочка: пёстрый шарф; ICON + CARD/PERCH/NEST.
+10. `G02_10` — Профессор: очки аналитика; ICON + CARD/PERCH/NEST.
+11. `G02_11` — Профессор: профессорская мантия; ICON + CARD/PERCH/NEST.
+12. `G02_12` — Профессор: сумочка с тетрадями; ICON + CARD/PERCH/NEST.
+13. `G02_13` — Монах: чётки тишины; ICON + CARD/PERCH/NEST.
+14. `G02_14` — Монах: сдержанный капюшон; ICON + CARD/PERCH/NEST.
+15. `G02_15` — Монах: пояс с деревянной бусиной; ICON + CARD/PERCH/NEST.
+16. `G02_16` — Гламурочка: звёздные очки; ICON + CARD/PERCH/NEST.
+17. `G02_17` — Гламурочка: жемчужное ожерелье; ICON + CARD/PERCH/NEST.
+18. `G02_18` — Гламурочка: клатч на крыло; ICON + CARD/PERCH/NEST.
+
+Любой item с конфликтующими якорями помечается OPEN и не экспортируется как готовый. Никаких чисел урона/боевой силы в PNG.
+
+### AEX01 — эксклюзивы Arena
+
+25 объектов: 5 рамок, 5 баннеров, 5 гербов, 5 эмоций победы, 5 скинов «Гладиатор Арены». `arena_exclusive=true`, `sellback_pct=0`, `battle_power_delta=0`. **Промпт:** «25 distinct Arena-exclusive cosmetic assets in a 5×5 grid: five card frames, five banners, five crests, five victory emotes, five Gladiator Arena cosmetic skins; warm wood, amber gold, soft dimensional QuRa style, transparent background, no texts, no game stats, 12% padding, no duplicate objects.»
+
+### FX01 — новый лист боевых эффектов, 25 позиций
+
+1. **FX01_01** — лёгкий прямой удар.
+2. **FX01_02** — сильный удар с искрами.
+3. **FX01_03** — световой блок Защиты.
+4. **FX01_04** — искра контратаки.
+5. **FX01_05** — рывок Манёвра.
+6. **FX01_06** — ответный толчок.
+7. **FX01_07** — Особый Рябы — разлёт золотой скорлупы.
+8. **FX01_08** — Особый Боевика — тяжёлый удар.
+9. **FX01_09** — Особый Дурочки — случайная вспышка «Авось!».
+10. **FX01_10** — Особый Профессора — вычисленная цель.
+11. **FX01_11** — Особый Монаха — светлая волна исцеления.
+12. **FX01_12** — Особый Гламурочки — ослепительная вспышка.
+13. **FX01_13** — персональный Shield.
+14. **FX01_14** — общий Боевой купол.
+15. **FX01_15** — мягкое лечение HP.
+16. **FX01_16** — усиление атаки.
+17. **FX01_17** — ослабление атаки.
+18. **FX01_18** — перегрузка Special.
+19. **FX01_19** — снижение заряда Special.
+20. **FX01_20** — замедление/утрата темпа.
+21. **FX01_21** — комичный промах.
+22. **FX01_22** — замешкалась и закрылась.
+23. **FX01_23** — выбывание — мерцающее затухание.
+24. **FX01_24** — Молния богов — предупреждение.
+25. **FX01_25** — Молния богов — удар.
+
+**Промпт FX01:** «Create a single 5×5 transparent sprite sheet of 25 magical combat FX in exact FX01_01..FX01_25 order. Effects are overlays on existing static QuRa chicken CARD art, not character poses; consistent top-left lighting, warm gold and amber with character-specific accent colors; no chickens, no text, no extra props, no overlaps between cells, 12% safe padding.»
+
+### Аудит универсальных листов и приоритет
+
+Figma-проверка **UNKNOWN**, не регенерировать существующие в «Волке» ассеты. **P0:** C01–C06, E01, G01/G02 (после подтверждения anchors), FX01, S01 (Arena-сундук), S10 (минимальный HUD). **P1:** AEX01, S04/S05 buffs, S02/S03 монетизация. **P2:** S06–S09, S11 (проверить на пересечение с FX01), S12. Исходные S01–S12 оставлены для аудита, а не безусловной повторной генерации.
+
+**Оценка объёма:** исходные S01–S12 = 300 слотов; новые 54 + 22 + 152 + 25 + 25 = **278 экспортов**, суммарно **578** до дедупликации. Это НЕ число обязательных новых генераций: кропы, существующие ассеты и дубли уменьшают фактический объём.
+
+### Состояния Figma
+
+Каждый объект: UNKNOWN → source-confirmed → approved → generated/imported → sliced → QA → referenced. Без Figma file key нельзя подтверждать source-confirmed; не обозначать его как выполненный.
