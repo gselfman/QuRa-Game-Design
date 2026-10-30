@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings,resolveTarget} from '../tools/arena-engine.mjs';
+import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings,resolveTarget,resolveClash} from '../tools/arena-engine.mjs';
 test('six prototype founders',()=>assert.equal(HEROES.length,6));
 test('legal Special only at 100 charge',()=>{const f=createFighter('r');assert.equal(legal(f).includes('special'),false);f.q=100;assert.equal(legal(f).includes('special'),true)});
 test('deterministic fight',()=>assert.deepEqual(fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'}),fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'})));
@@ -32,4 +32,28 @@ test('defense tactics only select legal moves',async()=>{
  const a=createFighter('r'),b=createFighter('f');
  for(const policy of ['aggressive','cautious','tricky'])
   for(let seed=1;seed<10;seed++)assert.ok(legal(a).includes(chooseDefense(a,b,policy,seeded(seed))));
+});
+
+test('legacy online Wall clash parity for 6x6, legal 4-action pairs and deterministic rolls',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const vm=await import('node:vm');
+ const original=readFileSync(new URL('../arena-live-3x3/team-core.js',import.meta.url),'utf8');
+ const start=original.indexOf('var R=['),end=original.indexOf('var sharedArenaEngine=',start);
+ assert.ok(start>=0&&end>start,'prototype code anchors present');
+ const ctx=vm.createContext({Math,JSON,URLSearchParams});
+ vm.runInContext(original.slice(start,end),ctx);
+ for(const heroA of HEROES)for(const heroB of HEROES){
+  for(const ma of ['attack','defend','maneuver','special'])
+   for(const mb of ['attack','defend','maneuver','special']){
+    const a=createFighter(heroA.id),b=createFighter(heroB.id),la=ctx.clone(ctx.C(heroA.id),0),lb=ctx.clone(ctx.C(heroB.id),0);
+    if(ma==='special'){a.q=100;la.q=100}
+    if(mb==='special'){b.q=100;lb.q=100}
+    const old=ctx.clash(la,lb,ma,mb,.28),current=resolveClash(a,b,ma,mb,.28);
+    assert.equal(current.w,old.w,heroA.id+'-'+heroB.id+' '+ma+mb);
+    for(const key of ['hp','q','shield','boost','weaken','dead']){
+     assert.ok(Math.abs(Number(a[key])-Number(la[key]))<1e-7,heroA.id+' '+key+' '+ma+mb);
+     assert.ok(Math.abs(Number(b[key])-Number(lb[key]))<1e-7,heroB.id+' '+key+' '+ma+mb);
+    }
+   }
+ }
 });
