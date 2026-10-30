@@ -17,3 +17,39 @@ test('equal-speed variant changes only eligible clash and preserves seeded deter
  const a=createFighter('r'),b=createFighter('b'),c=createFighter('r'),d=createFighter('b');
  assert.deepEqual(resolveClash(a,b,'attack','defend',.5),resolveClash(c,d,'attack','defend',.5,{equalSpeed:'simultaneous'}));
 });
+
+test('Speed: sequential initiative prevents an eliminated fighter from attacking',async()=>{
+ const a=createFighter('f'),b=createFighter('b');a.hp=10;b.hp=10;
+ const simultaneous=resolveClash({...a},{...b},'attack','attack',.25);
+ const sequential=resolveClash(a,b,'attack','attack',.25,{speedOrder:'sequential'});
+ assert.equal(simultaneous.after[0],0);
+ assert.equal(simultaneous.after[1],0);
+ assert.equal(sequential.after[0],10);
+ assert.equal(sequential.after[1],0);
+});
+test('charge variant changes meter, never exceeds 100',()=>{
+ const a=createFighter('r'),b=createFighter('g');
+ resolveClash(a,b,'attack','maneuver',.25,{chargeTable:{win:40,lose:10,tie:25}});
+ assert.equal(a.q,40);assert.equal(b.q,10);
+});
+test('time-limit tie policy is explicit, not double KO',()=>{
+ const config={seed:1,maxRounds:1,strategyA:'random',strategyB:'random'};
+ const draw=fight1v1('r','m',{...config,tiePolicy:'draw'});
+ assert.equal(draw.winner,3);assert.equal(draw.termination,'timeout');
+});
+test('1-vs-3 once-per-action prevents duplicated shield and charge',async()=>{
+ const {createTeam,resolveWall,seeded}=await import('../tools/arena-engine.mjs');
+ const A=createTeam(['r']),B=createTeam(['b','f','g']);
+ const originalA=createTeam(['r']),originalB=createTeam(['b','f','g']);
+ resolveWall(A,B,['maneuver'],['defend','defend','defend'],seeded(1),{multiCollision:'once'});
+ resolveWall(originalA,originalB,['maneuver'],['defend','defend','defend'],seeded(1));
+ assert.ok(A[0].shield<originalA[0].shield);assert.ok(A[0].q<=100);
+});
+test('JRPG lost-action variant differs from automatic retarget',async()=>{
+ const {createTeam,resolveTarget,seeded}=await import('../tools/arena-engine.mjs');
+ const A=createTeam(['r']),B=createTeam(['f','m']);B[0].dead=true;B[0].hp=0;
+ const lost=resolveTarget(A,B,[{move:'attack',target:0}],[null,{move:'attack',target:0}],seeded(1),{retarget:'lost'});
+ const C=createTeam(['r']),D=createTeam(['f','m']);D[0].dead=true;D[0].hp=0;
+ const auto=resolveTarget(C,D,[{move:'attack',target:0}],[null,{move:'attack',target:0}],seeded(1),{retarget:'auto'});
+ assert.equal(lost[0].lost,true);assert.equal(auto[0].targetPos,1);
+});
