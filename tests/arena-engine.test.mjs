@@ -81,3 +81,22 @@ test('Arena CLI exports complete matrix with round histograms',async()=>{
  assert.ok(readFileSync(join(dir,'matrix.csv'),'utf8').startsWith('heroA,heroB'));
  }finally{rmSync(dir,{recursive:true,force:true})}
 });
+
+test('JRPG single-target action parity with legacy targetOutcome (12 cases)',async()=>{
+ const {readFileSync}=await import('node:fs'),vm=await import('node:vm');
+ const original=readFileSync(new URL('../arena-live-3x3/team-core.js',import.meta.url),'utf8');
+ const ctx=vm.createContext({Math,JSON,URLSearchParams});
+ vm.runInContext(original.slice(original.indexOf('var R=['),original.indexOf('var sharedArenaEngine=')),ctx);
+ for(const move of ['attack','maneuver','special'])
+ for(const enemyMove of ['attack','defend','maneuver','special']){
+  const oldA=ctx.clone(ctx.C('f'),0),oldB=ctx.clone(ctx.C('b'),0);
+  const newA=createTeam(['f']),newB=createTeam(['b']);
+  if(move==='special'){oldA.q=100;newA[0].q=100}
+  if(enemyMove==='special'){oldB.q=100;newB[0].q=100}
+  if(enemyMove==='defend')ctx.charge(oldB,18);
+  const expected=ctx.targetOutcome(oldA,oldB,move,enemyMove,.28);
+  const output=resolveTarget(newA,newB,[{move,target:0}],[{move:enemyMove,target:0}],()=>.28);
+  assert.ok(output.length>=1);assert.equal(output[0].side,1);
+  assert.deepEqual(output[0].after,Array.from(expected.after),move+' vs '+enemyMove);
+ }
+});
