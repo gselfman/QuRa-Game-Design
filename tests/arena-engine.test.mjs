@@ -19,3 +19,17 @@ test('JRPG avoids action by eliminated actor',()=>{
  const a=createTeam(['r']),b=createTeam(['f']);b[0].dead=true;b[0].hp=0;
  assert.equal(resolveTarget(a,b,[{move:'attack',target:0}],[{move:'attack',target:0}],seeded(1)).length,0);
 });
+
+test('3v3 deterministic Wall simulation',async()=>{
+ const {fight3v3}=await import('../tools/arena-engine.mjs');
+ const cfg={seed:42,maxRounds:15,strategyA:'random',strategyB:'random'};
+ const a=fight3v3(['r','b','f'],['p','m','g'],cfg);
+ assert.deepEqual(a,fight3v3(['r','b','f'],['p','m','g'],cfg));
+ assert.ok(a.rounds>=1&&a.rounds<=15);
+});
+test('defense tactics only select legal moves',async()=>{
+ const {chooseDefense}=await import('../tools/arena-engine.mjs');
+ const a=createFighter('r'),b=createFighter('f');
+ for(const policy of ['aggressive','cautious','tricky'])
+  for(let seed=1;seed<10;seed++)assert.ok(legal(a).includes(chooseDefense(a,b,policy,seeded(seed))));
+});
