@@ -1,6 +1,6 @@
 # T2 — Battle Engine: architecture, runbook and verification
 
-**Status:** WIP until the complete 10,000×36 run and artifacts are verified; no character stats have been calibrated. **Branch:** `arena/t2-engine-2026-10-30` · **PR:** #16.
+**Status:** Core T2 engine, baseline 10,000×36 and exported artifact VERIFIED. Numeric target satisfaction is explicitly not yet achieved; the remaining baseline experiments for level/BP/gear/async and balance tuning are OPEN for T3–T5. No character stats have been calibrated. **Branch:** `arena/t2-engine-2026-10-30` · **PR:** #16.
 
 ## Shared engine
 - `tools/arena-engine.mjs`: pure deterministic calculations from the current prototype, unchanged L4 starting stats of six heroines, four actions, legal Special at 100 charge, shields/HP/negative status/healing, counter-matrix, Wall pairing, JRPG retarget, seeded PRNG.
@@ -39,3 +39,11 @@ Simultaneous hidden choice: `attack/defend/maneuver/special` if charge allows, o
 3. Shared engine used in both browser prototype entrypoints and JRPG/Wall.
 4. Actual parity tests green; any differences documented.
 5. PR #16 merged only after above, and green CI verified in `main`.
+
+## Verified evidence after full run
+
+- Full batch: https://github.com/gselfman/QuRa-Game-Design/actions/runs/41061092160 — 360,000 1×1 + 10,000 3×3, artifact `arena-t2-matrix`.
+- Tests after integration: https://github.com/gselfman/QuRa-Game-Design/actions/runs/41061832982 — success.
+- Detailed target-vs-actual: `ARENA_SIMULATION_RESULTS.md`.
+- Raw 6×6 data: `results/arena-t2-matrix-20261030.csv`.
+- **Not complete by literal scope of original T2:** simulator has not emitted meaningful L+1/L+4, BP±5/+20, 1×2/1×3 comeback, full-gear or async-defense figures. These require T3–T5 rule/model work; do not label absent figures as passing.
