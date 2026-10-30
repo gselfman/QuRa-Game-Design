@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings} from '../tools/arena-engine.mjs';
+import {HEROES,createFighter,resolveClash,fight1v1,seeded,legal,equilibrium,createTeam,resolveWall,assertInvariants,pairings,resolveTarget} from '../tools/arena-engine.mjs';
 test('six prototype founders',()=>assert.equal(HEROES.length,6));
 test('legal Special only at 100 charge',()=>{const f=createFighter('r');assert.equal(legal(f).includes('special'),false);f.q=100;assert.equal(legal(f).includes('special'),true)});
 test('deterministic fight',()=>assert.deepEqual(fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'}),fight1v1('r','b',{seed:42,strategyA:'equilibrium',strategyB:'equilibrium'})));
@@ -8,3 +8,14 @@ test('dead fighter has no legal actions',()=>{const a=createFighter('r'),b=creat
 test('Wall target list uses more numerous side',()=>{const a=createTeam(['r','b','f']),b=createTeam(['m']);assert.equal(pairings(a,b).length,3)});
 test('Wall outcome deterministic',()=>{const a=createTeam(['r','b']),b=createTeam(['f','p']);const r=resolveWall(a,b,['attack','defend'],['defend','attack'],seeded(4));assert.equal(r.length,2);assertInvariants([...a,...b])});
 test('equilibrium probabilities sum to one',()=>{const a=createFighter('g'),b=createFighter('m'),mix=equilibrium(a,b);assert.ok(Math.abs(mix.probabilities.reduce((x,y)=>x+y,0)-1)<1e-8)});
+
+test('JRPG target auto-retargets after preferred target is eliminated',()=>{
+ const a=createTeam(['r']),b=createTeam(['f','m']);
+ b[0].dead=true;b[0].hp=0;
+ const result=resolveTarget(a,b,[{move:'attack',target:0}],[null,{move:'attack',target:0}],seeded(6));
+ assert.equal(result[0].targetPos,1);assertInvariants([...a,...b]);
+});
+test('JRPG avoids action by eliminated actor',()=>{
+ const a=createTeam(['r']),b=createTeam(['f']);b[0].dead=true;b[0].hp=0;
+ assert.equal(resolveTarget(a,b,[{move:'attack',target:0}],[{move:'attack',target:0}],seeded(1)).length,0);
+});
