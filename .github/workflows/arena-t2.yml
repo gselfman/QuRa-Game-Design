@@ -1,0 +1,29 @@
+name: Arena T2 exhaustive simulation
+on:
+  push:
+    branches: [arena/t2-engine-2026-10-30]
+    paths:
+      - 'tools/arena-engine.mjs'
+      - 'tools/arena-sim-cli.mjs'
+      - '.github/workflows/arena-t2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  arena-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify Arena tests
+        run: node --test tests/arena-engine.test.mjs
+      - name: Full seeded 6x6 matrix
+        run: node tools/arena-sim-cli.mjs --per-pair 10000 --seed 20261030 --out arena-results
+      - name: Upload raw results
+        uses: actions/upload-artifact@v4
+        with:
+          name: arena-t2-matrix
+          path: arena-results/
