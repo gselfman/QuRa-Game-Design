@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {thresholds,levelFromXP,stage,runBehavior,compareCohorts} from '../tools/behavior-simulator.mjs';
+test('XP thresholds',()=>{assert.equal(thresholds[3],55);assert.equal(thresholds[4],110);assert.equal(thresholds[20],8760)});
+test('growth stages',()=>{assert.equal(stage(2),'egg');assert.equal(stage(3),'chick');assert.equal(stage(4),'adult')});
+test('level boundaries',()=>{assert.equal(levelFromXP(54),2);assert.equal(levelFromXP(55),3);assert.equal(levelFromXP(110),4)});
+test('GE offline',()=>{let s=runBehavior({days:30,profileOverrides:{login:0},initialXP:55});assert.equal(s.logins,0);assert.equal(s.passiveGE,30)});
+test('no GE before chick',()=>{let s=runBehavior({days:3,profileOverrides:{login:0},initialXP:0});assert.equal(s.passiveGE,0)});
+test('free bot limit',()=>{let s=runBehavior({days:10,initialXP:110,profileOverrides:{login:1,bot:1,wallet:0,minigame:0}});assert.equal(s.botBattles,40)});
+test('deterministic result',()=>{assert.deepEqual(runBehavior({seed:33}),runBehavior({seed:33}))});
+test('three cohorts exist',()=>assert.equal(compareCohorts().length,3));
