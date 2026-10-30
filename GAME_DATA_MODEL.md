@@ -895,3 +895,8 @@ ECONOMY_MODEL.md consumes:
 - mini-game attempt;
 - passive emission;
 - сундук EV.
+
+
+## Решения владельца 30.10.2026 — контракты наград
+
+`ArenaDefensePool` и `ArenaDefenseSetup` используются для добровольной защиты. При **успешной** защите Reward Ledger один раз по `match_id + defender_chicken_id + reward_type` выдаёт XP **защищающейся** курочке и прогресс достижения «Неприступный курятник». Никаких GE или Arena-сундуков защитнику. Ежедневный XP cap обязателен, значение OPEN. При fallback-боте — только уменьшенная ячейка Arena-сундука «Опыт», без продаваемых и эксклюзивных предметов; все награды idempotent. Решения LOCKED по продукту, числовые параметры OPEN.
