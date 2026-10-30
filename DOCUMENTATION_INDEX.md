@@ -216,3 +216,15 @@ Content:
 - `docs/simulator/QuRa_M3_farm_simulator.md` — документация API, ограничения и следующие этапы.
 
 Выполнение: `node --test tests/farm-simulator-m3.test.mjs && node tools/farm-demo-m3.mjs`. Это исследовательская модель, production QuRa не менялся.
+
+
+## M4 — Monte Carlo и интерфейс баланса
+
+- `tools/farm-monte-carlo-m4.mjs` — массовые seeded прогоны, перцентили, сравнение двух версий.
+- `tests/farm-monte-carlo-m4.test.mjs` — проверки статистики/инвариантов.
+- `tools/farm-m4-cli.mjs` — JSON/CSV экспорт и CLI.
+- `tools/m4-baseline.example.json`, `tools/m4-candidate.example.json` — примеры настроек.
+- `m4-dashboard/index.html` — локальный интерактивный интерфейс.
+- `docs/simulator/QuRa_M4_Monte_Carlo_and_dashboard.md` — подробная инструкция и ограничения.
+
+Тесты после загрузки в GitHub не подтверждены реальным исполнением; это исследовательский прототип, не production.
