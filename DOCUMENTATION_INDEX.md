@@ -228,3 +228,15 @@ Content:
 - `docs/simulator/QuRa_M4_Monte_Carlo_and_dashboard.md` — подробная инструкция и ограничения.
 
 Тесты после загрузки в GitHub не подтверждены реальным исполнением; это исследовательский прототип, не production.
+
+
+## T2 — Battle Engine (baseline 30.10.2026)
+- `tools/arena-engine.mjs` — единственный расчётный движок 1×1, Wall и JRPG, используемый двумя браузерными прототипами.
+- `tools/arena-sim-cli.mjs` — матрица 6×6, 10 000 боёв на пару; CSV, JSON и распределение раундов.
+- `tests/arena-engine.test.mjs` и `tests/fixtures/arena-legacy-jrpg.js` — CI parity и инварианты.
+- `ARENA_SIMULATION_RESULTS.md` — фактическая таблица цель/факт, 360 000 боёв; **баланс не соответствует целям и не LOCKED**.
+- `results/arena-t2-matrix-20261030.csv` — воспроизводимая матрица.
+- `docs/instructions/2026-10-30_T2_engine_runbook.md` — запуск и пробелы покрытия.
+- `.github/workflows/arena-t2.yml` — подтверждённая массовая симуляция: https://github.com/gselfman/QuRa-Game-Design/actions/runs/41061092160.
+
+**Открыто до полной целевой матрицы:** численные пробы BP, уровня, комплекта экипировки, камбэков и async-тактик для T3–T5; визуальное/сетевое E2E. Тесты зелёные, но достижения игровых target-коридоров **не заявлено**.
