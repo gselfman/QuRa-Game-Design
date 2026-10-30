@@ -124,7 +124,12 @@ export function pairings(teamA,teamB){
 export function resolveWall(teamA,teamB,movesA,movesB,rng=seeded(1)){
  const results=[];for(const [a,b] of pairings(teamA,teamB)){
   if(a.dead||b.dead)continue;
-  results.push(resolveClash(a,b,movesA[a.pos],movesB[b.pos],rng()));
+  // A fighter can be paired again when outnumbered. A Special spent in an
+  // earlier collision cannot be executed twice from one 100-charge payment.
+  // Provisional T2 safety rule, to be calibrated/locked in T3 section 54.
+  const moveA=legal(a).includes(movesA[a.pos])?movesA[a.pos]:'defend';
+  const moveB=legal(b).includes(movesB[b.pos])?movesB[b.pos]:'defend';
+  results.push(resolveClash(a,b,moveA,moveB,rng()));
  }
  return results
 }
