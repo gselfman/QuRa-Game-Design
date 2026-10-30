@@ -8,6 +8,7 @@ const variants=[
  {id:'speed_sequential',rules:{equalSpeed:'simultaneous',speedOrder:'sequential'}},
  {id:'charge_fast',rules:{equalSpeed:'simultaneous',chargeTable:{win:40,lose:20,tie:25}}},
  {id:'tie_draw',rules:{equalSpeed:'simultaneous'},tiePolicy:'draw'},
+ {id:'double_ko_tiebreak',rules:{equalSpeed:'simultaneous'},doubleKOPolicy:'pre_round_hp'},
  {id:'multi_once',rules:{equalSpeed:'simultaneous',multiCollision:'once'}}
 ];
 const pairs=[['r','b'],['f','p'],['m','g'],['r','r'],['m','m']];
@@ -17,7 +18,7 @@ for(const v of variants){
  for(let i=0;i<N;i++){
   const [a,b]=pairs[i%pairs.length];const fight=fight1v1(a,b,{
    seed:(seed+Math.imul(i+1,1664525))>>>0,strategyA:'equilibrium',strategyB:'equilibrium',
-   rules:v.rules,tiePolicy:v.tiePolicy||'hp'});
+   rules:v.rules,tiePolicy:v.tiePolicy||'hp',doubleKOPolicy:v.doubleKOPolicy||'draw'});
   wins+=fight.winner===1?1:fight.winner===3?.5:0;
   draws+=fight.winner===3?1:0;
   doubleKO+=fight.termination==='double_ko'?1:0;
