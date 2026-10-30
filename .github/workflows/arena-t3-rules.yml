@@ -1,0 +1,30 @@
+name: Arena T3 five rule variants
+on:
+  push:
+    branches: [arena/t3-rule-experiments-2026-10-30]
+    paths:
+      - 'tools/arena-engine.mjs'
+      - 'tools/arena-t3-rules-experiment.mjs'
+      - '.github/workflows/arena-t3-rules.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Regression suite
+        run: node --test tests/
+      - name: Compare T3 variants
+        run: node tools/arena-t3-rules-experiment.mjs --per-variant 1500 --seed 20261030 --out arena-t3-rules > arena-t3-rules-console.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arena-t3-five-rule-variants
+          path: |
+            arena-t3-rules/
+            arena-t3-rules-console.json
