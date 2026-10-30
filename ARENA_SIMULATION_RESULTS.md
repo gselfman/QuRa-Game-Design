@@ -49,3 +49,30 @@ The fact that same-hero mirror battles can produce 61.53% (Монах vs Мон�
 - Common engine `tools/arena-engine.mjs` is used in both browser prototype entrypoints; network UI integration has static contract tests, but **no real multiplayer browser E2E test was executed**.
 - Unit tests verify 576 deterministic Wall clashes and 12 JRPG single-target cases against frozen original code.
 - 360,000-fight batch and artifacts succeeded. Browser visual QA and deeper JRPG parity remain residual engineering risks.
+
+## T3 — фактические экспериментальные результаты, версия v0.1 (НЕ LOCKED)
+
+**Критическое исправление:** в T2 `equilibrium.evaluate()` знак HP-payoff был инвертирован (ИИ предпочитал получать урон). Матрица 360 000 боёв T2 — только исторический baseline старого невалидного для оптимальной игры алгоритма, а не основание утверждать balance. Исправлен в ветке T3; все дальнейшие сравнения должны использовать исправленную оценку.
+
+- Mirror A/B: https://github.com/gselfman/QuRa-Game-Design/actions/runs/41119729709 — 24 000 боёв, 2 политики equal Speed × 6 основательниц × 2000, fixed seed. Данные `results/arena-t3-mirror-payoff-corrected-20261030.csv`. При simultaneous equal-speed 6/6 зеркальных матчей 45–55%, однако Ряба 54.15% первой стороны; это не доказательство полной нейтральности.
+- Five-rule variants + double-KO tiebreak: https://github.com/gselfman/QuRa-Game-Design/actions/runs/41120387647 (green); `results/arena-t3-five-rule-variants-20261030.csv`. В выборке 1500 боёв на вариант + 500 3×3 на вариант; 5 различных упорядоченных пар (включая зеркала). Это focused experiment, не все 36 пар и не 10 000 на пару.
+
+| Эксперимент | 1×1 медиана | Special/бой | Доля Защиты | Двойной KO | Ничейный исход | 3×3 медиана |
+|---|---:|---:|---:|---:|---:|---:|
+| Simultaneous baseline, fixed payoff | 6 | 1.434 | 37.00% | 11.8% | 11.8% | 8 |
+| Sequential attack ordering | 6 | 1.426 | 37.28% | 5.13% | 5.13% | 8 |
+| Accelerated charge 40/20/25 | 7 | 2.009 | 35.75% | 10.27% | 10.27% | 8 |
+| Double-KO tie-break: pre-round HP, seeded coin if equal | 6 | 1.434 | 37.00% | 11.8% | 0% | 8 |
+| Multi-collision once-per-action policy | 6 | 1.434 | 37.00% | 11.8% | 11.8% | 8 |
+
+Оставлены отдельно **физическая частота двойных KO** и **частота незавершённого ничейного результата**: tie-break делает 0% незавершённых ничьих в этом эксперименте, но не уменьшает сами 11.8% двойных KO.
+
+### Предварительные решения для проверки следующей матрицей
+
+- **Скорость:** simultaneous предпочтительна из-за более последовательного скрытого выбора; последовательная уменьшает двойной KO, но это не отменяет нужду в tie-break. Проверка JRPG полного simultaneous ещё отсутствует.
+- **Multi-collision:** once-per-action выглядит логичнее; 3×3 нерешённые исходы 6.0% → 4.8% в данной выборке, но защита/заряд и 1×N требуют более широкого теста.
+- **JRPG auto-retarget vs lost:** в 1000 принудительных сценариях погибшей цели автоцель позволила 1000 переназначений и 33 000 суммарного урона; lost-action — 1000 потерянных действий и 0 урона. Это диагностический крайний случай, НЕ оценка частоты в реальной игре.
+- **Charge 35/15/20:** исходная таблица в данном сценарии достигает 1.434 Special/бой и медиану 6, быстрее 40/20/25 выходит за условный максимум 2.0 Special и замедляет бой; исходная предпочтительна.
+- **Double-KO:** событие 11.8% превышает порог 2%; экспериментальный честный тай-брейк по доле HP перед последним раундом, затем seeded 50/50, даёт 0% неразрешённых ничьих без изменения числа фактических двойных KO. Перед LOCK нужен тест side bias, распределения побед, BP и противников.
+
+**Статус:** ни одно из пяти правил НЕ переведено в LOCKED по симуляции до полного покрытия T3. Т3 всё ещё WIP, PR #17 draft. Цели T4 по параметрам курочек и экипировке не затрагивались.
