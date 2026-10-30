@@ -23,8 +23,8 @@ jobs:
           node-version: '20'
       - name: Verify tests
         run: node --test tests/
-      - name: Recalculate corrected equilibrium 6x6 with simultaneous equal-Speed Maneuvers
-        run: node tools/arena-sim-cli.mjs --per-pair 10000 --seed 20261030 --equal-speed simultaneous --out arena-t3-full
+      - name: Recalculate corrected equilibrium 6x6 with simultaneous Maneuver and Special
+        run: node tools/arena-sim-cli.mjs --per-pair 10000 --seed 20261030 --equal-speed simultaneous --special-order simultaneous --out arena-t3-full
       - uses: actions/upload-artifact@v4
         with:
           name: arena-t3-corrected-360k
