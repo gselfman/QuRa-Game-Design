@@ -7,6 +7,9 @@ on:
       - 'tools/arena-sim-cli.mjs'
       - '.github/workflows/arena-t3-full.yml'
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
