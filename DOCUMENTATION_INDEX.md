@@ -206,3 +206,13 @@ Content:
 - `tools/behavior-demo.mjs` — пример вывода сценариев.
 
 **Запуск локально:** `node --test tests/behavior-simulator.test.mjs` и `node tools/behavior-demo.mjs`. Файлы проверены чтением из GitHub; CI/Node-тесты после этой загрузки ещё не подтверждены. Figma-файл не создан автоматически, ссылки на Figma-страницы — план размещения.
+
+
+## M3 — симулятор Курятника (30.10.2026)
+
+- `tools/farm-simulator-m3.mjs` — multi-chicken state, XP, lifecycle, GE laying, eggs, coop upgrades and equipment purchasing.
+- `tests/farm-simulator-m3.test.mjs` — проверки M3 (запуск ещё не подтверждён).
+- `tools/farm-demo-m3.mjs` — 30/90-дневные демонстрационные сценарии.
+- `docs/simulator/QuRa_M3_farm_simulator.md` — документация API, ограничения и следующие этапы.
+
+Выполнение: `node --test tests/farm-simulator-m3.test.mjs && node tools/farm-demo-m3.mjs`. Это исследовательская модель, production QuRa не менялся.
