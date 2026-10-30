@@ -78,7 +78,11 @@ export function resolveClash(a,b,ma,mb,randomValue=.5){
 export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random'}={}){
  const a=createFighter(idA),b=createFighter(idB),rng=seeded(seed);const history=[];let winner=0;
  for(let round=1;round<=maxRounds;round++){
-  const ma=choose(a,b,strategyA,rng),mb=choose(b,a,strategyB,rng);
+  let ma,mb;
+  if(strategyA==='equilibrium'&&strategyB==='equilibrium'){
+   const eq=equilibrium(a,b),select=(actions,prob)=>{const v=rng();let p=0;for(let i=0;i<actions.length;i++){p+=prob[i];if(v<=p)return actions[i]}return actions.at(-1)};
+   ma=select(eq.actions,eq.probabilities);mb=select(eq.opponentActions,eq.opponentProbabilities);
+  }else{ma=choose(a,b,strategyA,rng);mb=choose(b,a,strategyB,rng)}
   const outcome=resolveClash(a,b,ma,mb,rng());history.push({round,...outcome});
   if(a.dead||b.dead){winner=a.dead&&b.dead?3:a.dead?2:1;break}
  }
@@ -103,7 +107,7 @@ export function equilibrium(a,b,iterations=24){
   let za=pa.reduce((x,y)=>x+y),zb=pb.reduce((x,y)=>x+y);
   pa=pa.map(x=>x/za);pb=pb.map(x=>x/zb);
  }
- return {actions:la,probabilities:avgA};
+ return {actions:la,probabilities:avgA,opponentActions:lb,opponentProbabilities:avgB};
 }
 export function choose(a,b,style,rng){
  const choices=legal(a);if(!choices.length)throw Error('dead fighter');
