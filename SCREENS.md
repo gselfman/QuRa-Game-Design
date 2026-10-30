@@ -222,16 +222,10 @@ Privacy-limited:
 - allowed collection
 - challenge
 
-## 25. Arena Home
+## 25. Главная Arena (старт)
 
-- ranked/friendly/training
-- season
-- Glory
-- league
-- record
-- current team
-- buff inventory/loadout
-- Hall of Fame entry
+Доступны: **1×1 с другом**, **бот-тренировка**, **асинхронный вызов защитной тактики**. Заблокированные превью 2×2 и 3×3: показывают прогресс (например 2/3 взрослых, 2/4 места), требования и кнопки «Получить курочку» / «Расширить Курятник». 4-player — Future, в стартовом UI не предлагать.
+
 
 ## 26. Arena Enrollment
 
@@ -249,12 +243,10 @@ Privacy-limited:
 - cancel before lock
 - bot vs human indication
 
-## 28. Arena Invite
+## 28. Вызов друга и аренда
 
-- opponent/friend
-- mode
-- accept/decline/later
-- entry cost if applicable
+Перед оплатой показывать **10 GE аренды/игрок (PROTOTYPE BALANCE)**, приз победителю — сундук без гарантированного GE, лимит призовых матчей пары и возможность **бесплатной тренировки без награды**. Скрытых ставок и переводов GE нет.
+
 
 ## 29. Arena Mode Selection
 
@@ -371,16 +363,10 @@ tabs/recipient:
 - Technical calculation spoiler
 - copy/share
 
-## 41. Arena Match Result
+## 41. Итоги боя
 
-- winner
-- reason
-- GE settlement
-- Glory
-- rewards
-- stats
-- rematch
-- Chronicle share
+Победа: выдача **Arena-сундука**, предпросмотр трёх ячеек (трофей, опыт, шанс эксклюзивной косметики). Проигрыш: без сундука. Отмена до начала/ошибка платформы — возврат аренды; двойной KO — без сундука/возврата. Отдельно показать XP, Боевой дух и прогресс сезона; не показывать старый GE payout 15.
+
 
 ## 42. Rematch Prompt
 

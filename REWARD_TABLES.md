@@ -109,14 +109,10 @@ Paid/high-value chest families need:
 
 Exact thresholds OPEN.
 
-## 7. Duplicate handling
+## 7. Дубли — утверждённая механика
 
-Gear duplicate:
-- stored if capacity;
-- overflow if full;
-- future partial sell/trade-in.
+Продаваемый дубль выкупается за **25% магазинной цены GE** (`duplicate_sellback_pct=25`), с серверным ledger и решением округления (OPEN). Arena-эксклюзивы: непродаваемы, дубль заменяется усиленной ячейкой прогресса. Награда никогда не удаляется молча.
 
-No automatic deletion.
 
 ## 8. Overflow
 
@@ -149,28 +145,20 @@ Specific current reward matrix remains in mini-game-specific documentation/proto
 
 Reward Tables references it rather than inventing new values.
 
-## 11. Arena rewards
+## 11. Arena-сундук победителя — D-02a
 
-### Paid 2-player match
-LOCKED:
-- 10 GE entry each
-- winner +15 GE
-- system sink 5 GE
+В платном бою с другом и асинхронной атаке победитель получает **один Arena-сундук** без гарантированного GE. Бой с ботом и тренировочный бой с другом — без сундука.
 
-### Glory
-Separate non-GE reward.
+| Ячейка | Награда | Продажа | GE-ценность |
+|---|---|---|---|
+| 1. Трофей — всегда | расходник/малый предмет из Arena-пула, цена магазина 20–50 GE | 25% | средняя 7,5; максимум 12,5 |
+| 2. Опыт — всегда | XP главной курочке (с cap), Боевой дух, сезон/achievement | нет | 0 |
+| 3. Редкость — очень редко | эксклюзивные рамка, баннер, герб, скин, эмоция, FX | нет | 0 |
 
-### Season
-Can include:
-- GE
-- chest
-- gear
-- buffs
-- cosmetics
-- tickets
-- medal/status
+**PROTOTYPE BALANCE** распределения ячейки 1: цена магазина 20 GE — 40%; 30 GE — 30%; 40 GE — 20%; 50 GE — 10%. **Средний выкуп:** 0,4×5 + 0,3×7,5 + 0,2×10 + 0,1×12,5 = **7,5 GE**. Эксклюзивная косметика: шанс **1–2% PROTOTYPE BALANCE**, при дубле даётся усиленный сезонный прогресс, не GE. Только предметы ценой ≤5×аренды; дорогие магазинные предметы исключены. В продаже Arena-сундук как способ покупки дорогой экипировки не используется.
 
-Exact season table OPEN.
+Для прозрачности: редкая косметика может иметь высокую коллекционную ценность, но её нельзя продать, передать или обменять на GE. XP из арендного сундука имеет дневной кап, чтобы не обходить запрет прямой покупки XP.
+
 
 ## 12. Friendly rewards
 
