@@ -46,7 +46,7 @@ export function special(c,e,defended,rng){
  if(c.id==='m'){c.hp=Math.min(c.maxHp,c.hp+27);return take(e,18*(defended?.5:1))}
  e.weaken=Math.max(e.weaken,.30);return take(e,41*(defended?.5:1))
 }
-export function resolveClash(a,b,ma,mb,randomValue=.5){
+export function resolveClash(a,b,ma,mb,randomValue=.5,options={}){
  if(!legal(a).includes(ma)||!legal(b).includes(mb))throw Error('illegal or dead fighter action');
  let da=0,db=0,w=0;const hpA=a.hp,hpB=b.hp;
  if(ma==='special'||mb==='special'){
@@ -59,7 +59,10 @@ export function resolveClash(a,b,ma,mb,randomValue=.5){
  }else if(ma===mb){
   if(ma==='attack'){da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
   if(ma==='maneuver'){
-   if(a.s>=b.s){da+=maneuver(a,b);db+=hit(b,a,.45);w=1}
+   if(a.s===b.s&&options.equalSpeed==='simultaneous'){
+    // Both maneuvers resolve without positional priority at equal speed.
+    da+=maneuver(a,b);db+=maneuver(b,a);
+   }else if(a.s>=b.s){da+=maneuver(a,b);db+=hit(b,a,.45);w=1}
    else{db+=maneuver(b,a);da+=hit(a,b,.45);w=2}
   }
  }else{
@@ -75,7 +78,7 @@ export function resolveClash(a,b,ma,mb,randomValue=.5){
  charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);
  return {ma,mb,w,damageToA:hpA-a.hp,damageToB:hpB-b.hp,after:[a.hp,b.hp],charge:[a.q,b.q]};
 }
-export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random'}={}){
+export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random',rules={}}={}){
  const a=createFighter(idA),b=createFighter(idB),rng=seeded(seed);const history=[];let winner=0;
  for(let round=1;round<=maxRounds;round++){
   let ma,mb;
@@ -83,7 +86,7 @@ export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strateg
    const eq=equilibrium(a,b),select=(actions,prob)=>{const v=rng();let p=0;for(let i=0;i<actions.length;i++){p+=prob[i];if(v<=p)return actions[i]}return actions.at(-1)};
    ma=select(eq.actions,eq.probabilities);mb=select(eq.opponentActions,eq.opponentProbabilities);
   }else{ma=choose(a,b,strategyA,rng);mb=choose(b,a,strategyB,rng)}
-  const outcome=resolveClash(a,b,ma,mb,rng());history.push({round,...outcome});
+  const outcome=resolveClash(a,b,ma,mb,rng(),rules);history.push({round,...outcome});
   if(a.dead||b.dead){winner=a.dead&&b.dead?3:a.dead?2:1;break}
  }
  if(!winner){winner=a.hp/a.maxHp>b.hp/b.maxHp?1:b.hp/b.maxHp>a.hp/a.maxHp?2:3}
