@@ -129,3 +129,46 @@ export function resolveWall(teamA,teamB,movesA,movesB,rng=seeded(1)){
  return results
 }
 export function assertInvariants(team){for(const f of team){if(f.hp<0||f.hp>f.maxHp||f.q<0||f.q>100||Boolean(f.dead)!==(f.hp===0))throw Error('bad fighter state')}}
+
+/**
+ * JRPG target-mode adaptation of the browser prototype.
+ * Actions are resolved defend-first then by current speed, with fallback to
+ * next living enemy at/after the selected slot (prototype retarget rule).
+ */
+export function resolveTarget(teamA,teamB,movesA,movesB,rng=seeded(1)){
+ const teams=[teamA,teamB],moves=[movesA,movesB],actions=[];
+ for(let side=0;side<2;side++)for(const c of teams[side]){
+  if(!c.dead){const cmd=moves[side][c.pos];if(cmd?.move)actions.push({side,c,move:cmd.move,target:cmd.target??c.pos})}
+ }
+ actions.sort((a,b)=>(a.move==='defend'?-1:0)-(b.move==='defend'?-1:0)||b.c.s-a.c.s);
+ const results=[],defended=new Set();
+ for(const act of actions){
+  if(act.c.dead)continue;
+  if(act.move==='defend'){
+   if(!defended.has(act.c)){charge(act.c,18);defended.add(act.c)}
+   continue;
+  }
+  const enemies=teams[1-act.side].filter(e=>!e.dead);
+  if(!enemies.length)break;
+  const target=enemies.find(e=>e.pos===act.target)||
+    enemies.slice().sort((a,b)=>((a.pos-act.target+3)%3)-((b.pos-act.target+3)%3))[0];
+  const enemyMove=moves[1-act.side][target.pos]?.move||'attack';
+  const before=[act.c.hp,target.hp];let winner=0,damage=0;
+  if(act.move==='attack'){
+   if(enemyMove==='defend'){damage=hit(act.c,target,.22);counter(target,act.c);winner=2}
+   else if(enemyMove==='maneuver'){damage=hit(act.c,target,1.45);winner=1}
+   else if(enemyMove==='special')damage=hit(act.c,target,.35);
+   else damage=hit(act.c,target,act.c.s>target.s?1.10:1);
+  }else if(act.move==='maneuver'){
+   if(enemyMove==='attack')damage=take(target,10);
+   else {damage=maneuver(act.c,target);winner=enemyMove==='defend'?1:0}
+  }else if(act.move==='special'){
+   if(act.c.q<100)throw Error('illegal special');
+   damage=special(act.c,target,enemyMove==='defend',rng());
+   winner=enemyMove==='defend'?0:1;
+  }else throw Error('illegal action');
+  charge(act.c,winner===1?35:20);
+  results.push({side:act.side+1,actorPos:act.c.pos,targetPos:target.pos,move:act.move,opponentMove:enemyMove,damage,before,after:[act.c.hp,target.hp],winner});
+ }
+ assertInvariants([...teamA,...teamB]);return results;
+}
