@@ -57,7 +57,13 @@ export function resolveClash(a,b,ma,mb,randomValue=.5,options={}){
   if(ma==='maneuver')da+=maneuver(a,b);
   if(mb==='maneuver')db+=maneuver(b,a);
  }else if(ma===mb){
-  if(ma==='attack'){da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
+  if(ma==='attack'){
+   if(options.speedOrder==='sequential'){
+    const aFirst=a.s>b.s||(a.s===b.s&&randomValue<.5);
+    if(aFirst){da+=hit(a,b,a.s>b.s?1.10:1);if(!b.dead)db+=hit(b,a,b.s>a.s?1.10:1)}
+    else{db+=hit(b,a,b.s>a.s?1.10:1);if(!a.dead)da+=hit(a,b,a.s>b.s?1.10:1)}
+   }else{da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
+  }
   if(ma==='maneuver'){
    if(a.s===b.s&&options.equalSpeed==='simultaneous'){
     // Both actors resolve from the SAME pre-round snapshot. Merge own
@@ -88,29 +94,32 @@ export function resolveClash(a,b,ma,mb,randomValue=.5,options={}){
   else if(k==='ad'){da=hit(a,b,.22);db=counter(b,a);w=2}
  }
  if(!w){if(da>db+5)w=1;else if(db>da+5)w=2}
- charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);
+ const table=options.chargeTable||{win:35,lose:15,tie:20};
+ for(const v of [table.win,table.lose,table.tie])if(!Number.isFinite(v)||v<0||v>100)throw Error('invalid charge table');
+ charge(a,w===1?table.win:w===2?table.lose:table.tie);
+ charge(b,w===2?table.win:w===1?table.lose:table.tie);
  return {ma,mb,w,damageToA:hpA-a.hp,damageToB:hpB-b.hp,after:[a.hp,b.hp],charge:[a.q,b.q]};
 }
-export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random',rules={}}={}){
- const a=createFighter(idA),b=createFighter(idB),rng=seeded(seed);const history=[];let winner=0;
+export function fight1v1(idA,idB,{seed=1,maxRounds=30,strategyA='random',strategyB='random',rules={},tiePolicy='hp'}={}){
+ const a=createFighter(idA),b=createFighter(idB),rng=seeded(seed);const history=[];let winner=0,termination='timeout';
  for(let round=1;round<=maxRounds;round++){
   let ma,mb;
   if(strategyA==='equilibrium'&&strategyB==='equilibrium'){
-   const eq=equilibrium(a,b),select=(actions,prob)=>{const v=rng();let p=0;for(let i=0;i<actions.length;i++){p+=prob[i];if(v<=p)return actions[i]}return actions.at(-1)};
+   const eq=equilibrium(a,b,24,rules),select=(actions,prob)=>{const v=rng();let p=0;for(let i=0;i<actions.length;i++){p+=prob[i];if(v<=p)return actions[i]}return actions.at(-1)};
    ma=select(eq.actions,eq.probabilities);mb=select(eq.opponentActions,eq.opponentProbabilities);
-  }else{ma=choose(a,b,strategyA,rng);mb=choose(b,a,strategyB,rng)}
+  }else{ma=choose(a,b,strategyA,rng,rules);mb=choose(b,a,strategyB,rng,rules)}
   const outcome=resolveClash(a,b,ma,mb,rng(),rules);history.push({round,...outcome});
-  if(a.dead||b.dead){winner=a.dead&&b.dead?3:a.dead?2:1;break}
+  if(a.dead||b.dead){winner=a.dead&&b.dead?3:a.dead?2:1;termination=a.dead&&b.dead?'double_ko':'knockout';break}
  }
- if(!winner){winner=a.hp/a.maxHp>b.hp/b.maxHp?1:b.hp/b.maxHp>a.hp/a.maxHp?2:3}
- return {winner,rounds:history.length,history,remaining:[a.hp,b.hp]};
+ if(!winner){winner=tiePolicy==='draw'?3:a.hp/a.maxHp>b.hp/b.maxHp?1:b.hp/b.maxHp>a.hp/a.maxHp?2:3}
+ return {winner,termination,rounds:history.length,history,remaining:[a.hp,b.hp]};
 }
-function evaluate(a,b,actA,actB){
- const ca={...a},cb={...b};resolveClash(ca,cb,actA,actB,.5);
+function evaluate(a,b,actA,actB,options={}){
+ const ca={...a},cb={...b};resolveClash(ca,cb,actA,actB,.5,options);
  return ((b.hp-cb.hp)-(a.hp-ca.hp)) + .28*(ca.hp-a.hp-cb.hp+b.hp) + .22*(ca.shield-a.shield-cb.shield+b.shield) + .09*(ca.q-a.q-cb.q+b.q) + (cb.dead?50:0)-(ca.dead?50:0);
 }
-export function equilibrium(a,b,iterations=24){
- const la=legal(a),lb=legal(b),scores=la.map(x=>lb.map(y=>evaluate(a,b,x,y)));
+export function equilibrium(a,b,iterations=24,options={}){
+ const la=legal(a),lb=legal(b),scores=la.map(x=>lb.map(y=>evaluate(a,b,x,y,options)));
  // approximate mixed minimax via simultaneous multiplicative weights.
  let pa=la.map(()=>1/la.length),pb=lb.map(()=>1/lb.length),avgA=pa.map(()=>0),avgB=pb.map(()=>0);
  for(let t=0;t<iterations;t++){
@@ -125,13 +134,13 @@ export function equilibrium(a,b,iterations=24){
  }
  return {actions:la,probabilities:avgA,opponentActions:lb,opponentProbabilities:avgB};
 }
-export function choose(a,b,style,rng){
+export function choose(a,b,style,rng,options={}){
  const choices=legal(a);if(!choices.length)throw Error('dead fighter');
  if(style==='random')return choices[Math.floor(rng()*choices.length)];
  if(style==='greedy'){
-  return choices.map(x=>({x,value:legal(b).reduce((sum,y)=>sum+evaluate(a,b,x,y),0)/legal(b).length})).sort((u,v)=>v.value-u.value)[0].x;
+  return choices.map(x=>({x,value:legal(b).reduce((sum,y)=>sum+evaluate(a,b,x,y,options),0)/legal(b).length})).sort((u,v)=>v.value-u.value)[0].x;
  }
- if(style==='equilibrium'){const mix=equilibrium(a,b),v=rng();let sum=0;for(let i=0;i<mix.actions.length;i++){sum+=mix.probabilities[i];if(v<=sum)return mix.actions[i]}return mix.actions.at(-1)}
+ if(style==='equilibrium'){const mix=equilibrium(a,b,24,options),v=rng();let sum=0;for(let i=0;i<mix.actions.length;i++){sum+=mix.probabilities[i];if(v<=sum)return mix.actions[i]}return mix.actions.at(-1)}
  throw Error('unknown strategy');
 }
 export function createTeam(ids){if(ids.length<1||ids.length>3)throw Error('team size 1..3');return ids.map((id,pos)=>Object.assign(createFighter(id),{pos}))}
@@ -141,15 +150,26 @@ export function pairings(teamA,teamB){
  const anchor=a.length>=b.length?1:2,other=anchor===1?b:a;
  return (anchor===1?a:b).map(c=>{const target=other.find(x=>x.pos===c.pos)||other.slice().sort((u,v)=>((u.pos-c.pos+3)%3)-((v.pos-c.pos+3)%3))[0];return anchor===1?[c,target]:[target,c]})
 }
-export function resolveWall(teamA,teamB,movesA,movesB,rng=seeded(1)){
- const results=[];for(const [a,b] of pairings(teamA,teamB)){
+export function resolveWall(teamA,teamB,movesA,movesB,rng=seeded(1),options={}){
+ const results=[],seen=new Set(),chargeOnce=new Map();for(const [a,b] of pairings(teamA,teamB)){
   if(a.dead||b.dead)continue;
   // A fighter can be paired again when outnumbered. A Special spent in an
   // earlier collision cannot be executed twice from one 100-charge payment.
   // Provisional T2 safety rule, to be calibrated/locked in T3 section 54.
-  const moveA=legal(a).includes(movesA[a.pos])?movesA[a.pos]:'defend';
-  const moveB=legal(b).includes(movesB[b.pos])?movesB[b.pos]:'defend';
-  results.push(resolveClash(a,b,moveA,moveB,rng()));
+  let moveA=legal(a).includes(movesA[a.pos])?movesA[a.pos]:'defend';
+  let moveB=legal(b).includes(movesB[b.pos])?movesB[b.pos]:'defend';
+  if(options.multiCollision==='once'){
+   if(seen.has(a)&&(moveA==='maneuver'||moveA==='special'))moveA='defend';
+   if(seen.has(b)&&(moveB==='maneuver'||moveB==='special'))moveB='defend';
+  }
+  const aAlready=seen.has(a),bAlready=seen.has(b);
+  const qa=a.q,qb=b.q;
+  results.push(resolveClash(a,b,moveA,moveB,rng(),options));
+  if(options.multiCollision==='once'){
+   if(aAlready)a.q=qa;
+   if(bAlready)b.q=qb;
+  }
+  seen.add(a);seen.add(b);
  }
  return results
 }
