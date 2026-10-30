@@ -1,0 +1,1 @@
+import {compareCohorts} from './behavior-simulator.mjs';console.log(JSON.stringify(compareCohorts(),null,2));
