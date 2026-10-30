@@ -1,0 +1,11 @@
+import {writeFileSync,mkdirSync} from 'node:fs';
+import {simulatePopulation,compareBalance,rowsToCSV} from './farm-monte-carlo-m4.mjs';
+const args=process.argv.slice(2);const opt=(key,defaultVal)=>{const i=args.indexOf('--'+key);return i<0?defaultVal:args[i+1]};
+const users=Number(opt('users',300)),days=Number(opt('days',90)),seed=Number(opt('seed',20261030)),output=opt('out','m4-output');
+const base=opt('config',null);const candidate=opt('compare',null);
+const read=async path=>path?JSON.parse((await import('node:fs')).readFileSync(path,'utf8')):{};
+const baseline=await read(base),compare=await read(candidate);
+const result=candidate?compareBalance({users,days,seed,baseline,candidate:compare}):simulatePopulation({users,days,seed,overrides:baseline,collectSamples:true});
+mkdirSync(output,{recursive:true});writeFileSync(output+'/summary.json',JSON.stringify(result,null,2)+'\n');
+if(!candidate)writeFileSync(output+'/users.csv',rowsToCSV(result.samples));
+console.log(JSON.stringify({output,users,days,seed,metrics:candidate?result.diff:result.metrics,milestones:candidate?result.candidate.milestones:result.milestones},null,2));
