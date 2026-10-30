@@ -53,3 +53,13 @@ test('JRPG lost-action variant differs from automatic retarget',async()=>{
  const auto=resolveTarget(C,D,[{move:'attack',target:0}],[null,{move:'attack',target:0}],seeded(1),{retarget:'auto'});
  assert.equal(lost[0].lost,true);assert.equal(auto[0].targetPos,1);
 });
+
+test('two simultaneous Specials preserve symmetry for mirror founder states',()=>{
+ for(const id of ['r','m','g','b','p']){
+  const a=createFighter(id),b=createFighter(id);a.q=b.q=100;
+  resolveClash(a,b,'special','special',.5,{specialOrder:'simultaneous'});
+  assert.equal(a.hp,b.hp,id+' mirrored HP');
+  assert.equal(a.shield,b.shield,id+' mirrored shield');
+  assert.equal(a.q,b.q,id+' mirrored charge');
+ }
+});
