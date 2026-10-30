@@ -180,7 +180,7 @@ export function assertInvariants(team){for(const f of team){if(f.hp<0||f.hp>f.ma
  * Actions are resolved defend-first then by current speed, with fallback to
  * next living enemy at/after the selected slot (prototype retarget rule).
  */
-export function resolveTarget(teamA,teamB,movesA,movesB,rng=seeded(1)){
+export function resolveTarget(teamA,teamB,movesA,movesB,rng=seeded(1),options={}){
  const teams=[teamA,teamB],moves=[movesA,movesB],actions=[];
  for(let side=0;side<2;side++)for(const c of teams[side]){
   if(!c.dead){const cmd=moves[side][c.pos];if(cmd?.move)actions.push({side,c,move:cmd.move,target:cmd.target??c.pos})}
@@ -195,8 +195,12 @@ export function resolveTarget(teamA,teamB,movesA,movesB,rng=seeded(1)){
   }
   const enemies=teams[1-act.side].filter(e=>!e.dead);
   if(!enemies.length)break;
-  const target=enemies.find(e=>e.pos===act.target)||
-    enemies.slice().sort((a,b)=>((a.pos-act.target+3)%3)-((b.pos-act.target+3)%3))[0];
+  const intended=enemies.find(e=>e.pos===act.target);
+  if(!intended&&options.retarget==='lost'){
+   results.push({side:act.side+1,actorPos:act.c.pos,targetPos:act.target,move:act.move,lost:true,damage:0});
+   continue;
+  }
+  const target=intended||enemies.slice().sort((a,b)=>((a.pos-act.target+3)%3)-((b.pos-act.target+3)%3))[0];
   const enemyMove=moves[1-act.side][target.pos]?.move||'attack';
   const before=[act.c.hp,target.hp];let winner=0,damage=0;
   if(act.move==='attack'){
