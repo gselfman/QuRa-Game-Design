@@ -19,44 +19,30 @@ function maneuver(c,e){var v=0,detail='';if(c.id==='r'){c.shield+=10;v=take(e,24
 function special(c,e,guard,rng){c.q=0;var v=0,detail='';if(c.id==='r'){var sh=guard?14:18;c.shield+=sh;v=take(e,guard?11:25);detail='Золотая скорлупа: −'+v+' HP, +'+sh+' щита'}else if(c.id==='b'){v=take(e,46*(guard?.45:1));detail='Ответочка: −'+v+' HP'+(guard?' (Защита)':'')}else if(c.id==='f'){var raw=rng<.10?0:(rng<.35?58:43);v=take(e,raw*(guard?.45:1));detail=raw?'Авось!: −'+v+' HP'+(guard?' (Защита)':''):'Авось!: не повезло — 0 урона'}else if(c.id==='p'){v=take(e,45*(guard?.5:1));detail='Расчёт: −'+v+' HP'+(guard?' (Защита)':'')}else if(c.id==='m'){var h2=Math.min(c.max-c.hp,27);c.hp+=h2;v=take(e,18*(guard?.5:1));detail='Благодать: +'+h2+' HP себе, −'+v+' HP врагу'}else{e.weaken=Math.max(e.weaken,.30);v=take(e,41*(guard?.5:1));detail='Ослепительный выход: −'+v+' HP, следующая Атака врага −30%'}return{v:v,detail:detail}}
 function label(c,m){return m==='attack'?'⚔️ Атака':m==='defend'?'🛡️ Защита':m==='maneuver'?'🎯 '+c.m:'✨ '+c.x}function coach(m){if(m==='attack')return'Против Атаки попробуйте Защиту: блок уменьшает урон и даёт контратаку.';if(m==='defend')return'Против Защиты попробуйте Манёвр: он обходит блок.';if(m==='maneuver')return'Против Манёвра попробуйте Атаку: соперница открыта во время подготовки.';return'Против Special Защита уменьшает прямой эффект, но соперник может блефовать Манёвром.'}
 function clash(a,b,ma,mb,rng){var before=[a.hp,b.hp],da=0,db=0,w=0,why='',details=[];if(ma==='special'||mb==='special'){if(ma==='special'){var sa=special(a,b,mb==='defend',rng);da+=sa.v;details.push(a.n+': '+sa.detail)}if(mb==='special'){var sb=special(b,a,ma==='defend',1-rng);db+=sb.v;details.push(b.n+': '+sb.detail)}if(ma!=='special'&&ma==='attack'){var va=hit(a,b,.35);da+=va;details.push(a.n+' атакует сквозь Special: −'+va+' HP')}if(mb!=='special'&&mb==='attack'){var vb=hit(b,a,.35);db+=vb;details.push(b.n+' атакует сквозь Special: −'+vb+' HP')}if(ma!=='special'&&ma==='maneuver'){var ra=maneuver(a,b);da+=ra.v;details.push(a.n+': '+ra.detail)}if(mb!=='special'&&mb==='maneuver'){var rb=maneuver(b,a);db+=rb.v;details.push(b.n+': '+rb.detail)}why=(ma==='defend'||mb==='defend')?'Защита уменьшила прямой Special.':'Special дал сильный эффект.'}else if(ma===mb){if(ma==='attack'){var v1=hit(a,b,a.s>b.s?1.10:1),v2=hit(b,a,b.s>a.s?1.10:1);da+=v1;db+=v2;why='Обе атаковали: обе получили урон, Скорость дала небольшой бонус.'}else if(ma==='defend'){why='Обе защищались: урона нет.'}else{if(a.s>=b.s){var r1=maneuver(a,b),z1=hit(b,a,.45);da+=r1.v;db+=z1;w=1}else{var r2=maneuver(b,a),z2=hit(a,b,.45);db+=r2.v;da+=z2;w=2}why='Обе выбрали Манёвр: более быстрая курочка провела его полностью.'}}else{var k=ma[0]+mb[0];if(k==='am'){da=hit(a,b,1.45);w=1;why='Атака победила Манёвр: соперница открылась во время подготовки.'}else if(k==='ma'){db=hit(b,a,1.45);w=2;why='Атака победила Манёвр: соперница открылась во время подготовки.'}else if(k==='md'){var m1=maneuver(a,b);da=m1.v;w=1;why='Манёвр победил Защиту: блок ждал прямой удар.'}else if(k==='dm'){var m2=maneuver(b,a);db=m2.v;w=2;why='Манёвр победил Защиту: блок ждал прямой удар.'}else if(k==='da'){db=hit(b,a,.22);da=counter(a,b);w=1;why='Защита победила Атаку: блок превратил удар в контратаку.'}else if(k==='ad'){da=hit(a,b,.22);db=counter(b,a);w=2;why='Защита победила Атаку: блок превратил удар в контратаку.'}}if(!w){if(da>db+5)w=1;else if(db>da+5)w=2}charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);return{a:a.n,b:b.n,ma:ma,mb:mb,la:label(a,ma),lb:label(b,mb),w:w,why:why,details:details,before:before,after:[a.hp,b.hp],tips:{1:w===2?coach(mb):'',2:w===1?coach(ma):''}}}
+var sharedArenaEngine=null;
+import('../tools/arena-engine.mjs').then(function(m){sharedArenaEngine=m}).catch(function(err){console.error('Arena engine import failed',err)});
+function engineReady(){if(!sharedArenaEngine)throw Error('Shared Arena engine is not loaded');return sharedArenaEngine}
+function syncFighter(c){c.maxHp=c.max;return c}
 function resolveWallHost(){
- var pairs=pairings(),res=[],wins=[0,0],seed=Math.random();
+ var eng=engineReady(),pairs=pairings(),res=[],wins=[0,0],seed=Math.random();
  pairs.forEach(function(p,i){
-   var oa=H.p[1].moves[p.a.pos],ob=H.p[2].moves[p.b.pos],ma=oa&&oa.move,mb=ob&&ob.move;
-   var r=clash(p.a,p.b,ma,mb,(seed+i*.271)%1);r.sideA=1;r.sideB=2;r.posA=p.a.pos;r.posB=p.b.pos;r.globalWinner=r.w;res.push(r);if(r.w)wins[r.w-1]++
+  var oa=H.p[1].moves[p.a.pos],ob=H.p[2].moves[p.b.pos],ma=oa&&oa.move,mb=ob&&ob.move;
+  var r=eng.resolveClash(syncFighter(p.a),syncFighter(p.b),ma,mb,(seed+i*.271)%1);
+  var x={a:p.a.n,b:p.b.n,ma:ma,mb:mb,la:label(p.a,ma),lb:label(p.b,mb),w:r.w,why:'Общий движок Arena',details:[],before:[r.after[0]+r.damageToA,r.after[1]+r.damageToB],after:r.after,tips:{1:'',2:''}};
+  x.sideA=1;x.sideB=2;x.posA=p.a.pos;x.posB=p.b.pos;x.globalWinner=x.w;res.push(x);if(x.w)wins[x.w-1]++
  });
  finishRound(res,wins);
-}
-function targetOutcome(actor,target,move,targetMove,rng){
- var before=[actor.hp,target.hp],v=0,w=0,why='',detail='';
- if(move==='defend'){charge(actor,18);return{a:actor.n,b:target.n,ma:move,mb:targetMove,la:label(actor,move),lb:label(target,targetMove),w:0,why:'Защита — стойка. Её эффект проявится, когда эту курочку атакуют.',details:[],before:before,after:[actor.hp,target.hp],tips:{1:'',2:''}}}
- if(move==='attack'){
-   if(targetMove==='defend'){v=hit(actor,target,.22);var cv=counter(target,actor);w=2;why='Цель выбрала Защиту: прямой удар почти заблокирован, а атакующая курочка получила контратаку.';detail='Атака: −'+v+' HP цели; контратака: −'+cv+' HP атакующей.'}
-   else if(targetMove==='maneuver'){v=hit(actor,target,1.45);w=1;why='Атака поймала цель на Манёвре: во время подготовки Манёвра цель открыта.';detail='Усиленная Атака: −'+v+' HP.'}
-   else if(targetMove==='special'){v=hit(actor,target,.35);why='Цель готовит Special: часть Атаки проходит, но Special не отменяется.';detail='Атака сквозь Special: −'+v+' HP.'}
-   else{v=hit(actor,target,actor.s>target.s?1.10:1);why='Обе курочки действуют агрессивно. Скорость даёт небольшой бонус к Атаке.';detail='Атака: −'+v+' HP.'}
- } else if(move==='maneuver'){
-   if(targetMove==='attack'){v=take(target,10);why='Цель выбрала Атаку: прямое давление срывает подготовку Манёвра.';detail='Манёвр сорван: проходит только −'+v+' HP без персонального бонуса.'}
-   else {var rm=maneuver(actor,target);v=rm.v;detail=rm.detail;w=targetMove==='defend'?1:0;why=targetMove==='defend'?'Манёвр обошёл Защиту: цель ждала прямую Атаку.':'Манёвр сработал со своим персональным эффектом.'}
- } else if(move==='special'){
-   var rs=special(actor,target,targetMove==='defend',rng);v=rs.v;detail=rs.detail;w=targetMove==='defend'?0:1;why=targetMove==='defend'?'Цель прочитала Special и Защитой снизила его прямой эффект.':'Special применён по выбранной цели.'
- }
- charge(actor,w===1?35:20);
- return{a:actor.n,b:target.n,ma:move,mb:targetMove,la:label(actor,move),lb:label(target,targetMove),w:w,why:why,details:[detail],before:before,after:[actor.hp,target.hp],tips:{1:w===2?coach(targetMove):'',2:w===1?coach(move):''}};
 }
 function resolveTargetHost(){
- var actions=[],seed=Math.random();
- [1,2].forEach(function(side){living(side).forEach(function(c){var o=H.p[side].moves[c.pos];if(o&&o.move)actions.push({side:side,c:c,o:o})})});
- actions.sort(function(x,y){if(x.o.move==='defend'&&y.o.move!=='defend')return-1;if(y.o.move==='defend'&&x.o.move!=='defend')return 1;return y.c.s-x.c.s});
- var res=[],wins=[0,0],seenDef={};
- actions.forEach(function(a,i){
-   if(a.c.dead)return;
-   if(a.o.move==='defend'){if(!seenDef[a.side+'-'+a.c.pos]){charge(a.c,18);seenDef[a.side+'-'+a.c.pos]=1}return}
-   var enemy=a.side===1?2:1,target=byPos(enemy,+a.o.target,H)||nextLiving(enemy,+a.o.target,H);if(!target)return;
-   var to=H.p[enemy].moves[target.pos]||{move:'attack'},r=targetOutcome(a.c,target,a.o.move,to.move,(seed+i*.173)%1);
-   r.sourceSide=a.side;r.targetSide=enemy;r.sideA=a.side;r.sideB=enemy;r.posA=a.c.pos;r.posB=target.pos;r.globalWinner=r.w===1?a.side:r.w===2?enemy:0;r.tipsBySide={1:'',2:''};if(r.globalWinner){var loser=r.globalWinner===1?2:1;r.tipsBySide[loser]=loser===a.side?coach(to.move):coach(a.o.move)}res.push(r);if(r.w===1)wins[a.side-1]++;else if(r.w===2)wins[enemy-1]++;
+ var eng=engineReady(),movesA=H.p[1].moves,movesB=H.p[2].moves;
+ var a=H.f[1].filter(Boolean).map(syncFighter),b=H.f[2].filter(Boolean).map(syncFighter);
+ var rng=eng.seeded(Math.floor(Math.random()*4294967296));
+ var output=eng.resolveTarget(a,b,movesA,movesB,rng),res=[],wins=[0,0];
+ output.forEach(function(o){var x={a:(o.side===1?H.f[1]:H.f[2])[o.actorPos].n,b:(o.side===1?H.f[2]:H.f[1])[o.targetPos].n,ma:o.move,mb:o.opponentMove,w:o.winner,why:'Общий движок Arena JRPG',details:[],before:o.before,after:o.after,sourceSide:o.side,targetSide:3-o.side,sideA:o.side,sideB:3-o.side,posA:o.actorPos,posB:o.targetPos,globalWinner:o.winner?o.winner===1?o.side:3-o.side:0,tipsBySide:{1:'',2:''}};
+ x.la=label((o.side===1?H.f[1]:H.f[2])[o.actorPos],o.move);x.lb=label((o.side===1?H.f[2]:H.f[1])[o.targetPos],o.opponentMove);
+ res.push(x);if(x.globalWinner)wins[x.globalWinner-1]++;
  });
- finishRound(res,wins);
+ finishRound(res,wins)
 }
 function finishRound(res,wins){
  var tw=wins[0]>wins[1]?1:wins[1]>wins[0]?2:0;
