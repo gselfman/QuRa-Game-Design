@@ -6,12 +6,12 @@ const opt=(name,fallback)=>{const i=argv.indexOf('--'+name);return i<0?fallback:
 const N=Number(opt('per-hero',2000)),seed=Number(opt('seed',20261030)),out=opt('out','arena-t3-results');
 if(!Number.isInteger(N)||N<100||N>100000)throw Error('per-hero must be 100..100000');
 const rows=[];
-for(const variant of ['legacy','simultaneous']){
+for(const variant of ['legacy','simultaneous','both_simultaneous']){
  for(let h=0;h<HEROES.length;h++){
   const hero=HEROES[h];let wins=0,draws=0,rounds=[],specials=0;
   const actions={attack:0,defend:0,maneuver:0,special:0};
   for(let k=0;k<N;k++){
-   const battle=fight1v1(hero.id,hero.id,{seed:(seed+Math.imul(h+1,92821)+k)>>>0,strategyA:'equilibrium',strategyB:'equilibrium',rules:variant==='simultaneous'?{equalSpeed:'simultaneous'}:{}});
+   const battle=fight1v1(hero.id,hero.id,{seed:(seed+Math.imul(h+1,92821)+k)>>>0,strategyA:'equilibrium',strategyB:'equilibrium',rules:variant==='legacy'?{}:variant==='both_simultaneous'?{equalSpeed:'simultaneous',specialOrder:'simultaneous'}:{equalSpeed:'simultaneous'}});
    wins+=battle.winner===1?1:battle.winner===3?.5:0;
    draws+=battle.winner===3?1:0;rounds.push(battle.rounds);
    for(const turn of battle.history)for(const action of [turn.ma,turn.mb]){actions[action]++;if(action==='special')specials++}
