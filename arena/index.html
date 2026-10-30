@@ -10,7 +10,7 @@
 <div class="cheat"><div>⚔️ <b>Атака</b><br>бьёт 🎯 Манёвр</div><div>🎯 <b>Манёвр</b><br>обходит 🛡️ Защиту</div><div>🛡️ <b>Защита</b><br>контрит ⚔️ Атаку</div></div>
 <div class="explain" id="explain"><div class="explainTitle">Что произошло в раунде</div><div class="tiny" style="text-align:center">После первого хода здесь появится подробный разбор.</div></div>
 <p class="tiny">Special — отдельный сильный приём. При одинаковом выборе действует ослабленный результат и/или Скорость.</p><div class="row" style="justify-content:center"><button class="ready" onclick="start()">Начать бой</button><button id="go" onclick="resolve()" disabled>Разыграть ход</button></div><div class="log" id="log"></div></div><div class="panel" id="p1"></div></div></div>
-<script>
+<script type="module">\nimport {resolveClash as sharedClash} from '../tools/arena-engine.mjs';\n
 const R=[
 {id:'r',n:'Ряба',i:'🐔',role:'Универсал',hp:108,a:24,d:21,s:18,m:'Скорлупа',x:'Золотая скорлупа'},
 {id:'b',n:'Боевик',i:'🥊',role:'Танк-боец',hp:112,a:26,d:23,s:14,m:'Провокация',x:'Ответочка'},
@@ -65,43 +65,10 @@ function resolve(){
  let x=cur(P[0]),y=cur(P[1]),ca=P[0].choice,cb=P[1].choice,before=[x.hp,y.hp],score=[0,0],winner=0,reason='';
  L('<b>Раунд '+T+'</b>: '+choiceLabel(x,ca)+' VS '+choiceLabel(y,cb));
 
- if(ca==='special'||cb==='special'){
-   if(ca==='special')score[0]+=special(x,y,cb);
-   if(cb==='special')score[1]+=special(y,x,ca);
-   if(ca!=='special'){
-     if(ca==='attack')score[0]+=hit(x,y,.35,'⚔️ Атака сквозь Special');
-     else if(ca==='maneuver')score[0]+=maneuver(x,y);
-     else {charge(x,18);L('🛡️ '+x.n+' готовится принять Special')}
-   }
-   if(cb!=='special'){
-     if(cb==='attack')score[1]+=hit(y,x,.35,'⚔️ Атака сквозь Special');
-     else if(cb==='maneuver')score[1]+=maneuver(y,x);
-     else {charge(y,18);L('🛡️ '+y.n+' готовится принять Special')}
-   }
-   reason=(ca==='defend'||cb==='defend')?'Защита уменьшила прямой Special':'Special вступил в игру';
- } else if(ca===cb){
-   if(ca==='attack'){
-     let m1=x.s>y.s?1.10:1,m2=y.s>x.s?1.10:1;
-     score[0]+=hit(x,y,m1,'⚔️ Встречная атака');score[1]+=hit(y,x,m2,'⚔️ Встречная атака');
-     reason='Оба атаковали; более быстрый получил небольшой бонус, но оба удара прошли';
-   } else if(ca==='defend'){reason='Оба защищались — урона нет'}
-   else{
-     if(x.s>=y.s){score[0]+=maneuver(x,y);score[1]+=hit(y,x,.45,'🎯 Запоздалый манёвр')}
-     else{score[1]+=maneuver(y,x);score[0]+=hit(x,y,.45,'🎯 Запоздалый манёвр')}
-     reason='Оба выбрали Манёвр — более быстрый выполнил свой эффект полностью';
-   }
-   charge(x,18);charge(y,18);
- } else {
-   const key=ca[0]+cb[0];
-   if(key==='am'){score[0]+=hit(x,y,1.45,'💥 Атака поймала Манёвр');winner=1;reason='Атака перебила Манёвр'}
-   else if(key==='ma'){score[1]+=hit(y,x,1.45,'💥 Атака поймала Манёвр');winner=2;reason='Атака перебила Манёвр'}
-   else if(key==='md'){score[0]+=maneuver(x,y);winner=1;reason=x.m+' обошёл Защиту'}
-   else if(key==='dm'){score[1]+=maneuver(y,x);winner=2;reason=y.m+' обошёл Защиту'}
-   else if(key==='da'){score[1]+=hit(y,x,.22,'⚔️ Удар в блок');score[0]+=counter(x,y);winner=1;reason='Защита остановила Атаку и дала контрудар'}
-   else if(key==='ad'){score[0]+=hit(x,y,.22,'⚔️ Удар в блок');score[1]+=counter(y,x);winner=2;reason='Защита остановила Атаку и дала контрудар'}
-   charge(x,18+(winner===1?17:0));charge(y,18+(winner===2?17:0));
- }
- if(!winner){if(score[0]>score[1]+5)winner=1;else if(score[1]>score[0]+5)winner=2}
+ const ax={...x,maxHp:x.max},by={...y,maxHp:y.max};
+ const outcome=sharedClash(ax,by,ca,cb,Math.random());
+ for(const [live,next] of [[x,ax],[y,by]])for(const key of ['hp','q','shield','boost','weaken','dead'])live[key]=next[key];
+ winner=outcome.w;reason='Общий Battle Engine: '+ca+' / '+cb;
  setRoundResult(winner,reason);explainRound(x,y,ca,cb,winner,reason,before,[x.hp,y.hp]);
  L((winner?'🏅 <b>Раунд за Игроком '+winner+'</b>':'🤝 <b>Равный раунд</b>')+' — '+reason);
  P.forEach(p=>p.choice=null);
