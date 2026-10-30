@@ -172,3 +172,27 @@ export function resolveTarget(teamA,teamB,movesA,movesB,rng=seeded(1)){
  }
  assertInvariants([...teamA,...teamB]);return results;
 }
+
+export const DEFENSE_TACTICS=Object.freeze(['aggressive','cautious','tricky']);
+export function chooseDefense(f,enemy,tactic,rng){
+ if(!DEFENSE_TACTICS.includes(tactic))throw Error('unknown defense tactic');
+ const moves=legal(f),weights={
+  aggressive:{attack:4,defend:1,maneuver:2,special:3},
+  cautious:{attack:2,defend:4,maneuver:2,special:3},
+  tricky:{attack:2,defend:2,maneuver:4,special:3}
+ }[tactic];
+ const total=moves.reduce((n,k)=>n+weights[k],0);let needle=rng()*total;
+ for(const move of moves){needle-=weights[move];if(needle<=0)return move}return moves.at(-1)
+}
+export function fight3v3(teamIdsA,teamIdsB,{seed=1,maxRounds=30,strategyA='equilibrium',strategyB='equilibrium'}={}){
+ const A=createTeam(teamIdsA),B=createTeam(teamIdsB),rng=seeded(seed),history=[];
+ for(let round=1;round<=maxRounds;round++){
+  const moveA=[],moveB=[];
+  for(const c of A)if(!c.dead){const e=B.find(b=>!b.dead);if(e)moveA[c.pos]=DEFENSE_TACTICS.includes(strategyA)?chooseDefense(c,e,strategyA,rng):choose(c,e,strategyA,rng)}
+  for(const c of B)if(!c.dead){const e=A.find(a=>!a.dead);if(e)moveB[c.pos]=DEFENSE_TACTICS.includes(strategyB)?chooseDefense(c,e,strategyB,rng):choose(c,e,strategyB,rng)}
+  const clashes=resolveWall(A,B,moveA,moveB,rng);history.push({round,clashes,aliveA:A.filter(x=>!x.dead).length,aliveB:B.filter(x=>!x.dead).length});
+  if(!A.some(x=>!x.dead)||!B.some(x=>!x.dead))break;
+ }
+ const aliveA=A.filter(x=>!x.dead).length,aliveB=B.filter(x=>!x.dead).length;
+ return {winner:aliveA&& !aliveB?1:aliveB&&!aliveA?2:!aliveA&&!aliveB?3:0,rounds:history.length,history,remaining:[aliveA,aliveB]};
+}
