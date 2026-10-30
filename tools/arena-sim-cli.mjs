@@ -3,6 +3,7 @@ import {HEROES,fight1v1,fight3v3} from './arena-engine.mjs';
 const args=process.argv.slice(2),arg=(k,d)=>{const i=args.indexOf('--'+k);return i===-1?d:args[i+1]};
 const perPair=Number(arg('per-pair',10000)),seed=Number(arg('seed',20261030)),dir=arg('out','arena-results');
 const equalSpeed=arg('equal-speed','legacy'); if(!['legacy','simultaneous'].includes(equalSpeed))throw Error('invalid equal-speed rule');
+const specialOrder=arg('special-order','legacy');if(!['legacy','simultaneous'].includes(specialOrder))throw Error('invalid special-order rule');
 if(!Number.isInteger(perPair)||perPair<1||perPair>100000)throw Error('per-pair must be 1..100000');
 if(!Number.isFinite(seed))throw Error('seed must be finite');
 const actionNames=['attack','defend','maneuver','special'],rows=[],rawHistogram={},overallCounts=Object.fromEntries(actionNames.map(x=>[x,0]));
@@ -10,7 +11,7 @@ for(let i=0;i<HEROES.length;i++)for(let j=0;j<HEROES.length;j++){
  const a=HEROES[i],b=HEROES[j];let wins=0,draws=0,specials=0;
  const histogram={},counts=Object.fromEntries(actionNames.map(x=>[x,0]));
  for(let k=0;k<perPair;k++){
-  const battle=fight1v1(a.id,b.id,{seed:(seed+Math.imul(i*6+j+1,1000003)+k)>>>0,strategyA:'equilibrium',strategyB:'equilibrium',rules:equalSpeed==='simultaneous'?{equalSpeed:'simultaneous'}:{}});
+  const battle=fight1v1(a.id,b.id,{seed:(seed+Math.imul(i*6+j+1,1000003)+k)>>>0,strategyA:'equilibrium',strategyB:'equilibrium',rules:{...(equalSpeed==='simultaneous'?{equalSpeed:'simultaneous'}:{}),...(specialOrder==='simultaneous'?{specialOrder:'simultaneous'}:{})}});
   wins+=battle.winner===1?1:battle.winner===3?.5:0;draws+=battle.winner===3?1:0;
   histogram[battle.rounds]=(histogram[battle.rounds]||0)+1;
   for(const turn of battle.history)for(const action of [turn.ma,turn.mb]){counts[action]++;overallCounts[action]++;if(action==='special')specials++}
@@ -27,7 +28,7 @@ for(let k=0;k<Math.max(100,Math.min(perPair,10000));k++){
  threeVsThree.push({rounds:battle.rounds,winner:battle.winner});
 }
 const teamRounds=threeVsThree.map(x=>x.rounds).sort((a,b)=>a-b),teamMedian=teamRounds[Math.floor(teamRounds.length/2)];
-const results={engine:'T3 research prototype, not calibrated',equalSpeedRule:equalSpeed,seed,perPair,totalBattles:perPair*36,actionShares,rows,team3x3:{battles:threeVsThree.length,medianRounds:teamMedian,meanRounds:teamRounds.reduce((a,b)=>a+b,0)/teamRounds.length,draws:threeVsThree.filter(x=>x.winner===3||x.winner===0).length}};
+const results={engine:'T3 research prototype, not calibrated',equalSpeedRule:equalSpeed,specialOrderRule:specialOrder,seed,perPair,totalBattles:perPair*36,actionShares,rows,team3x3:{battles:threeVsThree.length,medianRounds:teamMedian,meanRounds:teamRounds.reduce((a,b)=>a+b,0)/teamRounds.length,draws:threeVsThree.filter(x=>x.winner===3||x.winner===0).length}};
 mkdirSync(dir,{recursive:true});writeFileSync(dir+'/matrix.json',JSON.stringify(results,null,2)+'\n');
 writeFileSync(dir+'/matrix.csv','heroA,heroB,fights,winRate,drawRate,medianRounds,meanRounds,specialsPerMatch,attackPct,defendPct,maneuverPct,specialPct\n'+rows.map(r=>[r.heroA,r.heroB,r.fights,r.winRate,r.drawRate,r.medianRounds,r.meanRounds,r.specialsPerMatch,...actionNames.map(n=>r.actionShares[n])].join(',')).join('\n')+'\n');
 writeFileSync(dir+'/round-histograms.json',JSON.stringify(rawHistogram,null,2)+'\n');
