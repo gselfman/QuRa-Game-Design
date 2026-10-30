@@ -60,8 +60,21 @@ export function resolveClash(a,b,ma,mb,randomValue=.5,options={}){
   if(ma==='attack'){da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
   if(ma==='maneuver'){
    if(a.s===b.s&&options.equalSpeed==='simultaneous'){
-    // Both maneuvers resolve without positional priority at equal speed.
-    da+=maneuver(a,b);db+=maneuver(b,a);
+    // Both actors resolve from the SAME pre-round snapshot. Merge own
+    // changes and enemy effects simultaneously, avoiding first-actor shield bias.
+    const beforeA={...a},beforeB={...b};
+    const ownA={...beforeA},hitB={...beforeB};
+    const ownB={...beforeB},hitA={...beforeA};
+    maneuver(ownA,hitB);maneuver(ownB,hitA);
+    const combine=(dst,initial,own,target)=>{
+     dst.hp=Math.max(0,Math.min(dst.maxHp,initial.hp+(own.hp-initial.hp)+(target.hp-initial.hp)));
+     dst.shield=Math.max(0,initial.shield+(own.shield-initial.shield)+(target.shield-initial.shield));
+     dst.q=Math.max(0,Math.min(100,initial.q+(own.q-initial.q)+(target.q-initial.q)));
+     dst.boost=Math.max(own.boost,target.boost);dst.weaken=Math.max(own.weaken,target.weaken);
+     dst.dead=dst.hp===0;
+    };
+    combine(a,beforeA,ownA,hitA);combine(b,beforeB,ownB,hitB);
+    da=Math.max(0,beforeB.hp-b.hp);db=Math.max(0,beforeA.hp-a.hp);
    }else if(a.s>=b.s){da+=maneuver(a,b);db+=hit(b,a,.45);w=1}
    else{db+=maneuver(b,a);da+=hit(a,b,.45);w=2}
   }
