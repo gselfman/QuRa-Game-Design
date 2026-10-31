@@ -2,7 +2,7 @@
   "version": "v03",
   "date": "2026-10-31",
   "fileKey": "pTm5JOM8r7b8ukBrk3UsXg",
-  "status": "FIT_REVIEW_NOT_PRODUCTION_EXPORT",
+  "status": "REJECTED_USER_REVIEW",
   "poseCount": 18,
   "rules": {
     "seatedHidden": [
@@ -1766,5 +1766,11 @@
         }
       ]
     }
-  ]
+  ],
+  "rejection": {
+    "date": "2026-10-31",
+    "reason": "User rejected all 18 assembled fits: incompatible perspective, garment rear surfaces visible, wrong attachment and occlusion.",
+    "reuse": "Diagnostic coordinates only. Do not use rejected composite as an art reference.",
+    "nextContract": "docs/visual/2026-10-31_accessory_pose_contract_v04.md"
+  }
 }
