@@ -1,0 +1,935 @@
+{
+  "createdNodeIds": [
+    "161:2",
+    "161:3",
+    "161:4",
+    "161:5",
+    "161:6",
+    "161:7",
+    "161:8",
+    "161:9",
+    "161:10",
+    "161:11",
+    "161:12",
+    "161:13",
+    "161:14",
+    "161:15",
+    "161:16",
+    "161:17",
+    "161:18",
+    "161:19",
+    "161:20",
+    "161:21",
+    "161:22",
+    "161:23",
+    "161:24",
+    "161:25",
+    "161:26",
+    "161:27",
+    "161:28",
+    "161:29",
+    "161:30",
+    "161:31",
+    "161:32",
+    "161:33",
+    "161:34",
+    "161:35",
+    "161:36",
+    "161:37",
+    "161:38",
+    "161:39",
+    "161:40",
+    "161:41",
+    "161:42",
+    "161:43",
+    "161:44",
+    "161:45",
+    "161:46",
+    "161:47",
+    "161:48",
+    "161:49",
+    "161:50",
+    "161:51",
+    "161:52",
+    "161:53",
+    "161:54",
+    "161:55",
+    "161:56",
+    "161:57",
+    "161:58",
+    "161:59",
+    "161:60",
+    "161:61",
+    "161:62",
+    "161:63",
+    "161:64",
+    "161:65",
+    "161:66",
+    "161:67",
+    "161:68",
+    "161:69",
+    "161:70",
+    "161:71",
+    "161:72",
+    "161:73",
+    "161:74",
+    "161:75",
+    "161:76",
+    "161:77",
+    "161:78",
+    "161:79",
+    "161:80",
+    "161:81",
+    "161:82",
+    "161:83",
+    "161:84",
+    "161:85",
+    "161:86",
+    "161:87",
+    "161:88",
+    "161:89",
+    "161:90",
+    "161:91",
+    "161:92",
+    "161:93",
+    "161:94",
+    "161:95",
+    "161:96",
+    "161:97",
+    "161:98",
+    "161:99",
+    "161:100",
+    "161:101",
+    "161:102",
+    "161:103",
+    "161:104",
+    "161:105",
+    "161:106",
+    "161:107",
+    "161:108",
+    "161:109",
+    "161:110",
+    "161:111",
+    "161:112",
+    "161:113",
+    "161:114",
+    "161:115",
+    "161:116",
+    "161:117",
+    "161:118",
+    "161:119",
+    "161:120",
+    "161:121",
+    "161:122",
+    "161:123",
+    "161:124",
+    "161:125",
+    "161:126",
+    "161:127",
+    "161:128",
+    "161:129",
+    "161:130",
+    "161:131",
+    "161:132",
+    "161:133",
+    "161:134",
+    "161:135",
+    "161:136",
+    "161:137",
+    "161:138",
+    "161:139",
+    "161:140",
+    "161:141",
+    "161:142",
+    "161:143",
+    "161:144",
+    "161:145",
+    "161:146",
+    "161:147",
+    "161:148",
+    "161:149",
+    "161:150",
+    "161:151",
+    "161:152",
+    "161:153",
+    "161:154",
+    "161:155",
+    "161:156",
+    "161:157",
+    "161:158",
+    "161:159",
+    "161:160",
+    "161:161",
+    "161:162",
+    "161:163",
+    "161:164",
+    "161:165",
+    "161:166",
+    "161:167",
+    "161:168",
+    "161:169",
+    "161:170",
+    "161:171",
+    "161:172",
+    "161:173",
+    "161:174",
+    "161:175",
+    "161:176",
+    "161:177",
+    "161:178",
+    "161:179",
+    "161:180",
+    "161:181",
+    "161:182",
+    "161:183",
+    "161:184",
+    "161:185",
+    "161:186",
+    "161:187",
+    "161:188",
+    "161:189",
+    "161:190",
+    "161:191",
+    "161:192",
+    "161:193",
+    "161:194",
+    "161:195",
+    "161:196",
+    "161:197",
+    "161:198",
+    "161:199",
+    "161:200",
+    "161:201",
+    "161:202",
+    "161:203",
+    "161:204",
+    "161:205",
+    "161:206",
+    "161:207",
+    "161:208",
+    "161:209",
+    "161:210",
+    "161:211",
+    "161:212",
+    "161:213",
+    "161:214",
+    "161:215",
+    "161:216",
+    "161:217",
+    "161:218",
+    "161:219",
+    "161:220",
+    "161:221",
+    "161:222",
+    "161:223",
+    "161:224",
+    "161:225",
+    "161:226",
+    "161:227",
+    "161:228",
+    "161:229",
+    "161:230",
+    "161:231",
+    "161:232",
+    "161:233",
+    "161:234",
+    "161:235",
+    "161:236",
+    "161:237",
+    "161:238",
+    "161:239",
+    "161:240",
+    "161:241",
+    "161:242",
+    "161:243",
+    "161:244",
+    "161:245",
+    "161:246",
+    "161:247",
+    "161:248",
+    "161:249",
+    "161:250",
+    "161:251",
+    "161:252",
+    "161:253",
+    "161:254",
+    "161:255",
+    "161:256",
+    "161:257",
+    "161:258",
+    "161:259",
+    "161:260",
+    "161:261",
+    "161:262",
+    "161:263",
+    "161:264",
+    "161:265"
+  ],
+  "masters": {
+    "C01/parts/farWing.png": {
+      "component": "161:2",
+      "target": "161:3",
+      "kind": "part"
+    },
+    "C01/parts/body.png": {
+      "component": "161:4",
+      "target": "161:5",
+      "kind": "part"
+    },
+    "C01/parts/feet.png": {
+      "component": "161:6",
+      "target": "161:7",
+      "kind": "part"
+    },
+    "C01/parts/head.png": {
+      "component": "161:8",
+      "target": "161:9",
+      "kind": "part"
+    },
+    "C01/parts/nearWing.png": {
+      "component": "161:10",
+      "target": "161:11",
+      "kind": "part"
+    },
+    "C01/head_native_base.png": {
+      "component": "161:12",
+      "target": "161:13",
+      "kind": "head"
+    },
+    "C01/emotions/joy_hat.png": {
+      "component": "161:14",
+      "target": "161:15",
+      "kind": "emotion"
+    },
+    "C01/emotions/determination_hat.png": {
+      "component": "161:16",
+      "target": "161:17",
+      "kind": "emotion"
+    },
+    "C01/emotions/sadness_hat.png": {
+      "component": "161:18",
+      "target": "161:19",
+      "kind": "emotion"
+    },
+    "C01/emotions/surprise_bare.png": {
+      "component": "161:20",
+      "target": "161:21",
+      "kind": "emotion"
+    },
+    "C01/emotions/determination_bare.png": {
+      "component": "161:22",
+      "target": "161:23",
+      "kind": "emotion"
+    },
+    "C01/emotions/sadness_bare.png": {
+      "component": "161:24",
+      "target": "161:25",
+      "kind": "emotion"
+    },
+    "C01/emotions/joy_bare.png": {
+      "component": "161:26",
+      "target": "161:27",
+      "kind": "emotion"
+    },
+    "C01/emotions/surprise_hat.png": {
+      "component": "161:28",
+      "target": "161:29",
+      "kind": "emotion"
+    },
+    "C01/wear/hat.png": {
+      "component": "161:30",
+      "target": "161:31",
+      "kind": "wear"
+    },
+    "C01/wear/hat_back.png": {
+      "component": "161:32",
+      "target": "161:33",
+      "kind": "wear_back"
+    },
+    "C01/wear/glasses.png": {
+      "component": "161:34",
+      "target": "161:35",
+      "kind": "wear"
+    },
+    "C01/wear/vest.png": {
+      "component": "161:36",
+      "target": "161:37",
+      "kind": "wear"
+    },
+    "C01/wear/bag.png": {
+      "component": "161:38",
+      "target": "161:39",
+      "kind": "wear"
+    },
+    "C01/wear/boots.png": {
+      "component": "161:40",
+      "target": "161:41",
+      "kind": "wear"
+    },
+    "C01/feet_native.png": {
+      "component": "161:42",
+      "target": "161:43",
+      "kind": "feet"
+    },
+    "C01/feet_perch.png": {
+      "component": "161:44",
+      "target": "161:45",
+      "kind": "feet"
+    },
+    "C02/parts/farWing.png": {
+      "component": "161:46",
+      "target": "161:47",
+      "kind": "part"
+    },
+    "C02/parts/body.png": {
+      "component": "161:48",
+      "target": "161:49",
+      "kind": "part"
+    },
+    "C02/parts/feet.png": {
+      "component": "161:50",
+      "target": "161:51",
+      "kind": "part"
+    },
+    "C02/parts/head.png": {
+      "component": "161:52",
+      "target": "161:53",
+      "kind": "part"
+    },
+    "C02/parts/nearWing.png": {
+      "component": "161:54",
+      "target": "161:55",
+      "kind": "part"
+    },
+    "C02/head_native_base.png": {
+      "component": "161:56",
+      "target": "161:57",
+      "kind": "head"
+    },
+    "C02/emotions/surprise_bare.png": {
+      "component": "161:58",
+      "target": "161:59",
+      "kind": "emotion"
+    },
+    "C02/emotions/determination_bare.png": {
+      "component": "161:60",
+      "target": "161:61",
+      "kind": "emotion"
+    },
+    "C02/emotions/sadness_bare.png": {
+      "component": "161:62",
+      "target": "161:63",
+      "kind": "emotion"
+    },
+    "C02/emotions/joy_bare.png": {
+      "component": "161:64",
+      "target": "161:65",
+      "kind": "emotion"
+    },
+    "C02/wear/bandana.png": {
+      "component": "161:66",
+      "target": "161:67",
+      "kind": "wear"
+    },
+    "C02/wear/bandana_back.png": {
+      "component": "161:68",
+      "target": "161:69",
+      "kind": "wear_back"
+    },
+    "C02/wear/aviators.png": {
+      "component": "161:70",
+      "target": "161:71",
+      "kind": "wear"
+    },
+    "C02/wear/vest.png": {
+      "component": "161:72",
+      "target": "161:73",
+      "kind": "wear"
+    },
+    "C02/wear/cartridges.png": {
+      "component": "161:74",
+      "target": "161:75",
+      "kind": "wear"
+    },
+    "C02/wear/water_toy.png": {
+      "component": "161:76",
+      "target": "161:77",
+      "kind": "wear"
+    },
+    "C02/wear/boots.png": {
+      "component": "161:78",
+      "target": "161:79",
+      "kind": "wear"
+    },
+    "C02/feet_native.png": {
+      "component": "161:80",
+      "target": "161:81",
+      "kind": "feet"
+    },
+    "C02/feet_perch.png": {
+      "component": "161:82",
+      "target": "161:83",
+      "kind": "feet"
+    },
+    "C03/parts/farWing.png": {
+      "component": "161:84",
+      "target": "168:1269",
+      "kind": "part",
+      "existingSource": "115:300"
+    },
+    "C03/parts/body.png": {
+      "component": "161:86",
+      "target": "161:87",
+      "kind": "part"
+    },
+    "C03/parts/feet.png": {
+      "component": "161:88",
+      "target": "161:89",
+      "kind": "part"
+    },
+    "C03/parts/head.png": {
+      "component": "161:90",
+      "target": "161:91",
+      "kind": "part"
+    },
+    "C03/parts/nearWing.png": {
+      "component": "161:92",
+      "target": "161:93",
+      "kind": "part"
+    },
+    "C03/head_native_base.png": {
+      "component": "161:94",
+      "target": "161:95",
+      "kind": "head"
+    },
+    "C03/emotions/surprise_bare.png": {
+      "component": "161:96",
+      "target": "161:97",
+      "kind": "emotion"
+    },
+    "C03/emotions/surprise_hat.png": {
+      "component": "161:98",
+      "target": "161:99",
+      "kind": "emotion"
+    },
+    "C03/emotions/determination_bare.png": {
+      "component": "161:100",
+      "target": "161:101",
+      "kind": "emotion"
+    },
+    "C03/emotions/determination_hat.png": {
+      "component": "161:102",
+      "target": "161:103",
+      "kind": "emotion"
+    },
+    "C03/emotions/sadness_bare.png": {
+      "component": "161:104",
+      "target": "161:105",
+      "kind": "emotion"
+    },
+    "C03/emotions/sadness_hat.png": {
+      "component": "161:106",
+      "target": "161:107",
+      "kind": "emotion"
+    },
+    "C03/emotions/joy_bare.png": {
+      "component": "161:108",
+      "target": "161:109",
+      "kind": "emotion"
+    },
+    "C03/emotions/joy_hat.png": {
+      "component": "161:110",
+      "target": "161:111",
+      "kind": "emotion"
+    },
+    "C03/wear/scarf.png": {
+      "component": "161:112",
+      "target": "161:113",
+      "kind": "wear"
+    },
+    "C03/wear/scarf_back.png": {
+      "component": "161:114",
+      "target": "161:115",
+      "kind": "wear_back"
+    },
+    "C03/wear/glasses.png": {
+      "component": "161:116",
+      "target": "161:117",
+      "kind": "wear"
+    },
+    "C03/wear/vest.png": {
+      "component": "161:118",
+      "target": "161:119",
+      "kind": "wear"
+    },
+    "C03/wear/beads.png": {
+      "component": "161:120",
+      "target": "161:121",
+      "kind": "wear"
+    },
+    "C03/wear/shopper_flute.png": {
+      "component": "161:122",
+      "target": "161:123",
+      "kind": "wear"
+    },
+    "C03/wear/ring07.png": {
+      "component": "161:124",
+      "target": "161:125",
+      "kind": "wear"
+    },
+    "C03/feet_native.png": {
+      "component": "161:126",
+      "target": "161:127",
+      "kind": "feet"
+    },
+    "C03/feet_perch.png": {
+      "component": "161:128",
+      "target": "161:129",
+      "kind": "feet"
+    },
+    "C04/parts/farWing.png": {
+      "component": "161:130",
+      "target": "161:131",
+      "kind": "part"
+    },
+    "C04/parts/body.png": {
+      "component": "161:132",
+      "target": "161:133",
+      "kind": "part"
+    },
+    "C04/parts/feet.png": {
+      "component": "161:134",
+      "target": "161:135",
+      "kind": "part"
+    },
+    "C04/parts/head.png": {
+      "component": "161:136",
+      "target": "161:137",
+      "kind": "part"
+    },
+    "C04/parts/nearWing.png": {
+      "component": "161:138",
+      "target": "161:139",
+      "kind": "part"
+    },
+    "C04/head_native_base.png": {
+      "component": "161:140",
+      "target": "161:141",
+      "kind": "head"
+    },
+    "C04/emotions/surprise_bare.png": {
+      "component": "161:142",
+      "target": "161:143",
+      "kind": "emotion"
+    },
+    "C04/emotions/determination_bare.png": {
+      "component": "161:144",
+      "target": "161:145",
+      "kind": "emotion"
+    },
+    "C04/emotions/sadness_bare.png": {
+      "component": "161:146",
+      "target": "161:147",
+      "kind": "emotion"
+    },
+    "C04/emotions/joy_bare.png": {
+      "component": "161:148",
+      "target": "161:149",
+      "kind": "emotion"
+    },
+    "C04/wear/pencil.png": {
+      "component": "161:150",
+      "target": "161:151",
+      "kind": "wear"
+    },
+    "C04/wear/pencil_back.png": {
+      "component": "161:152",
+      "target": "161:153",
+      "kind": "wear_back"
+    },
+    "C04/wear/glasses.png": {
+      "component": "161:154",
+      "target": "161:155",
+      "kind": "wear"
+    },
+    "C04/wear/coat.png": {
+      "component": "161:156",
+      "target": "161:157",
+      "kind": "wear"
+    },
+    "C04/wear/magnifier.png": {
+      "component": "161:158",
+      "target": "161:159",
+      "kind": "wear"
+    },
+    "C04/wear/satchel.png": {
+      "component": "161:160",
+      "target": "161:161",
+      "kind": "wear"
+    },
+    "C04/wear/crocs.png": {
+      "component": "161:162",
+      "target": "161:163",
+      "kind": "wear"
+    },
+    "C04/feet_native.png": {
+      "component": "161:164",
+      "target": "161:165",
+      "kind": "feet"
+    },
+    "C04/feet_perch.png": {
+      "component": "161:166",
+      "target": "161:167",
+      "kind": "feet"
+    },
+    "C05/parts/farWing.png": {
+      "component": "161:168",
+      "target": "161:169",
+      "kind": "part"
+    },
+    "C05/parts/body.png": {
+      "component": "161:170",
+      "target": "161:171",
+      "kind": "part"
+    },
+    "C05/parts/feet.png": {
+      "component": "161:172",
+      "target": "161:173",
+      "kind": "part"
+    },
+    "C05/parts/head.png": {
+      "component": "161:174",
+      "target": "161:175",
+      "kind": "part"
+    },
+    "C05/parts/nearWing.png": {
+      "component": "161:176",
+      "target": "161:177",
+      "kind": "part"
+    },
+    "C05/head_native_base.png": {
+      "component": "161:178",
+      "target": "161:179",
+      "kind": "head"
+    },
+    "C05/emotions/joy_hat.png": {
+      "component": "161:180",
+      "target": "161:181",
+      "kind": "emotion"
+    },
+    "C05/emotions/determination_hat.png": {
+      "component": "161:182",
+      "target": "161:183",
+      "kind": "emotion"
+    },
+    "C05/emotions/sadness_hat.png": {
+      "component": "161:184",
+      "target": "161:185",
+      "kind": "emotion"
+    },
+    "C05/emotions/surprise_bare.png": {
+      "component": "161:186",
+      "target": "161:187",
+      "kind": "emotion"
+    },
+    "C05/emotions/determination_bare.png": {
+      "component": "161:188",
+      "target": "161:189",
+      "kind": "emotion"
+    },
+    "C05/emotions/sadness_bare.png": {
+      "component": "161:190",
+      "target": "161:191",
+      "kind": "emotion"
+    },
+    "C05/emotions/joy_bare.png": {
+      "component": "161:192",
+      "target": "161:193",
+      "kind": "emotion"
+    },
+    "C05/emotions/surprise_hat.png": {
+      "component": "161:194",
+      "target": "161:195",
+      "kind": "emotion"
+    },
+    "C05/wear/hat.png": {
+      "component": "161:196",
+      "target": "161:197",
+      "kind": "wear"
+    },
+    "C05/wear/hat_back.png": {
+      "component": "161:198",
+      "target": "161:199",
+      "kind": "wear_back"
+    },
+    "C05/wear/third_eye.png": {
+      "component": "161:200",
+      "target": "161:201",
+      "kind": "wear"
+    },
+    "C05/wear/robe.png": {
+      "component": "161:202",
+      "target": "161:203",
+      "kind": "wear"
+    },
+    "C05/wear/beads.png": {
+      "component": "161:204",
+      "target": "161:205",
+      "kind": "wear"
+    },
+    "C05/wear/cloth_bag.png": {
+      "component": "161:206",
+      "target": "161:207",
+      "kind": "wear"
+    },
+    "C05/wear/sandals.png": {
+      "component": "161:208",
+      "target": "161:209",
+      "kind": "wear"
+    },
+    "C05/feet_native.png": {
+      "component": "161:210",
+      "target": "168:1270",
+      "kind": "feet",
+      "existingSource": "120:1223"
+    },
+    "C05/feet_perch.png": {
+      "component": "161:212",
+      "target": "161:213",
+      "kind": "feet"
+    },
+    "C06/parts/farWing.png": {
+      "component": "161:214",
+      "target": "161:215",
+      "kind": "part"
+    },
+    "C06/parts/body.png": {
+      "component": "161:216",
+      "target": "161:217",
+      "kind": "part"
+    },
+    "C06/parts/feet.png": {
+      "component": "161:218",
+      "target": "161:219",
+      "kind": "part"
+    },
+    "C06/parts/head.png": {
+      "component": "161:220",
+      "target": "161:221",
+      "kind": "part"
+    },
+    "C06/parts/nearWing.png": {
+      "component": "161:222",
+      "target": "161:223",
+      "kind": "part"
+    },
+    "C06/head_native_base.png": {
+      "component": "161:224",
+      "target": "161:225",
+      "kind": "head"
+    },
+    "C06/emotions/surprise_bare.png": {
+      "component": "161:226",
+      "target": "161:227",
+      "kind": "emotion"
+    },
+    "C06/emotions/surprise_hat.png": {
+      "component": "161:228",
+      "target": "161:229",
+      "kind": "emotion"
+    },
+    "C06/emotions/determination_bare.png": {
+      "component": "161:230",
+      "target": "161:231",
+      "kind": "emotion"
+    },
+    "C06/emotions/determination_hat.png": {
+      "component": "161:232",
+      "target": "161:233",
+      "kind": "emotion"
+    },
+    "C06/emotions/sadness_bare.png": {
+      "component": "161:234",
+      "target": "161:235",
+      "kind": "emotion"
+    },
+    "C06/emotions/sadness_hat.png": {
+      "component": "161:236",
+      "target": "161:237",
+      "kind": "emotion"
+    },
+    "C06/emotions/joy_bare.png": {
+      "component": "161:238",
+      "target": "161:239",
+      "kind": "emotion"
+    },
+    "C06/emotions/joy_hat.png": {
+      "component": "161:240",
+      "target": "161:241",
+      "kind": "emotion"
+    },
+    "C06/wear/hat.png": {
+      "component": "161:242",
+      "target": "161:243",
+      "kind": "wear"
+    },
+    "C06/wear/hat_back.png": {
+      "component": "161:244",
+      "target": "161:245",
+      "kind": "wear_back"
+    },
+    "C06/wear/glasses.png": {
+      "component": "161:246",
+      "target": "161:247",
+      "kind": "wear"
+    },
+    "C06/wear/vest.png": {
+      "component": "161:248",
+      "target": "171:1269",
+      "kind": "wear",
+      "mask": "171:1270",
+      "existingSource": "145:1876"
+    },
+    "C06/wear/diamonds.png": {
+      "component": "161:250",
+      "target": "161:251",
+      "kind": "wear"
+    },
+    "C06/wear/bag_h.png": {
+      "component": "161:252",
+      "target": "161:253",
+      "kind": "wear"
+    },
+    "C06/wear/anklets.png": {
+      "component": "161:254",
+      "target": "161:255",
+      "kind": "wear"
+    },
+    "C06/feet_native.png": {
+      "component": "161:256",
+      "target": "161:257",
+      "kind": "feet"
+    },
+    "C06/feet_perch.png": {
+      "component": "161:258",
+      "target": "161:259",
+      "kind": "feet"
+    },
+    "props/nest_back.png": {
+      "component": "161:260",
+      "target": "161:261",
+      "kind": "prop"
+    },
+    "props/nest_front_eggs.png": {
+      "component": "161:262",
+      "target": "161:263",
+      "kind": "prop"
+    },
+    "props/perch.png": {
+      "component": "161:264",
+      "target": "161:265",
+      "kind": "prop"
+    }
+  },
+  "count": 132
+}

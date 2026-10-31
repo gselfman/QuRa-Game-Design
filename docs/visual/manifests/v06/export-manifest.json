@@ -1,0 +1,1176 @@
+{
+  "version": "v06",
+  "canvas_px": [
+    1200,
+    1520
+  ],
+  "virtual_origin": [
+    0,
+    40
+  ],
+  "draw_order": [
+    "props_back",
+    "feet",
+    "headwear_back",
+    "body",
+    "garment",
+    "bag",
+    "neck_front",
+    "farWing",
+    "nearWing",
+    "head",
+    "headwear_front",
+    "face_front",
+    "nest_front"
+  ],
+  "files": [
+    {
+      "file": "C01/parts/farWing.png",
+      "kind": "part",
+      "character": "C01",
+      "sha256": "ea7c581a1c2105776d403308fecef830e8c94c06be1c21914189b5eac0eeacb7"
+    },
+    {
+      "file": "C01/parts/body.png",
+      "kind": "part",
+      "character": "C01",
+      "sha256": "e9cda93361c0b5a32f98d74a0da64356d2f6bbbc9b8d51a1152f7e4527e51c65"
+    },
+    {
+      "file": "C01/parts/feet.png",
+      "kind": "part",
+      "character": "C01",
+      "sha256": "0c4b69cfae90c109d98847983754d6bbe844282eb7af425b0c5bb336541d83be"
+    },
+    {
+      "file": "C01/parts/head.png",
+      "kind": "part",
+      "character": "C01",
+      "sha256": "c619861365a3a13cfb177d0f536756cf5302f0494e23fd6ade105a55dfb4795e"
+    },
+    {
+      "file": "C01/parts/nearWing.png",
+      "kind": "part",
+      "character": "C01",
+      "sha256": "1803419e87c0a4f3edb779d86d2f8338e2e07f9e630f7baeb3383aeed1219870"
+    },
+    {
+      "file": "C01/head_native_base.png",
+      "kind": "head",
+      "character": "C01",
+      "sha256": "52959e02033410a240137c9172bf325c43cf087cc82fa7fa625130f70360080d"
+    },
+    {
+      "file": "C01/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "d28f71d7fd71895be019d89a20b1e64a8544e3e33b5709d4072e8a1d22986e2e"
+    },
+    {
+      "file": "C01/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "cb59d552e357026a7ef6873f8721b3add9b2bb1fff8d21742709491c686220ee"
+    },
+    {
+      "file": "C01/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "b1375a24e3db23bde752b4f211edfd0f372822a0b8a379de9e31c474a77ca06f"
+    },
+    {
+      "file": "C01/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "99c44b260c239c60858859a98b0ef0cd87aee6406dea7f94b03496492de60d9c"
+    },
+    {
+      "file": "C01/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "33488c29ccf35a3328992fdd2e9180880ed48966780e2f160db71d910ecdc45d"
+    },
+    {
+      "file": "C01/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "cb9bc371625e9017bbe6a96a1875034cb0a20aa6bdbb1fd4c8108210ab2f68d6"
+    },
+    {
+      "file": "C01/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "9b0c6ef3955edb02779c49d24c0ad9476e8a0d09dbc78c43029aaa9c7e916410"
+    },
+    {
+      "file": "C01/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C01",
+      "sha256": "c1d73d785ceb86690976a5d96d980c58dac676cd2e1829f420425507ed599bab"
+    },
+    {
+      "file": "C01/wear/hat.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C01",
+      "sha256": "84415f7e3fc178dee658984dd9553b0d3c6b075f2c05e264a77b60358ec10cd7"
+    },
+    {
+      "file": "C01/wear/hat_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C01",
+      "sha256": "aff134b0ba98e33083468a1250648999b28afb324a20fa910291b05fdcaf41c4"
+    },
+    {
+      "file": "C01/wear/glasses.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C01",
+      "sha256": "099bb91fd0cf709979c85022eceee3c610b6e6e0309f2f2c71ab4414b5eb1e7d"
+    },
+    {
+      "file": "C01/wear/vest.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C01",
+      "sha256": "91275e033a1cf50c0c6994974d5d337151cb2125fc79f00100af3c56ef4fe262"
+    },
+    {
+      "file": "C01/wear/bag.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C01",
+      "sha256": "09664c322a3f08f23d9b4e245db216711cc020ba6aa6969056c41688ba7988c9"
+    },
+    {
+      "file": "C01/wear/boots.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C01",
+      "sha256": "cb819517427f5b31e7f5cffe4c38910bcd17b922de071fa0df5ef6fa34ab1010"
+    },
+    {
+      "file": "C01/feet_native.png",
+      "kind": "feet",
+      "character": "C01",
+      "sha256": "cb819517427f5b31e7f5cffe4c38910bcd17b922de071fa0df5ef6fa34ab1010"
+    },
+    {
+      "file": "C01/feet_perch.png",
+      "kind": "feet",
+      "character": "C01",
+      "sha256": "3b3af385ab8efbfc83d3f5afb94c34deeac5debdd650974ddc642d1a47aa9347"
+    },
+    {
+      "file": "C01/shop/vest.png",
+      "kind": "shop",
+      "character": "C01",
+      "sha256": "74bdf051c2f38d28bf75580bb77b5209ddd0aa0c73271cc20210fc9dc2f00c6f"
+    },
+    {
+      "file": "C01/shop/glasses.png",
+      "kind": "shop",
+      "character": "C01",
+      "sha256": "96aad086d4fbc3a310a71eadbd8d00bad958c828581939e793649541460bc286"
+    },
+    {
+      "file": "C01/shop/bag.png",
+      "kind": "shop",
+      "character": "C01",
+      "sha256": "e1dd23831c8ff3690ca527a610c96d0ac88a7452dd7526337aa87942da01a617"
+    },
+    {
+      "file": "C01/shop/hat.png",
+      "kind": "shop",
+      "character": "C01",
+      "sha256": "56dfe22541b7ab8e3357e27e3fff99b3c089383b5b3e58c128fd639903cabb2e"
+    },
+    {
+      "file": "C01/shop/boots.png",
+      "kind": "shop",
+      "character": "C01",
+      "sha256": "6dfca997a0287943971ff8297bafd5672d0f34c320ae061030c941bf6f323819"
+    },
+    {
+      "file": "C02/parts/farWing.png",
+      "kind": "part",
+      "character": "C02",
+      "sha256": "151aef363a9056f6f2f6fc97bbba69b126032c19b13d572e65e45f55ab0066ec"
+    },
+    {
+      "file": "C02/parts/body.png",
+      "kind": "part",
+      "character": "C02",
+      "sha256": "128043be8f733621dd6005e25468dd2c37ff9dbfcb8bb5980fc23570f57634c0"
+    },
+    {
+      "file": "C02/parts/feet.png",
+      "kind": "part",
+      "character": "C02",
+      "sha256": "ab26b342fb77be7d5e5579285d84925084b0fb6052535e025634275ee8736fa9"
+    },
+    {
+      "file": "C02/parts/head.png",
+      "kind": "part",
+      "character": "C02",
+      "sha256": "fce4a945adee91978b9a97bdb2da98d467cfaa6944120ca2b8d45585612d0e5f"
+    },
+    {
+      "file": "C02/parts/nearWing.png",
+      "kind": "part",
+      "character": "C02",
+      "sha256": "d2dc5b8f55b2479f2ce837ccb640c436fef9776b9c10ccc0b2226d491ebfc232"
+    },
+    {
+      "file": "C02/head_native_base.png",
+      "kind": "head",
+      "character": "C02",
+      "sha256": "fce4a945adee91978b9a97bdb2da98d467cfaa6944120ca2b8d45585612d0e5f"
+    },
+    {
+      "file": "C02/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C02",
+      "sha256": "55caccaca488b0b4f13bcf7dc5be8c2cd7ccabff1d5b4d43985b76a43d097bfe"
+    },
+    {
+      "file": "C02/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C02",
+      "sha256": "6f8b545ad041f4276542642237e0ac13528cb30bada887d7bd6ab9d4a55cbc5b"
+    },
+    {
+      "file": "C02/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C02",
+      "sha256": "c37dbe112634fb6bdee472b36abe33c5d992b0c9cdda2c1afc043fc7fcba9502"
+    },
+    {
+      "file": "C02/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C02",
+      "sha256": "8f16fa33f6fa5a8446cb81f0aeeee457f9475ba0d56a8dde0e71ef64ea1a7f6e"
+    },
+    {
+      "file": "C02/wear/bandana.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C02",
+      "sha256": "278ffd9ec7ff0195c792d2c00747df144e06164667e3e8e03d5a21e5e1ffc92a"
+    },
+    {
+      "file": "C02/wear/bandana_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C02",
+      "sha256": "db81bdbb324ab8b0749faaa948ee07e146b29f15b7e53b71ff1d32987dc4165b"
+    },
+    {
+      "file": "C02/wear/aviators.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C02",
+      "sha256": "f8071ce6282e4e01119f678ffc27282b0cd2a865f20a78a0107652f4c4d2cb88"
+    },
+    {
+      "file": "C02/wear/vest.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C02",
+      "sha256": "0425bdf3da1d2680a4410d0617937ec5930fce5ead58a6ecc39e1d68c9995801"
+    },
+    {
+      "file": "C02/wear/cartridges.png",
+      "kind": "wear",
+      "slot": "neck",
+      "character": "C02",
+      "sha256": "61f7d418c65e23069e82ccf4226b3922ec42d3d09da5f08c6b5eb6d5b1087659"
+    },
+    {
+      "file": "C02/wear/water_toy.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C02",
+      "sha256": "40deb00a120986e472d63bd0d5b4f4996886e17ec66263072656bf69b63a2050"
+    },
+    {
+      "file": "C02/wear/boots.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C02",
+      "sha256": "2640a3db0ace8ddcfb7d9fedc19127b34e533449b4ec369c1311c406fbd26a7e"
+    },
+    {
+      "file": "C02/feet_native.png",
+      "kind": "feet",
+      "character": "C02",
+      "sha256": "2640a3db0ace8ddcfb7d9fedc19127b34e533449b4ec369c1311c406fbd26a7e"
+    },
+    {
+      "file": "C02/feet_perch.png",
+      "kind": "feet",
+      "character": "C02",
+      "sha256": "caaf4616082dc5f78305777654bff954daa6ff3389403881ad115e2374591e93"
+    },
+    {
+      "file": "C02/shop/vest.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "f4c24d78fe5505018051e9e9266bbd1f4269159ba7d29c26de74ab639257c681"
+    },
+    {
+      "file": "C02/shop/aviators.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "c3df60feb828881ab754e5d4a95ddd135e4530e8ef88f948b7115ce2cc047faa"
+    },
+    {
+      "file": "C02/shop/water_toy.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "0ccef860a581a97b6a21d0af28a936bb231a08fd27976eeb78f005d41a4844e4"
+    },
+    {
+      "file": "C02/shop/cartridges.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "13eaebcde1bfc6f683e902d1e3d8af6072daa53b8af83f40efc2ac571ba7608d"
+    },
+    {
+      "file": "C02/shop/bandana.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "8469c52359f29e81318739c930a6fb363e1ad32a0e901f5bdaea17138f95106d"
+    },
+    {
+      "file": "C02/shop/boots.png",
+      "kind": "shop",
+      "character": "C02",
+      "sha256": "2c13c9b1bd510a76a7b949a4a12a63be435234813fba666f3c77599f43d74c62"
+    },
+    {
+      "file": "C03/parts/farWing.png",
+      "kind": "part",
+      "character": "C03",
+      "sha256": "ac2d023c14abad3640efa325645b584ac58988b7583bd1b1352bdbfe4a46f6b8"
+    },
+    {
+      "file": "C03/parts/body.png",
+      "kind": "part",
+      "character": "C03",
+      "sha256": "b801361b8c9f525719456630c6036fff7f269527086884f01749020b208c7d42"
+    },
+    {
+      "file": "C03/parts/feet.png",
+      "kind": "part",
+      "character": "C03",
+      "sha256": "c4774da5f6c65fb6c173dd98a16f42cb980fa83e8950caa0700ebc7e775312cf"
+    },
+    {
+      "file": "C03/parts/head.png",
+      "kind": "part",
+      "character": "C03",
+      "sha256": "8e187a1c9c073865752bf0d1ad7ec592d4539dc0107eca77e6befed45723446f"
+    },
+    {
+      "file": "C03/parts/nearWing.png",
+      "kind": "part",
+      "character": "C03",
+      "sha256": "85f45aac2674875627463d70821332f59a820eff83163de4a4e70e1feb5bdf14"
+    },
+    {
+      "file": "C03/head_native_base.png",
+      "kind": "head",
+      "character": "C03",
+      "sha256": "a7e7d06076f554678bb3b3e6e663f040175fe472eec4f00848785823d8e1a1df"
+    },
+    {
+      "file": "C03/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "e5222c4f6439eea47566777363107d2aa3082f901feba15d866f0b778fd17e21"
+    },
+    {
+      "file": "C03/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "7e29af532866551151d72ecbbed1a6349186fd33b89ddfb4a5d12ad8b04cc3b2"
+    },
+    {
+      "file": "C03/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "4dc3f261dfd7a670954e663e42be38e682e1405be4c7826810d4bbee05736fb4"
+    },
+    {
+      "file": "C03/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "d7e0dd9ad46ceede6bc64eab0e8028a16b3890c33dce379664d21d59a1452bd2"
+    },
+    {
+      "file": "C03/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "016fc63a70ac89602313def60608f7317085a76b528fe6eec8a6bb35b676a505"
+    },
+    {
+      "file": "C03/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "8f8bb2d9b06991d09c552db6749459b178c22ecae962ddeabd0d16e80e23733f"
+    },
+    {
+      "file": "C03/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "c2680fdda2a6e0857ee56146e4ad54884446c2e7ce28761c71238c51c8bf2fac"
+    },
+    {
+      "file": "C03/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C03",
+      "sha256": "3996761d9597f276541968c700b490ff23d7c341aa2a5a5ecb325d6feb33f1e3"
+    },
+    {
+      "file": "C03/wear/scarf.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C03",
+      "sha256": "180e3171ab5721c45d54df3657ac970ffb9aa8b3b01fb0d17f7faae141b3d625"
+    },
+    {
+      "file": "C03/wear/scarf_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C03",
+      "sha256": "16946a61d367b7bbb88cf7c2d7a376195cdf4d0cd8195aeb5551e7b798920193"
+    },
+    {
+      "file": "C03/wear/glasses.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C03",
+      "sha256": "dd3b81435dda71ff6bf99e0f325481ebcd9d145c721d37186511b5a4b3219b9b"
+    },
+    {
+      "file": "C03/wear/vest.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C03",
+      "sha256": "c445ff82482f157aaa0c088a90433822d8a660c64c3b20832eb1e1197959d02f"
+    },
+    {
+      "file": "C03/wear/beads.png",
+      "kind": "wear",
+      "slot": "neck",
+      "character": "C03",
+      "sha256": "be51deed207ae89419381b2724043b1f4df48b9efa419f87b4fc3a706b7df98b"
+    },
+    {
+      "file": "C03/wear/shopper_flute.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C03",
+      "sha256": "43198eba90014d2570648ca02529dfa473bc9c035e8ba23dbefbdf8898ef4afe"
+    },
+    {
+      "file": "C03/wear/ring07.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C03",
+      "sha256": "8c490a7af410dc753ee7de3d37351b343e4ed22e5b738a52dc2cc0d8f6af57db"
+    },
+    {
+      "file": "C03/feet_native.png",
+      "kind": "feet",
+      "character": "C03",
+      "sha256": "8c490a7af410dc753ee7de3d37351b343e4ed22e5b738a52dc2cc0d8f6af57db"
+    },
+    {
+      "file": "C03/feet_perch.png",
+      "kind": "feet",
+      "character": "C03",
+      "sha256": "8f665e340e6a0c91044b2cb120187e0cd3ce20f5dd4159eef8b0c187cfd12357"
+    },
+    {
+      "file": "C03/shop/vest.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "be346f6b658bb9b76fd9e84ef5307ed2096caba788fa9249b02ef459211eab6d"
+    },
+    {
+      "file": "C03/shop/glasses.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "f0608b0451b80e2b8fd0427c7aafb8ccfbd8250bd43e111d99002c9f77d05b1f"
+    },
+    {
+      "file": "C03/shop/ring07.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "8dbe16226b1d35ef621dce926ce2f3dc91793ada60040879e7be4b77146f52bc"
+    },
+    {
+      "file": "C03/shop/beads.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "feefe4ad82a8a9ae9ad8dc20351079e73632c2b2a4bf100f6802923ae9f7de62"
+    },
+    {
+      "file": "C03/shop/scarf.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "f0841734e634be7c11ca57213138fab4fbf6f98c87fb02a92b2eed5eb1ee99b6"
+    },
+    {
+      "file": "C03/shop/shopper_flute.png",
+      "kind": "shop",
+      "character": "C03",
+      "sha256": "ee649064e8d22da35a2fc9bf8013b620a29c990530f7dfbffe97939dd627bb44"
+    },
+    {
+      "file": "C04/parts/farWing.png",
+      "kind": "part",
+      "character": "C04",
+      "sha256": "eaa02143ea8c834719ce47d3c31ec44ebc726fedfb33b3a2fe157a4caa62844a"
+    },
+    {
+      "file": "C04/parts/body.png",
+      "kind": "part",
+      "character": "C04",
+      "sha256": "64c558c00866a2ce5b4a1a5799504b5604bf04f5a53ca5828c89ecad8cc434f3"
+    },
+    {
+      "file": "C04/parts/feet.png",
+      "kind": "part",
+      "character": "C04",
+      "sha256": "5dd671fbab29c76803da9c5d5d921f218f314075afe4a728e7849df92982bd53"
+    },
+    {
+      "file": "C04/parts/head.png",
+      "kind": "part",
+      "character": "C04",
+      "sha256": "54330207209d0cd7e3d097a6ba0f23042616f1d12ef6de81ea49f7dc498d4965"
+    },
+    {
+      "file": "C04/parts/nearWing.png",
+      "kind": "part",
+      "character": "C04",
+      "sha256": "dd50e5cfc1f872dd8985e8946d340f4e826eef31d0674df2b81fe18a5f8e8f5c"
+    },
+    {
+      "file": "C04/head_native_base.png",
+      "kind": "head",
+      "character": "C04",
+      "sha256": "54330207209d0cd7e3d097a6ba0f23042616f1d12ef6de81ea49f7dc498d4965"
+    },
+    {
+      "file": "C04/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C04",
+      "sha256": "f30928d05f8cca1fa41d3c4597925b557efa95bf16c3d9a6c92208d540735db4"
+    },
+    {
+      "file": "C04/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C04",
+      "sha256": "fc4de980bdaa79514bbdec15bbc169c9d1fe05b31b265ebe22405b636902be6f"
+    },
+    {
+      "file": "C04/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C04",
+      "sha256": "60387a75f0911322062d0b098801918b5d90b24d5dff76800e65c170b6523cf7"
+    },
+    {
+      "file": "C04/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C04",
+      "sha256": "76668491c6f4607dc65b6fbde067d24575fe6622036178495db130a45a5ae2c1"
+    },
+    {
+      "file": "C04/wear/pencil.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C04",
+      "sha256": "834d5cdb6ff93c2d25572ed88d923f292b08743f76ae28f5e6a8383c074c04b3"
+    },
+    {
+      "file": "C04/wear/pencil_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C04",
+      "sha256": "16946a61d367b7bbb88cf7c2d7a376195cdf4d0cd8195aeb5551e7b798920193"
+    },
+    {
+      "file": "C04/wear/glasses.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C04",
+      "sha256": "6084eb82a93c2a2ace054aebdf387c2a2f074188a26721c2f74bee135b7874b1"
+    },
+    {
+      "file": "C04/wear/coat.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C04",
+      "sha256": "cd6ee90627ab3bc23a329e60490d674603396cd36aff1eafb18dbbd3cd1cf678"
+    },
+    {
+      "file": "C04/wear/magnifier.png",
+      "kind": "wear",
+      "slot": "neck",
+      "character": "C04",
+      "sha256": "2ec80c3ebcacc2a8d145abd520aa102b6a652110ce336af7a1fccc15a1cbd1da"
+    },
+    {
+      "file": "C04/wear/satchel.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C04",
+      "sha256": "4019801f474bad149607cdf9958be1e4d4f4515f2674a0044ead6c3ddf874b74"
+    },
+    {
+      "file": "C04/wear/crocs.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C04",
+      "sha256": "255004bd47fc2d4a9c9b4a303f26198a1bb052b0be3c5fe4f170166c0aab13b4"
+    },
+    {
+      "file": "C04/feet_native.png",
+      "kind": "feet",
+      "character": "C04",
+      "sha256": "255004bd47fc2d4a9c9b4a303f26198a1bb052b0be3c5fe4f170166c0aab13b4"
+    },
+    {
+      "file": "C04/feet_perch.png",
+      "kind": "feet",
+      "character": "C04",
+      "sha256": "1839999351a6d2839f2023e3565d83642000f76d14033827497bb16d3744d890"
+    },
+    {
+      "file": "C04/shop/glasses.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "c263ab53e5720356ca5099d4ca91b28443b5b8580e344f485fd545943fd0bccb"
+    },
+    {
+      "file": "C04/shop/crocs.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "030fba194e0badd6040369b0ba8ae1aa4ee33a8a2294cbf1c81f3cb9793509ce"
+    },
+    {
+      "file": "C04/shop/magnifier.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "4b9b68ff9df64988e458ad37fb5d27d0b97c05f02b30076da13a4390b3904c07"
+    },
+    {
+      "file": "C04/shop/pencil.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "38bec3b8c03fa5f34551b229af02ca4c5cc96eb43d3a551909c5412dc27996e9"
+    },
+    {
+      "file": "C04/shop/coat.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "3619d208fe974e6db0cba545e50bd65ff1be5ea421cf6437c03f1ab0f9aaf86f"
+    },
+    {
+      "file": "C04/shop/satchel.png",
+      "kind": "shop",
+      "character": "C04",
+      "sha256": "528c8f6ee46ef6425237a5a0075dd2276f9cb99e702439abc33c6b9649c39557"
+    },
+    {
+      "file": "C05/parts/farWing.png",
+      "kind": "part",
+      "character": "C05",
+      "sha256": "82c161b1158e1a8908a44f9210e4bdba868446b8882c7a6b8c6cf549ed2b8c50"
+    },
+    {
+      "file": "C05/parts/body.png",
+      "kind": "part",
+      "character": "C05",
+      "sha256": "94b4a17af37cb2139618165250d53086e138971ca3fb517b981076b10b9db52c"
+    },
+    {
+      "file": "C05/parts/feet.png",
+      "kind": "part",
+      "character": "C05",
+      "sha256": "48bb32740ff1d4c5c8ac826787f1f23a6e403cd2677a2266ceb4140c959775c0"
+    },
+    {
+      "file": "C05/parts/head.png",
+      "kind": "part",
+      "character": "C05",
+      "sha256": "2bcf91ed6e4472053e7924ce782b68b47075c1d93ca91dd73648323fcb57a86e"
+    },
+    {
+      "file": "C05/parts/nearWing.png",
+      "kind": "part",
+      "character": "C05",
+      "sha256": "ab49cc30f4eae24f9770c55bb25e922813bdd2588f73b3dc4052afd51cecd5bb"
+    },
+    {
+      "file": "C05/head_native_base.png",
+      "kind": "head",
+      "character": "C05",
+      "sha256": "3452cd793f4881759a2ee43caaebe077f689020d9975deb6c231a6c679344987"
+    },
+    {
+      "file": "C05/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "37ce8e0603f03a68c2d92945777de974f94dc518549edcb85a427447e449467b"
+    },
+    {
+      "file": "C05/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "1a80da048b9999c0179de8dc9e8c95a5615bace32197b9704b9fb96256963b2a"
+    },
+    {
+      "file": "C05/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "9ceae0c13d9a680e97e74690d5c7b85dbfb72f4b4fe6fd8661c5ef7c7d7f8a24"
+    },
+    {
+      "file": "C05/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "40a54af5a0f365c00149d0880562e281c1216eaa3075acd3eddea627997498e9"
+    },
+    {
+      "file": "C05/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "fabe9b769a0a56f10a2e8581d947921a521293bed5ecee13fd0a03bc2b64d15f"
+    },
+    {
+      "file": "C05/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "1524a46f853b11f6b8524ab9e0535e7e4118a7aed7a895d4dc74b1e0af8fef11"
+    },
+    {
+      "file": "C05/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "ecf7d11f86b16c18377f9acd986f3be10d274933953d2d973794756c501723bc"
+    },
+    {
+      "file": "C05/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C05",
+      "sha256": "e5e2a425b9a0088cac23fa3b6a617020eca5f46fb08d0bd379fe09af4e574c43"
+    },
+    {
+      "file": "C05/wear/hat.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C05",
+      "sha256": "55b85f9fcc0e34d2e3bc5e236af8aea8da2091a250eaeefb40884c975ff285ad"
+    },
+    {
+      "file": "C05/wear/hat_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C05",
+      "sha256": "9a409c9a198e2e7fe044653c22141e355d0d3529a815798794cddd11bc16c945"
+    },
+    {
+      "file": "C05/wear/third_eye.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C05",
+      "sha256": "93f6bd9d027e47a104efa31858d7a6c15250ed245b5c0ed5cf7ac5d5b0acce17"
+    },
+    {
+      "file": "C05/wear/robe.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C05",
+      "sha256": "6e89d95b317b3a9fde445ef345674b2b36f6160c16f3d41c64f8d680bd946400"
+    },
+    {
+      "file": "C05/wear/beads.png",
+      "kind": "wear",
+      "slot": "neck",
+      "character": "C05",
+      "sha256": "41d2e0e855d133de8f83a2a054fea7852a7f5bd33a7f937f79623d0feb1be334"
+    },
+    {
+      "file": "C05/wear/cloth_bag.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C05",
+      "sha256": "9c7f824ab97c7d02bcbbd2827d623489fca662a718fea880e71c89eb09b082a6"
+    },
+    {
+      "file": "C05/wear/sandals.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C05",
+      "sha256": "f45566ef4347cb04898fd80d93271bf6875c426debc4a22fc71c8b4c89665179"
+    },
+    {
+      "file": "C05/feet_native.png",
+      "kind": "feet",
+      "character": "C05",
+      "sha256": "f45566ef4347cb04898fd80d93271bf6875c426debc4a22fc71c8b4c89665179"
+    },
+    {
+      "file": "C05/feet_perch.png",
+      "kind": "feet",
+      "character": "C05",
+      "sha256": "fa43c91a9cbfbb55a3512db9be0dfd7153679cbc46e1770d2a7ad453a4026740"
+    },
+    {
+      "file": "C05/shop/third_eye.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "331b2354450d32d60ecaa1a1c4e96bb640742248225888eb32432f46a96e957a"
+    },
+    {
+      "file": "C05/shop/robe.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "c0b6405a98b95d273e553b8af5e6375711509262e367fe8b9a516bb0f2b3726e"
+    },
+    {
+      "file": "C05/shop/beads.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "016b5ce6d33f51f42414506bcca13cd916bfbc671a2a5aab326983c6de49dba3"
+    },
+    {
+      "file": "C05/shop/cloth_bag.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "49682fd50317909e09b1bf7661fd28fd856789cdf35078ea2da1b04c40bc9837"
+    },
+    {
+      "file": "C05/shop/sandals.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "e19e249878e57c07a20d253a7e9c96985f6ff79101800a8b922d426fe6beb567"
+    },
+    {
+      "file": "C05/shop/hat.png",
+      "kind": "shop",
+      "character": "C05",
+      "sha256": "f532db3d975baad37b6627f9263527d397044aa8238359e2886691f85cd88065"
+    },
+    {
+      "file": "C06/parts/farWing.png",
+      "kind": "part",
+      "character": "C06",
+      "sha256": "6f295aa606a51c6eb26f97af79d7f65c6fb57508b3ce6ffcdc201a78af2c9fab"
+    },
+    {
+      "file": "C06/parts/body.png",
+      "kind": "part",
+      "character": "C06",
+      "sha256": "fd3276c5be97358fa177908033e227789661d167c57281ac5ba6d463e96177e6"
+    },
+    {
+      "file": "C06/parts/feet.png",
+      "kind": "part",
+      "character": "C06",
+      "sha256": "f82e6366f598ea7a09480b4f7585814d8c61979ef83a10b4393b2fcdac0a8447"
+    },
+    {
+      "file": "C06/parts/head.png",
+      "kind": "part",
+      "character": "C06",
+      "sha256": "7d7951ed14c59d7a90ffc24ec8c5824b0900a0a83df5eed35219561bf45834cb"
+    },
+    {
+      "file": "C06/parts/nearWing.png",
+      "kind": "part",
+      "character": "C06",
+      "sha256": "a511eb7f1babf43fc51b3599851110e234c0e559d9f55c139b5cea3489e0c38e"
+    },
+    {
+      "file": "C06/head_native_base.png",
+      "kind": "head",
+      "character": "C06",
+      "sha256": "4c568d04140eac54aeaabb9129897ff3fe80fe90c0e14b85db137f2f28d84cce"
+    },
+    {
+      "file": "C06/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "8b5f2b03c3042eb616f06bb48817204b90478f0453146de01ec27ec6da79be04"
+    },
+    {
+      "file": "C06/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "39a305720ea9b463bb544b640ec863718fdb022d2459e5a4ed7eaaf9b9d79834"
+    },
+    {
+      "file": "C06/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "2d9ce6b26f5aedb28dbfadded43dde80b9a99c99aaea20ed2e40ec355adf10fc"
+    },
+    {
+      "file": "C06/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "210b00c802e2a7cd17f4732695929419ca3026609514d479f637190181916556"
+    },
+    {
+      "file": "C06/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "2d945b4120622c1585550d70494bffa53a175c55f84a55d05c80689d1a61b373"
+    },
+    {
+      "file": "C06/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "791bf7cc32f33f56048d0bc291e4f1e247ef351e708bc7c97e2da120f430b6f1"
+    },
+    {
+      "file": "C06/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "8eb61e9213a2cb9b65cb5fb272c32973ea2d33a4bbf04b1439d02a6a3a1c38e7"
+    },
+    {
+      "file": "C06/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C06",
+      "sha256": "98d172bb33f1f82710c7eae12244d45b905c461f7bbb106df619dcf4dc6bec26"
+    },
+    {
+      "file": "C06/wear/hat.png",
+      "kind": "wear",
+      "slot": "head_front",
+      "character": "C06",
+      "sha256": "26d8bc9e2b80ed0485b25af49161aa72f985eaca14a12062112d9e7b27ad62d5"
+    },
+    {
+      "file": "C06/wear/hat_back.png",
+      "kind": "wear_back",
+      "slot": "head_back",
+      "character": "C06",
+      "sha256": "2fe145d775283a897260a865c3d413acfbad5edbba97b48b4287c86f619bfb48"
+    },
+    {
+      "file": "C06/wear/glasses.png",
+      "kind": "wear",
+      "slot": "face",
+      "character": "C06",
+      "sha256": "e232c2b963461ed9b3ee60388fd92267c672c5d60509e2b222dc76bf715871ef"
+    },
+    {
+      "file": "C06/wear/vest.png",
+      "kind": "wear",
+      "slot": "body",
+      "character": "C06",
+      "sha256": "85d078ce9d7e1f1b169a87b35cf699967901e349b47d979202c76ba0dda1eca9"
+    },
+    {
+      "file": "C06/wear/diamonds.png",
+      "kind": "wear",
+      "slot": "neck",
+      "character": "C06",
+      "sha256": "f11df72a7004786165a69527d20bdeca0570a15b5b2f4384a37213bcbc5093c0"
+    },
+    {
+      "file": "C06/wear/bag_h.png",
+      "kind": "wear",
+      "slot": "bag",
+      "character": "C06",
+      "sha256": "74e6b24b7a0e664e6993ab2e46db4d9ee531629e0d8035cc0a4f72bf9da28d26"
+    },
+    {
+      "file": "C06/wear/anklets.png",
+      "kind": "wear",
+      "slot": "feet",
+      "character": "C06",
+      "sha256": "5b9cea8aefeed2e7305310e72755ebdaff0c428e78ff647b49ace429f434090a"
+    },
+    {
+      "file": "C06/feet_native.png",
+      "kind": "feet",
+      "character": "C06",
+      "sha256": "5b9cea8aefeed2e7305310e72755ebdaff0c428e78ff647b49ace429f434090a"
+    },
+    {
+      "file": "C06/feet_perch.png",
+      "kind": "feet",
+      "character": "C06",
+      "sha256": "4c79278be83db2c3bf242977ab8f234d0079082ad84e09f88dddd2fd522e3ceb"
+    },
+    {
+      "file": "C06/shop/vest.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "4eb203a780cf897595ab3818385f97376d2ed26d3f0efcb4ed78d953f220edd5"
+    },
+    {
+      "file": "C06/shop/glasses.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "9eefe102d4ad4c544f515e33729dc403dc7ea8928c898930dc683fcbe3785580"
+    },
+    {
+      "file": "C06/shop/bag_h.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "9e601900b66a03d6ca8831708c2a6b1046d28715a03c1ac61fe6f5634fe611d4"
+    },
+    {
+      "file": "C06/shop/anklets.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "3f122d46c9cedd81d519d04924825c309071158e6b5fc6e1a72d0f696090bd74"
+    },
+    {
+      "file": "C06/shop/diamonds.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "c7b410b830b18f09a5591113ca163570432045ca61a73eeb3612dff972b8e217"
+    },
+    {
+      "file": "C06/shop/hat.png",
+      "kind": "shop",
+      "character": "C06",
+      "sha256": "a19f51ede96bc2b804f98f32555afcfa9fc776044ec24402c0027e6a660d5f00"
+    },
+    {
+      "file": "props/nest_back.png",
+      "kind": "prop",
+      "sha256": "01854f998916f271e8820e0e75434964d6e1679058886e1463325c94343b8c2f"
+    },
+    {
+      "file": "props/nest_front_eggs.png",
+      "kind": "prop",
+      "sha256": "fbc23261d1253f1e36727a6fd613b29a3a5238eb66e680afa4fb379c4a62dea3"
+    },
+    {
+      "file": "props/perch.png",
+      "kind": "prop",
+      "sha256": "8c3563b902636fffc833215591258c0c8293d31c5da4a6f0495b86959d3d0b73"
+    },
+    {
+      "file": "C01/composites/CARD.png",
+      "kind": "composite",
+      "character": "C01",
+      "sha256": "9c3ab85bd09eabdd56e2d5cadccd91e0bc45d767a9fed712f5f757cc8c4e5a5e"
+    },
+    {
+      "file": "C01/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C01",
+      "sha256": "57b21c79f06c4b263e7ecce4ad628e790055e4a00d02526061c3949be057976e"
+    },
+    {
+      "file": "C01/composites/NEST.png",
+      "kind": "composite",
+      "character": "C01",
+      "sha256": "df6755b55b46d508ec488f9a002481746c6ed86f1f146aa71bed2f91627b6223"
+    },
+    {
+      "file": "C02/composites/CARD.png",
+      "kind": "composite",
+      "character": "C02",
+      "sha256": "d0c3dc7309bec117fb323fddbcc3c2f3c9849961c9ef59704aced6f4b71e6118"
+    },
+    {
+      "file": "C02/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C02",
+      "sha256": "0ac6b0e6fbe1d6d7a5e4976eaf4b519c8c5344d7e8cfde90ebf7e5ce7ae14d81"
+    },
+    {
+      "file": "C02/composites/NEST.png",
+      "kind": "composite",
+      "character": "C02",
+      "sha256": "6bc6796f7098c99874f24efb47f277939519b0d3ed87d2a300c33cdaf450246d"
+    },
+    {
+      "file": "C03/composites/CARD.png",
+      "kind": "composite",
+      "character": "C03",
+      "sha256": "0711ed77dfb74c58d858277b7bbdf150e1b6f121fa723649eaad0701571af049"
+    },
+    {
+      "file": "C03/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C03",
+      "sha256": "df0e264aae242217afee79c452ba5ace761fb452c2bbe7b72f4931e97fda25be"
+    },
+    {
+      "file": "C03/composites/NEST.png",
+      "kind": "composite",
+      "character": "C03",
+      "sha256": "c9423b6785d767fb67d60b5b7313ef86a8570c0dbfbcb383f50ca72170ea3cd4"
+    },
+    {
+      "file": "C04/composites/CARD.png",
+      "kind": "composite",
+      "character": "C04",
+      "sha256": "fcfe397d88f88d2158baca2df348deb7b68fc705e6bbc229b036e3474dcd596e"
+    },
+    {
+      "file": "C04/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C04",
+      "sha256": "077c52ca83ad87fbdd7e12c5e63644f6158c38f6bef2326ccff6b0fc3ead04f3"
+    },
+    {
+      "file": "C04/composites/NEST.png",
+      "kind": "composite",
+      "character": "C04",
+      "sha256": "cb8335f6f1cb7dc25cbd9001501405002b47765c380ec4cf134eb4390463f516"
+    },
+    {
+      "file": "C05/composites/CARD.png",
+      "kind": "composite",
+      "character": "C05",
+      "sha256": "cdd40d70a285e25746f20203c388df1858128ce5f329c97c5520b801d8efa585"
+    },
+    {
+      "file": "C05/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C05",
+      "sha256": "606cfe358a2e7eb20493f06d916027e3d82d57ee8b1ee4004b7b52de5271a17d"
+    },
+    {
+      "file": "C05/composites/NEST.png",
+      "kind": "composite",
+      "character": "C05",
+      "sha256": "091c3f35fa56a2a106b58e23edda997ad6de334a46853ca737bddf95a921d79a"
+    },
+    {
+      "file": "C06/composites/CARD.png",
+      "kind": "composite",
+      "character": "C06",
+      "sha256": "fdf8935eb64882db1a36b8784c296951c89ed3c4faad10ccfd74113dd5be00c4"
+    },
+    {
+      "file": "C06/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C06",
+      "sha256": "4b96b6b5eeb2c8f0a5c05abd9f03d4ea366b32e1967c592d5ad66fbcba974d2e"
+    },
+    {
+      "file": "C06/composites/NEST.png",
+      "kind": "composite",
+      "character": "C06",
+      "sha256": "3ecdf79b055868e43453330bd157b5f2b12b2dcb39f935b1474a27629cb06225"
+    }
+  ]
+}

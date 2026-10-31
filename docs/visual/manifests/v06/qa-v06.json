@@ -1,0 +1,30 @@
+{
+  "version": "v06",
+  "status": "READY_FOR_VISUAL_REVIEW",
+  "user_approved": false,
+  "previous_v05_status": "REJECTED_FOR_FITTING",
+  "native_accessories": 35,
+  "wear_back_layers": 6,
+  "game_masters_figma": 132,
+  "empty_figma_layers": 0,
+  "pose_views_reviewed": 18,
+  "head_states_reviewed": 30,
+  "checks": [
+    "individual item on a bare character",
+    "complete outfit",
+    "three static poses",
+    "clear lenses and frame alignment",
+    "headwear front/back occlusion",
+    "neckline and armhole exclusions",
+    "bag and strap under foreground wings",
+    "seated footwear and bags omitted",
+    "all PNGs fully decoded and dimensions checked"
+  ],
+  "known_limits": [
+    "Static assemblies; not an unrestricted skeleton rig.",
+    "Profiles are native to each character; arbitrary cross-character equipment requires another fitting profile.",
+    "Final aesthetic approval remains with the user."
+  ],
+  "png_files": 185,
+  "png_errors": []
+}

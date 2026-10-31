@@ -1,0 +1,452 @@
+{
+  "C01": {
+    "headwear": [
+      220,
+      10,
+      315,
+      157
+    ],
+    "eyes": [
+      [
+        338,
+        160
+      ],
+      [
+        404,
+        184
+      ]
+    ],
+    "shoulder": [
+      300,
+      284
+    ],
+    "garment": [
+      238,
+      275,
+      262,
+      237
+    ],
+    "bag": [
+      443,
+      391,
+      82,
+      98
+    ],
+    "roles": {},
+    "face_landmarks": {
+      "source_normalized": [
+        [
+          0.52,
+          0.49
+        ],
+        [
+          0.84,
+          0.49
+        ]
+      ],
+      "target": [
+        [
+          338,
+          160
+        ],
+        [
+          404,
+          184
+        ]
+      ],
+      "scale": 0.44157570085712883,
+      "rotation_degrees": 19.98310652189998
+    },
+    "feet": {
+      "registered_bbox_px": [
+        391,
+        1031,
+        991,
+        1301
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  },
+  "C02": {
+    "headwear": [
+      280,
+      73,
+      204,
+      93
+    ],
+    "eyes": [
+      [
+        358,
+        166
+      ],
+      [
+        430,
+        189
+      ]
+    ],
+    "shoulder": [
+      321,
+      287
+    ],
+    "garment": [
+      248,
+      283,
+      275,
+      222
+    ],
+    "bag": [
+      427,
+      382,
+      114,
+      68
+    ],
+    "roles": {},
+    "face_landmarks": {
+      "source_normalized": [
+        [
+          0.34,
+          0.44
+        ],
+        [
+          0.82,
+          0.6
+        ]
+      ],
+      "target": [
+        [
+          358,
+          166
+        ],
+        [
+          430,
+          189
+        ]
+      ],
+      "scale": 0.23113834001859265,
+      "rotation_degrees": 8.25347049835132
+    },
+    "feet": {
+      "registered_bbox_px": [
+        357,
+        1030,
+        1065,
+        1342
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  },
+  "C03": {
+    "headwear": [
+      273,
+      4,
+      244,
+      168
+    ],
+    "eyes": [
+      [
+        353,
+        157
+      ],
+      [
+        429,
+        185
+      ]
+    ],
+    "shoulder": [
+      315,
+      285
+    ],
+    "garment": [
+      253,
+      280,
+      277,
+      218
+    ],
+    "bag": [
+      491,
+      393,
+      89,
+      100
+    ],
+    "roles": {},
+    "face_landmarks": {
+      "source_normalized": [
+        [
+          0.46,
+          0.52
+        ],
+        [
+          0.81,
+          0.56
+        ]
+      ],
+      "target": [
+        [
+          353,
+          157
+        ],
+        [
+          429,
+          185
+        ]
+      ],
+      "scale": 0.5116130048259188,
+      "rotation_degrees": 18.081794822215546
+    },
+    "feet": {
+      "registered_bbox_px": [
+        86,
+        1052,
+        1045,
+        1327
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  },
+  "C04": {
+    "headwear": [
+      270,
+      49,
+      50,
+      64
+    ],
+    "eyes": [
+      [
+        337,
+        178
+      ],
+      [
+        401,
+        201
+      ]
+    ],
+    "shoulder": [
+      294,
+      297
+    ],
+    "garment": [
+      227,
+      291,
+      277,
+      216
+    ],
+    "bag": [
+      439,
+      401,
+      96,
+      67
+    ],
+    "roles": {},
+    "face_landmarks": {
+      "source_normalized": [
+        [
+          0.425,
+          0.49
+        ],
+        [
+          0.815,
+          0.57
+        ]
+      ],
+      "target": [
+        [
+          337,
+          178
+        ],
+        [
+          401,
+          201
+        ]
+      ],
+      "scale": 0.3636381544591851,
+      "rotation_degrees": 15.179077448555303
+    },
+    "feet": {
+      "registered_bbox_px": [
+        295,
+        1040,
+        1012,
+        1352
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  },
+  "C05": {
+    "headwear": [
+      272,
+      -2,
+      253,
+      134
+    ],
+    "eyes": [
+      [
+        372,
+        154
+      ],
+      [
+        437,
+        171
+      ]
+    ],
+    "shoulder": [
+      328,
+      293
+    ],
+    "garment": [
+      281,
+      282,
+      222,
+      223
+    ],
+    "bag": [
+      459,
+      404,
+      77,
+      55
+    ],
+    "roles": {},
+    "feet": {
+      "registered_bbox_px": [
+        74,
+        1060,
+        1058,
+        1358
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  },
+  "C06": {
+    "headwear": [
+      300,
+      5,
+      246,
+      133
+    ],
+    "eyes": [
+      [
+        392,
+        140
+      ],
+      [
+        462,
+        164
+      ]
+    ],
+    "shoulder": [
+      354,
+      302
+    ],
+    "garment": [
+      307,
+      292,
+      208,
+      217
+    ],
+    "bag": [
+      464,
+      404,
+      72,
+      49
+    ],
+    "roles": {},
+    "face_landmarks": {
+      "source_normalized": [
+        [
+          0.3,
+          0.51
+        ],
+        [
+          0.75,
+          0.52
+        ]
+      ],
+      "target": [
+        [
+          392,
+          140
+        ],
+        [
+          462,
+          164
+        ]
+      ],
+      "scale": 0.3349102894867211,
+      "rotation_degrees": 18.55123525392128
+    },
+    "feet": {
+      "registered_bbox_px": [
+        25,
+        1078,
+        1180,
+        1393
+      ],
+      "replace_bare_feet": true,
+      "seated": false
+    },
+    "head_depth_order": [
+      "headwear_back",
+      "head",
+      "headwear_front"
+    ],
+    "bag_depth": "below farWing and nearWing",
+    "canvas_px": [
+      1200,
+      1520
+    ]
+  }
+}
