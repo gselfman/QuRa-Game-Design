@@ -1,0 +1,62 @@
+{
+  "version": "v07",
+  "status": "READY_FOR_OWNER_REVIEW",
+  "owner_approved": false,
+  "png_validation": {
+    "png_files": 209,
+    "errors": []
+  },
+  "anatomy_checks": [
+    {
+      "cid": "C01",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    },
+    {
+      "cid": "C02",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    },
+    {
+      "cid": "C03",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    },
+    {
+      "cid": "C04",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    },
+    {
+      "cid": "C05",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    },
+    {
+      "cid": "C06",
+      "oneLegModule": true,
+      "wingAboveGarmentAndBag": true
+    }
+  ],
+  "anatomy_errors": [],
+  "wear_layers_changed": 28,
+  "torsos_restored": 6,
+  "anatomical_alias_files": 24,
+  "visual_checks": [
+    "six full standing assemblies",
+    "18 pose board in Figma",
+    "36 anatomy samples including raised right wing",
+    "right wing above garment and bag",
+    "one bare/shod leg module per standing rig"
+  ],
+  "boards": {
+    "poses": "164:488",
+    "emotions": "164:959",
+    "individual": "164:1351",
+    "anatomy": "182:1273"
+  },
+  "limitations": [
+    "Static modular artwork; no authored free skeletal animation.",
+    "User visual approval pending."
+  ]
+}

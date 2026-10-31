@@ -1,0 +1,248 @@
+{
+  "C01": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      180,
+      440,
+      105,
+      115
+    ],
+    "shoulder": [
+      285,
+      310
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ]
+  },
+  "C02": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      125,
+      456,
+      210,
+      100
+    ],
+    "shoulder": [
+      300,
+      320
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ],
+    "head": {
+      "rect": [
+        278,
+        81,
+        211,
+        90
+      ],
+      "rotation": 7,
+      "rear_surface": "omitted in worn layer"
+    },
+    "face": {
+      "source_landmarks": [
+        [
+          0.32,
+          0.44
+        ],
+        [
+          0.81,
+          0.6
+        ]
+      ],
+      "target_eye_centers": [
+        [
+          358,
+          169
+        ],
+        [
+          431,
+          191
+        ]
+      ],
+      "rotation": 6.592641639245308
+    }
+  },
+  "C03": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      143,
+      433,
+      122,
+      122
+    ],
+    "shoulder": [
+      306,
+      312
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ],
+    "head": {
+      "rect": [
+        263,
+        23,
+        260,
+        155
+      ],
+      "rotation": 0,
+      "rear_surface": "omitted in worn layer"
+    },
+    "ankle_front": [
+      290,
+      520.5
+    ]
+  },
+  "C04": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      163,
+      455,
+      117,
+      86
+    ],
+    "shoulder": [
+      280,
+      315
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ],
+    "body": {
+      "rect": [
+        232,
+        284,
+        270,
+        224
+      ],
+      "clip": "actual registered torso silhouette",
+      "rear_neckline": "not drawn"
+    },
+    "foot_front": {
+      "green": [
+        162,
+        525,
+        145,
+        82
+      ],
+      "purple": [
+        325,
+        526,
+        155,
+        86
+      ],
+      "heel_back": "omitted"
+    }
+  },
+  "C05": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      178,
+      454,
+      105,
+      82
+    ],
+    "shoulder": [
+      318,
+      315
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ],
+    "head": {
+      "rect": [
+        275,
+        19,
+        245,
+        133
+      ],
+      "rotation": 0,
+      "rear_surface": "omitted in worn layer"
+    },
+    "body": {
+      "rect": [
+        283,
+        287,
+        215,
+        216
+      ],
+      "clip": "actual registered torso silhouette",
+      "rear_neckline": "not drawn"
+    },
+    "third_eye": [
+      395,
+      119
+    ],
+    "neck": "front U only, no rear arc"
+  },
+  "C06": {
+    "bag_side": "anatomical right / viewer left",
+    "bag": [
+      170,
+      440,
+      112,
+      85
+    ],
+    "shoulder": [
+      345,
+      325
+    ],
+    "changes": [
+      "bag/right side; foreground wing occludes strap and upper bag"
+    ],
+    "head": {
+      "rect": [
+        314,
+        20,
+        220,
+        114
+      ],
+      "rotation": 11,
+      "rear_surface": "omitted in worn layer"
+    },
+    "body": {
+      "rect": [
+        309,
+        300,
+        193,
+        203
+      ],
+      "clip": "actual registered torso silhouette",
+      "rear_neckline": "not drawn"
+    },
+    "face": {
+      "source_landmarks": [
+        [
+          0.275,
+          0.49
+        ],
+        [
+          0.748,
+          0.54
+        ]
+      ],
+      "target_eye_centers": [
+        [
+          395,
+          143
+        ],
+        [
+          462,
+          164
+        ]
+      ],
+      "rotation": 15.322570074584453
+    },
+    "ankle_front": [
+      [
+        329.5,
+        548.5
+      ],
+      [
+        411,
+        548.5
+      ]
+    ]
+  }
+}
