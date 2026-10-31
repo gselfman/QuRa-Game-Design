@@ -1,0 +1,930 @@
+{
+  "date": "2026-10-31",
+  "fileKey": "pTm5JOM8r7b8ukBrk3UsXg",
+  "indexNode": "64:2",
+  "state": "sliced_not_registered_to_character_anchors",
+  "characters": [
+    {
+      "code": "C01",
+      "page": "1:3",
+      "gallery": "61:4",
+      "count": 18,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "61:26",
+          "name": "qura_c01_hat_shop_v02",
+          "w": 568,
+          "h": 282,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:29",
+          "name": "qura_c01_hat_card_v02",
+          "w": 482,
+          "h": 281,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:33",
+          "name": "qura_c01_bag_shop_v02",
+          "w": 418,
+          "h": 344,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:36",
+          "name": "qura_c01_bag_card_v02",
+          "w": 404,
+          "h": 334,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:40",
+          "name": "qura_c01_glasses_shop_v02",
+          "w": 501,
+          "h": 163,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:43",
+          "name": "qura_c01_glasses_card_v02",
+          "w": 398,
+          "h": 163,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:47",
+          "name": "qura_c01_vest_shop_v02",
+          "w": 397,
+          "h": 375,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:50",
+          "name": "qura_c01_vest_card_v02",
+          "w": 355,
+          "h": 368,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:54",
+          "name": "qura_c01_boots_shop_v02",
+          "w": 515,
+          "h": 234,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "61:57",
+          "name": "qura_c01_boots_card_v02",
+          "w": 467,
+          "h": 228,
+          "source": "source_pixels_57_25"
+        },
+        {
+          "id": "62:176",
+          "name": "qura_c01_hat_perch_v02",
+          "w": 759,
+          "h": 361,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:179",
+          "name": "qura_c01_hat_nest_v02",
+          "w": 718,
+          "h": 306,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:183",
+          "name": "qura_c01_glasses_perch_v02",
+          "w": 554,
+          "h": 180,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:186",
+          "name": "qura_c01_glasses_nest_v02",
+          "w": 522,
+          "h": 192,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:190",
+          "name": "qura_c01_vest_perch_v02",
+          "w": 386,
+          "h": 403,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:193",
+          "name": "qura_c01_vest_nest_v02",
+          "w": 411,
+          "h": 330,
+          "source": "source_pixels_57_10"
+        },
+        {
+          "id": "62:386",
+          "name": "qura_c01_base_perch_v02",
+          "w": 583,
+          "h": 635,
+          "source": "source_pixels_57_27"
+        },
+        {
+          "id": "62:389",
+          "name": "qura_c01_base_nest_v02",
+          "w": 712,
+          "h": 652,
+          "source": "source_pixels_57_27"
+        }
+      ]
+    },
+    {
+      "code": "C02",
+      "page": "1:4",
+      "gallery": "61:7",
+      "count": 22,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "62:47",
+          "name": "qura_c02_bandana_shop_v02",
+          "w": 475,
+          "h": 219,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:50",
+          "name": "qura_c02_bandana_card_v02",
+          "w": 457,
+          "h": 194,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:54",
+          "name": "qura_c02_cartridges_shop_v02",
+          "w": 391,
+          "h": 225,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:57",
+          "name": "qura_c02_cartridges_card_v02",
+          "w": 364,
+          "h": 207,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:61",
+          "name": "qura_c02_boots_shop_v02",
+          "w": 501,
+          "h": 276,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:64",
+          "name": "qura_c02_boots_card_v02",
+          "w": 455,
+          "h": 224,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:68",
+          "name": "qura_c02_water_toy_shop_v02",
+          "w": 409,
+          "h": 360,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:71",
+          "name": "qura_c02_water_toy_card_v02",
+          "w": 361,
+          "h": 294,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:75",
+          "name": "qura_c02_aviators_shop_v02",
+          "w": 456,
+          "h": 141,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:78",
+          "name": "qura_c02_aviators_card_v02",
+          "w": 353,
+          "h": 135,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:82",
+          "name": "qura_c02_vest_shop_v02",
+          "w": 457,
+          "h": 345,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:85",
+          "name": "qura_c02_vest_card_v02",
+          "w": 349,
+          "h": 322,
+          "source": "source_pixels_57_4"
+        },
+        {
+          "id": "62:241",
+          "name": "qura_c02_bandana_perch_v02",
+          "w": 602,
+          "h": 245,
+          "source": "source_pixels_57_13"
+        },
+        {
+          "id": "62:244",
+          "name": "qura_c02_bandana_nest_v02",
+          "w": 560,
+          "h": 230,
+          "source": "source_pixels_57_13"
+        },
+        {
+          "id": "62:248",
+          "name": "qura_c02_cartridges_perch_v02",
+          "w": 451,
+          "h": 225,
+          "source": "source_pixels_57_13"
+        },
+        {
+          "id": "62:251",
+          "name": "qura_c02_cartridges_nest_v02",
+          "w": 449,
+          "h": 217,
+          "source": "source_pixels_57_13"
+        },
+        {
+          "id": "62:255",
+          "name": "qura_c02_aviators_perch_v02",
+          "w": 601,
+          "h": 177,
+          "source": "source_pixels_57_24"
+        },
+        {
+          "id": "62:258",
+          "name": "qura_c02_aviators_nest_v02",
+          "w": 563,
+          "h": 172,
+          "source": "source_pixels_57_24"
+        },
+        {
+          "id": "62:262",
+          "name": "qura_c02_vest_perch_v02",
+          "w": 506,
+          "h": 378,
+          "source": "source_pixels_57_24"
+        },
+        {
+          "id": "62:265",
+          "name": "qura_c02_vest_nest_v02",
+          "w": 492,
+          "h": 365,
+          "source": "source_pixels_57_24"
+        },
+        {
+          "id": "62:402",
+          "name": "qura_c02_base_perch_v02",
+          "w": 608,
+          "h": 635,
+          "source": "source_pixels_57_28"
+        },
+        {
+          "id": "62:405",
+          "name": "qura_c02_base_nest_v02",
+          "w": 762,
+          "h": 658,
+          "source": "source_pixels_57_28"
+        }
+      ]
+    },
+    {
+      "code": "C03",
+      "page": "1:5",
+      "gallery": "61:16",
+      "count": 20,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "62:4",
+          "name": "qura_c03_scarf_shop_v02",
+          "w": 422,
+          "h": 292,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:7",
+          "name": "qura_c03_scarf_card_v02",
+          "w": 386,
+          "h": 292,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:11",
+          "name": "qura_c03_beads_shop_v02",
+          "w": 291,
+          "h": 231,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:14",
+          "name": "qura_c03_beads_card_v02",
+          "w": 235,
+          "h": 200,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:18",
+          "name": "qura_c03_glasses_shop_v02",
+          "w": 459,
+          "h": 154,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:21",
+          "name": "qura_c03_glasses_card_v02",
+          "w": 404,
+          "h": 163,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:25",
+          "name": "qura_c03_vest_shop_v02",
+          "w": 394,
+          "h": 310,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:28",
+          "name": "qura_c03_vest_card_v02",
+          "w": 361,
+          "h": 305,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:32",
+          "name": "qura_c03_shopper_flute_shop_v02",
+          "w": 361,
+          "h": 400,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:35",
+          "name": "qura_c03_shopper_flute_card_v02",
+          "w": 317,
+          "h": 410,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:39",
+          "name": "qura_c03_ring07_shop_v02",
+          "w": 253,
+          "h": 164,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:42",
+          "name": "qura_c03_ring07_card_v02",
+          "w": 212,
+          "h": 157,
+          "source": "source_pixels_57_15"
+        },
+        {
+          "id": "62:270",
+          "name": "qura_c03_scarf_perch_v02",
+          "w": 417,
+          "h": 300,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:273",
+          "name": "qura_c03_scarf_nest_v02",
+          "w": 405,
+          "h": 278,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:277",
+          "name": "qura_c03_glasses_perch_v02",
+          "w": 494,
+          "h": 158,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:280",
+          "name": "qura_c03_glasses_nest_v02",
+          "w": 491,
+          "h": 159,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:284",
+          "name": "qura_c03_beads_perch_v02",
+          "w": 300,
+          "h": 228,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:287",
+          "name": "qura_c03_beads_nest_v02",
+          "w": 304,
+          "h": 212,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:291",
+          "name": "qura_c03_vest_perch_v02",
+          "w": 525,
+          "h": 338,
+          "source": "source_pixels_57_12"
+        },
+        {
+          "id": "62:294",
+          "name": "qura_c03_vest_nest_v02",
+          "w": 504,
+          "h": 301,
+          "source": "source_pixels_57_12"
+        }
+      ]
+    },
+    {
+      "code": "C04",
+      "page": "1:6",
+      "gallery": "61:10",
+      "count": 20,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "62:90",
+          "name": "qura_c04_pencil_shop_v02",
+          "w": 179,
+          "h": 212,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:93",
+          "name": "qura_c04_pencil_card_v02",
+          "w": 171,
+          "h": 198,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:97",
+          "name": "qura_c04_glasses_shop_v02",
+          "w": 484,
+          "h": 193,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:100",
+          "name": "qura_c04_glasses_card_v02",
+          "w": 371,
+          "h": 190,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:104",
+          "name": "qura_c04_coat_shop_v02",
+          "w": 349,
+          "h": 332,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:107",
+          "name": "qura_c04_coat_card_v02",
+          "w": 342,
+          "h": 323,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:111",
+          "name": "qura_c04_satchel_shop_v02",
+          "w": 344,
+          "h": 338,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:114",
+          "name": "qura_c04_satchel_card_v02",
+          "w": 293,
+          "h": 341,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:118",
+          "name": "qura_c04_magnifier_shop_v02",
+          "w": 217,
+          "h": 306,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:121",
+          "name": "qura_c04_magnifier_card_v02",
+          "w": 175,
+          "h": 303,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:125",
+          "name": "qura_c04_crocs_shop_v02",
+          "w": 491,
+          "h": 163,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:128",
+          "name": "qura_c04_crocs_card_v02",
+          "w": 449,
+          "h": 158,
+          "source": "source_pixels_57_17"
+        },
+        {
+          "id": "62:299",
+          "name": "qura_c04_pencil_perch_v02",
+          "w": 146,
+          "h": 179,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:302",
+          "name": "qura_c04_pencil_nest_v02",
+          "w": 182,
+          "h": 163,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:306",
+          "name": "qura_c04_glasses_perch_v02",
+          "w": 410,
+          "h": 199,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:309",
+          "name": "qura_c04_glasses_nest_v02",
+          "w": 425,
+          "h": 204,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:313",
+          "name": "qura_c04_magnifier_perch_v02",
+          "w": 185,
+          "h": 337,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:316",
+          "name": "qura_c04_magnifier_nest_v02",
+          "w": 195,
+          "h": 338,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:320",
+          "name": "qura_c04_coat_perch_v02",
+          "w": 289,
+          "h": 291,
+          "source": "source_pixels_57_11"
+        },
+        {
+          "id": "62:323",
+          "name": "qura_c04_coat_nest_v02",
+          "w": 310,
+          "h": 237,
+          "source": "source_pixels_57_11"
+        }
+      ]
+    },
+    {
+      "code": "C05",
+      "page": "1:7",
+      "gallery": "61:13",
+      "count": 22,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "62:198",
+          "name": "qura_c05_hat_shop_v02",
+          "w": 445,
+          "h": 236,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:201",
+          "name": "qura_c05_hat_card_v02",
+          "w": 438,
+          "h": 235,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:205",
+          "name": "qura_c05_beads_shop_v02",
+          "w": 319,
+          "h": 203,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:208",
+          "name": "qura_c05_beads_card_v02",
+          "w": 310,
+          "h": 203,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:212",
+          "name": "qura_c05_robe_shop_v02",
+          "w": 400,
+          "h": 387,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:215",
+          "name": "qura_c05_robe_card_v02",
+          "w": 392,
+          "h": 388,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:219",
+          "name": "qura_c05_cloth_bag_shop_v02",
+          "w": 353,
+          "h": 334,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:222",
+          "name": "qura_c05_cloth_bag_card_v02",
+          "w": 344,
+          "h": 326,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:226",
+          "name": "qura_c05_sandals_shop_v02",
+          "w": 456,
+          "h": 142,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:229",
+          "name": "qura_c05_sandals_card_v02",
+          "w": 432,
+          "h": 145,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:233",
+          "name": "qura_c05_third_eye_shop_v02",
+          "w": 245,
+          "h": 204,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:236",
+          "name": "qura_c05_third_eye_card_v02",
+          "w": 237,
+          "h": 199,
+          "source": "source_pixels_57_19"
+        },
+        {
+          "id": "62:328",
+          "name": "qura_c05_hat_perch_v02",
+          "w": 473,
+          "h": 245,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:331",
+          "name": "qura_c05_hat_nest_v02",
+          "w": 448,
+          "h": 219,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:335",
+          "name": "qura_c05_beads_perch_v02",
+          "w": 259,
+          "h": 208,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:338",
+          "name": "qura_c05_beads_nest_v02",
+          "w": 263,
+          "h": 208,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:342",
+          "name": "qura_c05_robe_perch_v02",
+          "w": 491,
+          "h": 353,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:345",
+          "name": "qura_c05_robe_nest_v02",
+          "w": 459,
+          "h": 304,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:349",
+          "name": "qura_c05_third_eye_perch_v02",
+          "w": 200,
+          "h": 212,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:352",
+          "name": "qura_c05_third_eye_nest_v02",
+          "w": 201,
+          "h": 210,
+          "source": "source_pixels_57_26"
+        },
+        {
+          "id": "62:394",
+          "name": "qura_c05_base_perch_v02",
+          "w": 690,
+          "h": 664,
+          "source": "source_pixels_57_20"
+        },
+        {
+          "id": "62:397",
+          "name": "qura_c05_base_nest_v02",
+          "w": 903,
+          "h": 686,
+          "source": "source_pixels_57_20"
+        }
+      ]
+    },
+    {
+      "code": "C06",
+      "page": "1:8",
+      "gallery": "61:19",
+      "count": 22,
+      "invalid": [],
+      "assets": [
+        {
+          "id": "62:133",
+          "name": "qura_c06_hat_shop_v02",
+          "w": 469,
+          "h": 262,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:136",
+          "name": "qura_c06_hat_card_v02",
+          "w": 448,
+          "h": 262,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:140",
+          "name": "qura_c06_bag_h_shop_v02",
+          "w": 314,
+          "h": 404,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:143",
+          "name": "qura_c06_bag_h_card_v02",
+          "w": 254,
+          "h": 385,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:147",
+          "name": "qura_c06_diamonds_shop_v02",
+          "w": 394,
+          "h": 202,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:150",
+          "name": "qura_c06_diamonds_card_v02",
+          "w": 347,
+          "h": 180,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:154",
+          "name": "qura_c06_glasses_shop_v02",
+          "w": 495,
+          "h": 149,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:157",
+          "name": "qura_c06_glasses_card_v02",
+          "w": 392,
+          "h": 134,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:161",
+          "name": "qura_c06_vest_shop_v02",
+          "w": 322,
+          "h": 341,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:164",
+          "name": "qura_c06_vest_card_v02",
+          "w": 318,
+          "h": 337,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:168",
+          "name": "qura_c06_anklets_shop_v02",
+          "w": 483,
+          "h": 135,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:171",
+          "name": "qura_c06_anklets_card_v02",
+          "w": 452,
+          "h": 143,
+          "source": "source_pixels_57_18"
+        },
+        {
+          "id": "62:357",
+          "name": "qura_c06_hat_perch_v02",
+          "w": 556,
+          "h": 286,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:360",
+          "name": "qura_c06_hat_nest_v02",
+          "w": 532,
+          "h": 271,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:364",
+          "name": "qura_c06_glasses_perch_v02",
+          "w": 537,
+          "h": 159,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:367",
+          "name": "qura_c06_glasses_nest_v02",
+          "w": 527,
+          "h": 158,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:371",
+          "name": "qura_c06_diamonds_perch_v02",
+          "w": 389,
+          "h": 189,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:374",
+          "name": "qura_c06_diamonds_nest_v02",
+          "w": 394,
+          "h": 186,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:378",
+          "name": "qura_c06_vest_perch_v02",
+          "w": 341,
+          "h": 365,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:381",
+          "name": "qura_c06_vest_nest_v02",
+          "w": 333,
+          "h": 360,
+          "source": "source_pixels_57_30"
+        },
+        {
+          "id": "62:410",
+          "name": "qura_c06_base_perch_v02",
+          "w": 611,
+          "h": 606,
+          "source": "source_pixels_57_29"
+        },
+        {
+          "id": "62:413",
+          "name": "qura_c06_base_nest_v02",
+          "w": 809,
+          "h": 620,
+          "source": "source_pixels_57_29"
+        }
+      ]
+    }
+  ]
+}
