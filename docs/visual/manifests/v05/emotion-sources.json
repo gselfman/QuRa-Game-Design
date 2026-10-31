@@ -1,0 +1,68 @@
+[
+  {
+    "character": "C01",
+    "id": "45:22",
+    "name": "Спрайт-лист эмоций курицы 1",
+    "type": "RECTANGLE",
+    "w": 1536,
+    "h": 1024,
+    "hash": "0cc796ea391ba081cacc7069dac64e0fed4cbca3",
+    "path": "generated_images/exec-dd63cf53-5982-40ce-9655-6f69077ddce4.png",
+    "reviewWidth": 1100
+  },
+  {
+    "character": "C02",
+    "id": "48:24",
+    "name": "Спрайт-лист выражений лица курицы 1",
+    "type": "RECTANGLE",
+    "w": 1536,
+    "h": 1024,
+    "hash": "c4a7b2be663b9f77dc6fa62e73cdc84f10335a3b",
+    "path": "generated_images/exec-3821abbb-a300-4bf1-9ca0-421b020e41aa.png",
+    "reviewWidth": 1100
+  },
+  {
+    "character": "C03",
+    "id": "48:26",
+    "name": "Спрайт-лист эмоций радужной курицы 1",
+    "type": "RECTANGLE",
+    "w": 1536,
+    "h": 1024,
+    "hash": "25f0bb33ebf57cdee30d0b313addaf3646551d2f",
+    "path": "generated_images/exec-d27faf91-41a7-4cb6-a410-59dda20c4d9a.png",
+    "reviewWidth": 1100
+  },
+  {
+    "character": "C04",
+    "id": "48:36",
+    "name": "Четыре эмоции в сетке 2×2 1",
+    "type": "RECTANGLE",
+    "w": 1374,
+    "h": 1145,
+    "hash": "71b3493595017ae07e1d029880925b1a069271fd",
+    "path": "generated_images/exec-993cf613-bb46-40d1-a8bd-a2fbfc6bb6e8.png",
+    "reviewWidth": 1080
+  },
+  {
+    "character": "C05",
+    "id": "48:23",
+    "name": "Четыре эмоции медитативной курицы 1",
+    "type": "RECTANGLE",
+    "w": 1386,
+    "h": 1135,
+    "hash": "16456173fd4a0c2589c99d5099364e865ea89805",
+    "path": "generated_images/exec-44d32a9d-4bfa-430a-acb5-a7a2e3ecb825.png",
+    "reviewWidth": 1099
+  },
+  {
+    "character": "C06",
+    "id": "48:25",
+    "name": "Четыре эмоции розовопёрой курочки 1",
+    "type": "RECTANGLE",
+    "w": 1536,
+    "h": 1024,
+    "hash": "59bf11bd960387d315916b334fbe02f127084168",
+    "path": "generated_images/exec-be42a838-dbfa-4813-a4ed-fe0119229438.png",
+    "reviewWidth": 1100
+  }
+]

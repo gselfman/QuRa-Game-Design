@@ -1,0 +1,90 @@
+[
+  {
+    "name": "joy_bare",
+    "node": "145:1845",
+    "result": {
+      "success": true,
+      "imageHash": "2cb91d4d34dc643246f853ff9dcbfb53a0f8a4d5",
+      "sizeBytes": 308458,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1845"
+    }
+  },
+  {
+    "name": "joy_hat",
+    "node": "145:1847",
+    "result": {
+      "success": true,
+      "imageHash": "cef0588a2e3a7c2cda4f1be833b415c91ceecb4e",
+      "sizeBytes": 285196,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1847"
+    }
+  },
+  {
+    "name": "surprise_bare",
+    "node": "145:1849",
+    "result": {
+      "success": true,
+      "imageHash": "83a503d8036ae0c8c1ec3301c84ba9e95043c3ce",
+      "sizeBytes": 312584,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1849"
+    }
+  },
+  {
+    "name": "surprise_hat",
+    "node": "145:1851",
+    "result": {
+      "success": true,
+      "imageHash": "76cfc82350cb8c989dc813d99fec18908b5ed0ee",
+      "sizeBytes": 289692,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1851"
+    }
+  },
+  {
+    "name": "determination_bare",
+    "node": "145:1853",
+    "result": {
+      "success": true,
+      "imageHash": "32af01a3656a55de736ee6d71f6e539069017e46",
+      "sizeBytes": 306782,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1853"
+    }
+  },
+  {
+    "name": "determination_hat",
+    "node": "145:1891",
+    "result": {
+      "success": true,
+      "imageHash": "e59b15a10bd42763818fc93e6607057b67f52b5d",
+      "sizeBytes": 283982,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1891"
+    }
+  },
+  {
+    "name": "sadness_bare",
+    "node": "145:1855",
+    "result": {
+      "success": true,
+      "imageHash": "d37c07e6345c3076b8fbaf1c1dcbac55cee910dc",
+      "sizeBytes": 306091,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1855"
+    }
+  },
+  {
+    "name": "sadness_hat",
+    "node": "145:1857",
+    "result": {
+      "success": true,
+      "imageHash": "b9b2f6d23751b1510709844243a5cb98e90b06f1",
+      "sizeBytes": 283391,
+      "contentType": "image/png",
+      "placedOnNodeId": "145:1857"
+    }
+  }
+]

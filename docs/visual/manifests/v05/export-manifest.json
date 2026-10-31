@@ -1,0 +1,983 @@
+{
+  "version": "v05",
+  "canvas_px": [
+    1200,
+    1520
+  ],
+  "virtual_canvas": [
+    600,
+    760
+  ],
+  "scale": 2,
+  "body_origin_px": [
+    0,
+    80
+  ],
+  "pivot_normalized": [
+    0.5,
+    0.5
+  ],
+  "character_names": {
+    "C01": "Ряба",
+    "C02": "Боевик",
+    "C03": "Дурочка",
+    "C04": "Профессор",
+    "C05": "Монах",
+    "C06": "Гламурочка"
+  },
+  "emotion_order": [
+    "base",
+    "joy",
+    "surprise",
+    "determination",
+    "sadness"
+  ],
+  "draw_order": [
+    "nest_back_or_perch",
+    "feet",
+    "body",
+    "garment",
+    "bag",
+    "neck",
+    "farWing",
+    "nearWing",
+    "head",
+    "headwear",
+    "face",
+    "nest_front_eggs"
+  ],
+  "seated_hidden": [
+    "bag",
+    "feet_native"
+  ],
+  "notes": [
+    "All wearable and character layers use the same canvas. Do not trim independently.",
+    "Feet native replaces bare feet. The anklet, ring and sandal layers include their approved feet.",
+    "Use hat head variants for C01/C05 with native hats; use bare variants otherwise.",
+    "Foreground wings occlude bags in assembly. Do not cut wing-shaped holes into shop artwork.",
+    "Static pose assembly. Hidden body surfaces are not restored for unrestricted skeletal animation.",
+    "Native items are registered to their own character. Shared pilot items have separate character fit profiles."
+  ],
+  "files": [
+    {
+      "file": "C01/parts/body.png",
+      "kind": "part",
+      "character": "C01"
+    },
+    {
+      "file": "C01/parts/head.png",
+      "kind": "part",
+      "character": "C01"
+    },
+    {
+      "file": "C01/parts/feet.png",
+      "kind": "part",
+      "character": "C01"
+    },
+    {
+      "file": "C01/parts/nearWing.png",
+      "kind": "part",
+      "character": "C01"
+    },
+    {
+      "file": "C01/parts/farWing.png",
+      "kind": "part",
+      "character": "C01"
+    },
+    {
+      "file": "C01/feet_native.png",
+      "kind": "feet",
+      "character": "C01"
+    },
+    {
+      "file": "C01/feet_perch.png",
+      "kind": "feet",
+      "character": "C01"
+    },
+    {
+      "file": "C01/head_native_base.png",
+      "kind": "head",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C01"
+    },
+    {
+      "file": "C01/wear/hat.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C01"
+    },
+    {
+      "file": "C01/shop/hat.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C01"
+    },
+    {
+      "file": "C01/wear/bag.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C01"
+    },
+    {
+      "file": "C01/shop/bag.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C01"
+    },
+    {
+      "file": "C01/wear/glasses.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C01"
+    },
+    {
+      "file": "C01/shop/glasses.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C01"
+    },
+    {
+      "file": "C01/wear/vest.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C01"
+    },
+    {
+      "file": "C01/shop/vest.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C01"
+    },
+    {
+      "file": "C01/wear/boots.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C01"
+    },
+    {
+      "file": "C01/shop/boots.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C01"
+    },
+    {
+      "file": "C02/parts/body.png",
+      "kind": "part",
+      "character": "C02"
+    },
+    {
+      "file": "C02/parts/head.png",
+      "kind": "part",
+      "character": "C02"
+    },
+    {
+      "file": "C02/parts/feet.png",
+      "kind": "part",
+      "character": "C02"
+    },
+    {
+      "file": "C02/parts/nearWing.png",
+      "kind": "part",
+      "character": "C02"
+    },
+    {
+      "file": "C02/parts/farWing.png",
+      "kind": "part",
+      "character": "C02"
+    },
+    {
+      "file": "C02/feet_native.png",
+      "kind": "feet",
+      "character": "C02"
+    },
+    {
+      "file": "C02/feet_perch.png",
+      "kind": "feet",
+      "character": "C02"
+    },
+    {
+      "file": "C02/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C02"
+    },
+    {
+      "file": "C02/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C02"
+    },
+    {
+      "file": "C02/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C02"
+    },
+    {
+      "file": "C02/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/bandana.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/bandana.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/cartridges.png",
+      "kind": "wear",
+      "role": "neck",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/cartridges.png",
+      "kind": "shop",
+      "role": "neck",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/boots.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/boots.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/water_toy.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/water_toy.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/aviators.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/aviators.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C02"
+    },
+    {
+      "file": "C02/wear/vest.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C02"
+    },
+    {
+      "file": "C02/shop/vest.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C02"
+    },
+    {
+      "file": "C03/parts/body.png",
+      "kind": "part",
+      "character": "C03"
+    },
+    {
+      "file": "C03/parts/head.png",
+      "kind": "part",
+      "character": "C03"
+    },
+    {
+      "file": "C03/parts/feet.png",
+      "kind": "part",
+      "character": "C03"
+    },
+    {
+      "file": "C03/parts/nearWing.png",
+      "kind": "part",
+      "character": "C03"
+    },
+    {
+      "file": "C03/parts/farWing.png",
+      "kind": "part",
+      "character": "C03"
+    },
+    {
+      "file": "C03/feet_native.png",
+      "kind": "feet",
+      "character": "C03"
+    },
+    {
+      "file": "C03/feet_perch.png",
+      "kind": "feet",
+      "character": "C03"
+    },
+    {
+      "file": "C03/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C03"
+    },
+    {
+      "file": "C03/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C03"
+    },
+    {
+      "file": "C03/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C03"
+    },
+    {
+      "file": "C03/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/scarf.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/scarf.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/beads.png",
+      "kind": "wear",
+      "role": "neck",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/beads.png",
+      "kind": "shop",
+      "role": "neck",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/glasses.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/glasses.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/vest.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/vest.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/shopper_flute.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/shopper_flute.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C03"
+    },
+    {
+      "file": "C03/wear/ring07.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C03"
+    },
+    {
+      "file": "C03/shop/ring07.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C03"
+    },
+    {
+      "file": "C04/parts/body.png",
+      "kind": "part",
+      "character": "C04"
+    },
+    {
+      "file": "C04/parts/head.png",
+      "kind": "part",
+      "character": "C04"
+    },
+    {
+      "file": "C04/parts/feet.png",
+      "kind": "part",
+      "character": "C04"
+    },
+    {
+      "file": "C04/parts/nearWing.png",
+      "kind": "part",
+      "character": "C04"
+    },
+    {
+      "file": "C04/parts/farWing.png",
+      "kind": "part",
+      "character": "C04"
+    },
+    {
+      "file": "C04/feet_native.png",
+      "kind": "feet",
+      "character": "C04"
+    },
+    {
+      "file": "C04/feet_perch.png",
+      "kind": "feet",
+      "character": "C04"
+    },
+    {
+      "file": "C04/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C04"
+    },
+    {
+      "file": "C04/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C04"
+    },
+    {
+      "file": "C04/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C04"
+    },
+    {
+      "file": "C04/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/pencil.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/pencil.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/glasses.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/glasses.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/coat.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/coat.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/satchel.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/satchel.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/magnifier.png",
+      "kind": "wear",
+      "role": "neck",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/magnifier.png",
+      "kind": "shop",
+      "role": "neck",
+      "character": "C04"
+    },
+    {
+      "file": "C04/wear/crocs.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C04"
+    },
+    {
+      "file": "C04/shop/crocs.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C04"
+    },
+    {
+      "file": "C05/parts/body.png",
+      "kind": "part",
+      "character": "C05"
+    },
+    {
+      "file": "C05/parts/head.png",
+      "kind": "part",
+      "character": "C05"
+    },
+    {
+      "file": "C05/parts/feet.png",
+      "kind": "part",
+      "character": "C05"
+    },
+    {
+      "file": "C05/parts/nearWing.png",
+      "kind": "part",
+      "character": "C05"
+    },
+    {
+      "file": "C05/parts/farWing.png",
+      "kind": "part",
+      "character": "C05"
+    },
+    {
+      "file": "C05/feet_native.png",
+      "kind": "feet",
+      "character": "C05"
+    },
+    {
+      "file": "C05/feet_perch.png",
+      "kind": "feet",
+      "character": "C05"
+    },
+    {
+      "file": "C05/head_native_base.png",
+      "kind": "head",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/joy_hat.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/determination_hat.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/sadness_hat.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/emotions/surprise_hat.png",
+      "kind": "emotion",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/hat.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/hat.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/beads.png",
+      "kind": "wear",
+      "role": "neck",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/beads.png",
+      "kind": "shop",
+      "role": "neck",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/robe.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/robe.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/cloth_bag.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/cloth_bag.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/sandals.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/sandals.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C05"
+    },
+    {
+      "file": "C05/wear/third_eye.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C05"
+    },
+    {
+      "file": "C05/shop/third_eye.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C05"
+    },
+    {
+      "file": "C06/parts/body.png",
+      "kind": "part",
+      "character": "C06"
+    },
+    {
+      "file": "C06/parts/head.png",
+      "kind": "part",
+      "character": "C06"
+    },
+    {
+      "file": "C06/parts/feet.png",
+      "kind": "part",
+      "character": "C06"
+    },
+    {
+      "file": "C06/parts/nearWing.png",
+      "kind": "part",
+      "character": "C06"
+    },
+    {
+      "file": "C06/parts/farWing.png",
+      "kind": "part",
+      "character": "C06"
+    },
+    {
+      "file": "C06/feet_native.png",
+      "kind": "feet",
+      "character": "C06"
+    },
+    {
+      "file": "C06/feet_perch.png",
+      "kind": "feet",
+      "character": "C06"
+    },
+    {
+      "file": "C06/emotions/surprise_bare.png",
+      "kind": "emotion",
+      "character": "C06"
+    },
+    {
+      "file": "C06/emotions/determination_bare.png",
+      "kind": "emotion",
+      "character": "C06"
+    },
+    {
+      "file": "C06/emotions/sadness_bare.png",
+      "kind": "emotion",
+      "character": "C06"
+    },
+    {
+      "file": "C06/emotions/joy_bare.png",
+      "kind": "emotion",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/hat.png",
+      "kind": "wear",
+      "role": "head",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/hat.png",
+      "kind": "shop",
+      "role": "head",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/bag_h.png",
+      "kind": "wear",
+      "role": "bag",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/bag_h.png",
+      "kind": "shop",
+      "role": "bag",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/diamonds.png",
+      "kind": "wear",
+      "role": "neck",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/diamonds.png",
+      "kind": "shop",
+      "role": "neck",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/glasses.png",
+      "kind": "wear",
+      "role": "face",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/glasses.png",
+      "kind": "shop",
+      "role": "face",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/vest.png",
+      "kind": "wear",
+      "role": "body",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/vest.png",
+      "kind": "shop",
+      "role": "body",
+      "character": "C06"
+    },
+    {
+      "file": "C06/wear/anklets.png",
+      "kind": "wear",
+      "role": "feet",
+      "character": "C06"
+    },
+    {
+      "file": "C06/shop/anklets.png",
+      "kind": "shop",
+      "role": "feet",
+      "character": "C06"
+    },
+    {
+      "file": "props/nest_back.png",
+      "kind": "prop"
+    },
+    {
+      "file": "props/nest_front_eggs.png",
+      "kind": "prop"
+    },
+    {
+      "file": "props/perch.png",
+      "kind": "prop"
+    },
+    {
+      "file": "C01/composites/CARD.png",
+      "kind": "composite",
+      "character": "C01",
+      "pose": "CARD"
+    },
+    {
+      "file": "C01/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C01",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C01/composites/NEST.png",
+      "kind": "composite",
+      "character": "C01",
+      "pose": "NEST"
+    },
+    {
+      "file": "C02/composites/CARD.png",
+      "kind": "composite",
+      "character": "C02",
+      "pose": "CARD"
+    },
+    {
+      "file": "C02/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C02",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C02/composites/NEST.png",
+      "kind": "composite",
+      "character": "C02",
+      "pose": "NEST"
+    },
+    {
+      "file": "C03/composites/CARD.png",
+      "kind": "composite",
+      "character": "C03",
+      "pose": "CARD"
+    },
+    {
+      "file": "C03/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C03",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C03/composites/NEST.png",
+      "kind": "composite",
+      "character": "C03",
+      "pose": "NEST"
+    },
+    {
+      "file": "C04/composites/CARD.png",
+      "kind": "composite",
+      "character": "C04",
+      "pose": "CARD"
+    },
+    {
+      "file": "C04/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C04",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C04/composites/NEST.png",
+      "kind": "composite",
+      "character": "C04",
+      "pose": "NEST"
+    },
+    {
+      "file": "C05/composites/CARD.png",
+      "kind": "composite",
+      "character": "C05",
+      "pose": "CARD"
+    },
+    {
+      "file": "C05/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C05",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C05/composites/NEST.png",
+      "kind": "composite",
+      "character": "C05",
+      "pose": "NEST"
+    },
+    {
+      "file": "C06/composites/CARD.png",
+      "kind": "composite",
+      "character": "C06",
+      "pose": "CARD"
+    },
+    {
+      "file": "C06/composites/PERCH.png",
+      "kind": "composite",
+      "character": "C06",
+      "pose": "PERCH"
+    },
+    {
+      "file": "C06/composites/NEST.png",
+      "kind": "composite",
+      "character": "C06",
+      "pose": "NEST"
+    }
+  ]
+}
