@@ -1,0 +1,146 @@
+[
+  {
+    "id": "161:2",
+    "name": "QuRa/v08/C01/parts/left_wing"
+  },
+  {
+    "id": "161:4",
+    "name": "QuRa/v08/C01/parts/torso"
+  },
+  {
+    "id": "161:6",
+    "name": "QuRa/v08/C01/parts/legs_bare"
+  },
+  {
+    "id": "161:8",
+    "name": "QuRa/v08/C01/parts/head"
+  },
+  {
+    "id": "161:10",
+    "name": "QuRa/v08/C01/parts/right_wing"
+  },
+  {
+    "id": "161:12",
+    "name": "QuRa/v08/C01/head_native_base"
+  },
+  {
+    "id": "161:46",
+    "name": "QuRa/v08/C02/parts/left_wing"
+  },
+  {
+    "id": "161:48",
+    "name": "QuRa/v08/C02/parts/torso"
+  },
+  {
+    "id": "161:50",
+    "name": "QuRa/v08/C02/parts/legs_bare"
+  },
+  {
+    "id": "161:52",
+    "name": "QuRa/v08/C02/parts/head"
+  },
+  {
+    "id": "161:54",
+    "name": "QuRa/v08/C02/parts/right_wing"
+  },
+  {
+    "id": "161:56",
+    "name": "QuRa/v08/C02/head_native_base"
+  },
+  {
+    "id": "161:84",
+    "name": "QuRa/v08/C03/parts/left_wing"
+  },
+  {
+    "id": "161:86",
+    "name": "QuRa/v08/C03/parts/torso"
+  },
+  {
+    "id": "161:88",
+    "name": "QuRa/v08/C03/parts/legs_bare"
+  },
+  {
+    "id": "161:90",
+    "name": "QuRa/v08/C03/parts/head"
+  },
+  {
+    "id": "161:92",
+    "name": "QuRa/v08/C03/parts/right_wing"
+  },
+  {
+    "id": "161:94",
+    "name": "QuRa/v08/C03/head_native_base"
+  },
+  {
+    "id": "161:130",
+    "name": "QuRa/v08/C04/parts/left_wing"
+  },
+  {
+    "id": "161:132",
+    "name": "QuRa/v08/C04/parts/torso"
+  },
+  {
+    "id": "161:134",
+    "name": "QuRa/v08/C04/parts/legs_bare"
+  },
+  {
+    "id": "161:136",
+    "name": "QuRa/v08/C04/parts/head"
+  },
+  {
+    "id": "161:138",
+    "name": "QuRa/v08/C04/parts/right_wing"
+  },
+  {
+    "id": "161:140",
+    "name": "QuRa/v08/C04/head_native_base"
+  },
+  {
+    "id": "161:168",
+    "name": "QuRa/v08/C05/parts/left_wing"
+  },
+  {
+    "id": "161:170",
+    "name": "QuRa/v08/C05/parts/torso"
+  },
+  {
+    "id": "161:172",
+    "name": "QuRa/v08/C05/parts/legs_bare"
+  },
+  {
+    "id": "161:174",
+    "name": "QuRa/v08/C05/parts/head"
+  },
+  {
+    "id": "161:176",
+    "name": "QuRa/v08/C05/parts/right_wing"
+  },
+  {
+    "id": "161:178",
+    "name": "QuRa/v08/C05/head_native_base"
+  },
+  {
+    "id": "161:214",
+    "name": "QuRa/v08/C06/parts/left_wing"
+  },
+  {
+    "id": "161:216",
+    "name": "QuRa/v08/C06/parts/torso"
+  },
+  {
+    "id": "161:218",
+    "name": "QuRa/v08/C06/parts/legs_bare"
+  },
+  {
+    "id": "161:220",
+    "name": "QuRa/v08/C06/parts/head"
+  },
+  {
+    "id": "161:222",
+    "name": "QuRa/v08/C06/parts/right_wing"
+  },
+  {
+    "id": "161:224",
+    "name": "QuRa/v08/C06/head_native_base"
+  }
+]
