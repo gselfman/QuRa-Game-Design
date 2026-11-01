@@ -26,6 +26,8 @@ def slug(s):
 def export(source, emotion_source, repo):
     old=json.loads((source/'manifest.json').read_text())
     root=repo/'assets/characters/v12'
+    manifest_path=repo/'docs/visual/manifests/2026-11-02_characters_v12_web.json'
+    previous={f['png']:f for f in json.loads(manifest_path.read_text())['files']} if manifest_path.exists() else {}
     files=[]; by_source={}; recipes={}; groups={}
     item_for={f:key for key,parts in old['equipment_groups'].items() for f in parts}
     layer_for={l['file']:l for c in old['characters'].values() for l in c['layers']}
@@ -43,17 +45,21 @@ def export(source, emotion_source, repo):
             dirs=[CODES.get(x,x) for x in parts[:-1]]
             webrel='/'.join(dirs+[slug(Path(rel).stem)+'.webp'])
         web=root/'web'/webrel
-        small=im.resize((600,760),Image.Resampling.LANCZOS)
-        b=io.BytesIO(); small.save(b,format='WEBP',lossless=True,quality=100,method=6,exact=True)
-        lossless=True; quality=100
-        if len(b.getvalue())>=300000:
-            lossless=False; quality=95
-            while True:
-                b=io.BytesIO(); small.save(b,format='WEBP',quality=quality,method=6,alpha_quality=100,exact=True)
-                if len(b.getvalue())<300000:break
-                quality-=5
-                assert quality>=75, rel
-        wb=b.getvalue(); atomic(web,wb)
+        cached=previous.get(png.relative_to(repo).as_posix())
+        if cached and cached['sha256']['png']==sha(data) and web.exists() and sha(web.read_bytes())==cached['sha256']['webp']:
+            wb=web.read_bytes();lossless=cached['webp_lossless'];quality=cached['webp_quality']
+        else:
+            small=im.resize((600,760),Image.Resampling.LANCZOS)
+            b=io.BytesIO(); small.save(b,format='WEBP',lossless=True,quality=100,method=6,exact=True)
+            lossless=True; quality=100
+            if len(b.getvalue())>=300000:
+                lossless=False; quality=95
+                while True:
+                    b=io.BytesIO(); small.save(b,format='WEBP',quality=quality,method=6,alpha_quality=100,exact=True)
+                    if len(b.getvalue())<300000:break
+                    quality-=5
+                    assert quality>=75, rel
+            wb=b.getvalue(); atomic(web,wb)
         with Image.open(web)as test:
             test.load(); assert test.size==(600,760) and test.mode=='RGBA'
             assert test.getchannel('A').getextrema()[0]==0
@@ -90,7 +96,9 @@ def export(source, emotion_source, repo):
             entry=by_source[l['file']]
             layers.append({'file_id':entry['id'],'z':l['z'],'item':entry['item'],'type':entry['type'],'role':l['name']})
         anatomy={l.get('source'):by_source[l['file']] for l in c['layers'] if l['source_type']=='anatomy'}
-        base_parts=[by_source[cid+'/base/legs_bare.png']]+[anatomy[cid+'/'+n] for n in ['parts/torso.png','parts/left_wing.png','parts/right_wing.png','head_native_base.png']]
+        bare_head=add('heads/'+code+'/base_bare.png',(emotion_source/cid/'parts/head.png').read_bytes(),cid,'head_base','head_bare_base',z=70,
+                      provenance='existing registered v08 bare base head; comb retained when headwear is off',extra={'headwear_variant':'bare','replaces_role':'head_native_base'})
+        base_parts=[by_source[cid+'/base/legs_bare.png']]+[anatomy[cid+'/'+n] for n in ['parts/torso.png','parts/left_wing.png','parts/right_wing.png']]+[bare_head]
         base_z=[3,10,60,61,70]; body=Image.new('RGBA',SIZE)
         for part in base_parts:body.alpha_composite(Image.open(repo/part['png']).convert('RGBA'))
         body_entry=add('body/full_'+code+'.png',png_bytes(body),cid,'body','undressed_full_body',provenance='composed from unchanged v12 anatomy')
@@ -115,21 +123,21 @@ def export(source, emotion_source, repo):
         name=key.split('/')[1]; code=CODES[key.split('/')[0]]
         groups[key]={'character':code,'slot':SLOTS[name],'file_ids':[by_source[f]['id']for f in parts],
                      'standing_visible':True,'seated_visible':name not in ['bag','water_toy','shopper_flute','satchel','cloth_bag','bag_h','boots','crocs','sandals','ring07','anklets']}
-    assert len(files)==141
+    assert len(files)==147
     assert sum(x['type'].startswith('item_')for x in files)==49
     assert sum(len(x['default_layers'])for x in recipes.values())==77
     assert all(x['webp_bytes']<300000 for x in files)
     manifest={'schema_version':1,'batch':'characters_v12_web','status':'QA','source_status':old['status'],
               'source_library_file_id':'libfile_7567c5743e348191814cc91cd3ca3831','source_library_version':1,
               'figma':old['figma'],'coordinate_system':{'png':[1200,1520],'webp':[600,760],'origin':[0,0],'trim':False,'web_scale':0.5},
-              'counts':{'unchanged_original_png':95,'extra_undressed_bodies':6,'existing_emotion_head_variants':40,
-                        'emotion_expressions':24,'png':141,'webp':141,'equipment_groups':35,'equipment_parts':49,'default_anatomy_parts':28,'default_layers':77},
+              'counts':{'unchanged_original_png':95,'extra_undressed_bodies':6,'existing_bare_base_heads':6,'existing_emotion_head_variants':40,
+                        'emotion_expressions':24,'png':147,'webp':147,'equipment_groups':35,'equipment_parts':49,'default_anatomy_parts':28,'default_layers':77},
               'composition_contract':'Use the interleaved default_layers recipe. A flat undressed body is a preview fallback, not a substitute for torso/head/wings/legs in an equipped assembly. Swapping footwear must follow footwear_policy. Never crop the registration canvas.',
               'characters':recipes,'equipment_groups':groups,'files':files,
               'qa':{'original_95_png_unchanged':True,'png_and_webp_decode':'passed','dimensions_and_transparency':'passed','webp_limit_bytes':300000,'max_webp_bytes':max(x['webp_bytes']for x in files),'browser_assembly':'pending','owner_approval_not_set_by_agent':True}}
     path=repo/'docs/visual/manifests/2026-11-02_characters_v12_web.json'
     atomic(path,(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode())
-    print(json.dumps({'manifest':str(path),'png':141,'webp':141,'max_webp_bytes':manifest['qa']['max_webp_bytes'],'lossy_webp':sum(not x['webp_lossless']for x in files)}))
+    print(json.dumps({'manifest':str(path),'png':len(files),'webp':len(files),'max_webp_bytes':manifest['qa']['max_webp_bytes'],'lossy_webp':sum(not x['webp_lossless']for x in files)}))
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('--source',type=Path,required=True);p.add_argument('--emotions',type=Path,required=True);p.add_argument('--repo',type=Path,required=True)

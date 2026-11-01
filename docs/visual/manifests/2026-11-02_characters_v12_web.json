@@ -49,10 +49,11 @@
   "counts": {
     "unchanged_original_png": 95,
     "extra_undressed_bodies": 6,
+    "existing_bare_base_heads": 6,
     "existing_emotion_head_variants": 40,
     "emotion_expressions": 24,
-    "png": 141,
-    "webp": 141,
+    "png": 147,
+    "webp": 147,
     "equipment_groups": 35,
     "equipment_parts": 49,
     "default_anatomy_parts": 28,
@@ -167,7 +168,7 @@
           "z": 61
         },
         {
-          "file_id": "ryaba_c01_layers_09_head_native_base_png",
+          "file_id": "ryaba_heads_ryaba_base_bare_png",
           "z": 70
         }
       ],
@@ -303,7 +304,7 @@
           "z": 61
         },
         {
-          "file_id": "fighter_c02_layers_11_head_native_base_png",
+          "file_id": "fighter_heads_fighter_base_bare_png",
           "z": 70
         }
       ],
@@ -439,7 +440,7 @@
           "z": 61
         },
         {
-          "file_id": "fool_c03_layers_10_head_native_base_png",
+          "file_id": "fool_heads_fool_base_bare_png",
           "z": 70
         }
       ],
@@ -575,7 +576,7 @@
           "z": 61
         },
         {
-          "file_id": "professor_c04_layers_11_head_native_base_png",
+          "file_id": "professor_heads_professor_base_bare_png",
           "z": 70
         }
       ],
@@ -725,7 +726,7 @@
           "z": 61
         },
         {
-          "file_id": "monk_c05_layers_13_head_native_base_png",
+          "file_id": "monk_heads_monk_base_bare_png",
           "z": 70
         }
       ],
@@ -854,7 +855,7 @@
           "z": 61
         },
         {
-          "file_id": "glamour_c06_layers_08_head_native_base_png",
+          "file_id": "glamour_heads_glamour_base_bare_png",
           "z": 70
         }
       ],
@@ -3957,6 +3958,37 @@
       "source": "wardrobe_v12"
     },
     {
+      "id": "ryaba_heads_ryaba_base_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/ryaba/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/ryaba/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 548410,
+      "webp_bytes": 99630,
+      "sha256": {
+        "png": "c619861365a3a13cfb177d0f536756cf5302f0494e23fd6ade105a55dfb4795e",
+        "webp": "8e537e8bf2f9c4b73139bf960c3cbf3827abfeb4564274bbea7f1c1f2b0d7c06"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "ryaba_body_full_ryaba_png",
       "character": "ryaba",
       "source_character": "C01",
@@ -3975,11 +4007,11 @@
         600,
         760
       ],
-      "png_bytes": 1638418,
-      "webp_bytes": 143014,
+      "png_bytes": 1631640,
+      "webp_bytes": 140582,
       "sha256": {
-        "png": "e01158e7cf46a5c1a44f73305d5c054b892c309322114530cceaa738bee9cd72",
-        "webp": "a10a9c42314914ca07c88d44531c1c492505c9b6f021a7686d94b8480d7b84de"
+        "png": "65e41d0bf138e4ff3349f2382f2e3db7e6990e745d2cfa01b3dc5d7c61938898",
+        "webp": "9786c7b302e9d8a3e4a7361cc8a2b69d38b2b1e838bff256a1e8341c6afcd615"
       },
       "webp_lossless": false,
       "webp_quality": 95,
@@ -4242,6 +4274,37 @@
       "replaces_role": "head_native_base"
     },
     {
+      "id": "fighter_heads_fighter_base_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/fighter/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/fighter/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493984,
+      "webp_bytes": 81550,
+      "sha256": {
+        "png": "fce4a945adee91978b9a97bdb2da98d467cfaa6944120ca2b8d45585612d0e5f",
+        "webp": "bec0a58a531e2984648d6cb0abf4ec28a15746437ed88b72c4cfa6b065361146"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "fighter_body_full_fighter_png",
       "character": "fighter",
       "source_character": "C02",
@@ -4260,11 +4323,11 @@
         600,
         760
       ],
-      "png_bytes": 1555822,
-      "webp_bytes": 291458,
+      "png_bytes": 1555931,
+      "webp_bytes": 290736,
       "sha256": {
-        "png": "bad72ec56497db9689b0038d8117b8a1b07011f7ccb34cda833bd616f3f27cb1",
-        "webp": "9b67a4f1a3be73b06426657db9cad12c98043ab3e32bf8fd35f5946ce0ae43ff"
+        "png": "4b392f557a71cf6637d9b1f42c71e00c5dbb9f0e1a6dc4de3a55c5d199d7182f",
+        "webp": "9b4d4b18d38ce8c277b053eae073e41c88f4cc7d200b7a39b24351c744904aa6"
       },
       "webp_lossless": true,
       "webp_quality": 100,
@@ -4399,6 +4462,37 @@
       "replaces_role": "head_native_base"
     },
     {
+      "id": "fool_heads_fool_base_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/fool/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/fool/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 589866,
+      "webp_bytes": 115064,
+      "sha256": {
+        "png": "8e187a1c9c073865752bf0d1ad7ec592d4539dc0107eca77e6befed45723446f",
+        "webp": "c7678eb4588a8ea8fa14e6518fc11eb93060266210a3ca88dcca574c48cda198"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "fool_body_full_fool_png",
       "character": "fool",
       "source_character": "C03",
@@ -4417,11 +4511,11 @@
         600,
         760
       ],
-      "png_bytes": 1710764,
-      "webp_bytes": 146582,
+      "png_bytes": 1711228,
+      "webp_bytes": 145278,
       "sha256": {
-        "png": "320e402491773c47e71a1473ebfab183fa9bfac87ba380c994bd1f911c803e93",
-        "webp": "b97c701e8f4e61b8f7fb017670a0e7a5a318bbde9a05ddf0853c2627c5eebd16"
+        "png": "9b431ff7f5a4f44241d4c9da2a09dc87d455ff9dc41a4167e80086ff8fb6098a",
+        "webp": "6ded6c7a08069f654420837847ea97a7909e7ad73ed8f20d371364ca22da2924"
       },
       "webp_lossless": false,
       "webp_quality": 95,
@@ -4684,6 +4778,37 @@
       "replaces_role": "head_native_base"
     },
     {
+      "id": "professor_heads_professor_base_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/professor/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/professor/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 765552,
+      "webp_bytes": 138686,
+      "sha256": {
+        "png": "54330207209d0cd7e3d097a6ba0f23042616f1d12ef6de81ea49f7dc498d4965",
+        "webp": "a0e160c30a827762d919749c52d2378d8e5d936427891ba86d7326495e8052d7"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "professor_body_full_professor_png",
       "character": "professor",
       "source_character": "C04",
@@ -4702,11 +4827,11 @@
         600,
         760
       ],
-      "png_bytes": 1670511,
-      "webp_bytes": 152188,
+      "png_bytes": 1669863,
+      "webp_bytes": 152148,
       "sha256": {
-        "png": "9d9e859b85ed8375eca975d9a2035168119ede8d5bce0999c71de939556dd47d",
-        "webp": "cd0bb268b6bc375a2e9eb808f980da06535c9a127e8d0d6d2b8e9d09aa8d1a4a"
+        "png": "05f8815d517a6050f1f51c48246648861149df2366556382ba89779e236b23b6",
+        "webp": "5213dc2acead19181c2edc86c29f92746de9bbfb774bf8d2b39270779efb8eef"
       },
       "webp_lossless": false,
       "webp_quality": 95,
@@ -4841,6 +4966,37 @@
       "replaces_role": "head_native_base"
     },
     {
+      "id": "monk_heads_monk_base_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/monk/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/monk/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 367143,
+      "webp_bytes": 62272,
+      "sha256": {
+        "png": "2bcf91ed6e4472053e7924ce782b68b47075c1d93ca91dd73648323fcb57a86e",
+        "webp": "420ca33d97bfa748c7033b5510d2492199dd0ea3e7e30d22802238dda049bc0f"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "monk_body_full_monk_png",
       "character": "monk",
       "source_character": "C05",
@@ -4859,11 +5015,11 @@
         600,
         760
       ],
-      "png_bytes": 1191848,
-      "webp_bytes": 240718,
+      "png_bytes": 1217763,
+      "webp_bytes": 245354,
       "sha256": {
-        "png": "da1e20b8d996ac2fecec423e7d34ad81d286a75503afd6637acbfd7d01dcb144",
-        "webp": "2d80fe5a4fd0dbaf36438f47a0d4aded060c8bdea16e5b03e51e21e329125fd1"
+        "png": "91c66c9fef4610c71e9e55c0d700fa2e48b9c245cb23564a8be1efb983f3a233",
+        "webp": "5cc8455976eaffdf2a0781a8ec9668239f82d5924a99f3e112780be28ee74cdf"
       },
       "webp_lossless": true,
       "webp_quality": 100,
@@ -5126,6 +5282,37 @@
       "replaces_role": "head_native_base"
     },
     {
+      "id": "glamour_heads_glamour_base_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/glamour/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/glamour/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 655831,
+      "webp_bytes": 113170,
+      "sha256": {
+        "png": "7d7951ed14c59d7a90ffc24ec8c5824b0900a0a83df5eed35219561bf45834cb",
+        "webp": "7bc83d78a81d27f89c33bf0608d30f56133e541714400481e3f1bd9b7bade8a3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
       "id": "glamour_body_full_glamour_png",
       "character": "glamour",
       "source_character": "C06",
@@ -5144,11 +5331,11 @@
         600,
         760
       ],
-      "png_bytes": 1666094,
-      "webp_bytes": 141202,
+      "png_bytes": 1687398,
+      "webp_bytes": 142866,
       "sha256": {
-        "png": "f63d790ee7cf95de3544a305cae46e3b29ac69baf7a3fcba90f2e9eddb3cb3b5",
-        "webp": "81b754b1abd6397e567654df87d17f6827e97c4dd39bf4d3122cfccf4be5a699"
+        "png": "0cc07c6bfa1579f0964e90120a24177f05ddc0be9c173d24015083dcfaac68de",
+        "webp": "592ccdb3a79c956efcb3b15fd17fbe5d03f1ec6b7c6ec1806dba232c9f402014"
       },
       "webp_lossless": false,
       "webp_quality": 95,
@@ -5416,15 +5603,11 @@
     "png_and_webp_decode": "passed",
     "dimensions_and_transparency": "passed",
     "webp_limit_bytes": 300000,
-    "max_webp_bytes": 291458,
+    "max_webp_bytes": 290736,
     "browser_assembly": {
       "status": "blocked",
-      "reason": "Local Playwright has no Chromium executable; cloud Chrome rejects file:// navigation by browser URL policy. No browser screenshot is claimed.",
-      "reproduce": "python3 tools/art/characters-v12-web/preview_v12.py --repo . --out assets/characters/previews/browser; open v12_ryaba.html and v12_fighter.html in a permitted browser and verify loaded=true.",
-      "registered_raster_proofs": [
-        "assets/characters/previews/v12_ryaba_registered_proof.png",
-        "assets/characters/previews/v12_fighter_registered_proof.png"
-      ]
+      "reason": "Local Playwright has no Chromium; cloud Chrome file:// is blocked by URL policy. Browser evidence requested from Claude/agent:dev.",
+      "reproduce": "python3 tools/art/characters-v12-web/preview_v12.py --repo . --out assets/characters/previews/browser"
     },
     "owner_approval_not_set_by_agent": true,
     "registered_recipe_pixel_comparison": {
@@ -5474,6 +5657,11 @@
           "pixel_check": "passed"
         }
       ]
+    },
+    "bare_base_heads": {
+      "status": "passed",
+      "source": "existing v08 parts/head.png; preserves comb for headwear-off, native scalp retained in equipped recipes",
+      "proof": "assets/characters/previews/v12_bare_bodies_proof.png"
     }
   }
 }
