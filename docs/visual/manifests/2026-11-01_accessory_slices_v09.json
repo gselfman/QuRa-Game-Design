@@ -1,0 +1,771 @@
+{
+  "version": "v09 accessory slices",
+  "canvas_px": [
+    1200,
+    1520
+  ],
+  "origin_px": [
+    0,
+    0
+  ],
+  "source_set": "six most recent accessory-only images selected by the user",
+  "files": [
+    {
+      "file": "C01/hat.png",
+      "character": "C01",
+      "character_name": "Ряба",
+      "accessory": "hat",
+      "label": "Шляпа",
+      "bbox_px": [
+        300,
+        97,
+        1167,
+        573
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "20c1222a3b2c92261433443d54f808735c75a8a74dbe60383e1f204f6477e542",
+      "figma_component_id": "227:19"
+    },
+    {
+      "file": "C01/glasses.png",
+      "character": "C01",
+      "character_name": "Ряба",
+      "accessory": "glasses",
+      "label": "Очки",
+      "bbox_px": [
+        589,
+        366,
+        949,
+        564
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "80fb8e5105c69c7c75159a23a22c8918fb97fd6cd51a5d22eda395d98f604c2b",
+      "figma_component_id": "227:31"
+    },
+    {
+      "file": "C01/vest.png",
+      "character": "C01",
+      "character_name": "Ряба",
+      "accessory": "vest",
+      "label": "Жилет",
+      "bbox_px": [
+        596,
+        683,
+        1003,
+        1130
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "5d790a746b0ec3321d9d428e91c3976947852fd76ff4ead0b72c35c89f06c6bc",
+      "figma_component_id": "227:43"
+    },
+    {
+      "file": "C01/bag.png",
+      "character": "C01",
+      "character_name": "Ряба",
+      "accessory": "bag",
+      "label": "Сумка с ремнём",
+      "bbox_px": [
+        483,
+        675,
+        903,
+        1264
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "3681e637761f3ba38a9ae1c326a6e621c75591ee1f9e7c5977d11d356f883b21",
+      "figma_component_id": "227:55"
+    },
+    {
+      "file": "C01/boots.png",
+      "character": "C01",
+      "character_name": "Ряба",
+      "accessory": "boots",
+      "label": "Пара ботинок",
+      "bbox_px": [
+        357,
+        1256,
+        1067,
+        1466
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "2521dc1393c448d60b8412e6e01003fb6ba300865510661bbbe161f3a542bcbf",
+      "figma_component_id": "227:67"
+    },
+    {
+      "file": "C02/bandana.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "bandana",
+      "label": "Повязка",
+      "bbox_px": [
+        340,
+        247,
+        1009,
+        537
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "8a4034ef19ee3f4828d122677446001907c9ac3cda6cca965e74ded97d146776",
+      "figma_component_id": "227:89"
+    },
+    {
+      "file": "C02/aviators.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "aviators",
+      "label": "Авиаторы",
+      "bbox_px": [
+        575,
+        363,
+        1021,
+        537
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "2b99da1d712fd2d2ebc825c1d98537d3f6f0ebe7528ae1902b240d874788f2e7",
+      "figma_component_id": "227:101"
+    },
+    {
+      "file": "C02/cartridges.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "cartridges",
+      "label": "Патроны",
+      "bbox_px": [
+        558,
+        569,
+        954,
+        792
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "42eff74105eb8f9a40712bc6fcca95ae7fe0395d22dc139edc2e8f5cdb6a2ab4",
+      "figma_component_id": "227:113"
+    },
+    {
+      "file": "C02/vest.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "vest",
+      "label": "Жилет",
+      "bbox_px": [
+        521,
+        718,
+        1065,
+        1110
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "930a2f70cbe004eb90cc8dd41b655c68c9bf8acba55601dd632b3f2648d83cfa",
+      "figma_component_id": "227:125"
+    },
+    {
+      "file": "C02/water_toy.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "water_toy",
+      "label": "Водяная пушка с ремнём",
+      "bbox_px": [
+        541,
+        618,
+        1034,
+        1158
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "21017aa3a72204625c92431f247c98982740afc890fe1cdef2a338cabaa7f69e",
+      "figma_component_id": "227:137"
+    },
+    {
+      "file": "C02/boots.png",
+      "character": "C02",
+      "character_name": "Боевик",
+      "accessory": "boots",
+      "label": "Пара ботинок",
+      "bbox_px": [
+        315,
+        1115,
+        1132,
+        1444
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "4052f21acc1f4b4d17e3b94a29ced446874d2bae1d01ed74df85a6d9d8e5ad85",
+      "figma_component_id": "227:149"
+    },
+    {
+      "file": "C03/scarf.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "scarf",
+      "label": "Платок",
+      "bbox_px": [
+        453,
+        131,
+        1095,
+        665
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "3db283cd2059b574fb90344f6b7d0df5358e9a4d8ac0ace260232639f1c5ea38",
+      "figma_component_id": "227:171"
+    },
+    {
+      "file": "C03/glasses.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "glasses",
+      "label": "Очки",
+      "bbox_px": [
+        694,
+        332,
+        1079,
+        549
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "d3ff92ad97aa0aa9ca725cca71fb218d232c68ef376e9cf82e017da298146e8b",
+      "figma_component_id": "227:183"
+    },
+    {
+      "file": "C03/beads.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "beads",
+      "label": "Бусы",
+      "bbox_px": [
+        622,
+        602,
+        963,
+        874
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "41b80f5c248df3f4e0f14d1dd68775ff45162dfd169a28840febf1f20ad555bc",
+      "figma_component_id": "227:195"
+    },
+    {
+      "file": "C03/vest.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "vest",
+      "label": "Жилет",
+      "bbox_px": [
+        569,
+        629,
+        1133,
+        1110
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "c3480dab3f280b99ccef194661d0fd85f7181c9b66d35fec9fa7e3ce15755b63",
+      "figma_component_id": "227:207"
+    },
+    {
+      "file": "C03/shopper_flute.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "shopper_flute",
+      "label": "Шопер с дудкой",
+      "bbox_px": [
+        370,
+        838,
+        751,
+        1255
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "b1c89b06b2cf5e040f5954db051a045c903ecca7f972a0cf1c1cea2e53af8518",
+      "figma_component_id": "227:219"
+    },
+    {
+      "file": "C03/ring07.png",
+      "character": "C03",
+      "character_name": "Дурочка",
+      "accessory": "ring07",
+      "label": "Кольцо 07",
+      "bbox_px": [
+        831,
+        1206,
+        931,
+        1285
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "c51a3bd86a51fecd2c604be16d06f948287763484137f36051db344b4a98f85b",
+      "figma_component_id": "227:231"
+    },
+    {
+      "file": "C04/pencil.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "pencil",
+      "label": "Карандаш",
+      "bbox_px": [
+        537,
+        122,
+        679,
+        314
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "30713505e23616d7291eef9ffdce57f514e348497718abbd6d5a8af59c704f2d",
+      "figma_component_id": "227:253"
+    },
+    {
+      "file": "C04/glasses.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "glasses",
+      "label": "Очки",
+      "bbox_px": [
+        600,
+        329,
+        1045,
+        583
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "bec29c4f1276c5c21587a298effedff717e383317c46599fb5f0c90b60a90782",
+      "figma_component_id": "227:265"
+    },
+    {
+      "file": "C04/coat.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "coat",
+      "label": "Халат",
+      "bbox_px": [
+        491,
+        627,
+        1056,
+        1237
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "bd67e2e4eb7326884f4f6e8e1e2e5bc5140035a68dfd50e6205cf4c32b6015d0",
+      "figma_component_id": "227:277"
+    },
+    {
+      "file": "C04/magnifier.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "magnifier",
+      "label": "Лупа на шнурке",
+      "bbox_px": [
+        686,
+        648,
+        922,
+        1077
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "c50fd00e5b5a3509980935e4c1c7b64cedd263f9a74be9f0715cee35a3a09efd",
+      "figma_component_id": "227:289"
+    },
+    {
+      "file": "C04/satchel.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "satchel",
+      "label": "Сумка с блокнотом",
+      "bbox_px": [
+        399,
+        607,
+        740,
+        1215
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "cd22ffab9ca2fed3069f4ed7cc1dd6aeb99ac000c541b74f2073b4d0e5bbb6c7",
+      "figma_component_id": "227:301"
+    },
+    {
+      "file": "C04/crocs.png",
+      "character": "C04",
+      "character_name": "Профессор",
+      "accessory": "crocs",
+      "label": "Пара кроксов",
+      "bbox_px": [
+        242,
+        1241,
+        1140,
+        1503
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "89471b7dd52f871cc814c50a589385d38c29f26c70558539513617c06ef5041d",
+      "figma_component_id": "227:313"
+    },
+    {
+      "file": "C05/hat.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "hat",
+      "label": "Шляпа",
+      "bbox_px": [
+        423,
+        102,
+        1124,
+        538
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "d4c48618fdc7d0f65a29809d1fd022f466aebe325b3085748124e328ef49ed11",
+      "figma_component_id": "227:335"
+    },
+    {
+      "file": "C05/third_eye.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "third_eye",
+      "label": "Третий глаз",
+      "bbox_px": [
+        750,
+        280,
+        928,
+        428
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "dbc08e29939385cc513e403a0045e76ed66ef0961a15d7b0440f9949bbfc029d",
+      "figma_component_id": "227:347"
+    },
+    {
+      "file": "C05/beads.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "beads",
+      "label": "Бусы",
+      "bbox_px": [
+        612,
+        551,
+        944,
+        855
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "da27aefac82278076ef1f8afab5fba28690a6b64cdbb55c597005a248c9faa65",
+      "figma_component_id": "227:359"
+    },
+    {
+      "file": "C05/robe.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "robe",
+      "label": "Одеяние с поясом",
+      "bbox_px": [
+        526,
+        591,
+        1066,
+        1269
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "c9e53cb44207523cae91d57553e50bb92aceb02822992723927b03129bc96ac5",
+      "figma_component_id": "227:371"
+    },
+    {
+      "file": "C05/cloth_bag.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "cloth_bag",
+      "label": "Тканевая сумка",
+      "bbox_px": [
+        451,
+        839,
+        896,
+        1215
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "1f8b0201289b3a2b1b70e21be716b0214a6a5eee59e808c7937f3e5ceef58ec6",
+      "figma_component_id": "227:383"
+    },
+    {
+      "file": "C05/sandals.png",
+      "character": "C05",
+      "character_name": "Монах",
+      "accessory": "sandals",
+      "label": "Пара сандалий",
+      "bbox_px": [
+        383,
+        1313,
+        1103,
+        1491
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "ec818b9ab0584f1bb0ab64e6e29387dce54e0f73fa28bc2697b417f2ff15e891",
+      "figma_component_id": "227:395"
+    },
+    {
+      "file": "C06/hat.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "hat",
+      "label": "Шляпа",
+      "bbox_px": [
+        494,
+        88,
+        1181,
+        488
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "ae38d8f1b618957811409b23496b1020a4d66c64f1032bd4f1c1c7b5154606c0",
+      "figma_component_id": "227:417"
+    },
+    {
+      "file": "C06/glasses.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "glasses",
+      "label": "Очки",
+      "bbox_px": [
+        716,
+        305,
+        1101,
+        492
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "035c1b5d6973548982de6c26d62aac77a69cd7cf14f94a3f8ce9f9f03e2a933c",
+      "figma_component_id": "227:429"
+    },
+    {
+      "file": "C06/diamonds.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "diamonds",
+      "label": "Бриллиантовое ожерелье",
+      "bbox_px": [
+        756,
+        612,
+        973,
+        727
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "4d383261edd3659ad64419775dbb7165a1cbd47f64082525d8bacc865955b828",
+      "figma_component_id": "227:441"
+    },
+    {
+      "file": "C06/vest.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "vest",
+      "label": "Жилет",
+      "bbox_px": [
+        812,
+        684,
+        1076,
+        1070
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "dc9ebcd6900a24193717475403ca2db44320220379217f528a1b932d43b9791f",
+      "figma_component_id": "227:453"
+    },
+    {
+      "file": "C06/bag_h.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "bag_h",
+      "label": "Сумка H с ремнём",
+      "bbox_px": [
+        544,
+        658,
+        852,
+        1167
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "be7316a31bf87dd5bd0ee639cd29b0b823a9507b260f5a4911c89a8bca46968c",
+      "figma_component_id": "227:465"
+    },
+    {
+      "file": "C06/anklets.png",
+      "character": "C06",
+      "character_name": "Гламурочка",
+      "accessory": "anklets",
+      "label": "Пара браслетов",
+      "bbox_px": [
+        630,
+        1228,
+        889,
+        1291
+      ],
+      "size_px": [
+        1200,
+        1520
+      ],
+      "sha256": "bc4f5bfcb2ebc44341bd56ba55a93b3a91e299b89ac60705c59d0eb580dca972",
+      "figma_component_id": "227:477"
+    }
+  ],
+  "sources": [
+    {
+      "character": "C01",
+      "file": "sources/C01-selected-sheet.png",
+      "parts": 5,
+      "recomposition": {
+        "character": "C01",
+        "parts": 5,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 285
+      }
+    },
+    {
+      "character": "C02",
+      "file": "sources/C02-selected-sheet.png",
+      "parts": 6,
+      "recomposition": {
+        "character": "C02",
+        "parts": 6,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 1849
+      }
+    },
+    {
+      "character": "C03",
+      "file": "sources/C03-selected-sheet.png",
+      "parts": 6,
+      "recomposition": {
+        "character": "C03",
+        "parts": 6,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 945
+      }
+    },
+    {
+      "character": "C04",
+      "file": "sources/C04-selected-sheet.png",
+      "parts": 6,
+      "recomposition": {
+        "character": "C04",
+        "parts": 6,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 129
+      }
+    },
+    {
+      "character": "C05",
+      "file": "sources/C05-selected-sheet.png",
+      "parts": 6,
+      "recomposition": {
+        "character": "C05",
+        "parts": 6,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 2021
+      }
+    },
+    {
+      "character": "C06",
+      "file": "sources/C06-selected-sheet.png",
+      "parts": 6,
+      "recomposition": {
+        "character": "C06",
+        "parts": 6,
+        "different_pixels": 0,
+        "max_channel_error": 0,
+        "seam_residual_pixels": 586
+      }
+    }
+  ],
+  "limitations": "Only visible source pixels are cut. Hidden cloth or other surfaces behind overlapping items are not invented.",
+  "status": "sliced / owner review pending",
+  "source_images": {
+    "C01": "exec-178d8b33-27d7-47d3-9577-790d5c406f5e.png",
+    "C02": "exec-dcf81eaf-56ed-4543-94a3-75e1f62887b2.png",
+    "C03": "exec-a612d0e0-848a-4d05-8cea-75d090d20f49.png",
+    "C04": "exec-1adddd60-79eb-4923-bf18-243f4189be63.png",
+    "C05": "exec-7fe3291e-09d9-4554-bb18-32921cfcdfe3.png",
+    "C06": "exec-991214a9-32d2-47cd-82fe-bf104a5c3af3.png"
+  },
+  "normalization": "Whole selected sheets normalized to 1200x1520 before cutting. No per-item retargeting or resizing.",
+  "cleanup": "Tiny detached seam remnants retained separately in sources/*-seam-residuals.png.",
+  "figma": {
+    "page_id": "219:2",
+    "catalog_id": "227:2",
+    "reassembly_id": "227:6",
+    "file_key": "pTm5JOM8r7b8ukBrk3UsXg"
+  }
+}
