@@ -1,0 +1,48 @@
+{
+  "parts": 35,
+  "sheets": 6,
+  "checks": [
+    {
+      "character": "C01",
+      "parts": 5,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 285
+    },
+    {
+      "character": "C02",
+      "parts": 6,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 1849
+    },
+    {
+      "character": "C03",
+      "parts": 6,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 945
+    },
+    {
+      "character": "C04",
+      "parts": 6,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 129
+    },
+    {
+      "character": "C05",
+      "parts": 6,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 2021
+    },
+    {
+      "character": "C06",
+      "parts": 6,
+      "different_pixels": 0,
+      "max_channel_error": 0,
+      "seam_residual_pixels": 586
+    }
+  ]
+}

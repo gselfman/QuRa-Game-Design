@@ -1,0 +1,70 @@
+{
+  "garments": 6,
+  "equipment_groups": 35,
+  "full_pose_layers": 77,
+  "same_clothing_file_with_and_without_bags": true,
+  "source_heads_regenerated": false,
+  "native_figma_boards_visually_checked": true,
+  "checks": [
+    {
+      "character": "C01",
+      "complete_clothing": "C01/clothing/vest.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    },
+    {
+      "character": "C02",
+      "complete_clothing": "C02/clothing/vest.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    },
+    {
+      "character": "C03",
+      "complete_clothing": "C03/clothing/vest.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    },
+    {
+      "character": "C04",
+      "complete_clothing": "C04/clothing/coat.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    },
+    {
+      "character": "C05",
+      "complete_clothing": "C05/clothing/robe.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    },
+    {
+      "character": "C06",
+      "complete_clothing": "C06/clothing/vest.png",
+      "same_file_in_full_and_no_bag": true,
+      "RGBA": true,
+      "canvas": [
+        1200,
+        1520
+      ]
+    }
+  ]
+}

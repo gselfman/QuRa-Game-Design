@@ -1,0 +1,1634 @@
+{
+  "schema_version": 1,
+  "batch": "arena_arn01_arn02_v01",
+  "date": "2026-11-01",
+  "repository": "gselfman/QuRa-Game-Design",
+  "branch": "art/arena-arn01-arn02-v01",
+  "instruction": "docs/instructions/2026-11-01_arena_art_generation.md",
+  "prompt_source": "docs/visual/2026-11-01_arena_art_prompts_ARN01_ARN02.md",
+  "issue": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+  "status": "approved",
+  "approval": {
+    "by": "Павел Усенков (владелец)",
+    "date": "2026-11-01",
+    "source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+    "note": "Утверждение владельца зафиксировано в issue #19. Технический экспорт не означает подтверждения ещё не выполненных проверок анимации и интеграции."
+  },
+  "figma": {
+    "file_key": "pTm5JOM8r7b8ukBrk3UsXg",
+    "pages": [
+      {
+        "name": "26_ARN01_ARENA_SCENE",
+        "node_id": "211:107",
+        "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=211-107"
+      },
+      {
+        "name": "27_ARN02_ARENA_UI_PLUS",
+        "node_id": "211:117",
+        "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=211-117"
+      }
+    ],
+    "qa_notes_nodes": [
+      "211:116",
+      "211:126"
+    ]
+  },
+  "resolution": {
+    "working_exports_only": true,
+    "native_4k_masters_included": false,
+    "note": "В Figma сохранены растровые превью с длинной стороной 768px. Рабочие размеры экспорта не означают нативную детализацию этих размеров. Более подробные оригиналы в этом экспорте не восстановлены; ARN02 основан на встроенном превью листа 768×768, отображаемом на сетке 1600×1600."
+  },
+  "export_notes": [
+    "Существующие фоны ARN01_01/02 сохранены без изменения байтов из ветки на коммите 735f5acdecdd091640590773e0f45ea2a1c54ec6.",
+    "У прежних экспортов всех 9 накладываемых слоёв ARN01_03–07 и первых 5 уже загруженных иконок ARN02 альфа была полностью непрозрачной. Они заменены PNG с реальной прозрачностью.",
+    "Native node.exportAsync PNG сохраняет альфа-канал; download_assets экспорт рендера с белым матированием не использован для накладываемых слоёв.",
+    "ARN01_06a восстановлен непосредственно из PNG-заливки Figma с альфа, затем масштабирован с 432×768 до 1080×1920 с Lanczos; композиция и изображение не перерисовывались."
+  ],
+  "known_limitations": [
+    {
+      "id": "working_resolution",
+      "blocking": false,
+      "assets": "all",
+      "note": "Рабочее разрешение без нативных 4K-мастеров; масштабирование превью не добавляет детализации."
+    },
+    {
+      "id": "crowd_animation",
+      "blocking": false,
+      "assets": [
+        "ARN01_03a",
+        "ARN01_03b",
+        "ARN01_03c"
+      ],
+      "note": "Смену A/B/C и стабильность положения отдельных зрителей проверить в анимации."
+    },
+    {
+      "id": "scene_integration",
+      "blocking": false,
+      "assets": [
+        "ARN01_01",
+        "ARN01_05",
+        "ARN01_08"
+      ],
+      "note": "Проверить читаемость кнопок и карточек, а также двойное ограждение базового фона/переднего плана."
+    },
+    {
+      "id": "light_blending",
+      "blocking": false,
+      "assets": [
+        "ARN01_06a",
+        "ARN01_06b"
+      ],
+      "note": "Проверить additive/screen в движке; в утверждённом preview обычное наложение с opacity 0.18/0.22."
+    },
+    {
+      "id": "small_icons",
+      "blocking": false,
+      "assets": [
+        "ARN02_19",
+        "ARN02_20",
+        "ARN02_21"
+      ],
+      "note": "Проверить читаемость на 32px в приложении."
+    }
+  ],
+  "qa_summary": {
+    "production_assets": 37,
+    "arn01_files": 12,
+    "arn02_files": 25,
+    "preview_files": 1,
+    "png_decode": "passed",
+    "expected_names_and_dimensions": "passed",
+    "alpha_channel": "present_in_all_pngs",
+    "transparent_production_assets": 34,
+    "opaque_backgrounds": 3,
+    "arn02_transparent_outer_border": "passed",
+    "max_file_size_bytes": 2005630,
+    "all_below_10_mb": true,
+    "integrity": "SHA-256 and Git blob SHA recorded per file",
+    "visual_review": "Просмотрены _PREVIEW_STACK и контактный лист всех 25 иконок ARN02 на тёмном фоне. Бойцы читаются, белого фона вокруг иконок нет.",
+    "animation_qa": "not_run",
+    "in_app_qa": "not_run"
+  },
+  "assets": [
+    {
+      "id": "ARN01_01",
+      "file_name": "qura_arn01_01_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_01_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1080,
+        1920
+      ],
+      "size_bytes": 1467157,
+      "sha256": "020453ef63ca7e6151926e44f858f480dec718998f2b7d314e7696015f17a3fa",
+      "git_blob_sha": "a05ce1a4416b4d7b3961e9369369a97e141e713f",
+      "figma_node_id": "216:14",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-14",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "f8308ff3b0ce92691fba05914fa53a7b24a744c9",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "existing_branch_png_preserved",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Рабочий 1080×1920; в Figma встроено превью 432×768. Нативный 4K-мастер недоступен.",
+        "Нижние 25% сцены детальнее желаемого; проверить кнопки в приложении."
+      ]
+    },
+    {
+      "id": "ARN01_02",
+      "file_name": "qura_arn01_02_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_02_v01.png",
+      "width": 1920,
+      "height": 1080,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "size_bytes": 1826522,
+      "sha256": "076414d305e589cb6b5defb6d7632e7cdeddb4057a63aaa8daed52d987449665",
+      "git_blob_sha": "8440d9b84509bf17142b431538295202afd85ecb",
+      "figma_node_id": "216:16",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-16",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "e76621fd39f5de2fa76a3e2d96df6a01ba483a82",
+          "width": 768,
+          "height": 432
+        }
+      ],
+      "export_method": "existing_branch_png_preserved",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Рабочий 1920×1080; в Figma встроено превью 768×432. Нативный 4K-мастер недоступен."
+      ]
+    },
+    {
+      "id": "ARN01_03a",
+      "file_name": "qura_arn01_03a_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_03a_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        18,
+        333,
+        1068,
+        1075
+      ],
+      "size_bytes": 173031,
+      "sha256": "eb4be50d8f31b3c969e0d342bb5837a197a9cc9c03da2d0145432e55a4f57895",
+      "git_blob_sha": "cbfe1dcf7c1b024cc91ad8134d9aa1df9a3a9aa6",
+      "figma_node_id": "216:18",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-18",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "7f798692ac7d40898e0d19737e143e4e4f1b3a0f",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранена прозрачность; общий холст 1080×1920.",
+        "Точное совпадение отдельных птиц A/B/C проверить при переключении кадров."
+      ]
+    },
+    {
+      "id": "ARN01_03b",
+      "file_name": "qura_arn01_03b_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_03b_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        95,
+        1080,
+        1210
+      ],
+      "size_bytes": 225119,
+      "sha256": "055986f79e66b8672161e90ab27f393c6eee72db4a3aa81153e4c150a93303cd",
+      "git_blob_sha": "8fb0b52da2a0db2ed0b18c56605a848b22f8951f",
+      "figma_node_id": "216:20",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-20",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "bde8c7cf74c1bc265816af2979fd2fd35c3a6ade",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранена прозрачность; общий холст 1080×1920.",
+        "Точное совпадение отдельных птиц A/B/C проверить при переключении кадров."
+      ]
+    },
+    {
+      "id": "ARN01_03c",
+      "file_name": "qura_arn01_03c_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_03c_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        85,
+        1080,
+        1170
+      ],
+      "size_bytes": 242129,
+      "sha256": "43a92bf4748a2f1ca74b4b25633596eda201509bc77425a126b3bc7b6c6a5fa2",
+      "git_blob_sha": "5e282b9dd8489e825eca573b2191a3c86e1f22f9",
+      "figma_node_id": "216:22",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-22",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "2b6d6617d30a2fb613fedc7b940a6b21e4ec48ca",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранена прозрачность; общий холст 1080×1920.",
+        "Точное совпадение отдельных птиц A/B/C проверить при переключении кадров."
+      ]
+    },
+    {
+      "id": "ARN01_04",
+      "file_name": "qura_arn01_04_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_04_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        105,
+        1080,
+        1733
+      ],
+      "size_bytes": 477597,
+      "sha256": "83bcdb9e1033e4529e6e243d548f4a81aad6d9f4979360cf8a307ba980f9c27c",
+      "git_blob_sha": "a85ad802430e7c61183bbe901ac960839bda9ab5",
+      "figma_node_id": "216:24",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-24",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "036e3c6ec3ce22d050081040677ea5265b4ad73e",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранены пол, плоские стартовые метки и прозрачность; слой зарегистрирован в Figma."
+      ]
+    },
+    {
+      "id": "ARN01_05",
+      "file_name": "qura_arn01_05_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_05_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        175,
+        1080,
+        1920
+      ],
+      "size_bytes": 284247,
+      "sha256": "b3bfe1241b51b3d47710b6ce9ba7b98648defdb26c4e4eff036afa1456f3a46e",
+      "git_blob_sha": "9849343d84ca4b9f35ec61e77c00ab5d617b7b00",
+      "figma_node_id": "216:26",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-26",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "1ddca888d9b98c36e4e290302dcb3431adfa7243",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Центр прозрачен для бойцов; передние канаты и столбики отдельным слоем.",
+        "В базовом фоне также есть ограждение: слои не являются точным извлечением единой сцены."
+      ]
+    },
+    {
+      "id": "ARN01_06a",
+      "file_name": "qura_arn01_06a_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_06a_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1080,
+        1404
+      ],
+      "size_bytes": 1177040,
+      "sha256": "b641cf5ceff2fe6108f572e6c339910517737581a93f3afd3f8b451ccabab1de",
+      "git_blob_sha": "aa7c1b9849935954c261e626bcd7f5236c53aaca",
+      "figma_node_id": "216:28",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-28",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "71462fef253243fbb625152f8998deb075ae8b21",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "raw_png_fill_resized_to_frame_lanczos",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранён исходный альфа-канал PNG-заливки; растровое превью 432×768 масштабировано до рабочего холста с Lanczos.",
+        "В _PREVIEW_STACK opacity=0.18; additive/screen в движке требует проверки."
+      ]
+    },
+    {
+      "id": "ARN01_06b",
+      "file_name": "qura_arn01_06b_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_06b_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1080,
+        1893
+      ],
+      "size_bytes": 319055,
+      "sha256": "48f45ba9a70fb69f362f6df3b3283519466e0eec6e1121a39aa805464a08f92c",
+      "git_blob_sha": "88e169930229a8f1ff2263c18ea6fbad5078fda3",
+      "figma_node_id": "216:30",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-30",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "75833e670eeccd55c43390462af7b4eb6159a410",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Сохранён исходный альфа-канал.",
+        "В _PREVIEW_STACK opacity=0.22; additive/screen в движке требует проверки."
+      ]
+    },
+    {
+      "id": "ARN01_07a",
+      "file_name": "qura_arn01_07a_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_07a_v01.png",
+      "width": 1024,
+      "height": 512,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        196
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        512
+      ],
+      "size_bytes": 156499,
+      "sha256": "c4b33a84fba1104b53e0ccf3b35f98cc03ec0ba0e416f4e0f0ce8e70b8b94363",
+      "git_blob_sha": "94479fdb2de0ce4b43e23994311111a9b97b91e1",
+      "figma_node_id": "216:32",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-32",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "11d7474698a71a1bbb6c60d8609bd670cb6151ee",
+          "width": 768,
+          "height": 384
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Контактная тень; 1024×512 — предусмотренное промптом исключение из общего холста сцены."
+      ]
+    },
+    {
+      "id": "ARN01_07b",
+      "file_name": "qura_arn01_07b_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_07b_v01.png",
+      "width": 1024,
+      "height": 512,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        2,
+        1024,
+        512
+      ],
+      "size_bytes": 446198,
+      "sha256": "a779bd6674db82ecac3b4c571dc590f12709bdb32fd35ddc7b58a0a439a45aa0",
+      "git_blob_sha": "015fd94899a0446cd655d9d8408acd9edfd01a7c",
+      "figma_node_id": "216:34",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-34",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "9d5df440b2cf88bf15a23badbf951d1ecce9d439",
+          "width": 768,
+          "height": 384
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Золотое кольцо; 1024×512 — предусмотренное промптом исключение из общего холста сцены."
+      ]
+    },
+    {
+      "id": "ARN01_08",
+      "file_name": "qura_arn01_08_v01.png",
+      "path": "assets/arena/arn01/qura_arn01_08_v01.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1080,
+        1920
+      ],
+      "size_bytes": 1619694,
+      "sha256": "31281da31671c7c835afc2fd7a3d627573400f0930e5b9c423c0cecd7c3e7095",
+      "git_blob_sha": "6ac8ec196fe75b3b0428df780d381973c3824ffb",
+      "figma_node_id": "216:36",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-36",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "10da7a9269bc43059d81ec72110b48860fbb0649",
+          "width": 432,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Фон лобби без персонажей и текста.",
+        "Середина ворот светлее пожелания; проверить читаемость карточек режимов."
+      ]
+    },
+    {
+      "id": "ARN02_01",
+      "file_name": "qura_arn02_01_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_01_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        63,
+        61,
+        267,
+        278
+      ],
+      "size_bytes": 47839,
+      "sha256": "08a0ec52b017ec861d6f8b76e265a9b35bf572f28c8913d38be58b18c5167176",
+      "git_blob_sha": "e827fcbef22571afe96053673c3889e80a684e83",
+      "figma_node_id": "218:6",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-6",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Две скрещённые золотые перьевые формы и яйцо; проверить восприятие как VS в приложении."
+      ]
+    },
+    {
+      "id": "ARN02_02",
+      "file_name": "qura_arn02_02_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_02_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        61,
+        61,
+        257,
+        278
+      ],
+      "size_bytes": 23262,
+      "sha256": "94ba2cf7246cd6d7c465d5a2f3efbe1682ba416e992576342c4a15418148bb14",
+      "git_blob_sha": "1303c24894d3d6ded522b72f2cf615a9a4d858c5",
+      "figma_node_id": "218:8",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-8",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_03",
+      "file_name": "qura_arn02_03_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_03_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        75,
+        67,
+        246,
+        278
+      ],
+      "size_bytes": 16968,
+      "sha256": "d947fc943adba104389be0bf1b730b49f4477c07d3f253d4bbee1dbd6fdda3bb",
+      "git_blob_sha": "2ff2cb3030fa4626ec0376eae9d1413b58a11bcd",
+      "figma_node_id": "218:10",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-10",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_04",
+      "file_name": "qura_arn02_04_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_04_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        65,
+        67,
+        255,
+        278
+      ],
+      "size_bytes": 35112,
+      "sha256": "cd104202833f1ac6a6214d9e58f63d65450bef0c5fda742a2f8617a8c2eede01",
+      "git_blob_sha": "7a2930a48551171e6e38e6912fa533e7ad043b09",
+      "figma_node_id": "218:12",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-12",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_05",
+      "file_name": "qura_arn02_05_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_05_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        62,
+        80,
+        231,
+        278
+      ],
+      "size_bytes": 22157,
+      "sha256": "0c12c0cd973c312f932767ccf305a7ad02829685ef3b2190385efb013aa403bb",
+      "git_blob_sha": "282452775a2a66624634a111023f9c720906a737",
+      "figma_node_id": "218:14",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-14",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_06",
+      "file_name": "qura_arn02_06_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_06_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        63,
+        70,
+        277,
+        249
+      ],
+      "size_bytes": 43774,
+      "sha256": "42472a89072eb496ee0ac0452b7372c0398d6b51da026dc2f24f2937572bb014",
+      "git_blob_sha": "ccefc4c66f5c1e47b04e675def3f82ad6d296292",
+      "figma_node_id": "218:17",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-17",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_07",
+      "file_name": "qura_arn02_07_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_07_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        64,
+        278,
+        258
+      ],
+      "size_bytes": 39971,
+      "sha256": "41a6dbe22a0fc663b811734f60f3978750bc9631768c5e873d1e58f2279a1d39",
+      "git_blob_sha": "82a16a4a9e8789e1a228fb6741e9ff1ffdd3cc20",
+      "figma_node_id": "218:19",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-19",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_08",
+      "file_name": "qura_arn02_08_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_08_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        50,
+        55,
+        271,
+        264
+      ],
+      "size_bytes": 40217,
+      "sha256": "b06ce7e58d5c967c2bd3938a797a0900a7a7db3bff4db00bcb0341bb267ec935",
+      "git_blob_sha": "9b88c10b567b41938a764c1f0aba8c8a3d301950",
+      "figma_node_id": "218:21",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-21",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_09",
+      "file_name": "qura_arn02_09_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_09_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        42,
+        60,
+        278,
+        260
+      ],
+      "size_bytes": 40488,
+      "sha256": "c6cf6f4e7c44a4e636f3daf252548c03816f464cb8a5be0849c515f4a31c01fb",
+      "git_blob_sha": "f88ce0cf23385dfffc160458801622b933e0a156",
+      "figma_node_id": "218:23",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-23",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_10",
+      "file_name": "qura_arn02_10_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_10_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        66,
+        266,
+        255
+      ],
+      "size_bytes": 41320,
+      "sha256": "6660f87c00fac491bdc6ef3ed751aecab57c369c0958ca5213f349a9785020ee",
+      "git_blob_sha": "8233ccb562ffec6daf871913e02bfd5e64428d26",
+      "figma_node_id": "218:25",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-25",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_11",
+      "file_name": "qura_arn02_11_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_11_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        42,
+        56,
+        277,
+        265
+      ],
+      "size_bytes": 41381,
+      "sha256": "5e03ede2d0484725e98322b4e1de96936d0857333bf2b4eaaed9aeacf79b04d2",
+      "git_blob_sha": "22ac4830541b7ab9d596f175e231edf2c3378356",
+      "figma_node_id": "218:28",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-28",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_12",
+      "file_name": "qura_arn02_12_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_12_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        43,
+        278,
+        275
+      ],
+      "size_bytes": 56190,
+      "sha256": "474923cae5c9dd11efd315a8fc037d31becff8a91d92d7994a4a560eb5699a5d",
+      "git_blob_sha": "84e315bd535dd98dff894abb0e0d3eb43e0b36f2",
+      "figma_node_id": "218:30",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-30",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "При исходной нарезке удалён узкий фрагмент соседнего билета."
+      ]
+    },
+    {
+      "id": "ARN02_13",
+      "file_name": "qura_arn02_13_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_13_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        51,
+        42,
+        267,
+        279
+      ],
+      "size_bytes": 45533,
+      "sha256": "af3dc5800da77dd69fbbdf0e66653d74866a561d1045e4a07efb0d0cd6dfb3d0",
+      "git_blob_sha": "036dc4629cfcc25eb56d2bec0e7b263aad2ea0fb",
+      "figma_node_id": "218:32",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-32",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_14",
+      "file_name": "qura_arn02_14_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_14_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        42,
+        44,
+        278,
+        275
+      ],
+      "size_bytes": 54845,
+      "sha256": "92899911bac101fc9dea9a50e7d9cd4abbdaf60c858ed231596a3b93087c22ba",
+      "git_blob_sha": "8dea5c221d8cdaea3c355b22ac2ccd40bb34361c",
+      "figma_node_id": "218:34",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-34",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_15",
+      "file_name": "qura_arn02_15_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_15_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        50,
+        274,
+        271
+      ],
+      "size_bytes": 46475,
+      "sha256": "d2ba125062ce35c6a7806276e323080571cc8daa31224d9a93f8064011d76141",
+      "git_blob_sha": "74b486a42c328c07052528eed97d7e1f63d57fe5",
+      "figma_node_id": "218:36",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-36",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_16",
+      "file_name": "qura_arn02_16_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_16_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        42,
+        55,
+        277,
+        257
+      ],
+      "size_bytes": 47789,
+      "sha256": "c9df7bb0dfe56894115be446f1c8a9e8deb0afd4a8a2959edb806bd68e0e6754",
+      "git_blob_sha": "6e3779a39b2fb3f4a8f91f7bc617bb42af6fcaaa",
+      "figma_node_id": "218:39",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-39",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "В утверждённом варианте отсутствует знак вопроса."
+      ]
+    },
+    {
+      "id": "ARN02_17",
+      "file_name": "qura_arn02_17_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_17_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        47,
+        278,
+        274
+      ],
+      "size_bytes": 46653,
+      "sha256": "69813731db983f28db005cf08b23843676f9a1de7a8bac22b51a90fa70079618",
+      "git_blob_sha": "c14179ef983ccd6cd6bd818722c02c6fba0a0c8a",
+      "figma_node_id": "218:41",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-41",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_18",
+      "file_name": "qura_arn02_18_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_18_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        54,
+        43,
+        267,
+        278
+      ],
+      "size_bytes": 39724,
+      "sha256": "d6cdc270f3b35377922dd02b5ec9c40fa07c2c72073deb3cd1f20b2cbd5c570a",
+      "git_blob_sha": "b62829bbc9931e2318b1a85b4a476326dd1778cf",
+      "figma_node_id": "218:43",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-43",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_19",
+      "file_name": "qura_arn02_19_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_19_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        42,
+        43,
+        251,
+        278
+      ],
+      "size_bytes": 37492,
+      "sha256": "35cca8adcec213958866912ee49d3164c58b0d1863c769f89504fa00da971a4f",
+      "git_blob_sha": "954977f94a390f021b0eff7431679a18eec434d7",
+      "figma_node_id": "218:45",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-45",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Читаемость значка на 32px проверить в приложении."
+      ]
+    },
+    {
+      "id": "ARN02_20",
+      "file_name": "qura_arn02_20_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_20_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        54,
+        63,
+        224,
+        272
+      ],
+      "size_bytes": 34029,
+      "sha256": "ce25880215056f92627f20806c7f26140bd5b21b336f7c6460ef1271c2bf3c98",
+      "git_blob_sha": "f6a9297fc83c9d6f7d84070b54ea4f7d88f52b73",
+      "figma_node_id": "218:47",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-47",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Читаемость значка на 32px проверить в приложении."
+      ]
+    },
+    {
+      "id": "ARN02_21",
+      "file_name": "qura_arn02_21_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_21_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        96,
+        62,
+        248,
+        216
+      ],
+      "size_bytes": 33679,
+      "sha256": "e3b3108bba707fde3766f85574d931ae1cb7a6b9839415f61ded24c7dcc3bddc",
+      "git_blob_sha": "3e43b7f6abc806d60c10845bf0fae2bd5580664c",
+      "figma_node_id": "218:50",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-50",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Читаемость значка на 32px проверить в приложении."
+      ]
+    },
+    {
+      "id": "ARN02_22",
+      "file_name": "qura_arn02_22_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_22_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        49,
+        43,
+        278,
+        266
+      ],
+      "size_bytes": 28839,
+      "sha256": "3e7b6d998b1d4a7c100d83b56aa56d19c97be3d57e93047edb61843173372667",
+      "git_blob_sha": "5bb9add251538f7faf940fbf240e3043894f1766",
+      "figma_node_id": "218:52",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-52",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_23",
+      "file_name": "qura_arn02_23_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_23_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        58,
+        43,
+        262,
+        270
+      ],
+      "size_bytes": 31354,
+      "sha256": "6a3c96d59550fc7852d642c265665868ed36f55f810adbbe2734135d8f6c10e7",
+      "git_blob_sha": "355946be1e5ba992675346ec82a835363a6b9e65",
+      "figma_node_id": "218:54",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-54",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_24",
+      "file_name": "qura_arn02_24_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_24_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        59,
+        43,
+        272,
+        279
+      ],
+      "size_bytes": 35202,
+      "sha256": "5901209475a2f61b5146409202c7cff3d66c2bf77eccfafa652470990a8a06dd",
+      "git_blob_sha": "9ab8e0d69276d0894407fd56baeaab369f4edfd0",
+      "figma_node_id": "218:56",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-56",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    },
+    {
+      "id": "ARN02_25",
+      "file_name": "qura_arn02_25_v01.png",
+      "path": "assets/arena/arn02/qura_arn02_25_v01.png",
+      "width": 320,
+      "height": 320,
+      "format": "PNG",
+      "mode": "RGBA",
+      "has_alpha": true,
+      "has_transparency": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        70,
+        48,
+        258,
+        262
+      ],
+      "size_bytes": 34596,
+      "sha256": "17ebef71360e5b0d8329dc7878b46ca963493231b8797aad09d3d83d048f7e70",
+      "git_blob_sha": "f9b4bc8b1f80bd171ad30939290d197d4a17287b",
+      "figma_node_id": "218:58",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=218-58",
+      "status": "approved",
+      "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+      "source_rasters": [
+        {
+          "hash": "99e956621337edb43433fd6fe530c0e628ff7245",
+          "width": 768,
+          "height": 768
+        }
+      ],
+      "export_method": "figma_native_export_async_png",
+      "technical_qa": "passed",
+      "qa_notes": [
+        "Прозрачная внешняя рамка; основная форма без обрезания."
+      ]
+    }
+  ],
+  "preview": {
+    "id": "ARENA_PREVIEW_STACK",
+    "path": "assets/arena/arn01/qura_arena_preview_stack_v01.png",
+    "width": 1080,
+    "height": 1920,
+    "format": "PNG",
+    "mode": "RGBA",
+    "has_alpha": true,
+    "has_transparency": false,
+    "alpha_extrema": [
+      255,
+      255
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1080,
+      1920
+    ],
+    "size_bytes": 2005630,
+    "sha256": "60fdb9a169d45c1d18b83272f7f73aff1e3613c1e9f4b83161bbd77dcf00ea52",
+    "git_blob_sha": "23134b05b6e6779061b3f707f55c04b96005c536",
+    "figma_node_id": "216:38",
+    "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=216-38",
+    "status": "approved",
+    "approval_source": "https://github.com/gselfman/QuRa-Game-Design/issues/19",
+    "role": "reference_composite_not_runtime_layer",
+    "export_method": "figma_download_assets_composite",
+    "qa_notes": [
+      "Содержит бойцов Ряба и Боевик из CARD, только для визуальной проверки; не использовать как пустой фон сцены."
+    ]
+  }
+}
