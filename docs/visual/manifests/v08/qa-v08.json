@@ -1,0 +1,23 @@
+{
+  "version": "v08",
+  "png_files": 209,
+  "updated_wearables": 29,
+  "checked_poses": 18,
+  "checked_heads": 30,
+  "errors": [],
+  "visual_acceptance": "pending owner review",
+  "preserved_anatomy": "separate torso, left/right wings and interchangeable legs module",
+  "figma": {
+    "updated_wearables": 29,
+    "head_review": "193:1563",
+    "pose_board": "164:488",
+    "character_previews": 6,
+    "visible_final_checks": [
+      "native head board",
+      "native 18 pose board",
+      "soldier full rig after tie masking",
+      "monk full rig after PNG replacement"
+    ],
+    "registered_layer_state_errors": []
+  }
+}

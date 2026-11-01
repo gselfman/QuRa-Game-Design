@@ -1,0 +1,876 @@
+{
+  "pageId": "156:1552",
+  "masters": {
+    "C01/parts/farWing.png": {
+      "component": "161:2",
+      "target": "161:3",
+      "kind": "part"
+    },
+    "C01/parts/body.png": {
+      "component": "161:4",
+      "target": "185:1563",
+      "kind": "part"
+    },
+    "C01/parts/feet.png": {
+      "component": "161:6",
+      "target": "161:7",
+      "kind": "part"
+    },
+    "C01/parts/head.png": {
+      "component": "161:8",
+      "target": "161:9",
+      "kind": "part"
+    },
+    "C01/parts/nearWing.png": {
+      "component": "161:10",
+      "target": "161:11",
+      "kind": "part"
+    },
+    "C01/head_native_base.png": {
+      "component": "161:12",
+      "target": "161:13",
+      "kind": "head"
+    },
+    "C01/emotions/joy_hat.png": {
+      "component": "161:14",
+      "target": "161:15",
+      "kind": "emotion"
+    },
+    "C01/emotions/determination_hat.png": {
+      "component": "161:16",
+      "target": "161:17",
+      "kind": "emotion"
+    },
+    "C01/emotions/sadness_hat.png": {
+      "component": "161:18",
+      "target": "161:19",
+      "kind": "emotion"
+    },
+    "C01/emotions/surprise_bare.png": {
+      "component": "161:20",
+      "target": "161:21",
+      "kind": "emotion"
+    },
+    "C01/emotions/determination_bare.png": {
+      "component": "161:22",
+      "target": "161:23",
+      "kind": "emotion"
+    },
+    "C01/emotions/sadness_bare.png": {
+      "component": "161:24",
+      "target": "161:25",
+      "kind": "emotion"
+    },
+    "C01/emotions/joy_bare.png": {
+      "component": "161:26",
+      "target": "161:27",
+      "kind": "emotion"
+    },
+    "C01/emotions/surprise_hat.png": {
+      "component": "161:28",
+      "target": "161:29",
+      "kind": "emotion"
+    },
+    "C01/wear/hat.png": {
+      "component": "161:30",
+      "target": "161:31",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C01/wear/hat_back.png": {
+      "component": "161:32",
+      "target": "161:33",
+      "kind": "wear_back",
+      "window": null,
+      "masks": []
+    },
+    "C01/wear/glasses.png": {
+      "component": "161:34",
+      "target": "161:35",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C01/wear/vest.png": {
+      "component": "161:36",
+      "target": "161:37",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C01/wear/bag.png": {
+      "component": "161:38",
+      "target": "181:1281",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C01/wear/boots.png": {
+      "component": "161:40",
+      "target": "161:41",
+      "kind": "wear"
+    },
+    "C01/feet_native.png": {
+      "component": "161:42",
+      "target": "161:43",
+      "kind": "feet"
+    },
+    "C01/feet_perch.png": {
+      "component": "161:44",
+      "target": "161:45",
+      "kind": "feet"
+    },
+    "C02/parts/farWing.png": {
+      "component": "161:46",
+      "target": "161:47",
+      "kind": "part"
+    },
+    "C02/parts/body.png": {
+      "component": "161:48",
+      "target": "185:1564",
+      "kind": "part"
+    },
+    "C02/parts/feet.png": {
+      "component": "161:50",
+      "target": "161:51",
+      "kind": "part"
+    },
+    "C02/parts/head.png": {
+      "component": "161:52",
+      "target": "161:53",
+      "kind": "part"
+    },
+    "C02/parts/nearWing.png": {
+      "component": "161:54",
+      "target": "161:55",
+      "kind": "part"
+    },
+    "C02/head_native_base.png": {
+      "component": "161:56",
+      "target": "161:57",
+      "kind": "head"
+    },
+    "C02/emotions/surprise_bare.png": {
+      "component": "161:58",
+      "target": "161:59",
+      "kind": "emotion"
+    },
+    "C02/emotions/determination_bare.png": {
+      "component": "161:60",
+      "target": "161:61",
+      "kind": "emotion"
+    },
+    "C02/emotions/sadness_bare.png": {
+      "component": "161:62",
+      "target": "161:63",
+      "kind": "emotion"
+    },
+    "C02/emotions/joy_bare.png": {
+      "component": "161:64",
+      "target": "161:65",
+      "kind": "emotion"
+    },
+    "C02/wear/bandana.png": {
+      "component": "161:66",
+      "target": "181:1283",
+      "kind": "wear",
+      "window": null,
+      "masks": [
+        "200:1761"
+      ]
+    },
+    "C02/wear/bandana_back.png": {
+      "component": "161:68",
+      "target": "181:1284",
+      "kind": "wear_back",
+      "window": null,
+      "masks": [
+        "200:1763"
+      ]
+    },
+    "C02/wear/aviators.png": {
+      "component": "161:70",
+      "target": "181:1285",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C02/wear/vest.png": {
+      "component": "161:72",
+      "target": "161:73",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C02/wear/cartridges.png": {
+      "component": "161:74",
+      "target": "161:75",
+      "kind": "wear"
+    },
+    "C02/wear/water_toy.png": {
+      "component": "161:76",
+      "target": "181:1282",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C02/wear/boots.png": {
+      "component": "161:78",
+      "target": "161:79",
+      "kind": "wear"
+    },
+    "C02/feet_native.png": {
+      "component": "161:80",
+      "target": "161:81",
+      "kind": "feet"
+    },
+    "C02/feet_perch.png": {
+      "component": "161:82",
+      "target": "161:83",
+      "kind": "feet"
+    },
+    "C03/parts/farWing.png": {
+      "component": "161:84",
+      "target": "168:1269",
+      "kind": "part",
+      "existingSource": "115:300"
+    },
+    "C03/parts/body.png": {
+      "component": "161:86",
+      "target": "185:1565",
+      "kind": "part"
+    },
+    "C03/parts/feet.png": {
+      "component": "161:88",
+      "target": "161:89",
+      "kind": "part"
+    },
+    "C03/parts/head.png": {
+      "component": "161:90",
+      "target": "161:91",
+      "kind": "part"
+    },
+    "C03/parts/nearWing.png": {
+      "component": "161:92",
+      "target": "161:93",
+      "kind": "part"
+    },
+    "C03/head_native_base.png": {
+      "component": "161:94",
+      "target": "161:95",
+      "kind": "head"
+    },
+    "C03/emotions/surprise_bare.png": {
+      "component": "161:96",
+      "target": "161:97",
+      "kind": "emotion"
+    },
+    "C03/emotions/surprise_hat.png": {
+      "component": "161:98",
+      "target": "161:99",
+      "kind": "emotion"
+    },
+    "C03/emotions/determination_bare.png": {
+      "component": "161:100",
+      "target": "161:101",
+      "kind": "emotion"
+    },
+    "C03/emotions/determination_hat.png": {
+      "component": "161:102",
+      "target": "161:103",
+      "kind": "emotion"
+    },
+    "C03/emotions/sadness_bare.png": {
+      "component": "161:104",
+      "target": "161:105",
+      "kind": "emotion"
+    },
+    "C03/emotions/sadness_hat.png": {
+      "component": "161:106",
+      "target": "161:107",
+      "kind": "emotion"
+    },
+    "C03/emotions/joy_bare.png": {
+      "component": "161:108",
+      "target": "161:109",
+      "kind": "emotion"
+    },
+    "C03/emotions/joy_hat.png": {
+      "component": "161:110",
+      "target": "161:111",
+      "kind": "emotion"
+    },
+    "C03/wear/scarf.png": {
+      "component": "161:112",
+      "target": "181:1287",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C03/wear/scarf_back.png": {
+      "component": "161:114",
+      "target": "181:1288",
+      "kind": "wear_back",
+      "window": null,
+      "masks": []
+    },
+    "C03/wear/glasses.png": {
+      "component": "161:116",
+      "target": "161:117",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C03/wear/vest.png": {
+      "component": "161:118",
+      "target": "161:119",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C03/wear/beads.png": {
+      "component": "161:120",
+      "target": "161:121",
+      "kind": "wear"
+    },
+    "C03/wear/shopper_flute.png": {
+      "component": "161:122",
+      "target": "181:1286",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C03/wear/ring07.png": {
+      "component": "161:124",
+      "target": "181:1289",
+      "kind": "wear"
+    },
+    "C03/feet_native.png": {
+      "component": "161:126",
+      "target": "181:1290",
+      "kind": "feet"
+    },
+    "C03/feet_perch.png": {
+      "component": "161:128",
+      "target": "161:129",
+      "kind": "feet"
+    },
+    "C04/parts/farWing.png": {
+      "component": "161:130",
+      "target": "161:131",
+      "kind": "part"
+    },
+    "C04/parts/body.png": {
+      "component": "161:132",
+      "target": "185:1566",
+      "kind": "part"
+    },
+    "C04/parts/feet.png": {
+      "component": "161:134",
+      "target": "161:135",
+      "kind": "part"
+    },
+    "C04/parts/head.png": {
+      "component": "161:136",
+      "target": "161:137",
+      "kind": "part"
+    },
+    "C04/parts/nearWing.png": {
+      "component": "161:138",
+      "target": "161:139",
+      "kind": "part"
+    },
+    "C04/head_native_base.png": {
+      "component": "161:140",
+      "target": "161:141",
+      "kind": "head"
+    },
+    "C04/emotions/surprise_bare.png": {
+      "component": "161:142",
+      "target": "161:143",
+      "kind": "emotion"
+    },
+    "C04/emotions/determination_bare.png": {
+      "component": "161:144",
+      "target": "161:145",
+      "kind": "emotion"
+    },
+    "C04/emotions/sadness_bare.png": {
+      "component": "161:146",
+      "target": "161:147",
+      "kind": "emotion"
+    },
+    "C04/emotions/joy_bare.png": {
+      "component": "161:148",
+      "target": "161:149",
+      "kind": "emotion"
+    },
+    "C04/wear/pencil.png": {
+      "component": "161:150",
+      "target": "161:151",
+      "kind": "wear"
+    },
+    "C04/wear/pencil_back.png": {
+      "component": "161:152",
+      "target": "161:153",
+      "kind": "wear_back"
+    },
+    "C04/wear/glasses.png": {
+      "component": "161:154",
+      "target": "181:1293",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C04/wear/coat.png": {
+      "component": "161:156",
+      "target": "181:1292",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C04/wear/magnifier.png": {
+      "component": "161:158",
+      "target": "161:159",
+      "kind": "wear"
+    },
+    "C04/wear/satchel.png": {
+      "component": "161:160",
+      "target": "181:1291",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C04/wear/crocs.png": {
+      "component": "161:162",
+      "target": "181:1294",
+      "kind": "wear"
+    },
+    "C04/feet_native.png": {
+      "component": "161:164",
+      "target": "181:1295",
+      "kind": "feet"
+    },
+    "C04/feet_perch.png": {
+      "component": "161:166",
+      "target": "161:167",
+      "kind": "feet"
+    },
+    "C05/parts/farWing.png": {
+      "component": "161:168",
+      "target": "161:169",
+      "kind": "part"
+    },
+    "C05/parts/body.png": {
+      "component": "161:170",
+      "target": "185:1567",
+      "kind": "part"
+    },
+    "C05/parts/feet.png": {
+      "component": "161:172",
+      "target": "161:173",
+      "kind": "part"
+    },
+    "C05/parts/head.png": {
+      "component": "161:174",
+      "target": "161:175",
+      "kind": "part"
+    },
+    "C05/parts/nearWing.png": {
+      "component": "161:176",
+      "target": "161:177",
+      "kind": "part"
+    },
+    "C05/head_native_base.png": {
+      "component": "161:178",
+      "target": "161:179",
+      "kind": "head"
+    },
+    "C05/emotions/joy_hat.png": {
+      "component": "161:180",
+      "target": "161:181",
+      "kind": "emotion"
+    },
+    "C05/emotions/determination_hat.png": {
+      "component": "161:182",
+      "target": "161:183",
+      "kind": "emotion"
+    },
+    "C05/emotions/sadness_hat.png": {
+      "component": "161:184",
+      "target": "161:185",
+      "kind": "emotion"
+    },
+    "C05/emotions/surprise_bare.png": {
+      "component": "161:186",
+      "target": "161:187",
+      "kind": "emotion"
+    },
+    "C05/emotions/determination_bare.png": {
+      "component": "161:188",
+      "target": "161:189",
+      "kind": "emotion"
+    },
+    "C05/emotions/sadness_bare.png": {
+      "component": "161:190",
+      "target": "161:191",
+      "kind": "emotion"
+    },
+    "C05/emotions/joy_bare.png": {
+      "component": "161:192",
+      "target": "161:193",
+      "kind": "emotion"
+    },
+    "C05/emotions/surprise_hat.png": {
+      "component": "161:194",
+      "target": "161:195",
+      "kind": "emotion"
+    },
+    "C05/wear/hat.png": {
+      "component": "161:196",
+      "target": "181:1297",
+      "kind": "wear",
+      "window": "197:1699",
+      "masks": []
+    },
+    "C05/wear/hat_back.png": {
+      "component": "161:198",
+      "target": "181:1298",
+      "kind": "wear_back",
+      "window": null,
+      "masks": []
+    },
+    "C05/wear/third_eye.png": {
+      "component": "161:200",
+      "target": "181:1300",
+      "kind": "wear",
+      "window": "197:1700",
+      "masks": []
+    },
+    "C05/wear/robe.png": {
+      "component": "161:202",
+      "target": "181:1299",
+      "kind": "wear",
+      "window": "197:1701",
+      "masks": []
+    },
+    "C05/wear/beads.png": {
+      "component": "161:204",
+      "target": "181:1301",
+      "kind": "wear",
+      "window": "197:1702",
+      "masks": []
+    },
+    "C05/wear/cloth_bag.png": {
+      "component": "161:206",
+      "target": "181:1296",
+      "kind": "wear",
+      "window": "197:1703",
+      "masks": []
+    },
+    "C05/wear/sandals.png": {
+      "component": "161:208",
+      "target": "161:209",
+      "kind": "wear"
+    },
+    "C05/feet_native.png": {
+      "component": "161:210",
+      "target": "168:1270",
+      "kind": "feet",
+      "existingSource": "120:1223"
+    },
+    "C05/feet_perch.png": {
+      "component": "161:212",
+      "target": "161:213",
+      "kind": "feet"
+    },
+    "C06/parts/farWing.png": {
+      "component": "161:214",
+      "target": "161:215",
+      "kind": "part"
+    },
+    "C06/parts/body.png": {
+      "component": "161:216",
+      "target": "185:1568",
+      "kind": "part"
+    },
+    "C06/parts/feet.png": {
+      "component": "161:218",
+      "target": "161:219",
+      "kind": "part"
+    },
+    "C06/parts/head.png": {
+      "component": "161:220",
+      "target": "161:221",
+      "kind": "part"
+    },
+    "C06/parts/nearWing.png": {
+      "component": "161:222",
+      "target": "161:223",
+      "kind": "part"
+    },
+    "C06/head_native_base.png": {
+      "component": "161:224",
+      "target": "161:225",
+      "kind": "head"
+    },
+    "C06/emotions/surprise_bare.png": {
+      "component": "161:226",
+      "target": "161:227",
+      "kind": "emotion"
+    },
+    "C06/emotions/surprise_hat.png": {
+      "component": "161:228",
+      "target": "161:229",
+      "kind": "emotion"
+    },
+    "C06/emotions/determination_bare.png": {
+      "component": "161:230",
+      "target": "161:231",
+      "kind": "emotion"
+    },
+    "C06/emotions/determination_hat.png": {
+      "component": "161:232",
+      "target": "161:233",
+      "kind": "emotion"
+    },
+    "C06/emotions/sadness_bare.png": {
+      "component": "161:234",
+      "target": "161:235",
+      "kind": "emotion"
+    },
+    "C06/emotions/sadness_hat.png": {
+      "component": "161:236",
+      "target": "161:237",
+      "kind": "emotion"
+    },
+    "C06/emotions/joy_bare.png": {
+      "component": "161:238",
+      "target": "161:239",
+      "kind": "emotion"
+    },
+    "C06/emotions/joy_hat.png": {
+      "component": "161:240",
+      "target": "161:241",
+      "kind": "emotion"
+    },
+    "C06/wear/hat.png": {
+      "component": "161:242",
+      "target": "181:1303",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C06/wear/hat_back.png": {
+      "component": "161:244",
+      "target": "181:1304",
+      "kind": "wear_back",
+      "window": null,
+      "masks": []
+    },
+    "C06/wear/glasses.png": {
+      "component": "161:246",
+      "target": "181:1306",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C06/wear/vest.png": {
+      "component": "161:248",
+      "target": "181:1305",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C06/wear/diamonds.png": {
+      "component": "161:250",
+      "target": "161:251",
+      "kind": "wear"
+    },
+    "C06/wear/bag_h.png": {
+      "component": "161:252",
+      "target": "181:1302",
+      "kind": "wear",
+      "window": null,
+      "masks": []
+    },
+    "C06/wear/anklets.png": {
+      "component": "161:254",
+      "target": "181:1307",
+      "kind": "wear"
+    },
+    "C06/feet_native.png": {
+      "component": "161:256",
+      "target": "181:1308",
+      "kind": "feet"
+    },
+    "C06/feet_perch.png": {
+      "component": "161:258",
+      "target": "161:259",
+      "kind": "feet"
+    },
+    "props/nest_back.png": {
+      "component": "161:260",
+      "target": "161:261",
+      "kind": "prop"
+    },
+    "props/nest_front_eggs.png": {
+      "component": "161:262",
+      "target": "161:263",
+      "kind": "prop"
+    },
+    "props/perch.png": {
+      "component": "161:264",
+      "target": "161:265",
+      "kind": "prop"
+    },
+    "C01/parts/torso.png": {
+      "component": "161:4",
+      "target": "185:1563",
+      "kind": "part",
+      "alias_of": "C01/parts/body.png"
+    },
+    "C01/parts/right_wing.png": {
+      "component": "161:10",
+      "target": "161:11",
+      "kind": "part",
+      "alias_of": "C01/parts/nearWing.png"
+    },
+    "C01/parts/left_wing.png": {
+      "component": "161:2",
+      "target": "161:3",
+      "kind": "part",
+      "alias_of": "C01/parts/farWing.png"
+    },
+    "C01/parts/legs_bare.png": {
+      "component": "161:6",
+      "target": "161:7",
+      "kind": "part",
+      "alias_of": "C01/parts/feet.png"
+    },
+    "C02/parts/torso.png": {
+      "component": "161:48",
+      "target": "185:1564",
+      "kind": "part",
+      "alias_of": "C02/parts/body.png"
+    },
+    "C02/parts/right_wing.png": {
+      "component": "161:54",
+      "target": "161:55",
+      "kind": "part",
+      "alias_of": "C02/parts/nearWing.png"
+    },
+    "C02/parts/left_wing.png": {
+      "component": "161:46",
+      "target": "161:47",
+      "kind": "part",
+      "alias_of": "C02/parts/farWing.png"
+    },
+    "C02/parts/legs_bare.png": {
+      "component": "161:50",
+      "target": "161:51",
+      "kind": "part",
+      "alias_of": "C02/parts/feet.png"
+    },
+    "C03/parts/torso.png": {
+      "component": "161:86",
+      "target": "185:1565",
+      "kind": "part",
+      "alias_of": "C03/parts/body.png"
+    },
+    "C03/parts/right_wing.png": {
+      "component": "161:92",
+      "target": "161:93",
+      "kind": "part",
+      "alias_of": "C03/parts/nearWing.png"
+    },
+    "C03/parts/left_wing.png": {
+      "component": "161:84",
+      "target": "168:1269",
+      "kind": "part",
+      "existingSource": "115:300",
+      "alias_of": "C03/parts/farWing.png"
+    },
+    "C03/parts/legs_bare.png": {
+      "component": "161:88",
+      "target": "161:89",
+      "kind": "part",
+      "alias_of": "C03/parts/feet.png"
+    },
+    "C04/parts/torso.png": {
+      "component": "161:132",
+      "target": "185:1566",
+      "kind": "part",
+      "alias_of": "C04/parts/body.png"
+    },
+    "C04/parts/right_wing.png": {
+      "component": "161:138",
+      "target": "161:139",
+      "kind": "part",
+      "alias_of": "C04/parts/nearWing.png"
+    },
+    "C04/parts/left_wing.png": {
+      "component": "161:130",
+      "target": "161:131",
+      "kind": "part",
+      "alias_of": "C04/parts/farWing.png"
+    },
+    "C04/parts/legs_bare.png": {
+      "component": "161:134",
+      "target": "161:135",
+      "kind": "part",
+      "alias_of": "C04/parts/feet.png"
+    },
+    "C05/parts/torso.png": {
+      "component": "161:170",
+      "target": "185:1567",
+      "kind": "part",
+      "alias_of": "C05/parts/body.png"
+    },
+    "C05/parts/right_wing.png": {
+      "component": "161:176",
+      "target": "161:177",
+      "kind": "part",
+      "alias_of": "C05/parts/nearWing.png"
+    },
+    "C05/parts/left_wing.png": {
+      "component": "161:168",
+      "target": "161:169",
+      "kind": "part",
+      "alias_of": "C05/parts/farWing.png"
+    },
+    "C05/parts/legs_bare.png": {
+      "component": "161:172",
+      "target": "161:173",
+      "kind": "part",
+      "alias_of": "C05/parts/feet.png"
+    },
+    "C06/parts/torso.png": {
+      "component": "161:216",
+      "target": "185:1568",
+      "kind": "part",
+      "alias_of": "C06/parts/body.png"
+    },
+    "C06/parts/right_wing.png": {
+      "component": "161:222",
+      "target": "161:223",
+      "kind": "part",
+      "alias_of": "C06/parts/nearWing.png"
+    },
+    "C06/parts/left_wing.png": {
+      "component": "161:214",
+      "target": "161:215",
+      "kind": "part",
+      "alias_of": "C06/parts/farWing.png"
+    },
+    "C06/parts/legs_bare.png": {
+      "component": "161:218",
+      "target": "161:219",
+      "kind": "part",
+      "alias_of": "C06/parts/feet.png"
+    }
+  },
+  "version": "v08",
+  "headFittingBoard": "193:1563"
+}

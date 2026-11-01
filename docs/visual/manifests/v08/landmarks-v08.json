@@ -1,0 +1,878 @@
+{
+  "C01": {
+    "glasses": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          340,
+          204
+        ],
+        [
+          409,
+          227
+        ]
+      ],
+      "target_landmarks": [
+        [
+          342,
+          204
+        ],
+        [
+          411,
+          223
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "hat": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          318,
+          146
+        ],
+        [
+          449,
+          103
+        ]
+      ],
+      "target_landmarks": [
+        [
+          314,
+          121
+        ],
+        [
+          452,
+          145
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "hat_back": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          318,
+          146
+        ],
+        [
+          449,
+          103
+        ]
+      ],
+      "target_landmarks": [
+        [
+          314,
+          121
+        ],
+        [
+          452,
+          145
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "vest": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          294,
+          340
+        ],
+        [
+          434,
+          352
+        ],
+        [
+          409,
+          425
+        ],
+        [
+          400,
+          516
+        ],
+        [
+          271,
+          509
+        ],
+        [
+          490,
+          505
+        ]
+      ],
+      "target_landmarks": [
+        [
+          310,
+          344
+        ],
+        [
+          434,
+          349
+        ],
+        [
+          414,
+          424
+        ],
+        [
+          405,
+          518
+        ],
+        [
+          286,
+          517
+        ],
+        [
+          488,
+          510
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "bag": {
+      "body_rect": [
+        288,
+        477,
+        100,
+        105
+      ],
+      "shoulder": [
+        329,
+        352
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  },
+  "C02": {
+    "aviators": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          358,
+          209
+        ],
+        [
+          433,
+          232
+        ]
+      ],
+      "target_landmarks": [
+        [
+          359,
+          205
+        ],
+        [
+          431,
+          222
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "bandana": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          316,
+          143
+        ],
+        [
+          392,
+          147
+        ],
+        [
+          483,
+          165
+        ],
+        [
+          395,
+          135
+        ],
+        [
+          395,
+          158
+        ],
+        [
+          280,
+          165
+        ]
+      ],
+      "target_landmarks": [
+        [
+          316,
+          150
+        ],
+        [
+          392,
+          159
+        ],
+        [
+          470,
+          174
+        ],
+        [
+          395,
+          142
+        ],
+        [
+          395,
+          167
+        ],
+        [
+          292,
+          176
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)",
+      "hanging_tie": "behind temple, clear of near lens"
+    },
+    "vest": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          304,
+          343
+        ],
+        [
+          447,
+          344
+        ],
+        [
+          436,
+          435
+        ],
+        [
+          421,
+          534
+        ],
+        [
+          284,
+          520
+        ],
+        [
+          514,
+          520
+        ]
+      ],
+      "target_landmarks": [
+        [
+          316,
+          350
+        ],
+        [
+          448,
+          350
+        ],
+        [
+          432,
+          433
+        ],
+        [
+          423,
+          529
+        ],
+        [
+          297,
+          519
+        ],
+        [
+          505,
+          518
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "water_toy": {
+      "body_rect": [
+        256,
+        492,
+        195,
+        91
+      ],
+      "shoulder": [
+        345,
+        352
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  },
+  "C03": {
+    "glasses": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          355,
+          207
+        ],
+        [
+          427,
+          232
+        ]
+      ],
+      "target_landmarks": [
+        [
+          353,
+          195
+        ],
+        [
+          426,
+          224
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "scarf": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          300,
+          160
+        ],
+        [
+          490,
+          181
+        ],
+        [
+          374,
+          83
+        ],
+        [
+          278,
+          197
+        ],
+        [
+          502,
+          130
+        ],
+        [
+          336,
+          92
+        ]
+      ],
+      "target_landmarks": [
+        [
+          305,
+          146
+        ],
+        [
+          488,
+          161
+        ],
+        [
+          381,
+          87
+        ],
+        [
+          298,
+          190
+        ],
+        [
+          486,
+          128
+        ],
+        [
+          344,
+          94
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)",
+      "hanging_ends": "behind head, clear of eye sockets"
+    },
+    "vest": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          307,
+          333
+        ],
+        [
+          466,
+          337
+        ],
+        [
+          406,
+          415
+        ],
+        [
+          398,
+          524
+        ],
+        [
+          282,
+          516
+        ],
+        [
+          518,
+          518
+        ]
+      ],
+      "target_landmarks": [
+        [
+          316,
+          339
+        ],
+        [
+          461,
+          340
+        ],
+        [
+          410,
+          419
+        ],
+        [
+          402,
+          524
+        ],
+        [
+          298,
+          520
+        ],
+        [
+          507,
+          522
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "shopper_flute": {
+      "body_rect": [
+        279,
+        456,
+        91,
+        96
+      ],
+      "shoulder": [
+        331,
+        346
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  },
+  "C04": {
+    "glasses": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          333,
+          220
+        ],
+        [
+          401,
+          243
+        ]
+      ],
+      "target_landmarks": [
+        [
+          334,
+          222
+        ],
+        [
+          400,
+          247
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "coat": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          292,
+          330
+        ],
+        [
+          430,
+          333
+        ],
+        [
+          270,
+          395
+        ],
+        [
+          414,
+          456
+        ],
+        [
+          390,
+          540
+        ],
+        [
+          500,
+          500
+        ],
+        [
+          260,
+          490
+        ]
+      ],
+      "target_landmarks": [
+        [
+          310,
+          337
+        ],
+        [
+          425,
+          336
+        ],
+        [
+          291,
+          390
+        ],
+        [
+          405,
+          451
+        ],
+        [
+          385,
+          532
+        ],
+        [
+          484,
+          500
+        ],
+        [
+          278,
+          491
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "satchel": {
+      "body_rect": [
+        277,
+        482,
+        100,
+        82
+      ],
+      "shoulder": [
+        327,
+        354
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  },
+  "C06": {
+    "glasses": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          396,
+          181
+        ],
+        [
+          462,
+          207
+        ]
+      ],
+      "target_landmarks": [
+        [
+          395,
+          184
+        ],
+        [
+          465,
+          210
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "hat": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          337,
+          139
+        ],
+        [
+          493,
+          105
+        ]
+      ],
+      "target_landmarks": [
+        [
+          343,
+          119
+        ],
+        [
+          499,
+          146
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "hat_back": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          337,
+          139
+        ],
+        [
+          493,
+          105
+        ]
+      ],
+      "target_landmarks": [
+        [
+          343,
+          119
+        ],
+        [
+          499,
+          146
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "vest": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          342,
+          342
+        ],
+        [
+          460,
+          352
+        ],
+        [
+          433,
+          429
+        ],
+        [
+          432,
+          465
+        ],
+        [
+          375,
+          540
+        ],
+        [
+          500,
+          468
+        ],
+        [
+          326,
+          440
+        ]
+      ],
+      "target_landmarks": [
+        [
+          332,
+          346
+        ],
+        [
+          467,
+          350
+        ],
+        [
+          420,
+          413
+        ],
+        [
+          426,
+          462
+        ],
+        [
+          372,
+          534
+        ],
+        [
+          490,
+          472
+        ],
+        [
+          326,
+          437
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "bag_h": {
+      "body_rect": [
+        300,
+        485,
+        94,
+        75
+      ],
+      "shoulder": [
+        354,
+        356
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  },
+  "C05": {
+    "hat": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          329,
+          166
+        ],
+        [
+          469,
+          145
+        ]
+      ],
+      "target_landmarks": [
+        [
+          326,
+          138
+        ],
+        [
+          473,
+          159
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "hat_back": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          329,
+          166
+        ],
+        [
+          469,
+          145
+        ]
+      ],
+      "target_landmarks": [
+        [
+          326,
+          138
+        ],
+        [
+          473,
+          159
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "third_eye": {
+      "method": "similarity",
+      "source_landmarks": [
+        [
+          395,
+          159
+        ],
+        [
+          395,
+          170
+        ]
+      ],
+      "target_landmarks": [
+        [
+          423,
+          174
+        ],
+        [
+          423,
+          185
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "robe": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          348,
+          333
+        ],
+        [
+          433,
+          334
+        ],
+        [
+          421,
+          378
+        ],
+        [
+          405,
+          426
+        ],
+        [
+          320,
+          520
+        ],
+        [
+          498,
+          509
+        ]
+      ],
+      "target_landmarks": [
+        [
+          342,
+          330
+        ],
+        [
+          437,
+          337
+        ],
+        [
+          411,
+          377
+        ],
+        [
+          407,
+          421
+        ],
+        [
+          312,
+          521
+        ],
+        [
+          490,
+          523
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "beads": {
+      "method": "tps",
+      "source_landmarks": [
+        [
+          353,
+          326
+        ],
+        [
+          480,
+          339
+        ],
+        [
+          430,
+          374
+        ]
+      ],
+      "target_landmarks": [
+        [
+          340,
+          325
+        ],
+        [
+          449,
+          331
+        ],
+        [
+          398,
+          354
+        ]
+      ],
+      "canvas": "600 x 760 (export x2)"
+    },
+    "cloth_bag": {
+      "body_rect": [
+        288,
+        483,
+        91,
+        80
+      ],
+      "shoulder": [
+        343,
+        345
+      ],
+      "side": "right flank, under foreground wing, forward of tail"
+    }
+  }
+}
