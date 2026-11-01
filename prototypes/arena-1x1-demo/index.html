@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Арена QuRa — демо боя</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one phone column. Setup (your coop + hidden opponent) → arena scene (approved Figma ARN01 layers: bg, crowd, floor shadows, fighters, foreground; FX01 sprites; ARN02 icons) → 2×2 action pad → verdict. Barn-arena at night, single theme. */
+:root{
+  --bg:#1b120c;
+  --wood:#3a2618;
+  --wood-hi:#563823;
+  --straw:#f2c35b;
+  --ink:#fbeed6;
+  --muted:#cdb592;
+  --hp:#6fd08c;
+  --hit:#ff6f5e;
+  --display:"Russo One","Arial Black",system-ui,sans-serif;
+  --body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(120% 60% at 50% 0%,#4a2e19 0%,var(--bg) 60%) fixed,var(--bg);color:var(--ink);font:15px/1.45 var(--body)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--straw);outline-offset:2px}
+.app{max-width:440px;margin:0 auto;padding:16px 16px 40px;display:flex;flex-direction:column;gap:14px}
+header h1{font:24px/1.15 var(--display);margin:0;letter-spacing:.3px;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.panel{background:linear-gradient(180deg,var(--wood-hi),var(--wood));border:1px solid #6e4a2c;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.panel h2{font:16px var(--display);margin:0;letter-spacing:.2px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:#24170e;border-radius:12px;padding:4px;gap:4px}
+.seg button{background:none;border:0;border-radius:9px;padding:9px 4px;font-weight:500;font-size:13px;line-height:1.2;color:var(--muted);min-height:48px}
+.seg button[aria-pressed="true"]{background:var(--straw);color:#2a1a0c}
+.modeNote{margin:0;font-size:13px;color:var(--muted)}
+.roster{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hen{background:#2a1b10;border:2px solid transparent;border-radius:14px;padding:6px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.hen img{width:100%;max-width:92px;aspect-ratio:1;object-fit:contain}
+.hen b{font-size:13px}
+.hen small{font-size:11px;color:var(--muted);line-height:1.2}
+.hen[aria-pressed="true"]{border-color:var(--straw);background:#3d2814}
+.stats{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cta{background:var(--straw);color:#2a1a0c;border:0;border-radius:14px;padding:15px;font:17px var(--display);letter-spacing:.3px}
+.cta:disabled{opacity:.4;cursor:not-allowed}
+.ghost{background:#24170e;border:1px solid #6e4a2c;border-radius:12px;padding:11px;font-weight:500}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font-size:12px}
+.rules div{background:#24170e;border-radius:10px;padding:8px}
+.rules b{display:block;color:var(--ink);font-size:13px}
+.rules span{color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin:0}
+
+/* spoilers */
+details.sp{background:#24170e;border-radius:12px;border:1px solid #4a3220}
+details.sp>summary{cursor:pointer;list-style:none;padding:11px 12px;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px}
+details.sp>summary::-webkit-details-marker{display:none}
+details.sp>summary::after{content:"Показать";font-size:12px;color:var(--straw);font-weight:500}
+details.sp[open]>summary::after{content:"Скрыть"}
+details.sp .body{padding:0 12px 12px;display:flex;flex-direction:column;gap:10px}
+.oppCard{display:flex;gap:12px;align-items:center}
+.oppCard img{width:84px;aspect-ratio:1;object-fit:contain}
+.hidden-opp{display:flex;gap:12px;align-items:center;background:#24170e;border-radius:12px;padding:10px 12px;border:1px dashed #8a6a42}
+.hidden-opp .q{width:64px;height:64px;border-radius:50%;background:#33220f;display:flex;align-items:center;justify-content:center;font:28px var(--display);color:var(--straw);flex:none}
+.hidden-opp p{margin:0;font-size:13px;color:var(--muted)}
+.hidden-opp b{display:block;color:var(--ink);font-size:14px}
+
+.moves{display:flex;flex-direction:column;gap:8px}
+.mvd{background:#2f1e10;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.45}
+.mvd h4{margin:0 0 4px;font-size:14px;display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.mvd h4 em{font-style:normal;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--straw)}
+.mvd p{margin:0 0 4px;color:var(--ink)}
+.mvd ul{margin:4px 0 0;padding-left:18px;color:var(--muted)}
+.mvd li{margin:2px 0}
+
+/* arena */
+.arena{position:relative;width:100%;aspect-ratio:3/4;border-radius:18px;overflow:hidden;border:1px solid #8a5a2c;background:#120b06;container-type:inline-size}
+.scene{position:absolute;left:0;width:100%;aspect-ratio:9/16;top:-14cqw}
+.scene>.layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.crowd{transition:opacity .15s}
+.crowd.b{opacity:0}
+.scene.cheer .crowd.a{opacity:0}
+.scene.cheer .crowd.b{opacity:1}
+.fore{z-index:4}
+.floor{position:absolute;top:63.5%;width:38%;aspect-ratio:2/1;pointer-events:none;z-index:1}
+.floor.l{left:6%}.floor.r{right:6%}
+.arena::before{content:"";position:absolute;left:0;right:0;top:0;height:30%;background:linear-gradient(180deg,rgba(12,7,3,.85) 0%,rgba(12,7,3,.55) 60%,rgba(12,7,3,0) 100%);z-index:5;pointer-events:none}
+.hud{position:absolute;top:10px;left:10px;right:10px;display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:start;z-index:6}
+.hp{display:flex;flex-direction:column;gap:3px}
+.hp.r{align-items:flex-end;text-align:right}
+.hp .nm{font:13px var(--display);text-shadow:0 1px 2px #000}
+.hp .who{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;text-shadow:0 1px 2px #000;display:flex;align-items:center;gap:4px}
+.hp.r .who{flex-direction:row-reverse}
+.hp .who img{width:18px;height:18px}
+.bar{width:100%;height:10px;border-radius:6px;background:rgba(0,0,0,.6);overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.12)}
+.bar>i{position:absolute;top:0;bottom:0;border-radius:6px;transition:width .45s ease}
+.hp:not(.r) .bar>i{left:0}
+.hp.r .bar>i{right:0}
+.bar.life>i{background:var(--hp)}
+.bar.life.low>i{background:var(--hit)}
+.bar.ch{height:6px}
+.bar.ch>i{background:var(--straw)}
+.bar.ch.full>i{background:linear-gradient(90deg,#f2c35b,#fff1b8,#f2c35b);box-shadow:0 0 8px #f2c35b}
+.num{font-size:11px;color:var(--ink);font-variant-numeric:tabular-nums;text-shadow:0 1px 2px #000}
+.stat{display:flex;gap:3px;min-height:22px}
+.stat img{width:22px;height:22px}
+.rd{position:relative;width:64px;height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:10px var(--display);color:#ffe7ad;text-shadow:0 1px 2px #000}
+.rd img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:-1}
+.rd big{display:block;font-size:20px;color:var(--ink);line-height:1}
+.fighter{position:absolute;top:47%;width:38%;aspect-ratio:1;z-index:2;transition:transform .25s ease}
+.fighter.l{left:6%}
+.fighter.r{right:6%}
+.fighter img.body{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 6px rgba(0,0,0,.5))}
+.fighter.r img.body{transform:scaleX(-1)}
+.fighter.ko img.body{filter:grayscale(1) brightness(.45);opacity:.7;transform:translateY(8%) rotate(-6deg)}
+.fighter.l.lunge{transform:translateX(18%) rotate(4deg)}
+.fighter.r.lunge{transform:translateX(-18%) rotate(-4deg)}
+.fighter.guard{transform:scale(.95)}
+.fighter.guard img.body{filter:drop-shadow(0 0 12px #8fc7ff) drop-shadow(0 6px 6px rgba(0,0,0,.5))}
+.shield{position:absolute;top:2%;left:50%;transform:translateX(-50%);background:#183049;color:#bfe0ff;border:1px solid #8fc7ff;border-radius:999px;font-size:11px;padding:1px 7px;font-variant-numeric:tabular-nums;z-index:4;white-space:nowrap}
+.fx{position:absolute;left:50%;top:45%;width:92%;transform:translate(-50%,-50%) scale(.3);opacity:0;pointer-events:none;z-index:5;animation:fx 1s ease-out forwards}
+.fx.small{width:46%;top:18%;left:78%;animation-delay:.25s}
+.fighter.r .fx.small{left:22%}
+@keyframes fx{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}25%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}70%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.15)}}
+.float{position:absolute;left:50%;top:22%;transform:translateX(-50%);font:24px var(--display);color:var(--hit);text-shadow:0 2px 0 #000,0 0 6px #000;pointer-events:none;animation:up 1.2s ease-out forwards;z-index:6}
+.float.heal{color:var(--hp)}
+@keyframes up{from{opacity:1;transform:translate(-50%,0)}to{opacity:0;transform:translate(-50%,-50px)}}
+.shake{animation:shake .4s .15s}
+@keyframes shake{0%,100%{translate:0}20%{translate:-8px}40%{translate:7px}60%{translate:-5px}80%{translate:3px}}
+.intro{position:absolute;inset:0;z-index:8;flex-direction:column;gap:6px;display:flex;align-items:center;justify-content:center;background:rgba(10,6,3,.55);font:34px var(--display);color:var(--straw);text-shadow:0 3px 0 #000;animation:intro 1.6s ease forwards;pointer-events:none;text-align:center;line-height:1.1}
+.intro img{width:96px;height:96px;object-fit:contain}
+.intro small{display:block;font:14px var(--body);color:var(--ink);margin-top:6px}
+@keyframes intro{0%{opacity:0;transform:scale(1.3)}20%{opacity:1;transform:scale(1)}75%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fx,.float,.shake,.intro{animation-duration:.01s}.fx{opacity:0}.fighter{transition:none}.bar>i{transition:none}}
+
+.verdict{background:#24170e;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center}
+.mv{background:#33220f;border-radius:10px;padding:8px 4px;font-size:13px;font-weight:500;line-height:1.25}
+.mv small{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:400}
+.mv.won{outline:2px solid var(--straw)}
+.vs em{font:12px var(--display);color:var(--muted);font-style:normal}
+.why{text-align:center;font-weight:500}
+.why small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:2px}
+.turn{font:15px var(--display);text-align:center;margin:0}
+.pad{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.act{background:#2a1b10;border:2px solid #6e4a2c;border-radius:14px;padding:10px;text-align:left;display:flex;flex-direction:column;gap:2px;min-height:84px}
+.act em{font-style:normal;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:var(--straw)}
+.act b{font-size:15px;line-height:1.2}
+.act span{font-size:12px;color:var(--muted);line-height:1.3}
+.act.sp{border-color:var(--straw);background:linear-gradient(180deg,#5a3d12,#2a1b10)}
+.act:disabled{opacity:.45;cursor:not-allowed}
+.act:not(:disabled):active{transform:scale(.98)}
+.log{max-height:220px;overflow:auto;display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:13px}
+.log div{border-bottom:1px solid #3a2618;padding-bottom:4px}
+.log b{color:var(--ink)}
+
+.cover{position:fixed;inset:0;background:rgba(17,10,5,.95);display:flex;align-items:center;justify-content:center;padding:24px;z-index:10;overflow:auto}
+.cover[hidden]{display:none}
+.cover .box{max-width:360px;width:100%;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.cover h3{font:24px var(--display);margin:0;text-wrap:balance}
+.cover p{margin:0;color:var(--muted)}
+.cover img.rib{width:220px;align-self:center}
+.cta img,.ghost img{width:22px;height:22px;vertical-align:-5px;margin-right:6px}
+.hidden-opp .q img{width:56px;height:56px}
+.cover img.big{width:150px;aspect-ratio:1;object-fit:contain;align-self:center}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Арена · бой 1×1</h1>
+    <p>Демо на правилах боевого движка из документации игры. Числа стартовые, баланс будет меняться.</p>
+  </header>
+
+  <!-- SETUP -->
+  <section id="setup" class="panel" aria-label="Подготовка к бою">
+    <div class="seg" role="group" aria-label="Режим боя">
+      <button data-mode="bot" aria-pressed="true">Тренировка с ботом</button>
+      <button data-mode="async" aria-pressed="false">Случайный соперник</button>
+      <button data-mode="hot" aria-pressed="false">Вдвоём на телефоне</button>
+    </div>
+    <p class="modeNote" id="modeNote"></p>
+
+    <h2 id="p1title">Ваши курочки</h2>
+    <div class="roster" id="roster"></div>
+
+    <details class="sp" id="myMoves">
+      <summary id="myMovesTitle">Действия курочки</summary>
+      <div class="body moves" id="myMovesBody"></div>
+    </details>
+
+    <h2>Соперник</h2>
+    <div id="oppBox"></div>
+
+    <button class="cta" id="startBtn">В бой!</button>
+
+    <div class="rules" aria-label="Кто кого бьёт">
+      <div><b>Атака</b><span>ловит Манёвр, но упирается в Защиту</span></div>
+      <div><b>Защита</b><span>отбивает Атаку, но Манёвр её обходит</span></div>
+      <div><b>Манёвр</b><span>обходит Защиту, но попадает под Атаку</span></div>
+      <div><b>Спецнавык</b><span>после заряда 100; Защита ослабляет его вдвое</span></div>
+    </div>
+    <p class="note">Оба выбирают действие одновременно и втайне. Заряд копится каждый раунд: выиграл раунд +35, ничья +20, проиграл +15.</p>
+  </section>
+
+  <!-- BATTLE -->
+  <section id="battle" hidden aria-label="Бой">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="arena" id="arena">
+        <div class="scene" id="scene">
+          <img class="layer" src="arena/bg.webp" alt="">
+          <img class="layer crowd a" src="arena/crowdA.webp" alt="">
+          <img class="layer crowd b" src="arena/crowdB.webp" alt="">
+          <img class="floor l" id="floor0" src="arena/ring.webp" alt="">
+          <img class="floor r" src="arena/shadow.webp" alt="">
+          <div class="fighter l" id="f0"></div>
+          <div class="fighter r" id="f1"></div>
+          <img class="layer fore" src="arena/fore.webp" alt="">
+        </div>
+        <div class="hud">
+          <div class="hp" id="hud0"></div>
+          <div class="rd"><img src="ui/round.webp" alt="">Раунд<big id="roundNo">1</big></div>
+          <div class="hp r" id="hud1"></div>
+        </div>
+      </div>
+      <div class="verdict" id="verdict"></div>
+      <p class="turn" id="turnLabel"></p>
+      <div class="pad" id="pad"></div>
+      <details class="sp">
+        <summary id="padHelpTitle">Подробно о действиях</summary>
+        <div class="body moves" id="padHelp"></div>
+      </details>
+      <details class="sp" id="oppHelpBox">
+        <summary id="oppHelpTitle">Действия соперника</summary>
+        <div class="body moves" id="oppHelp"></div>
+      </details>
+      <details class="sp">
+        <summary>Журнал боя</summary>
+        <div class="body"><div class="log" id="log"></div></div>
+      </details>
+      <button class="ghost" id="quitBtn">Выйти из боя</button>
+    </div>
+  </section>
+</div>
+
+<div class="cover" id="cover" hidden>
+  <div class="box" id="coverBox"></div>
+</div>
+
+<script>
+/* ===== Battle Engine: tools/arena-engine.mjs (QuRa-Game-Design), numbers unchanged ===== */
+const HEROES=[
+{id:'r',name:'Ряба',hp:108,attack:24,defense:21,speed:18},
+{id:'b',name:'Боевик',hp:112,attack:26,defense:23,speed:14},
+{id:'f',name:'Дурочка',hp:102,attack:24,defense:17,speed:26},
+{id:'p',name:'Профессор',hp:102,attack:25,defense:19,speed:22},
+{id:'m',name:'Монах',hp:110,attack:21,defense:24,speed:15},
+{id:'g',name:'Гламурочка',hp:102,attack:23,defense:19,speed:24}];
+const ACTIONS=['attack','defend','maneuver','special'];
+const num=v=>Math.max(0,Math.round(v));
+function createFighter(id){const h=HEROES.find(x=>x.id===id);return{id,name:h.name,hp:h.hp,maxHp:h.hp,a:h.attack,d:h.defense,s:h.speed,q:0,shield:0,boost:0,weaken:0,dead:false}}
+function legal(f){return f&&!f.dead&&f.hp>0?(f.q>=100?ACTIONS:ACTIONS.slice(0,3)):[]}
+function take(f,raw){let n=Math.max(0,raw);if(f.shield>0){const ab=Math.min(f.shield,n);f.shield-=ab;n-=ab}const hp=num(n);f.hp=Math.max(0,f.hp-hp);f.dead=f.hp===0;return hp}
+function charge(f,v){f.q=Math.min(100,Math.max(0,f.q+v))}
+function baseDamage(a,d,m=1){let v=(20+1.15*a.a-.72*d.d)*m;if(a.boost){v*=1+a.boost;a.boost=0}if(a.weaken){v*=1-a.weaken;a.weaken=0}return Math.max(5,v)}
+function hit(a,d,m=1){return take(d,baseDamage(a,d,m))}
+function counter(d,a){return take(a,15+.45*d.d-.18*a.d)}
+function maneuver(c,e){
+ if(c.id==='r'){c.shield+=10;return take(e,24)}
+ if(c.id==='b'){c.boost=Math.max(c.boost,.18);return take(e,25)}
+ if(c.id==='f'){c.boost=Math.max(c.boost,.20);return take(e,31)}
+ if(c.id==='p'){e.q=Math.max(0,e.q-18);return take(e,26)}
+ if(c.id==='m'){c.hp=Math.min(c.maxHp,c.hp+12);return take(e,24)}
+ e.weaken=Math.max(e.weaken,.22);return take(e,27)}
+function special(c,e,defended,rng){
+ c.q=0;
+ if(c.id==='r'){c.shield+=defended?14:18;return take(e,defended?11:25)}
+ if(c.id==='b')return take(e,46*(defended?.45:1));
+ if(c.id==='f')return take(e,(rng<.10?0:rng<.35?58:43)*(defended?.45:1));
+ if(c.id==='p')return take(e,45*(defended?.5:1));
+ if(c.id==='m'){c.hp=Math.min(c.maxHp,c.hp+27);return take(e,18*(defended?.5:1))}
+ e.weaken=Math.max(e.weaken,.30);return take(e,41*(defended?.5:1))}
+function resolveClash(a,b,ma,mb,rv=.5){
+ let da=0,db=0,w=0;
+ if(ma==='special'||mb==='special'){
+  if(ma==='special')da+=special(a,b,mb==='defend',rv);
+  if(mb==='special')db+=special(b,a,ma==='defend',1-rv);
+  if(ma==='attack')da+=hit(a,b,.35);
+  if(mb==='attack')db+=hit(b,a,.35);
+  if(ma==='maneuver')da+=maneuver(a,b);
+  if(mb==='maneuver')db+=maneuver(b,a);
+ }else if(ma===mb){
+  if(ma==='attack'){da+=hit(a,b,a.s>b.s?1.10:1);db+=hit(b,a,b.s>a.s?1.10:1)}
+  if(ma==='maneuver'){if(a.s>=b.s){da+=maneuver(a,b);db+=hit(b,a,.45);w=1}else{db+=maneuver(b,a);da+=hit(a,b,.45);w=2}}
+ }else{
+  const k=ma[0]+mb[0];
+  if(k==='am'){da=hit(a,b,1.45);w=1}
+  else if(k==='ma'){db=hit(b,a,1.45);w=2}
+  else if(k==='md'){da=maneuver(a,b);w=1}
+  else if(k==='dm'){db=maneuver(b,a);w=2}
+  else if(k==='da'){db=hit(b,a,.22);da=counter(a,b);w=1}
+  else if(k==='ad'){da=hit(a,b,.22);db=counter(b,a);w=2}
+ }
+ if(!w){if(da>db+5)w=1;else if(db>da+5)w=2}
+ charge(a,w===1?35:w===2?15:20);charge(b,w===2?35:w===1?15:20);
+ return{ma,mb,w}}
+function evaluate(a,b,x,y){const ca={...a},cb={...b};resolveClash(ca,cb,x,y,.5);
+ return((cb.hp-b.hp)-(ca.hp-a.hp))+.28*(ca.hp-a.hp-cb.hp+b.hp)+.22*(ca.shield-a.shield-cb.shield+b.shield)+.09*(ca.q-a.q-cb.q+b.q)+(cb.dead?50:0)-(ca.dead?50:0)}
+function equilibrium(a,b,it=24){
+ const la=legal(a),lb=legal(b),sc=la.map(x=>lb.map(y=>evaluate(a,b,x,y)));
+ let pa=la.map(()=>1/la.length),pb=lb.map(()=>1/lb.length),avA=pa.map(()=>0);
+ for(let t=0;t<it;t++){
+  for(let i=0;i<pa.length;i++)avA[i]+=pa[i]/it;
+  const va=pa.map((_,i)=>sc[i].reduce((z,s,j)=>z+s*pb[j],0));
+  const vb=pb.map((_,j)=>-sc.reduce((z,row,i)=>z+row[j]*pa[i],0));
+  const eta=.025,na=va.map(v=>Math.exp(Math.max(-20,Math.min(20,eta*v)))),nb=vb.map(v=>Math.exp(Math.max(-20,Math.min(20,eta*v))));
+  pa=pa.map((p,i)=>p*na[i]);pb=pb.map((p,j)=>p*nb[j]);
+  const za=pa.reduce((x,y)=>x+y),zb=pb.reduce((x,y)=>x+y);pa=pa.map(x=>x/za);pb=pb.map(x=>x/zb)}
+ return{actions:la,probabilities:avA}}
+function botMove(bot,enemy){const m=equilibrium(bot,enemy),v=Math.random();let s=0;for(let i=0;i<m.actions.length;i++){s+=m.probabilities[i];if(v<=s)return m.actions[i]}return m.actions[m.actions.length-1]}
+const TACTICS={aggressive:{name:'Агрессивная',w:{attack:4,defend:1,maneuver:2,special:3}},cautious:{name:'Осторожная',w:{attack:2,defend:4,maneuver:2,special:3}},tricky:{name:'Хитрая',w:{attack:2,defend:2,maneuver:4,special:3}}};
+function defenseMove(f,tactic){const moves=legal(f),w=TACTICS[tactic].w,total=moves.reduce((n,k)=>n+w[k],0);let x=Math.random()*total;for(const m of moves){x-=w[m];if(x<=0)return m}return moves[moves.length-1]}
+
+/* ===== Texts ===== */
+const INFO={
+ r:{role:'Универсал',man:'Скорлупа',sp:'Золотая скорлупа',
+    manDo:'Ряба прячется в скорлупу и клюёт из-за неё: <b>24 урона</b> сопернику и <b>щит 10</b> себе. Щит поглощает следующий входящий урон, пока не кончится.',
+    spDo:'Золотая скорлупа закрывает Рябу целиком: <b>25 урона</b> и <b>щит 18</b>. Если соперник в Защите: 11 урона и щит 14. Хороша, чтобы пережить сильный ответный удар.',
+    manShort:'24 урона и щит 10',spShort:'25 урона и щит 18'},
+ b:{role:'Танк-боец',man:'Провокация',sp:'Ответочка',
+    manDo:'Боевик дразнит соперника и бьёт: <b>25 урона</b>. Его <b>следующая Атака сильнее на 18%</b>.',
+    spDo:'Самый тяжёлый удар в игре: <b>46 урона</b>. Если соперник в Защите, пройдёт только 21.',
+    manShort:'25 урона, следующая Атака +18%',spShort:'46 урона'},
+ f:{role:'Риск и скорость',man:'Финт',sp:'Авось!',
+    manDo:'Дурочка делает обманное движение и бьёт: <b>31 урон</b>, это самый сильный Манёвр. Её <b>следующая Атака сильнее на 20%</b>.',
+    spDo:'Лотерея. С шансом 10% промах и 0 урона, 65% — <b>43 урона</b>, 25% — <b>58 урона</b>. Защита соперника срезает урон примерно вдвое.',
+    manShort:'31 урон, следующая Атака +20%',spShort:'43 или 58 урона, может промахнуться'},
+ p:{role:'Контроль',man:'Анализ',sp:'Расчёт',
+    manDo:'Профессор находит слабое место: <b>26 урона</b> и соперник <b>теряет 18 заряда</b> спецнавыка. Отодвигает его Спецнавык на раунд.',
+    spDo:'Точно рассчитанный удар: <b>45 урона</b>. Если соперник в Защите — 22.',
+    manShort:'26 урона, у соперника −18 заряда',spShort:'45 урона'},
+ m:{role:'Выживание',man:'Медитация',sp:'Благодать',
+    manDo:'Монах бьёт и восстанавливает силы: <b>24 урона</b> сопернику и <b>лечит себе 12 HP</b>.',
+    spDo:'Волна света: <b>лечит Монаха на 27 HP</b> и наносит <b>18 урона</b>. Лечение работает даже против Защиты, урон тогда 9.',
+    manShort:'24 урона и лечение 12 HP',spShort:'лечение 27 HP и 18 урона'},
+ g:{role:'Ослабление',man:'Позирование',sp:'Ослепительный выход',
+    manDo:'Гламурочка эффектно позирует и бьёт: <b>27 урона</b>. Соперник засмотрелся: его <b>следующая Атака слабее на 22%</b>.',
+    spDo:'Ослепляет соперника: <b>41 урон</b>, и его <b>следующая Атака слабее на 30%</b>. Если соперник в Защите — 20 урона.',
+    manShort:'27 урона, Атака соперника −22%',spShort:'41 урон, Атака соперника −30%'}};
+const img=id=>'img/'+id+'.webp';
+const fxImg=n=>'fx/'+n+'.webp';
+function atkDmg(me,opp){return Math.round(Math.max(5,20+1.15*me.attack-.72*opp.defense))}
+function movesHTML(id,oppId){
+ const h=HEROES.find(x=>x.id===id),i=INFO[id],o=oppId?HEROES.find(x=>x.id===oppId):{defense:20,attack:24},vsTxt=oppId?'против '+o.name:'против средней курочки';
+ const base=atkDmg(h,o),counterDmg=Math.round(15+.45*h.defense-.18*o.defense);
+ return `
+ <div class="mvd"><h4><em>Атака</em>Удар клювом</h4>
+  <p>Прямой удар. Сила зависит от Атаки курочки и Защиты соперника: ${vsTxt} это около <b>${base} урона</b>.</p>
+  <ul><li>Против Манёвра: попадает с силой ×1,45 (≈${Math.round(base*1.45)}), раунд ваш.</li>
+  <li>Против Атаки: обе бьют, у кого выше Скорость, бьёт на 10% сильнее.</li>
+  <li>Против Защиты: проходит только ×0,22 (≈${Math.max(5,Math.round(base*.22))}), а вы получаете контрудар. Раунд проигран.</li>
+  <li>Против Спецнавыка: успеваете ударить ×0,35 (≈${Math.round(base*.35)}).</li></ul></div>
+ <div class="mvd"><h4><em>Защита</em>Блок</h4>
+  <p>Курочка закрывается. Сама по себе урон не наносит.</p>
+  <ul><li>Против Атаки: блок и контрудар на ≈${counterDmg}. Раунд ваш.</li>
+  <li>Против Манёвра: Манёвр обходит Защиту, вы получаете его урон. Раунд проигран.</li>
+  <li>Против Спецнавыка: срезает его урон примерно вдвое.</li>
+  <li>Обе в Защите: ничего не происходит, каждой +20 заряда.</li></ul></div>
+ <div class="mvd"><h4><em>Манёвр</em>${i.man}</h4>
+  <p>${i.manDo}</p>
+  <ul><li>Против Защиты: проходит полностью, раунд ваш.</li>
+  <li>Против Атаки: Манёвр сорван, вы получаете удар ×1,45.</li>
+  <li>Против Манёвра: срабатывает у того, кто быстрее, медленная получает слабый удар.</li></ul></div>
+ <div class="mvd"><h4><em>Спецнавык</em>${i.sp}</h4>
+  <p>${i.spDo}</p>
+  <ul><li>Доступен, когда заряд дошёл до 100. После применения заряд обнуляется.</li>
+  <li>Соперник не может его «поймать»: Атака и Манёвр против него просто срабатывают обе.</li></ul></div>`;
+}
+
+/* ===== State & UI ===== */
+const $=s=>document.querySelector(s);
+const NAMES_ASYNC=['Кура_777','НесушкаПро','Петя_Гребешок','ЯйцоФаберже','КлювоГрыз'];
+let drained=[false,false],mode='bot',myPick='r',opp={id:null,tactic:null,nick:null},p2Pick=null,F=[],round=1,choice=[null,null],turn=0,over=false;
+const sideName=k=>k===0?(mode==='hot'?'Игрок 1':'Вы'):(mode==='bot'?'Бот':mode==='async'?opp.nick:'Игрок 2');
+const CAT={attack:'Атака',defend:'Защита',maneuver:'Манёвр',special:'Спецнавык'};
+function moveName(f,m){return m==='attack'?'Удар клювом':m==='defend'?'Блок':m==='maneuver'?INFO[f.id].man:INFO[f.id].sp}
+
+function rollOpponent(){
+ const ids=HEROES.map(h=>h.id);opp.id=ids[Math.floor(Math.random()*ids.length)];
+ const t=Object.keys(TACTICS);opp.tactic=t[Math.floor(Math.random()*t.length)];
+ opp.nick=NAMES_ASYNC[Math.floor(Math.random()*NAMES_ASYNC.length)];
+}
+function setMode(m){mode=m;rollOpponent();p2Pick=null;renderSetup()}
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+
+function renderSetup(){
+ document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===mode));
+ $('#modeNote').textContent=mode==='bot'?'Бот уже выбрал курочку и играет в полную силу. Его выбор можно подсмотреть.':mode==='async'?'Атакуете курочку случайного игрока вашего уровня. Он не в сети: за него играет его тактика защиты. Кто вам попался, вы узнаете в начале боя.':'Игрок 1 выбирает курочку, потом передаёт телефон игроку 2. Выбор соперника скрыт.';
+ $('#p1title').textContent=mode==='hot'?'Курочки игрока 1':'Ваши курочки';
+ const box=$('#roster');box.innerHTML='';
+ HEROES.forEach(h=>{const b=document.createElement('button');b.className='hen';b.setAttribute('aria-pressed',myPick===h.id);
+  b.innerHTML='<img src="'+img(h.id)+'" alt=""><b>'+h.name+'</b><small>ур. 4 · '+INFO[h.id].role+'</small><span class="stats">❤'+h.hp+' ⚔'+h.attack+' 🛡'+h.defense+' ⚡'+h.speed+'</span>';
+  b.onclick=()=>{myPick=h.id;renderSetup()};box.appendChild(b)});
+ const me=HEROES.find(h=>h.id===myPick);
+ $('#myMovesTitle').textContent='Все 4 действия: '+me.name;
+ $('#myMovesBody').innerHTML=movesHTML(myPick,null);
+ const ob=$('#oppBox');
+ if(mode==='bot'){const o=HEROES.find(h=>h.id===opp.id);
+  ob.innerHTML='<details class="sp"><summary>Бот выбрал курочку</summary><div class="body"><div class="oppCard"><img src="'+img(o.id)+'" alt=""><div><b>'+o.name+'</b><br><span class="stats">ур. 4 · '+INFO[o.id].role+'<br>❤'+o.hp+' ⚔'+o.attack+' 🛡'+o.defense+' ⚡'+o.speed+'</span></div></div><div class="moves">'+movesHTML(o.id,myPick)+'</div></div></details>';
+ }else if(mode==='async'){
+  ob.innerHTML='<div class="hidden-opp"><div class="q"><img src="ui/live.webp" alt=""></div><div><b>Живой игрок вашего уровня</b><p>Курочка и тактика защиты соперника откроются, когда начнётся бой.</p></div></div>';
+ }else{
+  ob.innerHTML='<div class="hidden-opp"><div class="q">?</div><div><b>Игрок 2</b><p>Выберет свою курочку на своём ходу. Вы её не увидите, пока не начнётся бой.</p></div></div>';
+ }
+ $('#startBtn').textContent=mode==='hot'?'Передать телефон игроку 2':'В бой!';
+}
+
+$('#startBtn').onclick=()=>{
+ if(mode!=='hot'){startBattle(myPick,opp.id);return}
+ coverP2Pick();
+};
+function coverP2Pick(){
+ let pick=p2Pick||'b';
+ const draw=()=>{
+  cover('<h3>Игрок 2, выберите курочку</h3><p>Курочка игрока 1 скрыта.</p><div class="roster" id="r2"></div><button class="cta" id="p2go">В бой!</button>');
+  const r2=$('#r2');HEROES.forEach(h=>{const b=document.createElement('button');b.className='hen';b.setAttribute('aria-pressed',pick===h.id);
+   b.innerHTML='<img src="'+img(h.id)+'" alt=""><b>'+h.name+'</b><small>'+INFO[h.id].role+'</small>';b.onclick=()=>{pick=h.id;draw()};r2.appendChild(b)});
+  $('#p2go').onclick=()=>{p2Pick=pick;uncover();startBattle(myPick,pick)};
+ };draw();
+}
+
+function hudHTML(k){
+ const f=F[k],pct=Math.round(f.hp/f.maxHp*100);
+ const badge=k===1&&mode==='bot'?'bot':k===1&&mode==='async'?'live':null;
+ const st=(f.boost?'<img src="ui/s_boost.webp" alt="Атака усилена" title="Следующая Атака усилена">':'')+(f.weaken?'<img src="ui/s_weak.webp" alt="Атака ослаблена" title="Следующая Атака ослаблена">':'')+(drained[k]?'<img src="ui/s_drain.webp" alt="Заряд сожжён" title="Соперник сжёг заряд">':'');
+ return '<span class="who">'+(badge?'<img src="ui/'+badge+'.webp" alt="">':'')+sideName(k)+'</span><span class="nm">'+f.name+'</span>'+
+ '<div class="bar life'+(pct<30?' low':'')+'"><i style="width:'+pct+'%"></i></div><span class="num">'+f.hp+'/'+f.maxHp+' HP</span>'+
+ '<div class="bar ch'+(f.q>=100?' full':'')+'"><i style="width:'+f.q+'%"></i></div><span class="num">Заряд '+f.q+'/100</span><div class="stat">'+st+'</div>';
+}
+function fighterHTML(k){const f=F[k];return '<img class="body" src="'+img(f.id)+'" alt="'+f.name+'">'+(f.shield>0?'<span class="shield">щит '+Math.round(f.shield)+'</span>':'')}
+function renderStage(){[0,1].forEach(k=>{$('#hud'+k).innerHTML=hudHTML(k);const el=$('#f'+k);el.classList.toggle('ko',F[k].dead);el.innerHTML=fighterHTML(k)});$('#roundNo').textContent=round}
+
+function renderPad(){
+ const pad=$('#pad');pad.innerHTML='';
+ if(over){$('#turnLabel').textContent='';return}
+ const me=F[turn];
+ $('#turnLabel').textContent=mode==='hot'?'Ходит игрок '+(turn+1)+' · '+me.name:'Ваш ход · '+me.name;
+ ACTIONS.forEach(a=>{const b=document.createElement('button');b.className='act'+(a==='special'?' sp':'');
+  const ok=legal(me).includes(a);b.disabled=!ok;
+  const sub=a==='attack'?'ловит Манёвр':a==='defend'?'отбивает Атаку':a==='maneuver'?INFO[me.id].manShort+' · обходит Защиту':(ok?INFO[me.id].spShort:'нужен заряд 100, сейчас '+me.q);
+  b.innerHTML='<em>'+CAT[a]+'</em><b>'+moveName(me,a)+'</b><span>'+sub+'</span>';
+  b.onclick=()=>choose(a);pad.appendChild(b)});
+ $('#padHelpTitle').textContent='Подробно о действиях: '+me.name;
+ $('#padHelp').innerHTML=movesHTML(me.id,F[1-turn].id);
+ const o=F[1-turn];$('#oppHelpTitle').textContent='Действия соперника: '+o.name;$('#oppHelp').innerHTML=movesHTML(o.id,me.id);
+}
+function setVerdict(html){$('#verdict').innerHTML=html}
+
+function startBattle(a,b){
+ F=[createFighter(a),createFighter(b)];drained=[false,false];round=1;choice=[null,null];turn=0;over=false;$('#log').innerHTML='';
+ $('#setup').hidden=true;$('#battle').hidden=false;window.scrollTo(0,0);
+ renderStage();renderPad();
+ const intro=document.createElement('div');intro.className='intro';
+ intro.innerHTML='<span>'+F[0].name+'</span><img src="ui/vs.webp" alt="против"><span>'+F[1].name+'</span><small>'+(mode==='async'?'Соперник: '+opp.nick+' · тактика защиты скрыта':mode==='bot'?'Тренировка с ботом':'Бой вдвоём')+'</small>';
+ $('#arena').appendChild(intro);setTimeout(()=>intro.remove(),1700);
+ setVerdict('<div class="why">Выберите действие. Соперник выбирает одновременно и втайне.<small>Главное — угадать ход соперника. Сила удара важна меньше.</small></div>');
+}
+$('#quitBtn').onclick=()=>{$('#battle').hidden=true;$('#setup').hidden=false;rollOpponent();renderSetup()};
+
+function cover(html){$('#coverBox').innerHTML=html;$('#cover').hidden=false;$('#cover').scrollTop=0}
+function uncover(){$('#cover').hidden=true}
+
+function choose(a){
+ choice[turn]=a;
+ if(mode==='bot'){choice[1]=botMove(F[1],F[0]);resolve();return}
+ if(mode==='async'){choice[1]=defenseMove(F[1],opp.tactic);resolve();return}
+ if(turn===0){turn=1;
+  cover('<h3>Ход игрока 2</h3><img class="big" src="'+img(F[1].id)+'" alt=""><p>Игрок 1 выбрал действие и спрятал его. Передайте телефон.</p><button class="cta" id="okP2">Я игрок 2, показать мои кнопки</button>');
+  $('#okP2').onclick=()=>{uncover();renderPad();window.scrollTo(0,0)};
+ }else{turn=0;resolve()}
+}
+
+function why(r,a,b){
+ if(r.ma==='special'||r.mb==='special'){
+  const both=r.ma==='special'&&r.mb==='special';
+  const def=(r.ma==='special'&&r.mb==='defend')||(r.mb==='special'&&r.ma==='defend');
+  return[both?'Оба применили Спецнавык':'Спецнавык: '+(r.ma==='special'?a.name:b.name),def?'Защита примерно вдвое ослабила его.':'Спецнавык прошёл в полную силу.']}
+ if(r.ma===r.mb){
+  if(r.ma==='attack')return['Обмен ударами','Обе атаковали. Кто быстрее, бьёт на 10% сильнее.'];
+  if(r.ma==='defend')return['Обе в защите','Никто не ударил. Заряд +20 обеим.'];
+  return['Манёвр против Манёвра','Быстрее оказалась '+(r.w===1?a.name:b.name)+'.']}
+ const k=r.ma[0]+r.mb[0];
+ return({am:['Атака поймала Манёвр','Удар ×1,45.'],ma:['Атака поймала Манёвр','Удар ×1,45.'],md:['Манёвр обошёл Защиту','Защита не помогла.'],dm:['Манёвр обошёл Защиту','Защита не помогла.'],da:['Защита отбила Атаку','Блок и контрудар.'],ad:['Защита отбила Атаку','Блок и контрудар.']})[k];
+}
+
+function addFx(k,name,small){const f=$('#f'+k);if(!f)return;const im=document.createElement('img');im.className='fx'+(small?' small':'');im.src=fxImg(name);im.alt='';f.appendChild(im);setTimeout(()=>im.remove(),1400)}
+function addFloat(k,v){if(!v)return;const f=$('#f'+k);const s=document.createElement('span');s.className='float'+(v<0?' heal':'');s.textContent=(v>0?'−':'+')+Math.abs(v);f.appendChild(s)}
+
+function resolve(){
+ const a=F[0],b=F[1];
+ const before=[a,b].map(f=>({hp:f.hp,q:f.q,shield:f.shield,boost:f.boost,weaken:f.weaken}));
+ const ca=choice[0],cb=choice[1],rv=Math.random();
+ // lunge animation before numbers land
+ [0,1].forEach(k=>{const m=k?cb:ca;$('#f'+k).classList.toggle('lunge',m!=='defend');$('#f'+k).classList.toggle('guard',m==='defend')});
+ setTimeout(()=>{
+  const r=resolveClash(a,b,ca,cb,rv);
+  const d=[before[0].hp-a.hp,before[1].hp-b.hp];
+  drained=[0,1].map(k=>{const oppM=k?ca:cb,myM=k?cb:ca,oppSide=k?1:2;return F[1-k].id==='p'&&oppM==='maneuver'&&myM!=='attack'&&!(myM==='maneuver'&&r.w!==oppSide)});
+  renderStage();
+  if(Math.max(d[0],d[1])>=20||a.dead||b.dead){const sc=$('#scene');sc.classList.add('cheer');setTimeout(()=>sc.classList.remove('cheer'),900)}
+  [0,1].forEach(k=>$('#f'+k).classList.remove('lunge','guard'));
+  // FX per side
+  [0,1].forEach(k=>{
+   const me=F[k],op=F[1-k],myM=k?cb:ca,opM=k?ca:cb,bf=before[k],obf=before[1-k];
+   let main=null;
+   if(opM==='special'){main=(op.id==='f'&&d[k]===0)?'miss':'sp_'+op.id}
+   else if(myM==='defend'&&opM==='attack')main='block';
+   else if(myM==='attack'&&opM==='defend'&&d[k]>0)main='counter';
+   else if(d[k]>0&&opM==='maneuver')main='dash';
+   else if(d[k]>0)main=d[k]>=30?'hit2':'hit';
+   if(me.dead)main='ko';
+   if(main)addFx(k,main,false);
+   if(me.shield>bf.shield+0.5)addFx(k,'shield',true);
+   else if(me.hp>bf.hp)addFx(k,'heal',true);
+   else if(me.boost>bf.boost)addFx(k,'boost',true);
+   else if(me.weaken>bf.weaken)addFx(k,'weaken',true);
+   else if(myM!=='special'&&me.q<bf.q&&opM==='maneuver')addFx(k,'drain',true);
+   if(d[k]>0){$('#f'+k).classList.remove('shake');void $('#f'+k).offsetWidth;$('#f'+k).classList.add('shake')}
+   addFloat(k,d[k]);
+  });
+  const [t,s]=why(r,a,b),win=r.w===1?sideName(0):r.w===2?sideName(1):null;
+  setVerdict('<div class="vs"><div class="mv'+(r.w===1?' won':'')+'"><small>'+CAT[ca]+'</small>'+moveName(a,ca)+'</div><em>VS</em><div class="mv'+(r.w===2?' won':'')+'"><small>'+CAT[cb]+'</small>'+moveName(b,cb)+'</div></div>'+
+   '<div class="why">'+t+(win?' · раунд за: '+win:' · ничья в раунде')+'<small>'+s+' '+a.name+': '+fmt(d[0])+'. '+b.name+': '+fmt(d[1])+'.</small></div>');
+  const L=document.createElement('div');L.innerHTML='<b>Раунд '+round+'.</b> '+moveName(a,ca)+' против '+moveName(b,cb)+'. '+t+'. '+a.name+' '+fmt(d[0])+', '+b.name+' '+fmt(d[1])+'.';$('#log').prepend(L);
+  choice=[null,null];turn=0;
+  if(a.dead||b.dead||round>=30){over=true;renderPad();setTimeout(()=>finish(a,b),1300);return}
+  round++;$('#roundNo').textContent=round;renderPad();
+ },320);
+ $('#pad').querySelectorAll('button').forEach(x=>x.disabled=true);
+}
+function fmt(d){return d>0?'−'+d+' HP':d<0?'+'+(-d)+' HP':'без урона'}
+
+function finish(a,b){
+ const w=a.dead&&b.dead?0:a.dead?2:b.dead?1:(a.hp/a.maxHp>b.hp/b.maxHp?1:b.hp/b.maxHp>a.hp/a.maxHp?2:0);
+ const title=w===0?'Ничья':(mode==='hot'?'Победил игрок '+w:(w===1?'Победа!':'Поражение'));
+ const hero=w?F[w-1]:null;
+ const tac=mode==='async'?'<p style="display:flex;gap:10px;align-items:center;justify-content:center"><img src="ui/t_'+opp.tactic+'.webp" alt="" style="width:44px;height:44px">Соперник '+opp.nick+' защищался тактикой «'+TACTICS[opp.tactic].name+'».</p>':'';
+ const rib=w===0?'draw':(mode==='hot'||w===1)?'win':'lose';
+ cover('<img class="rib" src="ui/'+rib+'.webp" alt=""><h3>'+title+'</h3>'+(hero?'<img class="big" src="'+img(hero.id)+'" alt="">':'')+'<p>Бой длился '+round+' '+plural(round)+'.'+(hero?' '+hero.name+' осталась с '+hero.hp+' HP.':'')+'</p>'+tac+'<button class="cta" id="again"><img src="ui/rematch.webp" alt="">Ещё бой</button><button class="ghost" id="change">К выбору курочек</button>');
+ $('#again').onclick=()=>{uncover();if(mode==='hot')startBattle(F[0].id,F[1].id);else{rollOpponent();startBattle(myPick,opp.id)}};
+ $('#change').onclick=()=>{uncover();$('#quitBtn').click()};
+}
+function plural(n){const m=n%10,h=n%100;return m===1&&h!==11?'раунд':m>=2&&m<=4&&(h<12||h>14)?'раунда':'раундов'}
+
+// preload fx
+['hit','hit2','block','counter','dash','sp_r','sp_b','sp_f','sp_p','sp_m','sp_g','shield','heal','boost','weaken','drain','miss','ko'].forEach(n=>{const i=new Image();i.src=fxImg(n)});
+rollOpponent();renderSetup();
+</script>
+</body>
+</html>
