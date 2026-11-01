@@ -1,0 +1,5667 @@
+{
+  "schema_version": 1,
+  "batch": "characters_v12_web",
+  "status": "QA",
+  "source_status": "standing wardrobe corrected; other poses and emotions require separate QA",
+  "source_library_file_id": "libfile_7567c5743e348191814cc91cd3ca3831",
+  "source_library_version": 1,
+  "figma": {
+    "file_key": "pTm5JOM8r7b8ukBrk3UsXg",
+    "page_id": "219:2",
+    "full_board": "235:142",
+    "no_bag_board": "248:178",
+    "clothing_catalogue": "248:279",
+    "full_rigs": {
+      "C01": "235:148",
+      "C02": "235:216",
+      "C03": "235:296",
+      "C04": "235:372",
+      "C05": "235:449",
+      "C06": "235:541"
+    },
+    "no_bag_rigs": {
+      "C01": "248:184",
+      "C02": "248:200",
+      "C03": "248:216",
+      "C04": "248:233",
+      "C05": "248:249",
+      "C06": "248:265"
+    },
+    "page_name": "31_WARDROBE_STUDIO_v12",
+    "accessory_rules_board": "260:208"
+  },
+  "coordinate_system": {
+    "png": [
+      1200,
+      1520
+    ],
+    "webp": [
+      600,
+      760
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "trim": false,
+    "web_scale": 0.5
+  },
+  "counts": {
+    "unchanged_original_png": 95,
+    "extra_undressed_bodies": 6,
+    "existing_bare_base_heads": 6,
+    "existing_emotion_head_variants": 40,
+    "emotion_expressions": 24,
+    "png": 147,
+    "webp": 147,
+    "equipment_groups": 35,
+    "equipment_parts": 49,
+    "default_anatomy_parts": 28,
+    "default_layers": 77
+  },
+  "composition_contract": "Use the interleaved default_layers recipe. A flat undressed body is a preview fallback, not a substitute for torso/head/wings/legs in an equipped assembly. Swapping footwear must follow footwear_policy. Never crop the registration canvas.",
+  "characters": {
+    "ryaba": {
+      "source_character": "C01",
+      "title": "Ряба",
+      "default_items": [
+        "C01/boots",
+        "C01/vest",
+        "C01/bag",
+        "C01/hat",
+        "C01/glasses"
+      ],
+      "default_layers": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_09_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "ryaba_c01_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "ryaba_heads_ryaba_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "ryaba_body_full_ryaba_png",
+      "full_file_id": "ryaba_c01_card_png",
+      "clothing_only_file_id": "ryaba_c01_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": true,
+        "crocs_replace_full_legs_with_upper_legs": false,
+        "sandals_keep_bare_legs_between_platform_and_straps": false,
+        "rings_and_anklets_keep_bare_legs": false
+      }
+    },
+    "fighter": {
+      "source_character": "C02",
+      "title": "Боевик",
+      "default_items": [
+        "C02/water_toy",
+        "C02/boots",
+        "C02/vest",
+        "C02/cartridges",
+        "C02/bandana",
+        "C02/aviators"
+      ],
+      "default_layers": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "fighter_c02_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "fighter_heads_fighter_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "fighter_body_full_fighter_png",
+      "full_file_id": "fighter_c02_card_png",
+      "clothing_only_file_id": "fighter_c02_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": true,
+        "crocs_replace_full_legs_with_upper_legs": false,
+        "sandals_keep_bare_legs_between_platform_and_straps": false,
+        "rings_and_anklets_keep_bare_legs": false
+      }
+    },
+    "fool": {
+      "source_character": "C03",
+      "title": "Дурочка",
+      "default_items": [
+        "C03/vest",
+        "C03/shopper_flute",
+        "C03/beads",
+        "C03/scarf",
+        "C03/glasses",
+        "C03/ring07"
+      ],
+      "default_layers": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "file_id": "fool_c03_layers_10_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "fool_c03_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "fool_heads_fool_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "fool_body_full_fool_png",
+      "full_file_id": "fool_c03_card_png",
+      "clothing_only_file_id": "fool_c03_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": false,
+        "crocs_replace_full_legs_with_upper_legs": false,
+        "sandals_keep_bare_legs_between_platform_and_straps": false,
+        "rings_and_anklets_keep_bare_legs": true
+      }
+    },
+    "professor": {
+      "source_character": "C04",
+      "title": "Профессор",
+      "default_items": [
+        "C04/crocs",
+        "C04/coat",
+        "C04/satchel",
+        "C04/magnifier",
+        "C04/pencil",
+        "C04/glasses"
+      ],
+      "default_layers": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "file_id": "professor_c04_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "professor_c04_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "professor_heads_professor_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "professor_body_full_professor_png",
+      "full_file_id": "professor_c04_card_png",
+      "clothing_only_file_id": "professor_c04_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": false,
+        "crocs_replace_full_legs_with_upper_legs": true,
+        "sandals_keep_bare_legs_between_platform_and_straps": false,
+        "rings_and_anklets_keep_bare_legs": false
+      }
+    },
+    "monk": {
+      "source_character": "C05",
+      "title": "Монах",
+      "default_items": [
+        "C05/sandals",
+        "C05/robe",
+        "C05/cloth_bag",
+        "C05/beads",
+        "C05/hat",
+        "C05/third_eye"
+      ],
+      "default_layers": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_13_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "monk_c05_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "monk_heads_monk_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "monk_body_full_monk_png",
+      "full_file_id": "monk_c05_card_png",
+      "clothing_only_file_id": "monk_c05_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": false,
+        "crocs_replace_full_legs_with_upper_legs": false,
+        "sandals_keep_bare_legs_between_platform_and_straps": true,
+        "rings_and_anklets_keep_bare_legs": false
+      }
+    },
+    "glamour": {
+      "source_character": "C06",
+      "title": "Гламурочка",
+      "default_items": [
+        "C06/vest",
+        "C06/bag_h",
+        "C06/diamonds",
+        "C06/hat",
+        "C06/glasses",
+        "C06/anklets"
+      ],
+      "default_layers": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_08_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "bare_layers": [
+        {
+          "file_id": "glamour_c06_base_legs_bare_png",
+          "z": 3
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61
+        },
+        {
+          "file_id": "glamour_heads_glamour_base_bare_png",
+          "z": 70
+        }
+      ],
+      "undressed_body_file_id": "glamour_body_full_glamour_png",
+      "full_file_id": "glamour_c06_card_png",
+      "clothing_only_file_id": "glamour_c06_no_bag_png",
+      "footwear_policy": {
+        "closed_boots_hide_bare_legs": false,
+        "crocs_replace_full_legs_with_upper_legs": false,
+        "sandals_keep_bare_legs_between_platform_and_straps": false,
+        "rings_and_anklets_keep_bare_legs": true
+      }
+    }
+  },
+  "equipment_groups": {
+    "C01/boots": {
+      "character": "ryaba",
+      "slot": "feet",
+      "file_ids": [
+        "ryaba_c01_layers_00_left_boot_png",
+        "ryaba_c01_layers_01_right_boot_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C01/vest": {
+      "character": "ryaba",
+      "slot": "body",
+      "file_ids": [
+        "ryaba_c01_clothing_vest_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C01/bag": {
+      "character": "ryaba",
+      "slot": "bag",
+      "file_ids": [
+        "ryaba_c01_layers_05_bag_strap_png",
+        "ryaba_c01_layers_06_bag_front_right_flank_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C01/hat": {
+      "character": "ryaba",
+      "slot": "head",
+      "file_ids": [
+        "ryaba_c01_layers_10_hat_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C01/glasses": {
+      "character": "ryaba",
+      "slot": "eyes",
+      "file_ids": [
+        "ryaba_c01_layers_11_glasses_optical_centers_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C02/water_toy": {
+      "character": "fighter",
+      "slot": "bag",
+      "file_ids": [
+        "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+        "fighter_c02_layers_06_near_carry_strap_png",
+        "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C02/boots": {
+      "character": "fighter",
+      "slot": "feet",
+      "file_ids": [
+        "fighter_c02_layers_01_left_boot_png",
+        "fighter_c02_layers_02_right_boot_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C02/vest": {
+      "character": "fighter",
+      "slot": "body",
+      "file_ids": [
+        "fighter_c02_clothing_vest_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C02/cartridges": {
+      "character": "fighter",
+      "slot": "neck",
+      "file_ids": [
+        "fighter_c02_layers_07_cartridges_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C02/bandana": {
+      "character": "fighter",
+      "slot": "head",
+      "file_ids": [
+        "fighter_c02_layers_12_bandana_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C02/aviators": {
+      "character": "fighter",
+      "slot": "eyes",
+      "file_ids": [
+        "fighter_c02_layers_13_glasses_optical_centers_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C03/vest": {
+      "character": "fool",
+      "slot": "body",
+      "file_ids": [
+        "fool_c03_clothing_vest_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C03/shopper_flute": {
+      "character": "fool",
+      "slot": "bag",
+      "file_ids": [
+        "fool_c03_layers_04_shopper_front_right_flank_png",
+        "fool_c03_layers_08_flute_above_wing_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C03/beads": {
+      "character": "fool",
+      "slot": "neck",
+      "file_ids": [
+        "fool_c03_layers_05_beads_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C03/scarf": {
+      "character": "fool",
+      "slot": "head",
+      "file_ids": [
+        "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+        "fool_c03_layers_11_scarf_wrapped_over_crown_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C03/glasses": {
+      "character": "fool",
+      "slot": "eyes",
+      "file_ids": [
+        "fool_c03_layers_12_glasses_optical_centers_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C03/ring07": {
+      "character": "fool",
+      "slot": "feet",
+      "file_ids": [
+        "fool_c03_layers_13_07_ring_visible_left_ankle_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C04/crocs": {
+      "character": "professor",
+      "slot": "feet",
+      "file_ids": [
+        "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+        "professor_c04_layers_02_right_croc_upper_leg_retained_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C04/coat": {
+      "character": "professor",
+      "slot": "body",
+      "file_ids": [
+        "professor_c04_clothing_coat_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C04/satchel": {
+      "character": "professor",
+      "slot": "bag",
+      "file_ids": [
+        "professor_c04_layers_06_satchel_front_right_flank_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C04/magnifier": {
+      "character": "professor",
+      "slot": "neck",
+      "file_ids": [
+        "professor_c04_layers_07_magnifier_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C04/pencil": {
+      "character": "professor",
+      "slot": "head",
+      "file_ids": [
+        "professor_c04_layers_10_pencil_behind_hair_png",
+        "professor_c04_layers_12_pencil_visible_shaft_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C04/glasses": {
+      "character": "professor",
+      "slot": "eyes",
+      "file_ids": [
+        "professor_c04_layers_13_glasses_optical_centers_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C05/sandals": {
+      "character": "monk",
+      "slot": "feet",
+      "file_ids": [
+        "monk_c05_layers_00_left_wooden_sandal_platform_png",
+        "monk_c05_layers_01_right_wooden_sandal_platform_png",
+        "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+        "monk_c05_layers_04_right_sandal_strap_over_foot_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C05/robe": {
+      "character": "monk",
+      "slot": "body",
+      "file_ids": [
+        "monk_c05_clothing_robe_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C05/cloth_bag": {
+      "character": "monk",
+      "slot": "bag",
+      "file_ids": [
+        "monk_c05_layers_08_cloth_shoulder_strap_png",
+        "monk_c05_layers_09_cloth_bag_front_right_flank_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C05/beads": {
+      "character": "monk",
+      "slot": "neck",
+      "file_ids": [
+        "monk_c05_layers_10_beads_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C05/hat": {
+      "character": "monk",
+      "slot": "head",
+      "file_ids": [
+        "monk_c05_layers_14_hat_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C05/third_eye": {
+      "character": "monk",
+      "slot": "eyes",
+      "file_ids": [
+        "monk_c05_layers_15_third_eye_forehead_axis_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C06/vest": {
+      "character": "glamour",
+      "slot": "body",
+      "file_ids": [
+        "glamour_c06_clothing_vest_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C06/bag_h": {
+      "character": "glamour",
+      "slot": "bag",
+      "file_ids": [
+        "glamour_c06_layers_04_h_bag_front_right_flank_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    },
+    "C06/diamonds": {
+      "character": "glamour",
+      "slot": "neck",
+      "file_ids": [
+        "glamour_c06_layers_05_diamonds_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C06/hat": {
+      "character": "glamour",
+      "slot": "head",
+      "file_ids": [
+        "glamour_c06_layers_09_hat_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C06/glasses": {
+      "character": "glamour",
+      "slot": "eyes",
+      "file_ids": [
+        "glamour_c06_layers_10_glasses_optical_centers_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": true
+    },
+    "C06/anklets": {
+      "character": "glamour",
+      "slot": "feet",
+      "file_ids": [
+        "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+        "glamour_c06_layers_12_right_anklet_leg_shaft_png"
+      ],
+      "standing_visible": true,
+      "seated_visible": false
+    }
+  },
+  "files": [
+    {
+      "id": "ryaba_c01_card_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C01/CARD.png",
+      "webp": "assets/characters/v12/web/full_ryaba.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1943255,
+      "webp_bytes": 157166,
+      "sha256": {
+        "png": "869111b5628833692e8ddc8e0c5d143098da05f56ad1be191ac24302f53eb545",
+        "webp": "a9733296b031220a6f0fb15e0a6e617af8aab8d0f8a9af969ed1666ca4b05fd8"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_no_bag_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C01/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_ryaba.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1679470,
+      "webp_bytes": 147398,
+      "sha256": {
+        "png": "97ec2a819c014531d176daccfa7ef2208c7687d4ef054f249b3538591df201a3",
+        "webp": "2ac7e7de93e31b706756c188ee9932f1a9198e9876fc3d9c87082cd57f455166"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_base_legs_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C01/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/ryaba/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 163796,
+      "webp_bytes": 29910,
+      "sha256": {
+        "png": "0c4b69cfae90c109d98847983754d6bbe844282eb7af425b0c5bb336541d83be",
+        "webp": "af8a760175782872796ae578568d2ebda56c47680d5f8f848c1791724dd85f70"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_clothing_vest_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "complete vest",
+      "item": "C01/vest",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C01/clothing/vest.png",
+      "webp": "assets/characters/v12/web/ryaba/clothing/vest.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 336698,
+      "webp_bytes": 69630,
+      "sha256": {
+        "png": "6383ff5a96968cc41eb874baf6534312e6979a550c13cbc44416962f3641d7f6",
+        "webp": "9ffb1a6fec0b0bb57de1e432495889a5ec89bd2293c47257fe95ce0638713f37"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_00_left_boot_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "left boot",
+      "item": "C01/boots",
+      "slot": "feet",
+      "z": 2,
+      "png": "assets/characters/v12/C01/layers/00-left_boot.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/00_left_boot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 102503,
+      "webp_bytes": 22318,
+      "sha256": {
+        "png": "fdf26c561e35ae8e862b293a72ef568da567a31f945b4a93de1c4aa8b93a61e8",
+        "webp": "e05f4e34cd10385990fb8f1ba9d1f7d64a292fb93b71da14c0864b3a50d6c2cb"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_01_right_boot_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "right boot",
+      "item": "C01/boots",
+      "slot": "feet",
+      "z": 2,
+      "png": "assets/characters/v12/C01/layers/01-right_boot.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/01_right_boot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 116103,
+      "webp_bytes": 25460,
+      "sha256": {
+        "png": "9c55cff5976c8d02bdefcb957a230c815a450297b43dfad12bb8aab7b97122db",
+        "webp": "ff98873f8d345e12a23176074c5fdfb0d03634ed7dc40209258d4d91b865b05d"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_02_parts_torso_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C01/layers/02-parts_torso.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/02_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 969806,
+      "webp_bytes": 212192,
+      "sha256": {
+        "png": "434599cd1c39f3f90779cdd8d011f9db3cac019ccac816008efa84e027fd0681",
+        "webp": "bc6c7391eb5b9a782fa0df4ce129eed2571631fa07223a05071e78c83086e8f7"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_05_bag_strap_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "bag strap",
+      "item": "C01/bag",
+      "slot": "bag",
+      "z": 30,
+      "png": "assets/characters/v12/C01/layers/05-bag_strap.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/05_bag_strap.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 70635,
+      "webp_bytes": 16178,
+      "sha256": {
+        "png": "87531e1a85eda0f99907eb383c24bf60b2edee09baa7faff7ccffffcdec45bba",
+        "webp": "d91299c54d3e81a2f31984179b4d0c187f4ad6df025f2a7532397cf6bcb1921e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "bag — front right flank",
+      "item": "C01/bag",
+      "slot": "bag",
+      "z": 31,
+      "png": "assets/characters/v12/C01/layers/06-bag_—_front_right_flank.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/06_bag_front_right_flank.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 110998,
+      "webp_bytes": 24462,
+      "sha256": {
+        "png": "2873b983270f5d2085290e4383e2fe6541bc0db5ed5c86b815523898ace56abb",
+        "webp": "801b61f27a31653624a69bb459821c77405b0df8e0d1c471d241b4cc231787e2"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_07_parts_left_wing_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C01/layers/07-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/07_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 100011,
+      "webp_bytes": 22584,
+      "sha256": {
+        "png": "d47aff74c200d9e5a43b55e4e682b259e9ef23dd10d8b99b7edce10e3a46d6c9",
+        "webp": "ff4e46dbff9c0a9f40abb6b995c9b25e624c064e64eac6e6880f58250d1aa2cf"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_08_parts_right_wing_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C01/layers/08-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/08_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 244882,
+      "webp_bytes": 55022,
+      "sha256": {
+        "png": "459c4a608eb6a0b047558a5094f422511022464b5bcba11adbb9213c563e3f9a",
+        "webp": "f9f6808586f16e694c285e689c70bed49307acbb1d1ed14651b8e899e1c38908"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_09_head_native_base_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C01/layers/09-head_native_base.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/09_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 483050,
+      "webp_bytes": 101456,
+      "sha256": {
+        "png": "f2be41dc18d62b08b54bdbf795edc800e4395785b3ef2e001494e706e72ffda7",
+        "webp": "b03db2e718815782b723b2ec526f61ce97ad026fb067f73c4369d7d559055e8b"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_10_hat_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "hat",
+      "item": "C01/hat",
+      "slot": "head",
+      "z": 80,
+      "png": "assets/characters/v12/C01/layers/10-hat.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/10_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 323941,
+      "webp_bytes": 71156,
+      "sha256": {
+        "png": "efa1ab9e60b838fd3fe605276c71fe89f6482f3fdd318a429ef330a628387227",
+        "webp": "9f9d5e37fa7f18b562989bf747fbb7d716537a952b8a96519ed0b3f0bfd99628"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "item_front",
+      "role": "glasses — optical centers",
+      "item": "C01/glasses",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C01/layers/11-glasses_—_optical_centers.png",
+      "webp": "assets/characters/v12/web/ryaba/layers/11_glasses_optical_centers.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 36039,
+      "webp_bytes": 7544,
+      "sha256": {
+        "png": "485987625cd453bcbe830ec96905745993e702977c7217643dc45356ae68bf19",
+        "webp": "963a9affb76661c494edb6b4b203fb1ee93a52865161b1f847efe2992efb9d50"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_card_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C02/CARD.png",
+      "webp": "assets/characters/v12/web/full_fighter.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1780936,
+      "webp_bytes": 128298,
+      "sha256": {
+        "png": "251ec92cfe0b9dfc7c7164bca9db1d81cf83f9b8ffa33d7ac76df1c4d5f1c71d",
+        "webp": "68e9f05d3c2910ecf47cbb0aaffa9acd2fd8fd33764a52eece45fd00dac5d551"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_no_bag_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C02/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_fighter.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1641139,
+      "webp_bytes": 119010,
+      "sha256": {
+        "png": "3e8d945fa3bee59224074787901db6f896d8dba883415b52a3b2404e1edff69e",
+        "webp": "a385c6dcf185bee443bd7c9e9eea65da3a9b12fddef1ccd7c2872845381585c7"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_base_legs_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C02/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/fighter/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 212850,
+      "webp_bytes": 39416,
+      "sha256": {
+        "png": "ab26b342fb77be7d5e5579285d84925084b0fb6052535e025634275ee8736fa9",
+        "webp": "d10dc7d95dde47804ca87f35d7c032c1c23152147cb65cb53b9cbe7de2e97d3b"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_clothing_vest_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "complete vest",
+      "item": "C02/vest",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C02/clothing/vest.png",
+      "webp": "assets/characters/v12/web/fighter/clothing/vest.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 388745,
+      "webp_bytes": 67880,
+      "sha256": {
+        "png": "ea159d8b5fc26df454cbf50dc08a558b0cb08b609b911510e6d90cf001307fc2",
+        "webp": "2f954208aaa3fbfe623b31ca5a5bfc270850ee985ed6596ce5934c738e8e9e8b"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_back",
+      "role": "far carry strap — behind torso",
+      "item": "C02/water_toy",
+      "slot": "bag",
+      "z": 1,
+      "png": "assets/characters/v12/C02/layers/00-far_carry_strap_—_behind_torso.png",
+      "webp": "assets/characters/v12/web/fighter/layers/00_far_carry_strap_behind_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 27414,
+      "webp_bytes": 5644,
+      "sha256": {
+        "png": "d23b7737664bc44b9698f33c68a5ed38c9d9392f6dc031b27afad8ba481b25de",
+        "webp": "5d31dbe77fb63af4259584ef50e3253c422b22cb51f5b1d54822007098a4a79b"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_01_left_boot_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "left boot",
+      "item": "C02/boots",
+      "slot": "feet",
+      "z": 2,
+      "png": "assets/characters/v12/C02/layers/01-left_boot.png",
+      "webp": "assets/characters/v12/web/fighter/layers/01_left_boot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 143634,
+      "webp_bytes": 27226,
+      "sha256": {
+        "png": "2527cccdddb6967fdb6824e18f39570a64a04edaf1d51f13f4b890d1f0f4fade",
+        "webp": "57689178c8d565d4c3d5df398d4178cb5a89d15eb8d85bffd599d0d2fc1e9ae8"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_02_right_boot_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "right boot",
+      "item": "C02/boots",
+      "slot": "feet",
+      "z": 2,
+      "png": "assets/characters/v12/C02/layers/02-right_boot.png",
+      "webp": "assets/characters/v12/web/fighter/layers/02_right_boot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 133376,
+      "webp_bytes": 25088,
+      "sha256": {
+        "png": "18fcdc32d6f4da72fc5c20607019a214faffe105543e9cb74e1323578908849f",
+        "webp": "4e3ba81fa1bdeffc3b718a3a0ed9120fed9abaad35480815e09cd87cad9ffbad"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_03_parts_torso_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C02/layers/03-parts_torso.png",
+      "webp": "assets/characters/v12/web/fighter/layers/03_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 888079,
+      "webp_bytes": 171970,
+      "sha256": {
+        "png": "991d826d8e6cafea4c885cd87862fb483aba10c8e2c7f72a394ce65b14fdcf79",
+        "webp": "839c97c34890ddd01a6453e0b5cca9e8ae1f547a73becae564586cfde22db676"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_06_near_carry_strap_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "near carry strap",
+      "item": "C02/water_toy",
+      "slot": "bag",
+      "z": 35,
+      "png": "assets/characters/v12/C02/layers/06-near_carry_strap.png",
+      "webp": "assets/characters/v12/web/fighter/layers/06_near_carry_strap.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 38227,
+      "webp_bytes": 8286,
+      "sha256": {
+        "png": "f8ac08eb4bedfc68420afe6b42db064922b920376bac66fb494a15a032b6ceef",
+        "webp": "d4ee5de3baa1d9269f38bf391500af35a1e78229b13ac128a0d7cfd6a20fd51f"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_07_cartridges_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "cartridges",
+      "item": "C02/cartridges",
+      "slot": "neck",
+      "z": 45,
+      "png": "assets/characters/v12/C02/layers/07-cartridges.png",
+      "webp": "assets/characters/v12/web/fighter/layers/07_cartridges.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 99228,
+      "webp_bytes": 24320,
+      "sha256": {
+        "png": "be5804b5f43ab964cc1548ad05b5b41d5094d872bad94e4e03e348fa6eeb21f0",
+        "webp": "6c35fd710e3db39aa60f26148e17aada3ef140bea2245ecf3076a40d2452817f"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_08_parts_left_wing_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C02/layers/08-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/fighter/layers/08_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 118437,
+      "webp_bytes": 21958,
+      "sha256": {
+        "png": "0ee584087c943c418debd21c294eccb4104e4a0e12c9ba20f6966d9e12dacaf5",
+        "webp": "b7e75f6a3faec4b7a14c17aeb159a946f92639c951165257a429af4bc52957c1"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_09_parts_right_wing_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C02/layers/09-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/fighter/layers/09_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 221975,
+      "webp_bytes": 40660,
+      "sha256": {
+        "png": "b826fb7ef60dc8a82ef97ee976ef2ba597f701f638f976b66ac6a7d2298e72b7",
+        "webp": "b465bc5bf4391bd135bb5c7effcaac22c72848861799409d4c5c190095c411da"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "water toy — visible in front of wing",
+      "item": "C02/water_toy",
+      "slot": "bag",
+      "z": 65,
+      "png": "assets/characters/v12/C02/layers/10-water_toy_—_visible_in_front_of_wing.png",
+      "webp": "assets/characters/v12/web/fighter/layers/10_water_toy_visible_in_front_of_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 107884,
+      "webp_bytes": 24194,
+      "sha256": {
+        "png": "1274e5033584266992958a6ed5504e4c984c20301ef3ef83b0036cfb5af014a8",
+        "webp": "47fefc3c91d95e7dde103a5b932dd9ac5a65bef9924bf4332ed54bb0b618712a"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_11_head_native_base_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C02/layers/11-head_native_base.png",
+      "webp": "assets/characters/v12/web/fighter/layers/11_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 432417,
+      "webp_bytes": 82018,
+      "sha256": {
+        "png": "e87a09f3fe47e8a64ab1397e14ea467be7fc5b5e84d8dad962a777cbfc9674a3",
+        "webp": "c9bb9ed01873de3eb2c5185c038c9ba832c4d0638aae87ff2d3f60303223d9e8"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_12_bandana_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "bandana",
+      "item": "C02/bandana",
+      "slot": "head",
+      "z": 80,
+      "png": "assets/characters/v12/C02/layers/12-bandana.png",
+      "webp": "assets/characters/v12/web/fighter/layers/12_bandana.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 106488,
+      "webp_bytes": 22174,
+      "sha256": {
+        "png": "7d6edf5dca592d9a8f3bc94a817a54bff9f5e58fb82b11ae56290137d7b7608f",
+        "webp": "1333902be678bd6093aad3cb89041eda24183fd8d0ea3f809bc9211f92d1bcf6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fighter_c02_layers_13_glasses_optical_centers_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "item_front",
+      "role": "glasses — optical centers",
+      "item": "C02/aviators",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C02/layers/13-glasses_—_optical_centers.png",
+      "webp": "assets/characters/v12/web/fighter/layers/13_glasses_optical_centers.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 30928,
+      "webp_bytes": 6544,
+      "sha256": {
+        "png": "43d948ac357a1516c9f79420b38d8e8b2b4f018e41f38f40b6fa82b387e3b189",
+        "webp": "28b3178cbebee0f7576ee8e44efb5b0c88bfdd99e2c0da58b7742310f075cf58"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_card_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C03/CARD.png",
+      "webp": "assets/characters/v12/web/full_fool.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1932470,
+      "webp_bytes": 167264,
+      "sha256": {
+        "png": "27e9f5f4176b19dfa623fc6fa266c36fe450353f129890579cea769551f40df0",
+        "webp": "ff55e7940c3ef405373c4dadd4b3b334805f89aaab83ef0a57b5b3d53bd12552"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_no_bag_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C03/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_fool.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1788826,
+      "webp_bytes": 153730,
+      "sha256": {
+        "png": "0a3410bc5df6ef7eb0f9a0b3c571dc7e24e4349f74a41bfbd8934f7f81624a1f",
+        "webp": "ecef4a85405dfeb26514811d744e648ba41fb9edebeb1d89bbfe198a6d74bda0"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_base_legs_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C03/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/fool/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 205902,
+      "webp_bytes": 38570,
+      "sha256": {
+        "png": "c4774da5f6c65fb6c173dd98a16f42cb980fa83e8950caa0700ebc7e775312cf",
+        "webp": "f3fdf0d7318da8206becb4b779b17faf51d1058e313f20a236a7bdbc105ecdf1"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_clothing_vest_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "complete vest",
+      "item": "C03/vest",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C03/clothing/vest.png",
+      "webp": "assets/characters/v12/web/fool/clothing/vest.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 315244,
+      "webp_bytes": 82532,
+      "sha256": {
+        "png": "61e2889e567d4ba9c22c188c7953e1c2db97d0d1cfa45468383fabe047c15874",
+        "webp": "2904ee72df515d3a77fecd01293cefaf1b500eba7e348744ee67c64769d02731"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_00_parts_legs_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "parts/legs_bare",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C03/layers/00-parts_legs_bare.png",
+      "webp": "assets/characters/v12/web/fool/layers/00_parts_legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 158332,
+      "webp_bytes": 38626,
+      "sha256": {
+        "png": "686606279ce8a6215ebe6f6d054d07a283b11662b3cf58aa5084210a56416e08",
+        "webp": "c5669f233db7c47bea6703cf8db749acbbf51e18b1bfa9ef7b9ee43b3d53f7ba"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_01_parts_torso_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C03/layers/01-parts_torso.png",
+      "webp": "assets/characters/v12/web/fool/layers/01_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 955553,
+      "webp_bytes": 220664,
+      "sha256": {
+        "png": "5280d7a57a11be9e5c5c46339b1ddd7b4f2e5dcd74ea7c7a18f05b5e14764640",
+        "webp": "6dfcd6dce5aebbd15955376d8efcb481ee83d9c5e290b1a3bc869c3b8cb7b310"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_04_shopper_front_right_flank_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "shopper — front right flank",
+      "item": "C03/shopper_flute",
+      "slot": "bag",
+      "z": 30,
+      "png": "assets/characters/v12/C03/layers/04-shopper_—_front_right_flank.png",
+      "webp": "assets/characters/v12/web/fool/layers/04_shopper_front_right_flank.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 200085,
+      "webp_bytes": 49714,
+      "sha256": {
+        "png": "23c8ebd05481fbd13bd3140b28fa694f26a16e5e49e5f877aaf1401270120d49",
+        "webp": "546371927cc84a2d8736e58e9e728846120a79bdbcc21bdb9cf5af04efc6ac14"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_05_beads_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "beads",
+      "item": "C03/beads",
+      "slot": "neck",
+      "z": 45,
+      "png": "assets/characters/v12/C03/layers/05-beads.png",
+      "webp": "assets/characters/v12/web/fool/layers/05_beads.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 84649,
+      "webp_bytes": 20996,
+      "sha256": {
+        "png": "8b71bb1cf6813ebfedd64cc5294aef3b7e774be71547a567ef845b9dc8514f62",
+        "webp": "62074620f79b6adcf388a8a7cb90f6ebd68449ca426a654c706ffaceb29991c4"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_06_parts_left_wing_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C03/layers/06-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/fool/layers/06_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 106013,
+      "webp_bytes": 24320,
+      "sha256": {
+        "png": "6944ddcc4bdab824d51007fdd121bdcb870705a29a8a6796e654fe53807b824a",
+        "webp": "6047940a6e2b8ab8afb2cd351486f0bf5261f33fa1d18163fcc35b80b2cfabdf"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_07_parts_right_wing_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C03/layers/07-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/fool/layers/07_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 217305,
+      "webp_bytes": 52088,
+      "sha256": {
+        "png": "b3245838eb367e28df7efdb50d8b2b32bd6760ea9fe17c6b57d503a3e6d85c2e",
+        "webp": "eedae47d678358ff06da2c1ac96e42b5a8154a3935b5806de91c024e5a66eea2"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_08_flute_above_wing_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "flute above wing",
+      "item": "C03/shopper_flute",
+      "slot": "bag",
+      "z": 65,
+      "png": "assets/characters/v12/C03/layers/08-flute_above_wing.png",
+      "webp": "assets/characters/v12/web/fool/layers/08_flute_above_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 29470,
+      "webp_bytes": 5944,
+      "sha256": {
+        "png": "ff8f4bf1bf68a485470ce1f069c6a66a0f5a26b8e36fd7d1b6eddd244df5851b",
+        "webp": "d171d6b34087046779487407082c8d461db20b3bde901324d742b8c2b8f50016"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_back",
+      "role": "scarf tail tucked behind head",
+      "item": "C03/scarf",
+      "slot": "head",
+      "z": 69,
+      "png": "assets/characters/v12/C03/layers/09-scarf_tail_tucked_behind_head.png",
+      "webp": "assets/characters/v12/web/fool/layers/09_scarf_tail_tucked_behind_head.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 23395,
+      "webp_bytes": 4492,
+      "sha256": {
+        "png": "c983ea56e99e080d063d6f1fb259279b1bcee51692ca26cb619076a387d6da6b",
+        "webp": "13073be84f684480b0de4ed8edb44d074df1c18a6743a55eef25b6847632fa15"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_10_head_native_base_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C03/layers/10-head_native_base.png",
+      "webp": "assets/characters/v12/web/fool/layers/10_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 499039,
+      "webp_bytes": 116038,
+      "sha256": {
+        "png": "766586504e69ac812439f2aa238d7faf5ecf93ee618059eb652c119a4dbf2252",
+        "webp": "4643c5294fca026e96b0a34b1d8e9f33a8b211c4404419ac73054cf375807158"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "scarf wrapped over crown",
+      "item": "C03/scarf",
+      "slot": "head",
+      "z": 80,
+      "png": "assets/characters/v12/C03/layers/11-scarf_wrapped_over_crown.png",
+      "webp": "assets/characters/v12/web/fool/layers/11_scarf_wrapped_over_crown.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 244288,
+      "webp_bytes": 60490,
+      "sha256": {
+        "png": "496a0e6091ae1ede02876dec37ef97ea5a44fc60df8878a8b00be44fee4dc74e",
+        "webp": "e2cb079714819876bdca0e82ddc21b8bc8045c6db8677c71dd7bd5e714f5a9c3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_12_glasses_optical_centers_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "glasses — optical centers",
+      "item": "C03/glasses",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C03/layers/12-glasses_—_optical_centers.png",
+      "webp": "assets/characters/v12/web/fool/layers/12_glasses_optical_centers.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 43680,
+      "webp_bytes": 9876,
+      "sha256": {
+        "png": "ef1afabbfc6cc00dc8880a841789d35e639e9c139434bc3f52460f2433400899",
+        "webp": "ffd3ab2dde86f6c4cd7f98addb23bf1f13674cd80a1d1306fbc45fbdf5632d81"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "item_front",
+      "role": "07 ring — visible left ankle",
+      "item": "C03/ring07",
+      "slot": "feet",
+      "z": 95,
+      "png": "assets/characters/v12/C03/layers/13-07_ring_—_visible_left_ankle.png",
+      "webp": "assets/characters/v12/web/fool/layers/13_07_ring_visible_left_ankle.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 14533,
+      "webp_bytes": 1766,
+      "sha256": {
+        "png": "d6c353524f05a94e5bdbe1184443f458d04e2a7483ed1df31111c715dc79e00d",
+        "webp": "f31fd6581d6bbeb5f2d89f2de81614b905b07d6bdc0a7825ce0d71e6c2735a31"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_card_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C04/CARD.png",
+      "webp": "assets/characters/v12/web/full_professor.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1825136,
+      "webp_bytes": 156588,
+      "sha256": {
+        "png": "3c12494cd0ab5881a210ef2d2b49059415bfcf86969f43897186b2479e45a7f0",
+        "webp": "564c473e6f98cba03833084c3013abcde37921b257ca35285e852f55692ae4c4"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_no_bag_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C04/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_professor.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1690677,
+      "webp_bytes": 148542,
+      "sha256": {
+        "png": "ae1b66881a4f19c76a14092558879bb1745366635b3ae5ae3a12112258e76923",
+        "webp": "594bc5032f43953976ca31a8464ac02ce631afec46d2d4d2cd6a07494db183ca"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_base_legs_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C04/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/professor/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 206092,
+      "webp_bytes": 38454,
+      "sha256": {
+        "png": "5dd671fbab29c76803da9c5d5d921f218f314075afe4a728e7849df92982bd53",
+        "webp": "b1dd096e48f80a5a55ca047bd054c3aa8da9063abfa2e025f5e026e441c1b84a"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_clothing_coat_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "complete coat",
+      "item": "C04/coat",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C04/clothing/coat.png",
+      "webp": "assets/characters/v12/web/professor/clothing/coat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 324864,
+      "webp_bytes": 66292,
+      "sha256": {
+        "png": "8d69300d5c26cc9617a41961cd91f12ad7c4a6d7e3436485d8efed57b95e4cfa",
+        "webp": "494eba7381dcee5c3d2fe8094e1795296cacfd8157036fec737089a944334d5c"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "upper legs — claws hidden",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C04/layers/00-upper_legs_—_claws_hidden.png",
+      "webp": "assets/characters/v12/web/professor/layers/00_upper_legs_claws_hidden.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 36855,
+      "webp_bytes": 8228,
+      "sha256": {
+        "png": "384f7978f7df7e4edb83bb2741b76ff4b5a4f51e7edcb4888d42c5b87d151002",
+        "webp": "cbbe1bf9d253da1d5caef5ad2c255dc8a33448863c23faede8854ac0838a6775"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "left croc — upper leg retained",
+      "item": "C04/crocs",
+      "slot": "feet",
+      "z": 4,
+      "png": "assets/characters/v12/C04/layers/01-left_croc_—_upper_leg_retained.png",
+      "webp": "assets/characters/v12/web/professor/layers/01_left_croc_upper_leg_retained.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 120451,
+      "webp_bytes": 25402,
+      "sha256": {
+        "png": "d239580298ae849906f9c50c46c0d40de28caa66d66fe4134b5d8c680838276b",
+        "webp": "ea6943f64f1c47746eac6c5b903c09002cef1b345d2ec79f44a5fe004ecd80f6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "right croc — upper leg retained",
+      "item": "C04/crocs",
+      "slot": "feet",
+      "z": 4,
+      "png": "assets/characters/v12/C04/layers/02-right_croc_—_upper_leg_retained.png",
+      "webp": "assets/characters/v12/web/professor/layers/02_right_croc_upper_leg_retained.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 123030,
+      "webp_bytes": 26538,
+      "sha256": {
+        "png": "1c6da9951149cf05f77591a5f86a739380a0d21c9a25db494c83dc134c0fa822",
+        "webp": "3f54b1e7ffc9cba72ff9fa6f172a65df9082f3a7fe7b28976eb1522a2d56fbe2"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_03_parts_torso_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C04/layers/03-parts_torso.png",
+      "webp": "assets/characters/v12/web/professor/layers/03_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 773015,
+      "webp_bytes": 161568,
+      "sha256": {
+        "png": "377499cf29a6438f7ce07f776e77ba7b634c3ae9743f5238a6c80da2e730c35a",
+        "webp": "0a1c8339ed6a45420aefdd2a7cbebf52f213b4d71bc87156c5c18dfd8622db86"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_06_satchel_front_right_flank_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "satchel — front right flank",
+      "item": "C04/satchel",
+      "slot": "bag",
+      "z": 30,
+      "png": "assets/characters/v12/C04/layers/06-satchel_—_front_right_flank.png",
+      "webp": "assets/characters/v12/web/professor/layers/06_satchel_front_right_flank.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 157662,
+      "webp_bytes": 34832,
+      "sha256": {
+        "png": "7b2f2f209cc376b3e07fa014ed54123484dbb32464a7e394ffc1b81cd14389d2",
+        "webp": "42357fcc149208b51152d53ac2c2ff01d32452b76330c223d158063da952ff91"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_07_magnifier_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "magnifier",
+      "item": "C04/magnifier",
+      "slot": "neck",
+      "z": 45,
+      "png": "assets/characters/v12/C04/layers/07-magnifier.png",
+      "webp": "assets/characters/v12/web/professor/layers/07_magnifier.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 80733,
+      "webp_bytes": 17782,
+      "sha256": {
+        "png": "6e003bb874150e98c203aa185e14a25bee6e802588b0d58faf04f07710819960",
+        "webp": "14af43a69c0b98f811450d8740ecf7160affd30688960039ea03f8d1f41e0446"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_08_parts_left_wing_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C04/layers/08-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/professor/layers/08_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 76478,
+      "webp_bytes": 15544,
+      "sha256": {
+        "png": "f00ccf2e9ae29c9418c9bd6b61ccd1d5aa15781a00c15518a3c2e5210bd42376",
+        "webp": "67e9ec474bcb86a6025d291615d5d7ed0847fce99c4d2e42fc858aef61b440a6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_09_parts_right_wing_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C04/layers/09-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/professor/layers/09_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 225300,
+      "webp_bytes": 45706,
+      "sha256": {
+        "png": "c34996508474f29680d1226fd597b2e58391d0dd1e65577820f27406975256c3",
+        "webp": "d8474f5c9e62b0685da21251f139a5ea10a1f88bd736fa48e4b44cf6e97c48c5"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_10_pencil_behind_hair_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_back",
+      "role": "pencil behind hair",
+      "item": "C04/pencil",
+      "slot": "head",
+      "z": 68,
+      "png": "assets/characters/v12/C04/layers/10-pencil_behind_hair.png",
+      "webp": "assets/characters/v12/web/professor/layers/10_pencil_behind_hair.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 27391,
+      "webp_bytes": 4980,
+      "sha256": {
+        "png": "38fcbb6557199c69262be1bf00111ad7f9845eef8f591106e2b5269cb535acf1",
+        "webp": "c2e8fe5306f749f980d0e2127dc3d2f5c984b4a56e54646c67fbbd45f3d234e4"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_11_head_native_base_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C04/layers/11-head_native_base.png",
+      "webp": "assets/characters/v12/web/professor/layers/11_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 672655,
+      "webp_bytes": 139732,
+      "sha256": {
+        "png": "85338b2ecebd9f2f2e2f0955db2d8c3477494799215b627d50d92d66b42f4a0e",
+        "webp": "6743a52aad3d5bfc95503195b18ef70b62840bc768a313b321ff380476680bb1"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_12_pencil_visible_shaft_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "pencil visible shaft",
+      "item": "C04/pencil",
+      "slot": "head",
+      "z": 85,
+      "png": "assets/characters/v12/C04/layers/12-pencil_visible_shaft.png",
+      "webp": "assets/characters/v12/web/professor/layers/12_pencil_visible_shaft.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 23775,
+      "webp_bytes": 4148,
+      "sha256": {
+        "png": "10f438945ceaa697f62e4aec2f93127190ac81a6a767e348cdb0a16b1a04c2bd",
+        "webp": "4ceb1f37f0cd6be32b10a65b69f57a07bffee6da9c6dd825c54624c67681d4d6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "professor_c04_layers_13_glasses_optical_centers_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "item_front",
+      "role": "glasses — optical centers",
+      "item": "C04/glasses",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C04/layers/13-glasses_—_optical_centers.png",
+      "webp": "assets/characters/v12/web/professor/layers/13_glasses_optical_centers.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 31261,
+      "webp_bytes": 5284,
+      "sha256": {
+        "png": "79ae67ea0f5f166713e790fce74f93296dacb6eeabf652eff221f1911f9bee5f",
+        "webp": "718c88095c42fd09dac86a2652024d0d189d2d08d88535452d5f81a1e008d5a6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_card_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C05/CARD.png",
+      "webp": "assets/characters/v12/web/full_monk.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1569243,
+      "webp_bytes": 126798,
+      "sha256": {
+        "png": "00b344b85ec8ca80f6e083c91294c424fc42323b75074cf70ee95218c8a23a0f",
+        "webp": "8c17387fc82829e988d9bd713a6713164bc47ad290eeada553346681f41b6cc7"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_no_bag_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C05/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_monk.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1297475,
+      "webp_bytes": 261136,
+      "sha256": {
+        "png": "78a5a0ceb77fedee442e5a987513197410f3e592b23d7ec83b6a0a312127a823",
+        "webp": "cdf92bb722aba0cc506258ceb606691de103a5649d0ce767bafec523811c71d2"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_base_legs_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C05/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/monk/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 178184,
+      "webp_bytes": 32382,
+      "sha256": {
+        "png": "48bb32740ff1d4c5c8ac826787f1f23a6e403cd2677a2266ceb4140c959775c0",
+        "webp": "7332381b7d06dcfbe9f9039b0581a7465c218ec6436ab8079df869f5e8365cae"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_clothing_robe_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "complete robe",
+      "item": "C05/robe",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C05/clothing/robe.png",
+      "webp": "assets/characters/v12/web/monk/clothing/robe.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 420419,
+      "webp_bytes": 88396,
+      "sha256": {
+        "png": "9f960e294f00c747a8dc70a24f59e3124a0a0ae0211faf53d023833374b6f62b",
+        "webp": "3d4bd1491ec37b89e86f5be4be023d43d2bc9f132e821d61dc8692d2aab77b17"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_back",
+      "role": "left wooden sandal platform",
+      "item": "C05/sandals",
+      "slot": "feet",
+      "z": 1,
+      "png": "assets/characters/v12/C05/layers/00-left_wooden_sandal_platform.png",
+      "webp": "assets/characters/v12/web/monk/layers/00_left_wooden_sandal_platform.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 72017,
+      "webp_bytes": 13886,
+      "sha256": {
+        "png": "b0015b3ba48310b9ac9f7c639e6b62381755d9c24ec6a15b048b42e1c4d640fc",
+        "webp": "7c65da5924c2bc5ff1f67e6ea3e9082d775acff80b4b8268d583c9f12adaf684"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_back",
+      "role": "right wooden sandal platform",
+      "item": "C05/sandals",
+      "slot": "feet",
+      "z": 1,
+      "png": "assets/characters/v12/C05/layers/01-right_wooden_sandal_platform.png",
+      "webp": "assets/characters/v12/web/monk/layers/01_right_wooden_sandal_platform.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 78508,
+      "webp_bytes": 15118,
+      "sha256": {
+        "png": "2407c77d86b148c22bdf5f2f2fead7e8c9cbc4b08ffee633a8b64ab27209178b",
+        "webp": "e7fb0b4e1d2619f252d8ef55ab1dd64e68f18f30771c0f097a6c34dc87c33af4"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_02_parts_legs_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "parts/legs_bare",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C05/layers/02-parts_legs_bare.png",
+      "webp": "assets/characters/v12/web/monk/layers/02_parts_legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 135061,
+      "webp_bytes": 32432,
+      "sha256": {
+        "png": "4c9b56f856578e47cc4c1fce22fe8238b7fa0762c41e5dd53b80562186425254",
+        "webp": "2d36e3fad38d2e1015803d240465828095a8b607e7c51b68f950beb3b4c63c81"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "left sandal strap over foot",
+      "item": "C05/sandals",
+      "slot": "feet",
+      "z": 5,
+      "png": "assets/characters/v12/C05/layers/03-left_sandal_strap_over_foot.png",
+      "webp": "assets/characters/v12/web/monk/layers/03_left_sandal_strap_over_foot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 25490,
+      "webp_bytes": 4812,
+      "sha256": {
+        "png": "7bd3d4ed0a2607d54e9b8529690eaa0ac706f7e5a3968876a7155f0c0ead94dd",
+        "webp": "bcd4c6cb0eb271fc48eacfd435a96866139a2d56bf337535df6979e0e73d41ee"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "right sandal strap over foot",
+      "item": "C05/sandals",
+      "slot": "feet",
+      "z": 5,
+      "png": "assets/characters/v12/C05/layers/04-right_sandal_strap_over_foot.png",
+      "webp": "assets/characters/v12/web/monk/layers/04_right_sandal_strap_over_foot.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 25097,
+      "webp_bytes": 4758,
+      "sha256": {
+        "png": "3a874f08540164e1ee6cd301fef57b547723c4c6ca713f1dee29938861b51bc3",
+        "webp": "4413a65192b713189702439fda8eb8bbd5123c9b331a240926e8827d7b0f78b2"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_05_parts_torso_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C05/layers/05-parts_torso.png",
+      "webp": "assets/characters/v12/web/monk/layers/05_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 750427,
+      "webp_bytes": 156704,
+      "sha256": {
+        "png": "f2f97ff005c00b7fd5bc127072dbcc99206b72586eb13de25c697e22cac61230",
+        "webp": "d16c6ef6188498a83afb72112b8668186a17a36d172542439db936bea282cf96"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "cloth shoulder strap",
+      "item": "C05/cloth_bag",
+      "slot": "bag",
+      "z": 30,
+      "png": "assets/characters/v12/C05/layers/08-cloth_shoulder_strap.png",
+      "webp": "assets/characters/v12/web/monk/layers/08_cloth_shoulder_strap.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 36069,
+      "webp_bytes": 6236,
+      "sha256": {
+        "png": "19969cecb91560788eae85982c48d9cd104adf53fc96bced11bd5f9df025d134",
+        "webp": "0736a6fec5745a6d36e38b52915133803ea8506c370d2119b5d6c57cd829fa88"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "cloth bag — front right flank",
+      "item": "C05/cloth_bag",
+      "slot": "bag",
+      "z": 31,
+      "png": "assets/characters/v12/C05/layers/09-cloth_bag_—_front_right_flank.png",
+      "webp": "assets/characters/v12/web/monk/layers/09_cloth_bag_front_right_flank.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 121205,
+      "webp_bytes": 21902,
+      "sha256": {
+        "png": "0b6ae41a9e61126c22e0477c159421763494ca2ee2e9a8f705fe3f631d595e54",
+        "webp": "6051037a2e8efc055638be9db9fdb5fe694807da30367a27519ae7a29354cd7c"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_10_beads_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "beads",
+      "item": "C05/beads",
+      "slot": "neck",
+      "z": 45,
+      "png": "assets/characters/v12/C05/layers/10-beads.png",
+      "webp": "assets/characters/v12/web/monk/layers/10_beads.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 76223,
+      "webp_bytes": 18216,
+      "sha256": {
+        "png": "7b7562fecff538d71e27f8063d450cb29285b57afadeb9035456c05ed1f2fc3f",
+        "webp": "aaf521768a2d6e4804ed229bdb774384e8259ce77d508ab6e4f2259348b9a80e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_11_parts_left_wing_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C05/layers/11-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/monk/layers/11_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 51124,
+      "webp_bytes": 11024,
+      "sha256": {
+        "png": "16ecf10726325d90250ef6669a24edcd0944146802036c87ad1beb5b0bb4dbeb",
+        "webp": "d7613073a2d7c35c191798541e997504c3d60057cf752694bea4ace0837b0a5a"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_12_parts_right_wing_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C05/layers/12-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/monk/layers/12_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 178551,
+      "webp_bytes": 38002,
+      "sha256": {
+        "png": "05ec5fc2cf883693f8fbe56528512c58273ffd16f846bbaa64042b83489c33bc",
+        "webp": "6d35619888da0ce62e77bd7d1ea3c5c21dd3c21fa5ea3e48a20a17297b76e8ed"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_13_head_native_base_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C05/layers/13-head_native_base.png",
+      "webp": "assets/characters/v12/web/monk/layers/13_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 279994,
+      "webp_bytes": 56984,
+      "sha256": {
+        "png": "25155cfa9535f1be761a22fcba2ae308f159a6dd6de6d2b20fceca9c89c19169",
+        "webp": "a98bd616f9626fe2ba32946ba5969e8db6e72f6a67bd9059fc2501b964ad973e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_14_hat_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "hat",
+      "item": "C05/hat",
+      "slot": "head",
+      "z": 80,
+      "png": "assets/characters/v12/C05/layers/14-hat.png",
+      "webp": "assets/characters/v12/web/monk/layers/14_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 261354,
+      "webp_bytes": 57414,
+      "sha256": {
+        "png": "995e631c4704f3613a23fac2144fbd8d5db393802cecf6a6e503a9ea3c51e30a",
+        "webp": "c510d7ded414715ec7c43e692b6ab68d3f2798045961e04812f7ffb9512dd5cd"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "item_front",
+      "role": "third eye — forehead axis",
+      "item": "C05/third_eye",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C05/layers/15-third_eye_—_forehead_axis.png",
+      "webp": "assets/characters/v12/web/monk/layers/15_third_eye_forehead_axis.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 42132,
+      "webp_bytes": 7692,
+      "sha256": {
+        "png": "468915cb5d58548a7961d0b1ea401e55835df28c1e05b8bdce4aa93babbdb8f8",
+        "webp": "ba1c2bafc600f35fd4941adb8d54eca583620771ffad2fb09a77b040161c6ce3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_card_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "composite",
+      "role": "full_outfit",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C06/CARD.png",
+      "webp": "assets/characters/v12/web/full_glamour.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1843249,
+      "webp_bytes": 155288,
+      "sha256": {
+        "png": "9d250c887c7b74b19389e114ea054e56f52c454ea0dd22e1e32a80928370c927",
+        "webp": "b74c7e0b48091f78dd214c87369fe88c4fe252188c0c43767f0fe09a4d004772"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_no_bag_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "composite",
+      "role": "clothing_only_proof",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/C06/NO_BAG.png",
+      "webp": "assets/characters/v12/web/clothing_only_glamour.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1712931,
+      "webp_bytes": 144008,
+      "sha256": {
+        "png": "6bdf88310cafdf12d775eaa87421bf133dfa487da2fbe2c72bea681738e59839",
+        "webp": "e141e6c61758da884b1ece6b31013c605221c23579551c46f41e870bf2bc5eb0"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_base_legs_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "legs_bare_fallback",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C06/base/legs_bare.png",
+      "webp": "assets/characters/v12/web/glamour/base/legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 184895,
+      "webp_bytes": 33154,
+      "sha256": {
+        "png": "f82e6366f598ea7a09480b4f7585814d8c61979ef83a10b4393b2fcdac0a8447",
+        "webp": "d5999845e7a979297d1c3e3fe686c3cd14186c4c278e7609e927c76e7652dfb9"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_clothing_vest_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "complete vest",
+      "item": "C06/vest",
+      "slot": "body",
+      "z": 20,
+      "png": "assets/characters/v12/C06/clothing/vest.png",
+      "webp": "assets/characters/v12/web/glamour/clothing/vest.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 256800,
+      "webp_bytes": 54236,
+      "sha256": {
+        "png": "65fa2832d6c5f3f78d5c755a2f681f13fa674e7e2c7301238e002b305e90fdfa",
+        "webp": "d1e37acfe32ac9ad9b68f709ba08d364b4010155aa95c0edd982f7952a609025"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_00_parts_legs_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "parts/legs_bare",
+      "item": null,
+      "slot": null,
+      "z": 3,
+      "png": "assets/characters/v12/C06/layers/00-parts_legs_bare.png",
+      "webp": "assets/characters/v12/web/glamour/layers/00_parts_legs_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 140046,
+      "webp_bytes": 33234,
+      "sha256": {
+        "png": "b54db92c3d282bc65419424f853e210d08b9882ba34e0fd6e8dee89aad2f6322",
+        "webp": "6c09729393c9cae979fa56ded44e1870dcd62ffa31a4d3339bbc69e048c29403"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_01_parts_torso_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "parts/torso",
+      "item": null,
+      "slot": null,
+      "z": 10,
+      "png": "assets/characters/v12/C06/layers/01-parts_torso.png",
+      "webp": "assets/characters/v12/web/glamour/layers/01_parts_torso.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 958108,
+      "webp_bytes": 191322,
+      "sha256": {
+        "png": "54a9aa55ce2f15cf397dbaeb7e69d8da3d0af4ba69bd8bbfeedd6c4f3f7bc45a",
+        "webp": "678172a266b44731924fff5142f983e6ec80402a79e73f4e2187cb2976b86b1e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "H bag — front right flank",
+      "item": "C06/bag_h",
+      "slot": "bag",
+      "z": 30,
+      "png": "assets/characters/v12/C06/layers/04-H_bag_—_front_right_flank.png",
+      "webp": "assets/characters/v12/web/glamour/layers/04_h_bag_front_right_flank.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 133306,
+      "webp_bytes": 28680,
+      "sha256": {
+        "png": "b02a308200a372d4cc61ba9b3d04af2281150f202485ce9eb71cfcc3421e98da",
+        "webp": "53fa9c7fedbc081e16cac6db2dc20a560d0afeadb022fffce93feed3737f4b13"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_05_diamonds_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "diamonds",
+      "item": "C06/diamonds",
+      "slot": "neck",
+      "z": 45,
+      "png": "assets/characters/v12/C06/layers/05-diamonds.png",
+      "webp": "assets/characters/v12/web/glamour/layers/05_diamonds.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 43493,
+      "webp_bytes": 7806,
+      "sha256": {
+        "png": "17c4bc1ac6b36c537c93ee6144f3b8e13ce09cec8a9d3e7219c06ad2c696ea8e",
+        "webp": "17ad93b5b17300291ae56589a15ac9e4f11fdc14ecd61a842e0e0f9c5bc41ccc"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_06_parts_left_wing_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "parts/left_wing",
+      "item": null,
+      "slot": null,
+      "z": 60,
+      "png": "assets/characters/v12/C06/layers/06-parts_left_wing.png",
+      "webp": "assets/characters/v12/web/glamour/layers/06_parts_left_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 32450,
+      "webp_bytes": 6734,
+      "sha256": {
+        "png": "0e75117da6aa0891c00fd515bb772bdeda8367bd23e99821d45ab7b5f7b7bd37",
+        "webp": "133e346fdfd19d6a9929bae627cddb34ad9a279b5567c782d71803fa9a0c6405"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_07_parts_right_wing_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "parts/right_wing",
+      "item": null,
+      "slot": null,
+      "z": 61,
+      "png": "assets/characters/v12/C06/layers/07-parts_right_wing.png",
+      "webp": "assets/characters/v12/web/glamour/layers/07_parts_right_wing.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 162273,
+      "webp_bytes": 33092,
+      "sha256": {
+        "png": "9f851d7f316aa38e8fa4cbed57f92eb2eff596d680a9e551562f9daaa102b978",
+        "webp": "1c4ac65ecaa505779738c797fa1264442961a85d7039ea8a9667e0ec662ca3cd"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_08_head_native_base_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body_part",
+      "role": "head_native_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/C06/layers/08-head_native_base.png",
+      "webp": "assets/characters/v12/web/glamour/layers/08_head_native_base.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 551539,
+      "webp_bytes": 109174,
+      "sha256": {
+        "png": "19db49892f26314235c7cf949c2db01a809ceb6b3c6d2d44548109cc20339abe",
+        "webp": "2c35d425f76e0c0e35dc8938e40b2c226be2568501a22ebfb6787b40ba5386ea"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_09_hat_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "hat",
+      "item": "C06/hat",
+      "slot": "head",
+      "z": 80,
+      "png": "assets/characters/v12/C06/layers/09-hat.png",
+      "webp": "assets/characters/v12/web/glamour/layers/09_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 247567,
+      "webp_bytes": 53644,
+      "sha256": {
+        "png": "171ee77a9e4948962bac81ab86ec8b2aef8064bf4705f34854ded7cf9df2f34e",
+        "webp": "aa8601d5ce741a63fbb7a4de639b3c8d7ec6068771c2a26171606c7f96cf3db1"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_10_glasses_optical_centers_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "glasses — optical centers",
+      "item": "C06/glasses",
+      "slot": "eyes",
+      "z": 90,
+      "png": "assets/characters/v12/C06/layers/10-glasses_—_optical_centers.png",
+      "webp": "assets/characters/v12/web/glamour/layers/10_glasses_optical_centers.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 37984,
+      "webp_bytes": 7964,
+      "sha256": {
+        "png": "d3f07f557b2663ffd65ac525f659f0fcad69754433917818a840bf7723ede7c4",
+        "webp": "98a2ff053625ca156112bab2c44e09906eab12790deca0f596614cc9789cca9a"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "left anklet — leg shaft",
+      "item": "C06/anklets",
+      "slot": "feet",
+      "z": 95,
+      "png": "assets/characters/v12/C06/layers/11-left_anklet_—_leg_shaft.png",
+      "webp": "assets/characters/v12/web/glamour/layers/11_left_anklet_leg_shaft.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 15209,
+      "webp_bytes": 2024,
+      "sha256": {
+        "png": "99aa9cb5f67848f93dcaafe9895d9f51a436ad98bf7ceafd5cba164fa1fa2cd7",
+        "webp": "ce89849831ba236f6e606ae0d4ff9a7224576fdf74a7cbab40106b2d8aa4ef74"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "item_front",
+      "role": "right anklet — leg shaft",
+      "item": "C06/anklets",
+      "slot": "feet",
+      "z": 95,
+      "png": "assets/characters/v12/C06/layers/12-right_anklet_—_leg_shaft.png",
+      "webp": "assets/characters/v12/web/glamour/layers/12_right_anklet_leg_shaft.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 15016,
+      "webp_bytes": 1990,
+      "sha256": {
+        "png": "ce42b2df93579ff78fae3e744c5a0b3b676b2755d7a58632c866d1edeca67153",
+        "webp": "6e6f4839360d3b5a9b0c0f0beedce6c1128a7d138f48e6e21e5638afd9768a14"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "wardrobe_v12"
+    },
+    {
+      "id": "ryaba_heads_ryaba_base_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/ryaba/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/ryaba/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 548410,
+      "webp_bytes": 99630,
+      "sha256": {
+        "png": "c619861365a3a13cfb177d0f536756cf5302f0494e23fd6ade105a55dfb4795e",
+        "webp": "8e537e8bf2f9c4b73139bf960c3cbf3827abfeb4564274bbea7f1c1f2b0d7c06"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_body_full_ryaba_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_ryaba.png",
+      "webp": "assets/characters/v12/web/body/full_ryaba.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1631640,
+      "webp_bytes": 140582,
+      "sha256": {
+        "png": "65e41d0bf138e4ff3349f2382f2e3db7e6990e745d2cfa01b3dc5d7c61938898",
+        "webp": "9786c7b302e9d8a3e4a7361cc8a2b69d38b2b1e838bff256a1e8341c6afcd615"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_joy_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 564838,
+      "webp_bytes": 105358,
+      "sha256": {
+        "png": "9b0c6ef3955edb02779c49d24c0ad9476e8a0d09dbc78c43029aaa9c7e916410",
+        "webp": "51f10a031feb876029b3edf02c2bb86fb191357400c11d4e635e7fe109a64ced"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_joy_hat_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/joy_hat.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/joy_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 574150,
+      "webp_bytes": 107464,
+      "sha256": {
+        "png": "c1d73d785ceb86690976a5d96d980c58dac676cd2e1829f420425507ed599bab",
+        "webp": "a172a1ab06f0d60fc98f4d584e815156da82a4dc92a753b08e90d0c5f01cf2ba"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_surprise_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 563682,
+      "webp_bytes": 105266,
+      "sha256": {
+        "png": "d28f71d7fd71895be019d89a20b1e64a8544e3e33b5709d4072e8a1d22986e2e",
+        "webp": "a3f023acb0867180d37484a21715bcb5fb51436b53b08b53c41ae3d454e302dd"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_surprise_hat_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/surprise_hat.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/surprise_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 572450,
+      "webp_bytes": 106902,
+      "sha256": {
+        "png": "cb59d552e357026a7ef6873f8721b3add9b2bb1fff8d21742709491c686220ee",
+        "webp": "378353366a5358da9a8e8678bea53fcf0d5615cca52fc08c56f33a9c2c3c9da7"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_determination_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 566784,
+      "webp_bytes": 105328,
+      "sha256": {
+        "png": "b1375a24e3db23bde752b4f211edfd0f372822a0b8a379de9e31c474a77ca06f",
+        "webp": "c47b1803593e8d54637565afb96ca783da6fdc7316a47e30cf3fb726975f8019"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_determination_hat_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/determination_hat.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/determination_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 575092,
+      "webp_bytes": 107206,
+      "sha256": {
+        "png": "99c44b260c239c60858859a98b0ef0cd87aee6406dea7f94b03496492de60d9c",
+        "webp": "6d5dcb6980c9812b7b24bdd228fa3cbf75ffba7ca8e4cb9ee24eac2507b40ffd"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_sadness_bare_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 561429,
+      "webp_bytes": 104716,
+      "sha256": {
+        "png": "33488c29ccf35a3328992fdd2e9180880ed48966780e2f160db71d910ecdc45d",
+        "webp": "bfe0af7d48ff61cbb3988d806e974dd9b89f1da2ad3ac0a1d212b741b5fc3312"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "ryaba_emotions_ryaba_sadness_hat_png",
+      "character": "ryaba",
+      "source_character": "C01",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/ryaba/sadness_hat.png",
+      "webp": "assets/characters/v12/web/emotions/ryaba/sadness_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 571930,
+      "webp_bytes": 106746,
+      "sha256": {
+        "png": "cb9bc371625e9017bbe6a96a1875034cb0a20aa6bdbb1fd4c8108210ab2f68d6",
+        "webp": "dae9549ac7551d4e6d1d3c2472543348e302bb402369fe0a7e2f256f41dd441d"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fighter_heads_fighter_base_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/fighter/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/fighter/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493984,
+      "webp_bytes": 81550,
+      "sha256": {
+        "png": "fce4a945adee91978b9a97bdb2da98d467cfaa6944120ca2b8d45585612d0e5f",
+        "webp": "bec0a58a531e2984648d6cb0abf4ec28a15746437ed88b72c4cfa6b065361146"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fighter_body_full_fighter_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_fighter.png",
+      "webp": "assets/characters/v12/web/body/full_fighter.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1555931,
+      "webp_bytes": 290736,
+      "sha256": {
+        "png": "4b392f557a71cf6637d9b1f42c71e00c5dbb9f0e1a6dc4de3a55c5d199d7182f",
+        "webp": "9b4d4b18d38ce8c277b053eae073e41c88f4cc7d200b7a39b24351c744904aa6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "fighter_emotions_fighter_joy_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fighter/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fighter/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493846,
+      "webp_bytes": 82876,
+      "sha256": {
+        "png": "8f16fa33f6fa5a8446cb81f0aeeee457f9475ba0d56a8dde0e71ef64ea1a7f6e",
+        "webp": "1cd104f5566ad52bf2d10d3e634b08991954051ece0a79c03e6205cc3a3dd4c3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fighter_emotions_fighter_surprise_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fighter/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fighter/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493217,
+      "webp_bytes": 85548,
+      "sha256": {
+        "png": "55caccaca488b0b4f13bcf7dc5be8c2cd7ccabff1d5b4d43985b76a43d097bfe",
+        "webp": "ce8776186df4d4f3d1503d8fadc433ce5b1ff0c63cae8082e59b5f59c4b3e8bc"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fighter_emotions_fighter_determination_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fighter/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fighter/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493785,
+      "webp_bytes": 83654,
+      "sha256": {
+        "png": "6f8b545ad041f4276542642237e0ac13528cb30bada887d7bd6ab9d4a55cbc5b",
+        "webp": "ec8c69469add59e1c024537785ff46f3819e38a55dbf08416ba78256d8575b08"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fighter_emotions_fighter_sadness_bare_png",
+      "character": "fighter",
+      "source_character": "C02",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fighter/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fighter/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 493279,
+      "webp_bytes": 85050,
+      "sha256": {
+        "png": "c37dbe112634fb6bdee472b36abe33c5d992b0c9cdda2c1afc043fc7fcba9502",
+        "webp": "f0ed4eb2458a207d29bf96180efc889849d947bdd6a2f5fa83fce18ada4b6e4d"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_heads_fool_base_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/fool/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/fool/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 589866,
+      "webp_bytes": 115064,
+      "sha256": {
+        "png": "8e187a1c9c073865752bf0d1ad7ec592d4539dc0107eca77e6befed45723446f",
+        "webp": "c7678eb4588a8ea8fa14e6518fc11eb93060266210a3ca88dcca574c48cda198"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_body_full_fool_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_fool.png",
+      "webp": "assets/characters/v12/web/body/full_fool.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1711228,
+      "webp_bytes": 145278,
+      "sha256": {
+        "png": "9b431ff7f5a4f44241d4c9da2a09dc87d455ff9dc41a4167e80086ff8fb6098a",
+        "webp": "6ded6c7a08069f654420837847ea97a7909e7ad73ed8f20d371364ca22da2924"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "fool_emotions_fool_joy_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fool/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 599484,
+      "webp_bytes": 118572,
+      "sha256": {
+        "png": "c2680fdda2a6e0857ee56146e4ad54884446c2e7ce28761c71238c51c8bf2fac",
+        "webp": "23561087debb28c17ee9128b05d18a2886065f47d9590a9d20db306dccafb061"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_joy_hat_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/joy_hat.png",
+      "webp": "assets/characters/v12/web/emotions/fool/joy_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 598322,
+      "webp_bytes": 118696,
+      "sha256": {
+        "png": "3996761d9597f276541968c700b490ff23d7c341aa2a5a5ecb325d6feb33f1e3",
+        "webp": "7d37279d4b6eb7a53b28d9ebd2869e5048f91dbc35ec9e7382c4f354855f6359"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_surprise_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fool/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 598261,
+      "webp_bytes": 118638,
+      "sha256": {
+        "png": "e5222c4f6439eea47566777363107d2aa3082f901feba15d866f0b778fd17e21",
+        "webp": "5db5b4fff7256e520c9a3d1f574b62b2d1b6a2d449e637453266428cd3aea9fa"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_surprise_hat_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/surprise_hat.png",
+      "webp": "assets/characters/v12/web/emotions/fool/surprise_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 597248,
+      "webp_bytes": 118390,
+      "sha256": {
+        "png": "7e29af532866551151d72ecbbed1a6349186fd33b89ddfb4a5d12ad8b04cc3b2",
+        "webp": "9adf355cb104ae0d85bff26472f6656e90cdb43f311f90f1c4fedcb76aeb1b18"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_determination_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fool/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 594325,
+      "webp_bytes": 117026,
+      "sha256": {
+        "png": "4dc3f261dfd7a670954e663e42be38e682e1405be4c7826810d4bbee05736fb4",
+        "webp": "e6e1397242e5aef441f32deefae7bc87d1d4cd677571b1ec3d1ee769703553d6"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_determination_hat_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/determination_hat.png",
+      "webp": "assets/characters/v12/web/emotions/fool/determination_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 593864,
+      "webp_bytes": 117364,
+      "sha256": {
+        "png": "d7e0dd9ad46ceede6bc64eab0e8028a16b3890c33dce379664d21d59a1452bd2",
+        "webp": "26f870b25d717fb67b2c7557a65525544ae7f367baf2f13eacd4c77b324f963e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_sadness_bare_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/fool/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 591539,
+      "webp_bytes": 116360,
+      "sha256": {
+        "png": "016fc63a70ac89602313def60608f7317085a76b528fe6eec8a6bb35b676a505",
+        "webp": "ff12d01717303d51cf6d029007a212a48ad2c0f570ad37b60d175e8299c17109"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "fool_emotions_fool_sadness_hat_png",
+      "character": "fool",
+      "source_character": "C03",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/fool/sadness_hat.png",
+      "webp": "assets/characters/v12/web/emotions/fool/sadness_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 588776,
+      "webp_bytes": 116744,
+      "sha256": {
+        "png": "8f8bb2d9b06991d09c552db6749459b178c22ecae962ddeabd0d16e80e23733f",
+        "webp": "059334dfa96a00166094eb7184d05cbaf42ccce70131165267812354cff48094"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "professor_heads_professor_base_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/professor/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/professor/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 765552,
+      "webp_bytes": 138686,
+      "sha256": {
+        "png": "54330207209d0cd7e3d097a6ba0f23042616f1d12ef6de81ea49f7dc498d4965",
+        "webp": "a0e160c30a827762d919749c52d2378d8e5d936427891ba86d7326495e8052d7"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "professor_body_full_professor_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_professor.png",
+      "webp": "assets/characters/v12/web/body/full_professor.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1669863,
+      "webp_bytes": 152148,
+      "sha256": {
+        "png": "05f8815d517a6050f1f51c48246648861149df2366556382ba89779e236b23b6",
+        "webp": "5213dc2acead19181c2edc86c29f92746de9bbfb774bf8d2b39270779efb8eef"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "professor_emotions_professor_joy_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/professor/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/professor/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 751650,
+      "webp_bytes": 138900,
+      "sha256": {
+        "png": "76668491c6f4607dc65b6fbde067d24575fe6622036178495db130a45a5ae2c1",
+        "webp": "e7a3c6d9e1085f95a5d49b415b0ca29ad98a3079195cd5112e298b5bf28527cb"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "professor_emotions_professor_surprise_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/professor/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/professor/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 746473,
+      "webp_bytes": 137928,
+      "sha256": {
+        "png": "f30928d05f8cca1fa41d3c4597925b557efa95bf16c3d9a6c92208d540735db4",
+        "webp": "b7b128bb129f075d59b0f4f2d81712f800e01ac8daa4c340d8783a6a73147651"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "professor_emotions_professor_determination_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/professor/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/professor/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 745854,
+      "webp_bytes": 137546,
+      "sha256": {
+        "png": "fc4de980bdaa79514bbdec15bbc169c9d1fe05b31b265ebe22405b636902be6f",
+        "webp": "9d9f4900197042e921aff7c16170a6b863c7ab9dd64d5c67a509cffa0e541622"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "professor_emotions_professor_sadness_bare_png",
+      "character": "professor",
+      "source_character": "C04",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/professor/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/professor/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 743373,
+      "webp_bytes": 137098,
+      "sha256": {
+        "png": "60387a75f0911322062d0b098801918b5d90b24d5dff76800e65c170b6523cf7",
+        "webp": "f6d4b9b026fabe3ba02669d9662656776cde520f0f108198d76a7d1ec8043c87"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_heads_monk_base_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/monk/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/monk/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 367143,
+      "webp_bytes": 62272,
+      "sha256": {
+        "png": "2bcf91ed6e4472053e7924ce782b68b47075c1d93ca91dd73648323fcb57a86e",
+        "webp": "420ca33d97bfa748c7033b5510d2492199dd0ea3e7e30d22802238dda049bc0f"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_body_full_monk_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_monk.png",
+      "webp": "assets/characters/v12/web/body/full_monk.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1217763,
+      "webp_bytes": 245354,
+      "sha256": {
+        "png": "91c66c9fef4610c71e9e55c0d700fa2e48b9c245cb23564a8be1efb983f3a233",
+        "webp": "5cc8455976eaffdf2a0781a8ec9668239f82d5924a99f3e112780be28ee74cdf"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "monk_emotions_monk_joy_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/monk/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 371192,
+      "webp_bytes": 64092,
+      "sha256": {
+        "png": "ecf7d11f86b16c18377f9acd986f3be10d274933953d2d973794756c501723bc",
+        "webp": "0423a5d7bb7136b9bfd908e3fc6cbd30ab83b1db06fb2d5a6e5e8cec48040f3e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_joy_hat_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/joy_hat.png",
+      "webp": "assets/characters/v12/web/emotions/monk/joy_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 344934,
+      "webp_bytes": 59402,
+      "sha256": {
+        "png": "37ce8e0603f03a68c2d92945777de974f94dc518549edcb85a427447e449467b",
+        "webp": "9b1afebe2b65df216a51526927b5571ef4c9e60c3030f95e4e33b95ad0cb349e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_surprise_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/monk/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 374078,
+      "webp_bytes": 65408,
+      "sha256": {
+        "png": "40a54af5a0f365c00149d0880562e281c1216eaa3075acd3eddea627997498e9",
+        "webp": "55f169865c008628b410f5321a3d78520ac89bb700db9a14ea5eab10b4b8b3a3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_surprise_hat_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/surprise_hat.png",
+      "webp": "assets/characters/v12/web/emotions/monk/surprise_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 349511,
+      "webp_bytes": 60980,
+      "sha256": {
+        "png": "e5e2a425b9a0088cac23fa3b6a617020eca5f46fb08d0bd379fe09af4e574c43",
+        "webp": "f7b41909c9b26d9b9b9f3f5a55a9eedabc16b21dd00fcb1395f892143529e693"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_determination_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/monk/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 370920,
+      "webp_bytes": 64610,
+      "sha256": {
+        "png": "fabe9b769a0a56f10a2e8581d947921a521293bed5ecee13fd0a03bc2b64d15f",
+        "webp": "820918a4e2864c0ca798efccd6489adaf8d39a628ee126a939d44868af9048b4"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_determination_hat_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/determination_hat.png",
+      "webp": "assets/characters/v12/web/emotions/monk/determination_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 344592,
+      "webp_bytes": 60056,
+      "sha256": {
+        "png": "1a80da048b9999c0179de8dc9e8c95a5615bace32197b9704b9fb96256963b2a",
+        "webp": "080c6b2d456582e0b6a276674c284ee33a393b4d53489133eb360dec38f49b6d"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_sadness_bare_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/monk/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 369619,
+      "webp_bytes": 64010,
+      "sha256": {
+        "png": "1524a46f853b11f6b8524ab9e0535e7e4118a7aed7a895d4dc74b1e0af8fef11",
+        "webp": "221e866a6c8145f6f18a2d7598ac103656f707818e888d03b940a52f8a217c10"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "monk_emotions_monk_sadness_hat_png",
+      "character": "monk",
+      "source_character": "C05",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/monk/sadness_hat.png",
+      "webp": "assets/characters/v12/web/emotions/monk/sadness_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 343399,
+      "webp_bytes": 59574,
+      "sha256": {
+        "png": "9ceae0c13d9a680e97e74690d5c7b85dbfb72f4b4fe6fd8661c5ef7c7d7f8a24",
+        "webp": "1b28e9154c905abf2d502159653c4ed30851171d16d55e9c3999a195b13d9e05"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_heads_glamour_base_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_base",
+      "role": "head_bare_base",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/heads/glamour/base_bare.png",
+      "webp": "assets/characters/v12/web/heads/glamour/base_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 655831,
+      "webp_bytes": 113170,
+      "sha256": {
+        "png": "7d7951ed14c59d7a90ffc24ec8c5824b0900a0a83df5eed35219561bf45834cb",
+        "webp": "7bc83d78a81d27f89c33bf0608d30f56133e541714400481e3f1bd9b7bade8a3"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_body_full_glamour_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "body",
+      "role": "undressed_full_body",
+      "item": null,
+      "slot": null,
+      "z": null,
+      "png": "assets/characters/v12/body/full_glamour.png",
+      "webp": "assets/characters/v12/web/body/full_glamour.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 1687398,
+      "webp_bytes": 142866,
+      "sha256": {
+        "png": "0cc07c6bfa1579f0964e90120a24177f05ddc0be9c173d24015083dcfaac68de",
+        "webp": "592ccdb3a79c956efcb3b15fd17fbe5d03f1ec6b7c6ec1806dba232c9f402014"
+      },
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "composed from unchanged v12 anatomy"
+    },
+    {
+      "id": "glamour_emotions_glamour_joy_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/joy_bare.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/joy_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 653470,
+      "webp_bytes": 115068,
+      "sha256": {
+        "png": "8eb61e9213a2cb9b65cb5fb272c32973ea2d33a4bbf04b1439d02a6a3a1c38e7",
+        "webp": "5daa53158992a513053f5f2096d36fcbdc9787becf3541cba4d2c0cdf9c214cb"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_joy_hat_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/joy_hat.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/joy_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 632395,
+      "webp_bytes": 109694,
+      "sha256": {
+        "png": "98d172bb33f1f82710c7eae12244d45b905c461f7bbb106df619dcf4dc6bec26",
+        "webp": "fa35fd5e481124cec6d3034b543dddef0d442305122f88afbd2d9c27466178b1"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "joy",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_surprise_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/surprise_bare.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/surprise_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 654031,
+      "webp_bytes": 115482,
+      "sha256": {
+        "png": "8b5f2b03c3042eb616f06bb48817204b90478f0453146de01ec27ec6da79be04",
+        "webp": "827da1776031cdd6ad77a1a78b9711913a93a3a599a422b112a3317c8469706e"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_surprise_hat_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/surprise_hat.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/surprise_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 632155,
+      "webp_bytes": 109818,
+      "sha256": {
+        "png": "39a305720ea9b463bb544b640ec863718fdb022d2459e5a4ed7eaaf9b9d79834",
+        "webp": "f12ace87de86a44c21061ca93e89afa01e1f11a66d3d64e831db802602549e2c"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "surprise",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_determination_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/determination_bare.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/determination_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 650225,
+      "webp_bytes": 114230,
+      "sha256": {
+        "png": "2d9ce6b26f5aedb28dbfadded43dde80b9a99c99aaea20ed2e40ec355adf10fc",
+        "webp": "ba676a86960358790d2e6291de1ce2ddbf7708538e9caf588acfca7e7eb1ce15"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_determination_hat_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/determination_hat.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/determination_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 627654,
+      "webp_bytes": 108570,
+      "sha256": {
+        "png": "210b00c802e2a7cd17f4732695929419ca3026609514d479f637190181916556",
+        "webp": "cd87baf9f9d8b9839f92b950b3365d6bc47bb5448695aa067f40149e56b12067"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "determination",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_sadness_bare_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/sadness_bare.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/sadness_bare.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 649364,
+      "webp_bytes": 114148,
+      "sha256": {
+        "png": "2d945b4120622c1585550d70494bffa53a175c55f84a55d05c80689d1a61b373",
+        "webp": "b35f3c6dc8ef1774d49e8ce416b11abef998ba24df253abfcf4a154ef0b82467"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "bare",
+      "replaces_role": "head_native_base"
+    },
+    {
+      "id": "glamour_emotions_glamour_sadness_hat_png",
+      "character": "glamour",
+      "source_character": "C06",
+      "type": "head_emotion",
+      "role": "replacement_head",
+      "item": null,
+      "slot": null,
+      "z": 70,
+      "png": "assets/characters/v12/emotions/glamour/sadness_hat.png",
+      "webp": "assets/characters/v12/web/emotions/glamour/sadness_hat.webp",
+      "png_size": [
+        1200,
+        1520
+      ],
+      "webp_size": [
+        600,
+        760
+      ],
+      "png_bytes": 628114,
+      "webp_bytes": 109366,
+      "sha256": {
+        "png": "791bf7cc32f33f56048d0bc291e4f1e247ef351e708bc7c97e2da120f430b6f1",
+        "webp": "7c52a60f8770311e2e122c63bf75af4753d2bfbc1cf1132968bb6ec6108c634f"
+      },
+      "webp_lossless": true,
+      "webp_quality": 100,
+      "source": "existing registered v08 emotion; no regeneration",
+      "emotion": "sadness",
+      "headwear_variant": "hat",
+      "replaces_role": "head_native_base"
+    }
+  ],
+  "qa": {
+    "original_95_png_unchanged": true,
+    "png_and_webp_decode": "passed",
+    "dimensions_and_transparency": "passed",
+    "webp_limit_bytes": 300000,
+    "max_webp_bytes": 290736,
+    "browser_assembly": {
+      "status": "blocked",
+      "reason": "Local Playwright has no Chromium; cloud Chrome file:// is blocked by URL policy. Browser evidence requested from Claude/agent:dev.",
+      "reproduce": "python3 tools/art/characters-v12-web/preview_v12.py --repo . --out assets/characters/previews/browser"
+    },
+    "owner_approval_not_set_by_agent": true,
+    "registered_recipe_pixel_comparison": {
+      "status": "passed",
+      "reference": "original PNG resized to 600x760 with Lanczos",
+      "results": [
+        {
+          "character": "ryaba",
+          "rgb_mae": 0.40599846569693915,
+          "alpha_mae": 0.09914234856248988,
+          "layer_count": 11,
+          "pixel_check": "passed"
+        },
+        {
+          "character": "fighter",
+          "rgb_mae": 0.36794357136113093,
+          "alpha_mae": 0.05518982643602942,
+          "layer_count": 13,
+          "pixel_check": "passed"
+        },
+        {
+          "character": "fool",
+          "rgb_mae": 0.5030204957408246,
+          "alpha_mae": 0.14648096930793816,
+          "layer_count": 13,
+          "pixel_check": "passed"
+        },
+        {
+          "character": "professor",
+          "rgb_mae": 0.4783148101095082,
+          "alpha_mae": 0.13043580550144454,
+          "layer_count": 13,
+          "pixel_check": "passed"
+        },
+        {
+          "character": "monk",
+          "rgb_mae": 0.5793032638118253,
+          "alpha_mae": 0.14933987409381774,
+          "layer_count": 15,
+          "pixel_check": "passed"
+        },
+        {
+          "character": "glamour",
+          "rgb_mae": 0.5421129584561678,
+          "alpha_mae": 0.12043567921284368,
+          "layer_count": 12,
+          "pixel_check": "passed"
+        }
+      ]
+    },
+    "bare_base_heads": {
+      "status": "passed",
+      "source": "existing v08 parts/head.png; preserves comb for headwear-off, native scalp retained in equipped recipes",
+      "proof": "assets/characters/previews/v12_bare_bodies_proof.png"
+    }
+  }
+}
