@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "batch": "coop01_v01",
+  "status": "QA",
+  "owner_approval_not_set_by_agent": true,
+  "task": "https://github.com/gselfman/QuRa-Game-Design/issues/23",
+  "depends_on_issue": 22,
+  "figma": {
+    "file_key": "pTm5JOM8r7b8ukBrk3UsXg",
+    "page_id": "281:2",
+    "page_name": "32_COOP01_BACKGROUNDS"
+  },
+  "canvas": [
+    1080,
+    1920
+  ],
+  "coordinate_units": "percent of full canvas; 0-100; origin top-left",
+  "placement_contract": {
+    "slot_point": "bare feet contact the top of the illustrated perch",
+    "recommended_width": "full registered 1200x1520 character canvas as percent of background width; do not trim",
+    "preview_character_canvas": [
+      1200,
+      1520
+    ],
+    "perch_contact_anchor_px_by_character": {
+      "ryaba": [
+        758,
+        1098
+      ],
+      "fighter": [
+        797.5,
+        1098
+      ],
+      "fool": [
+        741,
+        1098
+      ],
+      "professor": [
+        729,
+        1098
+      ],
+      "monk": [
+        734.5,
+        1098
+      ],
+      "glamour": [
+        826,
+        1098
+      ]
+    },
+    "main_floor_contact_anchor_px": {
+      "ryaba": [
+        676.5,
+        1339
+      ]
+    },
+    "sitting_visibility": "hide bags, their straps and contents, footwear and ankle jewellery; retain upper clothing and head/neck equipment",
+    "main_preview_is_focus_duplicate": true,
+    "main_preview_note": "The large floor hen is a focus preview of an existing resident; it does not add another capacity slot."
+  },
+  "reference": {
+    "repo": "gselfman/QuRa",
+    "path": "web/public/assets/adaptive/coop/bg-941.webp",
+    "sha256": "ed18bf10e06e2d03748f61d65d323ede2fe8d5d2cd7792317e9e8d19d225b1ff"
+  },
+  "assets": [
+    {
+      "id": "COOP01_02",
+      "name": "Гнёздышко",
+      "capacity": 2,
+      "status": "QA",
+      "png": "assets/coop/qura_coop01_02_v01.png",
+      "webp": "assets/coop/qura_coop01_02_v01.webp",
+      "width": 1080,
+      "height": 1920,
+      "png_bytes": 2761022,
+      "webp_bytes": 385094,
+      "webp_quality": 92,
+      "sha256": {
+        "png": "82d063c91e0153b57ffa11c62ce41f6fd2d9db327943dfdd2791335ac720cfe0",
+        "webp": "0ae45e4829a740208ba7e034704fe70523c48d07163d76fd857fe9cad73c6cbf"
+      },
+      "native_generation_size": [
+        941,
+        1672
+      ],
+      "working_export_note": "Resampled with Lanczos to the required 1080x1920; no native 4K detail claimed.",
+      "figma_node_id": "281:19",
+      "figma_user_source_node_id": "279:2036",
+      "slots": [
+        {
+          "id": 1,
+          "x": 38,
+          "y": 44.3,
+          "recommended_width_percent": 29,
+          "preview_character": "ryaba"
+        },
+        {
+          "id": 2,
+          "x": 70,
+          "y": 44.3,
+          "recommended_width_percent": 29,
+          "preview_character": "fighter"
+        }
+      ],
+      "main_hen": {
+        "x": 50,
+        "y": 89,
+        "recommended_width_percent": 50,
+        "preview_character": "ryaba"
+      },
+      "preview": {
+        "figma_node_id": "281:23",
+        "png": "assets/coop/previews/qura_coop01_02_preview_v01.png",
+        "sha256": "53fbedbcb116df3b58a85588108d590c113a752e80b0e8317d76feead317144e"
+      },
+      "prompt": "QuRa game art. Premium cozy soft-3D dimensional style, warm oak wood, rich amber and polished gold, soft volumetric materials, top-left key light, crisp mobile-readable shapes. Same world and camera as the attached QuRa coop reference. Interior of a chicken coop seen from the front, vertical 9:16, 1080x1920. Keep the top 18% calm, perches in the band between 30% and 48% of the height, a clear open floor in the center from 55% to 90%, and a simple bottom 8%. No chickens, no people, no roosters, no other animals, no text, no letters, no numbers, no logos, no watermark, no UI.\n\nA small, humble but cozy starter coop at morning. Rough natural pine planks, a low roof with one small round window with soft sunrise light, one short birch perch for exactly two birds centered in the perch band, two straw nests in simple wooden crates on the floor sides, a tin water bowl and a small sack of grain, one simple hanging lamp. Modest and warm, very few decorations, clearly the first and smallest home.",
+      "targeted_correction_prompt": null,
+      "qa": {
+        "no_animals_or_ui_in_background": true,
+        "perches_in_30_48_percent_band": true,
+        "clear_central_floor": true,
+        "webp_under_400000_bytes": true,
+        "native_figma_preview_inspected": true,
+        "source_character_art_unchanged": true
+      }
+    },
+    {
+      "id": "COOP01_04",
+      "name": "Курятник",
+      "capacity": 4,
+      "status": "QA",
+      "png": "assets/coop/qura_coop01_04_v01.png",
+      "webp": "assets/coop/qura_coop01_04_v01.webp",
+      "width": 1080,
+      "height": 1920,
+      "png_bytes": 3107693,
+      "webp_bytes": 382286,
+      "webp_quality": 86,
+      "sha256": {
+        "png": "e141f73f41d898019fc150c8654aea95a98fe6704e47eb9b97b922cd402fd71c",
+        "webp": "0a808e81a9d8954954d582bf2deb81c1986d7d7fbe0c4f9a5bb35371bc8e7f50"
+      },
+      "native_generation_size": [
+        941,
+        1672
+      ],
+      "working_export_note": "Resampled with Lanczos to the required 1080x1920; no native 4K detail claimed.",
+      "figma_node_id": "281:31",
+      "figma_user_source_node_id": "279:2040",
+      "slots": [
+        {
+          "id": 1,
+          "x": 18,
+          "y": 44.05,
+          "recommended_width_percent": 23,
+          "preview_character": "ryaba"
+        },
+        {
+          "id": 2,
+          "x": 41,
+          "y": 44.05,
+          "recommended_width_percent": 23,
+          "preview_character": "fighter"
+        },
+        {
+          "id": 3,
+          "x": 64,
+          "y": 44.05,
+          "recommended_width_percent": 23,
+          "preview_character": "fool"
+        },
+        {
+          "id": 4,
+          "x": 87,
+          "y": 44.05,
+          "recommended_width_percent": 23,
+          "preview_character": "professor"
+        }
+      ],
+      "main_hen": {
+        "x": 50,
+        "y": 89,
+        "recommended_width_percent": 50,
+        "preview_character": "ryaba"
+      },
+      "preview": {
+        "figma_node_id": "281:35",
+        "png": "assets/coop/previews/qura_coop01_04_preview_v01.png",
+        "sha256": "c98d0f366ad3035ea10b96545820d7e65837c9529b63708a48f1112252b59d87"
+      },
+      "prompt": "QuRa game art. Premium cozy soft-3D dimensional style, warm oak wood, rich amber and polished gold, soft volumetric materials, top-left key light, crisp mobile-readable shapes. Same world and camera as the attached QuRa coop reference. Interior of a chicken coop seen from the front, vertical 9:16, 1080x1920. Keep the top 18% calm, perches in the band between 30% and 48% of the height, a clear open floor in the center from 55% to 90%, and a simple bottom 8%. No chickens, no people, no roosters, no other animals, no text, no letters, no numbers, no logos, no watermark, no UI.\n\nA proper wooden barn coop in warm evening light, based closely on the attached QuRa coop reference: oak plank walls, a big X-braced barn door at the back, three hanging lanterns, climbing ivy, one long oak perch for exactly four birds across the perch band, straw-filled nest boxes on both sides, a wooden crate of fresh eggs, a small ladder. A plain hanging wooden sign without any text. Comfortable and lived-in, a clear upgrade from the small starter coop.",
+      "targeted_correction_prompt": "QuRa game art. Premium cozy soft-3D dimensional style, warm oak wood, rich amber and polished gold, soft volumetric materials, top-left key light, crisp mobile-readable shapes. Same world and camera as the attached QuRa coop reference. Interior of a chicken coop seen from the front, vertical 9:16, 1080x1920. Keep the top 18% calm, perches in the band between 30% and 48% of the height, a clear open floor in the center from 55% to 90%, and a simple bottom 8%. No chickens, no people, no roosters, no other animals, no text, no letters, no numbers, no logos, no watermark, no UI.\n\nA proper wooden barn coop in warm evening light, based closely on the attached QuRa coop reference: oak plank walls, a big X-braced barn door at the back, three hanging lanterns, climbing ivy, one long oak perch for exactly four birds across the perch band, straw-filled nest boxes on both sides, a wooden crate of fresh eggs, a small ladder. A plain hanging wooden sign without any text. Comfortable and lived-in, a clear upgrade from the small starter coop.\n\nTargeted QA correction to the supplied 4-place coop image. Keep the entire existing camera, room geometry, lighting, oak wall, blank hanging sign, single long perch and side straw nesting boxes unchanged. Move the small ladder off the central floor and tuck it against the extreme left wall below the nesting boxes. Keep the central floor and the right-hand floor area clear for a separate main hen and an information panel. No UI, no animals and no text. This is a precise layout correction, not a new room.",
+      "qa": {
+        "no_animals_or_ui_in_background": true,
+        "perches_in_30_48_percent_band": true,
+        "clear_central_floor": true,
+        "webp_under_400000_bytes": true,
+        "native_figma_preview_inspected": true,
+        "source_character_art_unchanged": true
+      }
+    },
+    {
+      "id": "COOP01_06",
+      "name": "Птичий двор",
+      "capacity": 6,
+      "status": "QA",
+      "png": "assets/coop/qura_coop01_06_v01.png",
+      "webp": "assets/coop/qura_coop01_06_v01.webp",
+      "width": 1080,
+      "height": 1920,
+      "png_bytes": 2888310,
+      "webp_bytes": 376538,
+      "webp_quality": 89,
+      "sha256": {
+        "png": "56ece423cfa28414056db31eede52aa15a137c68e4fcc2b3e6f682c409a4b813",
+        "webp": "25c54fa3f0c4346f70d34291967c1b447927f1262e34ca5225e4fb96094f0c46"
+      },
+      "native_generation_size": [
+        941,
+        1672
+      ],
+      "working_export_note": "Resampled with Lanczos to the required 1080x1920; no native 4K detail claimed.",
+      "figma_node_id": "281:43",
+      "figma_user_source_node_id": "279:2039",
+      "slots": [
+        {
+          "id": 1,
+          "x": 24,
+          "y": 33.7,
+          "recommended_width_percent": 19.5,
+          "preview_character": "ryaba"
+        },
+        {
+          "id": 2,
+          "x": 51,
+          "y": 33.7,
+          "recommended_width_percent": 19.5,
+          "preview_character": "fighter"
+        },
+        {
+          "id": 3,
+          "x": 78,
+          "y": 33.7,
+          "recommended_width_percent": 19.5,
+          "preview_character": "fool"
+        },
+        {
+          "id": 4,
+          "x": 24,
+          "y": 44.5,
+          "recommended_width_percent": 19.5,
+          "preview_character": "professor"
+        },
+        {
+          "id": 5,
+          "x": 51,
+          "y": 44.5,
+          "recommended_width_percent": 19.5,
+          "preview_character": "monk"
+        },
+        {
+          "id": 6,
+          "x": 78,
+          "y": 44.5,
+          "recommended_width_percent": 19.5,
+          "preview_character": "glamour"
+        }
+      ],
+      "main_hen": {
+        "x": 50,
+        "y": 89,
+        "recommended_width_percent": 50,
+        "preview_character": "ryaba"
+      },
+      "preview": {
+        "figma_node_id": "281:47",
+        "png": "assets/coop/previews/qura_coop01_06_preview_v01.png",
+        "sha256": "b8cbde072a1b6f8207b5cc9a7f239e0f1da3ed53e330a8ca603fdf31eb0725e2"
+      },
+      "prompt": "QuRa game art. Premium cozy soft-3D dimensional style, warm oak wood, rich amber and polished gold, soft volumetric materials, top-left key light, crisp mobile-readable shapes. Same world and camera as the attached QuRa coop reference. Interior of a chicken coop seen from the front, vertical 9:16, 1080x1920. Keep the top 18% calm, perches in the band between 30% and 48% of the height, a clear open floor in the center from 55% to 90%, and a simple bottom 8%. No chickens, no people, no roosters, no other animals, no text, no letters, no numbers, no logos, no watermark, no UI.\n\nA spacious two-level barn coop at golden evening: polished oak with gold trims, two long perches with three places each stacked in the perch band, strings of warm bulbs under the roof beams, two tall windows showing a field at sunset, red cloth banners with a gold feather emblem, an elegant automatic feeder, an empty wooden trophy shelf, flower boxes. Rich and festive, clearly the most prestigious coop of the three.",
+      "targeted_correction_prompt": "QuRa game art. Premium cozy soft-3D dimensional style, warm oak wood, rich amber and polished gold, soft volumetric materials, top-left key light, crisp mobile-readable shapes. Same world and camera as the attached QuRa coop reference. Interior of a chicken coop seen from the front, vertical 9:16, 1080x1920. Keep the top 18% calm, perches in the band between 30% and 48% of the height, a clear open floor in the center from 55% to 90%, and a simple bottom 8%. No chickens, no people, no roosters, no other animals, no text, no letters, no numbers, no logos, no watermark, no UI.\n\nA spacious two-level barn coop at golden evening: polished oak with gold trims, two long perches with three places each stacked in the perch band, strings of warm bulbs under the roof beams, two tall windows showing a field at sunset, red cloth banners with a gold feather emblem, an elegant automatic feeder, an empty wooden trophy shelf, flower boxes. Rich and festive, clearly the most prestigious coop of the three.\n\nTargeted QA corrections to the supplied 6-place coop image. Preserve this exact room, camera, sunset windows, materials and overall perspective. There must be exactly two horizontal perches: put the TOP CONTACT LINE of the upper perch at 34% of the full image height, and the TOP CONTACT LINE of the lower perch at 46% of the full image height; both must be fully within the 30%-48% band. Do not leave any perch below 48% height. Keep each perch as a single uninterrupted beam with gold fittings, wide enough for three separate hens. Remove the cup from the trophy shelf so the wooden trophy shelf is empty. Clear the central upper 18% of the image for a future heading: remove the central feather plaque, use plain calm oak planks there; keep the gold feather emblems only on the side red banners and move those banners below 18% height. Keep the lower central floor empty and the bottom 8% simple. No UI, no animals, no text, no letters and no numbers. Make only these corrections.",
+      "qa": {
+        "no_animals_or_ui_in_background": true,
+        "perches_in_30_48_percent_band": true,
+        "clear_central_floor": true,
+        "webp_under_400000_bytes": true,
+        "native_figma_preview_inspected": true,
+        "source_character_art_unchanged": true
+      }
+    }
+  ]
+}
