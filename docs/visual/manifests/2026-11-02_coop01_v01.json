@@ -289,5 +289,17 @@
         "source_character_art_unchanged": true
       }
     }
-  ]
+  ],
+  "focus_hen_policy": {
+    "floor_focus_excludes_own_roost": true,
+    "capacity_includes_floor_focus": true,
+    "occupied_roosts_when_full": {
+      "2": 1,
+      "4": 3,
+      "6": 5
+    },
+    "implementation": "Keep capacity anchors. Hide only the focus character own roost sprite while the same resident is displayed on the floor. Never duplicate a resident.",
+    "current_v13_screens": "assets/screens/v13/coop02.png, coop04.png, coop06.png",
+    "legacy_preview_note": "v01 previews remain historical; v13 screens apply the corrected focus policy."
+  }
 }

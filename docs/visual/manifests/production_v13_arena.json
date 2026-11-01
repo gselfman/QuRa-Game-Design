@@ -1,0 +1,1267 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "count": 37,
+  "inherits": "docs/visual/manifests/2026-11-01_arena_arn01_arn02_v01.json",
+  "contract": "Existing PNGs unchanged. WebP preserves original canvas and alpha: ARN01 1080x1920 scene layers; ARN02 320x320 icons. Max400000bytes. Preview stack is not a runtime layer.",
+  "items": [
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_01_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 1467157,
+        "sha256": "020453ef63ca7e6151926e44f858f480dec718998f2b7d314e7696015f17a3fa",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1920
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_01_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 343802,
+        "sha256": "99ec0a78cd852da1d19f0cee8ed68047965e9002243f8ad79d8887434ed2e430",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1920
+        ]
+      },
+      "webp_quality": 90,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_02_v01.png",
+        "size": [
+          1920,
+          1080
+        ],
+        "bytes": 1826522,
+        "sha256": "076414d305e589cb6b5defb6d7632e7cdeddb4057a63aaa8daed52d987449665",
+        "alpha_bbox": [
+          0,
+          0,
+          1920,
+          1080
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_02_v01.webp",
+        "size": [
+          1920,
+          1080
+        ],
+        "bytes": 396702,
+        "sha256": "a1a227e9b067337ae2fc9d9b85d3c08d0a01a3cc43b4791095347718dd757cae",
+        "alpha_bbox": [
+          0,
+          0,
+          1920,
+          1080
+        ]
+      },
+      "webp_quality": 85,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_03a_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 173031,
+        "sha256": "eb4be50d8f31b3c969e0d342bb5837a197a9cc9c03da2d0145432e55a4f57895",
+        "alpha_bbox": [
+          18,
+          333,
+          1068,
+          1075
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_03a_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 110166,
+        "sha256": "381f15eca6a097464859b245737b86a16343129f5e80903a5e5486a398610f1f",
+        "alpha_bbox": [
+          18,
+          333,
+          1068,
+          1075
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_03b_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 225119,
+        "sha256": "055986f79e66b8672161e90ab27f393c6eee72db4a3aa81153e4c150a93303cd",
+        "alpha_bbox": [
+          0,
+          95,
+          1080,
+          1210
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_03b_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 142336,
+        "sha256": "bea40c2dcf3583a8b88f93cacc975309867684d5c2858c00cb4b913e5238f33e",
+        "alpha_bbox": [
+          0,
+          95,
+          1080,
+          1210
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_03c_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 242129,
+        "sha256": "43a92bf4748a2f1ca74b4b25633596eda201509bc77425a126b3bc7b6c6a5fa2",
+        "alpha_bbox": [
+          0,
+          85,
+          1080,
+          1170
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_03c_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 165998,
+        "sha256": "fc6bd6a1f57670fdfdc2eecc0c956404b056eadff6dfbcfac1784c43e549860c",
+        "alpha_bbox": [
+          0,
+          85,
+          1080,
+          1170
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_04_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 477597,
+        "sha256": "83bcdb9e1033e4529e6e243d548f4a81aad6d9f4979360cf8a307ba980f9c27c",
+        "alpha_bbox": [
+          0,
+          105,
+          1080,
+          1733
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_04_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 225336,
+        "sha256": "185bde805fc63465aeecf9a750e7d45c3e88d7323f5dce648a80e49c8971461d",
+        "alpha_bbox": [
+          0,
+          105,
+          1080,
+          1733
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_05_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 284247,
+        "sha256": "b3bfe1241b51b3d47710b6ce9ba7b98648defdb26c4e4eff036afa1456f3a46e",
+        "alpha_bbox": [
+          0,
+          175,
+          1080,
+          1920
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_05_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 106932,
+        "sha256": "bedb6b48bdc954575c3738f035a59ff7e4220ef496a67bb55a473256295fdda8",
+        "alpha_bbox": [
+          0,
+          175,
+          1080,
+          1920
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_06a_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 1177040,
+        "sha256": "b641cf5ceff2fe6108f572e6c339910517737581a93f3afd3f8b451ccabab1de",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1404
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_06a_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 367310,
+        "sha256": "fb146501c6d875fe315a9e92376878a1c0cfc1f6fd52832b4b1aeb480102fb36",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1404
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_06b_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 319055,
+        "sha256": "48f45ba9a70fb69f362f6df3b3283519466e0eec6e1121a39aa805464a08f92c",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1893
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_06b_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 187720,
+        "sha256": "84b444a02018d0c76ce0e1969b53167376b880e7e8a52402197a2aaf513b9996",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1893
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_07a_v01.png",
+        "size": [
+          1024,
+          512
+        ],
+        "bytes": 156499,
+        "sha256": "c4b33a84fba1104b53e0ccf3b35f98cc03ec0ba0e416f4e0f0ce8e70b8b94363",
+        "alpha_bbox": [
+          0,
+          0,
+          1024,
+          512
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_07a_v01.webp",
+        "size": [
+          1024,
+          512
+        ],
+        "bytes": 52696,
+        "sha256": "2058744f7a0d7c687c7c4d01e68c72312f0d28331101048622ad42d7e01ebd80",
+        "alpha_bbox": [
+          0,
+          0,
+          1024,
+          512
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_07b_v01.png",
+        "size": [
+          1024,
+          512
+        ],
+        "bytes": 446198,
+        "sha256": "a779bd6674db82ecac3b4c571dc590f12709bdb32fd35ddc7b58a0a439a45aa0",
+        "alpha_bbox": [
+          0,
+          2,
+          1024,
+          512
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_07b_v01.webp",
+        "size": [
+          1024,
+          512
+        ],
+        "bytes": 160998,
+        "sha256": "d89f8e29df60755b24fc0ecde005a67206171da40ee99ae207f422749b29523a",
+        "alpha_bbox": [
+          0,
+          2,
+          1024,
+          512
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn01/qura_arn01_08_v01.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 1619694,
+        "sha256": "31281da31671c7c835afc2fd7a3d627573400f0930e5b9c423c0cecd7c3e7095",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1920
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn01/qura_arn01_08_v01.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "bytes": 378518,
+        "sha256": "9266aed9b4e6e2ad9e5a09b9daff6924e6fb146a43226233e3481a0a501f316b",
+        "alpha_bbox": [
+          0,
+          0,
+          1080,
+          1920
+        ]
+      },
+      "webp_quality": 90,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_01_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 47839,
+        "sha256": "08a0ec52b017ec861d6f8b76e265a9b35bf572f28c8913d38be58b18c5167176",
+        "alpha_bbox": [
+          63,
+          61,
+          267,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_01_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 20662,
+        "sha256": "d280b7e626d25d23f80d17816eb94fd3a093a3e4380b30262dd14589de3658b3",
+        "alpha_bbox": [
+          63,
+          61,
+          267,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_02_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 23262,
+        "sha256": "94ba2cf7246cd6d7c465d5a2f3efbe1682ba416e992576342c4a15418148bb14",
+        "alpha_bbox": [
+          61,
+          61,
+          257,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_02_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 11574,
+        "sha256": "0db5d6f6d67f928276eb2c1595ee0b64d9747132653eeefa5d4275dc02d608db",
+        "alpha_bbox": [
+          61,
+          61,
+          257,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_03_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 16968,
+        "sha256": "d947fc943adba104389be0bf1b730b49f4477c07d3f253d4bbee1dbd6fdda3bb",
+        "alpha_bbox": [
+          75,
+          67,
+          246,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_03_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 9468,
+        "sha256": "398b4ae215269cf2abf69f4241be1a8ad7f9bde3dc4d226b8f6de7bb8eb9a733",
+        "alpha_bbox": [
+          75,
+          67,
+          246,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_04_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 35112,
+        "sha256": "cd104202833f1ac6a6214d9e58f63d65450bef0c5fda742a2f8617a8c2eede01",
+        "alpha_bbox": [
+          65,
+          67,
+          255,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_04_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 16682,
+        "sha256": "6c218816c609a960658559a0e873e1b3a5f785a6506e3476f5aa88064e05a3a3",
+        "alpha_bbox": [
+          65,
+          67,
+          255,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_05_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 22157,
+        "sha256": "0c12c0cd973c312f932767ccf305a7ad02829685ef3b2190385efb013aa403bb",
+        "alpha_bbox": [
+          62,
+          80,
+          231,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_05_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 11766,
+        "sha256": "c784c65b83123326ab17967a6f53f69f898f154e33b1da2fabccefa08fdbc1b6",
+        "alpha_bbox": [
+          62,
+          80,
+          231,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_06_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 43774,
+        "sha256": "42472a89072eb496ee0ac0452b7372c0398d6b51da026dc2f24f2937572bb014",
+        "alpha_bbox": [
+          63,
+          70,
+          277,
+          249
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_06_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 19176,
+        "sha256": "f23f8759f515c9a57f4471bea88bda4b1fee9d82b777ff57ec987bb96226a551",
+        "alpha_bbox": [
+          63,
+          70,
+          277,
+          249
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_07_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 39971,
+        "sha256": "41a6dbe22a0fc663b811734f60f3978750bc9631768c5e873d1e58f2279a1d39",
+        "alpha_bbox": [
+          43,
+          64,
+          278,
+          258
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_07_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 17828,
+        "sha256": "cb0e29951702dcd8953d6f41b1275505bf6ec92c4274073c268fadb52a7d76c0",
+        "alpha_bbox": [
+          43,
+          64,
+          278,
+          258
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_08_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 40217,
+        "sha256": "b06ce7e58d5c967c2bd3938a797a0900a7a7db3bff4db00bcb0341bb267ec935",
+        "alpha_bbox": [
+          50,
+          55,
+          271,
+          264
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_08_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 17220,
+        "sha256": "19f6b1fb37c6c4df49a5a1c2d77550bb3ff66c6c7ebbfe49178b8dadfc68c571",
+        "alpha_bbox": [
+          50,
+          55,
+          271,
+          264
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_09_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 40488,
+        "sha256": "c6cf6f4e7c44a4e636f3daf252548c03816f464cb8a5be0849c515f4a31c01fb",
+        "alpha_bbox": [
+          42,
+          60,
+          278,
+          260
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_09_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 17772,
+        "sha256": "fe15981e8211a1078f4f56c20976d5638641523f2247d5d837fe6980176347a4",
+        "alpha_bbox": [
+          42,
+          60,
+          278,
+          260
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_10_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 41320,
+        "sha256": "6660f87c00fac491bdc6ef3ed751aecab57c369c0958ca5213f349a9785020ee",
+        "alpha_bbox": [
+          43,
+          66,
+          266,
+          255
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_10_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 16856,
+        "sha256": "9a5524b08bbf48e56582163ee3ceb7b7561a3c69d6e33f1ef23c8296dba3c1dd",
+        "alpha_bbox": [
+          43,
+          66,
+          266,
+          255
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_11_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 41381,
+        "sha256": "5e03ede2d0484725e98322b4e1de96936d0857333bf2b4eaaed9aeacf79b04d2",
+        "alpha_bbox": [
+          42,
+          56,
+          277,
+          265
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_11_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 15878,
+        "sha256": "e18db0008aee1e8ac95034d26c75b3526030781a96b4b59a5bd2e744afa97fe1",
+        "alpha_bbox": [
+          42,
+          56,
+          277,
+          265
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_12_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 56190,
+        "sha256": "474923cae5c9dd11efd315a8fc037d31becff8a91d92d7994a4a560eb5699a5d",
+        "alpha_bbox": [
+          43,
+          43,
+          278,
+          275
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_12_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 25218,
+        "sha256": "bbdfa638e5b81aaa3da660461dd3821be6ffef95717c2ef4c35b5a5ab32a8587",
+        "alpha_bbox": [
+          43,
+          43,
+          278,
+          275
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_13_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 45533,
+        "sha256": "af3dc5800da77dd69fbbdf0e66653d74866a561d1045e4a07efb0d0cd6dfb3d0",
+        "alpha_bbox": [
+          51,
+          42,
+          267,
+          279
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_13_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 21380,
+        "sha256": "bd2f8aa70dc4a2df89f740570a7470b41a10808549742598f6d8fe13c7473646",
+        "alpha_bbox": [
+          51,
+          42,
+          267,
+          279
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_14_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 54845,
+        "sha256": "92899911bac101fc9dea9a50e7d9cd4abbdaf60c858ed231596a3b93087c22ba",
+        "alpha_bbox": [
+          42,
+          44,
+          278,
+          275
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_14_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 24852,
+        "sha256": "29cfa74c6e8132a82dd5b30617eda152454320c7ba1403bf17e964ed1afc8e9c",
+        "alpha_bbox": [
+          42,
+          44,
+          278,
+          275
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_15_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 46475,
+        "sha256": "d2ba125062ce35c6a7806276e323080571cc8daa31224d9a93f8064011d76141",
+        "alpha_bbox": [
+          43,
+          50,
+          274,
+          271
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_15_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 21718,
+        "sha256": "1b508159c41ca22d563979d0365b7a1ae784cac13efae5d9affa17d795cff69d",
+        "alpha_bbox": [
+          43,
+          50,
+          274,
+          271
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_16_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 47789,
+        "sha256": "c9df7bb0dfe56894115be446f1c8a9e8deb0afd4a8a2959edb806bd68e0e6754",
+        "alpha_bbox": [
+          42,
+          55,
+          277,
+          257
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_16_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 19210,
+        "sha256": "64b096d9cc64125c7eb41bc12b2544eb010390fa9fa7563ba0a9144a6a2e46c6",
+        "alpha_bbox": [
+          42,
+          55,
+          277,
+          257
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_17_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 46653,
+        "sha256": "69813731db983f28db005cf08b23843676f9a1de7a8bac22b51a90fa70079618",
+        "alpha_bbox": [
+          43,
+          47,
+          278,
+          274
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_17_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 21116,
+        "sha256": "47f787defe69b20695959624e4e89c4247d45119338e73bfaa332410c93ad803",
+        "alpha_bbox": [
+          43,
+          47,
+          278,
+          274
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_18_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 39724,
+        "sha256": "d6cdc270f3b35377922dd02b5ec9c40fa07c2c72073deb3cd1f20b2cbd5c570a",
+        "alpha_bbox": [
+          54,
+          43,
+          267,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_18_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 17310,
+        "sha256": "728922cbd7861ec7fbc19f3fe81e1fff9f6341a90ab09a6a7691d9394510d221",
+        "alpha_bbox": [
+          54,
+          43,
+          267,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_19_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 37492,
+        "sha256": "35cca8adcec213958866912ee49d3164c58b0d1863c769f89504fa00da971a4f",
+        "alpha_bbox": [
+          42,
+          43,
+          251,
+          278
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_19_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 15474,
+        "sha256": "9a22eaa2303d995b92686ac0b10544196290b1c41e7ebb1b6dd5e328623553df",
+        "alpha_bbox": [
+          42,
+          43,
+          251,
+          278
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_20_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 34029,
+        "sha256": "ce25880215056f92627f20806c7f26140bd5b21b336f7c6460ef1271c2bf3c98",
+        "alpha_bbox": [
+          54,
+          63,
+          224,
+          272
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_20_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 13004,
+        "sha256": "0cac1e7987b7bf2cb73e587254c05bfcc0a37714aea2e8bf9db85a899ae42556",
+        "alpha_bbox": [
+          54,
+          63,
+          224,
+          272
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_21_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 33679,
+        "sha256": "e3b3108bba707fde3766f85574d931ae1cb7a6b9839415f61ded24c7dcc3bddc",
+        "alpha_bbox": [
+          96,
+          62,
+          248,
+          216
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_21_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 12210,
+        "sha256": "ef68ca2ce1b60a6c4cf868bc0d864b09be6813d4516e874f440ab08e924927e7",
+        "alpha_bbox": [
+          96,
+          62,
+          248,
+          216
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_22_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 28839,
+        "sha256": "3e7b6d998b1d4a7c100d83b56aa56d19c97be3d57e93047edb61843173372667",
+        "alpha_bbox": [
+          49,
+          43,
+          278,
+          266
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_22_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 12182,
+        "sha256": "c283fce8ef3c380aab3007f142e95308e5114aa475b87480dd128396512edc2c",
+        "alpha_bbox": [
+          49,
+          43,
+          278,
+          266
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_23_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 31354,
+        "sha256": "6a3c96d59550fc7852d642c265665868ed36f55f810adbbe2734135d8f6c10e7",
+        "alpha_bbox": [
+          58,
+          43,
+          262,
+          270
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_23_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 12612,
+        "sha256": "4b21cd68ad83444e1c61a2fabaef6614c48dd4ac49a8388189c8590bfa1e1467",
+        "alpha_bbox": [
+          58,
+          43,
+          262,
+          270
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_24_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 35202,
+        "sha256": "5901209475a2f61b5146409202c7cff3d66c2bf77eccfafa652470990a8a06dd",
+        "alpha_bbox": [
+          59,
+          43,
+          272,
+          279
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_24_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 12286,
+        "sha256": "0436c8dec7bba13e5eaa3af7662b2b8139bd03cf11e71a0bbcce18c5ca412808",
+        "alpha_bbox": [
+          59,
+          43,
+          272,
+          279
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    },
+    {
+      "png": {
+        "path": "assets/arena/arn02/qura_arn02_25_v01.png",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 34596,
+        "sha256": "17ebef71360e5b0d8329dc7878b46ca963493231b8797aad09d3d83d048f7e70",
+        "alpha_bbox": [
+          70,
+          48,
+          258,
+          262
+        ]
+      },
+      "webp": {
+        "path": "assets/arena/arn02/qura_arn02_25_v01.webp",
+        "size": [
+          320,
+          320
+        ],
+        "bytes": 13072,
+        "sha256": "bf38f81301c690d51e3103d316ac447b433493e6094b97fe3bcb4118d03160c8",
+        "alpha_bbox": [
+          70,
+          48,
+          258,
+          262
+        ]
+      },
+      "webp_quality": 95,
+      "trim": false
+    }
+  ]
+}

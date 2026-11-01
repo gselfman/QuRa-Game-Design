@@ -1,0 +1,516 @@
+{
+  "figma_pages": [
+    {
+      "id": "0:1",
+      "name": "00_README"
+    },
+    {
+      "id": "1:2",
+      "name": "01_REFERENCES_MASTER"
+    },
+    {
+      "id": "45:20",
+      "name": "_MOVED_ARCHIVE | курочке на нашесте и в гнезде"
+    },
+    {
+      "id": "16:18",
+      "name": "_MOVED_ARCHIVE | G01 — 20 общих аксессуаров"
+    },
+    {
+      "id": "1:3",
+      "name": "02_C01_RYABA"
+    },
+    {
+      "id": "1:4",
+      "name": "03_C02_BOEVIK"
+    },
+    {
+      "id": "1:5",
+      "name": "04_C03_DUROCHKA"
+    },
+    {
+      "id": "48:27",
+      "name": "_MOVED_ARCHIVE | яйцо фиолетовое и силуэт птенца и курочки"
+    },
+    {
+      "id": "1:6",
+      "name": "05_C04_PROFESSOR"
+    },
+    {
+      "id": "57:2",
+      "name": "28_IMPORT_SORTED · C01–C06 exports"
+    },
+    {
+      "id": "48:30",
+      "name": "_MOVED_ARCHIVE | яйца и цыплята"
+    },
+    {
+      "id": "1:7",
+      "name": "06_C05_MONAKH"
+    },
+    {
+      "id": "1:8",
+      "name": "07_C06_GLAMUROCHKA"
+    },
+    {
+      "id": "1:9",
+      "name": "08_E01_EGGS"
+    },
+    {
+      "id": "2:2",
+      "name": "09_G01_GEAR_CORE"
+    },
+    {
+      "id": "2:3",
+      "name": "10_G02_GEAR_NATIVE"
+    },
+    {
+      "id": "2:4",
+      "name": "11_AEX01_ARENA_EXCLUSIVES"
+    },
+    {
+      "id": "23:26",
+      "name": "_MOVED_ARCHIVE | RYABA_CARD_HAT_CROSSBODY_APPROVED_v01."
+    },
+    {
+      "id": "24:34",
+      "name": "_MOVED_ARCHIVE | RYABA_BASE_STANDING_v01"
+    },
+    {
+      "id": "25:37",
+      "name": "_MOVED_ARCHIVE | RYABA_STANDING_FULL_GEAR_v01"
+    },
+    {
+      "id": "27:42",
+      "name": "_MOVED_ARCHIVE | FIGHTER_BASE_STANDING_v03"
+    },
+    {
+      "id": "27:44",
+      "name": "_MOVED_ARCHIVE | DUROCHKA_BASE_STANDING_v03"
+    },
+    {
+      "id": "27:46",
+      "name": "_MOVED_ARCHIVE | NEDUROCHKA_BASE_STANDING_v01"
+    },
+    {
+      "id": "29:48",
+      "name": "_MOVED_ARCHIVE | GLAMUROCHKA_BASE_STANDING_v02"
+    },
+    {
+      "id": "29:50",
+      "name": "_MOVED_ARCHIVE | MONK_BASE_STANDING_v02"
+    },
+    {
+      "id": "2:5",
+      "name": "12_FX01_BATTLE_FX"
+    },
+    {
+      "id": "2:6",
+      "name": "13_S01"
+    },
+    {
+      "id": "2:7",
+      "name": "14_S02"
+    },
+    {
+      "id": "2:8",
+      "name": "15_S03"
+    },
+    {
+      "id": "2:9",
+      "name": "16_S04"
+    },
+    {
+      "id": "2:10",
+      "name": "17_S05"
+    },
+    {
+      "id": "2:11",
+      "name": "18_S06"
+    },
+    {
+      "id": "2:12",
+      "name": "19_S07"
+    },
+    {
+      "id": "2:13",
+      "name": "20_S08"
+    },
+    {
+      "id": "2:14",
+      "name": "21_S09"
+    },
+    {
+      "id": "2:15",
+      "name": "22_S10"
+    },
+    {
+      "id": "2:16",
+      "name": "23_S11"
+    },
+    {
+      "id": "2:17",
+      "name": "24_S12"
+    },
+    {
+      "id": "2:18",
+      "name": "25_EXPORT_QA"
+    },
+    {
+      "id": "108:2",
+      "name": "29_MODULAR_STUDIO_v05 · ОТКЛОНЕНО ПО ПОСАДКЕ"
+    },
+    {
+      "id": "156:1552",
+      "name": "30_MODULAR_FITTING_v08"
+    },
+    {
+      "id": "211:107",
+      "name": "26_ARN01_ARENA_SCENE"
+    },
+    {
+      "id": "211:117",
+      "name": "27_ARN02_ARENA_UI_PLUS"
+    },
+    {
+      "id": "219:2",
+      "name": "31_WARDROBE_STUDIO_v12"
+    },
+    {
+      "id": "279:2035",
+      "name": "фон курятников"
+    },
+    {
+      "id": "281:2",
+      "name": "32_COOP01_BACKGROUNDS"
+    },
+    {
+      "id": "293:451",
+      "name": "33_CHARACTER_POSES_v13"
+    },
+    {
+      "id": "298:2",
+      "name": "34_GAME_SCREENS_v13"
+    },
+    {
+      "id": "318:208",
+      "name": "35_ACCESSORY_CATALOG_v13"
+    },
+    {
+      "id": "322:3379",
+      "name": "36_NATIVE_EXPORTS_v13"
+    }
+  ],
+  "qa": {
+    "createdNodeIds": [
+      "325:2",
+      "325:3",
+      "325:4",
+      "325:5",
+      "325:6",
+      "325:7",
+      "325:8",
+      "325:9",
+      "325:10",
+      "325:11",
+      "325:13",
+      "325:16",
+      "325:17",
+      "325:19",
+      "325:22",
+      "325:23",
+      "325:25",
+      "325:28",
+      "325:29",
+      "325:31",
+      "325:34",
+      "325:35",
+      "325:36",
+      "325:38",
+      "325:41",
+      "325:44",
+      "325:45",
+      "325:47",
+      "325:50",
+      "325:53",
+      "325:54",
+      "325:56",
+      "325:59",
+      "325:62",
+      "325:63",
+      "325:65",
+      "325:68",
+      "325:71"
+    ],
+    "mutatedNodeIds": [],
+    "pageId": "2:18",
+    "boardId": "325:2",
+    "width": 1400,
+    "height": 1373,
+    "cases": 8
+  },
+  "readme": {
+    "createdNodeIds": [
+      "326:2"
+    ],
+    "mutatedNodeIds": [],
+    "width": 1300,
+    "height": 920
+  },
+  "monk_fix": {
+    "createdNodeIds": [],
+    "mutatedNodeIds": [
+      "145:1845",
+      "145:1844",
+      "145:1849",
+      "145:1848",
+      "145:1853",
+      "145:1852",
+      "145:1855",
+      "145:1854",
+      "145:1797"
+    ],
+    "expressions": 4,
+    "baseHead": 1,
+    "status": "QA",
+    "source": "existing native bald head + existing hat emotion variants"
+  },
+  "ui_foundation": {
+    "pageId": "298:2",
+    "boardId": "298:135",
+    "collections": [
+      "VariableCollectionId:298:3",
+      "VariableCollectionId:298:4"
+    ],
+    "variables": {
+      "wood": "VariableID:298:6",
+      "wood-hi": "VariableID:298:8",
+      "plank": "VariableID:298:10",
+      "gold": "VariableID:298:12",
+      "ink": "VariableID:298:14",
+      "muted": "VariableID:298:16",
+      "good": "VariableID:298:18",
+      "bad": "VariableID:298:20",
+      "border": "VariableID:298:22",
+      "space/8": "VariableID:298:23",
+      "space/12": "VariableID:298:24",
+      "space/14": "VariableID:298:25",
+      "space/16": "VariableID:298:26",
+      "radius/12": "VariableID:298:27",
+      "radius/18": "VariableID:298:28"
+    },
+    "styles": {
+      "Heading": "S:46b11cc84da5e459ebb9b78b4f110b6f2ba951a0,",
+      "Subheading": "S:f85d459c0c492f5619b921bf92b47f0ac950ff29,",
+      "Body": "S:157418e16da654d66dfa64808cf8dd3e64fae8ec,",
+      "Caption": "S:2a7b4b40b943ab27d3185e2b28452adfd88d10c5,"
+    },
+    "buttonSet": "298:36",
+    "buttonVariants": [
+      {
+        "id": "298:33",
+        "name": "Kind=Primary"
+      },
+      {
+        "id": "298:34",
+        "name": "Kind=Secondary"
+      },
+      {
+        "id": "298:35",
+        "name": "Kind=Disabled"
+      }
+    ],
+    "buttonLabelKey": "Label#298:0",
+    "header": "298:40",
+    "navSet": "298:54",
+    "navVariants": [
+      {
+        "id": "298:49",
+        "name": "Active=coop"
+      },
+      {
+        "id": "298:50",
+        "name": "Active=quests"
+      },
+      {
+        "id": "298:51",
+        "name": "Active=arena"
+      },
+      {
+        "id": "298:52",
+        "name": "Active=shop"
+      },
+      {
+        "id": "298:53",
+        "name": "Active=play"
+      }
+    ],
+    "navAssets": [
+      {
+        "code": "coop",
+        "nodeId": "298:130"
+      },
+      {
+        "code": "quests",
+        "nodeId": "298:131"
+      },
+      {
+        "code": "arena",
+        "nodeId": "298:132"
+      },
+      {
+        "code": "shop",
+        "nodeId": "298:133"
+      },
+      {
+        "code": "play",
+        "nodeId": "298:134"
+      }
+    ],
+    "createdNodeIds": [
+      "298:2",
+      "298:36",
+      "298:40",
+      "298:54",
+      "298:135",
+      "298:36",
+      "298:33",
+      "298:37",
+      "298:34",
+      "298:38",
+      "298:35",
+      "298:39",
+      "298:40",
+      "298:41",
+      "298:42",
+      "298:43",
+      "298:44",
+      "298:45",
+      "298:46",
+      "298:47",
+      "298:48",
+      "298:54",
+      "298:49",
+      "298:55",
+      "298:56",
+      "298:57",
+      "298:58",
+      "298:59",
+      "298:60",
+      "298:61",
+      "298:62",
+      "298:63",
+      "298:64",
+      "298:65",
+      "298:66",
+      "298:67",
+      "298:68",
+      "298:69",
+      "298:50",
+      "298:70",
+      "298:71",
+      "298:72",
+      "298:73",
+      "298:74",
+      "298:75",
+      "298:76",
+      "298:77",
+      "298:78",
+      "298:79",
+      "298:80",
+      "298:81",
+      "298:82",
+      "298:83",
+      "298:84",
+      "298:51",
+      "298:85",
+      "298:86",
+      "298:87",
+      "298:88",
+      "298:89",
+      "298:90",
+      "298:91",
+      "298:92",
+      "298:93",
+      "298:94",
+      "298:95",
+      "298:96",
+      "298:97",
+      "298:98",
+      "298:99",
+      "298:52",
+      "298:100",
+      "298:101",
+      "298:102",
+      "298:103",
+      "298:104",
+      "298:105",
+      "298:106",
+      "298:107",
+      "298:108",
+      "298:109",
+      "298:110",
+      "298:111",
+      "298:112",
+      "298:113",
+      "298:114",
+      "298:53",
+      "298:115",
+      "298:116",
+      "298:117",
+      "298:118",
+      "298:119",
+      "298:120",
+      "298:121",
+      "298:122",
+      "298:123",
+      "298:124",
+      "298:125",
+      "298:126",
+      "298:127",
+      "298:128",
+      "298:129",
+      "298:130",
+      "298:131",
+      "298:132",
+      "298:133",
+      "298:134",
+      "298:135",
+      "298:136",
+      "298:137"
+    ],
+    "mutatedNodeIds": []
+  },
+  "ui_structure": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"boardId\":\"298:135\",\"width\":1184,\"height\":2256,\"descendants\":1284,\"counts\":{\"TEXT\":193,\"FRAME\":662,\"RECTANGLE\":340,\"INSTANCE\":89},\"fonts\":{\"Russo One / Regular\":32,\"Onest / Regular\":146,\"Onest / Bold\":15},\"images\":[{\"id\":\"302:31\",\"name\":\"qura_arn01_01_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:32\",\"name\":\"qura_arn01_03a_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:33\",\"name\":\"qura_arn01_04_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:39\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:42\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:45\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"I302:47;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":396.0000305175781,\"height\":175.23001098632812},{\"id\":\"302:50\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:53\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:56\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:59\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:62\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:65\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"302:68\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":396,\"height\":305.5799865722656},{\"id\":\"I302:15;298:86\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:15;298:89\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:15;298:92\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:15;298:95\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:15;298:98\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:117\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:120\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:123\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"I302:125;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:128\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:131\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:134\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:137\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:140\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:143\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:146\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":148.16000366210938},{\"id\":\"302:153\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:156\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:159\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:162\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"I302:164;248:150\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:167\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:170\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:173\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:176\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:179\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:182\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:185\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:188\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":162.39999389648438},{\"id\":\"302:195\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:198\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"I302:200;248:156\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:203\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:206\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:209\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:212\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:215\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:218\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:221\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:224\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:227\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:230\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":158.32000732421875},{\"id\":\"302:238\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:241\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:244\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:247\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"I302:249;248:162\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:252\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:255\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:258\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:261\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:264\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:267\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:270\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:273\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":160.24000549316406},{\"id\":\"302:280\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:283\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:286\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:289\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:292\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:295\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"I302:297;248:168\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:300\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:303\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:306\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:309\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:312\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:315\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:318\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:321\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.1199951171875},{\"id\":\"302:328\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:331\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"I302:333;248:174\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":84.95999908447266},{\"id\":\"302:336\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:339\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:342\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:345\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:348\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:351\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:354\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:357\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"302:360\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":192,\"height\":151.0399932861328},{\"id\":\"I302:94;298:86\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:94;298:89\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:94;298:92\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:94;298:95\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:94;298:98\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:393\",\"name\":\"qura_arn01_01_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:394\",\"name\":\"qura_arn01_03a_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:395\",\"name\":\"qura_arn01_04_v01\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"302:414\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:417\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:420\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"I302:422;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":323.9999694824219,\"height\":143.3699951171875},{\"id\":\"302:425\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:428\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:431\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:434\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:437\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:440\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:443\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":250.02000427246094},{\"id\":\"302:447\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:450\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:453\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:456\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"I302:458;248:150\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":323.9999694824219,\"height\":143.3699951171875},{\"id\":\"302:461\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:464\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:467\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:470\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:473\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:476\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:479\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:482\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":324,\"height\":274.04998779296875},{\"id\":\"302:483\",\"name\":\"impact\",\"type\":\"RECTANGLE\",\"width\":128,\"height\":128},{\"id\":\"I302:377;298:86\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:377;298:89\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:377;298:92\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:377;298:95\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:377;298:98\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:545\",\"name\":\"hat\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"302:549\",\"name\":\"glasses\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"302:553\",\"name\":\"vest\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"302:558\",\"name\":\"bag\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"302:562\",\"name\":\"boots\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"302:566\",\"name\":\"water_toy\",\"type\":\"RECTANGLE\",\"width\":88,\"height\":88},{\"id\":\"I302:525;298:101\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:525;298:104\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:525;298:107\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:525;298:110\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:525;298:113\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:604\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:607\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:610\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"I302:612;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":180.54000854492188},{\"id\":\"302:615\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:618\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:621\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:624\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:627\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:630\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:633\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":408,\"height\":314.8399963378906},{\"id\":\"302:635\",\"name\":\"hat\",\"type\":\"RECTANGLE\",\"width\":48,\"height\":48},{\"id\":\"302:638\",\"name\":\"glasses\",\"type\":\"RECTANGLE\",\"width\":48,\"height\":48},{\"id\":\"302:641\",\"name\":\"vest\",\"type\":\"RECTANGLE\",\"width\":48,\"height\":48},{\"id\":\"302:644\",\"name\":\"bag\",\"type\":\"RECTANGLE\",\"width\":48,\"height\":48},{\"id\":\"302:647\",\"name\":\"boots\",\"type\":\"RECTANGLE\",\"width\":48,\"height\":48},{\"id\":\"I302:583;298:56\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:583;298:59\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:583;298:62\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:583;298:65\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:583;298:68\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:691;161:261\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":252.00001525878906,\"height\":319.20001220703125},{\"id\":\"I302:692;283:7\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:692;283:9;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":223.02000427246094},{\"id\":\"I302:692;283:14\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:692;283:17\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:692;283:20\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:692;283:23\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:692;283:26\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":504.0000305175781,\"height\":388.9200134277344},{\"id\":\"I302:693;161:263\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":252.00001525878906,\"height\":319.20001220703125},{\"id\":\"I302:672;298:56\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:672;298:59\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:672;298:62\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:672;298:65\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:672;298:68\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:759\",\"name\":\"ARTWORK\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"I302:760;283:3;161:45\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":104.40000915527344,\"height\":132.24000549316406},{\"id\":\"I302:760;283:7\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:760;283:9;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":92.39400482177734},{\"id\":\"I302:760;283:14\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:760;283:17\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:760;283:20\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:760;283:23\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:760;283:26\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":161.12400817871094},{\"id\":\"I302:761;283:28;161:83\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":104.40000915527344,\"height\":132.24000549316406},{\"id\":\"I302:761;283:32\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:34;248:150\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":92.39400482177734},{\"id\":\"I302:761;283:39\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:42\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:45\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:48\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:51\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:761;283:54\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":208.80001831054688,\"height\":176.61001586914062},{\"id\":\"I302:762;283:176\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:179\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:182\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:184;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":159.3000030517578},{\"id\":\"I302:762;283:189\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:192\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:195\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:198\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:201\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:204\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:762;283:207\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:742;298:56\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:742;298:59\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:742;298:62\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:742;298:65\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:742;298:68\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:800\",\"name\":\"ARTWORK\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"I302:801;283:3;161:45\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":82.80000305175781,\"height\":104.8800048828125},{\"id\":\"I302:801;283:7\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:801;283:9;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":73.27800750732422},{\"id\":\"I302:801;283:14\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:801;283:17\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:801;283:20\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:801;283:23\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:801;283:26\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":127.78800964355469},{\"id\":\"I302:802;283:28;161:83\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":82.80000305175781,\"height\":104.8800048828125},{\"id\":\"I302:802;283:32\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:34;248:150\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":73.27800750732422},{\"id\":\"I302:802;283:39\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:42\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:45\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:48\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:51\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:802;283:54\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":140.07000732421875},{\"id\":\"I302:803;283:56;161:129\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":82.80000305175781,\"height\":104.8800048828125},{\"id\":\"I302:803;283:60\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:62;248:156\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":73.27800750732422},{\"id\":\"I302:803;283:67\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:70\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:73\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:76\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:79\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:82\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:803;283:85\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":136.55101013183594},{\"id\":\"I302:804;283:87;161:167\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":82.80000305175781,\"height\":104.8800048828125},{\"id\":\"I302:804;283:91\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:93;248:162\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":73.27800750732422},{\"id\":\"I302:804;283:98\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:101\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:104\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:107\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:110\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:113\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:804;283:116\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":165.60000610351562,\"height\":138.20701599121094},{\"id\":\"I302:805;283:176\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:179\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:182\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:184;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":159.3000030517578},{\"id\":\"I302:805;283:189\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:192\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:195\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:198\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:201\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:204\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:805;283:207\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:783;298:56\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:783;298:59\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:783;298:62\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:783;298:65\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:783;298:68\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"302:843\",\"name\":\"ARTWORK\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":640},{\"id\":\"I302:844;283:3;161:45\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:844;283:7\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:844;283:9;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:844;283:14\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:844;283:17\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:844;283:20\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:844;283:23\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:844;283:26\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":108.34200286865234},{\"id\":\"I302:845;283:28;161:83\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:845;283:32\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:34;248:150\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:845;283:39\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:42\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:45\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:48\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:51\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:845;283:54\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":118.7550048828125},{\"id\":\"I302:846;283:56;161:129\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:846;283:60\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:62;248:156\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:846;283:67\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:70\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:73\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:76\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:79\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:82\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:846;283:85\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":115.7715072631836},{\"id\":\"I302:847;283:87;161:167\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:847;283:91\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:93;248:162\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:847;283:98\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:101\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:104\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:107\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:110\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:113\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:847;283:116\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":117.17550659179688},{\"id\":\"I302:848;283:118;161:213\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:848;283:122\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:124;248:168\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:848;283:129\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:132\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:135\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:138\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:141\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:848;283:144\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.50650787353516},{\"id\":\"I302:849;283:146;161:259\",\"name\":\"REGISTERED_RGBA\",\"type\":\"RECTANGLE\",\"width\":70.20000457763672,\"height\":88.92000579833984},{\"id\":\"I302:849;283:150\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:152;248:174\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":62.12700271606445},{\"id\":\"I302:849;283:157\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:160\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:163\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:166\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:169\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:849;283:172\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":140.40000915527344,\"height\":110.44800567626953},{\"id\":\"I302:850;283:176\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:179\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:182\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:184;248:144\",\"name\":\"Rectangle\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":159.3000030517578},{\"id\":\"I302:850;283:189\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:192\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:195\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:198\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:201\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:204\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:850;283:207\",\"name\":\"Fitted sprite atlas\",\"type\":\"RECTANGLE\",\"width\":360,\"height\":277.8000183105469},{\"id\":\"I302:826;298:56\",\"name\":\"nav-art/coop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:826;298:59\",\"name\":\"nav-art/quests\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:826;298:62\",\"name\":\"nav-art/arena\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:826;298:65\",\"name\":\"nav-art/shop\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30},{\"id\":\"I302:826;298:68\",\"name\":\"nav-art/play\",\"type\":\"RECTANGLE\",\"width\":30,\"height\":30}],\"fontFamiliesPass\":true}"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  },
+  "ui_monk_fix": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"createdNodeIds\":[\"309:208\",\"309:209\",\"309:210\",\"309:211\",\"309:212\",\"309:213\",\"309:214\",\"309:215\",\"309:216\",\"309:217\",\"309:218\",\"309:219\",\"309:220\",\"309:221\",\"309:222\",\"309:223\",\"309:224\",\"309:225\",\"309:226\",\"309:227\",\"309:228\",\"309:229\",\"309:257\",\"309:258\",\"309:259\",\"309:231\",\"309:232\",\"309:233\",\"309:234\",\"309:235\",\"309:236\",\"309:237\",\"309:238\",\"309:239\",\"309:240\",\"309:241\",\"309:242\",\"309:243\",\"309:244\",\"309:245\",\"309:246\",\"309:247\",\"309:248\",\"309:249\",\"309:250\",\"309:251\",\"309:252\",\"309:253\",\"309:254\",\"309:260\"],\"mutatedNodeIds\":[\"302:842\"],\"removedNodeIds\":[\"308:740\"],\"detached\":1,\"visibleParts\":[\"parts/torso\",\"Цельная одежда · Монах\",\"beads\",\"parts/left_wing\",\"parts/right_wing\",\"head_native_base\",\"hat\",\"third eye — forehead axis\"],\"slotCanvas\":[70.20000457763672,88.92000579833984]}"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  },
+  "readme_panel": {
+    "id": "328:2",
+    "text_id": "326:2",
+    "width": 1360,
+    "height": 980
+  },
+  "qa_final": {
+    "boardId": "325:2",
+    "width": 1400,
+    "height": 1513,
+    "noteId": "331:10"
+  }
+}

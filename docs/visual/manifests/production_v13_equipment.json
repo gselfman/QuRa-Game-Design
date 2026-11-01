@@ -1,0 +1,3192 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "shop_count": 35,
+  "prop_count": 9,
+  "registration": {
+    "png": [
+      1200,
+      1520
+    ],
+    "webp": [
+      600,
+      760
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "trim": false
+  },
+  "rules_document": "docs/visual/QuRa_accessory_creation_rules_v12.md",
+  "catalogue": {
+    "pageId": "318:208",
+    "boardId": "318:209",
+    "items": [
+      {
+        "item": "C01/boots",
+        "cardId": "318:215",
+        "shopViewId": "318:219",
+        "registeredViewId": "318:225",
+        "parts": [
+          {
+            "sourceNodeId": "235:149",
+            "nodeId": "318:226",
+            "name": "left boot"
+          },
+          {
+            "sourceNodeId": "235:156",
+            "nodeId": "318:229",
+            "name": "right boot"
+          }
+        ]
+      },
+      {
+        "item": "C01/vest",
+        "cardId": "318:234",
+        "shopViewId": "318:238",
+        "registeredViewId": "318:244",
+        "parts": [
+          {
+            "sourceNodeId": "235:173",
+            "nodeId": "318:245",
+            "name": "Цельная одежда · Ряба"
+          }
+        ]
+      },
+      {
+        "item": "C01/bag",
+        "cardId": "318:249",
+        "shopViewId": "318:253",
+        "registeredViewId": "318:259",
+        "parts": [
+          {
+            "sourceNodeId": "235:178",
+            "nodeId": "318:260",
+            "name": "bag strap"
+          },
+          {
+            "sourceNodeId": "235:185",
+            "nodeId": "318:263",
+            "name": "bag — front right flank"
+          }
+        ]
+      },
+      {
+        "item": "C01/hat",
+        "cardId": "318:268",
+        "shopViewId": "318:272",
+        "registeredViewId": "318:278",
+        "parts": [
+          {
+            "sourceNodeId": "235:204",
+            "nodeId": "318:279",
+            "name": "hat"
+          }
+        ]
+      },
+      {
+        "item": "C01/glasses",
+        "cardId": "318:284",
+        "shopViewId": "318:288",
+        "registeredViewId": "318:294",
+        "parts": [
+          {
+            "sourceNodeId": "235:209",
+            "nodeId": "318:295",
+            "name": "glasses — optical centers"
+          }
+        ]
+      },
+      {
+        "item": "C02/water_toy",
+        "cardId": "318:303",
+        "shopViewId": "318:307",
+        "registeredViewId": "318:313",
+        "parts": [
+          {
+            "sourceNodeId": "235:217",
+            "nodeId": "318:314",
+            "name": "far carry strap — behind torso"
+          },
+          {
+            "sourceNodeId": "235:253",
+            "nodeId": "318:317",
+            "name": "near carry strap"
+          },
+          {
+            "sourceNodeId": "235:273",
+            "nodeId": "318:320",
+            "name": "water toy — visible in front of wing"
+          }
+        ]
+      },
+      {
+        "item": "C02/boots",
+        "cardId": "318:325",
+        "shopViewId": "318:329",
+        "registeredViewId": "318:335",
+        "parts": [
+          {
+            "sourceNodeId": "235:224",
+            "nodeId": "318:336",
+            "name": "left boot"
+          },
+          {
+            "sourceNodeId": "235:231",
+            "nodeId": "318:339",
+            "name": "right boot"
+          }
+        ]
+      },
+      {
+        "item": "C02/vest",
+        "cardId": "318:344",
+        "shopViewId": "318:348",
+        "registeredViewId": "318:352",
+        "parts": [
+          {
+            "sourceNodeId": "235:248",
+            "nodeId": "318:353",
+            "name": "Цельная одежда · Боевик"
+          }
+        ]
+      },
+      {
+        "item": "C02/cartridges",
+        "cardId": "318:357",
+        "shopViewId": "318:361",
+        "registeredViewId": "318:367",
+        "parts": [
+          {
+            "sourceNodeId": "235:260",
+            "nodeId": "318:368",
+            "name": "cartridges"
+          }
+        ]
+      },
+      {
+        "item": "C02/bandana",
+        "cardId": "318:373",
+        "shopViewId": "318:377",
+        "registeredViewId": "318:383",
+        "parts": [
+          {
+            "sourceNodeId": "235:284",
+            "nodeId": "318:384",
+            "name": "bandana"
+          }
+        ]
+      },
+      {
+        "item": "C02/aviators",
+        "cardId": "318:389",
+        "shopViewId": "318:393",
+        "registeredViewId": "318:403",
+        "parts": [
+          {
+            "sourceNodeId": "235:289",
+            "nodeId": "318:404",
+            "name": "glasses — optical centers"
+          }
+        ]
+      },
+      {
+        "item": "C03/vest",
+        "cardId": "318:412",
+        "shopViewId": "318:416",
+        "registeredViewId": "318:422",
+        "parts": [
+          {
+            "sourceNodeId": "235:311",
+            "nodeId": "318:423",
+            "name": "Цельная одежда · Дурочка"
+          }
+        ]
+      },
+      {
+        "item": "C03/shopper_flute",
+        "cardId": "318:427",
+        "shopViewId": "318:431",
+        "registeredViewId": "318:437",
+        "parts": [
+          {
+            "sourceNodeId": "235:316",
+            "nodeId": "318:438",
+            "name": "shopper — front right flank"
+          },
+          {
+            "sourceNodeId": "235:334",
+            "nodeId": "318:441",
+            "name": "flute above wing"
+          }
+        ]
+      },
+      {
+        "item": "C03/beads",
+        "cardId": "318:446",
+        "shopViewId": "318:450",
+        "registeredViewId": "318:456",
+        "parts": [
+          {
+            "sourceNodeId": "235:321",
+            "nodeId": "318:457",
+            "name": "beads"
+          }
+        ]
+      },
+      {
+        "item": "C03/scarf",
+        "cardId": "318:462",
+        "shopViewId": "318:466",
+        "registeredViewId": "318:472",
+        "parts": [
+          {
+            "sourceNodeId": "235:341",
+            "nodeId": "318:473",
+            "name": "scarf tail tucked behind head"
+          },
+          {
+            "sourceNodeId": "235:352",
+            "nodeId": "318:476",
+            "name": "scarf wrapped over crown"
+          }
+        ]
+      },
+      {
+        "item": "C03/glasses",
+        "cardId": "318:481",
+        "shopViewId": "318:485",
+        "registeredViewId": "318:491",
+        "parts": [
+          {
+            "sourceNodeId": "235:359",
+            "nodeId": "318:492",
+            "name": "glasses — optical centers"
+          }
+        ]
+      },
+      {
+        "item": "C03/ring07",
+        "cardId": "318:497",
+        "shopViewId": "318:501",
+        "registeredViewId": "318:507",
+        "parts": [
+          {
+            "sourceNodeId": "235:364",
+            "nodeId": "318:508",
+            "name": "07 ring — visible left ankle"
+          }
+        ]
+      },
+      {
+        "item": "C04/crocs",
+        "cardId": "318:516",
+        "shopViewId": "318:520",
+        "registeredViewId": "318:526",
+        "parts": [
+          {
+            "sourceNodeId": "235:379",
+            "nodeId": "318:527",
+            "name": "left croc — upper leg retained"
+          },
+          {
+            "sourceNodeId": "235:386",
+            "nodeId": "318:530",
+            "name": "right croc — upper leg retained"
+          }
+        ]
+      },
+      {
+        "item": "C04/coat",
+        "cardId": "318:535",
+        "shopViewId": "318:539",
+        "registeredViewId": "318:545",
+        "parts": [
+          {
+            "sourceNodeId": "235:403",
+            "nodeId": "318:546",
+            "name": "Цельная одежда · Профессор"
+          }
+        ]
+      },
+      {
+        "item": "C04/satchel",
+        "cardId": "318:550",
+        "shopViewId": "318:554",
+        "registeredViewId": "318:560",
+        "parts": [
+          {
+            "sourceNodeId": "235:408",
+            "nodeId": "318:561",
+            "name": "satchel — front right flank"
+          }
+        ]
+      },
+      {
+        "item": "C04/magnifier",
+        "cardId": "318:566",
+        "shopViewId": "318:570",
+        "registeredViewId": "318:576",
+        "parts": [
+          {
+            "sourceNodeId": "235:413",
+            "nodeId": "318:577",
+            "name": "magnifier"
+          }
+        ]
+      },
+      {
+        "item": "C04/pencil",
+        "cardId": "318:582",
+        "shopViewId": "318:586",
+        "registeredViewId": "318:592",
+        "parts": [
+          {
+            "sourceNodeId": "235:426",
+            "nodeId": "318:593",
+            "name": "pencil behind hair"
+          },
+          {
+            "sourceNodeId": "235:435",
+            "nodeId": "318:596",
+            "name": "pencil visible shaft"
+          }
+        ]
+      },
+      {
+        "item": "C04/glasses",
+        "cardId": "318:601",
+        "shopViewId": "318:605",
+        "registeredViewId": "318:611",
+        "parts": [
+          {
+            "sourceNodeId": "235:442",
+            "nodeId": "318:612",
+            "name": "glasses — optical centers"
+          }
+        ]
+      },
+      {
+        "item": "C05/sandals",
+        "cardId": "318:620",
+        "shopViewId": "318:624",
+        "registeredViewId": "318:630",
+        "parts": [
+          {
+            "sourceNodeId": "235:450",
+            "nodeId": "318:631",
+            "name": "left wooden sandal platform"
+          },
+          {
+            "sourceNodeId": "235:457",
+            "nodeId": "318:634",
+            "name": "right wooden sandal platform"
+          },
+          {
+            "sourceNodeId": "235:468",
+            "nodeId": "318:637",
+            "name": "left sandal strap over foot"
+          },
+          {
+            "sourceNodeId": "235:475",
+            "nodeId": "318:640",
+            "name": "right sandal strap over foot"
+          }
+        ]
+      },
+      {
+        "item": "C05/robe",
+        "cardId": "318:645",
+        "shopViewId": "318:649",
+        "registeredViewId": "318:655",
+        "parts": [
+          {
+            "sourceNodeId": "235:493",
+            "nodeId": "318:656",
+            "name": "Цельная одежда · Монах"
+          }
+        ]
+      },
+      {
+        "item": "C05/cloth_bag",
+        "cardId": "318:660",
+        "shopViewId": "318:664",
+        "registeredViewId": "318:670",
+        "parts": [
+          {
+            "sourceNodeId": "235:498",
+            "nodeId": "318:671",
+            "name": "cloth shoulder strap"
+          },
+          {
+            "sourceNodeId": "235:505",
+            "nodeId": "318:674",
+            "name": "cloth bag — front right flank"
+          }
+        ]
+      },
+      {
+        "item": "C05/beads",
+        "cardId": "318:679",
+        "shopViewId": "318:683",
+        "registeredViewId": "318:689",
+        "parts": [
+          {
+            "sourceNodeId": "235:512",
+            "nodeId": "318:690",
+            "name": "beads"
+          }
+        ]
+      },
+      {
+        "item": "C05/hat",
+        "cardId": "318:695",
+        "shopViewId": "318:699",
+        "registeredViewId": "318:705",
+        "parts": [
+          {
+            "sourceNodeId": "235:529",
+            "nodeId": "318:706",
+            "name": "hat"
+          }
+        ]
+      },
+      {
+        "item": "C05/third_eye",
+        "cardId": "318:711",
+        "shopViewId": "318:715",
+        "registeredViewId": "318:721",
+        "parts": [
+          {
+            "sourceNodeId": "235:534",
+            "nodeId": "318:722",
+            "name": "third eye — forehead axis"
+          }
+        ]
+      },
+      {
+        "item": "C06/vest",
+        "cardId": "318:730",
+        "shopViewId": "318:734",
+        "registeredViewId": "318:740",
+        "parts": [
+          {
+            "sourceNodeId": "235:556",
+            "nodeId": "318:741",
+            "name": "Цельная одежда · Гламурочка"
+          }
+        ]
+      },
+      {
+        "item": "C06/bag_h",
+        "cardId": "318:745",
+        "shopViewId": "318:749",
+        "registeredViewId": "318:755",
+        "parts": [
+          {
+            "sourceNodeId": "235:561",
+            "nodeId": "318:756",
+            "name": "H bag — front right flank"
+          }
+        ]
+      },
+      {
+        "item": "C06/diamonds",
+        "cardId": "318:761",
+        "shopViewId": "318:765",
+        "registeredViewId": "318:771",
+        "parts": [
+          {
+            "sourceNodeId": "235:566",
+            "nodeId": "318:772",
+            "name": "diamonds"
+          }
+        ]
+      },
+      {
+        "item": "C06/hat",
+        "cardId": "318:777",
+        "shopViewId": "318:781",
+        "registeredViewId": "318:787",
+        "parts": [
+          {
+            "sourceNodeId": "235:583",
+            "nodeId": "318:788",
+            "name": "hat"
+          }
+        ]
+      },
+      {
+        "item": "C06/glasses",
+        "cardId": "318:793",
+        "shopViewId": "318:797",
+        "registeredViewId": "318:803",
+        "parts": [
+          {
+            "sourceNodeId": "235:588",
+            "nodeId": "318:804",
+            "name": "glasses — optical centers"
+          }
+        ]
+      },
+      {
+        "item": "C06/anklets",
+        "cardId": "318:809",
+        "shopViewId": "318:813",
+        "registeredViewId": "318:819",
+        "parts": [
+          {
+            "sourceNodeId": "235:593",
+            "nodeId": "318:820",
+            "name": "left anklet — leg shaft"
+          },
+          {
+            "sourceNodeId": "235:600",
+            "nodeId": "318:823",
+            "name": "right anklet — leg shaft"
+          }
+        ]
+      }
+    ],
+    "width": 1948,
+    "height": 2967,
+    "createdNodeIds": [
+      "318:208",
+      "318:209",
+      "318:210",
+      "318:211",
+      "318:212",
+      "318:213",
+      "318:214",
+      "318:215",
+      "318:216",
+      "318:217",
+      "318:218",
+      "318:219",
+      "318:222",
+      "I318:222;117:535",
+      "I318:222;117:536",
+      "318:225",
+      "318:226",
+      "318:227",
+      "318:228",
+      "318:229",
+      "318:230",
+      "318:231",
+      "318:232",
+      "318:233",
+      "318:234",
+      "318:235",
+      "318:236",
+      "318:237",
+      "318:238",
+      "318:241",
+      "I318:241;117:525",
+      "I318:241;117:526",
+      "318:244",
+      "318:245",
+      "318:246",
+      "318:247",
+      "318:248",
+      "318:249",
+      "318:250",
+      "318:251",
+      "318:252",
+      "318:253",
+      "318:256",
+      "I318:256;117:505",
+      "I318:256;117:506",
+      "318:259",
+      "318:260",
+      "318:261",
+      "318:262",
+      "318:263",
+      "318:264",
+      "318:265",
+      "318:266",
+      "318:267",
+      "318:268",
+      "318:269",
+      "318:270",
+      "318:271",
+      "318:272",
+      "318:275",
+      "I318:275;117:495",
+      "I318:275;117:496",
+      "318:278",
+      "318:279",
+      "318:280",
+      "318:281",
+      "318:282",
+      "318:283",
+      "318:284",
+      "318:285",
+      "318:286",
+      "318:287",
+      "318:288",
+      "318:291",
+      "I318:291;117:515",
+      "I318:291;117:516",
+      "318:294",
+      "318:295",
+      "318:296",
+      "318:297",
+      "318:298",
+      "318:299",
+      "318:300",
+      "318:301",
+      "318:302",
+      "318:303",
+      "318:304",
+      "318:305",
+      "318:306",
+      "318:307",
+      "318:310",
+      "I318:310;117:576",
+      "I318:310;117:577",
+      "318:313",
+      "318:314",
+      "318:315",
+      "318:316",
+      "318:317",
+      "318:318",
+      "318:319",
+      "318:320",
+      "318:321",
+      "318:322",
+      "318:323",
+      "318:324",
+      "318:325",
+      "318:326",
+      "318:327",
+      "318:328",
+      "318:329",
+      "318:332",
+      "I318:332;117:566",
+      "I318:332;117:567",
+      "318:335",
+      "318:336",
+      "318:337",
+      "318:338",
+      "318:339",
+      "318:340",
+      "318:341",
+      "318:342",
+      "318:343",
+      "318:344",
+      "318:345",
+      "318:346",
+      "318:347",
+      "318:348",
+      "318:350",
+      "I318:350;110:14",
+      "318:352",
+      "318:353",
+      "318:354",
+      "318:355",
+      "318:356",
+      "318:357",
+      "318:358",
+      "318:359",
+      "318:360",
+      "318:361",
+      "318:364",
+      "I318:364;117:556",
+      "I318:364;117:557",
+      "318:367",
+      "318:368",
+      "318:369",
+      "318:370",
+      "318:371",
+      "318:372",
+      "318:373",
+      "318:374",
+      "318:375",
+      "318:376",
+      "318:377",
+      "318:380",
+      "I318:380;117:546",
+      "I318:380;117:547",
+      "318:383",
+      "318:384",
+      "318:385",
+      "318:386",
+      "318:387",
+      "318:388",
+      "318:389",
+      "318:390",
+      "318:391",
+      "318:392",
+      "318:393",
+      "318:398",
+      "I318:398;110:9",
+      "I318:398;110:10",
+      "I318:398;110:11",
+      "I318:398;110:12",
+      "318:403",
+      "318:404",
+      "318:405",
+      "318:406",
+      "318:407",
+      "318:408",
+      "318:409",
+      "318:410",
+      "318:411",
+      "318:412",
+      "318:413",
+      "318:414",
+      "318:415",
+      "318:416",
+      "318:419",
+      "I318:419;117:630",
+      "I318:419;117:631",
+      "318:422",
+      "318:423",
+      "318:424",
+      "318:425",
+      "318:426",
+      "318:427",
+      "318:428",
+      "318:429",
+      "318:430",
+      "318:431",
+      "318:434",
+      "I318:434;117:640",
+      "I318:434;117:641",
+      "318:437",
+      "318:438",
+      "318:439",
+      "318:440",
+      "318:441",
+      "318:442",
+      "318:443",
+      "318:444",
+      "318:445",
+      "318:446",
+      "318:447",
+      "318:448",
+      "318:449",
+      "318:450",
+      "318:453",
+      "I318:453;117:610",
+      "I318:453;117:611",
+      "318:456",
+      "318:457",
+      "318:458",
+      "318:459",
+      "318:460",
+      "318:461",
+      "318:462",
+      "318:463",
+      "318:464",
+      "318:465",
+      "318:466",
+      "318:469",
+      "I318:469;117:600",
+      "I318:469;117:601",
+      "318:472",
+      "318:473",
+      "318:474",
+      "318:475",
+      "318:476",
+      "318:477",
+      "318:478",
+      "318:479",
+      "318:480",
+      "318:481",
+      "318:482",
+      "318:483",
+      "318:484",
+      "318:485",
+      "318:488",
+      "I318:488;117:620",
+      "I318:488;117:621",
+      "318:491",
+      "318:492",
+      "318:493",
+      "318:494",
+      "318:495",
+      "318:496",
+      "318:497",
+      "318:498",
+      "318:499",
+      "318:500",
+      "318:501",
+      "318:504",
+      "I318:504;117:650",
+      "I318:504;117:651",
+      "318:507",
+      "318:508",
+      "318:509",
+      "318:510",
+      "318:511",
+      "318:512",
+      "318:513",
+      "318:514",
+      "318:515",
+      "318:516",
+      "318:517",
+      "318:518",
+      "318:519",
+      "318:520",
+      "318:523",
+      "I318:523;117:711",
+      "I318:523;117:712",
+      "318:526",
+      "318:527",
+      "318:528",
+      "318:529",
+      "318:530",
+      "318:531",
+      "318:532",
+      "318:533",
+      "318:534",
+      "318:535",
+      "318:536",
+      "318:537",
+      "318:538",
+      "318:539",
+      "318:542",
+      "I318:542;117:681",
+      "I318:542;117:682",
+      "318:545",
+      "318:546",
+      "318:547",
+      "318:548",
+      "318:549",
+      "318:550",
+      "318:551",
+      "318:552",
+      "318:553",
+      "318:554",
+      "318:557",
+      "I318:557;117:691",
+      "I318:557;117:692",
+      "318:560",
+      "318:561",
+      "318:562",
+      "318:563",
+      "318:564",
+      "318:565",
+      "318:566",
+      "318:567",
+      "318:568",
+      "318:569",
+      "318:570",
+      "318:573",
+      "I318:573;117:701",
+      "I318:573;117:702",
+      "318:576",
+      "318:577",
+      "318:578",
+      "318:579",
+      "318:580",
+      "318:581",
+      "318:582",
+      "318:583",
+      "318:584",
+      "318:585",
+      "318:586",
+      "318:589",
+      "I318:589;117:661",
+      "I318:589;117:662",
+      "318:592",
+      "318:593",
+      "318:594",
+      "318:595",
+      "318:596",
+      "318:597",
+      "318:598",
+      "318:599",
+      "318:600",
+      "318:601",
+      "318:602",
+      "318:603",
+      "318:604",
+      "318:605",
+      "318:608",
+      "I318:608;117:671",
+      "I318:608;117:672",
+      "318:611",
+      "318:612",
+      "318:613",
+      "318:614",
+      "318:615",
+      "318:616",
+      "318:617",
+      "318:618",
+      "318:619",
+      "318:620",
+      "318:621",
+      "318:622",
+      "318:623",
+      "318:624",
+      "318:627",
+      "I318:627;117:762",
+      "I318:627;117:763",
+      "318:630",
+      "318:631",
+      "318:632",
+      "318:633",
+      "318:634",
+      "318:635",
+      "318:636",
+      "318:637",
+      "318:638",
+      "318:639",
+      "318:640",
+      "318:641",
+      "318:642",
+      "318:643",
+      "318:644",
+      "318:645",
+      "318:646",
+      "318:647",
+      "318:648",
+      "318:649",
+      "318:652",
+      "I318:652;117:742",
+      "I318:652;117:743",
+      "318:655",
+      "318:656",
+      "318:657",
+      "318:658",
+      "318:659",
+      "318:660",
+      "318:661",
+      "318:662",
+      "318:663",
+      "318:664",
+      "318:667",
+      "I318:667;117:752",
+      "I318:667;117:753",
+      "318:670",
+      "318:671",
+      "318:672",
+      "318:673",
+      "318:674",
+      "318:675",
+      "318:676",
+      "318:677",
+      "318:678",
+      "318:679",
+      "318:680",
+      "318:681",
+      "318:682",
+      "318:683",
+      "318:686",
+      "I318:686;117:732",
+      "I318:686;117:733",
+      "318:689",
+      "318:690",
+      "318:691",
+      "318:692",
+      "318:693",
+      "318:694",
+      "318:695",
+      "318:696",
+      "318:697",
+      "318:698",
+      "318:699",
+      "318:702",
+      "I318:702;117:722",
+      "I318:702;117:723",
+      "318:705",
+      "318:706",
+      "318:707",
+      "318:708",
+      "318:709",
+      "318:710",
+      "318:711",
+      "318:712",
+      "318:713",
+      "318:714",
+      "318:715",
+      "318:718",
+      "I318:718;117:772",
+      "I318:718;117:773",
+      "318:721",
+      "318:722",
+      "318:723",
+      "318:724",
+      "318:725",
+      "318:726",
+      "318:727",
+      "318:728",
+      "318:729",
+      "318:730",
+      "318:731",
+      "318:732",
+      "318:733",
+      "318:734",
+      "318:737",
+      "I318:737;117:823",
+      "I318:737;117:824",
+      "318:740",
+      "318:741",
+      "318:742",
+      "318:743",
+      "318:744",
+      "318:745",
+      "318:746",
+      "318:747",
+      "318:748",
+      "318:749",
+      "318:752",
+      "I318:752;117:793",
+      "I318:752;117:794",
+      "318:755",
+      "318:756",
+      "318:757",
+      "318:758",
+      "318:759",
+      "318:760",
+      "318:761",
+      "318:762",
+      "318:763",
+      "318:764",
+      "318:765",
+      "318:768",
+      "I318:768;117:803",
+      "I318:768;117:804",
+      "318:771",
+      "318:772",
+      "318:773",
+      "318:774",
+      "318:775",
+      "318:776",
+      "318:777",
+      "318:778",
+      "318:779",
+      "318:780",
+      "318:781",
+      "318:784",
+      "I318:784;117:783",
+      "I318:784;117:784",
+      "318:787",
+      "318:788",
+      "318:789",
+      "318:790",
+      "318:791",
+      "318:792",
+      "318:793",
+      "318:794",
+      "318:795",
+      "318:796",
+      "318:797",
+      "318:800",
+      "I318:800;117:813",
+      "I318:800;117:814",
+      "318:803",
+      "318:804",
+      "318:805",
+      "318:806",
+      "318:807",
+      "318:808",
+      "318:809",
+      "318:810",
+      "318:811",
+      "318:812",
+      "318:813",
+      "318:816",
+      "I318:816;117:833",
+      "I318:816;117:834",
+      "318:819",
+      "318:820",
+      "318:821",
+      "318:822",
+      "318:823",
+      "318:824",
+      "318:825",
+      "318:826",
+      "318:827",
+      "318:828",
+      "318:829"
+    ],
+    "mutatedNodeIds": []
+  },
+  "contract": "Shop illustrations are complete product art. Only registered_game_group file_ids from v12 dress the hen. Interleave parts by z; wings cover vest and bag; water toy stays readable in front. Closed shoes replace bare feet. Never trim clothing canvas.",
+  "files": [
+    {
+      "id": "ryaba",
+      "nodeId": "322:3442",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/ryaba/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/ryaba/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 116341,
+        "sha256": "d92b57f34c1b88e0423281065369445d33e160cfeb532c3118bc6775900696ee",
+        "alpha_bbox": [
+          570,
+          1056,
+          946,
+          1244
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/ryaba/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 14748,
+        "sha256": "3247ec50a82c8d130980c870f7e28ef06cef32599df956211dba805f14f2aeab",
+        "alpha_bbox": [
+          282,
+          525,
+          473,
+          623
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "fighter",
+      "nodeId": "322:3445",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/fighter/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/fighter/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 118932,
+        "sha256": "46631891cba547a6b7dc9cfb90d24947364d7ff4bd473b5917be72b4e7488682",
+        "alpha_bbox": [
+          595,
+          1056,
+          1000,
+          1224
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/fighter/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 13596,
+        "sha256": "8ed508759cfc21b68362d284faae2735195a3883fdcb61d5480690303b0ff6a3",
+        "alpha_bbox": [
+          297,
+          526,
+          500,
+          614
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "fool",
+      "nodeId": "322:3448",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/fool/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/fool/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 56886,
+        "sha256": "270e9bc00b2916f905a055290815219d7b113df36f59c3bc6b6d759206de57da",
+        "alpha_bbox": [
+          592,
+          1086,
+          890,
+          1185
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/fool/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 8448,
+        "sha256": "fccdffe4766d199224c4046d9547b3f9b17d107065fac570157fb69714fdcbb4",
+        "alpha_bbox": [
+          295,
+          542,
+          446,
+          594
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "professor",
+      "nodeId": "322:3451",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/professor/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/professor/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 70499,
+        "sha256": "be2604ff8a8e1495a2ea355da1a236565298da6a3fc0d3baad11e915d3048aef",
+        "alpha_bbox": [
+          558,
+          1086,
+          900,
+          1199
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/professor/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 9868,
+        "sha256": "1055cd25cd15fe0fcf77a2cc093e8c4302e901352830f931f4103c0ee718de8e",
+        "alpha_bbox": [
+          278,
+          541,
+          451,
+          601
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "monk",
+      "nodeId": "322:3454",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/monk/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/monk/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 89438,
+        "sha256": "a1f8d27d4281b75f672bdf4714fb288818468f49ba5b3c575fbf9d1665de3480",
+        "alpha_bbox": [
+          570,
+          1056,
+          899,
+          1196
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/monk/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 12098,
+        "sha256": "cf900e357cde187ae9c513a0fb36c0ccbd0ec8b71afb9b56ee46aab996f46118",
+        "alpha_bbox": [
+          282,
+          525,
+          450,
+          600
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "glamour",
+      "nodeId": "322:3457",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/glamour/feet_perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/glamour/feet_perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 59896,
+        "sha256": "f7fdfad90836f073a9122cd0144881976dee9c4e73c614d080e7373cb7d73ba5",
+        "alpha_bbox": [
+          684,
+          1080,
+          968,
+          1194
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/glamour/feet_perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 8348,
+        "sha256": "e767cd1e5081691667f9b03b78a66b8be71c28d342c4e23e00563b8da09ff93c",
+        "alpha_bbox": [
+          341,
+          539,
+          485,
+          599
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "nest_back",
+      "nodeId": "322:3460",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/nest_back.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/nest_back.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1015970,
+        "sha256": "e33b29b49959bf8937a9f33b750e8ce1353f08a1c914f8b0e8bee027658ef0f5",
+        "alpha_bbox": [
+          76,
+          760,
+          1138,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/nest_back.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 83422,
+        "sha256": "da3b6ae2f085a618254def32c27d0bd94f73e2ee70a8b1aef47488a4270cb281",
+        "alpha_bbox": [
+          37,
+          380,
+          570,
+          678
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "nest_front_eggs",
+      "nodeId": "322:3463",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/nest_front_eggs.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/nest_front_eggs.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 455740,
+        "sha256": "f1eed90290f2499de8a88c571ea0ec5cad21f6eeba215e1146b89919adafd950",
+        "alpha_bbox": [
+          81,
+          1020,
+          1124,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/nest_front_eggs.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 42738,
+        "sha256": "0c768ad9a7cebe8ee320e555637015ba25c13ec84dd9e3b4a502521b92ffcc36",
+        "alpha_bbox": [
+          40,
+          507,
+          562,
+          678
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "perch",
+      "nodeId": "322:3466",
+      "width": 1200,
+      "height": 1520,
+      "path": "assets/characters/v13/props/perch.png",
+      "kind": "prop",
+      "png": {
+        "path": "assets/characters/v13/props/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 7887,
+        "sha256": "3414b3a1465d07ea3bcd9ee554fc4e1b4ab42b68698959e2d422cf47b7500a7f",
+        "alpha_bbox": [
+          40,
+          1098,
+          1161,
+          1175
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/props/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 3488,
+        "sha256": "03bbdefade94757d280fed192cb6f83e325f1c66afc6dab52d8e790aac3353d8",
+        "alpha_bbox": [
+          17,
+          546,
+          583,
+          590
+        ]
+      },
+      "webp_quality": 95
+    },
+    {
+      "id": "C01/hat",
+      "nodeId": "322:3469",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C01/hat/hat.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:501",
+      "png": {
+        "path": "assets/characters/v13/shop/C01/hat/hat.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 166616,
+        "sha256": "7de4f6b602607ad173cfee4732b34e34485053779d0d7acfe022a91f53234077",
+        "alpha_bbox": [
+          28,
+          141,
+          484,
+          369
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C01/hat/hat.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 43480,
+        "sha256": "38dc3eb964e379c2304549b3d6ad17bf7fa4ac4a3337c924386f11ed1d73bf74",
+        "alpha_bbox": [
+          28,
+          141,
+          484,
+          369
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "ryaba",
+        "slot": "head",
+        "file_ids": [
+          "ryaba_c01_layers_10_hat_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C01/bag",
+      "nodeId": "322:3474",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C01/bag/bag.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:511",
+      "png": {
+        "path": "assets/characters/v13/shop/C01/bag/bag.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 176259,
+        "sha256": "a73fd7762963cc6573356bca74c2d17537b2065897baa5e7252e3819827892e0",
+        "alpha_bbox": [
+          24,
+          65,
+          481,
+          444
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C01/bag/bag.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 55596,
+        "sha256": "3d27ac94712762d89d4338bbee66d3f6d5f223d2c803b11bb18f1bba4fc6ecaf",
+        "alpha_bbox": [
+          24,
+          65,
+          481,
+          444
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "ryaba",
+        "slot": "bag",
+        "file_ids": [
+          "ryaba_c01_layers_05_bag_strap_png",
+          "ryaba_c01_layers_06_bag_front_right_flank_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C01/glasses",
+      "nodeId": "322:3479",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C01/glasses/glasses.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:521",
+      "png": {
+        "path": "assets/characters/v13/shop/C01/glasses/glasses.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 64088,
+        "sha256": "6a394709a30b3a1e020838cbec09e4f05a3a86ab0fe8248894348541ee27d0a3",
+        "alpha_bbox": [
+          24,
+          181,
+          484,
+          325
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C01/glasses/glasses.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 33586,
+        "sha256": "bddfab2f6d4fcac22636d2f6f25e1a9544bac0b6947ca85f6be3059ddd8b81f3",
+        "alpha_bbox": [
+          24,
+          181,
+          484,
+          325
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "ryaba",
+        "slot": "eyes",
+        "file_ids": [
+          "ryaba_c01_layers_11_glasses_optical_centers_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C01/vest",
+      "nodeId": "322:3484",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C01/vest/vest.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:531",
+      "png": {
+        "path": "assets/characters/v13/shop/C01/vest/vest.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 311316,
+        "sha256": "b07d4683e54150d2757a0170e707cd8d99003cf1aca04356c5b6ec7daebb0973",
+        "alpha_bbox": [
+          24,
+          37,
+          483,
+          470
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C01/vest/vest.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 68140,
+        "sha256": "46db7d215fdcd5f41d681f4295f4d0b288e36afff95c138516a295210de04818",
+        "alpha_bbox": [
+          24,
+          37,
+          483,
+          470
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "ryaba",
+        "slot": "body",
+        "file_ids": [
+          "ryaba_c01_clothing_vest_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C01/boots",
+      "nodeId": "322:3489",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C01/boots/boots.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:541",
+      "png": {
+        "path": "assets/characters/v13/shop/C01/boots/boots.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 141063,
+        "sha256": "8c22109e04dd1b234d2245b734150ed3ff10739d10ded31ce102d0fca3d978c6",
+        "alpha_bbox": [
+          24,
+          151,
+          484,
+          357
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C01/boots/boots.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 37982,
+        "sha256": "1a275a8f66ca407d251adabf51788c6fe91ab5ca10d4b53cfb512f3eb45b8b4a",
+        "alpha_bbox": [
+          24,
+          151,
+          484,
+          357
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "ryaba",
+        "slot": "feet",
+        "file_ids": [
+          "ryaba_c01_layers_00_left_boot_png",
+          "ryaba_c01_layers_01_right_boot_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C02/bandana",
+      "nodeId": "322:3494",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/bandana/bandana.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:552",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/bandana/bandana.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 82630,
+        "sha256": "ecb5a746f4acf2adddeeeb06b8f54105421964a79a55e4f173ba8cf5f2d16bdd",
+        "alpha_bbox": [
+          27,
+          152,
+          483,
+          357
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/bandana/bandana.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 23752,
+        "sha256": "78c9f624dabe0886e1c14e9e31dba709d278b9492eb2e89ee0b374c1d682f9b2",
+        "alpha_bbox": [
+          27,
+          152,
+          483,
+          357
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "head",
+        "file_ids": [
+          "fighter_c02_layers_12_bandana_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C02/cartridges",
+      "nodeId": "322:3499",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/cartridges/cartridges.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:562",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/cartridges/cartridges.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 176946,
+        "sha256": "7aa2361037bc1cdd1b5cbd867b85f16b2b036f99efdf93e7e7662a7211069c89",
+        "alpha_bbox": [
+          28,
+          124,
+          482,
+          383
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/cartridges/cartridges.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 59904,
+        "sha256": "e5f95676be4cdf4f21216e542bdfef7facfed6de7f0a86dc864849fdf8276f02",
+        "alpha_bbox": [
+          28,
+          124,
+          482,
+          383
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "neck",
+        "file_ids": [
+          "fighter_c02_layers_07_cartridges_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C02/boots",
+      "nodeId": "322:3504",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/boots/boots.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:572",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/boots/boots.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 168024,
+        "sha256": "b0e8c1bf312678a309d012f9f4a1786a8c7fc12beb13965c5737c793da2d9a87",
+        "alpha_bbox": [
+          24,
+          135,
+          483,
+          379
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/boots/boots.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 46460,
+        "sha256": "9924324ae5beb03d1b6e8edfd5e0789d210731c4fd7785c9c0825fafcb88af57",
+        "alpha_bbox": [
+          24,
+          135,
+          483,
+          379
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "feet",
+        "file_ids": [
+          "fighter_c02_layers_01_left_boot_png",
+          "fighter_c02_layers_02_right_boot_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C02/water_toy",
+      "nodeId": "322:3509",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/water_toy/water_toy.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:582",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/water_toy/water_toy.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 213697,
+        "sha256": "bc15aeab94aec8366eb3ec449c29cc805f903c01cf1ea8f3792482596b0700f4",
+        "alpha_bbox": [
+          25,
+          53,
+          482,
+          455
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/water_toy/water_toy.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 72126,
+        "sha256": "cbbe2519743464784f8b0a34cdf9a0d1eb82065380ada7dcbb82c23a74004fae",
+        "alpha_bbox": [
+          25,
+          53,
+          482,
+          455
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "bag",
+        "file_ids": [
+          "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "fighter_c02_layers_06_near_carry_strap_png",
+          "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C02/aviators",
+      "nodeId": "322:3514",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/aviators/aviators.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:588",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/aviators/aviators.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 49586,
+        "sha256": "10e257a12a06f964fcf1cc3e9eaab0ebc943bff407d571f10d10fb12ec0b18a7",
+        "alpha_bbox": [
+          24,
+          140,
+          483,
+          370
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/aviators/aviators.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 25708,
+        "sha256": "0fbc9c0747c45b6be68dc724f384ef7745dbff90d2ff507e3443cc0358cc3aa4",
+        "alpha_bbox": [
+          24,
+          140,
+          483,
+          370
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "eyes",
+        "file_ids": [
+          "fighter_c02_layers_13_glasses_optical_centers_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C02/vest",
+      "nodeId": "322:3521",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C02/vest/vest.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:596",
+      "png": {
+        "path": "assets/characters/v13/shop/C02/vest/vest.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 329027,
+        "sha256": "b68cc8239c62ecb477dae5a314c4cb639f8cf0984eb850927cd8c8f572b8f172",
+        "alpha_bbox": [
+          26,
+          49,
+          486,
+          465
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C02/vest/vest.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 85640,
+        "sha256": "fdda58ceae631356970fe99957e57c842bc49bb5b9d99e9ab61587a968e3f9e4",
+        "alpha_bbox": [
+          26,
+          49,
+          486,
+          465
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fighter",
+        "slot": "body",
+        "file_ids": [
+          "fighter_c02_clothing_vest_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C03/scarf",
+      "nodeId": "322:3525",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/scarf/scarf.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:606",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/scarf/scarf.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 198432,
+        "sha256": "a17bf84b47871a911f78362477e24d1bc091fc9696d8a0bfec4802e184e3c6ed",
+        "alpha_bbox": [
+          25,
+          95,
+          483,
+          414
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/scarf/scarf.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 56338,
+        "sha256": "66c66159813c82677d39cb33d88bdd13f63cd06cb27fa7089b35d6b397439558",
+        "alpha_bbox": [
+          25,
+          95,
+          483,
+          414
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "head",
+        "file_ids": [
+          "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "fool_c03_layers_11_scarf_wrapped_over_crown_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C03/beads",
+      "nodeId": "322:3530",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/beads/beads.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:616",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/beads/beads.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 180489,
+        "sha256": "f0d40ff2cbf1b0227afb6e342301409cf7bbbe8b01c90c515430acdaf474a8a9",
+        "alpha_bbox": [
+          24,
+          72,
+          482,
+          431
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/beads/beads.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 70538,
+        "sha256": "973e63755485fab9e36764c3081f1035d7594efd0f0cfa6e574d08abeeb769fc",
+        "alpha_bbox": [
+          24,
+          72,
+          482,
+          431
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "neck",
+        "file_ids": [
+          "fool_c03_layers_05_beads_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C03/glasses",
+      "nodeId": "322:3535",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/glasses/glasses.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:626",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/glasses/glasses.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 76664,
+        "sha256": "0264adec58e8886ecba00e30022c431767c2a10384fc478c201d19f32af82e81",
+        "alpha_bbox": [
+          28,
+          181,
+          481,
+          327
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/glasses/glasses.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 22336,
+        "sha256": "949ffbafea4d29751bc36b6d2035b3aa3bbeffab38fe7b60879d0db20a2f13db",
+        "alpha_bbox": [
+          28,
+          181,
+          481,
+          327
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "eyes",
+        "file_ids": [
+          "fool_c03_layers_12_glasses_optical_centers_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C03/vest",
+      "nodeId": "322:3540",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/vest/vest.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:636",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/vest/vest.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 274603,
+        "sha256": "044212bdaf9404d2fe3d6b4853bc20d2c8f25659aea0c655e1ef00ea8d1e3f59",
+        "alpha_bbox": [
+          27,
+          74,
+          481,
+          431
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/vest/vest.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 72368,
+        "sha256": "675c6319fc01fdde667eb5cb3adf4e75523d1d15869b34b18e3d653d2018458d",
+        "alpha_bbox": [
+          27,
+          74,
+          481,
+          431
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "body",
+        "file_ids": [
+          "fool_c03_clothing_vest_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C03/shopper_flute",
+      "nodeId": "322:3545",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/shopper_flute/shopper_flute.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:646",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/shopper_flute/shopper_flute.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 332368,
+        "sha256": "e3fa35a843f8de2190d673d1a1691bcebb5a58df2a01d1c44aceb22493af437a",
+        "alpha_bbox": [
+          49,
+          24,
+          459,
+          488
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/shopper_flute/shopper_flute.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 91132,
+        "sha256": "88fd2a4ec04e33662aa167e614a760b75cbabc6e2ae92316a92e66f7de261408",
+        "alpha_bbox": [
+          49,
+          24,
+          459,
+          488
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "bag",
+        "file_ids": [
+          "fool_c03_layers_04_shopper_front_right_flank_png",
+          "fool_c03_layers_08_flute_above_wing_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C03/ring07",
+      "nodeId": "322:3550",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C03/ring07/ring07.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:656",
+      "png": {
+        "path": "assets/characters/v13/shop/C03/ring07/ring07.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 121003,
+        "sha256": "7fc03f6439e94f9dee2a55ea3ed16880a14417481f985d8b6759d5f3f83e6aec",
+        "alpha_bbox": [
+          24,
+          106,
+          483,
+          396
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C03/ring07/ring07.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 33372,
+        "sha256": "75bd089291c0e6b153798fef0e758e4b57daef52d1f195e50c25b8534a3f276c",
+        "alpha_bbox": [
+          24,
+          106,
+          483,
+          396
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "fool",
+        "slot": "feet",
+        "file_ids": [
+          "fool_c03_layers_13_07_ring_visible_left_ankle_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C04/pencil",
+      "nodeId": "322:3555",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/pencil/pencil.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:667",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/pencil/pencil.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 86616,
+        "sha256": "f5a8c91675425e0526fc497973cad8192509c607fa4e4d2610b5e601ea03bb2f",
+        "alpha_bbox": [
+          67,
+          32,
+          443,
+          471
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/pencil/pencil.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 32778,
+        "sha256": "d3c2f9352e7cee1c0e743b773b8824c6e05cb740aa0e55b88bb80bcfdf5ebfc2",
+        "alpha_bbox": [
+          67,
+          32,
+          443,
+          471
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "head",
+        "file_ids": [
+          "professor_c04_layers_10_pencil_behind_hair_png",
+          "professor_c04_layers_12_pencil_visible_shaft_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C04/glasses",
+      "nodeId": "322:3560",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/glasses/glasses.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:677",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/glasses/glasses.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 82266,
+        "sha256": "4f7fc20290617aa47a3ed647c41f9045a7d6cf5009cf419418135abcd40cd258",
+        "alpha_bbox": [
+          27,
+          167,
+          483,
+          343
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/glasses/glasses.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 32864,
+        "sha256": "a7a2c8f0b5eced44b152d0c10a6a6bd7cf3a6d9714c7ac23c658c62d63d609bd",
+        "alpha_bbox": [
+          27,
+          167,
+          483,
+          343
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "eyes",
+        "file_ids": [
+          "professor_c04_layers_13_glasses_optical_centers_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C04/coat",
+      "nodeId": "322:3565",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/coat/coat.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:687",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/coat/coat.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 234042,
+        "sha256": "349b4f32d0c616c42166a62c51688f9e0d5cd3d984c4d79fe9a4da9e6aa73cad",
+        "alpha_bbox": [
+          26,
+          38,
+          484,
+          469
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/coat/coat.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 48192,
+        "sha256": "7c0170674faae859185505ba2f5a6c5b190cdf861f528d757a127652ea394947",
+        "alpha_bbox": [
+          26,
+          38,
+          484,
+          469
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "body",
+        "file_ids": [
+          "professor_c04_clothing_coat_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C04/satchel",
+      "nodeId": "322:3570",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/satchel/satchel.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:697",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/satchel/satchel.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 256834,
+        "sha256": "62652433593ada3a2721c5c89f5c61f2476234030a69b37395928e616d2ea5f4",
+        "alpha_bbox": [
+          26,
+          29,
+          479,
+          478
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/satchel/satchel.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 67984,
+        "sha256": "db09d882b4f9a0083ee9ccc0677283843ae985e2cf785dab9a2e58d8360b18ee",
+        "alpha_bbox": [
+          26,
+          29,
+          479,
+          478
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "bag",
+        "file_ids": [
+          "professor_c04_layers_06_satchel_front_right_flank_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C04/magnifier",
+      "nodeId": "322:3575",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/magnifier/magnifier.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:707",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/magnifier/magnifier.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 113780,
+        "sha256": "c58f71d890820950a1708df7037887558981ec8f776052c82c1430f3d74e7b1a",
+        "alpha_bbox": [
+          92,
+          24,
+          410,
+          481
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/magnifier/magnifier.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 37898,
+        "sha256": "feb7c1a388eb943610d5a444b933b62e2f510b2997f0208f9d8999ca3bf12b32",
+        "alpha_bbox": [
+          92,
+          24,
+          410,
+          481
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "neck",
+        "file_ids": [
+          "professor_c04_layers_07_magnifier_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C04/crocs",
+      "nodeId": "322:3580",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C04/crocs/crocs.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:717",
+      "png": {
+        "path": "assets/characters/v13/shop/C04/crocs/crocs.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 105858,
+        "sha256": "47bb0525a6f8be51f5728b06470d7283a23b7cbb7c8e2a4e8766b5fc7f9a61ed",
+        "alpha_bbox": [
+          24,
+          180,
+          484,
+          327
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C04/crocs/crocs.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 29862,
+        "sha256": "2238327ee3fbbb8f6f6d099a8cfa38e364f32e9c199fc99d6c86ade9980307cd",
+        "alpha_bbox": [
+          24,
+          180,
+          484,
+          327
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "professor",
+        "slot": "feet",
+        "file_ids": [
+          "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "professor_c04_layers_02_right_croc_upper_leg_retained_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C05/hat",
+      "nodeId": "322:3585",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/hat/hat.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:728",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/hat/hat.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 143603,
+        "sha256": "b335a766d803d33b2074797947638db6afae2022bdba304e11e7b78e821814b2",
+        "alpha_bbox": [
+          25,
+          133,
+          484,
+          372
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/hat/hat.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 39412,
+        "sha256": "fd03fe467095a1d42c8f55d3cd9498862a12d2e9dcdff5206e789705888d91c3",
+        "alpha_bbox": [
+          25,
+          133,
+          484,
+          372
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "head",
+        "file_ids": [
+          "monk_c05_layers_14_hat_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C05/beads",
+      "nodeId": "322:3590",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/beads/beads.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:738",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/beads/beads.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 151014,
+        "sha256": "20a064d130970d2930535d3214393a82a8d95530c201a824fc306af377e181b6",
+        "alpha_bbox": [
+          24,
+          113,
+          482,
+          396
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/beads/beads.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 48494,
+        "sha256": "b0b25f33f8571bcb88708275abc96c33dc125aeb41186c3ef5ff46f6002c253d",
+        "alpha_bbox": [
+          24,
+          113,
+          482,
+          396
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "neck",
+        "file_ids": [
+          "monk_c05_layers_10_beads_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C05/robe",
+      "nodeId": "322:3595",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/robe/robe.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:748",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/robe/robe.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 301785,
+        "sha256": "91ff75d87d9e8e8f96be8160e7fd71f2f734297256c96a58f48a443d74a0f235",
+        "alpha_bbox": [
+          24,
+          32,
+          483,
+          474
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/robe/robe.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 65778,
+        "sha256": "4b563de30a9b14060f67adff3c427aaa83407edd9a0effe359185444e5d1416f",
+        "alpha_bbox": [
+          24,
+          32,
+          483,
+          474
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "body",
+        "file_ids": [
+          "monk_c05_clothing_robe_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C05/cloth_bag",
+      "nodeId": "322:3600",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/cloth_bag/cloth_bag.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:758",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/cloth_bag/cloth_bag.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 219405,
+        "sha256": "a6ac05523d4762702d24b90151a8fcf1005673ae724b72cfa5a9db3039c9cf33",
+        "alpha_bbox": [
+          24,
+          36,
+          482,
+          473
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/cloth_bag/cloth_bag.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 60416,
+        "sha256": "e9a4d528ad7d4774ea783ca1d6dbc13bf68126d29c633bc5f768e9fc0ec0abd8",
+        "alpha_bbox": [
+          24,
+          36,
+          482,
+          473
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "bag",
+        "file_ids": [
+          "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "monk_c05_layers_09_cloth_bag_front_right_flank_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C05/sandals",
+      "nodeId": "322:3605",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/sandals/sandals.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:768",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/sandals/sandals.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 95804,
+        "sha256": "6b0c81409c4af4f1993311d95416defedd752d42914d32f13223d27d106b1141",
+        "alpha_bbox": [
+          27,
+          184,
+          483,
+          324
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/sandals/sandals.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 27494,
+        "sha256": "c176eb2b21e565fd8b70b110a1f1f8074d277d5e135bbe05070b02510189acd4",
+        "alpha_bbox": [
+          27,
+          184,
+          483,
+          324
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "feet",
+        "file_ids": [
+          "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "monk_c05_layers_04_right_sandal_strap_over_foot_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C05/third_eye",
+      "nodeId": "322:3610",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C05/third_eye/third_eye.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:778",
+      "png": {
+        "path": "assets/characters/v13/shop/C05/third_eye/third_eye.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 174948,
+        "sha256": "786eeee64b961f671a7dc9fdf13aa2ff1cca0573cb9b392254936a528e09b497",
+        "alpha_bbox": [
+          30,
+          63,
+          477,
+          444
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C05/third_eye/third_eye.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 52626,
+        "sha256": "05af1946a6e59cbb73f7a67da28270cad2a678c2b48cc1e2f868a6a4508d7a07",
+        "alpha_bbox": [
+          30,
+          63,
+          477,
+          444
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "monk",
+        "slot": "eyes",
+        "file_ids": [
+          "monk_c05_layers_15_third_eye_forehead_axis_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C06/hat",
+      "nodeId": "322:3615",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/hat/hat.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:789",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/hat/hat.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 194401,
+        "sha256": "7eebde38e16db5710f8eb79b7d350dabc1ba5ca21571c0c8f1ed1991ea43a895",
+        "alpha_bbox": [
+          24,
+          127,
+          483,
+          382
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/hat/hat.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 51716,
+        "sha256": "2b7111af12a30c41f3c06baa6a7442bf8558e6a1597c19b60a6a7ef38034f54f",
+        "alpha_bbox": [
+          24,
+          127,
+          483,
+          382
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "head",
+        "file_ids": [
+          "glamour_c06_layers_09_hat_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C06/bag_h",
+      "nodeId": "322:3620",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/bag_h/bag_h.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:799",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/bag_h/bag_h.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 198777,
+        "sha256": "4a6cb1329d8f9aba8e113019d854b37400d385f8b4a2cb791aad7cd54075c2ed",
+        "alpha_bbox": [
+          77,
+          24,
+          432,
+          485
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/bag_h/bag_h.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 54608,
+        "sha256": "0af135593c93e4a0f5111030230faba6bf57afe422a6281c5248c78b86342c5a",
+        "alpha_bbox": [
+          77,
+          24,
+          432,
+          485
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "bag",
+        "file_ids": [
+          "glamour_c06_layers_04_h_bag_front_right_flank_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    },
+    {
+      "id": "C06/diamonds",
+      "nodeId": "322:3625",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/diamonds/diamonds.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:809",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/diamonds/diamonds.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 152849,
+        "sha256": "a0ebc9ab7b3b96ba5726757ad11007b972966e64bdfac7f89f811141e4c2b9c6",
+        "alpha_bbox": [
+          24,
+          138,
+          482,
+          371
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/diamonds/diamonds.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 56132,
+        "sha256": "a3d8981a9ba360e6153a965fb3d952207f854ace12ff858a3c1a890b181139ed",
+        "alpha_bbox": [
+          24,
+          138,
+          482,
+          371
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "neck",
+        "file_ids": [
+          "glamour_c06_layers_05_diamonds_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C06/glasses",
+      "nodeId": "322:3630",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/glasses/glasses.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:819",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/glasses/glasses.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 86711,
+        "sha256": "a84ae95812fa46c8948c5b6cafadd6355f10bce874d574716d9a1c5c1c5adb4c",
+        "alpha_bbox": [
+          24,
+          188,
+          484,
+          322
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/glasses/glasses.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 27336,
+        "sha256": "123b8952b14a594c19aa259628c1296845decfed2c8114b399a2cb21df27f16c",
+        "alpha_bbox": [
+          24,
+          188,
+          484,
+          322
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "eyes",
+        "file_ids": [
+          "glamour_c06_layers_10_glasses_optical_centers_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C06/vest",
+      "nodeId": "322:3635",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/vest/vest.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:829",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/vest/vest.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 313495,
+        "sha256": "5c7eec3e9c5ccea5fdac28001a631883b530feb5af04903cde250ec581af9789",
+        "alpha_bbox": [
+          37,
+          24,
+          466,
+          480
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/vest/vest.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 71418,
+        "sha256": "3f4eb4df603596f942ef16d9521ca44aeeff0d6dcf89b4e278417fe8ffbf3987",
+        "alpha_bbox": [
+          37,
+          24,
+          466,
+          480
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "body",
+        "file_ids": [
+          "glamour_c06_clothing_vest_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": true
+      }
+    },
+    {
+      "id": "C06/anklets",
+      "nodeId": "322:3640",
+      "width": 512,
+      "height": 512,
+      "path": "assets/characters/v13/shop/C06/anklets/anklets.png",
+      "kind": "shop",
+      "sourceInstanceId": "117:839",
+      "png": {
+        "path": "assets/characters/v13/shop/C06/anklets/anklets.png",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 106538,
+        "sha256": "681fd6017e23729d377ab94b8e7ad8e0ab1d17981f439498c8e67937046a1bfa",
+        "alpha_bbox": [
+          24,
+          192,
+          486,
+          317
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/shop/C06/anklets/anklets.webp",
+        "size": [
+          512,
+          512
+        ],
+        "bytes": 43252,
+        "sha256": "91fea364fb4520f1b6c290e979ae33e29b9a42ce8ee82f4552045712746e8339",
+        "alpha_bbox": [
+          24,
+          192,
+          486,
+          317
+        ]
+      },
+      "webp_quality": 95,
+      "registered_game_group": {
+        "character": "glamour",
+        "slot": "feet",
+        "file_ids": [
+          "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "glamour_c06_layers_12_right_anklet_leg_shaft_png"
+        ],
+        "standing_visible": true,
+        "seated_visible": false
+      }
+    }
+  ]
+}

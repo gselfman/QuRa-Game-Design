@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "verified_v12_files": 294,
+  "original95_png_unchanged": true,
+  "monk_derived_files_corrected": 12,
+  "arena_webp": 37,
+  "sprite_cuts": 435,
+  "atlas_pixel_comparisons": 435,
+  "webp_alpha_comparisons": 534,
+  "props": 9,
+  "shop_items": 35,
+  "poses": 18,
+  "emotion_cases": 48,
+  "editable_figma_screens": 9,
+  "status_maximum": "QA",
+  "visual_checks": [
+    "18poses: wing/vest/bag ordering, perch feet, concealed nest feet",
+    "48emotion cases: existing expressions; monk bald in both headwear states",
+    "35complete shop illustrations and registered parts catalogue",
+    "9screens: readable text, visible monk, exact2/4/6 residents, no duplicated floor focus"
+  ],
+  "owner_approval_not_set": true
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "inherits": "docs/visual/manifests/2026-11-02_characters_v12_web.json",
+  "monk": {
+    "base_bare_head_file_id": "monk_c05_layers_13_head_native_base_png",
+    "bare_layers": [
+      {
+        "file_id": "monk_c05_base_legs_bare_png",
+        "z": 3
+      },
+      {
+        "file_id": "monk_c05_layers_05_parts_torso_png",
+        "z": 10
+      },
+      {
+        "file_id": "monk_c05_layers_11_parts_left_wing_png",
+        "z": 60
+      },
+      {
+        "file_id": "monk_c05_layers_12_parts_right_wing_png",
+        "z": 61
+      },
+      {
+        "file_id": "monk_c05_layers_13_head_native_base_png",
+        "z": 70
+      }
+    ],
+    "undressed_png": "assets/characters/v13/base/monk_bald.png",
+    "undressed_webp": "assets/characters/v13/base/monk_bald.webp",
+    "emotion_variant_both_headwear_states": "hat",
+    "reason": "Existing bald native/hat heads preserve the approved face. Canonical v12 bare paths are corrected to the same bald heads; comb versions remain in history."
+  },
+  "all_other_characters": "Use v12 bare base; prefer hat emotion variant for headwear ON when available. Preserve registered default layer order."
+}
