@@ -4416,9 +4416,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_390_05.webp",
-      "bytes": 2920320,
-      "git_sha": "6869d6de13d08814c225ec05276fbb091441ecf8",
-      "sha256": "7a065da37c06506b668d47093ca83f5a99488fb3aeef6c612f713dc2e3922eca",
+      "bytes": 2900392,
+      "git_sha": "f683a82b11df72425e6e0e1644b94fcb15ee793b",
+      "sha256": "b66c0debb600fea4a731469d792124842168fe4babf2136c27cc9dbadaf78499",
       "size": [
         1680,
         2766
@@ -4426,9 +4426,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_390_06.webp",
-      "bytes": 3373544,
-      "git_sha": "e3d43a73f1c3bfa8e67203f561b79e458a01b0a4",
-      "sha256": "0caf5c57ff768a27bb1cf550cb2f81bafc0997e8823e5e6b2a020e4d74abdb3c",
+      "bytes": 3232644,
+      "git_sha": "ba70ce6b0d7d38b5a83c303ba8f0841edeadef7c",
+      "sha256": "fb7ecaac5fc668032952ae74697c7496bf758d61d1d3701441f4451ad42e516b",
       "size": [
         1680,
         2766
@@ -4446,9 +4446,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_390_08.webp",
-      "bytes": 2093556,
-      "git_sha": "8c3edb6974e7d1d3c85617abade0a782b99c57f9",
-      "sha256": "d1f9069edd7e9628fc15780eea422b2906b0b98e8b2e9658f8d0ba87de88b540",
+      "bytes": 2059748,
+      "git_sha": "a1a89ced48cdaf105b3a3bb821e462b3c97da668",
+      "sha256": "87e743346953b164fe75cac2331a1db52f5d3f00d326e0aafe70ed4af59000fc",
       "size": [
         1680,
         2766
@@ -4476,9 +4476,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_390_11.webp",
-      "bytes": 2051360,
-      "git_sha": "46a50096dcd42d1ccee715a49568383c2764abfa",
-      "sha256": "153af44a050c6703d598cb919473e218bc7066a88c47c25bd180a823a6b25c9c",
+      "bytes": 2026072,
+      "git_sha": "5a9fb9638eb147fa4c622a7186f7876616f1c510",
+      "sha256": "96a52335a45211f87083a9d7de17dfa7a969742f66c8e75cb5b274b379a9335c",
       "size": [
         1680,
         2766
@@ -4526,9 +4526,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_360_05.webp",
-      "bytes": 2295568,
-      "git_sha": "fd15b71a028d7ceb2445dda72a4a75c1dea3eb28",
-      "sha256": "f3f200d7b82c2da5049c53241b91ac1c87f39ad20437ddf72d0f074da84a92b6",
+      "bytes": 2280728,
+      "git_sha": "043de2feb8f71fbfca596f0ff23db1bdf5bbe7ea",
+      "sha256": "66a913656005b22caa8a9f56ae49864ade42cb0f0ec4c3b36454f4efb52bdda6",
       "size": [
         1560,
         2454
@@ -4536,9 +4536,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_360_06.webp",
-      "bytes": 2650264,
-      "git_sha": "565abcb609c11d46989773772adfb0bafe2e2b12",
-      "sha256": "9f0d9c6673189a082e4fe26d018b4445627d27d9e3a645420bc3deaefb533eca",
+      "bytes": 2536162,
+      "git_sha": "04b45a36aee871cf02ee696ddf98e56e8f7a6a39",
+      "sha256": "da5f7c4fd1b4306dd1d3e7d32aa610303480c66d3306ee0bdb1a2c5d92f1f36a",
       "size": [
         1560,
         2454
@@ -4556,9 +4556,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_360_08.webp",
-      "bytes": 1750506,
-      "git_sha": "a5ab616e72e1bfe49765b555409f947fb5b123b9",
-      "sha256": "0104509de83c3c3c12acced7e3b01cd366a2b2f63c5a9c30977944c4cdabe73b",
+      "bytes": 1728234,
+      "git_sha": "c7deff51ec93161f09e20be65ebd3a031e7eff09",
+      "sha256": "41897514aef9321df1530e44cd4e3114eb0d937fa07ca320592dbc21b8e5a298",
       "size": [
         1560,
         2454
@@ -4586,9 +4586,9 @@
     },
     {
       "path": "assets/screens/arena_battle_v15/v15_360_11.webp",
-      "bytes": 1724206,
-      "git_sha": "9be87335b7fd03b21185322c08aa64b2de94bafd",
-      "sha256": "34be24e974dc31954f0e64727d58a2fbdfa6b999d73b733d7ba255092f8965c5",
+      "bytes": 1702820,
+      "git_sha": "40f3ef51dc350b70ec9289784369dbcdbca18031",
+      "sha256": "645de8eeb3087aed6380995c4565f87c09805c44dc907d6384dd1fbcdc7299ed",
       "size": [
         1560,
         2454
@@ -4697,7 +4697,7 @@
   "missing_fonts": [],
   "modal_overflow": [],
   "normalized_sprites_reused": 29,
-  "source_components_reused": 46,
+  "source_components_reused": 47,
   "new_raster_art": [
     {
       "node_id": "534:262",
@@ -22524,5 +22524,12 @@
     "Existing v14 and approved native pages are opened with prototype URLs at page boundaries.",
     "Buff exact magnitudes, GE service prices and some eligibility limits remain product/balance OPEN; not changed by this design.",
     "Scout asynchronous interaction is a future design proposal; synchronous reveal is forbidden."
-  ]
+  ],
+  "verification_as_of": "2026-11-02",
+  "revision_2026_11_03_coliseum": {
+    "manifest": "docs/visual/manifests/2026-11-03_coliseum_3x3_revision.json",
+    "source_frame_count": 26,
+    "proof_copy_count": 26,
+    "status": "review"
+  }
 }
