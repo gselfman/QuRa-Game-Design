@@ -2,7 +2,6 @@
   "schema_version": 13,
   "status": "inventory",
   "repository": "gselfman/QuRa",
-  "commit": "85a678e7c19cc49000f561571c2f1e46ddb26194",
   "policy": "Already sliced production/legacy sources are indexed in place with Git blob SHA; no replacement or recut of the approved Wolf assets.",
   "groups": {
     "QuRa_docs/docs/design/motion-demo": 9,
@@ -4679,5 +4678,6 @@
       "bytes": 811428,
       "purpose": "Existing web runtime art"
     }
-  ]
+  ],
+  "tree_sha": "85a678e7c19cc49000f561571c2f1e46ddb26194"
 }
