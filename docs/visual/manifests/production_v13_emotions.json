@@ -1,0 +1,4822 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "expression_count": 24,
+  "case_count": 48,
+  "source": "Existing registered heads; no regeneration",
+  "cases": [
+    {
+      "character": "ryaba",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "ryaba_emotions_ryaba_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "ryaba_emotions_ryaba_joy_hat_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_joy_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "ryaba_emotions_ryaba_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "ryaba_emotions_ryaba_surprise_hat_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_surprise_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "ryaba_emotions_ryaba_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "ryaba_emotions_ryaba_determination_hat_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_determination_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "ryaba_emotions_ryaba_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "ryaba",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "ryaba_emotions_ryaba_sadness_hat_png",
+      "recipe": [
+        {
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "ryaba_emotions_ryaba_sadness_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        327,
+        74,
+        1188,
+        683
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "fighter_emotions_fighter_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "fighter_emotions_fighter_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "fighter_emotions_fighter_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "fighter_emotions_fighter_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "fighter_emotions_fighter_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "fighter_emotions_fighter_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "fighter_emotions_fighter_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fighter",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "fighter_emotions_fighter_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "file_id": "fighter_emotions_fighter_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        363,
+        86,
+        1168,
+        721
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "fool_emotions_fool_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_emotions_fool_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "fool_emotions_fool_joy_hat_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "file_id": "fool_emotions_fool_joy_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "fool_emotions_fool_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_emotions_fool_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "fool_emotions_fool_surprise_hat_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "file_id": "fool_emotions_fool_surprise_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "fool_emotions_fool_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_emotions_fool_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "fool_emotions_fool_determination_hat_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "file_id": "fool_emotions_fool_determination_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "fool_emotions_fool_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_emotions_fool_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "fool",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "fool_emotions_fool_sadness_hat_png",
+      "recipe": [
+        {
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "file_id": "fool_emotions_fool_sadness_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "proof_crop": [
+        449,
+        71,
+        1200,
+        685
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "professor_emotions_professor_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_emotions_professor_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "professor_emotions_professor_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "file_id": "professor_emotions_professor_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "professor_emotions_professor_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_emotions_professor_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "professor_emotions_professor_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "file_id": "professor_emotions_professor_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "professor_emotions_professor_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_emotions_professor_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "professor_emotions_professor_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "file_id": "professor_emotions_professor_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "professor_emotions_professor_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_emotions_professor_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "professor",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "professor_emotions_professor_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "file_id": "professor_emotions_professor_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "proof_crop": [
+        358,
+        60,
+        1200,
+        707
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "monk_emotions_monk_joy_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_joy_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "monk_emotions_monk_joy_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_joy_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "monk_emotions_monk_surprise_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_surprise_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "monk_emotions_monk_surprise_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_surprise_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "monk_emotions_monk_determination_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_determination_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "monk_emotions_monk_determination_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_determination_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "monk_emotions_monk_sadness_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_sadness_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "monk",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "monk_emotions_monk_sadness_hat_png",
+      "recipe": [
+        {
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "monk_emotions_monk_sadness_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "proof_crop": [
+        427,
+        82,
+        1127,
+        913
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "joy",
+      "headwear": false,
+      "head_file_id": "glamour_emotions_glamour_joy_bare_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_joy_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "joy",
+      "headwear": true,
+      "head_file_id": "glamour_emotions_glamour_joy_hat_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_joy_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "surprise",
+      "headwear": false,
+      "head_file_id": "glamour_emotions_glamour_surprise_bare_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_surprise_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "surprise",
+      "headwear": true,
+      "head_file_id": "glamour_emotions_glamour_surprise_hat_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_surprise_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "determination",
+      "headwear": false,
+      "head_file_id": "glamour_emotions_glamour_determination_bare_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_determination_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "determination",
+      "headwear": true,
+      "head_file_id": "glamour_emotions_glamour_determination_hat_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_determination_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "sadness",
+      "headwear": false,
+      "head_file_id": "glamour_emotions_glamour_sadness_bare_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_sadness_bare_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    },
+    {
+      "character": "glamour",
+      "emotion": "sadness",
+      "headwear": true,
+      "head_file_id": "glamour_emotions_glamour_sadness_hat_png",
+      "recipe": [
+        {
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "file_id": "glamour_emotions_glamour_sadness_hat_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "proof_crop": [
+        485,
+        56,
+        1176,
+        751
+      ],
+      "status": "QA"
+    }
+  ],
+  "qa": {
+    "source_unchanged": true,
+    "headwear_on_off": "visual contact sheet",
+    "proof": "assets/characters/v13/previews/emotions_48.png"
+  }
+}

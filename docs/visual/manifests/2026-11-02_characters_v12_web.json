@@ -2,7 +2,7 @@
   "schema_version": 1,
   "batch": "characters_v12_web",
   "status": "QA",
-  "source_status": "standing wardrobe corrected; other poses and emotions require separate QA",
+  "source_status": "v12 standing layers verified; v13 supplies poses, emotion QA and monk bald-head policy",
   "source_library_file_id": "libfile_7567c5743e348191814cc91cd3ca3831",
   "source_library_version": 1,
   "figma": {
@@ -4984,15 +4984,15 @@
         600,
         760
       ],
-      "png_bytes": 367143,
-      "webp_bytes": 62272,
+      "png_bytes": 279994,
+      "webp_bytes": 56984,
       "sha256": {
-        "png": "2bcf91ed6e4472053e7924ce782b68b47075c1d93ca91dd73648323fcb57a86e",
-        "webp": "420ca33d97bfa748c7033b5510d2492199dd0ea3e7e30d22802238dda049bc0f"
+        "png": "25155cfa9535f1be761a22fcba2ae308f159a6dd6de6d2b20fceca9c89c19169",
+        "webp": "a98bd616f9626fe2ba32946ba5969e8db6e72f6a67bd9059fc2501b964ad973e"
       },
       "webp_lossless": true,
       "webp_quality": 100,
-      "source": "existing registered v08 bare base head; comb retained when headwear is off",
+      "source": "existing bald monk_c05_layers_13_head_native_base_png; v13 monk correction; no generation",
       "headwear_variant": "bare",
       "replaces_role": "head_native_base"
     },
@@ -5015,15 +5015,15 @@
         600,
         760
       ],
-      "png_bytes": 1217763,
-      "webp_bytes": 245354,
+      "png_bytes": 1179335,
+      "webp_bytes": 97810,
       "sha256": {
-        "png": "91c66c9fef4610c71e9e55c0d700fa2e48b9c245cb23564a8be1efb983f3a233",
-        "webp": "5cc8455976eaffdf2a0781a8ec9668239f82d5924a99f3e112780be28ee74cdf"
+        "png": "eebb4728769939ca93bbd10a502361336e97ee2c2d3456b82f85ee97fdd12e6f",
+        "webp": "a670b17b24151c9caac7e9392b1d4dbb740b38a27a8f1942bfac1d5218cee341"
       },
-      "webp_lossless": true,
-      "webp_quality": 100,
-      "source": "composed from unchanged v12 anatomy"
+      "webp_lossless": false,
+      "webp_quality": 95,
+      "source": "composed from unchanged v12 anatomy; bald monk head corrected in v13"
     },
     {
       "id": "monk_emotions_monk_joy_bare_png",
@@ -5044,15 +5044,15 @@
         600,
         760
       ],
-      "png_bytes": 371192,
-      "webp_bytes": 64092,
+      "png_bytes": 344934,
+      "webp_bytes": 59402,
       "sha256": {
-        "png": "ecf7d11f86b16c18377f9acd986f3be10d274933953d2d973794756c501723bc",
-        "webp": "0423a5d7bb7136b9bfd908e3fc6cbd30ab83b1db06fb2d5a6e5e8cec48040f3e"
+        "png": "37ce8e0603f03a68c2d92945777de974f94dc518549edcb85a427447e449467b",
+        "webp": "9b1afebe2b65df216a51526927b5571ef4c9e60c3030f95e4e33b95ad0cb349e"
       },
       "webp_lossless": true,
       "webp_quality": 100,
-      "source": "existing registered v08 emotion; no regeneration",
+      "source": "existing bald monk_emotions_monk_joy_hat_png; v13 monk correction; no generation",
       "emotion": "joy",
       "headwear_variant": "bare",
       "replaces_role": "head_native_base"
@@ -5108,15 +5108,15 @@
         600,
         760
       ],
-      "png_bytes": 374078,
-      "webp_bytes": 65408,
+      "png_bytes": 349511,
+      "webp_bytes": 60980,
       "sha256": {
-        "png": "40a54af5a0f365c00149d0880562e281c1216eaa3075acd3eddea627997498e9",
-        "webp": "55f169865c008628b410f5321a3d78520ac89bb700db9a14ea5eab10b4b8b3a3"
+        "png": "e5e2a425b9a0088cac23fa3b6a617020eca5f46fb08d0bd379fe09af4e574c43",
+        "webp": "f7b41909c9b26d9b9b9f3f5a55a9eedabc16b21dd00fcb1395f892143529e693"
       },
       "webp_lossless": true,
       "webp_quality": 100,
-      "source": "existing registered v08 emotion; no regeneration",
+      "source": "existing bald monk_emotions_monk_surprise_hat_png; v13 monk correction; no generation",
       "emotion": "surprise",
       "headwear_variant": "bare",
       "replaces_role": "head_native_base"
@@ -5172,15 +5172,15 @@
         600,
         760
       ],
-      "png_bytes": 370920,
-      "webp_bytes": 64610,
+      "png_bytes": 344592,
+      "webp_bytes": 60056,
       "sha256": {
-        "png": "fabe9b769a0a56f10a2e8581d947921a521293bed5ecee13fd0a03bc2b64d15f",
-        "webp": "820918a4e2864c0ca798efccd6489adaf8d39a628ee126a939d44868af9048b4"
+        "png": "1a80da048b9999c0179de8dc9e8c95a5615bace32197b9704b9fb96256963b2a",
+        "webp": "080c6b2d456582e0b6a276674c284ee33a393b4d53489133eb360dec38f49b6d"
       },
       "webp_lossless": true,
       "webp_quality": 100,
-      "source": "existing registered v08 emotion; no regeneration",
+      "source": "existing bald monk_emotions_monk_determination_hat_png; v13 monk correction; no generation",
       "emotion": "determination",
       "headwear_variant": "bare",
       "replaces_role": "head_native_base"
@@ -5236,15 +5236,15 @@
         600,
         760
       ],
-      "png_bytes": 369619,
-      "webp_bytes": 64010,
+      "png_bytes": 343399,
+      "webp_bytes": 59574,
       "sha256": {
-        "png": "1524a46f853b11f6b8524ab9e0535e7e4118a7aed7a895d4dc74b1e0af8fef11",
-        "webp": "221e866a6c8145f6f18a2d7598ac103656f707818e888d03b940a52f8a217c10"
+        "png": "9ceae0c13d9a680e97e74690d5c7b85dbfb72f4b4fe6fd8661c5ef7c7d7f8a24",
+        "webp": "1b28e9154c905abf2d502159653c4ed30851171d16d55e9c3999a195b13d9e05"
       },
       "webp_lossless": true,
       "webp_quality": 100,
-      "source": "existing registered v08 emotion; no regeneration",
+      "source": "existing bald monk_emotions_monk_sadness_hat_png; v13 monk correction; no generation",
       "emotion": "sadness",
       "headwear_variant": "bare",
       "replaces_role": "head_native_base"
@@ -5605,9 +5605,10 @@
     "webp_limit_bytes": 300000,
     "max_webp_bytes": 290736,
     "browser_assembly": {
-      "status": "blocked",
-      "reason": "Local Playwright has no Chromium; cloud Chrome file:// is blocked by URL policy. Browser evidence requested from Claude/agent:dev.",
-      "reproduce": "python3 tools/art/characters-v12-web/preview_v12.py --repo . --out assets/characters/previews/browser"
+      "status": "passed",
+      "reviewer": "Claude",
+      "evidence": "https://github.com/gselfman/QuRa-Game-Design/pull/24#issuecomment-6564356095",
+      "checks": "Chromium Playwright: Ryaba12/Fighter14 loaded images; all6 recipe pixel comparisons passed"
     },
     "owner_approval_not_set_by_agent": true,
     "registered_recipe_pixel_comparison": {
@@ -5660,8 +5661,15 @@
     },
     "bare_base_heads": {
       "status": "passed",
-      "source": "existing v08 parts/head.png; preserves comb for headwear-off, native scalp retained in equipped recipes",
-      "proof": "assets/characters/previews/v12_bare_bodies_proof.png"
+      "source": "Existing registered heads; C05 canonical bare head uses the existing bald native head in v13.",
+      "proof": "assets/characters/v13/previews/bare_bodies_6.png"
+    },
+    "monk_bald_correction": {
+      "status": "passed",
+      "head_aliases": 5,
+      "bare_composite": 1,
+      "original95_png_unchanged": true,
+      "method": "Copy existing registered bald native/hat expression PNG and WebP to canonical bare paths; rebuild undressed monk from those unchanged parts."
     }
   }
 }

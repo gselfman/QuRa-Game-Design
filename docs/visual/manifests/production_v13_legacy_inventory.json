@@ -1,0 +1,4683 @@
+{
+  "schema_version": 13,
+  "status": "inventory",
+  "repository": "gselfman/QuRa",
+  "policy": "Already sliced production/legacy sources are indexed in place with Git blob SHA; no replacement or recut of the approved Wolf assets.",
+  "groups": {
+    "QuRa_docs/docs/design/motion-demo": 9,
+    "app/games/volk/prototype/dist/assets/award": 8,
+    "app/games/volk/prototype/dist/assets/basket-layers": 6,
+    "app/games/volk/prototype/dist/assets/brand": 1,
+    "app/games/volk/prototype/dist/assets/chick": 12,
+    "app/games/volk/prototype/dist/assets/chicken": 18,
+    "app/games/volk/prototype/dist/assets/collection": 2,
+    "app/games/volk/prototype/dist/assets/console": 4,
+    "app/games/volk/prototype/dist/assets/depth-hen": 18,
+    "app/games/volk/prototype/dist/assets/egg-readable": 15,
+    "app/games/volk/prototype/dist/assets/egg": 15,
+    "app/games/volk/prototype/dist/assets/epoch": 11,
+    "app/games/volk/prototype/dist/assets/icons": 4,
+    "app/games/volk/prototype/dist/assets/illustration": 1,
+    "app/games/volk/prototype/dist/assets/joker-open": 6,
+    "app/games/volk/prototype/dist/assets/movie": 1,
+    "app/games/volk/prototype/dist/assets/new-basket": 4,
+    "app/games/volk/prototype/dist/assets/new-wolf-a": 7,
+    "app/games/volk/prototype/dist/assets/new-wolf-b": 7,
+    "app/games/volk/prototype/dist/assets/phone-qr.png": 1,
+    "app/games/volk/prototype/dist/assets/portrait": 1,
+    "app/games/volk/prototype/dist/assets/radio": 1,
+    "app/games/volk/prototype/dist/assets/ui": 15,
+    "app/games/volk/prototype/dist/assets/vfx": 12,
+    "app/games/volk/prototype/dist/assets/wolf-a": 11,
+    "app/games/volk/prototype/dist/assets/wolf-b": 11,
+    "design/raster-src/adaptive/coop": 2,
+    "design/raster-src/adaptive/deposit": 2,
+    "design/raster-src/adaptive/ge": 2,
+    "design/raster-src/adaptive/hen": 4,
+    "design/raster-src/adaptive/home": 6,
+    "design/raster-src/adaptive/pay": 2,
+    "design/raster-src/adaptive/support": 2,
+    "design/raster-src/home/bg-barn-lq.webp": 1,
+    "design/raster-src/home/bg-barn.png": 1,
+    "design/raster-src/home/bg-barn.webp": 1,
+    "design/raster-src/home/logo-lq.webp": 1,
+    "design/raster-src/home/logo.png": 1,
+    "design/raster-src/home/logo.webp": 1,
+    "design/raster-src/home/nest-level1.png": 1,
+    "design/raster-src/home/nest-level1.webp": 1,
+    "design/raster-src/nav/bottom-nav.png": 1,
+    "design/raster-src/nav/qr-frame.png": 1,
+    "design/raster-src/screens/coop": 2,
+    "design/raster-src/screens/hen": 2,
+    "design/raster-src/screens/home": 10,
+    "design/raster-src/screens/notifications": 2,
+    "design/raster-src/screens/profile": 2,
+    "design/raster-src/screens/splash": 4,
+    "design/raster-src/shell/farm-sunset-1920.webp": 1,
+    "design/raster-src/tokens/bnb.png": 1,
+    "design/raster-src/tokens/cache": 2,
+    "design/raster-src/tokens/lifesol-c3f47338a1cd.png": 1,
+    "design/raster-src/tokens/lifesol.png": 1,
+    "design/raster-src/tokens/lifesol.webp": 1,
+    "design/raster-src/tokens/sol.png": 1,
+    "design/raster-src/tokens/usdt-bsc.png": 1,
+    "design/raster-src/ui/banner-gold.png": 1,
+    "design/raster-src/ui/button-primary.png": 1,
+    "design/raster-src/ui/ge-panel.png": 1,
+    "design/raster-src/ui/golden-egg.png": 1,
+    "design/raster-src/ui/golden-egg.webp": 1,
+    "design/raster-src/ui/medallion-level.png": 1,
+    "design/raster-src/ui/medallion-level.webp": 1,
+    "design/raster-src/ui/name-plaque.png": 1,
+    "design/raster-src/ui/sheet-confirm.png": 1,
+    "web/public/assets/abank": 24,
+    "web/public/assets/adaptive": 195,
+    "web/public/assets/header": 6,
+    "web/public/assets/icons": 11,
+    "web/public/assets/nav": 9,
+    "web/public/assets/shell": 4,
+    "web/public/assets/tokens": 26,
+    "web/public/assets/ui": 15,
+    "web/public/games/volk": 197,
+    "web/public/icons/icon-192-maskable.png": 1,
+    "web/public/icons/icon-192.png": 1,
+    "web/public/icons/icon-512-maskable.png": 1,
+    "web/public/icons/icon-512.png": 1,
+    "web/public/pc/farm-frame-1920.webp": 1,
+    "web/public/pc/farm-frame-2880.webp": 1,
+    "web/public/pc/farm-frame-3840.webp": 1
+  },
+  "files": [
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/bg.webp",
+      "git_blob_sha": "fb90fcb8245407e09b65f2c0d2e11969eeaa8014",
+      "bytes": 114390,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/chick.webp",
+      "git_blob_sha": "303d039931ee9417ed9714ad8f1c7a471431f468",
+      "bytes": 227890,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/egg1.webp",
+      "git_blob_sha": "1508e1b5094d484c645a138a5bef3a00a89c0890",
+      "bytes": 201064,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/egg2.webp",
+      "git_blob_sha": "e8e59b4e01631baf1d9f62663b7f59f37d4f12ed",
+      "bytes": 189042,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/ge.webp",
+      "git_blob_sha": "5d29acbceca88db865d626e8927d19b2968bee8b",
+      "bytes": 3254,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/logo.webp",
+      "git_blob_sha": "cd1a49e2463cfc0c3530b8ebd0303f68ef0daec7",
+      "bytes": 12704,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/panel.webp",
+      "git_blob_sha": "dc18a62f5c2322dbed220a29232536a4d2b1eec2",
+      "bytes": 27960,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/plaque.webp",
+      "git_blob_sha": "040b8db093731c77c2152dfdac66331be2bf09e3",
+      "bytes": 25940,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "QuRa_docs/docs/design/motion-demo/assets/ryaba.webp",
+      "git_blob_sha": "23b9f3dcd8a26f964a20cc2ef0ac8c8f355431af",
+      "bytes": 266608,
+      "purpose": "Legacy motion prototype reference"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/avatar-ring.webp",
+      "git_blob_sha": "e341ade1cea1dd710446370ac1615f0a6c71a714",
+      "bytes": 63248,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/cup.webp",
+      "git_blob_sha": "2d17e40ef03a2f2f5462fc0026df50e310dc0d9c",
+      "bytes": 85658,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/lock.webp",
+      "git_blob_sha": "de2b6e2e49601ba5d6164b2135cb7ec85ec04ebd",
+      "bytes": 61762,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/medal-bronze.webp",
+      "git_blob_sha": "032d1c5aada603a5dbf9abd9d069d9cea25db80e",
+      "bytes": 81712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/medal-gold.webp",
+      "git_blob_sha": "2a82e49765359edcd70b5ffc7de504d98e7287a0",
+      "bytes": 80190,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/medal-silver.webp",
+      "git_blob_sha": "ef8d6fe02a0b3556ee852d183018709dfe2c8a34",
+      "bytes": 75580,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/penalty-active.webp",
+      "git_blob_sha": "c9390aa3bf6a4eecea2475a2f90c9f7bbedd3d88",
+      "bytes": 83056,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/award/penalty-inactive.webp",
+      "git_blob_sha": "4360cffb9217cba1d26b7e74e856289f2945b576",
+      "bytes": 74138,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/left-back.webp",
+      "git_blob_sha": "456aa8214f8e12940bbe84b98ce1ee0e247e3e24",
+      "bytes": 76826,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/left-front.webp",
+      "git_blob_sha": "b414d610d59830d48c9ac06612c1f69c1b1aca0a",
+      "bytes": 60676,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/left-whole.webp",
+      "git_blob_sha": "1a9bbb3a53425761f1d9faa9468f44b607f54e5a",
+      "bytes": 82224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/right-back.webp",
+      "git_blob_sha": "8a6ab0861882ce5e8e059dd7603e5a9ed2812d45",
+      "bytes": 76056,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/right-front.webp",
+      "git_blob_sha": "d4ef84f40071b955dc2daefcea26d7ad9153237d",
+      "bytes": 60380,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/basket-layers/right-whole.webp",
+      "git_blob_sha": "ffbeae3a3e5b8ad644e4765b7fc901307632de3e",
+      "bytes": 84108,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/brand/logo.webp",
+      "git_blob_sha": "25886756cfb3da47171087b9dc339794d537d91c",
+      "bytes": 70952,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/crack.webp",
+      "git_blob_sha": "60eb2f981e2c3668769d84be69b0d666db4c42c2",
+      "bytes": 38326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/fly-wings-down.webp",
+      "git_blob_sha": "48da834a25d378fb3783cd7fc67b52e52f7c06e9",
+      "bytes": 44220,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/fly-wings-up.webp",
+      "git_blob_sha": "248181247215fbdf96c8ec98a27c93a4bfeee0a7",
+      "bytes": 46940,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/hatched.webp",
+      "git_blob_sha": "8109fb4f65ddbe328f89f65d718204e6f2f68313",
+      "bytes": 55726,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/hatching.webp",
+      "git_blob_sha": "b0f1ba2a9e3e019c4eeaf339a7830e6a95edbd33",
+      "bytes": 52604,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/run-idle.webp",
+      "git_blob_sha": "aa0bc8c5e9328506a3089fd359e169e1b597a44a",
+      "bytes": 38878,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/run-left-leg.webp",
+      "git_blob_sha": "d6d2c6caca906acde8231159c6d9980c38fcc630",
+      "bytes": 40152,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/run-pass.webp",
+      "git_blob_sha": "df33a914d7e8a123cf0c020dba164223969bb269",
+      "bytes": 38342,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/run-right-leg.webp",
+      "git_blob_sha": "26c9f682398307bf01f396fbd3295820724e5e4a",
+      "bytes": 40388,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/split.webp",
+      "git_blob_sha": "c693fd7c16e89df08a5e26d5c6922d2f7a4ba34e",
+      "bytes": 43600,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/takeoff-crouch.webp",
+      "git_blob_sha": "dd936f17de7a8561c152c34c6d2fe7c40f442e5a",
+      "bytes": 39068,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chick/takeoff.webp",
+      "git_blob_sha": "a1dffecb92eeab394143798d421579821cd6ae8d",
+      "bytes": 44676,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/brown/angry.webp",
+      "git_blob_sha": "e9bde82321ecd2dc8649e46e8e9b8478dc2455ce",
+      "bytes": 87118,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/brown/idle.webp",
+      "git_blob_sha": "d2fc05cbd6e774f83c250ea86be0e55df504a371",
+      "bytes": 92880,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/brown/laying.webp",
+      "git_blob_sha": "984459803b47e78838c22b4318caf97f102a2918",
+      "bytes": 98424,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/commando/angry.webp",
+      "git_blob_sha": "7c4e80a45760e4a7a70232b923d071ca2de98eb3",
+      "bytes": 115482,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/commando/idle.webp",
+      "git_blob_sha": "1cd0464cee751b87fad6e7df6d8e80a2d14dbe70",
+      "bytes": 122058,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/commando/laying.webp",
+      "git_blob_sha": "0522a01c9cbd41e70cb91fb0ce64938c4661b7d7",
+      "bytes": 129742,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/leopard/angry.webp",
+      "git_blob_sha": "73988c88a50a15ef5fb0a6d3b9834a78ab01ca27",
+      "bytes": 98718,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/leopard/idle.webp",
+      "git_blob_sha": "ea95cd6d00c100e03c57496060192a38c51accef",
+      "bytes": 103966,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/leopard/laying.webp",
+      "git_blob_sha": "6651abde0df8b30d176aaea48c5f902ec541b482",
+      "bytes": 108528,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/monk/angry.webp",
+      "git_blob_sha": "ddfe31a335837389b7da701d6f128dcb1538a853",
+      "bytes": 97202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/monk/idle.webp",
+      "git_blob_sha": "a74f53958c334345a2eafadd9c37a66806fc9e9d",
+      "bytes": 103990,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/monk/laying.webp",
+      "git_blob_sha": "5acea00abe0f3830414b1e7dc1869684504a2f94",
+      "bytes": 104940,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/professor/angry.webp",
+      "git_blob_sha": "8178ab2bf8e832cb87e311bcb09a3ad802bd0346",
+      "bytes": 110114,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/professor/idle.webp",
+      "git_blob_sha": "84db7d255e23c25cdf203570e6cb097ff41c80f8",
+      "bytes": 119972,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/professor/laying.webp",
+      "git_blob_sha": "cbbad6b021306c9168558f92a985f8df36e990d1",
+      "bytes": 120382,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/rainbow/angry.webp",
+      "git_blob_sha": "2beb435fdcddea632fa2ef3285126c31935cc2a6",
+      "bytes": 118540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/rainbow/idle.webp",
+      "git_blob_sha": "009e6c6b6387251f6ee6426ff9068429c731bdf2",
+      "bytes": 130524,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/chicken/rainbow/laying.webp",
+      "git_blob_sha": "c942efd9d153c5a663c8ee60adaaab81efbc2eb0",
+      "bytes": 130036,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/collection/epoch-default.webp",
+      "git_blob_sha": "b9f98c84293dc711ba3b096d6cd7f58ff0ff3628",
+      "bytes": 46874,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/collection/epoch-locked.webp",
+      "git_blob_sha": "422aa193b189200234ca5676fe765a49a6a7a6e7",
+      "bytes": 46092,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/console/chute.webp",
+      "git_blob_sha": "ac5a06127d0159da81b9fe7aa015b0c8a03e9abd",
+      "bytes": 40090,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/console/depth-frame.webp",
+      "git_blob_sha": "0b3b4709053ef232d8b50bc45da3a89ec7eb7ca8",
+      "bytes": 288038,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/console/frame-empty.webp",
+      "git_blob_sha": "f782ea808755d3b8e1d563d363bfd0fe6bff6846",
+      "bytes": 476750,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/console/frame-with-chutes.webp",
+      "git_blob_sha": "b25cbefb99e7aae77c7631d5c7d67e9861dd2079",
+      "bytes": 823534,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/brown/angry.webp",
+      "git_blob_sha": "53a45c853974a5160b03667f0eed3cfbfcaa6bc1",
+      "bytes": 31024,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/brown/idle.webp",
+      "git_blob_sha": "9b671a66f4a8dde733728571b8ec9fd67271b063",
+      "bytes": 32946,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/brown/laying.webp",
+      "git_blob_sha": "043ac6b748614c8b4bf635e23dceaca0980641d2",
+      "bytes": 32984,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/commando/angry.webp",
+      "git_blob_sha": "6d5491365abf5220d8883d15c36a006e3a8b6a5f",
+      "bytes": 38296,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/commando/idle.webp",
+      "git_blob_sha": "f8212075b78a562b652766de908118bc4900e27a",
+      "bytes": 43386,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/commando/laying.webp",
+      "git_blob_sha": "a0ed563f8fdd66b9853e6efda899df6214ec6c9e",
+      "bytes": 41010,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/leopard/angry.webp",
+      "git_blob_sha": "5564da14f509f52ab3c0c5ba69c6aac0c40afe3d",
+      "bytes": 33428,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/leopard/idle.webp",
+      "git_blob_sha": "2b0d5d0a05fbb06b335495e8269993792257a559",
+      "bytes": 36758,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/leopard/laying.webp",
+      "git_blob_sha": "7b313974a544b4b83015edb0d054c03e900efbb7",
+      "bytes": 36308,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/monk/angry.webp",
+      "git_blob_sha": "5334183a18c4a614f25536140bf41c1703bf82ab",
+      "bytes": 32728,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/monk/idle.webp",
+      "git_blob_sha": "14263100e9bb95e06c1608c8b4fc6941470c1b5c",
+      "bytes": 38540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/monk/laying.webp",
+      "git_blob_sha": "8211cf38d69e9a93811033123b7d3edad875a047",
+      "bytes": 36354,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/professor/angry.webp",
+      "git_blob_sha": "8f38b0895efc77f639c7927145753cef2f121876",
+      "bytes": 38746,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/professor/idle.webp",
+      "git_blob_sha": "97c24dc71d231a92cf37c2e168484c4dce1a05b7",
+      "bytes": 42664,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/professor/laying.webp",
+      "git_blob_sha": "66e95dda5bc5fe33349d02e12725ea9f688bb937",
+      "bytes": 41884,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/rainbow/angry.webp",
+      "git_blob_sha": "41717816a80ecf09ad4c17c56537c3741c85be79",
+      "bytes": 40748,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/rainbow/idle.webp",
+      "git_blob_sha": "0c669fcb2162e8028804e64d095e0d729764a234",
+      "bytes": 45906,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/depth-hen/rainbow/laying.webp",
+      "git_blob_sha": "4f6fecff618b9bd6b7a46a7e26d473cad83fb4a9",
+      "bytes": 43712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/dark.webp",
+      "git_blob_sha": "bfd6b9cbde0d47946379caf2f4704789d6200447",
+      "bytes": 15476,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/double-score.webp",
+      "git_blob_sha": "8c29ecab7401bceffb877f5911640ff3eeab5f7c",
+      "bytes": 14442,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/four-baskets.webp",
+      "git_blob_sha": "83e44f942e76ddee7195354a42ce26cd14bd7f78",
+      "bytes": 22106,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/ge.webp",
+      "git_blob_sha": "5be1c5b599b6a231ab66343054314a2844871f9c",
+      "bytes": 18700,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/gold.webp",
+      "git_blob_sha": "ae72802efb365ef238a427affbd447b9ae2f5f4d",
+      "bytes": 12090,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/joker.webp",
+      "git_blob_sha": "9581ed18138b90fc8d92c517778cd0a5ed0a9c4e",
+      "bytes": 16322,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/magnet.webp",
+      "git_blob_sha": "c6d25d0fb4c4c7f84cd93dff2015f4b7af4b00c0",
+      "bytes": 13862,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/mushroom.webp",
+      "git_blob_sha": "a39951f71b9e613abb51bf3e88bf378321747f4e",
+      "bytes": 17828,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/pepper.webp",
+      "git_blob_sha": "9fa8d5b14dd3f873e052d7d8b5945536347187cf",
+      "bytes": 15850,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/reverse.webp",
+      "git_blob_sha": "be63ab5aef9e6aa978d39fc6d5d2bbf1fc5dc13e",
+      "bytes": 16010,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/rotten.webp",
+      "git_blob_sha": "6d2ca6b483ccfad2e3d80d73729ae700f2d87799",
+      "bytes": 23052,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/shield.webp",
+      "git_blob_sha": "dccfdedd7cec8b75413c6d2b31a3dff35867c48e",
+      "bytes": 14414,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/shuffle.webp",
+      "git_blob_sha": "eb939f6643d7962440f0da5ebe94867a2ae5a817",
+      "bytes": 17290,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/slow.webp",
+      "git_blob_sha": "c6f03edd9feb5ba0245a8ff0e04ee8f222fcbba6",
+      "bytes": 17492,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg-readable/speed.webp",
+      "git_blob_sha": "e788bb606569a4ec81e7e09f8660dfb9976a7a82",
+      "bytes": 16614,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/dark.webp",
+      "git_blob_sha": "9344f488ff0df95dc85801e779e1af30c6c0ee1e",
+      "bytes": 66414,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/double-score.webp",
+      "git_blob_sha": "64ce9e3acccde6f3df2280ea70b9c38283eedec5",
+      "bytes": 61198,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/four-baskets.webp",
+      "git_blob_sha": "b05631af29b1fbac898a88d707d420b0926daec4",
+      "bytes": 75672,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/ge.webp",
+      "git_blob_sha": "0e86d994ad178138a76a3bd3958065d0d5b5a5db",
+      "bytes": 68844,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/gold.webp",
+      "git_blob_sha": "9d1278c22374531990b8a1f27ded9af418dfc542",
+      "bytes": 54038,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/joker.webp",
+      "git_blob_sha": "a12daaff211bafe9007c4642d646b20456230ef7",
+      "bytes": 69352,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/magnet.webp",
+      "git_blob_sha": "59517fa271208dbb9c1f9457b8b3f786d864e82c",
+      "bytes": 60726,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/mushroom.webp",
+      "git_blob_sha": "7dc31d0478ceed67e818af09ef29ac1cd9df5b84",
+      "bytes": 68006,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/pepper.webp",
+      "git_blob_sha": "c11f0aef35c08acb131e39f525ca14a2e199b968",
+      "bytes": 63522,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/reverse.webp",
+      "git_blob_sha": "54610d56285081b156504d7cc8297af151c9b60e",
+      "bytes": 58780,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/rotten.webp",
+      "git_blob_sha": "cd70fd9f4961a5bf896252f7475606f054b8cf0b",
+      "bytes": 84880,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/shield.webp",
+      "git_blob_sha": "9987bcead8d198c58ba89ae97c10ac1b28bbbd29",
+      "bytes": 58094,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/shuffle.webp",
+      "git_blob_sha": "65a4eec39219dbf028401a0b5e1c2e21f4e4fa73",
+      "bytes": 66842,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/slow.webp",
+      "git_blob_sha": "b27b3f9a525e20c8431869f5f7af1dd0895e7d74",
+      "bytes": 64810,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/egg/speed.webp",
+      "git_blob_sha": "a80f1f15a22bc6be94aa2088a5da8a0b26d52a1a",
+      "bytes": 60968,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/00.webp",
+      "git_blob_sha": "6c3e059c7f3994594ee56457d5ebaf770929b1e0",
+      "bytes": 387986,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/01.webp",
+      "git_blob_sha": "4e87953ae656f81a4b21a65ea1ae039abbb7b46f",
+      "bytes": 475764,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/02.webp",
+      "git_blob_sha": "054526077e46806ddba277ff1e864e3b5b97402c",
+      "bytes": 466710,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/03.webp",
+      "git_blob_sha": "3895ba19f0f54bfca89386b59d69a08024b52b5c",
+      "bytes": 418148,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/04.webp",
+      "git_blob_sha": "68bb92af71830b6649c837f143db87190e939057",
+      "bytes": 416162,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/05.webp",
+      "git_blob_sha": "73097a5621b5322e11f29a253b8bc8232d5d495c",
+      "bytes": 426290,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/06.webp",
+      "git_blob_sha": "a2777c212862670f326223e396ca925eeef08641",
+      "bytes": 362374,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/07.webp",
+      "git_blob_sha": "5dc5bf4e77789189c0095fe256eb9f33bace4e6e",
+      "bytes": 343544,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/08.webp",
+      "git_blob_sha": "6f0d49f24adcaba7b63035ebb79b43e8f76ecf88",
+      "bytes": 280952,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/09.webp",
+      "git_blob_sha": "3d6f9a07c50e599db6828d307a43c55db8674a42",
+      "bytes": 212480,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/epoch/10.webp",
+      "git_blob_sha": "fe3f5e7f085588761ff37cb2e4ffc182dbb9b7bc",
+      "bytes": 342712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/icons/music.webp",
+      "git_blob_sha": "16f8218d219015f3090882e4060370d18a310325",
+      "bytes": 600,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/icons/pause.webp",
+      "git_blob_sha": "07ee512857a600ace6bbdc24c38237cfa2700a69",
+      "bytes": 202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/icons/sound.webp",
+      "git_blob_sha": "6f9af3c441e244971765762725a88046dbd94d06",
+      "bytes": 572,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/icons/vibration.webp",
+      "git_blob_sha": "4b183552b4c51e59d26b70e8ec7abd04c0dff62f",
+      "bytes": 438,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/illustration/loading-wolf-and-chick.webp",
+      "git_blob_sha": "ce7f7a5fc37e7f0c0c197fa4848cd3be59b84ecc",
+      "bytes": 941514,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/01.webp",
+      "git_blob_sha": "86a674c7a2b4da9c9fc5874ee7b2f2e00c3c0dc7",
+      "bytes": 59094,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/02.webp",
+      "git_blob_sha": "c54d144567dcf518cacefc2eebe9583657a0217d",
+      "bytes": 63754,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/03.webp",
+      "git_blob_sha": "6c8f9f1ae6710f558e9f187405c4cf931ac883c3",
+      "bytes": 74794,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/04.webp",
+      "git_blob_sha": "08bb3e5664c75c3f7936d311fade54a43503c414",
+      "bytes": 78388,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/05.webp",
+      "git_blob_sha": "92a157ab6d1f5302019c9d8c9decffa008d154c2",
+      "bytes": 42062,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/joker-open/06.webp",
+      "git_blob_sha": "dc881ef314baa2724531b41d6908583f83e070a5",
+      "bytes": 41890,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/movie/poster.webp",
+      "git_blob_sha": "a609f3793d52d97d159026998f51f8c3048ca046",
+      "bytes": 77906,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-basket/0.webp",
+      "git_blob_sha": "6529e489aa04e9ab4697d589639b95847aa5389f",
+      "bytes": 33722,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-basket/1.webp",
+      "git_blob_sha": "c55022572dbb7dee8455b3dd9a87af5d90f7809b",
+      "bytes": 33548,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-basket/2.webp",
+      "git_blob_sha": "43103717a5f62b13033e3e35b644f7a86a737870",
+      "bytes": 36062,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-basket/3.webp",
+      "git_blob_sha": "bc6d70d5d64a03b389e5f25ba482863938b52b78",
+      "bytes": 35376,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/confused.webp",
+      "git_blob_sha": "24fb9af8529477374f0afb669b94e413406470c8",
+      "bytes": 91836,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/lower-left.webp",
+      "git_blob_sha": "c7578daa20465ce8c462297f3e974280fe2e87e1",
+      "bytes": 78074,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/lower-right.webp",
+      "git_blob_sha": "bbe42975c314c5484a460158d1cf912fd9555efd",
+      "bytes": 85176,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/sad-left.webp",
+      "git_blob_sha": "7b3cd2a6beb89d66bd8edace98af56d4283f792c",
+      "bytes": 84762,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/sad-right.webp",
+      "git_blob_sha": "00343eae981f0b9ba7c21aeb81898c108a284a16",
+      "bytes": 83690,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/upper-left.webp",
+      "git_blob_sha": "a4774684342d7f199ce0f5f5e5a24b0be7813e37",
+      "bytes": 79340,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-a/upper-right.webp",
+      "git_blob_sha": "15e65cd5e61a2ea61c4d69f7f02613252be22331",
+      "bytes": 90558,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/confused.webp",
+      "git_blob_sha": "c530748ce9c15c1cdab4dd39b059f054908c728c",
+      "bytes": 90512,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/lower-left.webp",
+      "git_blob_sha": "93dd7a934cbe0b576a1462ccbc396471fe0c0228",
+      "bytes": 79224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/lower-right.webp",
+      "git_blob_sha": "31e8b158e3eda62a5b067f7456795319ef6dbe87",
+      "bytes": 89678,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/sad-left.webp",
+      "git_blob_sha": "0545a53f14d2d65e37a6b09403cd6fd97b7fdc8d",
+      "bytes": 81672,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/sad-right.webp",
+      "git_blob_sha": "dc2250ad4e930b9ffad253dff1ebb5172d601441",
+      "bytes": 80326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/upper-left.webp",
+      "git_blob_sha": "26311941cd36e9baf6bed1198dc6fda512b2def0",
+      "bytes": 79492,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/new-wolf-b/upper-right.webp",
+      "git_blob_sha": "d9de857966727a2604e0a0aeb986aa733f5b7ae4",
+      "bytes": 93710,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/phone-qr.png",
+      "git_blob_sha": "490429dce944993eef4f9971f91cf855b0382dd9",
+      "bytes": 2192,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/portrait/glamour.webp",
+      "git_blob_sha": "8c772461ee354621519db44365d288a8d1e65e87",
+      "bytes": 216286,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/radio/receiver.webp",
+      "git_blob_sha": "1212832013486cf3a0d3eaafefc7e910db49cc94",
+      "bytes": 70016,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/control.webp",
+      "git_blob_sha": "cc89a820829181e5fb895501fade547e715e5d5d",
+      "bytes": 130570,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/entry-panel.webp",
+      "git_blob_sha": "faadde24a388a0784c8069493a82210b7431edfb",
+      "bytes": 551256,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/konets.png",
+      "git_blob_sha": "53e516c1f3b5f0ed352d0628d75a7113a33865a1",
+      "bytes": 119543,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/konets@2x.png",
+      "git_blob_sha": "2676da6a44686f9befacd851b94d22185b25a1e3",
+      "bytes": 1150644,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/mode-circle.webp",
+      "git_blob_sha": "445137cfd66afbd568b5f5f0a4ac7c40ff510cfa",
+      "bytes": 18410,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/mode-default.webp",
+      "git_blob_sha": "923f77dbe7b18a573667d885dfd210be364e1c6b",
+      "bytes": 11282,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/mode-selected.webp",
+      "git_blob_sha": "6b4dc3b214c23a03ac74e59cda4cae2ff5de61a8",
+      "bytes": 11688,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/panel.webp",
+      "git_blob_sha": "6ae84a45a511a6667a1984c3272ce6e94967c60f",
+      "bytes": 573586,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/primary.webp",
+      "git_blob_sha": "04d1493aadbe08d245c66884492a64e1caeec21f",
+      "bytes": 43632,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/progress-fill.webp",
+      "git_blob_sha": "a84d2b8f3bf37eddbc8bda178918e483acc5720c",
+      "bytes": 3202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/progress.webp",
+      "git_blob_sha": "fb79c8da0d22a40b38600a46a375ee3bf29bcef1",
+      "bytes": 9446,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/secondary.webp",
+      "git_blob_sha": "92e3bfa4183092c91c7855e924d411eb8cceaf37",
+      "bytes": 41200,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/support.webp",
+      "git_blob_sha": "e69c99f5e940286d987f7c642513486d2a22f5fe",
+      "bytes": 5546,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/toggle-off.webp",
+      "git_blob_sha": "f4516c0e9bc06ea0eb41f8e80595bf6cbbab294e",
+      "bytes": 30394,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/ui/toggle-on.webp",
+      "git_blob_sha": "dcff734fb8c732ae0ea318a4cb63547a867794c1",
+      "bytes": 30918,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/catch-flash.webp",
+      "git_blob_sha": "e4cf17698801096ce83a505aae1e66e6fd43c1e0",
+      "bytes": 63582,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/feather-brown.webp",
+      "git_blob_sha": "cf02a3d17ed30b12f6ddc27c423b5e570e1c61bf",
+      "bytes": 52950,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/feather-white.webp",
+      "git_blob_sha": "6b1758276f097fb37f44e8ddb8b2aff7037173d4",
+      "bytes": 43440,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/feather-yellow.webp",
+      "git_blob_sha": "0a11b5702a10bdc576d287a285019cd023a6bb15",
+      "bytes": 46932,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/impact.webp",
+      "git_blob_sha": "ba8db0f59fdf126b5666d75cebdab5f2485c8892",
+      "bytes": 41920,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/particle-ring.webp",
+      "git_blob_sha": "c19065c397b464f83d0e5f044e494fe0ff4cf715",
+      "bytes": 77960,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/puff-01.webp",
+      "git_blob_sha": "af7a8a8ebf548e4a8416de42de3f051902f7bba3",
+      "bytes": 24540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/puff-02.webp",
+      "git_blob_sha": "6e781555a570659493e5bb9ceaf7e9691b7eaf9d",
+      "bytes": 66050,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/puff-03.webp",
+      "git_blob_sha": "ed0fa964a2cd763b63ad90ef60b98958a51420cf",
+      "bytes": 104838,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/puff-04.webp",
+      "git_blob_sha": "208d88d2058dd2c835649d1874521eb797b3a327",
+      "bytes": 67888,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/sparks.webp",
+      "git_blob_sha": "8c64e9c327e17cc09ea3e67a435e4c79819800ff",
+      "bytes": 44180,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/vfx/straw.webp",
+      "git_blob_sha": "e136a2bda0ae3ebd1b807d92bd3af89819a12f9d",
+      "bytes": 62630,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/catch-lower-left.webp",
+      "git_blob_sha": "5d9ae2793427d93f1a048c236197a9bcff8ba2f8",
+      "bytes": 75966,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/catch-lower-right.webp",
+      "git_blob_sha": "89cea1f8bd70cc66f9cc8375130ccda254ccd193",
+      "bytes": 76536,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/catch-upper-left.webp",
+      "git_blob_sha": "6a47dcaf2f249e5b1039b00af0caccb2c18ec029",
+      "bytes": 79232,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/catch-upper-right.webp",
+      "git_blob_sha": "aa76731305d07a0d23d821ccaed2c9ac0eb05980",
+      "bytes": 76044,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/four-arms-eyes-closed.webp",
+      "git_blob_sha": "b22b9a7d36256b21cf0b7078ead384e9aad315df",
+      "bytes": 128788,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/four-arms-eyes-half.webp",
+      "git_blob_sha": "971ea14e5209485586ad54062c6508fd9c490f98",
+      "bytes": 129460,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/four-arms-eyes-open.webp",
+      "git_blob_sha": "1761b64e5bfb86aabee61cb6fa25d06c05bc95d8",
+      "bytes": 129292,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/fright.webp",
+      "git_blob_sha": "cd86c1cbbbb244e6b3341276fd4dbd1a7c717988",
+      "bytes": 75892,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/miss.webp",
+      "git_blob_sha": "9fbf3b5195e9de06d769bc6847b1312af0f05c38",
+      "bytes": 78790,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/pepper.webp",
+      "git_blob_sha": "104df368ef1e67f8f04dbb57b9db21f0089eeb41",
+      "bytes": 77224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-a/victory.webp",
+      "git_blob_sha": "24e81fd1eea9b02f31616e2bb0c262125292f1f0",
+      "bytes": 76266,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/catch-lower-left.webp",
+      "git_blob_sha": "9f4157a8189cce389af0f51f6c787421362080c1",
+      "bytes": 76530,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/catch-lower-right.webp",
+      "git_blob_sha": "01c0324115fe58df15f7e9064221366b790ea0a2",
+      "bytes": 76692,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/catch-upper-left.webp",
+      "git_blob_sha": "ff11e2ec8594902dfad00bcb79bd67551dabb367",
+      "bytes": 81190,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/catch-upper-right.webp",
+      "git_blob_sha": "79d37d3069cd66fb16bd5d473d0d95fb64ee212a",
+      "bytes": 77836,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/four-arms-eyes-closed.webp",
+      "git_blob_sha": "59cb5cc3c87499bb35f20d71a0eb01293035c1cd",
+      "bytes": 129502,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/four-arms-eyes-half.webp",
+      "git_blob_sha": "6cff5723679551fd3a74e8fde0f28c94840813c2",
+      "bytes": 130308,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/four-arms-eyes-open.webp",
+      "git_blob_sha": "16b68ae0362655ba448d012a2d40f0ed573e3324",
+      "bytes": 130158,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/fright.webp",
+      "git_blob_sha": "4c53a53a14f30d802c22158a805c8107eb1ce199",
+      "bytes": 76892,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/miss.webp",
+      "git_blob_sha": "0b18de3b51c1454b1aeeeece04f9ce44cad31c7a",
+      "bytes": 80590,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/pepper.webp",
+      "git_blob_sha": "45a99e1b915025689928cf57a3cf8ce6ec320bab",
+      "bytes": 79266,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "app/games/volk/prototype/dist/assets/wolf-b/victory.webp",
+      "git_blob_sha": "82b5a1dd1a6eb8a0ae5bd04839522ceef62b6b29",
+      "bytes": 77774,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "design/raster-src/adaptive/coop/bg-480.webp",
+      "git_blob_sha": "5e78009b99cc112215e466124ab8da6985fd1fbf",
+      "bytes": 75526,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/coop/bg-941.webp",
+      "git_blob_sha": "1bade2e6b3909ea75c52ca090ad00ca74cc95ff0",
+      "bytes": 174910,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/deposit/bg-workshop-480.webp",
+      "git_blob_sha": "1ce58870c8ab9b04e091aaf593a190294630522b",
+      "bytes": 26208,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/deposit/bg-workshop-941.webp",
+      "git_blob_sha": "aad9d11805d90c371942f9382d1540bafa6d56c4",
+      "bytes": 61550,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/ge/bg-light-480.webp",
+      "git_blob_sha": "e092a96cedfdea704f42d29bc45f54f7ad9bb611",
+      "bytes": 72802,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/ge/bg-light-941.webp",
+      "git_blob_sha": "57c5ab897d57fe2b81488d633cce4c64736d9a9b",
+      "bytes": 171146,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/hen/bg-card-480.webp",
+      "git_blob_sha": "8b24757d04dff0b4fa51f17b26604b7ded60208e",
+      "bytes": 74800,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/hen/bg-card-941.webp",
+      "git_blob_sha": "21531d19f3893ace42f39bc0a154d182337f4b33",
+      "bytes": 175120,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/hen/bg-figure-480.webp",
+      "git_blob_sha": "51f6a7faf7ac441cfb747af5436436ee1d42a505",
+      "bytes": 55682,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/hen/bg-figure-941.webp",
+      "git_blob_sha": "955270b16fe4c032643691a9e57ba3c472d3fde5",
+      "bytes": 126058,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/bg-barn-480.webp",
+      "git_blob_sha": "c63ff349db48446a31fd40c77fea2df7b160ce49",
+      "bytes": 69698,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/bg-barn-941.webp",
+      "git_blob_sha": "8bf61d559ee02085b58f84ae69d22f2f45260c52",
+      "bytes": 152454,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/hero-l1-1200.webp",
+      "git_blob_sha": "ebc8646ed80e09784aab651a08105d8f6fb81e75",
+      "bytes": 222362,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/hero-l2-1200.webp",
+      "git_blob_sha": "dd638dee0bb04c32876a16538a396cd29640632c",
+      "bytes": 240370,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/hero-l3-1200.webp",
+      "git_blob_sha": "a3312df8f8cef97066a2c9927ccabe31cd0f7eca",
+      "bytes": 263318,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/home/hero-l4-1200.webp",
+      "git_blob_sha": "7ed90fe65f2089c6b73e04cdfc6ee1ff62b909e0",
+      "bytes": 361338,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/pay/bg-scanner-480.webp",
+      "git_blob_sha": "c419819ce81f03d748cb3e3b87865c6e2c3ada5b",
+      "bytes": 22268,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/pay/bg-scanner-941.webp",
+      "git_blob_sha": "77b5e6f8f5e477a96bd3bf4640ad98c6879f4a2d",
+      "bytes": 57130,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/support/avatar.png",
+      "git_blob_sha": "eacc7c988587e674dcb28b08a25158dd89655f09",
+      "bytes": 1757032,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/adaptive/support/avatar.webp",
+      "git_blob_sha": "8c78d1d796ca3865e015dc70ccea0894073744cf",
+      "bytes": 238760,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/bg-barn-lq.webp",
+      "git_blob_sha": "826e3516ef7f54d23f69f7ad29d1d95940d0a7d9",
+      "bytes": 476,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/bg-barn.png",
+      "git_blob_sha": "8e7355cde96233b30a7b3005fa4ad72ca1fc491c",
+      "bytes": 2149147,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/bg-barn.webp",
+      "git_blob_sha": "f79c7dd4f45ebf9652a70d28a5da65440f2286d5",
+      "bytes": 158992,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/logo-lq.webp",
+      "git_blob_sha": "65ec86ab42ea0171e0281c4e7f66abc546ce267f",
+      "bytes": 306,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/logo.png",
+      "git_blob_sha": "c8b91934f2c01f46e774d82096079fb0e767c2a6",
+      "bytes": 1328002,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/logo.webp",
+      "git_blob_sha": "f9f39aed8f6055d6b317c4419f31f6ca6801c836",
+      "bytes": 144526,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/nest-level1.png",
+      "git_blob_sha": "987b646521c587600ff717122288893c65dec8e1",
+      "bytes": 1881648,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/home/nest-level1.webp",
+      "git_blob_sha": "d3e38c415ad8106685a973845f5c46b94bf5e69c",
+      "bytes": 251442,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/nav/bottom-nav.png",
+      "git_blob_sha": "ab18948ebf5dbc8f1aabecf51f5e3a82060a67f4",
+      "bytes": 1178789,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/nav/qr-frame.png",
+      "git_blob_sha": "3d40a43e974ed0579af271b4192b36ae0ad53700",
+      "bytes": 1795217,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/coop/bg-lq.webp",
+      "git_blob_sha": "f77cb982481390bb0c69446f836199276eb626d5",
+      "bytes": 590,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/coop/bg.webp",
+      "git_blob_sha": "0eab371bd1ca7b4651a77dfcf8321058346d24b9",
+      "bytes": 147932,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/hen/ref-lq.webp",
+      "git_blob_sha": "37927912704015f2558972a2aecceb91e9a8292f",
+      "bytes": 560,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/hen/ref.webp",
+      "git_blob_sha": "3f0d5e56355c4fcb7e04ebc9ca9acbe7b704b82e",
+      "bytes": 54562,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/bg-barn-lq.webp",
+      "git_blob_sha": "130ab64c2f4a5aea72d4241a8973c56831bde6f9",
+      "bytes": 478,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/bg-barn.webp",
+      "git_blob_sha": "baf9248affb268a6a338149c7132c1abe4c92a13",
+      "bytes": 170970,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l1-lq.webp",
+      "git_blob_sha": "52999992d2948006c11dac580aab73f0a8126e8c",
+      "bytes": 370,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l1.webp",
+      "git_blob_sha": "e8465478bc9fa2a67819ac7749afc51367c2bda6",
+      "bytes": 216612,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l2-lq.webp",
+      "git_blob_sha": "a1dfc265b0e7d29e0363dfc5f817a783210cd9df",
+      "bytes": 334,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l2.webp",
+      "git_blob_sha": "a50af07dcb2c01883bc34d69c6e0ea5e8b030010",
+      "bytes": 231766,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l3-lq.webp",
+      "git_blob_sha": "70136b4ea425f0d8c1f6d698647c24d864545d2d",
+      "bytes": 398,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l3.webp",
+      "git_blob_sha": "ada6b2e52fbf81eb4927277d8205c59b9b32a902",
+      "bytes": 255870,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l4-lq.webp",
+      "git_blob_sha": "062d3845e84135f7e51755fd9f7052844f29c72e",
+      "bytes": 374,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/home/nest-l4.webp",
+      "git_blob_sha": "0778311e815ea56af89e8e469eebaaa763e9239e",
+      "bytes": 353290,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/notifications/ref-lq.webp",
+      "git_blob_sha": "73ba48ad0f3ac15a1753cc3b40f7a1ef8521086d",
+      "bytes": 300,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/notifications/ref.webp",
+      "git_blob_sha": "40311791ed9b38682c0089ce5c9472b3b98f7a82",
+      "bytes": 28222,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/profile/ref-lq.webp",
+      "git_blob_sha": "b6c79d6b00cd680cd44b11aa1a74536ce6a4deb2",
+      "bytes": 314,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/profile/ref.webp",
+      "git_blob_sha": "d9d7bee3480ec7b84bac0d23df599c997c4d10ee",
+      "bytes": 28324,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/splash/bg-lq.webp",
+      "git_blob_sha": "f5623d5bc447e2dba30bbedc87116017784eeac5",
+      "bytes": 478,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/splash/bg.webp",
+      "git_blob_sha": "d530841044a37adffe6953e4381def53934c5837",
+      "bytes": 168848,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/splash/logo-lq.webp",
+      "git_blob_sha": "48a18e8147841a697cc7c258be9cfba7f935a446",
+      "bytes": 296,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/screens/splash/logo.webp",
+      "git_blob_sha": "e726b071f909f467f5f5c6fbce02e6ca6d94a955",
+      "bytes": 21928,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/shell/farm-sunset-1920.webp",
+      "git_blob_sha": "c0a31bf7a4a5bd85b11556759f025554e46035da",
+      "bytes": 251168,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/bnb.png",
+      "git_blob_sha": "6d362ce0c141b82d20f63c629d31673a6ad8a7f1",
+      "bytes": 3036,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/cache/498ca3589dbe075f0cfed24f.jpg",
+      "git_blob_sha": "85b15beb56aed1fe530df9440f74a309e273dbcd",
+      "bytes": 48373,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/cache/56e1bb5fbb6592450c7aca9f.png",
+      "git_blob_sha": "bb35ab181fad695bb5b70902e761402051bb06f4",
+      "bytes": 13838,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/lifesol-c3f47338a1cd.png",
+      "git_blob_sha": "0429a37a5b07c371a6375afa39509c74970eca88",
+      "bytes": 181919,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/lifesol.png",
+      "git_blob_sha": "0429a37a5b07c371a6375afa39509c74970eca88",
+      "bytes": 181919,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/lifesol.webp",
+      "git_blob_sha": "7cd62de90cf321232462ad1f9f1bf88d5e11fed5",
+      "bytes": 8346,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/sol.png",
+      "git_blob_sha": "7e2a75efa2c11f4fc3922252a59cdaa8dc57910b",
+      "bytes": 32126,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/tokens/usdt-bsc.png",
+      "git_blob_sha": "ad13722ea5a364a794b1623ff6dba91f1a853248",
+      "bytes": 1444,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/banner-gold.png",
+      "git_blob_sha": "692208513998439549fb3f250747ef76a6295f88",
+      "bytes": 1486279,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/button-primary.png",
+      "git_blob_sha": "692208513998439549fb3f250747ef76a6295f88",
+      "bytes": 1486279,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/ge-panel.png",
+      "git_blob_sha": "a1341329e87b9766122756c1968ccf1b776621f0",
+      "bytes": 1288643,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/golden-egg.png",
+      "git_blob_sha": "4350db55d74747dffa4d063d7dacc96bae9734a9",
+      "bytes": 1334890,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/golden-egg.webp",
+      "git_blob_sha": "5a79acfaf74ed0601f06cc2a2901a21ec2b48be1",
+      "bytes": 134290,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/medallion-level.png",
+      "git_blob_sha": "2e704d70dabd0db1ba50d3e8455fcbc3681b4452",
+      "bytes": 2230861,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/medallion-level.webp",
+      "git_blob_sha": "d8eaf3264052aceedc2d5df8433144165216ddc3",
+      "bytes": 116076,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/name-plaque.png",
+      "git_blob_sha": "4e9f9cf45c47ff5c0693f13e27978f276e99e8af",
+      "bytes": 1534082,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "design/raster-src/ui/sheet-confirm.png",
+      "git_blob_sha": "bc9878dbf484b2595358fada51f7e7130ab7d1d4",
+      "bytes": 1711504,
+      "purpose": "Legacy raster source / adaptive derivatives"
+    },
+    {
+      "path": "web/public/assets/abank/bg-workshop-sunset-360.webp",
+      "git_blob_sha": "6aad34d4ab11978f3870a4eedadd742846f4f5a5",
+      "bytes": 14768,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/bg-workshop-sunset-480.webp",
+      "git_blob_sha": "815641adc8a97f5715cfdbd3a2b28e7475879885",
+      "bytes": 23822,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/bg-workshop-sunset-720.webp",
+      "git_blob_sha": "947908cb8db23dc69762238f8a51837074b50798",
+      "bytes": 46956,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/bg-workshop-sunset-lq.webp",
+      "git_blob_sha": "908c288b9495d89b4a9bd61e62dc2d52fdc03a82",
+      "bytes": 312,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/cards-fan-280.webp",
+      "git_blob_sha": "6ab71d8b491066854661a5542a4a423b23762b42",
+      "bytes": 12554,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/cards-fan-334.webp",
+      "git_blob_sha": "735daef76ba8114e84bb577cc4c41dfe86df21ef",
+      "bytes": 16350,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/cards-fan-500.webp",
+      "git_blob_sha": "27ebfe691f1a08fe14e497d92cd96bf99edc36f6",
+      "bytes": 29688,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/cards-fan-lq.webp",
+      "git_blob_sha": "0190834d3c394de7b66dfdd2ae2874381c28ddd1",
+      "bytes": 964,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/done-confetti-1x.webp",
+      "git_blob_sha": "127cabe014734bfb0a654700434141ae45313781",
+      "bytes": 6834,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/done-confetti-2x.webp",
+      "git_blob_sha": "1327b0787c8e15c91a2cf903f768fd2af41e46f1",
+      "bytes": 18706,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/done-confetti-lq.webp",
+      "git_blob_sha": "ae9a2e8760edfa15f19ad516bb31a74326dc166f",
+      "bytes": 1626,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/hero-coin-280.webp",
+      "git_blob_sha": "9d3a556a66f0e9e1ed6fe98b051fb6482511147b",
+      "bytes": 24536,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/hero-coin-334.webp",
+      "git_blob_sha": "d468fe0ef85414a24160751add5783145d3bdc52",
+      "bytes": 33474,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/hero-coin-500.webp",
+      "git_blob_sha": "ba5d4359c3b11dea54f6b69671c84c4b0d8b378c",
+      "bytes": 65988,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/hero-coin-lq.webp",
+      "git_blob_sha": "899a4139f552d149067efa9baf356968eab197ae",
+      "bytes": 1372,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-copy-1x.webp",
+      "git_blob_sha": "a151bb775a7467ea5881f8fc256a88d03ef7dd29",
+      "bytes": 5142,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-copy-2x.webp",
+      "git_blob_sha": "5543e3049a1208b1f88c4afca46e09a1fa844272",
+      "bytes": 12474,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-copy-lq.webp",
+      "git_blob_sha": "f400906f7d25e711efc18eb84678d5ec9c4c073a",
+      "bytes": 1204,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-kyc-1x.webp",
+      "git_blob_sha": "ad0ed8675746e79d3cb72e834f55facedcb52475",
+      "bytes": 5216,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-kyc-2x.webp",
+      "git_blob_sha": "75cb7cad8920a5291574f86c972669f049879483",
+      "bytes": 13044,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-kyc-lq.webp",
+      "git_blob_sha": "060a68d85c49e534c13e175a75e620afe85598f8",
+      "bytes": 1192,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-withdraw-1x.webp",
+      "git_blob_sha": "3dd67c0a2a0ab80b64d644d6ea690e30bea131a7",
+      "bytes": 5308,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-withdraw-2x.webp",
+      "git_blob_sha": "429427572e8b05818f296289bd0adb97d0c4e1e1",
+      "bytes": 12956,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/abank/step-withdraw-lq.webp",
+      "git_blob_sha": "1855d822f572c8f9d2920b7736f268987f2586e8",
+      "bytes": 1170,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/auth/logo-hero-1x.webp",
+      "git_blob_sha": "f0f770165d4b16d763d1f8d5132aa879636f80fc",
+      "bytes": 7928,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/auth/logo-hero-2x.webp",
+      "git_blob_sha": "c9d1ef83e5fc98b8b4de6afd2ec1adf3e8a186ad",
+      "bytes": 19518,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/auth/logo-hero-3x.webp",
+      "git_blob_sha": "69668e34938bc5be6081f17e65caa56a99dfb8c1",
+      "bytes": 32714,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/auth/logo-hero-lq.webp",
+      "git_blob_sha": "34162f3a1f3156774aca275cd1002d4dd129cdf6",
+      "bytes": 302,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/bg-480.webp",
+      "git_blob_sha": "a804cf5f624d11619a67984152bd9686df0bfea4",
+      "bytes": 88646,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/bg-941.webp",
+      "git_blob_sha": "ef519df8591eed4075fd75a30eaaf37154b43e44",
+      "bytes": 220484,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/bg-lq.webp",
+      "git_blob_sha": "44fef8946dfb11f9413615089fa3361d67873c05",
+      "bytes": 1860,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-charming-1x.webp",
+      "git_blob_sha": "b8297df43c97fad411eaddb22150522d9b717efd",
+      "bytes": 8624,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-charming-2x.webp",
+      "git_blob_sha": "926ab0e2e2413d203b6aec7ce5987c816f850a90",
+      "bytes": 20910,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-charming-3x.webp",
+      "git_blob_sha": "5c7e398f946d1babedbc6752e8887858c08cb11f",
+      "bytes": 36372,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-charming-lq.webp",
+      "git_blob_sha": "177b099e5533f32efac4bf660d8da2f772644ff0",
+      "bytes": 1506,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-commando-1x.webp",
+      "git_blob_sha": "b410d562c61c47dfbc9f85fc26ea94c895b29421",
+      "bytes": 12792,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-commando-2x.webp",
+      "git_blob_sha": "6dbb6bcd5328472dd56bb1323bb5164f099a1773",
+      "bytes": 34010,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-commando-3x.webp",
+      "git_blob_sha": "6db19e8a0d162e39f51e8290d9b6814e40bb4848",
+      "bytes": 61526,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-commando-lq.webp",
+      "git_blob_sha": "7e134e263757557004f31d293c9698c095f079e1",
+      "bytes": 1794,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-handbag-1x.webp",
+      "git_blob_sha": "55a2d2dc108c4e1e1e2d5fbfbc4cf55809b2f8c4",
+      "bytes": 10718,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-handbag-2x.webp",
+      "git_blob_sha": "12a33f0cb75e31c610297f64d5eb53b3f32e5fde",
+      "bytes": 27966,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-handbag-3x.webp",
+      "git_blob_sha": "b4744b71fb65913d09843633847dfbba03b61e79",
+      "bytes": 50426,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-handbag-lq.webp",
+      "git_blob_sha": "a73487ff8ad9ccedd356afb2f41b6cf6b32edb77",
+      "bytes": 1546,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-monk-1x.webp",
+      "git_blob_sha": "3f6d2ae5687e3cc217ca31fa048a83f861c2cefb",
+      "bytes": 11004,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-monk-2x.webp",
+      "git_blob_sha": "2b338a5613bdc7a55ed38a30b3d573d42cde4e6a",
+      "bytes": 28394,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-monk-3x.webp",
+      "git_blob_sha": "20cc4bf3794dbe00562f789f78a68c5d773fd566",
+      "bytes": 50730,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-monk-lq.webp",
+      "git_blob_sha": "e6a67101af39a6354224325d804efc69ef8e274c",
+      "bytes": 1704,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-professor-1x.webp",
+      "git_blob_sha": "e66b7c8ebd387c966b782d0cf80622e5b31a329a",
+      "bytes": 13248,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-professor-2x.webp",
+      "git_blob_sha": "4e77d9104cf976b5e153af07b180406bfd05ba0b",
+      "bytes": 35862,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-professor-3x.webp",
+      "git_blob_sha": "1de82ee40982b09e552b05501599b19f350d417d",
+      "bytes": 65794,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-professor-lq.webp",
+      "git_blob_sha": "64e136d341348682f6da0d6e2abee6f775a4a181",
+      "bytes": 1896,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-rainbow-1x.webp",
+      "git_blob_sha": "7299bcf48c7a8b4e1bb764849b6c9202a99f14e4",
+      "bytes": 11466,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-rainbow-2x.webp",
+      "git_blob_sha": "7749dbef1b0bf6adb94bb253b21b90ebdb25c7d5",
+      "bytes": 29070,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-rainbow-3x.webp",
+      "git_blob_sha": "11f239c4be88ac49a0ec0a83859ee096fd25b746",
+      "bytes": 52058,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/coop/hen-rainbow-lq.webp",
+      "git_blob_sha": "5dda5268264aa649f4fc6949aa91395251f2525e",
+      "bytes": 1772,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/deposit/bg-workshop-480.webp",
+      "git_blob_sha": "becf6cc0be960b1de15ddcf5934c8dbf00fda9ab",
+      "bytes": 44744,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/deposit/bg-workshop-941.webp",
+      "git_blob_sha": "a4cf0261f12d6d3ecc1d23f107270f9afe482939",
+      "bytes": 105886,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/deposit/bg-workshop-lq.webp",
+      "git_blob_sha": "7977228b99a2cc85cfc0460b9b123aac5a391c0c",
+      "bytes": 946,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ge/bg-light-480.webp",
+      "git_blob_sha": "fc27ca141fe84a10fa7cf29ed298121b07e64575",
+      "bytes": 98090,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ge/bg-light-941.webp",
+      "git_blob_sha": "ee6e413e7f9e8fdef1be2bc095d5d603aa08d8ea",
+      "bytes": 236190,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ge/bg-light-lq.webp",
+      "git_blob_sha": "c07150c4db467e54647c48e896845d125dab5947",
+      "bytes": 1796,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-card-480.webp",
+      "git_blob_sha": "4816b70feacd96356c04139d02bc5892c279f22e",
+      "bytes": 100418,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-card-941.webp",
+      "git_blob_sha": "8d2ffd2bf942bc2e4570315b72213f64a774480d",
+      "bytes": 243200,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-card-lq.webp",
+      "git_blob_sha": "a80577029e4879e8fc79184bbbe87c927e273961",
+      "bytes": 1794,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-figure-480.webp",
+      "git_blob_sha": "244a5214745f4c43ce72e6b5be8f071251f71bf8",
+      "bytes": 75264,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-figure-941.webp",
+      "git_blob_sha": "41c9b270fafad8f8cbd11f659131f844213b9f98",
+      "bytes": 269604,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/bg-figure-lq.webp",
+      "git_blob_sha": "d525516d5e334ab9638a262fe4ce685414f92f2b",
+      "bytes": 2134,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/ryaba-1x.webp",
+      "git_blob_sha": "f2d306e7a08c62be5af543fd8da24fcccbb542f6",
+      "bytes": 14730,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/ryaba-2x.webp",
+      "git_blob_sha": "421341cb6258e541a68b9b01ab9a6b9b86b82d4c",
+      "bytes": 41534,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/ryaba-3x.webp",
+      "git_blob_sha": "1971ac5e723e75b1eb4ed34ce5489cc1ae66a4b8",
+      "bytes": 73992,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/hen/ryaba-lq.webp",
+      "git_blob_sha": "d10a6b3ffa43d8f46fbd56e2333fa7a6f91d737f",
+      "bytes": 416,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/bg-barn-480.webp",
+      "git_blob_sha": "bf8823af39dd4ce36b4bad3c732af6abccb00bf2",
+      "bytes": 122636,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/bg-barn-941.webp",
+      "git_blob_sha": "9a661535aa845c614139547a4ddcaf1733e35a9c",
+      "bytes": 299722,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/bg-barn-lq.webp",
+      "git_blob_sha": "90a68e135b98946371d3741ff0b55f188eb08359",
+      "bytes": 1808,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-1x.webp",
+      "git_blob_sha": "ef26b3342d2cb8039e5bac508d7573cee078f1e2",
+      "bytes": 41432,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-2x.webp",
+      "git_blob_sha": "decac84a7789cc61e56a38eddc34f4a3f88e7a1e",
+      "bytes": 115000,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-3x.webp",
+      "git_blob_sha": "7a490e504907ca7ceee2301834a5cf3461aebf88",
+      "bytes": 197580,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-400.webp",
+      "git_blob_sha": "1066684493c71f53fe72dc062f2b25b3b5e99083",
+      "bytes": 43124,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-800.webp",
+      "git_blob_sha": "a760eabc705eec88cee69b58085397799d2d6cbd",
+      "bytes": 122946,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l1-lq.webp",
+      "git_blob_sha": "6bd04bf04ec098014e26cb160ca921b0d5b66661",
+      "bytes": 358,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-1x.webp",
+      "git_blob_sha": "f05fd2f292252810080042b4123420c5602a543e",
+      "bytes": 39418,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-2x.webp",
+      "git_blob_sha": "42ed65119dcf8afbe8cf220c855ccef779ad7073",
+      "bytes": 106724,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-3x.webp",
+      "git_blob_sha": "7e60f6e48c5563832e5da54ab444fcda2a4f8531",
+      "bytes": 189354,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-400.webp",
+      "git_blob_sha": "33da5e312376175d5170918cd40095a049727a17",
+      "bytes": 42080,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-800.webp",
+      "git_blob_sha": "b3ef456aa06e1f9a15c040d1e417a951b1bc79ec",
+      "bytes": 129252,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l2-lq.webp",
+      "git_blob_sha": "0faa23d2eb957c42a4698579488d270545cb1c27",
+      "bytes": 334,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-1x.webp",
+      "git_blob_sha": "72fbe6ae9c2827e8b957ebec7edffc93be4d73d6",
+      "bytes": 49536,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-2x.webp",
+      "git_blob_sha": "076c2d294ae10ac714d59ea6f010ed45efd4dac4",
+      "bytes": 136296,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-3x.webp",
+      "git_blob_sha": "4a12d86be7e40283504e15bf3ea61a5d67f80854",
+      "bytes": 241138,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-400.webp",
+      "git_blob_sha": "59bc63394f811621b42d8a4c885d634cfdd3d946",
+      "bytes": 50948,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-800.webp",
+      "git_blob_sha": "222082fb756251035160aaf03b85cec744e048f8",
+      "bytes": 144178,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l3-lq.webp",
+      "git_blob_sha": "bb039d9387f32187f5935d94623a637baef0220c",
+      "bytes": 406,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-1x.webp",
+      "git_blob_sha": "ad91cdd98929e87353dd44eacc103613377ae830",
+      "bytes": 57294,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-2x.webp",
+      "git_blob_sha": "a4c417fcd785d3438a0530720467f1fb42406b73",
+      "bytes": 165794,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-3x.webp",
+      "git_blob_sha": "aee12febcc4b3064ebeddec1bb3c8b26819e436c",
+      "bytes": 300022,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-400.webp",
+      "git_blob_sha": "cb69021bb6497f016ada97f9547171c2c499afc9",
+      "bytes": 63004,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-800.webp",
+      "git_blob_sha": "5578582cb5099d5b44b461b35785b948821f1115",
+      "bytes": 191440,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/home/hero-l4-lq.webp",
+      "git_blob_sha": "4a6398227a13fe37b128568fed722b2cf8001a78",
+      "bytes": 380,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/chick-1x.webp",
+      "git_blob_sha": "f1b74972cd42b5d46d0fca828bad17270fb26c7c",
+      "bytes": 3924,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/chick-2x.webp",
+      "git_blob_sha": "8c4d4003db799a7e5e109c58764070e223ff80f0",
+      "bytes": 10182,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/chick-3x.webp",
+      "git_blob_sha": "684e32e37464b1dd749f34502b16a0599ecd050f",
+      "bytes": 18660,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/chick-lq.webp",
+      "git_blob_sha": "0d56c4601436e999bbb16cc76ab34afd6a628d1d",
+      "bytes": 572,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/clara-1x.webp",
+      "git_blob_sha": "9cfa8eb9f331c0744065e3c801b20d36c4a74200",
+      "bytes": 5994,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/clara-2x.webp",
+      "git_blob_sha": "3c480c5b8b8d072e4d8d10f8c688f5fbeee9d201",
+      "bytes": 16998,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/clara-3x.webp",
+      "git_blob_sha": "45cbae4cf84d04424dacc64be383b171753df973",
+      "bytes": 31904,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/clara-lq.webp",
+      "git_blob_sha": "0b1a32b899923cf12e834c207525621edbcef31b",
+      "bytes": 810,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/gloria-1x.webp",
+      "git_blob_sha": "1c1604f8a7717ca30bac6e957b45ba7a6af3e196",
+      "bytes": 5730,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/gloria-2x.webp",
+      "git_blob_sha": "497a339f6355e4c965acae3426f9efa9cc28b0d0",
+      "bytes": 15828,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/gloria-3x.webp",
+      "git_blob_sha": "0133a3a6481116de68f7a93c2ad33ba2e26f237f",
+      "bytes": 29228,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/gloria-lq.webp",
+      "git_blob_sha": "8d6bf89b0646e7753aa089832001d056e1e461d7",
+      "bytes": 790,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/pestrushka-1x.webp",
+      "git_blob_sha": "b318604562d41bd055c046c35bff406fb989f420",
+      "bytes": 7130,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/pestrushka-2x.webp",
+      "git_blob_sha": "c1409dcac295bd151e28dba07407952b9f14f765",
+      "bytes": 19986,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/pestrushka-3x.webp",
+      "git_blob_sha": "6af72d5d728dcaad3a56e5f48a0c2eeb63b79f7b",
+      "bytes": 35974,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/pestrushka-lq.webp",
+      "git_blob_sha": "08c954edba7d6386babbed500a4a70407cc15f7f",
+      "bytes": 872,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/ryaba-1x.webp",
+      "git_blob_sha": "8c5900ec14a474e0dfe4d3b6cd92cbbb3a53ff33",
+      "bytes": 5738,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/ryaba-2x.webp",
+      "git_blob_sha": "116a71a8dee27786df4899a25be4ceab233b85f6",
+      "bytes": 16116,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/ryaba-3x.webp",
+      "git_blob_sha": "5ada3d7a487ae8398868db27576e6702a4f8d281",
+      "bytes": 30064,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/ryaba-lq.webp",
+      "git_blob_sha": "e936e25a75c03bcb58b37d3dbb6751db086074a2",
+      "bytes": 788,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/shao-1x.webp",
+      "git_blob_sha": "2f1725ec6f035d75b596698c460f7fcc723bc348",
+      "bytes": 6132,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/shao-2x.webp",
+      "git_blob_sha": "b66800495020e31c92a51af68d23bc12c31fd8f7",
+      "bytes": 16866,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/shao-3x.webp",
+      "git_blob_sha": "0596fd5337dc00f2f2e3e4a0a45e9c9d05ed20db",
+      "bytes": 30648,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/market/shao-lq.webp",
+      "git_blob_sha": "4608d5e820f1ff6ecfa26bb671c0b25d797cb908",
+      "bytes": 834,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/empty-history-1x.webp",
+      "git_blob_sha": "edb1cb9d6bd2a3bdc408158636386c508abf9d30",
+      "bytes": 5874,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/empty-history-2x.webp",
+      "git_blob_sha": "732c2a0bc967356ff6410965b23a08985b93849f",
+      "bytes": 14376,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/empty-history-3x.webp",
+      "git_blob_sha": "8de72c00101acd6240a7f0f5c7fc7faa12517327",
+      "bytes": 25404,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/empty-history-lq.webp",
+      "git_blob_sha": "0d325bbf4ce13c183ebdde3d1b4fe1b07f34c145",
+      "bytes": 254,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/status-medallion-1x.webp",
+      "git_blob_sha": "d79cf6fa7365822b748ee82101cc67ba2b257fd3",
+      "bytes": 6034,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/status-medallion-2x.webp",
+      "git_blob_sha": "3c30204dc53a45a18508e5f91b2e22d94d85af9b",
+      "bytes": 15012,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/status-medallion-3x.webp",
+      "git_blob_sha": "a9eb25bba0e9321100f5933e04c3df7d753d190d",
+      "bytes": 28210,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/money/status-medallion-lq.webp",
+      "git_blob_sha": "f3de757676bada30effb39788abd2e0d2e46e04b",
+      "bytes": 334,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-l-1x.webp",
+      "git_blob_sha": "1b5919b24189644ec1e071fbd2d912b7921fa5c6",
+      "bytes": 5346,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-l-2x.webp",
+      "git_blob_sha": "1147adcaed0b00813a4320aff97e060a4cca1d14",
+      "bytes": 13922,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-l-3x.webp",
+      "git_blob_sha": "d51c4b832dd9fa6898d79c7138c33221dec636a1",
+      "bytes": 24926,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-l-lq.webp",
+      "git_blob_sha": "1e545f3f21b2a0aec2620a7757ea7b7d508876cb",
+      "bytes": 180,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-r-1x.webp",
+      "git_blob_sha": "8328879e6d9f494f36ef298f3199bab3c241f750",
+      "bytes": 5330,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-r-2x.webp",
+      "git_blob_sha": "d9d591f84543a25535fa80eae35b102665b84efe",
+      "bytes": 13680,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-r-3x.webp",
+      "git_blob_sha": "c01ee80acfbae379432acf11f3f5a5543efe3ae8",
+      "bytes": 23844,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/nav-r-lq.webp",
+      "git_blob_sha": "1a1aaeb358da6b91746e16e5773977005e83d97c",
+      "bytes": 166,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/qr-button-1x.webp",
+      "git_blob_sha": "21463b9c25a9472cf6ec3cc02e902eb6387fca0b",
+      "bytes": 2370,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/qr-button-2x.webp",
+      "git_blob_sha": "678dfb99e184591cede05a645f0e148a740e66ba",
+      "bytes": 5944,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/qr-button-3x.webp",
+      "git_blob_sha": "529acce827abcd951cd48ad563ecd92ccb9b9745",
+      "bytes": 10448,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/nav/qr-button-lq.webp",
+      "git_blob_sha": "1d3c2103c9ec109991c83293a58b2caea54bfa04",
+      "bytes": 338,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/bg-scanner-480.webp",
+      "git_blob_sha": "7c6ae6899400ccdcc980a127b01213479b879958",
+      "bytes": 32824,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/bg-scanner-941.webp",
+      "git_blob_sha": "0603627368964b0878bf98eb8053374a452dcaa2",
+      "bytes": 88702,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/bg-scanner-lq.webp",
+      "git_blob_sha": "29651c4f9c7d0bcfc1c49b75f89a694d2690b07f",
+      "bytes": 656,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/medallion-1x.webp",
+      "git_blob_sha": "3d7d7e456b40033710f8905a87f6d90e53505fa5",
+      "bytes": 8044,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/medallion-2x.webp",
+      "git_blob_sha": "2f652b63bcefb7163db1e10e0e78a856a639c6c0",
+      "bytes": 20600,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/medallion-3x.webp",
+      "git_blob_sha": "f25a020b2d5bf95d0fc8e1014074d194cbf65787",
+      "bytes": 37822,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/medallion-lq.webp",
+      "git_blob_sha": "dd9cb4f3c5dc56cadd464b5c186f1b4a680c79ec",
+      "bytes": 318,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/scan-frame-1x.webp",
+      "git_blob_sha": "db8d5f63a301be31561f64267bdcc0efba61e8f5",
+      "bytes": 9566,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/scan-frame-2x.webp",
+      "git_blob_sha": "9a9c92c3bfcad19c39970076afb955a95531c525",
+      "bytes": 23798,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/scan-frame-3x.webp",
+      "git_blob_sha": "fa0ffcf8abd6bc959977b4529ed814477f7be98b",
+      "bytes": 46952,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/pay/scan-frame-lq.webp",
+      "git_blob_sha": "bd6ed846fa040c8cc7c6ed952668a832fe14e9a8",
+      "bytes": 242,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/profile/avatar-1x.webp",
+      "git_blob_sha": "94e6bbf21fe9f6d8b4b684f1acd791d4b948ea6f",
+      "bytes": 3204,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/profile/avatar-2x.webp",
+      "git_blob_sha": "b3dc8871caa51ed8d61150c67ada76b6511a0cfb",
+      "bytes": 7830,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/profile/avatar-3x.webp",
+      "git_blob_sha": "ad9d08714ac51d1b0a73016912660d4bba55cb9b",
+      "bytes": 13256,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/profile/avatar-lq.webp",
+      "git_blob_sha": "1c141b4f74d4da146f7b5b34d47587f9b08eea50",
+      "bytes": 408,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/gamepad-1x.webp",
+      "git_blob_sha": "01042fff04b9e8584c4b2132f998f30f910ec8b7",
+      "bytes": 2268,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/gamepad-2x.webp",
+      "git_blob_sha": "c0c8d08cd67901f1d49c7d48ade0e3db35b7dd9e",
+      "bytes": 5778,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/gamepad-3x.webp",
+      "git_blob_sha": "86b17109ca4086845c2ac6d50529c2f7d398b9da",
+      "bytes": 9868,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/gamepad-lq.webp",
+      "git_blob_sha": "a75ece3269d55bf777edbd3c704ede5d9a7bbb4b",
+      "bytes": 356,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/logo-1x.webp",
+      "git_blob_sha": "7bf4a77acef801bd9a40c1a4e31727990b56e9f7",
+      "bytes": 4908,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/logo-2x.webp",
+      "git_blob_sha": "6cc181a6299d76bc76288fb484408e23afb7630c",
+      "bytes": 11312,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/logo-3x.webp",
+      "git_blob_sha": "37a9ae7f3d378894964da9c1579dd29396d71a29",
+      "bytes": 18856,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/logo-lq.webp",
+      "git_blob_sha": "80732f8c80d2544bd5ff20fdbf167caceb18577b",
+      "bytes": 298,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/support-1x.webp",
+      "git_blob_sha": "0ded499009286195fbf302406222315dd9a604a7",
+      "bytes": 2312,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/support-2x.webp",
+      "git_blob_sha": "e69c99f5e940286d987f7c642513486d2a22f5fe",
+      "bytes": 5546,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/support-3x.webp",
+      "git_blob_sha": "59de4d4a1a91506e316d194a30242bccabbfa9b5",
+      "bytes": 8978,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/shell/support-lq.webp",
+      "git_blob_sha": "00d95e1c4407ceac2d04d24b08f2b73dd586ba3b",
+      "bytes": 356,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/support/avatar-lq.webp",
+      "git_blob_sha": "f9e9877d0e0343d6640bda8c08475b37d622a4a1",
+      "bytes": 360,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/support/avatar.webp",
+      "git_blob_sha": "76af0efc8a4635feda20d8ae1931271a655fae12",
+      "bytes": 55236,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/banner-gold-1x.webp",
+      "git_blob_sha": "50655bbe5ed3dd077c0e93cce0da0edbcd6185d5",
+      "bytes": 24010,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/banner-gold-2x.webp",
+      "git_blob_sha": "dc49887c1e6ed386b1596c2fbeced3eddd9a1e3b",
+      "bytes": 68922,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/banner-gold-3x.webp",
+      "git_blob_sha": "24d794caa56b86e884291beba1a150b7e8fce124",
+      "bytes": 120098,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/banner-gold-lq.webp",
+      "git_blob_sha": "acac690387d0cc919726f469ca3659382e7c16b2",
+      "bytes": 184,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/golden-egg-1x.webp",
+      "git_blob_sha": "a4c4748d14383e68613ccaf5ce1eae25820fc9c1",
+      "bytes": 1378,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/golden-egg-2x.webp",
+      "git_blob_sha": "5ef339309d6ea304d48f63bd4dd392f8697027b1",
+      "bytes": 3194,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/golden-egg-3x.webp",
+      "git_blob_sha": "e7398be606cf3c729000ce3ce56d9b16337a5cdb",
+      "bytes": 5494,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/golden-egg-lq.webp",
+      "git_blob_sha": "6938d193c5c7c1a886cae70365cea4cb09e66bbb",
+      "bytes": 300,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/panel-ge-wide-1x.webp",
+      "git_blob_sha": "e341c23d67b9d0f476457418957f73d4691791c2",
+      "bytes": 6480,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/panel-ge-wide-2x.webp",
+      "git_blob_sha": "76dd91bbabcd5d69a2cae1823a35363ce9eb7dc8",
+      "bytes": 15502,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/panel-ge-wide-3x.webp",
+      "git_blob_sha": "0d069fee819b6ae40723697cc9f6b971c7e8afa1",
+      "bytes": 26804,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/panel-ge-wide-lq.webp",
+      "git_blob_sha": "c3c8910f7e385f0f4706cfc62d78ab12d7ed5c47",
+      "bytes": 160,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/plaque-name-1x.webp",
+      "git_blob_sha": "a2c1c70eb7a6d934945f8dab3cce87273f57a297",
+      "bytes": 8132,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/plaque-name-2x.webp",
+      "git_blob_sha": "c7b4f7b8440d06b955b1ea7818e28928a39ee8fe",
+      "bytes": 22050,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/plaque-name-3x.webp",
+      "git_blob_sha": "d6bd7ded6993745d4cfef748e5fa6ee5da394d27",
+      "bytes": 39296,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/plaque-name-lq.webp",
+      "git_blob_sha": "f209aa4d2fcf14ad4d29918990ac256a4cf4eb1c",
+      "bytes": 196,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-basket-1x.webp",
+      "git_blob_sha": "926ba0819b288df7d9461b36cc732c952bb5296e",
+      "bytes": 6070,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-basket-2x.webp",
+      "git_blob_sha": "014ad41bac1c5832fe8b5c9c5db6c91e2ae349fa",
+      "bytes": 16720,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-basket-3x.webp",
+      "git_blob_sha": "c7e87c244c869d9ce0efde5af4adf376bcd0e7c6",
+      "bytes": 31112,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-basket-lq.webp",
+      "git_blob_sha": "f4bb39979129085053c0696d7519444c021e60e7",
+      "bytes": 1326,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chest-1x.webp",
+      "git_blob_sha": "d01a2006672e923c7036358e509fa25319034a0e",
+      "bytes": 5776,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chest-2x.webp",
+      "git_blob_sha": "1d2548d2e6d5d08270932f199310fb24339d62c5",
+      "bytes": 17138,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chest-3x.webp",
+      "git_blob_sha": "42cf8720602bfbef8b03df5f57bd1ab2b1317883",
+      "bytes": 33718,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chest-lq.webp",
+      "git_blob_sha": "2442814202f8f6c31d907e487066716af9a39490",
+      "bytes": 1180,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chinggis-1x.webp",
+      "git_blob_sha": "b67dc773aa5dfc82e0d390f4083a29e710bc1ca5",
+      "bytes": 2342,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chinggis-2x.webp",
+      "git_blob_sha": "536ff8e5127d0a93db00775d71ebd08e10398ba6",
+      "bytes": 5506,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chinggis-3x.webp",
+      "git_blob_sha": "31cbbf1775ada7ef02e76b5b50ade2cf333a3558",
+      "bytes": 9318,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-chinggis-lq.webp",
+      "git_blob_sha": "d67beb357452fcbd4b6e329343a0755952f033ff",
+      "bytes": 696,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-feathers-1x.webp",
+      "git_blob_sha": "584065f9280b83b9e08c752fe62ae0a1979fc561",
+      "bytes": 3980,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-feathers-2x.webp",
+      "git_blob_sha": "d862658c219a5c07fa8efce8c01574787b71dc24",
+      "bytes": 10872,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-feathers-3x.webp",
+      "git_blob_sha": "92a95457858aa9ed432c96b67030b72a400b29ed",
+      "bytes": 19874,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-feathers-lq.webp",
+      "git_blob_sha": "5d298d7eef9753bfe44ce5c8ff0d99e8a2110b86",
+      "bytes": 1054,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-figurine-1x.webp",
+      "git_blob_sha": "45d38c6cfacf69dff36445a4a170976a132401ef",
+      "bytes": 4980,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-figurine-2x.webp",
+      "git_blob_sha": "5ed01eb87867f2100500a40ae1a295ebcf056d88",
+      "bytes": 14204,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-figurine-3x.webp",
+      "git_blob_sha": "183d3a7ba5116a84ec2953d7199e5670a4ef27e5",
+      "bytes": 26404,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-figurine-lq.webp",
+      "git_blob_sha": "d78f7428ee052ee5821753b59f35dc3c7308f92c",
+      "bytes": 1156,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-handful-1x.webp",
+      "git_blob_sha": "844eb0c7e6c2f46e0543ee505f3c7b48b01c90e0",
+      "bytes": 5398,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-handful-2x.webp",
+      "git_blob_sha": "8dabfa65123e51d4517f5cdf9454e493c972369f",
+      "bytes": 13490,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-handful-3x.webp",
+      "git_blob_sha": "04f80a7053b17832e6af575173d2b9116e535502",
+      "bytes": 24256,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-handful-lq.webp",
+      "git_blob_sha": "9e8b72b7a81be89b522c915520c42f9b331a448c",
+      "bytes": 1278,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-lukoshko-1x.webp",
+      "git_blob_sha": "d0bbcd4421484f53ab5db1f2526fefca73c0dc00",
+      "bytes": 5196,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-lukoshko-2x.webp",
+      "git_blob_sha": "6af4a6af23babd71bbbcbc3bc1f97cadc7a9fa61",
+      "bytes": 14016,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-lukoshko-3x.webp",
+      "git_blob_sha": "75ec480e69c3c5f9b84840802592075d0c7d600a",
+      "bytes": 26736,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-lukoshko-lq.webp",
+      "git_blob_sha": "e5de735bd89f01463804e6b5d62ef080d609d16f",
+      "bytes": 1162,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-nest-1x.webp",
+      "git_blob_sha": "ac91db39a533b2b845c3da23b16f929e7cd90e25",
+      "bytes": 6684,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-nest-2x.webp",
+      "git_blob_sha": "e6f787783454e3de07d71f0bc19735a7a3229a86",
+      "bytes": 19636,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-nest-3x.webp",
+      "git_blob_sha": "9859309e3b13a1edff5638fed5d78f0c1827b8e1",
+      "bytes": 37026,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/adaptive/ui/shop-nest-lq.webp",
+      "git_blob_sha": "9739e8eba89fd9f698a6891e3128f2c5a2615923",
+      "bytes": 1492,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/badge.svg",
+      "git_blob_sha": "5e0dc13b92f2aa962fb1a7ff2b37f59d731ccfeb",
+      "bytes": 237,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/bell.svg",
+      "git_blob_sha": "fc2b2e65d50168b8e4d78fa810c7e457b55fd100",
+      "bytes": 462,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/ellipse.svg",
+      "git_blob_sha": "1a1c74f4593e82d7c36e762964aaa4b7123a468f",
+      "bytes": 419,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/eye.svg",
+      "git_blob_sha": "3a8e49f283a668b3e06d5b28d6d3a56c7e1debeb",
+      "bytes": 413,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/next.svg",
+      "git_blob_sha": "e94f0136688772869a4a24162be93b696c93e2a1",
+      "bytes": 335,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/header/support.svg",
+      "git_blob_sha": "9cb5ddaf50a78ca5b20e7ef0881ee633705e7e34",
+      "bytes": 646,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/badge.svg",
+      "git_blob_sha": "5e0dc13b92f2aa962fb1a7ff2b37f59d731ccfeb",
+      "bytes": 237,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/bell-bg.svg",
+      "git_blob_sha": "1a1c74f4593e82d7c36e762964aaa4b7123a468f",
+      "bytes": 419,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/bell.svg",
+      "git_blob_sha": "fc2b2e65d50168b8e4d78fa810c7e457b55fd100",
+      "bytes": 462,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/eye.svg",
+      "git_blob_sha": "3a8e49f283a668b3e06d5b28d6d3a56c7e1debeb",
+      "bytes": 413,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/gallery.svg",
+      "git_blob_sha": "1db32cfb8d3129616abe219a5241f52faa3cd691",
+      "bytes": 868,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/home.svg",
+      "git_blob_sha": "be88b22a1bb40fae79acea8ec4e4f9cf39f8dbeb",
+      "bytes": 388,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/link.svg",
+      "git_blob_sha": "9fc0da48eda7546d0ad4055626fc4578260fe9be",
+      "bytes": 1312,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/next.svg",
+      "git_blob_sha": "e94f0136688772869a4a24162be93b696c93e2a1",
+      "bytes": 335,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/plus.svg",
+      "git_blob_sha": "7455f849383f5c58a638254307620d9d27019e1c",
+      "bytes": 321,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/qr.svg",
+      "git_blob_sha": "e6b0978c857eeeccf35d06412efcd02a1791484d",
+      "bytes": 383,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/icons/withdraw.svg",
+      "git_blob_sha": "b1e4af4261baa5acb2c6585c7ec26c7faf3c553b",
+      "bytes": 361,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/bottom-nav-lq.webp",
+      "git_blob_sha": "43311d687e1835c3ae68e854a0c8d7ef454c54e8",
+      "bytes": 160,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/bottom-nav.webp",
+      "git_blob_sha": "26636de632ec6e003364f3058654f153a170a64d",
+      "bytes": 48856,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/history.svg",
+      "git_blob_sha": "a105c38a60894e8734635e044651a61600b78de4",
+      "bytes": 576,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/home.svg",
+      "git_blob_sha": "be88b22a1bb40fae79acea8ec4e4f9cf39f8dbeb",
+      "bytes": 388,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/plus.svg",
+      "git_blob_sha": "7455f849383f5c58a638254307620d9d27019e1c",
+      "bytes": 321,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/qr-frame-lq.webp",
+      "git_blob_sha": "9dfc6395a964f7907ca44201176b2a1c746aaf0f",
+      "bytes": 344,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/qr-frame.webp",
+      "git_blob_sha": "d8e3c68fcfea448376c366bee0952135f02475ee",
+      "bytes": 10376,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/qr.svg",
+      "git_blob_sha": "e6b0978c857eeeccf35d06412efcd02a1791484d",
+      "bytes": 383,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/nav/withdraw.svg",
+      "git_blob_sha": "b1e4af4261baa5acb2c6585c7ec26c7faf3c553b",
+      "bytes": 361,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/shell/farm-sunset-960.webp",
+      "git_blob_sha": "2c81d6b5c7e593f87b22fbc59197e6723baa8fa8",
+      "bytes": 94904,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/shell/farm-sunset-lq.webp",
+      "git_blob_sha": "42ea0a883a6de10fda3825e631ddef409856d0be",
+      "bytes": 232,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/shell/logo-lq.webp",
+      "git_blob_sha": "fea781c65b5536ef3d6b186e925bcb98c23d97e2",
+      "bytes": 298,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/shell/logo.webp",
+      "git_blob_sha": "75ea2517da886da63ec2470342d8beefb46aecd5",
+      "bytes": 19014,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/bnb.png",
+      "git_blob_sha": "6d362ce0c141b82d20f63c629d31673a6ad8a7f1",
+      "bytes": 3036,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/btt.svg",
+      "git_blob_sha": "86003e60b0d5a1f58872cf7248e58345158963a5",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/dogs.svg",
+      "git_blob_sha": "87bbad57e9ca99b57d53ac1755507705d48a75d1",
+      "bytes": 269,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/eth.svg",
+      "git_blob_sha": "857255f56c44e28b82e1d0f3d04e2d67c8ed4713",
+      "bytes": 523,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/htx.svg",
+      "git_blob_sha": "f9e1f3c9f3d3733d4f8bb31021b31737c56e1200",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/jst.svg",
+      "git_blob_sha": "46547f0644efc6fc196ed6f966bf38a0001577be",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/lifesol-c3f47338a1cd.webp",
+      "git_blob_sha": "7cd62de90cf321232462ad1f9f1bf88d5e11fed5",
+      "bytes": 8346,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/nft.svg",
+      "git_blob_sha": "cd5cbcb5f7fccbd508d765d90fada6aa1d384b24",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/not.svg",
+      "git_blob_sha": "f8bd7f372951689778f207c4709533812532bbf9",
+      "bytes": 269,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/redo.svg",
+      "git_blob_sha": "d6b220ee38749c8d10ca77df1cb3d724e119b222",
+      "bytes": 269,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/sol.webp",
+      "git_blob_sha": "497ed1ec1936f7f6e8efdaa200b845e5ed9ae1a3",
+      "bytes": 1632,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/ston.svg",
+      "git_blob_sha": "c6984c90f36aa63dffa3e8e68c7ee8e60c93c0e2",
+      "bytes": 269,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/sun.svg",
+      "git_blob_sha": "0c7fc5dc953eb02321430477e01ca902129da2ad",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/ton.svg",
+      "git_blob_sha": "4f0b80e44647beebb8589094e42d24381a2ec2e5",
+      "bytes": 228,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/trx.svg",
+      "git_blob_sha": "cde3dc411ba3f87bde2369c36415458735fa4aa6",
+      "bytes": 252,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/tston.svg",
+      "git_blob_sha": "e67585bfa12c99d30561f48f8d622794599fabf2",
+      "bytes": 270,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/turbo.webp",
+      "git_blob_sha": "a7070e29ddca1470b42bd735ce7584e771428abd",
+      "bytes": 658,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/tusd.svg",
+      "git_blob_sha": "ee616b99428243de949254bd5222a7ae588854ee",
+      "bytes": 275,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdd.svg",
+      "git_blob_sha": "3c0e409734e384df38e03ed8dd88c5bb4a2b592e",
+      "bytes": 275,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdt-bsc.png",
+      "git_blob_sha": "ad13722ea5a364a794b1623ff6dba91f1a853248",
+      "bytes": 1444,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdt-eth.svg",
+      "git_blob_sha": "2ba432f89d3e9ff45d5a2e703c9f1f1305af6f52",
+      "bytes": 1173,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdt-sol.svg",
+      "git_blob_sha": "2ba432f89d3e9ff45d5a2e703c9f1f1305af6f52",
+      "bytes": 1173,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdt-ton.svg",
+      "git_blob_sha": "dec4d3259197004541734de338bdb948f4a60066",
+      "bytes": 397,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/usdt-tron.svg",
+      "git_blob_sha": "dec4d3259197004541734de338bdb948f4a60066",
+      "bytes": 397,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/utya.svg",
+      "git_blob_sha": "c0172b24c8b02547821e18d02c8fd45f756b37aa",
+      "bytes": 269,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/tokens/win.svg",
+      "git_blob_sha": "9a7f1c01470d65984e70b15ec077fe22b43116fc",
+      "bytes": 274,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/banner-gold-lq.webp",
+      "git_blob_sha": "d5a1c742e4f90b43313c9ca7a513b04121ba3779",
+      "bytes": 182,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/banner-gold.webp",
+      "git_blob_sha": "4128ad619a19d99037d85cd379fe8c1593c4113e",
+      "bytes": 39474,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/button-primary-lq.webp",
+      "git_blob_sha": "4d1e1dc7cd2efa4c65522244862e507287bc1ac1",
+      "bytes": 176,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/button-primary.webp",
+      "git_blob_sha": "28e33dca50f5e302c10c733f133677a4660e69fe",
+      "bytes": 50708,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/ge-panel-lq.webp",
+      "git_blob_sha": "cbaba273b8dd1a85caaa731bb85759a488df8b30",
+      "bytes": 164,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/ge-panel.webp",
+      "git_blob_sha": "65485e2bc94894c8cbf80ffe3a94716e74dc0ac8",
+      "bytes": 37082,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/golden-egg-lq.webp",
+      "git_blob_sha": "efcd5026acfcd99e6e7a95fc7119ec1fec4f2393",
+      "bytes": 266,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/golden-egg.webp",
+      "git_blob_sha": "beacfd712aba70dca21b308eec27ea8058b5e731",
+      "bytes": 89388,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/lukoil-logo.svg",
+      "git_blob_sha": "5c646fedcd8004bc1235432d90b6037afd9e20eb",
+      "bytes": 26530,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/medallion-level-lq.webp",
+      "git_blob_sha": "cac3a85b49d39413cd4b13d3263c01afe9a13b5e",
+      "bytes": 314,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/medallion-level.webp",
+      "git_blob_sha": "b9382851b49b31f16e6c74d949a02e64c88c6b7b",
+      "bytes": 51678,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/name-plaque-lq.webp",
+      "git_blob_sha": "db37b8de2ad651a8b61308c51e5dff1b2b5d7d36",
+      "bytes": 188,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/name-plaque.webp",
+      "git_blob_sha": "69fe58bc42c7b0d352b5f0aa7d0de7e85aad307a",
+      "bytes": 71898,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/sheet-confirm-lq.webp",
+      "git_blob_sha": "e79761b490c09e9c78f7d8fe120ce9ace29ced74",
+      "bytes": 266,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/assets/ui/sheet-confirm.webp",
+      "git_blob_sha": "194f8863925d0bbd9060a8b6c33ad5fffabdae9b",
+      "bytes": 78062,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/games/volk/app-icon.png",
+      "git_blob_sha": "7dd9fd16fa3d7dc9692c648abd663ef4a44020cc",
+      "bytes": 21849,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/avatar-ring.webp",
+      "git_blob_sha": "e341ade1cea1dd710446370ac1615f0a6c71a714",
+      "bytes": 63248,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/cup.webp",
+      "git_blob_sha": "2d17e40ef03a2f2f5462fc0026df50e310dc0d9c",
+      "bytes": 85658,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/lock.webp",
+      "git_blob_sha": "de2b6e2e49601ba5d6164b2135cb7ec85ec04ebd",
+      "bytes": 61762,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/medal-bronze.webp",
+      "git_blob_sha": "032d1c5aada603a5dbf9abd9d069d9cea25db80e",
+      "bytes": 81712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/medal-gold.webp",
+      "git_blob_sha": "2a82e49765359edcd70b5ffc7de504d98e7287a0",
+      "bytes": 80190,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/medal-silver.webp",
+      "git_blob_sha": "ef8d6fe02a0b3556ee852d183018709dfe2c8a34",
+      "bytes": 75580,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/penalty-active.webp",
+      "git_blob_sha": "c9390aa3bf6a4eecea2475a2f90c9f7bbedd3d88",
+      "bytes": 83056,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/award/penalty-inactive.webp",
+      "git_blob_sha": "4360cffb9217cba1d26b7e74e856289f2945b576",
+      "bytes": 74138,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/left-back.webp",
+      "git_blob_sha": "456aa8214f8e12940bbe84b98ce1ee0e247e3e24",
+      "bytes": 76826,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/left-front.webp",
+      "git_blob_sha": "b414d610d59830d48c9ac06612c1f69c1b1aca0a",
+      "bytes": 60676,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/left-whole.webp",
+      "git_blob_sha": "1a9bbb3a53425761f1d9faa9468f44b607f54e5a",
+      "bytes": 82224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/right-back.webp",
+      "git_blob_sha": "8a6ab0861882ce5e8e059dd7603e5a9ed2812d45",
+      "bytes": 76056,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/right-front.webp",
+      "git_blob_sha": "d4ef84f40071b955dc2daefcea26d7ad9153237d",
+      "bytes": 60380,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/basket-layers/right-whole.webp",
+      "git_blob_sha": "ffbeae3a3e5b8ad644e4765b7fc901307632de3e",
+      "bytes": 84108,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/brand/logo.webp",
+      "git_blob_sha": "25886756cfb3da47171087b9dc339794d537d91c",
+      "bytes": 70952,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/crack.webp",
+      "git_blob_sha": "60eb2f981e2c3668769d84be69b0d666db4c42c2",
+      "bytes": 38326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/fly-wings-down.webp",
+      "git_blob_sha": "48da834a25d378fb3783cd7fc67b52e52f7c06e9",
+      "bytes": 44220,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/fly-wings-up.webp",
+      "git_blob_sha": "248181247215fbdf96c8ec98a27c93a4bfeee0a7",
+      "bytes": 46940,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/hatched.webp",
+      "git_blob_sha": "8109fb4f65ddbe328f89f65d718204e6f2f68313",
+      "bytes": 55726,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/hatching.webp",
+      "git_blob_sha": "b0f1ba2a9e3e019c4eeaf339a7830e6a95edbd33",
+      "bytes": 52604,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/run-idle.webp",
+      "git_blob_sha": "aa0bc8c5e9328506a3089fd359e169e1b597a44a",
+      "bytes": 38878,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/run-left-leg.webp",
+      "git_blob_sha": "d6d2c6caca906acde8231159c6d9980c38fcc630",
+      "bytes": 40152,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/run-pass.webp",
+      "git_blob_sha": "df33a914d7e8a123cf0c020dba164223969bb269",
+      "bytes": 38342,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/run-right-leg.webp",
+      "git_blob_sha": "26c9f682398307bf01f396fbd3295820724e5e4a",
+      "bytes": 40388,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/split.webp",
+      "git_blob_sha": "c693fd7c16e89df08a5e26d5c6922d2f7a4ba34e",
+      "bytes": 43600,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/takeoff-crouch.webp",
+      "git_blob_sha": "dd936f17de7a8561c152c34c6d2fe7c40f442e5a",
+      "bytes": 39068,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chick/takeoff.webp",
+      "git_blob_sha": "a1dffecb92eeab394143798d421579821cd6ae8d",
+      "bytes": 44676,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/brown/angry.webp",
+      "git_blob_sha": "e9bde82321ecd2dc8649e46e8e9b8478dc2455ce",
+      "bytes": 87118,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/brown/idle.webp",
+      "git_blob_sha": "d2fc05cbd6e774f83c250ea86be0e55df504a371",
+      "bytes": 92880,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/brown/laying.webp",
+      "git_blob_sha": "984459803b47e78838c22b4318caf97f102a2918",
+      "bytes": 98424,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/commando/angry.webp",
+      "git_blob_sha": "7c4e80a45760e4a7a70232b923d071ca2de98eb3",
+      "bytes": 115482,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/commando/idle.webp",
+      "git_blob_sha": "1cd0464cee751b87fad6e7df6d8e80a2d14dbe70",
+      "bytes": 122058,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/commando/laying.webp",
+      "git_blob_sha": "0522a01c9cbd41e70cb91fb0ce64938c4661b7d7",
+      "bytes": 129742,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/leopard/angry.webp",
+      "git_blob_sha": "73988c88a50a15ef5fb0a6d3b9834a78ab01ca27",
+      "bytes": 98718,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/leopard/idle.webp",
+      "git_blob_sha": "ea95cd6d00c100e03c57496060192a38c51accef",
+      "bytes": 103966,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/leopard/laying.webp",
+      "git_blob_sha": "6651abde0df8b30d176aaea48c5f902ec541b482",
+      "bytes": 108528,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/monk/angry.webp",
+      "git_blob_sha": "ddfe31a335837389b7da701d6f128dcb1538a853",
+      "bytes": 97202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/monk/idle.webp",
+      "git_blob_sha": "a74f53958c334345a2eafadd9c37a66806fc9e9d",
+      "bytes": 103990,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/monk/laying.webp",
+      "git_blob_sha": "5acea00abe0f3830414b1e7dc1869684504a2f94",
+      "bytes": 104940,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/professor/angry.webp",
+      "git_blob_sha": "8178ab2bf8e832cb87e311bcb09a3ad802bd0346",
+      "bytes": 110114,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/professor/idle.webp",
+      "git_blob_sha": "84db7d255e23c25cdf203570e6cb097ff41c80f8",
+      "bytes": 119972,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/professor/laying.webp",
+      "git_blob_sha": "cbbad6b021306c9168558f92a985f8df36e990d1",
+      "bytes": 120382,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/rainbow/angry.webp",
+      "git_blob_sha": "2beb435fdcddea632fa2ef3285126c31935cc2a6",
+      "bytes": 118540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/rainbow/idle.webp",
+      "git_blob_sha": "009e6c6b6387251f6ee6426ff9068429c731bdf2",
+      "bytes": 130524,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/chicken/rainbow/laying.webp",
+      "git_blob_sha": "c942efd9d153c5a663c8ee60adaaab81efbc2eb0",
+      "bytes": 130036,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/collection/epoch-default.webp",
+      "git_blob_sha": "b9f98c84293dc711ba3b096d6cd7f58ff0ff3628",
+      "bytes": 46874,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/collection/epoch-locked.webp",
+      "git_blob_sha": "422aa193b189200234ca5676fe765a49a6a7a6e7",
+      "bytes": 46092,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/console/chute.webp",
+      "git_blob_sha": "ac5a06127d0159da81b9fe7aa015b0c8a03e9abd",
+      "bytes": 40090,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/console/depth-frame.webp",
+      "git_blob_sha": "0b3b4709053ef232d8b50bc45da3a89ec7eb7ca8",
+      "bytes": 288038,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/console/frame-empty.webp",
+      "git_blob_sha": "f782ea808755d3b8e1d563d363bfd0fe6bff6846",
+      "bytes": 476750,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/console/frame-with-chutes.webp",
+      "git_blob_sha": "b25cbefb99e7aae77c7631d5c7d67e9861dd2079",
+      "bytes": 823534,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/brown/angry.webp",
+      "git_blob_sha": "53a45c853974a5160b03667f0eed3cfbfcaa6bc1",
+      "bytes": 31024,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/brown/idle.webp",
+      "git_blob_sha": "9b671a66f4a8dde733728571b8ec9fd67271b063",
+      "bytes": 32946,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/brown/laying.webp",
+      "git_blob_sha": "043ac6b748614c8b4bf635e23dceaca0980641d2",
+      "bytes": 32984,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/commando/angry.webp",
+      "git_blob_sha": "6d5491365abf5220d8883d15c36a006e3a8b6a5f",
+      "bytes": 38296,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/commando/idle.webp",
+      "git_blob_sha": "f8212075b78a562b652766de908118bc4900e27a",
+      "bytes": 43386,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/commando/laying.webp",
+      "git_blob_sha": "a0ed563f8fdd66b9853e6efda899df6214ec6c9e",
+      "bytes": 41010,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/leopard/angry.webp",
+      "git_blob_sha": "5564da14f509f52ab3c0c5ba69c6aac0c40afe3d",
+      "bytes": 33428,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/leopard/idle.webp",
+      "git_blob_sha": "2b0d5d0a05fbb06b335495e8269993792257a559",
+      "bytes": 36758,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/leopard/laying.webp",
+      "git_blob_sha": "7b313974a544b4b83015edb0d054c03e900efbb7",
+      "bytes": 36308,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/monk/angry.webp",
+      "git_blob_sha": "5334183a18c4a614f25536140bf41c1703bf82ab",
+      "bytes": 32728,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/monk/idle.webp",
+      "git_blob_sha": "14263100e9bb95e06c1608c8b4fc6941470c1b5c",
+      "bytes": 38540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/monk/laying.webp",
+      "git_blob_sha": "8211cf38d69e9a93811033123b7d3edad875a047",
+      "bytes": 36354,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/professor/angry.webp",
+      "git_blob_sha": "8f38b0895efc77f639c7927145753cef2f121876",
+      "bytes": 38746,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/professor/idle.webp",
+      "git_blob_sha": "97c24dc71d231a92cf37c2e168484c4dce1a05b7",
+      "bytes": 42664,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/professor/laying.webp",
+      "git_blob_sha": "66e95dda5bc5fe33349d02e12725ea9f688bb937",
+      "bytes": 41884,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/rainbow/angry.webp",
+      "git_blob_sha": "41717816a80ecf09ad4c17c56537c3741c85be79",
+      "bytes": 40748,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/rainbow/idle.webp",
+      "git_blob_sha": "0c669fcb2162e8028804e64d095e0d729764a234",
+      "bytes": 45906,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/depth-hen/rainbow/laying.webp",
+      "git_blob_sha": "4f6fecff618b9bd6b7a46a7e26d473cad83fb4a9",
+      "bytes": 43712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/dark.webp",
+      "git_blob_sha": "bfd6b9cbde0d47946379caf2f4704789d6200447",
+      "bytes": 15476,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/double-score.webp",
+      "git_blob_sha": "8c29ecab7401bceffb877f5911640ff3eeab5f7c",
+      "bytes": 14442,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/four-baskets.webp",
+      "git_blob_sha": "83e44f942e76ddee7195354a42ce26cd14bd7f78",
+      "bytes": 22106,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/ge.webp",
+      "git_blob_sha": "5be1c5b599b6a231ab66343054314a2844871f9c",
+      "bytes": 18700,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/gold.webp",
+      "git_blob_sha": "ae72802efb365ef238a427affbd447b9ae2f5f4d",
+      "bytes": 12090,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/joker.webp",
+      "git_blob_sha": "9581ed18138b90fc8d92c517778cd0a5ed0a9c4e",
+      "bytes": 16322,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/magnet.webp",
+      "git_blob_sha": "c6d25d0fb4c4c7f84cd93dff2015f4b7af4b00c0",
+      "bytes": 13862,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/mushroom.webp",
+      "git_blob_sha": "a39951f71b9e613abb51bf3e88bf378321747f4e",
+      "bytes": 17828,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/pepper.webp",
+      "git_blob_sha": "9fa8d5b14dd3f873e052d7d8b5945536347187cf",
+      "bytes": 15850,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/reverse.webp",
+      "git_blob_sha": "be63ab5aef9e6aa978d39fc6d5d2bbf1fc5dc13e",
+      "bytes": 16010,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/rotten.webp",
+      "git_blob_sha": "6d2ca6b483ccfad2e3d80d73729ae700f2d87799",
+      "bytes": 23052,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/shield.webp",
+      "git_blob_sha": "dccfdedd7cec8b75413c6d2b31a3dff35867c48e",
+      "bytes": 14414,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/shuffle.webp",
+      "git_blob_sha": "eb939f6643d7962440f0da5ebe94867a2ae5a817",
+      "bytes": 17290,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/slow.webp",
+      "git_blob_sha": "c6f03edd9feb5ba0245a8ff0e04ee8f222fcbba6",
+      "bytes": 17492,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg-readable/speed.webp",
+      "git_blob_sha": "e788bb606569a4ec81e7e09f8660dfb9976a7a82",
+      "bytes": 16614,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/dark.webp",
+      "git_blob_sha": "9344f488ff0df95dc85801e779e1af30c6c0ee1e",
+      "bytes": 66414,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/double-score.webp",
+      "git_blob_sha": "64ce9e3acccde6f3df2280ea70b9c38283eedec5",
+      "bytes": 61198,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/four-baskets.webp",
+      "git_blob_sha": "b05631af29b1fbac898a88d707d420b0926daec4",
+      "bytes": 75672,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/ge.webp",
+      "git_blob_sha": "0e86d994ad178138a76a3bd3958065d0d5b5a5db",
+      "bytes": 68844,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/gold.webp",
+      "git_blob_sha": "9d1278c22374531990b8a1f27ded9af418dfc542",
+      "bytes": 54038,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/joker.webp",
+      "git_blob_sha": "a12daaff211bafe9007c4642d646b20456230ef7",
+      "bytes": 69352,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/magnet.webp",
+      "git_blob_sha": "59517fa271208dbb9c1f9457b8b3f786d864e82c",
+      "bytes": 60726,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/mushroom.webp",
+      "git_blob_sha": "7dc31d0478ceed67e818af09ef29ac1cd9df5b84",
+      "bytes": 68006,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/pepper.webp",
+      "git_blob_sha": "c11f0aef35c08acb131e39f525ca14a2e199b968",
+      "bytes": 63522,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/reverse.webp",
+      "git_blob_sha": "54610d56285081b156504d7cc8297af151c9b60e",
+      "bytes": 58780,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/rotten.webp",
+      "git_blob_sha": "cd70fd9f4961a5bf896252f7475606f054b8cf0b",
+      "bytes": 84880,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/shield.webp",
+      "git_blob_sha": "9987bcead8d198c58ba89ae97c10ac1b28bbbd29",
+      "bytes": 58094,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/shuffle.webp",
+      "git_blob_sha": "65a4eec39219dbf028401a0b5e1c2e21f4e4fa73",
+      "bytes": 66842,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/slow.webp",
+      "git_blob_sha": "b27b3f9a525e20c8431869f5f7af1dd0895e7d74",
+      "bytes": 64810,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/egg/speed.webp",
+      "git_blob_sha": "a80f1f15a22bc6be94aa2088a5da8a0b26d52a1a",
+      "bytes": 60968,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/00.webp",
+      "git_blob_sha": "6c3e059c7f3994594ee56457d5ebaf770929b1e0",
+      "bytes": 387986,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/01.webp",
+      "git_blob_sha": "4e87953ae656f81a4b21a65ea1ae039abbb7b46f",
+      "bytes": 475764,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/02.webp",
+      "git_blob_sha": "054526077e46806ddba277ff1e864e3b5b97402c",
+      "bytes": 466710,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/03.webp",
+      "git_blob_sha": "3895ba19f0f54bfca89386b59d69a08024b52b5c",
+      "bytes": 418148,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/04.webp",
+      "git_blob_sha": "68bb92af71830b6649c837f143db87190e939057",
+      "bytes": 416162,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/05.webp",
+      "git_blob_sha": "73097a5621b5322e11f29a253b8bc8232d5d495c",
+      "bytes": 426290,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/06.webp",
+      "git_blob_sha": "a2777c212862670f326223e396ca925eeef08641",
+      "bytes": 362374,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/07.webp",
+      "git_blob_sha": "5dc5bf4e77789189c0095fe256eb9f33bace4e6e",
+      "bytes": 343544,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/08.webp",
+      "git_blob_sha": "6f0d49f24adcaba7b63035ebb79b43e8f76ecf88",
+      "bytes": 280952,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/09.webp",
+      "git_blob_sha": "3d6f9a07c50e599db6828d307a43c55db8674a42",
+      "bytes": 212480,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/epoch/10.webp",
+      "git_blob_sha": "fe3f5e7f085588761ff37cb2e4ffc182dbb9b7bc",
+      "bytes": 342712,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/icons/music.webp",
+      "git_blob_sha": "16f8218d219015f3090882e4060370d18a310325",
+      "bytes": 600,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/icons/pause.webp",
+      "git_blob_sha": "07ee512857a600ace6bbdc24c38237cfa2700a69",
+      "bytes": 202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/icons/sound.webp",
+      "git_blob_sha": "6f9af3c441e244971765762725a88046dbd94d06",
+      "bytes": 572,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/icons/vibration.webp",
+      "git_blob_sha": "4b183552b4c51e59d26b70e8ec7abd04c0dff62f",
+      "bytes": 438,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/illustration/loading-wolf-and-chick.webp",
+      "git_blob_sha": "ce7f7a5fc37e7f0c0c197fa4848cd3be59b84ecc",
+      "bytes": 941514,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/01.webp",
+      "git_blob_sha": "86a674c7a2b4da9c9fc5874ee7b2f2e00c3c0dc7",
+      "bytes": 59094,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/02.webp",
+      "git_blob_sha": "c54d144567dcf518cacefc2eebe9583657a0217d",
+      "bytes": 63754,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/03.webp",
+      "git_blob_sha": "6c8f9f1ae6710f558e9f187405c4cf931ac883c3",
+      "bytes": 74794,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/04.webp",
+      "git_blob_sha": "08bb3e5664c75c3f7936d311fade54a43503c414",
+      "bytes": 78388,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/05.webp",
+      "git_blob_sha": "92a157ab6d1f5302019c9d8c9decffa008d154c2",
+      "bytes": 42062,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/joker-open/06.webp",
+      "git_blob_sha": "dc881ef314baa2724531b41d6908583f83e070a5",
+      "bytes": 41890,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/movie/poster.webp",
+      "git_blob_sha": "a609f3793d52d97d159026998f51f8c3048ca046",
+      "bytes": 77906,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-basket/0.webp",
+      "git_blob_sha": "6529e489aa04e9ab4697d589639b95847aa5389f",
+      "bytes": 33722,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-basket/1.webp",
+      "git_blob_sha": "c55022572dbb7dee8455b3dd9a87af5d90f7809b",
+      "bytes": 33548,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-basket/2.webp",
+      "git_blob_sha": "43103717a5f62b13033e3e35b644f7a86a737870",
+      "bytes": 36062,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-basket/3.webp",
+      "git_blob_sha": "bc6d70d5d64a03b389e5f25ba482863938b52b78",
+      "bytes": 35376,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/confused.webp",
+      "git_blob_sha": "24fb9af8529477374f0afb669b94e413406470c8",
+      "bytes": 91836,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/lower-left.webp",
+      "git_blob_sha": "c7578daa20465ce8c462297f3e974280fe2e87e1",
+      "bytes": 78074,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/lower-right.webp",
+      "git_blob_sha": "bbe42975c314c5484a460158d1cf912fd9555efd",
+      "bytes": 85176,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/sad-left.webp",
+      "git_blob_sha": "7b3cd2a6beb89d66bd8edace98af56d4283f792c",
+      "bytes": 84762,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/sad-right.webp",
+      "git_blob_sha": "00343eae981f0b9ba7c21aeb81898c108a284a16",
+      "bytes": 83690,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/upper-left.webp",
+      "git_blob_sha": "a4774684342d7f199ce0f5f5e5a24b0be7813e37",
+      "bytes": 79340,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-a/upper-right.webp",
+      "git_blob_sha": "15e65cd5e61a2ea61c4d69f7f02613252be22331",
+      "bytes": 90558,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/confused.webp",
+      "git_blob_sha": "c530748ce9c15c1cdab4dd39b059f054908c728c",
+      "bytes": 90512,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/lower-left.webp",
+      "git_blob_sha": "93dd7a934cbe0b576a1462ccbc396471fe0c0228",
+      "bytes": 79224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/lower-right.webp",
+      "git_blob_sha": "31e8b158e3eda62a5b067f7456795319ef6dbe87",
+      "bytes": 89678,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/sad-left.webp",
+      "git_blob_sha": "0545a53f14d2d65e37a6b09403cd6fd97b7fdc8d",
+      "bytes": 81672,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/sad-right.webp",
+      "git_blob_sha": "dc2250ad4e930b9ffad253dff1ebb5172d601441",
+      "bytes": 80326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/upper-left.webp",
+      "git_blob_sha": "26311941cd36e9baf6bed1198dc6fda512b2def0",
+      "bytes": 79492,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/new-wolf-b/upper-right.webp",
+      "git_blob_sha": "d9de857966727a2604e0a0aeb986aa733f5b7ae4",
+      "bytes": 93710,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/phone-qr.png",
+      "git_blob_sha": "490429dce944993eef4f9971f91cf855b0382dd9",
+      "bytes": 2192,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/portrait/glamour.webp",
+      "git_blob_sha": "8c772461ee354621519db44365d288a8d1e65e87",
+      "bytes": 216286,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/radio/receiver.webp",
+      "git_blob_sha": "1212832013486cf3a0d3eaafefc7e910db49cc94",
+      "bytes": 70016,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/control.webp",
+      "git_blob_sha": "cc89a820829181e5fb895501fade547e715e5d5d",
+      "bytes": 130570,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/entry-panel.webp",
+      "git_blob_sha": "faadde24a388a0784c8069493a82210b7431edfb",
+      "bytes": 551256,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/konets.png",
+      "git_blob_sha": "53e516c1f3b5f0ed352d0628d75a7113a33865a1",
+      "bytes": 119543,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/konets@2x.png",
+      "git_blob_sha": "2676da6a44686f9befacd851b94d22185b25a1e3",
+      "bytes": 1150644,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/mode-circle.webp",
+      "git_blob_sha": "445137cfd66afbd568b5f5f0a4ac7c40ff510cfa",
+      "bytes": 18410,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/mode-default.webp",
+      "git_blob_sha": "923f77dbe7b18a573667d885dfd210be364e1c6b",
+      "bytes": 11282,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/mode-selected.webp",
+      "git_blob_sha": "6b4dc3b214c23a03ac74e59cda4cae2ff5de61a8",
+      "bytes": 11688,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/panel.webp",
+      "git_blob_sha": "6ae84a45a511a6667a1984c3272ce6e94967c60f",
+      "bytes": 573586,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/primary.webp",
+      "git_blob_sha": "04d1493aadbe08d245c66884492a64e1caeec21f",
+      "bytes": 43632,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/progress-fill.webp",
+      "git_blob_sha": "a84d2b8f3bf37eddbc8bda178918e483acc5720c",
+      "bytes": 3202,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/progress.webp",
+      "git_blob_sha": "fb79c8da0d22a40b38600a46a375ee3bf29bcef1",
+      "bytes": 9446,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/secondary.webp",
+      "git_blob_sha": "92e3bfa4183092c91c7855e924d411eb8cceaf37",
+      "bytes": 41200,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/support.webp",
+      "git_blob_sha": "e69c99f5e940286d987f7c642513486d2a22f5fe",
+      "bytes": 5546,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/toggle-off.webp",
+      "git_blob_sha": "f4516c0e9bc06ea0eb41f8e80595bf6cbbab294e",
+      "bytes": 30394,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/ui/toggle-on.webp",
+      "git_blob_sha": "dcff734fb8c732ae0ea318a4cb63547a867794c1",
+      "bytes": 30918,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/catch-flash.webp",
+      "git_blob_sha": "e4cf17698801096ce83a505aae1e66e6fd43c1e0",
+      "bytes": 63582,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/feather-brown.webp",
+      "git_blob_sha": "cf02a3d17ed30b12f6ddc27c423b5e570e1c61bf",
+      "bytes": 52950,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/feather-white.webp",
+      "git_blob_sha": "6b1758276f097fb37f44e8ddb8b2aff7037173d4",
+      "bytes": 43440,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/feather-yellow.webp",
+      "git_blob_sha": "0a11b5702a10bdc576d287a285019cd023a6bb15",
+      "bytes": 46932,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/impact.webp",
+      "git_blob_sha": "ba8db0f59fdf126b5666d75cebdab5f2485c8892",
+      "bytes": 41920,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/particle-ring.webp",
+      "git_blob_sha": "c19065c397b464f83d0e5f044e494fe0ff4cf715",
+      "bytes": 77960,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/puff-01.webp",
+      "git_blob_sha": "af7a8a8ebf548e4a8416de42de3f051902f7bba3",
+      "bytes": 24540,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/puff-02.webp",
+      "git_blob_sha": "6e781555a570659493e5bb9ceaf7e9691b7eaf9d",
+      "bytes": 66050,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/puff-03.webp",
+      "git_blob_sha": "ed0fa964a2cd763b63ad90ef60b98958a51420cf",
+      "bytes": 104838,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/puff-04.webp",
+      "git_blob_sha": "208d88d2058dd2c835649d1874521eb797b3a327",
+      "bytes": 67888,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/sparks.webp",
+      "git_blob_sha": "8c64e9c327e17cc09ea3e67a435e4c79819800ff",
+      "bytes": 44180,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/vfx/straw.webp",
+      "git_blob_sha": "e136a2bda0ae3ebd1b807d92bd3af89819a12f9d",
+      "bytes": 62630,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/catch-lower-left.webp",
+      "git_blob_sha": "5d9ae2793427d93f1a048c236197a9bcff8ba2f8",
+      "bytes": 75966,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/catch-lower-right.webp",
+      "git_blob_sha": "89cea1f8bd70cc66f9cc8375130ccda254ccd193",
+      "bytes": 76536,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/catch-upper-left.webp",
+      "git_blob_sha": "6a47dcaf2f249e5b1039b00af0caccb2c18ec029",
+      "bytes": 79232,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/catch-upper-right.webp",
+      "git_blob_sha": "aa76731305d07a0d23d821ccaed2c9ac0eb05980",
+      "bytes": 76044,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/four-arms-eyes-closed.webp",
+      "git_blob_sha": "b22b9a7d36256b21cf0b7078ead384e9aad315df",
+      "bytes": 128788,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/four-arms-eyes-half.webp",
+      "git_blob_sha": "971ea14e5209485586ad54062c6508fd9c490f98",
+      "bytes": 129460,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/four-arms-eyes-open.webp",
+      "git_blob_sha": "1761b64e5bfb86aabee61cb6fa25d06c05bc95d8",
+      "bytes": 129292,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/fright.webp",
+      "git_blob_sha": "cd86c1cbbbb244e6b3341276fd4dbd1a7c717988",
+      "bytes": 75892,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/miss.webp",
+      "git_blob_sha": "9fbf3b5195e9de06d769bc6847b1312af0f05c38",
+      "bytes": 78790,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/pepper.webp",
+      "git_blob_sha": "104df368ef1e67f8f04dbb57b9db21f0089eeb41",
+      "bytes": 77224,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-a/victory.webp",
+      "git_blob_sha": "24e81fd1eea9b02f31616e2bb0c262125292f1f0",
+      "bytes": 76266,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/catch-lower-left.webp",
+      "git_blob_sha": "9f4157a8189cce389af0f51f6c787421362080c1",
+      "bytes": 76530,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/catch-lower-right.webp",
+      "git_blob_sha": "01c0324115fe58df15f7e9064221366b790ea0a2",
+      "bytes": 76692,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/catch-upper-left.webp",
+      "git_blob_sha": "ff11e2ec8594902dfad00bcb79bd67551dabb367",
+      "bytes": 81190,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/catch-upper-right.webp",
+      "git_blob_sha": "79d37d3069cd66fb16bd5d473d0d95fb64ee212a",
+      "bytes": 77836,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/four-arms-eyes-closed.webp",
+      "git_blob_sha": "59cb5cc3c87499bb35f20d71a0eb01293035c1cd",
+      "bytes": 129502,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/four-arms-eyes-half.webp",
+      "git_blob_sha": "6cff5723679551fd3a74e8fde0f28c94840813c2",
+      "bytes": 130308,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/four-arms-eyes-open.webp",
+      "git_blob_sha": "16b68ae0362655ba448d012a2d40f0ed573e3324",
+      "bytes": 130158,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/fright.webp",
+      "git_blob_sha": "4c53a53a14f30d802c22158a805c8107eb1ce199",
+      "bytes": 76892,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/miss.webp",
+      "git_blob_sha": "0b18de3b51c1454b1aeeeece04f9ce44cad31c7a",
+      "bytes": 80590,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/pepper.webp",
+      "git_blob_sha": "45a99e1b915025689928cf57a3cf8ce6ec320bab",
+      "bytes": 79266,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/assets/wolf-b/victory.webp",
+      "git_blob_sha": "82b5a1dd1a6eb8a0ae5bd04839522ceef62b6b29",
+      "bytes": 77774,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/gamezone-cover.webp",
+      "git_blob_sha": "d1b8f84bb1095360c0816c6379b25c0f39fa310a",
+      "bytes": 282326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/production-phone-qr.png",
+      "git_blob_sha": "7136651b713ebe4c950991097f1ac63e6de91349",
+      "bytes": 486,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/runtime/gamezone-cover.webp",
+      "git_blob_sha": "d1b8f84bb1095360c0816c6379b25c0f39fa310a",
+      "bytes": 282326,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/games/volk/runtime/production-phone-qr.png",
+      "git_blob_sha": "7136651b713ebe4c950991097f1ac63e6de91349",
+      "bytes": 486,
+      "purpose": "Existing Wolf game: preserve current runtime assets"
+    },
+    {
+      "path": "web/public/icons/icon-192-maskable.png",
+      "git_blob_sha": "01c1f635b2500fce511929392270dd20a2668235",
+      "bytes": 16175,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/icons/icon-192.png",
+      "git_blob_sha": "97f4e0054076f6395dcf3a17a51ae86670f30bb5",
+      "bytes": 21572,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/icons/icon-512-maskable.png",
+      "git_blob_sha": "a1c2ccf806bce8d5753c55853bf617ed8c598856",
+      "bytes": 94105,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/icons/icon-512.png",
+      "git_blob_sha": "d188d9bb1dda4c23ed2d22b186ad235c11419c66",
+      "bytes": 132656,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/pc/farm-frame-1920.webp",
+      "git_blob_sha": "965a2bedfdd586b317c9b73fe899b08414d9296c",
+      "bytes": 326224,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/pc/farm-frame-2880.webp",
+      "git_blob_sha": "9f9e676a9a796448819eb37f60ad8c636ab2c3cd",
+      "bytes": 525352,
+      "purpose": "Existing web runtime art"
+    },
+    {
+      "path": "web/public/pc/farm-frame-3840.webp",
+      "git_blob_sha": "cf1eedb62411ce43b245390ebaca2ca66e77d59e",
+      "bytes": 811428,
+      "purpose": "Existing web runtime art"
+    }
+  ],
+  "tree_sha": "85a678e7c19cc49000f561571c2f1e46ddb26194"
+}

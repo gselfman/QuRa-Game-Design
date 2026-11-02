@@ -1,0 +1,112 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "logical_canvas": [
+    360,
+    640
+  ],
+  "figma_page": "298:2",
+  "figma_board": "298:135",
+  "fonts": [
+    "Onest",
+    "Russo One"
+  ],
+  "colors_source": "gselfman/QuRa web/app/game/v1 globals.css",
+  "screens": [
+    {
+      "key": "ARENA_HOME",
+      "nodeId": "302:5",
+      "label": "01 · Арена",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/arena_home.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "ARENA_ROSTER",
+      "nodeId": "302:84",
+      "label": "02 · Выбор курочки",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/arena_roster.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "ARENA_BATTLE",
+      "nodeId": "302:367",
+      "label": "03 · Бой 1×1",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/arena_battle.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "SHOP_GEAR",
+      "nodeId": "302:515",
+      "label": "04 · Магазин предметов",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/shop_gear.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "WARDROBE_RYABA",
+      "nodeId": "302:573",
+      "label": "05 · Гардероб Рябы",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/wardrobe_ryaba.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "HEN_RYABA_NEST",
+      "nodeId": "302:662",
+      "label": "06 · Карточка курочки",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/hen_ryaba_nest.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "COOP02",
+      "nodeId": "302:732",
+      "label": "07 · Гнёздышко",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/coop02.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "COOP04",
+      "nodeId": "302:773",
+      "label": "08 · Курятник",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/coop04.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    },
+    {
+      "key": "COOP06",
+      "nodeId": "302:816",
+      "label": "09 · Птичий двор",
+      "width": 360,
+      "height": 640,
+      "png": "assets/screens/v13/coop06.png",
+      "status": "QA",
+      "kind": "editable_Figma_layout"
+    }
+  ],
+  "prototype_interactions": false,
+  "battle": "Static CARD hens plus independent FX; training is free with no rewards. No new action pose or combat mechanic implemented.",
+  "coop_policy": "The focus hen on the floor vacates its own roost. Occupied roosts 1/3/5 plus one focus resident = capacity2/4/6.",
+  "qa": "Visual review passed: all9 screens, readable text, complete shop art, visible native monk in COOP06, no duplicated focus hen.",
+  "proof": "assets/screens/v13/screens_09.png"
+}

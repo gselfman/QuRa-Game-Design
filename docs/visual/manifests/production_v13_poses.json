@@ -1,0 +1,2979 @@
+{
+  "schema_version": 13,
+  "status": "QA",
+  "count": 18,
+  "coordinate_system": {
+    "png": [
+      1200,
+      1520
+    ],
+    "webp": [
+      600,
+      760
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "trim": false,
+    "web_scale": 0.5
+  },
+  "figma": {
+    "pageId": "293:451",
+    "boardId": "293:452",
+    "poses": [
+      {
+        "character": "C01",
+        "pose": "CARD",
+        "nodeId": "293:460"
+      },
+      {
+        "character": "C01",
+        "pose": "PERCH",
+        "nodeId": "293:496"
+      },
+      {
+        "character": "C01",
+        "pose": "NEST",
+        "nodeId": "293:526"
+      },
+      {
+        "character": "C02",
+        "pose": "CARD",
+        "nodeId": "293:561"
+      },
+      {
+        "character": "C02",
+        "pose": "PERCH",
+        "nodeId": "293:603"
+      },
+      {
+        "character": "C02",
+        "pose": "NEST",
+        "nodeId": "293:636"
+      },
+      {
+        "character": "C03",
+        "pose": "CARD",
+        "nodeId": "293:674"
+      },
+      {
+        "character": "C03",
+        "pose": "PERCH",
+        "nodeId": "293:716"
+      },
+      {
+        "character": "C03",
+        "pose": "NEST",
+        "nodeId": "293:752"
+      },
+      {
+        "character": "C04",
+        "pose": "CARD",
+        "nodeId": "293:793"
+      },
+      {
+        "character": "C04",
+        "pose": "PERCH",
+        "nodeId": "293:835"
+      },
+      {
+        "character": "C04",
+        "pose": "NEST",
+        "nodeId": "293:871"
+      },
+      {
+        "character": "C05",
+        "pose": "CARD",
+        "nodeId": "293:912"
+      },
+      {
+        "character": "C05",
+        "pose": "PERCH",
+        "nodeId": "293:960"
+      },
+      {
+        "character": "C05",
+        "pose": "NEST",
+        "nodeId": "293:996"
+      },
+      {
+        "character": "C06",
+        "pose": "CARD",
+        "nodeId": "293:1034"
+      },
+      {
+        "character": "C06",
+        "pose": "PERCH",
+        "nodeId": "293:1073"
+      },
+      {
+        "character": "C06",
+        "pose": "NEST",
+        "nodeId": "293:1106"
+      }
+    ],
+    "width": 1904,
+    "height": 5487,
+    "createdNodeIds": [
+      "293:451",
+      "293:452",
+      "293:453",
+      "293:454",
+      "293:455",
+      "293:456",
+      "293:457",
+      "293:458",
+      "293:459",
+      "293:460",
+      "293:461",
+      "293:462",
+      "293:463",
+      "293:464",
+      "293:465",
+      "293:466",
+      "293:467",
+      "293:468",
+      "293:469",
+      "293:470",
+      "293:471",
+      "293:472",
+      "293:473",
+      "293:474",
+      "293:475",
+      "293:476",
+      "293:477",
+      "293:478",
+      "293:479",
+      "293:480",
+      "293:481",
+      "293:482",
+      "293:483",
+      "293:484",
+      "293:485",
+      "293:486",
+      "293:487",
+      "293:488",
+      "293:489",
+      "293:490",
+      "293:491",
+      "293:492",
+      "293:493",
+      "293:494",
+      "293:495",
+      "293:496",
+      "293:522",
+      "I293:522;161:265",
+      "293:497",
+      "I293:497;283:3",
+      "I293:497;283:3;161:45",
+      "I293:497;283:5",
+      "I293:497;283:6",
+      "I293:497;283:7",
+      "I293:497;283:8",
+      "I293:497;283:9",
+      "I293:497;283:9;248:143",
+      "I293:497;283:9;248:144",
+      "I293:497;283:12",
+      "I293:497;283:13",
+      "I293:497;283:14",
+      "I293:497;283:15",
+      "I293:497;283:16",
+      "I293:497;283:17",
+      "I293:497;283:18",
+      "I293:497;283:19",
+      "I293:497;283:20",
+      "I293:497;283:21",
+      "I293:497;283:22",
+      "I293:497;283:23",
+      "I293:497;283:24",
+      "I293:497;283:25",
+      "I293:497;283:26",
+      "293:524",
+      "293:525",
+      "293:526",
+      "293:527",
+      "I293:527;161:261",
+      "293:529",
+      "I293:529;283:5",
+      "I293:529;283:6",
+      "I293:529;283:7",
+      "I293:529;283:8",
+      "I293:529;283:9",
+      "I293:529;283:9;248:143",
+      "I293:529;283:9;248:144",
+      "I293:529;283:12",
+      "I293:529;283:13",
+      "I293:529;283:14",
+      "I293:529;283:15",
+      "I293:529;283:16",
+      "I293:529;283:17",
+      "I293:529;283:18",
+      "I293:529;283:19",
+      "I293:529;283:20",
+      "I293:529;283:21",
+      "I293:529;283:22",
+      "I293:529;283:23",
+      "I293:529;283:24",
+      "I293:529;283:25",
+      "I293:529;283:26",
+      "293:554",
+      "I293:554;161:263",
+      "293:556",
+      "293:557",
+      "293:558",
+      "293:559",
+      "293:560",
+      "293:561",
+      "293:562",
+      "293:563",
+      "293:564",
+      "293:565",
+      "293:566",
+      "293:567",
+      "293:568",
+      "293:569",
+      "293:570",
+      "293:571",
+      "293:572",
+      "293:573",
+      "293:574",
+      "293:575",
+      "293:576",
+      "293:577",
+      "293:578",
+      "293:579",
+      "293:580",
+      "293:581",
+      "293:582",
+      "293:583",
+      "293:584",
+      "293:585",
+      "293:586",
+      "293:587",
+      "293:588",
+      "293:589",
+      "293:590",
+      "293:591",
+      "293:592",
+      "293:593",
+      "293:594",
+      "293:595",
+      "293:596",
+      "293:597",
+      "293:598",
+      "293:599",
+      "293:600",
+      "293:601",
+      "293:602",
+      "293:603",
+      "293:632",
+      "I293:632;161:265",
+      "293:604",
+      "I293:604;283:28",
+      "I293:604;283:28;161:83",
+      "I293:604;283:30",
+      "I293:604;283:31",
+      "I293:604;283:32",
+      "I293:604;283:33",
+      "I293:604;283:34",
+      "I293:604;283:34;248:149",
+      "I293:604;283:34;248:150",
+      "I293:604;283:37",
+      "I293:604;283:38",
+      "I293:604;283:39",
+      "I293:604;283:40",
+      "I293:604;283:41",
+      "I293:604;283:42",
+      "I293:604;283:43",
+      "I293:604;283:44",
+      "I293:604;283:45",
+      "I293:604;283:46",
+      "I293:604;283:47",
+      "I293:604;283:48",
+      "I293:604;283:49",
+      "I293:604;283:50",
+      "I293:604;283:51",
+      "I293:604;283:52",
+      "I293:604;283:53",
+      "I293:604;283:54",
+      "293:634",
+      "293:635",
+      "293:636",
+      "293:637",
+      "I293:637;161:261",
+      "293:639",
+      "I293:639;283:30",
+      "I293:639;283:31",
+      "I293:639;283:32",
+      "I293:639;283:33",
+      "I293:639;283:34",
+      "I293:639;283:34;248:149",
+      "I293:639;283:34;248:150",
+      "I293:639;283:37",
+      "I293:639;283:38",
+      "I293:639;283:39",
+      "I293:639;283:40",
+      "I293:639;283:41",
+      "I293:639;283:42",
+      "I293:639;283:43",
+      "I293:639;283:44",
+      "I293:639;283:45",
+      "I293:639;283:46",
+      "I293:639;283:47",
+      "I293:639;283:48",
+      "I293:639;283:49",
+      "I293:639;283:50",
+      "I293:639;283:51",
+      "I293:639;283:52",
+      "I293:639;283:53",
+      "I293:639;283:54",
+      "293:667",
+      "I293:667;161:263",
+      "293:669",
+      "293:670",
+      "293:671",
+      "293:672",
+      "293:673",
+      "293:674",
+      "293:675",
+      "293:676",
+      "293:677",
+      "293:678",
+      "293:679",
+      "293:680",
+      "293:681",
+      "293:682",
+      "293:683",
+      "293:684",
+      "293:685",
+      "293:686",
+      "293:687",
+      "293:688",
+      "293:689",
+      "293:690",
+      "293:691",
+      "293:692",
+      "293:693",
+      "293:694",
+      "293:695",
+      "293:696",
+      "293:697",
+      "293:698",
+      "293:699",
+      "293:700",
+      "293:701",
+      "293:702",
+      "293:703",
+      "293:704",
+      "293:705",
+      "293:706",
+      "293:707",
+      "293:708",
+      "293:709",
+      "293:710",
+      "293:711",
+      "293:712",
+      "293:713",
+      "293:714",
+      "293:715",
+      "293:716",
+      "293:748",
+      "I293:748;161:265",
+      "293:717",
+      "I293:717;283:56",
+      "I293:717;283:56;161:129",
+      "I293:717;283:58",
+      "I293:717;283:59",
+      "I293:717;283:60",
+      "I293:717;283:61",
+      "I293:717;283:62",
+      "I293:717;283:62;248:155",
+      "I293:717;283:62;248:156",
+      "I293:717;283:65",
+      "I293:717;283:66",
+      "I293:717;283:67",
+      "I293:717;283:68",
+      "I293:717;283:69",
+      "I293:717;283:70",
+      "I293:717;283:71",
+      "I293:717;283:72",
+      "I293:717;283:73",
+      "I293:717;283:74",
+      "I293:717;283:75",
+      "I293:717;283:76",
+      "I293:717;283:77",
+      "I293:717;283:78",
+      "I293:717;283:79",
+      "I293:717;283:80",
+      "I293:717;283:81",
+      "I293:717;283:82",
+      "I293:717;283:83",
+      "I293:717;283:84",
+      "I293:717;283:85",
+      "293:750",
+      "293:751",
+      "293:752",
+      "293:753",
+      "I293:753;161:261",
+      "293:755",
+      "I293:755;283:58",
+      "I293:755;283:59",
+      "I293:755;283:60",
+      "I293:755;283:61",
+      "I293:755;283:62",
+      "I293:755;283:62;248:155",
+      "I293:755;283:62;248:156",
+      "I293:755;283:65",
+      "I293:755;283:66",
+      "I293:755;283:67",
+      "I293:755;283:68",
+      "I293:755;283:69",
+      "I293:755;283:70",
+      "I293:755;283:71",
+      "I293:755;283:72",
+      "I293:755;283:73",
+      "I293:755;283:74",
+      "I293:755;283:75",
+      "I293:755;283:76",
+      "I293:755;283:77",
+      "I293:755;283:78",
+      "I293:755;283:79",
+      "I293:755;283:80",
+      "I293:755;283:81",
+      "I293:755;283:82",
+      "I293:755;283:83",
+      "I293:755;283:84",
+      "I293:755;283:85",
+      "293:786",
+      "I293:786;161:263",
+      "293:788",
+      "293:789",
+      "293:790",
+      "293:791",
+      "293:792",
+      "293:793",
+      "293:794",
+      "293:795",
+      "293:796",
+      "293:797",
+      "293:798",
+      "293:799",
+      "293:800",
+      "293:801",
+      "293:802",
+      "293:803",
+      "293:804",
+      "293:805",
+      "293:806",
+      "293:807",
+      "293:808",
+      "293:809",
+      "293:810",
+      "293:811",
+      "293:812",
+      "293:813",
+      "293:814",
+      "293:815",
+      "293:816",
+      "293:817",
+      "293:818",
+      "293:819",
+      "293:820",
+      "293:821",
+      "293:822",
+      "293:823",
+      "293:824",
+      "293:825",
+      "293:826",
+      "293:827",
+      "293:828",
+      "293:829",
+      "293:830",
+      "293:831",
+      "293:832",
+      "293:833",
+      "293:834",
+      "293:835",
+      "293:867",
+      "I293:867;161:265",
+      "293:836",
+      "I293:836;283:87",
+      "I293:836;283:87;161:167",
+      "I293:836;283:89",
+      "I293:836;283:90",
+      "I293:836;283:91",
+      "I293:836;283:92",
+      "I293:836;283:93",
+      "I293:836;283:93;248:161",
+      "I293:836;283:93;248:162",
+      "I293:836;283:96",
+      "I293:836;283:97",
+      "I293:836;283:98",
+      "I293:836;283:99",
+      "I293:836;283:100",
+      "I293:836;283:101",
+      "I293:836;283:102",
+      "I293:836;283:103",
+      "I293:836;283:104",
+      "I293:836;283:105",
+      "I293:836;283:106",
+      "I293:836;283:107",
+      "I293:836;283:108",
+      "I293:836;283:109",
+      "I293:836;283:110",
+      "I293:836;283:111",
+      "I293:836;283:112",
+      "I293:836;283:113",
+      "I293:836;283:114",
+      "I293:836;283:115",
+      "I293:836;283:116",
+      "293:869",
+      "293:870",
+      "293:871",
+      "293:872",
+      "I293:872;161:261",
+      "293:874",
+      "I293:874;283:89",
+      "I293:874;283:90",
+      "I293:874;283:91",
+      "I293:874;283:92",
+      "I293:874;283:93",
+      "I293:874;283:93;248:161",
+      "I293:874;283:93;248:162",
+      "I293:874;283:96",
+      "I293:874;283:97",
+      "I293:874;283:98",
+      "I293:874;283:99",
+      "I293:874;283:100",
+      "I293:874;283:101",
+      "I293:874;283:102",
+      "I293:874;283:103",
+      "I293:874;283:104",
+      "I293:874;283:105",
+      "I293:874;283:106",
+      "I293:874;283:107",
+      "I293:874;283:108",
+      "I293:874;283:109",
+      "I293:874;283:110",
+      "I293:874;283:111",
+      "I293:874;283:112",
+      "I293:874;283:113",
+      "I293:874;283:114",
+      "I293:874;283:115",
+      "I293:874;283:116",
+      "293:905",
+      "I293:905;161:263",
+      "293:907",
+      "293:908",
+      "293:909",
+      "293:910",
+      "293:911",
+      "293:912",
+      "293:913",
+      "293:914",
+      "293:915",
+      "293:916",
+      "293:917",
+      "293:918",
+      "293:919",
+      "293:920",
+      "293:921",
+      "293:922",
+      "293:923",
+      "293:924",
+      "293:925",
+      "293:926",
+      "293:927",
+      "293:928",
+      "293:929",
+      "293:930",
+      "293:931",
+      "293:932",
+      "293:933",
+      "293:934",
+      "293:935",
+      "293:936",
+      "293:937",
+      "293:938",
+      "293:939",
+      "293:940",
+      "293:941",
+      "293:942",
+      "293:943",
+      "293:944",
+      "293:945",
+      "293:946",
+      "293:947",
+      "293:948",
+      "293:949",
+      "293:950",
+      "293:951",
+      "293:952",
+      "293:953",
+      "293:954",
+      "293:955",
+      "293:956",
+      "293:957",
+      "293:958",
+      "293:959",
+      "293:960",
+      "293:990",
+      "I293:990;161:265",
+      "293:989",
+      "293:961",
+      "I293:961;283:120",
+      "I293:961;283:121",
+      "I293:961;283:122",
+      "I293:961;283:123",
+      "I293:961;283:124",
+      "I293:961;283:124;248:167",
+      "I293:961;283:124;248:168",
+      "I293:961;283:127",
+      "I293:961;283:128",
+      "I293:961;283:129",
+      "I293:961;283:130",
+      "I293:961;283:131",
+      "I293:961;283:132",
+      "I293:961;283:133",
+      "I293:961;283:134",
+      "I293:961;283:135",
+      "I293:961;283:136",
+      "I293:961;283:137",
+      "I293:961;283:138",
+      "I293:961;283:139",
+      "I293:961;283:140",
+      "I293:961;283:141",
+      "I293:961;283:142",
+      "I293:961;283:143",
+      "I293:961;283:144",
+      "293:992",
+      "I293:992;161:213",
+      "293:994",
+      "293:995",
+      "293:996",
+      "293:997",
+      "I293:997;161:261",
+      "293:999",
+      "I293:999;283:120",
+      "I293:999;283:121",
+      "I293:999;283:122",
+      "I293:999;283:123",
+      "I293:999;283:124",
+      "I293:999;283:124;248:167",
+      "I293:999;283:124;248:168",
+      "I293:999;283:127",
+      "I293:999;283:128",
+      "I293:999;283:129",
+      "I293:999;283:130",
+      "I293:999;283:131",
+      "I293:999;283:132",
+      "I293:999;283:133",
+      "I293:999;283:134",
+      "I293:999;283:135",
+      "I293:999;283:136",
+      "I293:999;283:137",
+      "I293:999;283:138",
+      "I293:999;283:139",
+      "I293:999;283:140",
+      "I293:999;283:141",
+      "I293:999;283:142",
+      "I293:999;283:143",
+      "I293:999;283:144",
+      "293:1027",
+      "I293:1027;161:263",
+      "293:1029",
+      "293:1030",
+      "293:1031",
+      "293:1032",
+      "293:1033",
+      "293:1034",
+      "293:1035",
+      "293:1036",
+      "293:1037",
+      "293:1038",
+      "293:1039",
+      "293:1040",
+      "293:1041",
+      "293:1042",
+      "293:1043",
+      "293:1044",
+      "293:1045",
+      "293:1046",
+      "293:1047",
+      "293:1048",
+      "293:1049",
+      "293:1050",
+      "293:1051",
+      "293:1052",
+      "293:1053",
+      "293:1054",
+      "293:1055",
+      "293:1056",
+      "293:1057",
+      "293:1058",
+      "293:1059",
+      "293:1060",
+      "293:1061",
+      "293:1062",
+      "293:1063",
+      "293:1064",
+      "293:1065",
+      "293:1066",
+      "293:1067",
+      "293:1068",
+      "293:1069",
+      "293:1070",
+      "293:1071",
+      "293:1072",
+      "293:1073",
+      "293:1102",
+      "I293:1102;161:265",
+      "293:1074",
+      "I293:1074;283:146",
+      "I293:1074;283:146;161:259",
+      "I293:1074;283:148",
+      "I293:1074;283:149",
+      "I293:1074;283:150",
+      "I293:1074;283:151",
+      "I293:1074;283:152",
+      "I293:1074;283:152;248:173",
+      "I293:1074;283:152;248:174",
+      "I293:1074;283:155",
+      "I293:1074;283:156",
+      "I293:1074;283:157",
+      "I293:1074;283:158",
+      "I293:1074;283:159",
+      "I293:1074;283:160",
+      "I293:1074;283:161",
+      "I293:1074;283:162",
+      "I293:1074;283:163",
+      "I293:1074;283:164",
+      "I293:1074;283:165",
+      "I293:1074;283:166",
+      "I293:1074;283:167",
+      "I293:1074;283:168",
+      "I293:1074;283:169",
+      "I293:1074;283:170",
+      "I293:1074;283:171",
+      "I293:1074;283:172",
+      "293:1104",
+      "293:1105",
+      "293:1106",
+      "293:1107",
+      "I293:1107;161:261",
+      "293:1109",
+      "I293:1109;283:148",
+      "I293:1109;283:149",
+      "I293:1109;283:150",
+      "I293:1109;283:151",
+      "I293:1109;283:152",
+      "I293:1109;283:152;248:173",
+      "I293:1109;283:152;248:174",
+      "I293:1109;283:155",
+      "I293:1109;283:156",
+      "I293:1109;283:157",
+      "I293:1109;283:158",
+      "I293:1109;283:159",
+      "I293:1109;283:160",
+      "I293:1109;283:161",
+      "I293:1109;283:162",
+      "I293:1109;283:163",
+      "I293:1109;283:164",
+      "I293:1109;283:165",
+      "I293:1109;283:166",
+      "I293:1109;283:167",
+      "I293:1109;283:168",
+      "I293:1109;283:169",
+      "I293:1109;283:170",
+      "I293:1109;283:171",
+      "I293:1109;283:172",
+      "293:1137",
+      "I293:1137;161:263",
+      "293:1139"
+    ],
+    "mutatedNodeIds": []
+  },
+  "policy": {
+    "seated_hide_slots": [
+      "bag",
+      "feet"
+    ],
+    "nest": "No legs or perch feet; nest front overlays body",
+    "monk_perch_clip_y": 1098
+  },
+  "items": [
+    {
+      "character": "ryaba",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_00_left_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_01_right_boot_png",
+          "z": 2,
+          "item": "C01/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_05_bag_strap_png",
+          "z": 30,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag strap"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_06_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C01/bag",
+          "type": "item_front",
+          "role": "bag — front right flank"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_09_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/ryaba/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1943255,
+        "sha256": "869111b5628833692e8ddc8e0c5d143098da05f56ad1be191ac24302f53eb545",
+        "alpha_bbox": [
+          70,
+          101,
+          1176,
+          1339
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/ryaba/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 157166,
+        "sha256": "a9733296b031220a6f0fb15e0a6e617af8aab8d0f8a9af969ed1666ca4b05fd8",
+        "alpha_bbox": [
+          35,
+          59,
+          578,
+          670
+        ]
+      }
+    },
+    {
+      "character": "ryaba",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/ryaba/feet_perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_09_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/ryaba/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1771110,
+        "sha256": "cb3461f53f0a1aa57d556b20058c3581d8932280ddbfc3ffe02ac924ffebf7d4",
+        "alpha_bbox": [
+          40,
+          101,
+          1176,
+          1244
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/ryaba/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 147790,
+        "sha256": "bd9d1a4b10207719ca8137160187fffd32452fcaee2c15999a8e757089e622f6",
+        "alpha_bbox": [
+          17,
+          59,
+          583,
+          623
+        ]
+      }
+    },
+    {
+      "character": "ryaba",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_02_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_clothing_vest_png",
+          "z": 20,
+          "item": "C01/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_07_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_08_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_09_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_10_hat_png",
+          "z": 80,
+          "item": "C01/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "ryaba_c01_layers_11_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C01/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/ryaba/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 2148191,
+        "sha256": "0dfed02665a40166ebd206bb1191c6d301ac08e2ad7b007fb2c95e6e51a295b0",
+        "alpha_bbox": [
+          70,
+          101,
+          1176,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/ryaba/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 167584,
+        "sha256": "868ddcaabf20d9682fe3d330a2b1583206dfa4199154102e1166370b5423e1af",
+        "alpha_bbox": [
+          35,
+          59,
+          578,
+          678
+        ]
+      }
+    },
+    {
+      "character": "fighter",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_00_far_carry_strap_behind_torso_png",
+          "z": 1,
+          "item": "C02/water_toy",
+          "type": "item_back",
+          "role": "far carry strap — behind torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_01_left_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "left boot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_02_right_boot_png",
+          "z": 2,
+          "item": "C02/boots",
+          "type": "item_front",
+          "role": "right boot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_06_near_carry_strap_png",
+          "z": 35,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "near carry strap"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_10_water_toy_visible_in_front_of_wing_png",
+          "z": 65,
+          "item": "C02/water_toy",
+          "type": "item_front",
+          "role": "water toy — visible in front of wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fighter/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1780936,
+        "sha256": "251ec92cfe0b9dfc7c7164bca9db1d81cf83f9b8ffa33d7ac76df1c4d5f1c71d",
+        "alpha_bbox": [
+          28,
+          106,
+          1158,
+          1324
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fighter/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 128298,
+        "sha256": "68e9f05d3c2910ecf47cbb0aaffa9acd2fd8fd33764a52eece45fd00dac5d551",
+        "alpha_bbox": [
+          14,
+          52,
+          579,
+          663
+        ]
+      }
+    },
+    {
+      "character": "fighter",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/fighter/feet_perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fighter/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1600385,
+        "sha256": "94daee4c543ca2887fb2efe60362c8c735822edc55c837aa4e645597ba5f72d2",
+        "alpha_bbox": [
+          28,
+          106,
+          1161,
+          1224
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fighter/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 120060,
+        "sha256": "52f9157b3f1606c7f3ccf961a071deea6c40bc1e42e1bfe8f99b864563a6ecf7",
+        "alpha_bbox": [
+          14,
+          52,
+          583,
+          614
+        ]
+      }
+    },
+    {
+      "character": "fighter",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_clothing_vest_png",
+          "z": 20,
+          "item": "C02/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_07_cartridges_png",
+          "z": 45,
+          "item": "C02/cartridges",
+          "type": "item_front",
+          "role": "cartridges"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_12_bandana_png",
+          "z": 80,
+          "item": "C02/bandana",
+          "type": "item_front",
+          "role": "bandana"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fighter_c02_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C02/aviators",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fighter/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1991720,
+        "sha256": "413e671822cf44831ec2613581947a61405a819c9f61e0160b9cc48e3d77e2fc",
+        "alpha_bbox": [
+          28,
+          106,
+          1158,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fighter/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 144732,
+        "sha256": "aa66b82eb8149451ada9a6ddd5b45b34f6c1915d7c7f459d0948bd460b52b1e0",
+        "alpha_bbox": [
+          14,
+          52,
+          579,
+          678
+        ]
+      }
+    },
+    {
+      "character": "fool",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_04_shopper_front_right_flank_png",
+          "z": 30,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "shopper — front right flank"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_08_flute_above_wing_png",
+          "z": 65,
+          "item": "C03/shopper_flute",
+          "type": "item_front",
+          "role": "flute above wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_10_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_13_07_ring_visible_left_ankle_png",
+          "z": 95,
+          "item": "C03/ring07",
+          "type": "item_front",
+          "role": "07 ring — visible left ankle"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fool/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1932470,
+        "sha256": "27e9f5f4176b19dfa623fc6fa266c36fe450353f129890579cea769551f40df0",
+        "alpha_bbox": [
+          11,
+          91,
+          1161,
+          1327
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fool/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 167264,
+        "sha256": "ff55e7940c3ef405373c4dadd4b3b334805f89aaab83ef0a57b5b3d53bd12552",
+        "alpha_bbox": [
+          5,
+          44,
+          581,
+          664
+        ]
+      }
+    },
+    {
+      "character": "fool",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/fool/feet_perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_10_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fool/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1754954,
+        "sha256": "617db727884d2bffb3b2f8d67cdd25b402360e0981db5f747b8cba9f4ce90c93",
+        "alpha_bbox": [
+          11,
+          91,
+          1161,
+          1185
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fool/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 151142,
+        "sha256": "1bce22141fad9503fd16df7ff1772b3f46040c3c054e276802d862e7d8c0f7d5",
+        "alpha_bbox": [
+          5,
+          44,
+          583,
+          594
+        ]
+      }
+    },
+    {
+      "character": "fool",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_clothing_vest_png",
+          "z": 20,
+          "item": "C03/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_05_beads_png",
+          "z": 45,
+          "item": "C03/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_09_scarf_tail_tucked_behind_head_png",
+          "z": 69,
+          "item": "C03/scarf",
+          "type": "item_back",
+          "role": "scarf tail tucked behind head"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_10_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_11_scarf_wrapped_over_crown_png",
+          "z": 80,
+          "item": "C03/scarf",
+          "type": "item_front",
+          "role": "scarf wrapped over crown"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "fool_c03_layers_12_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C03/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/fool/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 2184344,
+        "sha256": "dba8502a92a13e1a537c58e67e9c7d03aba28ba3e12047ebfb7a00e1e09e333b",
+        "alpha_bbox": [
+          11,
+          91,
+          1161,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/fool/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 177316,
+        "sha256": "80620856cd259788ca0af91b7354d0a016b3797c6438d03620fb3f897ed453f4",
+        "alpha_bbox": [
+          5,
+          44,
+          581,
+          678
+        ]
+      }
+    },
+    {
+      "character": "professor",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_00_upper_legs_claws_hidden_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "upper legs — claws hidden"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_01_left_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "left croc — upper leg retained"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_02_right_croc_upper_leg_retained_png",
+          "z": 4,
+          "item": "C04/crocs",
+          "type": "item_front",
+          "role": "right croc — upper leg retained"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_06_satchel_front_right_flank_png",
+          "z": 30,
+          "item": "C04/satchel",
+          "type": "item_front",
+          "role": "satchel — front right flank"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/professor/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1825136,
+        "sha256": "3c12494cd0ab5881a210ef2d2b49059415bfcf86969f43897186b2479e45a7f0",
+        "alpha_bbox": [
+          0,
+          80,
+          1187,
+          1303
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/professor/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 156588,
+        "sha256": "564c473e6f98cba03833084c3013abcde37921b257ca35285e852f55692ae4c4",
+        "alpha_bbox": [
+          16,
+          40,
+          560,
+          653
+        ]
+      }
+    },
+    {
+      "character": "professor",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/professor/feet_perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/professor/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1601658,
+        "sha256": "6a2a8f7037142ccc66c864019ac731ca4db4927d883000a36e38fb586ad497a6",
+        "alpha_bbox": [
+          0,
+          80,
+          1187,
+          1199
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/professor/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 137440,
+        "sha256": "60041346c7908ea8a60a0a06ef5da780d7ab66c1ef96a5d872d43fa7ab6dd08e",
+        "alpha_bbox": [
+          16,
+          40,
+          583,
+          601
+        ]
+      }
+    },
+    {
+      "character": "professor",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_03_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_clothing_coat_png",
+          "z": 20,
+          "item": "C04/coat",
+          "type": "item_front",
+          "role": "complete coat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_07_magnifier_png",
+          "z": 45,
+          "item": "C04/magnifier",
+          "type": "item_front",
+          "role": "magnifier"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_08_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_09_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_10_pencil_behind_hair_png",
+          "z": 68,
+          "item": "C04/pencil",
+          "type": "item_back",
+          "role": "pencil behind hair"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_11_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_12_pencil_visible_shaft_png",
+          "z": 85,
+          "item": "C04/pencil",
+          "type": "item_front",
+          "role": "pencil visible shaft"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "professor_c04_layers_13_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C04/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/professor/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 2021396,
+        "sha256": "0a4872f156643210fd88603128b79270a705fbabcef9ab87e7ee41bc21685d29",
+        "alpha_bbox": [
+          0,
+          80,
+          1187,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/professor/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 166218,
+        "sha256": "74ebce2e838387b2cb3a7aa17afee6407c4ddcd99853206902afbcf0171e2023",
+        "alpha_bbox": [
+          16,
+          40,
+          570,
+          678
+        ]
+      }
+    },
+    {
+      "character": "monk",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_00_left_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "left wooden sandal platform"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_01_right_wooden_sandal_platform_png",
+          "z": 1,
+          "item": "C05/sandals",
+          "type": "item_back",
+          "role": "right wooden sandal platform"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_02_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_03_left_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "left sandal strap over foot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_04_right_sandal_strap_over_foot_png",
+          "z": 5,
+          "item": "C05/sandals",
+          "type": "item_front",
+          "role": "right sandal strap over foot"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_08_cloth_shoulder_strap_png",
+          "z": 30,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth shoulder strap"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_09_cloth_bag_front_right_flank_png",
+          "z": 31,
+          "item": "C05/cloth_bag",
+          "type": "item_front",
+          "role": "cloth bag — front right flank"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_13_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/monk/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1569243,
+        "sha256": "00b344b85ec8ca80f6e083c91294c424fc42323b75074cf70ee95218c8a23a0f",
+        "alpha_bbox": [
+          56,
+          102,
+          1153,
+          1342
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/monk/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 126798,
+        "sha256": "8c17387fc82829e988d9bd713a6713164bc47ad290eeada553346681f41b6cc7",
+        "alpha_bbox": [
+          40,
+          51,
+          575,
+          671
+        ]
+      }
+    },
+    {
+      "character": "monk",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_13_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        },
+        {
+          "kind": "clip",
+          "target": "seated_stack",
+          "keep": [
+            0,
+            0,
+            1200,
+            1098
+          ]
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/monk/feet_perch.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/monk/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1372884,
+        "sha256": "58b257c78c223ac7b411e4921d647a3ffebae9d359a0cc5765a48d255e1a0337",
+        "alpha_bbox": [
+          40,
+          102,
+          1161,
+          1196
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/monk/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 113490,
+        "sha256": "0913fb5cd4182db24afa78d3ee5a7effc69d3d740e6f860dbcdea481dfc36216",
+        "alpha_bbox": [
+          17,
+          51,
+          583,
+          600
+        ]
+      }
+    },
+    {
+      "character": "monk",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_05_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_clothing_robe_png",
+          "z": 20,
+          "item": "C05/robe",
+          "type": "item_front",
+          "role": "complete robe"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_10_beads_png",
+          "z": 45,
+          "item": "C05/beads",
+          "type": "item_front",
+          "role": "beads"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_11_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_12_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_13_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_14_hat_png",
+          "z": 80,
+          "item": "C05/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "monk_c05_layers_15_third_eye_forehead_axis_png",
+          "z": 90,
+          "item": "C05/third_eye",
+          "type": "item_front",
+          "role": "third eye — forehead axis"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/monk/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1835300,
+        "sha256": "1d800039a9d214757cb89a8ce7118b6abb09efab01406daffc055ce6cbeeee52",
+        "alpha_bbox": [
+          56,
+          102,
+          1153,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/monk/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 143288,
+        "sha256": "88cb964f95f27ebe6216973f294eab7bbbc7b2aacaf07d6ce2467136eb31938d",
+        "alpha_bbox": [
+          37,
+          51,
+          575,
+          678
+        ]
+      }
+    },
+    {
+      "character": "glamour",
+      "pose": "CARD",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_00_parts_legs_bare_png",
+          "z": 3,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/legs_bare"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_04_h_bag_front_right_flank_png",
+          "z": 30,
+          "item": "C06/bag_h",
+          "type": "item_front",
+          "role": "H bag — front right flank"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_08_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_11_left_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "left anklet — leg shaft"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_12_right_anklet_leg_shaft_png",
+          "z": 95,
+          "item": "C06/anklets",
+          "type": "item_front",
+          "role": "right anklet — leg shaft"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/glamour/card.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1843249,
+        "sha256": "9d250c887c7b74b19389e114ea054e56f52c454ea0dd22e1e32a80928370c927",
+        "alpha_bbox": [
+          0,
+          76,
+          1180,
+          1393
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/glamour/card.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 155288,
+        "sha256": "b74c7e0b48091f78dd214c87369fe88c4fe252188c0c43767f0fe09a4d004772",
+        "alpha_bbox": [
+          6,
+          50,
+          588,
+          689
+        ]
+      }
+    },
+    {
+      "character": "glamour",
+      "pose": "PERCH",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/perch.png"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/glamour/feet_perch.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_08_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/glamour/perch.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 1723974,
+        "sha256": "12c4f9de12f00953fdc92bc3af66f35f6b0f5b4e2fe1579fa2c78883956fad52",
+        "alpha_bbox": [
+          0,
+          76,
+          1161,
+          1194
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/glamour/perch.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 141828,
+        "sha256": "480390d87aec6d5ebac028821ef0a3551a23e313fe755d1b3f201dbf0d9905a9",
+        "alpha_bbox": [
+          6,
+          50,
+          583,
+          599
+        ]
+      }
+    },
+    {
+      "character": "glamour",
+      "pose": "NEST",
+      "status": "QA",
+      "recipe": [
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_back.png"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_01_parts_torso_png",
+          "z": 10,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/torso"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_clothing_vest_png",
+          "z": 20,
+          "item": "C06/vest",
+          "type": "item_front",
+          "role": "complete vest"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_05_diamonds_png",
+          "z": 45,
+          "item": "C06/diamonds",
+          "type": "item_front",
+          "role": "diamonds"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_06_parts_left_wing_png",
+          "z": 60,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/left_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_07_parts_right_wing_png",
+          "z": 61,
+          "item": null,
+          "type": "body_part",
+          "role": "parts/right_wing"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_08_head_native_base_png",
+          "z": 70,
+          "item": null,
+          "type": "body_part",
+          "role": "head_native_base"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_09_hat_png",
+          "z": 80,
+          "item": "C06/hat",
+          "type": "item_front",
+          "role": "hat"
+        },
+        {
+          "kind": "v12_layer",
+          "file_id": "glamour_c06_layers_10_glasses_optical_centers_png",
+          "z": 90,
+          "item": "C06/glasses",
+          "type": "item_front",
+          "role": "glasses — optical centers"
+        },
+        {
+          "kind": "prop",
+          "png": "assets/characters/v13/props/nest_front_eggs.png"
+        }
+      ],
+      "png": {
+        "path": "assets/characters/v13/poses/glamour/nest.png",
+        "size": [
+          1200,
+          1520
+        ],
+        "bytes": 2142847,
+        "sha256": "9f9cf25c389188557bcf1e28cf62bcfb0b3bfff3d042f7b4620e63edcb05c5c0",
+        "alpha_bbox": [
+          0,
+          76,
+          1156,
+          1355
+        ]
+      },
+      "webp": {
+        "path": "assets/characters/v13/poses/glamour/nest.webp",
+        "size": [
+          600,
+          760
+        ],
+        "bytes": 164306,
+        "sha256": "35f83350b056f56bdc4bde1d29448a0f9f5603f4458541c22ac9f02b43b4ac49",
+        "alpha_bbox": [
+          6,
+          50,
+          579,
+          678
+        ]
+      }
+    }
+  ]
+}
