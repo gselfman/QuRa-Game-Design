@@ -1,0 +1,4801 @@
+{
+  "schema_version": 19,
+  "status": "review",
+  "agent": "agent:design",
+  "created_on": "2026-11-04",
+  "name": "QuRa · Wolf rewards, wardrobe, SBP verification, Poultry exit, Chronicle share",
+  "repository": "gselfman/QuRa-Game-Design",
+  "branch": "design/28-rewards-return-v19",
+  "design_issue": 28,
+  "handoff_issues": {
+    "wolf_inventory": 170,
+    "sbp": 168,
+    "poultry_exit": 169
+  },
+  "approval": {
+    "existing_v18": "Owner approved earlier; source page preserved",
+    "new_v19": "Pending owner review; no self-approval"
+  },
+  "figma": {
+    "file_key": "pTm5JOM8r7b8ukBrk3UsXg",
+    "page_id": "1771:2",
+    "page_name": "41_REWARDS_AND_RETURN_v19 · review · §43–45",
+    "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1771-2",
+    "approved_style_page_id": "1694:19056",
+    "sizes": [
+      [
+        390,
+        844
+      ],
+      [
+        360,
+        740
+      ]
+    ],
+    "screens_per_size": 37,
+    "share_size": [
+      1080,
+      1350
+    ]
+  },
+  "sources": {
+    "game_bible": {
+      "repository": "gselfman/QuRa-Game-Design",
+      "path": "GAME_BIBLE_V1.md",
+      "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+      "blob_sha": "b15abef089d6c8005cbef41f6274e73eac7a763e",
+      "sections": [
+        "43",
+        "44",
+        "45"
+      ],
+      "url": "https://github.com/gselfman/QuRa-Game-Design/blob/1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e/GAME_BIBLE_V1.md"
+    },
+    "equipment": {
+      "path": "docs/visual/manifests/production_v13_equipment.json",
+      "blob_sha": "0ea6e338f4910abb9bf7779c477e48328af45e43",
+      "registered_count": 35
+    },
+    "production_reference_commit": "d611fcfe14c726ec19178654ed5e1cbf26751605",
+    "design_reference_commit": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+    "production_issues": [
+      "https://github.com/gselfman/QuRa/issues/170",
+      "https://github.com/gselfman/QuRa/issues/168",
+      "https://github.com/gselfman/QuRa/issues/169"
+    ],
+    "style": {
+      "fonts": [
+        "Onest",
+        "Russo One"
+      ],
+      "tokens_collection": "QuRa/v13/ui",
+      "colors": {
+        "wood": "#3a2618",
+        "highlight": "#563823",
+        "plank": "#24170e",
+        "gold": "#f2c35b",
+        "ink": "#fbeed6",
+        "muted": "#cdb592",
+        "good": "#6fd08c",
+        "bad": "#ff6f5e",
+        "border": "#a67a39"
+      },
+      "reused_components": {
+        "primary": "298:33",
+        "secondary": "298:34",
+        "resource_header": "298:40",
+        "large_navigation": "539:80",
+        "lobby_background": "359:5",
+        "arena_background": "359:8"
+      },
+      "tokens_collection_id": "VariableCollectionId:298:4"
+    },
+    "artwork_policy": "Approved artwork and source v18 page were not redrawn. Only missing Platinum chest pair newly generated. Existing WebP sprites converted losslessly to PNG for correct Figma rendering."
+  },
+  "deliverables": {
+    "png_count": 83,
+    "phone_png_count": 74,
+    "transparent_chest_png_count": 8,
+    "share_png_count": 1,
+    "manifest_path": "docs/visual/manifests/2026-11-04_rewards_return_v19.json"
+  },
+  "chests": [
+    {
+      "key": "epic-closed",
+      "path": "assets/rewards/wolf_v19/epic-closed.png",
+      "node_id": "1773:4",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        22,
+        16,
+        505,
+        501
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 205079,
+      "sha256": "4bac4d7c386ef845f8495ec4c92c68658ee7d435a31c55148ee7279eedd2ac45",
+      "git_blob_sha": "a58db6fdd9a1dbf9c7d0a68204c5e193e708e2cf",
+      "tier": "epic",
+      "state": "closed",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-4",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_08.png",
+        "git_blob_sha": "425a9b4a237d4f04cc277fe7d240e0f3cb09cac0",
+        "sprite_id": "S01_08",
+        "method": "reuse approved source, native Figma normalized export"
+      }
+    },
+    {
+      "key": "epic-open",
+      "path": "assets/rewards/wolf_v19/epic-open.png",
+      "node_id": "1773:16",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        14,
+        0,
+        498,
+        498
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 106372,
+      "sha256": "63672d8e8c3e097d899dc89284b70e564cedd61ec974de0134922509822a2f6a",
+      "git_blob_sha": "c0875c89fa9b55648c8eae87f8aca437649b054d",
+      "tier": "epic",
+      "state": "open",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-16",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_09.png",
+        "git_blob_sha": "c7ef526eca3031a4ab7a0fc3d7892bf61f2dbd0d",
+        "sprite_id": "S01_09",
+        "method": "reuse approved source, native Figma normalized export"
+      }
+    },
+    {
+      "key": "gold-closed",
+      "path": "assets/rewards/wolf_v19/gold-closed.png",
+      "node_id": "1773:6",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        2,
+        29,
+        481,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 214232,
+      "sha256": "3e0aaaf086e3604c9097f4d62268c72a808860ef8323bdb605d2181b8cae85a8",
+      "git_blob_sha": "cf506cce70c179b7b713501fd7db22d4007c0623",
+      "tier": "gold",
+      "state": "closed",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-6",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_10.png",
+        "git_blob_sha": "2895c2b510d60aa8fea00fbef20df33a059e6a26",
+        "sprite_id": "S01_10",
+        "method": "reuse approved source, native Figma normalized export",
+        "note": "Existing gold winged visual S01_10/11 reused for Wolf Gold; original atlas title says legendary, gameplay tier is §45 Gold."
+      }
+    },
+    {
+      "key": "gold-open",
+      "path": "assets/rewards/wolf_v19/gold-open.png",
+      "node_id": "1773:12",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        28,
+        16,
+        498,
+        507
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 232439,
+      "sha256": "784cf14563cc6692c66093c34475aeb82a740261b5ea818c276bf57e17bdb376",
+      "git_blob_sha": "c506c51eeb0d22a82ac7ae9cf9bec5e4f47c43f1",
+      "tier": "gold",
+      "state": "open",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-12",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_11.png",
+        "git_blob_sha": "d28c0bf4e58d453b7a9ddf3f9c8ad8f51ab0354a",
+        "sprite_id": "S01_11",
+        "method": "reuse approved source, native Figma normalized export",
+        "note": "Existing gold winged visual S01_10/11 reused for Wolf Gold; original atlas title says legendary, gameplay tier is §45 Gold."
+      }
+    },
+    {
+      "key": "platinum-closed",
+      "path": "assets/rewards/wolf_v19/platinum-closed.png",
+      "node_id": "1773:2",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        2,
+        0,
+        512,
+        500
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "bytes": 224455,
+      "sha256": "f053d6226d968af0de7d47a76e5bc958e22399fd52e0311b639d684f4abeed4e",
+      "git_blob_sha": "473af0f2b0784c0bb7cbc50a76df7a85b36aea1d",
+      "tier": "platinum",
+      "state": "closed",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-2",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_06.png",
+        "git_blob_sha": "3392c516ce0ed33d2c8930a4a61127a373bb8f6d",
+        "sprite_id": "S01_06",
+        "method": "imagegen edit of approved chest reference"
+      },
+      "generation": {
+        "key": "platinum-closed",
+        "prompt": "Use case: precise-object-edit. Production game asset for QuRa, one PLATINUM treasure chest, CLOSED. Edit the referenced blue bronze chest. Keep the same charming polished 3D cartoon rendering, rounded wooden chest silhouette, three-quarter camera, small diamond clasp, and footprint. Change only the tier materials: pale icy blue lacquered wood, lustrous cool platinum/silver metal bands and clasp with subtle cyan-white gemstone. It must read as platinum silver, no copper or gold bands, with restrained premium detail. Warm directional highlights consistent with a friendly farm fantasy game, crisp clean edges. Single chest centered, fully visible, identical viewpoint and proportions to reference. Occupy about 65% of a square canvas, leave transparent margin. Remove any existing dark background, red fringe or edge residue. True transparent background, no text, numbers, watermark, extra objects, platform, border or cast shadow outside the object."
+      }
+    },
+    {
+      "key": "platinum-open",
+      "path": "assets/rewards/wolf_v19/platinum-open.png",
+      "node_id": "1773:8",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        0,
+        0,
+        506,
+        501
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "bytes": 247928,
+      "sha256": "3718122c4d6035fbecfa4c106018c359a56502f7b48ff9b29666147cfb095de8",
+      "git_blob_sha": "058e8084f01c7b43c4acfa9f44852cfbffb9b5e6",
+      "tier": "platinum",
+      "state": "open",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-8",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_07.png",
+        "git_blob_sha": "15756105f0368276aa67be82c739f6b5bafbc683",
+        "sprite_id": "S01_07",
+        "method": "imagegen edit of approved chest reference"
+      },
+      "generation": {
+        "key": "platinum-open",
+        "prompt": "Use case: precise-object-edit. Production game asset for QuRa, one PLATINUM treasure chest, OPEN. Edit the referenced blue bronze open chest. Keep the same charming polished 3D cartoon rendering, rounded wooden chest silhouette, three-quarter camera, raised lid angle, small diamond clasp and footprint. Change only tier materials: pale icy blue lacquered wood, lustrous cool platinum/silver bands and clasp, subtle cyan-white gemstone. It must read as platinum silver, no copper or gold bands. From inside, a restrained cyan-white magical glow and a few small stars, without contents spilling out. Warm directional highlights consistent with a friendly farm fantasy game, crisp clean edges. Single chest centered, fully visible, identical viewpoint and proportions to reference. Occupy about 65% of a square canvas, leave transparent margin. Remove any existing dark background, red fringe or edge residue. True transparent background, no text, numbers, watermark, extra objects, platform, border or cast shadow outside the object."
+      }
+    },
+    {
+      "key": "simple-closed",
+      "path": "assets/rewards/wolf_v19/simple-closed.png",
+      "node_id": "1773:10",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        39,
+        0,
+        502,
+        487
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 146867,
+      "sha256": "18fc13a8de711278eb8266b53a894722a2a817c45ae377ec81290ccade7a0aaf",
+      "git_blob_sha": "9b11dd700d82ecdb6e4d4f40ef6fca83e20d673f",
+      "tier": "simple",
+      "state": "closed",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-10",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_01.png",
+        "git_blob_sha": "f291f5ffa77de3cbf9a5d8284ada787abbb2a360",
+        "sprite_id": "S01_01",
+        "method": "reuse approved source, native Figma normalized export"
+      }
+    },
+    {
+      "key": "simple-open",
+      "path": "assets/rewards/wolf_v19/simple-open.png",
+      "node_id": "1773:14",
+      "width": 512,
+      "height": 512,
+      "alpha_bbox": [
+        15,
+        7,
+        503,
+        497
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 182155,
+      "sha256": "2dceb5fc49cb865608c16b6e132e8350b832e83a65848b282d7b5a14980e2e07",
+      "git_blob_sha": "0dd6d053cf39e892e472de8ed2f3d9ea3a45ddab",
+      "tier": "simple",
+      "state": "open",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1773-14",
+      "transparent": true,
+      "normalization": {
+        "canvas": [
+          512,
+          512
+        ],
+        "visible_extent_max_px": 400,
+        "bottom_anchor_y": 448,
+        "center_x": 256,
+        "fit": "contain, preserve aspect and all positive-alpha pixels"
+      },
+      "source": {
+        "repository": "gselfman/QuRa-Game-Design",
+        "ref": "1e77b5ba8868f9733f06b4d31fa9ee4c1405ac1e",
+        "path": "assets/sprites/v13/game/s01/s01_03.png",
+        "git_blob_sha": "8f87f8f4f957a338a63a48d4d4f5cb5b97c6664d",
+        "sprite_id": "S01_03",
+        "method": "reuse approved source, native Figma normalized export"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "key": "wolf-chests",
+      "id": "1777:6",
+      "width": 390,
+      "height": 844,
+      "heading": "Сундуки Волка",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-chests.png",
+        "bytes": 258179,
+        "sha256": "77ff3e9e89530d391eb3c6e1ab4b38c930fdfcff230a04498c86e72ff101bdda",
+        "git_blob_sha": "27eab836a3d0548b54c2d85b48c3b039cd9f9115"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-6",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-6&starting-point-node-id=1777-6&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 14
+    },
+    {
+      "key": "wolf-result-below",
+      "id": "1777:69",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-below.png",
+        "bytes": 327939,
+        "sha256": "a78796a1c7f47d87910d95982fb9b1d1639f9ee9cc39a4c53a19b1bdb050c1e7",
+        "git_blob_sha": "5dff95a50066c0397c8c88cb84334dd084637378"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-69",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-69&starting-point-node-id=1777-69&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 199,
+        "ticketed": true,
+        "chest": null,
+        "next_milestone": 200,
+        "remaining": 1
+      }
+    },
+    {
+      "key": "wolf-result-simple",
+      "id": "1777:101",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-simple.png",
+        "bytes": 335095,
+        "sha256": "9a88dfa2637cc70e111abc10d585b97e6069435cb8d3c64c68beb500c633dc83",
+        "git_blob_sha": "6e4996279d5730cff9784791b55680eaa90c14b9"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-101",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-101&starting-point-node-id=1777-101&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 320,
+        "ticketed": true,
+        "chest": "simple",
+        "next_milestone": 500,
+        "remaining": 180
+      }
+    },
+    {
+      "key": "wolf-result-gold",
+      "id": "1777:132",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-gold.png",
+        "bytes": 344600,
+        "sha256": "619494eb5ee0acb6ab73011628a5f798369c5ca3521f46e3af6f4135cfd8c334",
+        "git_blob_sha": "7fdff5af14b74f84204d0c7ff4cabff27328483a"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-132",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-132&starting-point-node-id=1777-132&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 650,
+        "ticketed": true,
+        "chest": "gold",
+        "next_milestone": 800,
+        "remaining": 150
+      }
+    },
+    {
+      "key": "wolf-result-platinum",
+      "id": "1777:163",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-platinum.png",
+        "bytes": 337988,
+        "sha256": "ecf1a9a1753c5389706b26aed1f22bec9bf640135e669f710d5b8bce18ecc181",
+        "git_blob_sha": "dedc76e3fd5a55a83ec124dbfb96ad7631b1650c"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-163",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-163&starting-point-node-id=1777-163&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 875,
+        "ticketed": true,
+        "chest": "platinum",
+        "next_milestone": 1000,
+        "remaining": 125
+      }
+    },
+    {
+      "key": "wolf-result-epic",
+      "id": "1777:194",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-epic.png",
+        "bytes": 343532,
+        "sha256": "5fc38621ec09f6158b0f5014247d0594a581682735554f5564c626e6fd89643d",
+        "git_blob_sha": "ab63788e911909326de800a4cbf688a876a2e99b"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-194",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-194&starting-point-node-id=1777-194&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 1000,
+        "ticketed": true,
+        "chest": "epic",
+        "next_milestone": null,
+        "remaining": null
+      }
+    },
+    {
+      "key": "wolf-result-casual",
+      "id": "1777:225",
+      "width": 390,
+      "height": 844,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/390x844/wolf-result-casual.png",
+        "bytes": 330366,
+        "sha256": "6b5c257dd2a23c1c9b8417ce09adb69243545ecfea90419e9f27122730eccc2f",
+        "git_blob_sha": "d87e0ed00ad3c675b1a5cd12023193b2ba822758"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-225",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-225&starting-point-node-id=1777-225&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 650,
+        "ticketed": false,
+        "chest": null,
+        "next_milestone": null,
+        "remaining": null
+      }
+    },
+    {
+      "key": "chest-open-simple",
+      "id": "1777:257",
+      "width": 390,
+      "height": 844,
+      "heading": "Простой сундук",
+      "png": {
+        "path": "assets/screens/v19/390x844/chest-open-simple.png",
+        "bytes": 316913,
+        "sha256": "85409c35e357678b98504ae86aaddfa9cddbe38a99025888a9f2d14a04fdb6fa",
+        "git_blob_sha": "51709b597f4b67b64d239646a0e17e1a4e22b8bc"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-257",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-257&starting-point-node-id=1777-257&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 5,
+      "fixture": {
+        "chest": "simple",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 10
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-gold",
+      "id": "1777:282",
+      "width": 390,
+      "height": 844,
+      "heading": "Золотой сундук",
+      "png": {
+        "path": "assets/screens/v19/390x844/chest-open-gold.png",
+        "bytes": 325743,
+        "sha256": "9a11dda0ef69bf85cf47064b8730d0a96ba17a1956b97d3e3fcfe1dbc972244f",
+        "git_blob_sha": "70790f04a5371f8deec64186252c5c824e6f298f"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-282",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-282&starting-point-node-id=1777-282&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 5,
+      "fixture": {
+        "chest": "gold",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 25
+          },
+          {
+            "type": "XP",
+            "quantity": 60
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-platinum",
+      "id": "1777:311",
+      "width": 390,
+      "height": 844,
+      "heading": "Платиновый сундук",
+      "png": {
+        "path": "assets/screens/v19/390x844/chest-open-platinum.png",
+        "bytes": 270803,
+        "sha256": "4f5a7b6d4f04119f96c91797deaf61358ce53e846fb90df7df59af92079c42a4",
+        "git_blob_sha": "7aed03099035e92e9542dceb4834f3175bf177ec"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-311",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-311&starting-point-node-id=1777-311&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "chest": "platinum",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 60
+          },
+          {
+            "type": "XP",
+            "quantity": 100
+          },
+          {
+            "type": "buff",
+            "name": "Боевой купол",
+            "rarity": "Rare",
+            "quantity": 2,
+            "unit_shop_price_ge": 100,
+            "sell_total_ge": 50
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-epic",
+      "id": "1777:365",
+      "width": 390,
+      "height": 844,
+      "heading": "Эпический сундук",
+      "png": {
+        "path": "assets/screens/v19/390x844/chest-open-epic.png",
+        "bytes": 226669,
+        "sha256": "02e7b296fe939c55f5a22db6abece64e67fe38a43123af01085294ff7d0c03a9",
+        "git_blob_sha": "b02929067d62c1b46f11e2bbac377766b588c20e"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-365",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-365&starting-point-node-id=1777-365&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 9,
+      "fixture": {
+        "chest": "epic",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 120
+          },
+          {
+            "type": "XP",
+            "quantity": 150
+          },
+          {
+            "type": "buff",
+            "name": "Боевой купол",
+            "rarity": "Rare",
+            "quantity": 2,
+            "unit_shop_price_ge": 100,
+            "sell_total_ge": 50
+          },
+          {
+            "type": "accessory",
+            "asset_id": "C01/bag",
+            "rarity": "Epic",
+            "quantity": 1,
+            "shop_price_ge": 600,
+            "sell_ge": 150,
+            "guaranteed_slot": true
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "buff-stock",
+      "id": "1777:437",
+      "width": 390,
+      "height": 844,
+      "heading": "Бафы сохранены",
+      "png": {
+        "path": "assets/screens/v19/390x844/buff-stock.png",
+        "bytes": 371547,
+        "sha256": "332c96c9a39a7180502004fecf6bf830af29afdb23e1b5eaaafa1e7afe817f53",
+        "git_blob_sha": "48b9df39d741b00f8e879358a6d6766c5c66ac24"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-437",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-437&starting-point-node-id=1777-437&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sale-buff",
+      "id": "1777:460",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/sale-buff.png",
+        "bytes": 135819,
+        "sha256": "c0573e53555d70f3f04f2c944acc85e70f82f374c51d9fcec0d80b22ab8a6d42",
+        "git_blob_sha": "f45a9ea1d1aea49a1f96ad2d136799f67cb596e2"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-460",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-460&starting-point-node-id=1777-460&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sold-buff",
+      "id": "1777:498",
+      "width": 390,
+      "height": 844,
+      "heading": "Бафы проданы",
+      "png": {
+        "path": "assets/screens/v19/390x844/sold-buff.png",
+        "bytes": 367221,
+        "sha256": "75fac5db961347a4924831b02aae1a9d61b83f9984bb06ac12da55c73b0a5fd0",
+        "git_blob_sha": "05db57373e75a34c1c8821db3243bf800720fda8"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-498",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-498&starting-point-node-id=1777-498&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sale-reward",
+      "id": "1777:521",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/sale-reward.png",
+        "bytes": 136912,
+        "sha256": "6fe5d469944b9329df66f68a18bfcd8e70160d3cbfe4f03e28cd4238cb169306",
+        "git_blob_sha": "a19a25f9d2818c6a11436d03cbe726120b259f90"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-521",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-521&starting-point-node-id=1777-521&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sold-reward",
+      "id": "1777:559",
+      "width": 390,
+      "height": 844,
+      "heading": "Вещь продана",
+      "png": {
+        "path": "assets/screens/v19/390x844/sold-reward.png",
+        "bytes": 367821,
+        "sha256": "66d9bddd095168c86ad46c7f59b8dd40f97c1246e1c4e7fa65216a4e6aa960c2",
+        "git_blob_sha": "14af4bdebc4949f4931f97819d801cf3e9c65ff8"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-559",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-559&starting-point-node-id=1777-559&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "wardrobe-bare",
+      "id": "1777:582",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/wardrobe-bare.png",
+        "bytes": 335050,
+        "sha256": "08470c594b2b557d37e6f2e3c3b12b32520a0ab2608f70c723caf6e25afeaca8",
+        "git_blob_sha": "6b459b4bd24737e66252294f88aeb6719dccf573"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-582",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-582&starting-point-node-id=1777-582&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 12
+    },
+    {
+      "key": "wardrobe-hat",
+      "id": "1777:649",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/wardrobe-hat.png",
+        "bytes": 337874,
+        "sha256": "9917598bf6ebe4aa4e38d20a29c2073d12fadc4dde3312d9a483595afe98316c",
+        "git_blob_sha": "22455f32199b2f830002b783589289a27a3b4de1"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-649",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-649&starting-point-node-id=1777-649&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "wardrobe-bag",
+      "id": "1777:721",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/wardrobe-bag.png",
+        "bytes": 335627,
+        "sha256": "ce0b8a79b6e5b7bb4bb49bf3fdd5fa989463068bfd6cae60b0776decfe4c6422",
+        "git_blob_sha": "f959bec67eb662fde1d4f41ef6989ce2944f40eb"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-721",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-721&starting-point-node-id=1777-721&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 12
+    },
+    {
+      "key": "wardrobe-bag-equipped",
+      "id": "1777:788",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/wardrobe-bag-equipped.png",
+        "bytes": 336361,
+        "sha256": "f90de9efa4cd27c4f85ad5f95a61c97640b809f0bfe2f811b09aed51bdfc5780",
+        "git_blob_sha": "d964ba37f980e2dff2963e275914a444d95dec45"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-788",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-788&starting-point-node-id=1777-788&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "wardrobe-sold",
+      "id": "1777:861",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/wardrobe-sold.png",
+        "bytes": 345062,
+        "sha256": "1e4f8b2f106f4e6c41ea3f96289856f415f31bd6651a4ada98bc14f464421691",
+        "git_blob_sha": "f8b7aea2ddb4aa24dc44b3229b154708a81361de"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-861",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-861&starting-point-node-id=1777-861&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "sale-hat",
+      "id": "1777:916",
+      "width": 390,
+      "height": 844,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/390x844/sale-hat.png",
+        "bytes": 135513,
+        "sha256": "c33b77952fe48def0e382bff8599d7fec23eb5a73acfe6d3bde060a229b7fc53",
+        "git_blob_sha": "01fa00bdae0b266451f3b96198bfcf2654239812"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-916",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-916&starting-point-node-id=1777-916&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "shop-payment",
+      "id": "1777:954",
+      "width": 390,
+      "height": 844,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/390x844/shop-payment.png",
+        "bytes": 282855,
+        "sha256": "ba9425630b77cdff8984ed61c3fea85fd01156718a6b3a28bc7fd26dc8f4c64b",
+        "git_blob_sha": "6584df08d11617596d44965485ba508b3da44669"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-954",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-954&starting-point-node-id=1777-954&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 7
+    },
+    {
+      "key": "sbp-blocked",
+      "id": "1777:984",
+      "width": 390,
+      "height": 844,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/390x844/sbp-blocked.png",
+        "bytes": 146898,
+        "sha256": "d703dfbffe05d0d7c43f67713e0c9dbaa9d55130f05a53e387f70c9a9e39eeb2",
+        "git_blob_sha": "c14bb5c8fe5482f634f171fa35931480f6f63024"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-984",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-984&starting-point-node-id=1777-984&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "verification-profile",
+      "id": "1777:1014",
+      "width": 390,
+      "height": 844,
+      "heading": "Верификация",
+      "png": {
+        "path": "assets/screens/v19/390x844/verification-profile.png",
+        "bytes": 227390,
+        "sha256": "fc9fb94ca6b2c01c9a506e6a8e409b7144e234e26349c1ab5af5d358b71b4211",
+        "git_blob_sha": "09104f5daa0632e61dfcbd590f4e146c9f469973"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1014",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1014&starting-point-node-id=1777-1014&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 7
+    },
+    {
+      "key": "verification-success",
+      "id": "1777:1045",
+      "width": 390,
+      "height": 844,
+      "heading": "Верификация пройдена",
+      "png": {
+        "path": "assets/screens/v19/390x844/verification-success.png",
+        "bytes": 257207,
+        "sha256": "8b6185e447e031073ec164890fa5739a4703f1334340de68bbfdd150f347a15e",
+        "git_blob_sha": "6ebd096eecdc1d42cbe51bfb035c85412374add0"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1045",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1045&starting-point-node-id=1777-1045&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "payment-ready",
+      "id": "1777:1074",
+      "width": 390,
+      "height": 844,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/390x844/payment-ready.png",
+        "bytes": 257752,
+        "sha256": "f87c1cd1e076d9ce009c47edfa4459348cb5eecff80dcdf00a73477d0c2541d3",
+        "git_blob_sha": "6911efb87fb03007a9c99fba7dae2879f70e7fa9"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1074",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1074&starting-point-node-id=1777-1074&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "poultry-start-ryaba",
+      "id": "1777:1103",
+      "width": 390,
+      "height": 844,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-start-ryaba.png",
+        "bytes": 444429,
+        "sha256": "705fc05d8a3eb6ab381a04262e34cf8e1f851738113e21f21bfddba28f23c279",
+        "git_blob_sha": "ce1639451103c5540c7e8c8e30dc440f1ba9924d"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1103",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1103&starting-point-node-id=1777-1103&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "ryaba",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-start-rambo",
+      "id": "1777:1149",
+      "width": 390,
+      "height": 844,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-start-rambo.png",
+        "bytes": 444270,
+        "sha256": "86851433c7a0fcd8107972b313b2c735103e426dc0c2eb62b86e59c62a08c8c0",
+        "git_blob_sha": "fc5b9ee6972370b43b1ea005d70447751ce0b8b3"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1149",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1149&starting-point-node-id=1777-1149&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "rambo",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-start-monk",
+      "id": "1777:1195",
+      "width": 390,
+      "height": 844,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-start-monk.png",
+        "bytes": 444198,
+        "sha256": "ec42f2d2914cf77468361c31151fbb7075ac65b07516d8cafbcb1596efbd35bb",
+        "git_blob_sha": "ee74e8b93243c1261f10eda5c79e68418b7274f8"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1195",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1195&starting-point-node-id=1777-1195&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "monk",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-playing",
+      "id": "1777:1241",
+      "width": 390,
+      "height": 844,
+      "heading": "Птичий двор",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-playing.png",
+        "bytes": 682117,
+        "sha256": "152ae345da5b89fef6653159dd12316ba2cd5bdc9f40417550dd48f31b300107",
+        "git_blob_sha": "7ab0a02f84267ab40b39a950e3dd2cb49aa0fd29"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1241",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1241&starting-point-node-id=1777-1241&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 2
+    },
+    {
+      "key": "poultry-pause",
+      "id": "1777:1263",
+      "width": 390,
+      "height": 844,
+      "heading": "Пауза",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-pause.png",
+        "bytes": 274338,
+        "sha256": "d597da31043b07f3d75c49df1b25d0a522e6c74c74b7458f2a51ea12d45ff69a",
+        "git_blob_sha": "20d9f42bd95b94119ca06a9f0c7458e0e5e77a19"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1263",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1263&starting-point-node-id=1777-1263&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    },
+    {
+      "key": "poultry-defeat",
+      "id": "1777:1294",
+      "width": 390,
+      "height": 844,
+      "heading": "Курочка выбыла",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-defeat.png",
+        "bytes": 260731,
+        "sha256": "e274978c7cbb3eae069db568e47518f03ceb67652e263b6fb98be1d80db0fdc8",
+        "git_blob_sha": "8d9f791ae52639675094175e50ca4134ced22389"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1294",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1294&starting-point-node-id=1777-1294&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 4
+    },
+    {
+      "key": "poultry-settings",
+      "id": "1777:1324",
+      "width": 390,
+      "height": 844,
+      "heading": "Настройки",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-settings.png",
+        "bytes": 269191,
+        "sha256": "3f32f5c0efafa6d3cd85860fb0f976014bb6e6de64ccff75f80732392550f284",
+        "git_blob_sha": "7b8cf1ceb2b85a84de695b40719b87ee55a110bd"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1324",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1324&starting-point-node-id=1777-1324&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 4
+    },
+    {
+      "key": "poultry-stats",
+      "id": "1777:1354",
+      "width": 390,
+      "height": 844,
+      "heading": "Статистика забега",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-stats.png",
+        "bytes": 252830,
+        "sha256": "8ca756c13b3150b712825b2ffbdd3d2d1ba5c95223968661e3e661566edb2c85",
+        "git_blob_sha": "34b5b75499b34476f7fecd21e183307d093f5e14"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1354",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1354&starting-point-node-id=1777-1354&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 3
+    },
+    {
+      "key": "poultry-rating-today",
+      "id": "1777:1385",
+      "width": 390,
+      "height": 844,
+      "heading": "Рейтинг",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-rating-today.png",
+        "bytes": 242579,
+        "sha256": "223e221c7485b72b892f658217a139119c4137433145eb883c922d109ca391cb",
+        "git_blob_sha": "92f1da2cebbf4003456ca2d1900bf3f680696242"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1385",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1385&starting-point-node-id=1777-1385&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    },
+    {
+      "key": "poultry-rating-all",
+      "id": "1777:1425",
+      "width": 390,
+      "height": 844,
+      "heading": "Рейтинг",
+      "png": {
+        "path": "assets/screens/v19/390x844/poultry-rating-all.png",
+        "bytes": 243325,
+        "sha256": "237f798eded2bf4cc55b50610684981f3841a7668022aef955edd23db65fc7cb",
+        "git_blob_sha": "27c1aa3e787a3c34818e49ce92984357abfa88d5"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1777-1425",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1425&starting-point-node-id=1777-1425&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    },
+    {
+      "key": "wolf-chests",
+      "id": "1778:715",
+      "width": 360,
+      "height": 740,
+      "heading": "Сундуки Волка",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-chests.png",
+        "bytes": 211681,
+        "sha256": "04fa59999fc46a00b6ebcff8d01df87f56f46509b1345f33207f002802f944c3",
+        "git_blob_sha": "54310551fbc51653f89d2a965cbf9d92d6594d0b"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-715",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-715&starting-point-node-id=1778-715&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 14
+    },
+    {
+      "key": "wolf-result-below",
+      "id": "1778:778",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-below.png",
+        "bytes": 266451,
+        "sha256": "1fe08c0bc233d8d7fd461918cb45c416601fb17ff392472c260101f997d7def9",
+        "git_blob_sha": "727fe183f6687097683cd46eeba94924604937cd"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-778",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-778&starting-point-node-id=1778-778&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 199,
+        "ticketed": true,
+        "chest": null,
+        "next_milestone": 200,
+        "remaining": 1
+      }
+    },
+    {
+      "key": "wolf-result-simple",
+      "id": "1778:810",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-simple.png",
+        "bytes": 274541,
+        "sha256": "30274fd637d5f05bcbbfb18ac8a775a3d19e38d621844db89ee579268c6007bb",
+        "git_blob_sha": "3997c2f3b5aeac1ea5f538a6e9e151f2ed12a44a"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-810",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-810&starting-point-node-id=1778-810&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 320,
+        "ticketed": true,
+        "chest": "simple",
+        "next_milestone": 500,
+        "remaining": 180
+      }
+    },
+    {
+      "key": "wolf-result-gold",
+      "id": "1778:841",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-gold.png",
+        "bytes": 283765,
+        "sha256": "b2619bd7e0c9725cceeb35769c4a9004cac9926563c0c2e3816f495e67d2baf3",
+        "git_blob_sha": "791324416792384b6844e1877ec2b6838caf0c1e"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-841",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-841&starting-point-node-id=1778-841&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 650,
+        "ticketed": true,
+        "chest": "gold",
+        "next_milestone": 800,
+        "remaining": 150
+      }
+    },
+    {
+      "key": "wolf-result-platinum",
+      "id": "1778:872",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-platinum.png",
+        "bytes": 277095,
+        "sha256": "2360a2c1a51aafd89a4e89d5d57553755fb1c0f555e6bc7ea673e0f17d2eba2d",
+        "git_blob_sha": "b9614baf9514e22565354434cd4e0e6f9963d103"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-872",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-872&starting-point-node-id=1778-872&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 875,
+        "ticketed": true,
+        "chest": "platinum",
+        "next_milestone": 1000,
+        "remaining": 125
+      }
+    },
+    {
+      "key": "wolf-result-epic",
+      "id": "1778:903",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-epic.png",
+        "bytes": 282881,
+        "sha256": "f55dc19fd7d71d0c45228a10cba982c6292cce6a60e52b55a1e5dfd9269ae82f",
+        "git_blob_sha": "8ecff56012dc8096b56c70b85f32af457d4ef407"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-903",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-903&starting-point-node-id=1778-903&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 1000,
+        "ticketed": true,
+        "chest": "epic",
+        "next_milestone": null,
+        "remaining": null
+      }
+    },
+    {
+      "key": "wolf-result-casual",
+      "id": "1778:934",
+      "width": 360,
+      "height": 740,
+      "heading": "Волк · итог попытки",
+      "png": {
+        "path": "assets/screens/v19/360x740/wolf-result-casual.png",
+        "bytes": 269745,
+        "sha256": "f7aa5c268b0d43f6fac9458bea767fe73ff1c3499ec101ac223224e4d07f9049",
+        "git_blob_sha": "c2f8924bb671c0eacccebf8a0ad3492dbbda15ac"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-934",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-934&starting-point-node-id=1778-934&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "caught": 650,
+        "ticketed": false,
+        "chest": null,
+        "next_milestone": null,
+        "remaining": null
+      }
+    },
+    {
+      "key": "chest-open-simple",
+      "id": "1778:966",
+      "width": 360,
+      "height": 740,
+      "heading": "Простой сундук",
+      "png": {
+        "path": "assets/screens/v19/360x740/chest-open-simple.png",
+        "bytes": 269682,
+        "sha256": "0b6fa5f812e78e27649310a07d1fbcc017e98a68dac69ef4b6f96d0aa592a907",
+        "git_blob_sha": "c482450d9974a4f8caa356ce96ce21238401f5b5"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-966",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-966&starting-point-node-id=1778-966&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 5,
+      "fixture": {
+        "chest": "simple",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 10
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-gold",
+      "id": "1778:991",
+      "width": 360,
+      "height": 740,
+      "heading": "Золотой сундук",
+      "png": {
+        "path": "assets/screens/v19/360x740/chest-open-gold.png",
+        "bytes": 277978,
+        "sha256": "99e6ea094bb6ff4296127c0a6777bf1636c0772be1eed6031880a82887216400",
+        "git_blob_sha": "cef20a4b3985c913cb3f90c54ccc7ae354a07da0"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-991",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-991&starting-point-node-id=1778-991&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 5,
+      "fixture": {
+        "chest": "gold",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 25
+          },
+          {
+            "type": "XP",
+            "quantity": 60
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-platinum",
+      "id": "1778:1020",
+      "width": 360,
+      "height": 740,
+      "heading": "Платиновый сундук",
+      "png": {
+        "path": "assets/screens/v19/360x740/chest-open-platinum.png",
+        "bytes": 227343,
+        "sha256": "f9766d920217236e5980ffb50263d1c32662c5eaf290428e912783cb634dc5af",
+        "git_blob_sha": "712b434d74ead194716f490aca9426fc464956db"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1020",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1020&starting-point-node-id=1778-1020&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 7,
+      "fixture": {
+        "chest": "platinum",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 60
+          },
+          {
+            "type": "XP",
+            "quantity": 100
+          },
+          {
+            "type": "buff",
+            "name": "Боевой купол",
+            "rarity": "Rare",
+            "quantity": 2,
+            "unit_shop_price_ge": 100,
+            "sell_total_ge": 50
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "chest-open-epic",
+      "id": "1778:1074",
+      "width": 360,
+      "height": 740,
+      "heading": "Эпический сундук",
+      "png": {
+        "path": "assets/screens/v19/360x740/chest-open-epic.png",
+        "bytes": 190285,
+        "sha256": "bf902ba3deefaa88545633cca9be1819781b7f64c2e7623aaeda26f0e1c38e89",
+        "git_blob_sha": "8181476ccaba69f35d1fdf045406eb7f78a3f45a"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1074",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1074&starting-point-node-id=1778-1074&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "wolf",
+      "interactive_nodes": 9,
+      "fixture": {
+        "chest": "epic",
+        "rewards": [
+          {
+            "type": "GE",
+            "quantity": 120
+          },
+          {
+            "type": "XP",
+            "quantity": 150
+          },
+          {
+            "type": "buff",
+            "name": "Боевой купол",
+            "rarity": "Rare",
+            "quantity": 2,
+            "unit_shop_price_ge": 100,
+            "sell_total_ge": 50
+          },
+          {
+            "type": "accessory",
+            "asset_id": "C01/bag",
+            "rarity": "Epic",
+            "quantity": 1,
+            "shop_price_ge": 600,
+            "sell_ge": 150,
+            "guaranteed_slot": true
+          }
+        ],
+        "economic_values": "display fixture from §45; issue-time registry is authoritative"
+      }
+    },
+    {
+      "key": "buff-stock",
+      "id": "1778:1146",
+      "width": 360,
+      "height": 740,
+      "heading": "Бафы сохранены",
+      "png": {
+        "path": "assets/screens/v19/360x740/buff-stock.png",
+        "bytes": 314305,
+        "sha256": "c011a0301ba9cd79f23561755303644a5c9fe1d26f04c98c363625a7d9ba2e27",
+        "git_blob_sha": "0e1393879624bfb3cdd05e33008b28dff4d95347"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1146",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1146&starting-point-node-id=1778-1146&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sale-buff",
+      "id": "1778:1169",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/sale-buff.png",
+        "bytes": 124522,
+        "sha256": "d3893a6bbd96ade5ac2341b960937b71be0cda1341fa044ada6d47b830a9e553",
+        "git_blob_sha": "571f56b8c363e83b8ad8ee75db2f423ba2496210"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1169",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1169&starting-point-node-id=1778-1169&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sold-buff",
+      "id": "1778:1207",
+      "width": 360,
+      "height": 740,
+      "heading": "Бафы проданы",
+      "png": {
+        "path": "assets/screens/v19/360x740/sold-buff.png",
+        "bytes": 310703,
+        "sha256": "bebd11ba7c7b9683471a4879ada98ecc7f4305ef7b0a3814af8e2269cedfe6a3",
+        "git_blob_sha": "bda3a7eb7323403bfb1969e1a8c2580146140fb5"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1207",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1207&starting-point-node-id=1778-1207&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sale-reward",
+      "id": "1778:1230",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/sale-reward.png",
+        "bytes": 125287,
+        "sha256": "4079bb3fbb3770c91c1f0bed74a8cab51b07ab35f7e6b880634c2d01ed756526",
+        "git_blob_sha": "ea72c691f33ff6fa2bc6cc29f6a9d181603935ae"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1230",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1230&starting-point-node-id=1778-1230&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "sold-reward",
+      "id": "1778:1268",
+      "width": 360,
+      "height": 740,
+      "heading": "Вещь продана",
+      "png": {
+        "path": "assets/screens/v19/360x740/sold-reward.png",
+        "bytes": 311337,
+        "sha256": "df18aef5cc781e779a6d655d0d6c6742044ff5dbe2a50147483cdd15f85f797e",
+        "git_blob_sha": "032265be13cdb181de93c7cd75ed313890259f6b"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1268",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1268&starting-point-node-id=1778-1268&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "wardrobe-bare",
+      "id": "1778:1291",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/wardrobe-bare.png",
+        "bytes": 274300,
+        "sha256": "998ba40260af9322f60bb01654715483adf80b1acc74a0436c01b989e4202601",
+        "git_blob_sha": "7a879d922b59e58451ceceb102a4b3dab30f0247"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1291",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1291&starting-point-node-id=1778-1291&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 12
+    },
+    {
+      "key": "wardrobe-hat",
+      "id": "1778:1358",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/wardrobe-hat.png",
+        "bytes": 277110,
+        "sha256": "93c29f3a40c328e5968041e1492f70fb56a84801b54eb3b4aa8dbd0ac599327d",
+        "git_blob_sha": "a5cb100a3397215c5ad1c4a559d42cadf2337092"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1358",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1358&starting-point-node-id=1778-1358&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "wardrobe-bag",
+      "id": "1778:1430",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/wardrobe-bag.png",
+        "bytes": 275066,
+        "sha256": "4b081dc346cf1fbbb3e65343e9366e451ae8bac41432242d984e6f1958f9148f",
+        "git_blob_sha": "2ebe0b1467a5fa3ef978681d8961f57e645ef777"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1430",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1430&starting-point-node-id=1778-1430&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 12
+    },
+    {
+      "key": "wardrobe-bag-equipped",
+      "id": "1778:1497",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/wardrobe-bag-equipped.png",
+        "bytes": 276342,
+        "sha256": "d427dbbfc1f974c47b4e5780d122774f4ee1ede54e8d121d444d3093d61dc4c8",
+        "git_blob_sha": "d916662ec82fea3a701ebdb45a6c37ffa24f48da"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1497",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1497&starting-point-node-id=1778-1497&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "wardrobe-sold",
+      "id": "1778:1570",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/wardrobe-sold.png",
+        "bytes": 274501,
+        "sha256": "8102adc0fdc838a8bc799004b6fd0ab8c0d4c41a15b289abd5a088b15e54ccc9",
+        "git_blob_sha": "bc2d1ff842990238ef1ed4b7ef0e8f353cd1e5be"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1570",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1570&starting-point-node-id=1778-1570&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 11
+    },
+    {
+      "key": "sale-hat",
+      "id": "1778:1625",
+      "width": 360,
+      "height": 740,
+      "heading": "Гардероб",
+      "png": {
+        "path": "assets/screens/v19/360x740/sale-hat.png",
+        "bytes": 124636,
+        "sha256": "661f436df91b650643e4c15d92c2e886c9b032e73f2bfb125b19754574d860a9",
+        "git_blob_sha": "3e77afc3f421b1f502ffedc0b7994024b336ed1b"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1625",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1625&starting-point-node-id=1778-1625&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "inventory",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "shop-payment",
+      "id": "1778:1663",
+      "width": 360,
+      "height": 740,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/360x740/shop-payment.png",
+        "bytes": 239146,
+        "sha256": "e1df3701e600a63d733d8196bd2f0cca8424292bab60bd403db30fc85b3a24d5",
+        "git_blob_sha": "eb1b1aaffe472115c759846b1035357b1c3432c7"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1663",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1663&starting-point-node-id=1778-1663&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 7
+    },
+    {
+      "key": "sbp-blocked",
+      "id": "1778:1693",
+      "width": 360,
+      "height": 740,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/360x740/sbp-blocked.png",
+        "bytes": 109984,
+        "sha256": "104e562a1d5bf945dce06e04489561733502b44c7e6ac0dacc516db821b2e44f",
+        "git_blob_sha": "84fa8a4b93829187d2ee2a3ff0fdf2a553fcbae9"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1693",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1693&starting-point-node-id=1778-1693&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "verification-profile",
+      "id": "1778:1723",
+      "width": 360,
+      "height": 740,
+      "heading": "Верификация",
+      "png": {
+        "path": "assets/screens/v19/360x740/verification-profile.png",
+        "bytes": 190281,
+        "sha256": "3f062e3286732159b0624e7ac73795e49b179c4d4085f8a5bd18112145c50008",
+        "git_blob_sha": "0ba993c1a4d7d944be3be0eebb51fc08dd5738bf"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1723",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1723&starting-point-node-id=1778-1723&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 7
+    },
+    {
+      "key": "verification-success",
+      "id": "1778:1754",
+      "width": 360,
+      "height": 740,
+      "heading": "Верификация пройдена",
+      "png": {
+        "path": "assets/screens/v19/360x740/verification-success.png",
+        "bytes": 207441,
+        "sha256": "f7d17b3f3993d1e55f153014ebd9d8619e17fb8f59e5aceed0b7f0184df3d4df",
+        "git_blob_sha": "b980b8f6fcb4f5f60c6eb214a2fc93693c6e6c4c"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1754",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1754&starting-point-node-id=1778-1754&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "payment-ready",
+      "id": "1778:1783",
+      "width": 360,
+      "height": 740,
+      "heading": "Оплата покупки",
+      "png": {
+        "path": "assets/screens/v19/360x740/payment-ready.png",
+        "bytes": 208034,
+        "sha256": "65a954c06536ed45179ddd48f79a5c3b1e6c8be23815c7037ff323a84b075fa5",
+        "git_blob_sha": "a5e7f4413023f3059ed8ef866fefce3c85450163"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1783",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1783&starting-point-node-id=1778-1783&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "payment",
+      "interactive_nodes": 6
+    },
+    {
+      "key": "poultry-start-ryaba",
+      "id": "1778:1812",
+      "width": 360,
+      "height": 740,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-start-ryaba.png",
+        "bytes": 363577,
+        "sha256": "ed64109641d7668b62303c4454323287e201bf4a72a2af8f5a28f4f39dac401b",
+        "git_blob_sha": "9fcf6ad01a0acb20a8ebac4bb977e02b31558d6e"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1812",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1812&starting-point-node-id=1778-1812&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "ryaba",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-start-rambo",
+      "id": "1778:1858",
+      "width": 360,
+      "height": 740,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-start-rambo.png",
+        "bytes": 363478,
+        "sha256": "11916e3b2d20630adefd74670a7b73bf6277cde8d240b6865de14398cfcfa994",
+        "git_blob_sha": "83de0074f4a4b9c3957d035cce08ec695cdcb2f1"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1858",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1858&starting-point-node-id=1778-1858&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "rambo",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-start-monk",
+      "id": "1778:1904",
+      "width": 360,
+      "height": 740,
+      "heading": "Выбери курочку",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-start-monk.png",
+        "bytes": 363445,
+        "sha256": "d1ebce85a7c4f49dd5ed28a23d1faa724cac9dc713a712b49acff2a89c029253",
+        "git_blob_sha": "2e59dbff972512c76a73e2c8a8b3ffbb48553bc2"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1904",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1904&starting-point-node-id=1778-1904&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 8,
+      "fixture": {
+        "selected_hero": "monk",
+        "unlocked_heroes": [
+          "ryaba",
+          "rambo",
+          "monk"
+        ],
+        "profile": "demonstration account with both bosses defeated"
+      }
+    },
+    {
+      "key": "poultry-playing",
+      "id": "1778:1950",
+      "width": 360,
+      "height": 740,
+      "heading": "Птичий двор",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-playing.png",
+        "bytes": 557979,
+        "sha256": "543542ebb8efb0c7c92d8d5ffa3c4b3b6e9625696d5b45e02ea6a64a382d4434",
+        "git_blob_sha": "b606d59bd64bd116811360d722b51b966fc68161"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1950",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1950&starting-point-node-id=1778-1950&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 2
+    },
+    {
+      "key": "poultry-pause",
+      "id": "1778:1972",
+      "width": 360,
+      "height": 740,
+      "heading": "Пауза",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-pause.png",
+        "bytes": 204952,
+        "sha256": "d8b27c7680fab4adb6cbba14219f8128fc521f3a2a6d2f113e811dee5e948912",
+        "git_blob_sha": "1305fb6006faa6f87e146906c0bdf2d385723a7d"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-1972",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1972&starting-point-node-id=1778-1972&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    },
+    {
+      "key": "poultry-defeat",
+      "id": "1778:2003",
+      "width": 360,
+      "height": 740,
+      "heading": "Курочка выбыла",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-defeat.png",
+        "bytes": 193089,
+        "sha256": "bb8d770b2ed86ba1d6650a650eed62eced459434fe40b3f5d96cd74b5902aa1a",
+        "git_blob_sha": "e02f48c80d88777793d1f322e2db492161a53d4c"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-2003",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-2003&starting-point-node-id=1778-2003&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 4
+    },
+    {
+      "key": "poultry-settings",
+      "id": "1778:2033",
+      "width": 360,
+      "height": 740,
+      "heading": "Настройки",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-settings.png",
+        "bytes": 201002,
+        "sha256": "5110e3b31dd634de32441f43f8d148fa4f3517c24112333de8f9ccfc22ed0783",
+        "git_blob_sha": "bff9818eb60019e442cc1468e77e70bc4d608d18"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-2033",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-2033&starting-point-node-id=1778-2033&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 4
+    },
+    {
+      "key": "poultry-stats",
+      "id": "1778:2063",
+      "width": 360,
+      "height": 740,
+      "heading": "Статистика забега",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-stats.png",
+        "bytes": 186005,
+        "sha256": "eb83053b6a7eed175682ad01e3c0a9595111a691ca8fffaedce7b66118d75c46",
+        "git_blob_sha": "1e6b04eefdf1e6a3a894efcced2c1f79e6e52def"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-2063",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-2063&starting-point-node-id=1778-2063&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 3
+    },
+    {
+      "key": "poultry-rating-today",
+      "id": "1778:2094",
+      "width": 360,
+      "height": 740,
+      "heading": "Рейтинг",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-rating-today.png",
+        "bytes": 176410,
+        "sha256": "c5e04ad361315671b1704e03da58c395602fce26f1f4b2558b6bf6a3dca7ddf5",
+        "git_blob_sha": "98de6696f9f242ee8fa4e4cebc3ea5d58624d074"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-2094",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-2094&starting-point-node-id=1778-2094&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    },
+    {
+      "key": "poultry-rating-all",
+      "id": "1778:2134",
+      "width": 360,
+      "height": 740,
+      "heading": "Рейтинг",
+      "png": {
+        "path": "assets/screens/v19/360x740/poultry-rating-all.png",
+        "bytes": 177185,
+        "sha256": "aef51cbe15eee9d67198d89b0f57250c8d3c19d5425bf487cfa3431ce766a943",
+        "git_blob_sha": "c62b4cb9abc905179cfa720b26d27c1cc9310774"
+      },
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1778-2134",
+      "prototype_url": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-2134&starting-point-node-id=1778-2134&scaling=contain",
+      "owner_approval": "pending",
+      "flow": "poultry",
+      "interactive_nodes": 5
+    }
+  ],
+  "share_card": {
+    "key": "chronicle-share",
+    "node_id": "1781:1530",
+    "width": 1080,
+    "height": 1350,
+    "path": "assets/share/v19/chronicle-share.png",
+    "bytes": 1046553,
+    "sha256": "c66d447bc7e75921cc7130e7bdfa418e41bf129b308bbf31721baf5ed473157e",
+    "git_blob_sha": "144962fc20f9f1fc40e7312038db6a93ad622d0f",
+    "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=1781-1530",
+    "template": {
+      "title": "Последняя скорлупа",
+      "subtitle": "Ряба побеждает Боевика",
+      "result": "Победа Рябы · 9 раундов",
+      "best_moment": "Золотая скорлупа, раунд 9",
+      "display_link": "qura.one",
+      "public_url": "REQUIRED_SERVER_VALUE",
+      "best_moment_source_node": "1706:11642",
+      "art": "Approved v15 layered-sprite fallback. Actual equipped participants; internal picture caption removed. Overlay title/result/link are editable native text, not embedded in illustration.",
+      "facts": {
+        "round": 9,
+        "winner": "Ряба",
+        "loser": "Боевик",
+        "winner_hp": 51,
+        "winner_hp_max": 108,
+        "loser_hp": 0,
+        "loser_hp_max": 112
+      },
+      "runtime_fields": [
+        "title",
+        "subtitle",
+        "winner",
+        "rounds",
+        "best_moment",
+        "illustration",
+        "public_url"
+      ],
+      "privacy": "Public battle URL without account identifiers, balances, email or other PII. No private player id encoded in the card."
+    },
+    "integration_note": "This is a design template. A public Chronicle detail route is not shipped in the current production source; developer must use the server-issued real public_url for share payload and printed link. qura.one is the real domain, not a fabricated working battle URL."
+  },
+  "equipment_examples": [
+    {
+      "asset_id": "C01/hat",
+      "name": "Соломенная шляпа",
+      "source_node": "318:272",
+      "rig_component": "1776:14",
+      "fixture": {
+        "rarity": "Common",
+        "min_level": 4,
+        "shop_price_ge": 75,
+        "sell_ge": 18,
+        "native_for": "Ряба",
+        "bonus": "Крутость +1; боевых бонусов нет"
+      }
+    },
+    {
+      "asset_id": "C01/bag",
+      "name": "Сумочка через плечо",
+      "source_node": "318:253",
+      "rig_component": "1776:31",
+      "fixture": {
+        "rarity": "Epic",
+        "min_level": 4,
+        "shop_price_ge": 600,
+        "sell_ge": 150,
+        "native_for": "Ряба",
+        "bonus": "Крутость +1; боевых бонусов нет"
+      }
+    }
+  ],
+  "rules": {
+    "economic_authority": "GAME_BIBLE §45 is LOCKED. Its numbers are PROTOTYPE BALANCE controlled by server configuration, never client constants.",
+    "wolf": {
+      "ticket_required": true,
+      "one_highest_chest_per_attempt": true,
+      "milestones": [
+        {
+          "caught": 200,
+          "tier": "simple",
+          "label": "Простой",
+          "slots": 1
+        },
+        {
+          "caught": 500,
+          "tier": "gold",
+          "label": "Золотой",
+          "slots": 2
+        },
+        {
+          "caught": 800,
+          "tier": "platinum",
+          "label": "Платиновый",
+          "slots": 3
+        },
+        {
+          "caught": 1000,
+          "tier": "epic",
+          "label": "Эпический",
+          "slots": 3,
+          "additional_guarantee": "accessory Epic or above"
+        }
+      ],
+      "below_200": "No chest",
+      "casual": "No ticket -> no chest regardless of count",
+      "rewards": {
+        "GE": "Immediate balance credit",
+        "XP": "Immediate credit to main hen",
+        "buff": "Buff stock by default",
+        "accessory": "Wardrobe by default; only registered 35 fitted assets"
+      },
+      "close_without_choice": "All remaining items/buffs retained in inventory; GE/XP already credited",
+      "no_L4_hen": "Accessory replaced with GE equal to sellback ×2; backend rule, no new character/item asset is introduced",
+      "rolls": "Independent server-side slots with seed/log; idempotent award key; no reroll on reopening"
+    },
+    "chances_percent": {
+      "simple": {
+        "GE": 40,
+        "GE_range": [
+          5,
+          15
+        ],
+        "XP": 30,
+        "XP_quantity": 30,
+        "buff": 20,
+        "buff_kind": "common ×1",
+        "accessory": 10,
+        "accessory_rarity": "Common"
+      },
+      "gold": {
+        "GE": 30,
+        "GE_range": [
+          15,
+          40
+        ],
+        "XP": 25,
+        "XP_quantity": 60,
+        "buff": 25,
+        "buff_kind": "common/rare ×1–2",
+        "accessory": 20,
+        "accessory_rarity": "Common/Rare"
+      },
+      "platinum": {
+        "GE": 25,
+        "GE_range": [
+          40,
+          80
+        ],
+        "XP": 20,
+        "XP_quantity": 100,
+        "buff": 25,
+        "buff_kind": "rare ×2",
+        "accessory": 30,
+        "accessory_rarity": "Rare/Epic"
+      },
+      "epic": {
+        "GE": 25,
+        "GE_range": [
+          80,
+          150
+        ],
+        "XP": 20,
+        "XP_quantity": 150,
+        "buff": 25,
+        "buff_kind": "rare/epic ×2",
+        "accessory": 30,
+        "accessory_rarity": "Epic; 10% Legendary",
+        "additional_guaranteed_accessory": "Epic or above"
+      }
+    },
+    "sell": {
+      "formula": "max(1, floor(current_shop_price_ge * 0.25))",
+      "percent": 25,
+      "rounding": "floor",
+      "minimum_ge": 1,
+      "source": "current server shop catalog at confirmation time",
+      "same_for_purchased_and_loot": true,
+      "equipped": "Must unequip first; disabled sell button reads «Сначала снимите»",
+      "arena_exclusive": "Cannot sell",
+      "confirmation": "One confirmed idempotent ledger operation; cancel makes no changes",
+      "examples": [
+        {
+          "price": 75,
+          "sell": 18
+        },
+        {
+          "price": 600,
+          "sell": 150
+        },
+        {
+          "unit_price": 100,
+          "quantity": 2,
+          "sell_total": 50
+        }
+      ]
+    },
+    "wardrobe": {
+      "base_hen": "Bare registered L4 base; do not display complete CARD clothes by default",
+      "native_layering": "Approved hat or strap + bag layered independently over bare hen; wings above bag strap",
+      "allowed_assets": "Only 35 items in production_v13_equipment.json. Retired G01/G02 shop pictures are not wearables."
+    },
+    "sbp": {
+      "unverified_message": "Оплата по СБП доступна только верифицированным пользователям. Зайдите в профиль и пройдите верификацию.",
+      "cta": "Перейти в профиль",
+      "verified_title": "Верификация пройдена",
+      "return_cta": "Вернуться в магазин",
+      "guard": "Read current verified status on SBP click; unverified -> sheet, no provider/payment request",
+      "verification_entry": "ProfileVerification",
+      "after_success": "Fresh server verified=true response; return to same package/product, no payment auto-start",
+      "verified_direct": "Already verified -> ordinary SBP flow",
+      "balance_payment": "Existing QuRa balance payment remains independent of SBP verification"
+    },
+    "poultry": {
+      "exit_label": "В QuRa",
+      "exit_surfaces": [
+        "start",
+        "pause",
+        "settings",
+        "stats",
+        "rating-today",
+        "rating-all",
+        "defeat"
+      ],
+      "death_actions": [
+        "Ещё раз",
+        "Рейтинг",
+        "В QuRa"
+      ],
+      "start_exit_rect": {
+        "390x844": {
+          "x": 274,
+          "y": 12,
+          "width": 104,
+          "height": 44
+        },
+        "360x740": {
+          "x": 244,
+          "y": 12,
+          "width": 104,
+          "height": 44
+        }
+      },
+      "hero_cards_y": {
+        "390x844": 386,
+        "360x740": 362
+      },
+      "persist_on_exit": [
+        "selected hero",
+        "progress",
+        "sound preferences"
+      ],
+      "system_back": "Android/Telegram back must call same app exit callback on these surfaces; Figma models tap route only",
+      "again": "Restart a run with same selected hero",
+      "exit_target": "QuRa game catalog; not an external game landing page"
+    }
+  },
+  "fixture_notes": [
+    "Item rarities, prices, levels and displayed bonuses are examples, not new authoritative metadata for the 35 items. Current equipment art manifest has no economy fields; developer must bind the server catalog.",
+    "Displayed 300 GE / 99 ₽ is the current base handful package example from app/services/ge_shop_catalog.py (blob 0c15028d6ae3e24d6d787c0753128f0a3b0356af); server configuration remains authoritative.",
+    "All three Poultry heroes are available in this demonstration account. Boss unlock instructions describe game rules, not an unlocked/locked gate for this fixture.",
+    "Rankings, run totals, balances, player names and share battle facts are demonstration data, not live account data.",
+    "The prototype verification success button demonstrates a positive server response. It is not a client-side verification bypass.",
+    "Screen fixtures show representative states, not a live inventory/ledger/payment simulation. Sale and award idempotency, eligibility, verified status, native back and public share URL require production implementation in the linked issues."
+  ],
+  "prototype": {
+    "entry_points": {
+      "390": {
+        "wolf-chests": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-6&starting-point-node-id=1777-6&scaling=contain",
+        "wolf-result-gold": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-132&starting-point-node-id=1777-132&scaling=contain",
+        "chest-open-epic": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-365&starting-point-node-id=1777-365&scaling=contain",
+        "wardrobe-bare": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-582&starting-point-node-id=1777-582&scaling=contain",
+        "shop-payment": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-954&starting-point-node-id=1777-954&scaling=contain",
+        "poultry-start-ryaba": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1777-1103&starting-point-node-id=1777-1103&scaling=contain"
+      },
+      "360": {
+        "wolf-chests": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-715&starting-point-node-id=1778-715&scaling=contain",
+        "wolf-result-gold": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-841&starting-point-node-id=1778-841&scaling=contain",
+        "chest-open-epic": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1074&starting-point-node-id=1778-1074&scaling=contain",
+        "wardrobe-bare": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1291&starting-point-node-id=1778-1291&scaling=contain",
+        "shop-payment": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1663&starting-point-node-id=1778-1663&scaling=contain",
+        "poultry-start-ryaba": "https://www.figma.com/proto/pTm5JOM8r7b8ukBrk3UsXg?page-id=1771-2&node-id=1778-1812&starting-point-node-id=1778-1812&scaling=contain"
+      }
+    },
+    "tap_transitions": [
+      {
+        "node": "I1777:20;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:20;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:20;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:20;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:20;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:43",
+        "target": "chest-open-simple",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:49",
+        "target": "chest-open-gold",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:55",
+        "target": "chest-open-platinum",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:61",
+        "target": "chest-open-epic",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:67",
+        "target": "wolf-result-gold",
+        "width": 390,
+        "sourceFrame": "1777:6",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:95",
+        "target": "EXTERNAL:https://qura.one/gamezone/volk",
+        "width": 390,
+        "sourceFrame": "1777:69",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:97",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:69",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:99",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:69",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:126",
+        "target": "chest-open-simple",
+        "width": 390,
+        "sourceFrame": "1777:101",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:128",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:101",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:130",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:101",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:157",
+        "target": "chest-open-gold",
+        "width": 390,
+        "sourceFrame": "1777:132",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:159",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:132",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:161",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:132",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:188",
+        "target": "chest-open-platinum",
+        "width": 390,
+        "sourceFrame": "1777:163",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:190",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:163",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:192",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:163",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:219",
+        "target": "chest-open-epic",
+        "width": 390,
+        "sourceFrame": "1777:194",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:221",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:194",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:223",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:194",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:251",
+        "target": "EXTERNAL:https://qura.one/gamezone/volk",
+        "width": 390,
+        "sourceFrame": "1777:225",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:253",
+        "target": "wolf-chests",
+        "width": 390,
+        "sourceFrame": "1777:225",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:255",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:225",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:280",
+        "target": "wolf-result-simple",
+        "width": 390,
+        "sourceFrame": "1777:257",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:309",
+        "target": "wolf-result-gold",
+        "width": 390,
+        "sourceFrame": "1777:282",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:351;1777:346",
+        "target": "buff-stock",
+        "width": 390,
+        "rewardOrigin": "chest-open-platinum",
+        "sourceFrame": "1777:311",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:351;1777:348",
+        "target": "sale-buff",
+        "width": 390,
+        "rewardOrigin": "chest-open-platinum",
+        "sourceFrame": "1777:311",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:363",
+        "target": "wolf-result-platinum",
+        "width": 390,
+        "sourceFrame": "1777:311",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:392;1777:346",
+        "target": "buff-stock",
+        "width": 390,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1777:365",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:392;1777:348",
+        "target": "sale-buff",
+        "width": 390,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1777:365",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:420;1777:415",
+        "target": "wardrobe-bag",
+        "width": 390,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1777:365",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:420;1777:417",
+        "target": "sale-reward",
+        "width": 390,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1777:365",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:435",
+        "target": "wolf-result-epic",
+        "width": 390,
+        "sourceFrame": "1777:365",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:456",
+        "target": "REWARD_RETURN",
+        "width": 390,
+        "sourceFrame": "1777:437",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:458",
+        "target": "REWARD_RETURN",
+        "width": 390,
+        "sourceFrame": "1777:437",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:494",
+        "target": "sold-buff",
+        "width": 390,
+        "sourceFrame": "1777:460",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:496",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:460",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:517",
+        "target": "REWARD_RETURN",
+        "width": 390,
+        "sourceFrame": "1777:498",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:519",
+        "target": "REWARD_RETURN",
+        "width": 390,
+        "sourceFrame": "1777:498",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:555",
+        "target": "sold-reward",
+        "width": 390,
+        "sourceFrame": "1777:521",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:557",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:521",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:578",
+        "target": "wardrobe-bare",
+        "width": 390,
+        "sourceFrame": "1777:559",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:580",
+        "target": "wardrobe-bare",
+        "width": 390,
+        "sourceFrame": "1777:559",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:596;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:596;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:596;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:596;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:596;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:643",
+        "target": "wardrobe-hat",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:645",
+        "target": "sale-hat",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:647",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:582",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:663;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:663;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:663;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:663;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:663;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:715",
+        "target": "wardrobe-bare",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:719",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:649",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:735;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:735;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:735;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:735;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:735;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:782",
+        "target": "wardrobe-bag-equipped",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:784",
+        "target": "sale-reward",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:786",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:721",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:802;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:802;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:802;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:802;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:802;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:855",
+        "target": "wardrobe-bag",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:859",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:788",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:875;539:81",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:875;539:85",
+        "target": "EXISTING:quests",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:875;539:89",
+        "target": "EXISTING:arena",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:875;539:93",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1777:875;539:97",
+        "target": "EXISTING:games",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:912",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:914",
+        "target": "EXISTING:coop",
+        "width": 390,
+        "sourceFrame": "1777:861",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:950",
+        "target": "wardrobe-sold",
+        "width": 390,
+        "sourceFrame": "1777:916",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:952",
+        "target": "wardrobe-bare",
+        "width": 390,
+        "sourceFrame": "1777:916",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:977",
+        "target": "sbp-blocked",
+        "width": 390,
+        "sourceFrame": "1777:954",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:979",
+        "target": "EXTERNAL:https://qura.one/ge-shop",
+        "width": 390,
+        "sourceFrame": "1777:954",
+        "interaction": "tap",
+        "source": "Read back from native Figma reaction"
+      },
+      {
+        "node": "1777:982",
+        "target": "EXISTING:shop",
+        "width": 390,
+        "sourceFrame": "1777:954",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1010",
+        "target": "verification-profile",
+        "width": 390,
+        "sourceFrame": "1777:984",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1012",
+        "target": "shop-payment",
+        "width": 390,
+        "sourceFrame": "1777:984",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1039",
+        "target": "EXTERNAL:https://qura.one/profile/verification",
+        "width": 390,
+        "sourceFrame": "1777:1014",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1041",
+        "target": "verification-success",
+        "width": 390,
+        "serverResponse": "verified=true",
+        "sourceFrame": "1777:1014",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1043",
+        "target": "shop-payment",
+        "width": 390,
+        "sourceFrame": "1777:1014",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1070",
+        "target": "payment-ready",
+        "width": 390,
+        "sourceFrame": "1777:1045",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1072",
+        "target": "EXTERNAL:https://qura.one/profile",
+        "width": 390,
+        "sourceFrame": "1777:1045",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1099",
+        "target": "EXTERNAL:https://qura.one/ge-shop",
+        "width": 390,
+        "sourceFrame": "1777:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1101",
+        "target": "shop-payment",
+        "width": 390,
+        "sourceFrame": "1777:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1118",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1124",
+        "target": "poultry-start-ryaba",
+        "width": 390,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1129",
+        "target": "poultry-start-rambo",
+        "width": 390,
+        "selectedHero": "rambo",
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1134",
+        "target": "poultry-start-monk",
+        "width": 390,
+        "selectedHero": "monk",
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1139",
+        "target": "poultry-playing",
+        "width": 390,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1142",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1144",
+        "target": "poultry-stats",
+        "width": 390,
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1146",
+        "target": "poultry-settings",
+        "width": 390,
+        "sourceFrame": "1777:1103",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1164",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1170",
+        "target": "poultry-start-ryaba",
+        "width": 390,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1175",
+        "target": "poultry-start-rambo",
+        "width": 390,
+        "selectedHero": "rambo",
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1180",
+        "target": "poultry-start-monk",
+        "width": 390,
+        "selectedHero": "monk",
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1185",
+        "target": "poultry-playing",
+        "width": 390,
+        "selectedHero": "rambo",
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1188",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1190",
+        "target": "poultry-stats",
+        "width": 390,
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1192",
+        "target": "poultry-settings",
+        "width": 390,
+        "sourceFrame": "1777:1149",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1210",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1216",
+        "target": "poultry-start-ryaba",
+        "width": 390,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1221",
+        "target": "poultry-start-rambo",
+        "width": 390,
+        "selectedHero": "rambo",
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1226",
+        "target": "poultry-start-monk",
+        "width": 390,
+        "selectedHero": "monk",
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1231",
+        "target": "poultry-playing",
+        "width": 390,
+        "selectedHero": "monk",
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1234",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1236",
+        "target": "poultry-stats",
+        "width": 390,
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1238",
+        "target": "poultry-settings",
+        "width": 390,
+        "sourceFrame": "1777:1195",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1258",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1241",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1260",
+        "target": "poultry-pause",
+        "width": 390,
+        "sourceFrame": "1777:1241",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1281",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1263",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1286",
+        "target": "poultry-playing",
+        "width": 390,
+        "sourceFrame": "1777:1263",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1288",
+        "target": "poultry-settings",
+        "width": 390,
+        "sourceFrame": "1777:1263",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1290",
+        "target": "poultry-stats",
+        "width": 390,
+        "sourceFrame": "1777:1263",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1292",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1777:1263",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1312",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1294",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1318",
+        "target": "poultry-playing",
+        "width": 390,
+        "sourceFrame": "1777:1294",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1320",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1294",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1322",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1777:1294",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1342",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1324",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1346",
+        "target": "TOGGLE:Звуки боя · Вкл.",
+        "width": 390,
+        "sourceFrame": "1777:1324",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1348",
+        "target": "TOGGLE:Радио QuRa · Выкл.",
+        "width": 390,
+        "sourceFrame": "1777:1324",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1352",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:1324",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1372",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1354",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1381",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:1354",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1383",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1777:1354",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1403",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1385",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1408",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1385",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1410",
+        "target": "poultry-rating-all",
+        "width": 390,
+        "sourceFrame": "1777:1385",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1421",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:1385",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1423",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1777:1385",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1443",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1777:1425",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1448",
+        "target": "poultry-rating-today",
+        "width": 390,
+        "sourceFrame": "1777:1425",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1450",
+        "target": "poultry-rating-all",
+        "width": 390,
+        "sourceFrame": "1777:1425",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1461",
+        "target": "BACK",
+        "width": 390,
+        "sourceFrame": "1777:1425",
+        "interaction": "tap"
+      },
+      {
+        "node": "1777:1463",
+        "target": "EXISTING:games",
+        "width": 390,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1777:1425",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:729;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:729;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:729;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:729;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:729;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:752",
+        "target": "chest-open-simple",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:758",
+        "target": "chest-open-gold",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:764",
+        "target": "chest-open-platinum",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:770",
+        "target": "chest-open-epic",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:776",
+        "target": "wolf-result-gold",
+        "width": 360,
+        "sourceFrame": "1778:715",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:804",
+        "target": "EXTERNAL:https://qura.one/gamezone/volk",
+        "width": 360,
+        "sourceFrame": "1778:778",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:806",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:778",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:808",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:778",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:835",
+        "target": "chest-open-simple",
+        "width": 360,
+        "sourceFrame": "1778:810",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:837",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:810",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:839",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:810",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:866",
+        "target": "chest-open-gold",
+        "width": 360,
+        "sourceFrame": "1778:841",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:868",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:841",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:870",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:841",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:897",
+        "target": "chest-open-platinum",
+        "width": 360,
+        "sourceFrame": "1778:872",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:899",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:872",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:901",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:872",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:928",
+        "target": "chest-open-epic",
+        "width": 360,
+        "sourceFrame": "1778:903",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:930",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:903",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:932",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:903",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:960",
+        "target": "EXTERNAL:https://qura.one/gamezone/volk",
+        "width": 360,
+        "sourceFrame": "1778:934",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:962",
+        "target": "wolf-chests",
+        "width": 360,
+        "sourceFrame": "1778:934",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:964",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:934",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:989",
+        "target": "wolf-result-simple",
+        "width": 360,
+        "sourceFrame": "1778:966",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1018",
+        "target": "wolf-result-gold",
+        "width": 360,
+        "sourceFrame": "1778:991",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1060;1778:1055",
+        "target": "buff-stock",
+        "width": 360,
+        "rewardOrigin": "chest-open-platinum",
+        "sourceFrame": "1778:1020",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1060;1778:1057",
+        "target": "sale-buff",
+        "width": 360,
+        "rewardOrigin": "chest-open-platinum",
+        "sourceFrame": "1778:1020",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1072",
+        "target": "wolf-result-platinum",
+        "width": 360,
+        "sourceFrame": "1778:1020",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1101;1778:1055",
+        "target": "buff-stock",
+        "width": 360,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1778:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1101;1778:1057",
+        "target": "sale-buff",
+        "width": 360,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1778:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1129;1778:1124",
+        "target": "wardrobe-bag",
+        "width": 360,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1778:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1129;1778:1126",
+        "target": "sale-reward",
+        "width": 360,
+        "rewardOrigin": "chest-open-epic",
+        "sourceFrame": "1778:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1144",
+        "target": "wolf-result-epic",
+        "width": 360,
+        "sourceFrame": "1778:1074",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1165",
+        "target": "REWARD_RETURN",
+        "width": 360,
+        "sourceFrame": "1778:1146",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1167",
+        "target": "REWARD_RETURN",
+        "width": 360,
+        "sourceFrame": "1778:1146",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1203",
+        "target": "sold-buff",
+        "width": 360,
+        "sourceFrame": "1778:1169",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1205",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:1169",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1226",
+        "target": "REWARD_RETURN",
+        "width": 360,
+        "sourceFrame": "1778:1207",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1228",
+        "target": "REWARD_RETURN",
+        "width": 360,
+        "sourceFrame": "1778:1207",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1264",
+        "target": "sold-reward",
+        "width": 360,
+        "sourceFrame": "1778:1230",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1266",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:1230",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1287",
+        "target": "wardrobe-bare",
+        "width": 360,
+        "sourceFrame": "1778:1268",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1289",
+        "target": "wardrobe-bare",
+        "width": 360,
+        "sourceFrame": "1778:1268",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1305;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1305;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1305;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1305;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1305;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1352",
+        "target": "wardrobe-hat",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1354",
+        "target": "sale-hat",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1356",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1291",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1372;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1372;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1372;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1372;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1372;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1424",
+        "target": "wardrobe-bare",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1428",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1358",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1444;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1444;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1444;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1444;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1444;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1491",
+        "target": "wardrobe-bag-equipped",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1493",
+        "target": "sale-reward",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1495",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1430",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1511;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1511;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1511;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1511;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1511;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1564",
+        "target": "wardrobe-bag",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1568",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1497",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1584;539:81",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1584;539:85",
+        "target": "EXISTING:quests",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1584;539:89",
+        "target": "EXISTING:arena",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1584;539:93",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "I1778:1584;539:97",
+        "target": "EXISTING:games",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1621",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1623",
+        "target": "EXISTING:coop",
+        "width": 360,
+        "sourceFrame": "1778:1570",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1659",
+        "target": "wardrobe-sold",
+        "width": 360,
+        "sourceFrame": "1778:1625",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1661",
+        "target": "wardrobe-bare",
+        "width": 360,
+        "sourceFrame": "1778:1625",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1686",
+        "target": "sbp-blocked",
+        "width": 360,
+        "sourceFrame": "1778:1663",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1688",
+        "target": "EXTERNAL:https://qura.one/ge-shop",
+        "width": 360,
+        "sourceFrame": "1778:1663",
+        "interaction": "tap",
+        "source": "Read back from native Figma reaction"
+      },
+      {
+        "node": "1778:1691",
+        "target": "EXISTING:shop",
+        "width": 360,
+        "sourceFrame": "1778:1663",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1719",
+        "target": "verification-profile",
+        "width": 360,
+        "sourceFrame": "1778:1693",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1721",
+        "target": "shop-payment",
+        "width": 360,
+        "sourceFrame": "1778:1693",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1748",
+        "target": "EXTERNAL:https://qura.one/profile/verification",
+        "width": 360,
+        "sourceFrame": "1778:1723",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1750",
+        "target": "verification-success",
+        "width": 360,
+        "serverResponse": "verified=true",
+        "sourceFrame": "1778:1723",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1752",
+        "target": "shop-payment",
+        "width": 360,
+        "sourceFrame": "1778:1723",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1779",
+        "target": "payment-ready",
+        "width": 360,
+        "sourceFrame": "1778:1754",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1781",
+        "target": "EXTERNAL:https://qura.one/profile",
+        "width": 360,
+        "sourceFrame": "1778:1754",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1808",
+        "target": "EXTERNAL:https://qura.one/ge-shop",
+        "width": 360,
+        "sourceFrame": "1778:1783",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1810",
+        "target": "shop-payment",
+        "width": 360,
+        "sourceFrame": "1778:1783",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1827",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1833",
+        "target": "poultry-start-ryaba",
+        "width": 360,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1838",
+        "target": "poultry-start-rambo",
+        "width": 360,
+        "selectedHero": "rambo",
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1843",
+        "target": "poultry-start-monk",
+        "width": 360,
+        "selectedHero": "monk",
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1848",
+        "target": "poultry-playing",
+        "width": 360,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1851",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1853",
+        "target": "poultry-stats",
+        "width": 360,
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1855",
+        "target": "poultry-settings",
+        "width": 360,
+        "sourceFrame": "1778:1812",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1873",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1879",
+        "target": "poultry-start-ryaba",
+        "width": 360,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1884",
+        "target": "poultry-start-rambo",
+        "width": 360,
+        "selectedHero": "rambo",
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1889",
+        "target": "poultry-start-monk",
+        "width": 360,
+        "selectedHero": "monk",
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1894",
+        "target": "poultry-playing",
+        "width": 360,
+        "selectedHero": "rambo",
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1897",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1899",
+        "target": "poultry-stats",
+        "width": 360,
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1901",
+        "target": "poultry-settings",
+        "width": 360,
+        "sourceFrame": "1778:1858",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1919",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1925",
+        "target": "poultry-start-ryaba",
+        "width": 360,
+        "selectedHero": "ryaba",
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1930",
+        "target": "poultry-start-rambo",
+        "width": 360,
+        "selectedHero": "rambo",
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1935",
+        "target": "poultry-start-monk",
+        "width": 360,
+        "selectedHero": "monk",
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1940",
+        "target": "poultry-playing",
+        "width": 360,
+        "selectedHero": "monk",
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1943",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1945",
+        "target": "poultry-stats",
+        "width": 360,
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1947",
+        "target": "poultry-settings",
+        "width": 360,
+        "sourceFrame": "1778:1904",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1967",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:1950",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1969",
+        "target": "poultry-pause",
+        "width": 360,
+        "sourceFrame": "1778:1950",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1990",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:1972",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1995",
+        "target": "poultry-playing",
+        "width": 360,
+        "sourceFrame": "1778:1972",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1997",
+        "target": "poultry-settings",
+        "width": 360,
+        "sourceFrame": "1778:1972",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:1999",
+        "target": "poultry-stats",
+        "width": 360,
+        "sourceFrame": "1778:1972",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2001",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1778:1972",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2021",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:2003",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2027",
+        "target": "poultry-playing",
+        "width": 360,
+        "sourceFrame": "1778:2003",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2029",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:2003",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2031",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1778:2003",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2051",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:2033",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2055",
+        "target": "TOGGLE:Звуки боя · Вкл.",
+        "width": 360,
+        "sourceFrame": "1778:2033",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2057",
+        "target": "TOGGLE:Радио QuRa · Выкл.",
+        "width": 360,
+        "sourceFrame": "1778:2033",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2061",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:2033",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2081",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:2063",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2090",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:2063",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2092",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1778:2063",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2112",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:2094",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2117",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:2094",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2119",
+        "target": "poultry-rating-all",
+        "width": 360,
+        "sourceFrame": "1778:2094",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2130",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:2094",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2132",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1778:2094",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2152",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "preserveSelectedHero": true,
+        "sourceFrame": "1778:2134",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2157",
+        "target": "poultry-rating-today",
+        "width": 360,
+        "sourceFrame": "1778:2134",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2159",
+        "target": "poultry-rating-all",
+        "width": 360,
+        "sourceFrame": "1778:2134",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2170",
+        "target": "BACK",
+        "width": 360,
+        "sourceFrame": "1778:2134",
+        "interaction": "tap"
+      },
+      {
+        "node": "1778:2172",
+        "target": "EXISTING:games",
+        "width": 360,
+        "event": "qura:poultry:exit",
+        "sourceFrame": "1778:2134",
+        "interaction": "tap"
+      }
+    ],
+    "resource_header_routes": {
+      "wallet": "EXISTING:resources",
+      "GE": "EXISTING:resources",
+      "tickets": "EXISTING:tickets",
+      "menu": "EXISTING:settings"
+    },
+    "existing_v18_targets": {
+      "360": {
+        "coop": "1710:47111",
+        "quests": "1710:36265",
+        "arena": "1710:47397",
+        "shop": "1710:61518",
+        "games": "1710:36712",
+        "resources": "1710:36610",
+        "tickets": "1710:36665",
+        "settings": "1710:36821"
+      },
+      "390": {
+        "coop": "1710:41290",
+        "quests": "1709:28391",
+        "arena": "1710:41576",
+        "shop": "1710:61518",
+        "games": "1709:28838",
+        "resources": "1709:28736",
+        "tickets": "1709:28791",
+        "settings": "1709:28947"
+      }
+    },
+    "cross_page_navigation": "Figma URL action opens approved v18 prototype; in app use internal router callback.",
+    "route_overrides": [
+      "The «С баланса QuRa» action opens existing https://qura.one/ge-shop, independent of SBP verification."
+    ],
+    "conditional_logic": {
+      "reward_return": "REWARD_RETURN checks reward/origin and returns to the actual opening tier",
+      "poultry_hero": "Selected hero sets string and 3 exclusive visibility booleans; not reset by exit; run actor and pause summary bound to hero variables",
+      "sound_switches": "Boolean toggle with bound label; no audio file playback claimed by this graphics handoff",
+      "sbp": "verified false -> blocked sheet; true -> payment-ready. Package id retained.",
+      "verified_fixture": "Success callback marks prototype variable only after represented successful response"
+    },
+    "variables": [
+      {
+        "id": "VariableID:1781:1640",
+        "name": "reward/origin",
+        "type": "STRING",
+        "values": {
+          "1781:0": "chest-open-epic"
+        }
+      },
+      {
+        "id": "VariableID:1781:1641",
+        "name": "poultry/hero",
+        "type": "STRING",
+        "values": {
+          "1781:0": "ryaba"
+        }
+      },
+      {
+        "id": "VariableID:1781:1642",
+        "name": "poultry/hero/ryaba",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": true
+        }
+      },
+      {
+        "id": "VariableID:1781:1643",
+        "name": "poultry/hero/rambo",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": false
+        }
+      },
+      {
+        "id": "VariableID:1781:1644",
+        "name": "poultry/hero/monk",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": false
+        }
+      },
+      {
+        "id": "VariableID:1781:1645",
+        "name": "poultry/effects",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": true
+        }
+      },
+      {
+        "id": "VariableID:1781:1646",
+        "name": "poultry/effectsLabel",
+        "type": "STRING",
+        "values": {
+          "1781:0": "Звуки боя · Вкл."
+        }
+      },
+      {
+        "id": "VariableID:1781:1647",
+        "name": "poultry/radio",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": false
+        }
+      },
+      {
+        "id": "VariableID:1781:1648",
+        "name": "poultry/radioLabel",
+        "type": "STRING",
+        "values": {
+          "1781:0": "Радио QuRa · Выкл."
+        }
+      },
+      {
+        "id": "VariableID:1781:1649",
+        "name": "verification/verified",
+        "type": "BOOLEAN",
+        "values": {
+          "1781:0": false
+        }
+      },
+      {
+        "id": "VariableID:1781:1650",
+        "name": "verification/returnContext",
+        "type": "STRING",
+        "values": {
+          "1781:0": "handful"
+        }
+      },
+      {
+        "id": "VariableID:1781:1651",
+        "name": "nav/feedback",
+        "type": "STRING",
+        "values": {
+          "1781:0": "current"
+        }
+      },
+      {
+        "id": "VariableID:1784:1618",
+        "name": "poultry/heroName",
+        "type": "STRING",
+        "values": {
+          "1781:0": "Ряба"
+        }
+      },
+      {
+        "id": "VariableID:1784:1619",
+        "name": "poultry/runLabel",
+        "type": "STRING",
+        "values": {
+          "1781:0": "Ряба · уровень 7\n03:42 · 480 очков"
+        }
+      }
+    ]
+  },
+  "qa": {
+    "png_dimensions": "All 83 files decoded and checked against declared exact dimensions",
+    "transparent_assets": "All 8 RGBA sprites retain alpha=0 background and >250 maximum alpha; no opaque backdrop",
+    "visual_inspection": {
+      "360x740": [
+        "wolf-result-platinum",
+        "chest-open-epic",
+        "wardrobe-bare",
+        "sale-hat",
+        "sbp-blocked",
+        "poultry-start-ryaba",
+        "poultry-defeat",
+        "poultry-settings"
+      ],
+      "390x844": [
+        "wolf-chests",
+        "chest-open-gold",
+        "wardrobe-hat",
+        "verification-success",
+        "poultry-pause",
+        "poultry-rating-all"
+      ],
+      "share": "1080×1350 poster inspected",
+      "art": "All eight chest states inspected on checkerboard"
+    },
+    "prototype_readback": {
+      "frames_including_share": 75,
+      "interactive_nodes": 518,
+      "missing_internal_destinations": [],
+      "action_types": {
+        "URL": 344,
+        "NODE": 174,
+        "SET_VARIABLE": 182,
+        "CONDITIONAL": 42,
+        "BACK": 12
+      }
+    },
+    "button_bounds": "No button or hero card extends beyond its phone frame",
+    "intentional_disabled_controls": [
+      {
+        "frame": "1777:649",
+        "controls": [
+          {
+            "id": "1777:717",
+            "name": "button/Сначала снимите",
+            "opacity": 0.4000000059604645
+          }
+        ]
+      },
+      {
+        "frame": "1777:788",
+        "controls": [
+          {
+            "id": "1777:857",
+            "name": "button/Сначала снимите",
+            "opacity": 0.4000000059604645
+          }
+        ]
+      },
+      {
+        "frame": "1778:1358",
+        "controls": [
+          {
+            "id": "1778:1426",
+            "name": "button/Сначала снимите",
+            "opacity": 0.4000000059604645
+          }
+        ]
+      },
+      {
+        "frame": "1778:1497",
+        "controls": [
+          {
+            "id": "1778:1566",
+            "name": "button/Сначала снимите",
+            "opacity": 0.4000000059604645
+          }
+        ]
+      }
+    ],
+    "coverage": "Native Figma reaction/variable structure audited. No claim of production behavior or real SBP transaction testing."
+  }
+}
