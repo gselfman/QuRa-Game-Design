@@ -1,0 +1,548 @@
+{
+  "version": 18,
+  "original": true,
+  "provenance": "Original procedural composition and sound design for QuRa; no third-party samples.",
+  "mix": {
+    "musicDefault": 0.25,
+    "sfxDefault": 0.7,
+    "chatDuckDb": -6,
+    "oneWarningPerRound": true,
+    "maxSimultaneousSfx": 4,
+    "respectMute": true,
+    "resumeOnlyAfterUserGesture": true
+  },
+  "files": [
+    {
+      "id": "music_coop",
+      "kind": "music",
+      "file": "assets/audio/v18/music_coop.ogg",
+      "duration": 40.0,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": true,
+      "description": "Тёплая деревянная тема Курятника",
+      "events": [
+        "scene.coop"
+      ],
+      "sha256": "9af0b7defa67ed633780b7dd981e1473d305d418e897b0e6fd930f6f8b122373",
+      "peakDbFS": -7.98
+    },
+    {
+      "id": "music_arena",
+      "kind": "music",
+      "file": "assets/audio/v18/music_arena.ogg",
+      "duration": 34.2857,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": true,
+      "description": "Упругая боевая тема Арены",
+      "events": [
+        "scene.arena"
+      ],
+      "sha256": "a16f93c3a5877650a75546ace138e1df05cac80a40ab57c17bacd8fd29703fe8",
+      "peakDbFS": -9.53
+    },
+    {
+      "id": "ui_tap",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_tap.wav",
+      "duration": 0.12,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий деревянный тап",
+      "events": [
+        "ui.click"
+      ],
+      "sha256": "333e244880bc8e00b12c5660f4dc231728b67f00ae762a6bc35f6d962081b113",
+      "peakDbFS": -7.3
+    },
+    {
+      "id": "ui_back",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_back.wav",
+      "duration": 0.26,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Мягкий возврат",
+      "events": [
+        "ui.back",
+        "ui.cancel"
+      ],
+      "sha256": "b141d925de9dceb0505550917537d98a9619a41af77bbbf11ce9c09552548ea4",
+      "peakDbFS": -5.82
+    },
+    {
+      "id": "ui_swipe",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_swipe.wav",
+      "duration": 0.22,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Лёгкое движение шторки",
+      "events": [
+        "chat.expand",
+        "chat.collapse",
+        "menu.reveal",
+        "history.open"
+      ],
+      "sha256": "4094986de6ee826a9b0618c623d447cacf1a8e93a0702bd69017b9d61591110e",
+      "peakDbFS": -1.87
+    },
+    {
+      "id": "target_lock",
+      "kind": "sfx",
+      "file": "assets/audio/v18/target_lock.wav",
+      "duration": 0.28,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Двойной сигнал выбора цели",
+      "events": [
+        "arena.target.select",
+        "roster.assign"
+      ],
+      "sha256": "4746103917af3eb1d480796bd3d6aa68fa1f6b5db1314030f9b97dac92bfd34c",
+      "peakDbFS": -5.0
+    },
+    {
+      "id": "hen_cluck",
+      "kind": "sfx",
+      "file": "assets/audio/v18/hen_cluck.wav",
+      "duration": 0.6,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткое стилизованное кудахтанье",
+      "events": [
+        "coop.hen.tap",
+        "roster.hen.select"
+      ],
+      "sha256": "efbd6232abd1441f1fa6c224cf93c313704c0ea0bd238abd5ae5743c294c0b8f",
+      "peakDbFS": -4.47
+    },
+    {
+      "id": "eggs_collect",
+      "kind": "sfx",
+      "file": "assets/audio/v18/eggs_collect.wav",
+      "duration": 0.9,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Рассыпчатый звон золотых яиц",
+      "events": [
+        "coop.collect.success"
+      ],
+      "sha256": "0617e2e1a67e75b9538afce86ac951ef5da0a41661de2f2870452a2a8abee943",
+      "peakDbFS": -3.13
+    },
+    {
+      "id": "save_defense",
+      "kind": "sfx",
+      "file": "assets/audio/v18/save_defense.wav",
+      "duration": 0.8,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Подтверждение сохранения защиты",
+      "events": [
+        "defense.save.success"
+      ],
+      "sha256": "155b62041aec24a10aee4111d1dbab5ff3765fcba2d8dafefd226bb8706c15b3",
+      "peakDbFS": -3.55
+    },
+    {
+      "id": "chat_message",
+      "kind": "sfx",
+      "file": "assets/audio/v18/chat_message.wav",
+      "duration": 0.22,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Ненавязчивое уведомление чата",
+      "events": [
+        "chat.message.receive"
+      ],
+      "sha256": "737545cbf2ffef11c0b89c140d8f60925d188f3ebdc913d64895e85bf90ea1c0",
+      "peakDbFS": -5.91
+    },
+    {
+      "id": "arena_start",
+      "kind": "sfx",
+      "file": "assets/audio/v18/arena_start.wav",
+      "duration": 1.4,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий сигнал выхода на Арену",
+      "events": [
+        "arena.start"
+      ],
+      "sha256": "1145da5b408a8d9551150fd5bb2f70d6e93c7c60a1fe69503d5b3bfb6ec7dcf1",
+      "peakDbFS": -2.4
+    },
+    {
+      "id": "attack",
+      "kind": "sfx",
+      "file": "assets/audio/v18/attack.wav",
+      "duration": 0.46,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Взмах крыла и мягкий удар",
+      "events": [
+        "arena.attack.reveal"
+      ],
+      "sha256": "fdccbfb401406b63efa3f0bddaf27e167002176a04ff953cc460cce082fb4e9d",
+      "peakDbFS": -1.11
+    },
+    {
+      "id": "defense_shield",
+      "kind": "sfx",
+      "file": "assets/audio/v18/defense_shield.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий звон щита",
+      "events": [
+        "arena.defend.reveal"
+      ],
+      "sha256": "e3a91a2158e0d1f011e40842ea1bb8260d4eebef02385a673481523bd719bb90",
+      "peakDbFS": -2.39
+    },
+    {
+      "id": "maneuver_ryaba",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_ryaba.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · ryaba",
+      "events": [
+        "arena.maneuver.ryaba"
+      ],
+      "sha256": "f70f12309f2047319294a7e0340c7437c6786c6f75693bfdff44b2b53ba107f2",
+      "peakDbFS": -2.89
+    },
+    {
+      "id": "special_ryaba",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_ryaba.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · ryaba",
+      "events": [
+        "arena.special.ryaba"
+      ],
+      "sha256": "499b3d1c86948c8eadc7663b0b2fcef0db654e19b62dbb6e232878ea33aff4a0",
+      "peakDbFS": -2.82
+    },
+    {
+      "id": "maneuver_fighter",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_fighter.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · fighter",
+      "events": [
+        "arena.maneuver.fighter"
+      ],
+      "sha256": "0eadbb535ade7c3cca3ddf881253e58375d83cc46c46df208e97c18e0f41a2e8",
+      "peakDbFS": -3.07
+    },
+    {
+      "id": "special_fighter",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_fighter.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · fighter",
+      "events": [
+        "arena.special.fighter"
+      ],
+      "sha256": "2d4d5b94c8cbc38ec1a4ae5d5b52e7cc0e8890122b13f6e3948f6360245787ea",
+      "peakDbFS": -2.82
+    },
+    {
+      "id": "maneuver_fool",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_fool.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · fool",
+      "events": [
+        "arena.maneuver.fool"
+      ],
+      "sha256": "641b79041aa8d38fbf81e5eefaaa83055bbf707aa68bfeff52e28c9c2ebbcc07",
+      "peakDbFS": -3.56
+    },
+    {
+      "id": "special_fool",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_fool.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · fool",
+      "events": [
+        "arena.special.fool"
+      ],
+      "sha256": "4c7f2959a0da36a6b6ccd7a90187ccc3ef71e7356b89b8119792893a2bb6711d",
+      "peakDbFS": -3.25
+    },
+    {
+      "id": "maneuver_professor",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_professor.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · professor",
+      "events": [
+        "arena.maneuver.professor"
+      ],
+      "sha256": "0d5e938c43b8c054536252d2c56c20964c7e9046e1eb374961dab4a6334f4505",
+      "peakDbFS": -4.34
+    },
+    {
+      "id": "special_professor",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_professor.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · professor",
+      "events": [
+        "arena.special.professor"
+      ],
+      "sha256": "13f7a13b258a2ec814ca1b4b9fb65e4c7cf235da77f503c8438d80494193f9be",
+      "peakDbFS": -3.17
+    },
+    {
+      "id": "maneuver_monk",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_monk.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · monk",
+      "events": [
+        "arena.maneuver.monk"
+      ],
+      "sha256": "9b80469c4bc452ea4821d1de48fed047bb4136d2310fb58e4c7b64d80e912b78",
+      "peakDbFS": -3.51
+    },
+    {
+      "id": "special_monk",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_monk.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · monk",
+      "events": [
+        "arena.special.monk"
+      ],
+      "sha256": "d7f32a9ccc57dcf1bb3bd8af15dc1ea579656ae86460a10dd2fc78f1f9489eff",
+      "peakDbFS": -2.45
+    },
+    {
+      "id": "maneuver_glamour",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_glamour.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · glamour",
+      "events": [
+        "arena.maneuver.glamour"
+      ],
+      "sha256": "3ad7325d2a632cac5335945956082a6e9655a1495680579a3307886dc5278d4c",
+      "peakDbFS": -3.62
+    },
+    {
+      "id": "special_glamour",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_glamour.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · glamour",
+      "events": [
+        "arena.special.glamour"
+      ],
+      "sha256": "b5dfd979316b521bf7db17e877b06415b8d92b3f9c07c1be4a277636f6d3400f",
+      "peakDbFS": -2.4
+    },
+    {
+      "id": "special_ready",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_ready.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Особый удар накоплен",
+      "events": [
+        "arena.special.ready"
+      ],
+      "sha256": "fc639636208682895c90baa23921aa7dd950327c6a5508e8544dd6400efcde04",
+      "peakDbFS": -3.1
+    },
+    {
+      "id": "buff_activate",
+      "kind": "sfx",
+      "file": "assets/audio/v18/buff_activate.wav",
+      "duration": 0.8,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Срабатывание бафа",
+      "events": [
+        "arena.buff.activate"
+      ],
+      "sha256": "b0b0d1075698492e8e14eb0a36930b9a668aba52005dfce9ae32fbeec0ded888",
+      "peakDbFS": -2.65
+    },
+    {
+      "id": "scout_reveal",
+      "kind": "sfx",
+      "file": "assets/audio/v18/scout_reveal.wav",
+      "duration": 0.9,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Раскрытие Разведки",
+      "events": [
+        "arena.scout.reveal"
+      ],
+      "sha256": "69126ea3c74b2427176940d7aef663c1a4e91de3e202e714b94129dd367296f4",
+      "peakDbFS": -3.3
+    },
+    {
+      "id": "round_win",
+      "kind": "sfx",
+      "file": "assets/audio/v18/round_win.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Победа в раунде",
+      "events": [
+        "arena.round.win"
+      ],
+      "sha256": "cc8d857880670b04da0a95d31e300727f438567544985c47145ac6d83e58d7bc",
+      "peakDbFS": -3.14
+    },
+    {
+      "id": "round_lose",
+      "kind": "sfx",
+      "file": "assets/audio/v18/round_lose.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Проигрыш раунда",
+      "events": [
+        "arena.round.lose"
+      ],
+      "sha256": "45a1927abf82b84a2dd141e97605131074fc2f1c5d963b16e9c6cf0f9cf726df",
+      "peakDbFS": -4.55
+    },
+    {
+      "id": "battle_victory",
+      "kind": "sfx",
+      "file": "assets/audio/v18/battle_victory.wav",
+      "duration": 2.0,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Праздничная финальная каденция",
+      "events": [
+        "arena.victory",
+        "quest.reward"
+      ],
+      "sha256": "7b6487a126ec364a332b973ffaa9066cc798eee6263d42cb6cadeb8570b99a6e",
+      "peakDbFS": -2.15
+    },
+    {
+      "id": "battle_defeat",
+      "kind": "sfx",
+      "file": "assets/audio/v18/battle_defeat.wav",
+      "duration": 1.6,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Спокойное завершение поражения",
+      "events": [
+        "arena.defeat"
+      ],
+      "sha256": "01e77acc4d80bb8e74137dc9001114619bde3500e63b95307f1c9a7f0ca80f45",
+      "peakDbFS": -3.06
+    },
+    {
+      "id": "timer_warning",
+      "kind": "sfx",
+      "file": "assets/audio/v18/timer_warning.wav",
+      "duration": 0.5,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Деликатный сигнал окончания времени",
+      "events": [
+        "arena.timer.warning"
+      ],
+      "sha256": "f089b9b55ed2316381ed7b698060f05ddcc8c360f65f87f1f0fd53907236043c",
+      "peakDbFS": -6.99
+    },
+    {
+      "id": "minigame_catch",
+      "kind": "sfx",
+      "file": "assets/audio/v18/minigame_catch.wav",
+      "duration": 0.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Яйцо поймано",
+      "events": [
+        "minigame.catch"
+      ],
+      "sha256": "26ae71e5d0e3aed8c15f7acacc322d3b602b9dac0585876f8ada32faf26b585d",
+      "peakDbFS": -6.59
+    },
+    {
+      "id": "minigame_miss",
+      "kind": "sfx",
+      "file": "assets/audio/v18/minigame_miss.wav",
+      "duration": 0.42,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Мягкий комичный промах",
+      "events": [
+        "minigame.miss"
+      ],
+      "sha256": "3980de61484e1ba84cd04e31a7dc56ebf1fbc197cb2f65ae95ef2c958a3a1002",
+      "peakDbFS": -5.93
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "passed": 13,
+  "checks": [
+    "Save gated until roster complete",
+    "Three positions selected independently",
+    "Duplicate hen blocked without closing picker",
+    "Replace and remove free occupied hens",
+    "Save snapshots names, keys, policy and buffs",
+    "Draft edits preserve saved defense",
+    "Pause and resume saved format",
+    "Preparation, formats and defense retain separate state",
+    "Action effect precedes target confirmation",
+    "Figure and HP card select and change target",
+    "Confirm stores target and moves to next hen",
+    "Defense bypasses enemy selection",
+    "All individual choices are retained through review and submit"
+  ]
+}

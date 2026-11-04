@@ -1,0 +1,55 @@
+{
+  "method": "Actual Figma reactions read back through Plugin API, interpreted locally; no browser playback or backend calls.",
+  "screens": 527,
+  "reactions": 7906,
+  "checks": [
+    {
+      "name": "arbitrary six-hero roster is copied once into a battle snapshot",
+      "pass": true
+    },
+    {
+      "name": "maneuver and selected target survive individual confirmation",
+      "pass": true
+    },
+    {
+      "name": "Defense is saved without an enemy target",
+      "pass": true
+    },
+    {
+      "name": "wall pairs stay 1–1, 2–2, 3–3",
+      "pass": true
+    },
+    {
+      "name": "Special availability follows the selected fighter",
+      "pass": true
+    },
+    {
+      "name": "all three choices must be saved before submission; wait resolves to team reveal",
+      "pass": true
+    },
+    {
+      "name": "1×1 supports a different hero and preserves the unique maneuver",
+      "pass": true
+    },
+    {
+      "name": "collect grants once and repeat taps show the empty state",
+      "pass": true
+    },
+    {
+      "name": "all internal destinations exist on the unified page",
+      "pass": true
+    },
+    {
+      "name": "every state has a return route or an intentional external exit",
+      "pass": true
+    },
+    {
+      "name": "product fonts only",
+      "pass": true
+    },
+    {
+      "name": "35 original cues have matching hashes, positive durations and peak headroom",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,4240 @@
+{
+  "nativeFigmaPlayback": false,
+  "playablePreview": "assets/audio/v18/listen.html",
+  "contract": "Play the event once after confirmed state change; never play damage sound when selecting a target. Reveal uses actual BattleEngine response.",
+  "rules": {
+    "crossfadeMs": 800,
+    "musicVolume": 0.25,
+    "effectsVolume": 0.7,
+    "stopOnExternalMiniGame": true,
+    "mutePersistent": true,
+    "reducedMotionDoesNotForceAudio": true,
+    "autoplay": "first user gesture required",
+    "maxSfx": 4
+  },
+  "cues": [
+    {
+      "id": "music_coop",
+      "kind": "music",
+      "file": "assets/audio/v18/music_coop.ogg",
+      "duration": 40.0,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": true,
+      "description": "Тёплая деревянная тема Курятника",
+      "events": [
+        "scene.coop"
+      ],
+      "sha256": "9af0b7defa67ed633780b7dd981e1473d305d418e897b0e6fd930f6f8b122373",
+      "peakDbFS": -7.98
+    },
+    {
+      "id": "music_arena",
+      "kind": "music",
+      "file": "assets/audio/v18/music_arena.ogg",
+      "duration": 34.2857,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": true,
+      "description": "Упругая боевая тема Арены",
+      "events": [
+        "scene.arena"
+      ],
+      "sha256": "a16f93c3a5877650a75546ace138e1df05cac80a40ab57c17bacd8fd29703fe8",
+      "peakDbFS": -9.53
+    },
+    {
+      "id": "ui_tap",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_tap.wav",
+      "duration": 0.12,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий деревянный тап",
+      "events": [
+        "ui.click"
+      ],
+      "sha256": "333e244880bc8e00b12c5660f4dc231728b67f00ae762a6bc35f6d962081b113",
+      "peakDbFS": -7.3
+    },
+    {
+      "id": "ui_back",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_back.wav",
+      "duration": 0.26,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Мягкий возврат",
+      "events": [
+        "ui.back",
+        "ui.cancel"
+      ],
+      "sha256": "b141d925de9dceb0505550917537d98a9619a41af77bbbf11ce9c09552548ea4",
+      "peakDbFS": -5.82
+    },
+    {
+      "id": "ui_swipe",
+      "kind": "sfx",
+      "file": "assets/audio/v18/ui_swipe.wav",
+      "duration": 0.22,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Лёгкое движение шторки",
+      "events": [
+        "chat.expand",
+        "chat.collapse",
+        "menu.reveal",
+        "history.open"
+      ],
+      "sha256": "4094986de6ee826a9b0618c623d447cacf1a8e93a0702bd69017b9d61591110e",
+      "peakDbFS": -1.87
+    },
+    {
+      "id": "target_lock",
+      "kind": "sfx",
+      "file": "assets/audio/v18/target_lock.wav",
+      "duration": 0.28,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Двойной сигнал выбора цели",
+      "events": [
+        "arena.target.select",
+        "roster.assign"
+      ],
+      "sha256": "4746103917af3eb1d480796bd3d6aa68fa1f6b5db1314030f9b97dac92bfd34c",
+      "peakDbFS": -5.0
+    },
+    {
+      "id": "hen_cluck",
+      "kind": "sfx",
+      "file": "assets/audio/v18/hen_cluck.wav",
+      "duration": 0.6,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткое стилизованное кудахтанье",
+      "events": [
+        "coop.hen.tap",
+        "roster.hen.select"
+      ],
+      "sha256": "efbd6232abd1441f1fa6c224cf93c313704c0ea0bd238abd5ae5743c294c0b8f",
+      "peakDbFS": -4.47
+    },
+    {
+      "id": "eggs_collect",
+      "kind": "sfx",
+      "file": "assets/audio/v18/eggs_collect.wav",
+      "duration": 0.9,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Рассыпчатый звон золотых яиц",
+      "events": [
+        "coop.collect.success"
+      ],
+      "sha256": "0617e2e1a67e75b9538afce86ac951ef5da0a41661de2f2870452a2a8abee943",
+      "peakDbFS": -3.13
+    },
+    {
+      "id": "save_defense",
+      "kind": "sfx",
+      "file": "assets/audio/v18/save_defense.wav",
+      "duration": 0.8,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Подтверждение сохранения защиты",
+      "events": [
+        "defense.save.success"
+      ],
+      "sha256": "155b62041aec24a10aee4111d1dbab5ff3765fcba2d8dafefd226bb8706c15b3",
+      "peakDbFS": -3.55
+    },
+    {
+      "id": "chat_message",
+      "kind": "sfx",
+      "file": "assets/audio/v18/chat_message.wav",
+      "duration": 0.22,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Ненавязчивое уведомление чата",
+      "events": [
+        "chat.message.receive"
+      ],
+      "sha256": "737545cbf2ffef11c0b89c140d8f60925d188f3ebdc913d64895e85bf90ea1c0",
+      "peakDbFS": -5.91
+    },
+    {
+      "id": "arena_start",
+      "kind": "sfx",
+      "file": "assets/audio/v18/arena_start.wav",
+      "duration": 1.4,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий сигнал выхода на Арену",
+      "events": [
+        "arena.start"
+      ],
+      "sha256": "1145da5b408a8d9551150fd5bb2f70d6e93c7c60a1fe69503d5b3bfb6ec7dcf1",
+      "peakDbFS": -2.4
+    },
+    {
+      "id": "attack",
+      "kind": "sfx",
+      "file": "assets/audio/v18/attack.wav",
+      "duration": 0.46,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Взмах крыла и мягкий удар",
+      "events": [
+        "arena.attack.reveal"
+      ],
+      "sha256": "fdccbfb401406b63efa3f0bddaf27e167002176a04ff953cc460cce082fb4e9d",
+      "peakDbFS": -1.11
+    },
+    {
+      "id": "defense_shield",
+      "kind": "sfx",
+      "file": "assets/audio/v18/defense_shield.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Короткий звон щита",
+      "events": [
+        "arena.defend.reveal"
+      ],
+      "sha256": "e3a91a2158e0d1f011e40842ea1bb8260d4eebef02385a673481523bd719bb90",
+      "peakDbFS": -2.39
+    },
+    {
+      "id": "maneuver_ryaba",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_ryaba.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · ryaba",
+      "events": [
+        "arena.maneuver.ryaba"
+      ],
+      "sha256": "f70f12309f2047319294a7e0340c7437c6786c6f75693bfdff44b2b53ba107f2",
+      "peakDbFS": -2.89
+    },
+    {
+      "id": "special_ryaba",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_ryaba.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · ryaba",
+      "events": [
+        "arena.special.ryaba"
+      ],
+      "sha256": "499b3d1c86948c8eadc7663b0b2fcef0db654e19b62dbb6e232878ea33aff4a0",
+      "peakDbFS": -2.82
+    },
+    {
+      "id": "maneuver_fighter",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_fighter.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · fighter",
+      "events": [
+        "arena.maneuver.fighter"
+      ],
+      "sha256": "0eadbb535ade7c3cca3ddf881253e58375d83cc46c46df208e97c18e0f41a2e8",
+      "peakDbFS": -3.07
+    },
+    {
+      "id": "special_fighter",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_fighter.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · fighter",
+      "events": [
+        "arena.special.fighter"
+      ],
+      "sha256": "2d4d5b94c8cbc38ec1a4ae5d5b52e7cc0e8890122b13f6e3948f6360245787ea",
+      "peakDbFS": -2.82
+    },
+    {
+      "id": "maneuver_fool",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_fool.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · fool",
+      "events": [
+        "arena.maneuver.fool"
+      ],
+      "sha256": "641b79041aa8d38fbf81e5eefaaa83055bbf707aa68bfeff52e28c9c2ebbcc07",
+      "peakDbFS": -3.56
+    },
+    {
+      "id": "special_fool",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_fool.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · fool",
+      "events": [
+        "arena.special.fool"
+      ],
+      "sha256": "4c7f2959a0da36a6b6ccd7a90187ccc3ef71e7356b89b8119792893a2bb6711d",
+      "peakDbFS": -3.25
+    },
+    {
+      "id": "maneuver_professor",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_professor.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · professor",
+      "events": [
+        "arena.maneuver.professor"
+      ],
+      "sha256": "0d5e938c43b8c054536252d2c56c20964c7e9046e1eb374961dab4a6334f4505",
+      "peakDbFS": -4.34
+    },
+    {
+      "id": "special_professor",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_professor.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · professor",
+      "events": [
+        "arena.special.professor"
+      ],
+      "sha256": "13f7a13b258a2ec814ca1b4b9fb65e4c7cf235da77f503c8438d80494193f9be",
+      "peakDbFS": -3.17
+    },
+    {
+      "id": "maneuver_monk",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_monk.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · monk",
+      "events": [
+        "arena.maneuver.monk"
+      ],
+      "sha256": "9b80469c4bc452ea4821d1de48fed047bb4136d2310fb58e4c7b64d80e912b78",
+      "peakDbFS": -3.51
+    },
+    {
+      "id": "special_monk",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_monk.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · monk",
+      "events": [
+        "arena.special.monk"
+      ],
+      "sha256": "d7f32a9ccc57dcf1bb3bd8af15dc1ea579656ae86460a10dd2fc78f1f9489eff",
+      "peakDbFS": -2.45
+    },
+    {
+      "id": "maneuver_glamour",
+      "kind": "sfx",
+      "file": "assets/audio/v18/maneuver_glamour.wav",
+      "duration": 0.66,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Манёвр · glamour",
+      "events": [
+        "arena.maneuver.glamour"
+      ],
+      "sha256": "3ad7325d2a632cac5335945956082a6e9655a1495680579a3307886dc5278d4c",
+      "peakDbFS": -3.62
+    },
+    {
+      "id": "special_glamour",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_glamour.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Индивидуальный Особый · glamour",
+      "events": [
+        "arena.special.glamour"
+      ],
+      "sha256": "b5dfd979316b521bf7db17e877b06415b8d92b3f9c07c1be4a277636f6d3400f",
+      "peakDbFS": -2.4
+    },
+    {
+      "id": "special_ready",
+      "kind": "sfx",
+      "file": "assets/audio/v18/special_ready.wav",
+      "duration": 1.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Особый удар накоплен",
+      "events": [
+        "arena.special.ready"
+      ],
+      "sha256": "fc639636208682895c90baa23921aa7dd950327c6a5508e8544dd6400efcde04",
+      "peakDbFS": -3.1
+    },
+    {
+      "id": "buff_activate",
+      "kind": "sfx",
+      "file": "assets/audio/v18/buff_activate.wav",
+      "duration": 0.8,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Срабатывание бафа",
+      "events": [
+        "arena.buff.activate"
+      ],
+      "sha256": "b0b0d1075698492e8e14eb0a36930b9a668aba52005dfce9ae32fbeec0ded888",
+      "peakDbFS": -2.65
+    },
+    {
+      "id": "scout_reveal",
+      "kind": "sfx",
+      "file": "assets/audio/v18/scout_reveal.wav",
+      "duration": 0.9,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Раскрытие Разведки",
+      "events": [
+        "arena.scout.reveal"
+      ],
+      "sha256": "69126ea3c74b2427176940d7aef663c1a4e91de3e202e714b94129dd367296f4",
+      "peakDbFS": -3.3
+    },
+    {
+      "id": "round_win",
+      "kind": "sfx",
+      "file": "assets/audio/v18/round_win.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Победа в раунде",
+      "events": [
+        "arena.round.win"
+      ],
+      "sha256": "cc8d857880670b04da0a95d31e300727f438567544985c47145ac6d83e58d7bc",
+      "peakDbFS": -3.14
+    },
+    {
+      "id": "round_lose",
+      "kind": "sfx",
+      "file": "assets/audio/v18/round_lose.wav",
+      "duration": 0.65,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Проигрыш раунда",
+      "events": [
+        "arena.round.lose"
+      ],
+      "sha256": "45a1927abf82b84a2dd141e97605131074fc2f1c5d963b16e9c6cf0f9cf726df",
+      "peakDbFS": -4.55
+    },
+    {
+      "id": "battle_victory",
+      "kind": "sfx",
+      "file": "assets/audio/v18/battle_victory.wav",
+      "duration": 2.0,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Праздничная финальная каденция",
+      "events": [
+        "arena.victory",
+        "quest.reward"
+      ],
+      "sha256": "7b6487a126ec364a332b973ffaa9066cc798eee6263d42cb6cadeb8570b99a6e",
+      "peakDbFS": -2.15
+    },
+    {
+      "id": "battle_defeat",
+      "kind": "sfx",
+      "file": "assets/audio/v18/battle_defeat.wav",
+      "duration": 1.6,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Спокойное завершение поражения",
+      "events": [
+        "arena.defeat"
+      ],
+      "sha256": "01e77acc4d80bb8e74137dc9001114619bde3500e63b95307f1c9a7f0ca80f45",
+      "peakDbFS": -3.06
+    },
+    {
+      "id": "timer_warning",
+      "kind": "sfx",
+      "file": "assets/audio/v18/timer_warning.wav",
+      "duration": 0.5,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Деликатный сигнал окончания времени",
+      "events": [
+        "arena.timer.warning"
+      ],
+      "sha256": "f089b9b55ed2316381ed7b698060f05ddcc8c360f65f87f1f0fd53907236043c",
+      "peakDbFS": -6.99
+    },
+    {
+      "id": "minigame_catch",
+      "kind": "sfx",
+      "file": "assets/audio/v18/minigame_catch.wav",
+      "duration": 0.25,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Яйцо поймано",
+      "events": [
+        "minigame.catch"
+      ],
+      "sha256": "26ae71e5d0e3aed8c15f7acacc322d3b602b9dac0585876f8ada32faf26b585d",
+      "peakDbFS": -6.59
+    },
+    {
+      "id": "minigame_miss",
+      "kind": "sfx",
+      "file": "assets/audio/v18/minigame_miss.wav",
+      "duration": 0.42,
+      "sampleRate": 32000,
+      "channels": 2,
+      "loop": false,
+      "description": "Мягкий комичный промах",
+      "events": [
+        "minigame.miss"
+      ],
+      "sha256": "3980de61484e1ba84cd04e31a7dc56ebf1fbc197cb2f65ae95ef2c958a3a1002",
+      "peakDbFS": -5.93
+    }
+  ],
+  "scenes": [
+    {
+      "node": "1705:2",
+      "key": "01-format",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:102",
+      "key": "02-lock2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:152",
+      "key": "03-lock3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:202",
+      "key": "04-types2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:583",
+      "key": "05-types3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1132",
+      "key": "06-launch",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1192",
+      "key": "07-email",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1241",
+      "key": "08-found",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1288",
+      "key": "09-waiting",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1376",
+      "key": "10-accepted",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1503",
+      "key": "11-declined",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1591",
+      "key": "12-expired",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1679",
+      "key": "13-telegram",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1803",
+      "key": "14-lobby",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:1945",
+      "key": "15-ready",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2087",
+      "key": "16-battle",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2234",
+      "key": "17-battle-chat",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2400",
+      "key": "18-win",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2540",
+      "key": "19-loss",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2680",
+      "key": "20-draw",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2820",
+      "key": "21-bot-roster",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:2900",
+      "key": "22-bot-battle",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3043",
+      "key": "23-search",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3088",
+      "key": "24-match",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3133",
+      "key": "25-safety",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3186",
+      "key": "26-blocked",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3317",
+      "key": "27-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3459",
+      "key": "28-report",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3503",
+      "key": "29-rematch",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3630",
+      "key": "30-not-found",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3718",
+      "key": "31-chat-limit",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3857",
+      "key": "32-left",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:3984",
+      "key": "01-format",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:4082",
+      "key": "02-lock2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:4132",
+      "key": "03-lock3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:4182",
+      "key": "04-types2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:4557",
+      "key": "05-types3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5102",
+      "key": "06-launch",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5162",
+      "key": "07-email",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5211",
+      "key": "08-found",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5258",
+      "key": "09-waiting",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5346",
+      "key": "10-accepted",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5473",
+      "key": "11-declined",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5561",
+      "key": "12-expired",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5649",
+      "key": "13-telegram",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5773",
+      "key": "14-lobby",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:5910",
+      "key": "15-ready",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6047",
+      "key": "16-battle",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6194",
+      "key": "17-battle-chat",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6360",
+      "key": "18-win",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6497",
+      "key": "19-loss",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6634",
+      "key": "20-draw",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6771",
+      "key": "21-bot-roster",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6851",
+      "key": "22-bot-battle",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:6994",
+      "key": "23-search",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:7039",
+      "key": "24-match",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:7084",
+      "key": "25-safety",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:7137",
+      "key": "26-blocked",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:7268",
+      "key": "27-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1705:7405",
+      "key": "28-report",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:5940",
+      "key": "29-rematch",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6067",
+      "key": "30-not-found",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6155",
+      "key": "31-chat-limit",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6294",
+      "key": "32-left",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6421",
+      "key": "33-battle-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6587",
+      "key": "34-result-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6727",
+      "key": "35-bot-result",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6852",
+      "key": "36-lobby-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:6994",
+      "key": "33-battle-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7160",
+      "key": "34-result-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7297",
+      "key": "35-bot-result",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7422",
+      "key": "36-lobby-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7559",
+      "key": "37-friend-methods",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7658",
+      "key": "38-partners",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7795",
+      "key": "39-invite-new",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7890",
+      "key": "40-share-sheet",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:7971",
+      "key": "41-link-copied",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8058",
+      "key": "42-link-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8145",
+      "key": "43-new-onboarding",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8232",
+      "key": "44-partners-empty",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8312",
+      "key": "45-referrer-empty",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8392",
+      "key": "46-partner-notready",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8478",
+      "key": "47-no-telegram",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8525",
+      "key": "48-self-invite",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8572",
+      "key": "49-duplicate",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8619",
+      "key": "50-blocked-invite",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8666",
+      "key": "51-invite-limit",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8713",
+      "key": "52-email-sending",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8758",
+      "key": "53-share-fallback",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8838",
+      "key": "54-link-error",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8885",
+      "key": "37-friend-methods",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:8984",
+      "key": "38-partners",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9121",
+      "key": "39-invite-new",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9174",
+      "key": "40-share-sheet",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9255",
+      "key": "41-link-copied",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9342",
+      "key": "42-link-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9429",
+      "key": "43-new-onboarding",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9516",
+      "key": "44-partners-empty",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9596",
+      "key": "45-referrer-empty",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9676",
+      "key": "46-partner-notready",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9762",
+      "key": "47-no-telegram",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9809",
+      "key": "48-self-invite",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9856",
+      "key": "49-duplicate",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9903",
+      "key": "50-blocked-invite",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9950",
+      "key": "51-invite-limit",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:9997",
+      "key": "52-email-sending",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10042",
+      "key": "53-share-fallback",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10122",
+      "key": "54-link-error",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10169",
+      "key": "55-incoming",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10296",
+      "key": "55-incoming",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10423",
+      "key": "01-battle",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10593",
+      "key": "02-menu",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10766",
+      "key": "03-chat",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:10932",
+      "key": "04-wait",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11090",
+      "key": "05-reveal",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11303",
+      "key": "06-ready",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11468",
+      "key": "07-history",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11635",
+      "key": "08-chronicle",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11769",
+      "key": "09-share",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:11913",
+      "key": "chat-sent",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12079",
+      "key": "01-battle",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12229",
+      "key": "02-menu",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12402",
+      "key": "03-chat",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12568",
+      "key": "04-wait",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12726",
+      "key": "05-reveal",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:12939",
+      "key": "06-ready",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13104",
+      "key": "07-history",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13271",
+      "key": "08-chronicle",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13405",
+      "key": "09-share",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13549",
+      "key": "chat-sent",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13715",
+      "key": "10-buffs",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13796",
+      "key": "11-buff-detail",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:13851",
+      "key": "12-buff-target",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14036",
+      "key": "13-buff-active",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14193",
+      "key": "14-buff-locked",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14246",
+      "key": "15-services",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14314",
+      "key": "16-hint",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14369",
+      "key": "17-auto",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14424",
+      "key": "18-scout-lock",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14477",
+      "key": "19-async-scout",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14658",
+      "key": "20-scout-revealed",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14710",
+      "key": "21-forecast",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14793",
+      "key": "22-forecast",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14876",
+      "key": "23-forecast",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:14959",
+      "key": "24-forecast",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15042",
+      "key": "forecast-risk",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15125",
+      "key": "preparation",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15206",
+      "key": "10-buffs",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15287",
+      "key": "11-buff-detail",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15342",
+      "key": "12-buff-target",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15521",
+      "key": "13-buff-active",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15678",
+      "key": "14-buff-locked",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15731",
+      "key": "15-services",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15799",
+      "key": "16-hint",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15854",
+      "key": "17-auto",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15909",
+      "key": "18-scout-lock",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:15962",
+      "key": "19-async-scout",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:16137",
+      "key": "20-scout-revealed",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:16189",
+      "key": "21-forecast",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1706:16272",
+      "key": "22-forecast",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13288",
+      "key": "23-forecast",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13371",
+      "key": "24-forecast",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13454",
+      "key": "forecast-risk",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13537",
+      "key": "preparation",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13618",
+      "key": "25-types2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13672",
+      "key": "launch-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13731",
+      "key": "bot-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13860",
+      "key": "search-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13905",
+      "key": "friend-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:13958",
+      "key": "waiting-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14008",
+      "key": "lobby-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14216",
+      "key": "launch-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14275",
+      "key": "bot-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14404",
+      "key": "search-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14449",
+      "key": "friend-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14502",
+      "key": "waiting-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14552",
+      "key": "lobby-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14760",
+      "key": "33-types3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14814",
+      "key": "launch-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:14873",
+      "key": "bot-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15051",
+      "key": "search-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15096",
+      "key": "friend-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15149",
+      "key": "waiting-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15199",
+      "key": "lobby-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15493",
+      "key": "launch-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15552",
+      "key": "bot-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15730",
+      "key": "search-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15775",
+      "key": "friend-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15828",
+      "key": "waiting-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:15878",
+      "key": "lobby-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16172",
+      "key": "25-types2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16226",
+      "key": "launch-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16285",
+      "key": "bot-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16414",
+      "key": "search-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16459",
+      "key": "friend-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16512",
+      "key": "waiting-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16562",
+      "key": "lobby-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16770",
+      "key": "launch-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16829",
+      "key": "bot-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:16958",
+      "key": "search-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17003",
+      "key": "friend-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17056",
+      "key": "waiting-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17106",
+      "key": "lobby-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17314",
+      "key": "33-types3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17368",
+      "key": "launch-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17427",
+      "key": "bot-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17605",
+      "key": "search-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17650",
+      "key": "friend-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17703",
+      "key": "waiting-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:17753",
+      "key": "lobby-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18047",
+      "key": "launch-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18106",
+      "key": "bot-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18284",
+      "key": "search-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18329",
+      "key": "friend-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18382",
+      "key": "waiting-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18432",
+      "key": "lobby-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18726",
+      "key": "wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:18974",
+      "key": "28-select2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:19219",
+      "key": "29-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:19467",
+      "key": "30-second2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:19721",
+      "key": "31-picked2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:19959",
+      "key": "32-reveal2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:20247",
+      "key": "wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:20609",
+      "key": "36-select3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:20968",
+      "key": "37-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:21330",
+      "key": "38-second3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:21698",
+      "key": "39-third3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:22082",
+      "key": "39-picked3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:22450",
+      "key": "39-reveal3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:22885",
+      "key": "botfight-wall2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:23133",
+      "key": "botfight-target2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:23381",
+      "key": "botfight-wall3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:23743",
+      "key": "botfight-target3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:24105",
+      "key": "wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:24353",
+      "key": "28-select2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:24598",
+      "key": "29-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:24846",
+      "key": "30-second2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:25098",
+      "key": "31-picked2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:25336",
+      "key": "32-reveal2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:25624",
+      "key": "wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:25986",
+      "key": "36-select3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:26345",
+      "key": "37-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:26707",
+      "key": "38-second3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:27073",
+      "key": "39-third3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:27455",
+      "key": "39-picked3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:27823",
+      "key": "39-reveal3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:28258",
+      "key": "botfight-wall2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:28506",
+      "key": "botfight-target2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:28754",
+      "key": "botfight-wall3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:29116",
+      "key": "botfight-target3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:29478",
+      "key": "40-attack",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:29650",
+      "key": "41-defend",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:29819",
+      "key": "m-C01",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:29988",
+      "key": "s-C01",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:30181",
+      "key": "m-C02",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:30355",
+      "key": "s-C02",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:30551",
+      "key": "m-C03",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:30723",
+      "key": "s-C03",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:30919",
+      "key": "m-C04",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:31091",
+      "key": "s-C04",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:31287",
+      "key": "m-C05",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:31465",
+      "key": "s-C05",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:31667",
+      "key": "m-C06",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:31838",
+      "key": "s-C06",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32031",
+      "key": "40-attack",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32200",
+      "key": "41-defend",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32369",
+      "key": "m-C01",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32538",
+      "key": "s-C01",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32731",
+      "key": "m-C02",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:32903",
+      "key": "s-C02",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:33099",
+      "key": "m-C03",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:33271",
+      "key": "s-C03",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:33467",
+      "key": "m-C04",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:33639",
+      "key": "s-C04",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:33835",
+      "key": "m-C05",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:34013",
+      "key": "s-C05",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:34215",
+      "key": "m-C06",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:34384",
+      "key": "s-C06",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:34577",
+      "key": "action-gallery",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1707:34663",
+      "key": "format-open",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30330",
+      "key": "buff-feather",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30380",
+      "key": "buff-dome",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30430",
+      "key": "buff-charge",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30480",
+      "key": "buff-swap",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30618",
+      "key": "buff-used",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30666",
+      "key": "wall-confirm2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30905",
+      "key": "wall-confirm3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:31262",
+      "key": "wall-reveal2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:31551",
+      "key": "wall-reveal3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:31987",
+      "key": "team-result2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:32190",
+      "key": "team-result3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:32479",
+      "key": "team-share2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:32690",
+      "key": "team-share3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:32987",
+      "key": "history-final",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33044",
+      "key": "result-chat",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33091",
+      "key": "share-copied",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33139",
+      "key": "chat2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33165",
+      "key": "chat3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33191",
+      "key": "bot-chat",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33218",
+      "key": "attack-reveal",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33384",
+      "key": "defend-reveal",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33550",
+      "key": "special-reveal",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33728",
+      "key": "final-special",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33906",
+      "key": "confirm-m-C02",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:33955",
+      "key": "confirm-s-C02",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34004",
+      "key": "confirm-m-C03",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34053",
+      "key": "confirm-s-C03",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34102",
+      "key": "confirm-m-C04",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34152",
+      "key": "confirm-s-C04",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34202",
+      "key": "confirm-m-C05",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34252",
+      "key": "confirm-s-C05",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34302",
+      "key": "confirm-m-C06",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34352",
+      "key": "confirm-s-C06",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34402",
+      "key": "action-gallery",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34488",
+      "key": "format-open",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34550",
+      "key": "buff-feather",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34600",
+      "key": "buff-dome",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34650",
+      "key": "buff-charge",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34700",
+      "key": "buff-swap",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34838",
+      "key": "buff-used",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:34886",
+      "key": "wall-confirm2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:35125",
+      "key": "wall-confirm3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:35482",
+      "key": "wall-reveal2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:35771",
+      "key": "wall-reveal3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:36207",
+      "key": "team-result2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:36410",
+      "key": "team-result3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:36699",
+      "key": "team-share2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:36910",
+      "key": "team-share3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37207",
+      "key": "history-final",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37264",
+      "key": "result-chat",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37311",
+      "key": "share-copied",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37359",
+      "key": "chat2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37385",
+      "key": "chat3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37411",
+      "key": "bot-chat",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37438",
+      "key": "attack-reveal",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37604",
+      "key": "defend-reveal",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37770",
+      "key": "special-reveal",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:37948",
+      "key": "final-special",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38126",
+      "key": "confirm-m-C02",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38175",
+      "key": "confirm-s-C02",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38224",
+      "key": "confirm-m-C03",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38273",
+      "key": "confirm-s-C03",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38322",
+      "key": "confirm-m-C04",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38372",
+      "key": "confirm-s-C04",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38422",
+      "key": "confirm-m-C05",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38472",
+      "key": "confirm-s-C05",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38522",
+      "key": "confirm-m-C06",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38572",
+      "key": "confirm-s-C06",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38622",
+      "key": "buff-result-feather",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38670",
+      "key": "buff-result-dome",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38718",
+      "key": "buff-result-charge",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38766",
+      "key": "buff-result-swap",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38814",
+      "key": "result-loss",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:38940",
+      "key": "result-draw",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39066",
+      "key": "bot1",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39216",
+      "key": "bot-result",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39342",
+      "key": "buff-result-feather",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39390",
+      "key": "buff-result-dome",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39438",
+      "key": "buff-result-charge",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:39486",
+      "key": "buff-result-swap",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:38204",
+      "key": "result-loss",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:38330",
+      "key": "result-draw",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:38456",
+      "key": "bot1",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:38606",
+      "key": "bot-result",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:38732",
+      "key": "menu2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:39000",
+      "key": "history2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:39256",
+      "key": "menu3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:39638",
+      "key": "history3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:40011",
+      "key": "menu2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:40279",
+      "key": "history2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:40535",
+      "key": "menu3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:40917",
+      "key": "history3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41290",
+      "key": "coop-entry",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41475",
+      "key": "settings",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41499",
+      "key": "defense",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41576",
+      "key": "preparation",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41618",
+      "key": "prep1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41698",
+      "key": "def1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41787",
+      "key": "prep2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:41914",
+      "key": "def2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:42050",
+      "key": "prep3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:42227",
+      "key": "def3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:42413",
+      "key": "picker-prep1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:42770",
+      "key": "picker-prep2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:43174",
+      "key": "picker-prep3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:43628",
+      "key": "picker-def1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:43994",
+      "key": "picker-def2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:44407",
+      "key": "picker-def3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:44870",
+      "key": "strategy1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:44996",
+      "key": "buffs1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45119",
+      "key": "save1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45227",
+      "key": "strategy2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45400",
+      "key": "buffs2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45570",
+      "key": "save2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45726",
+      "key": "strategy3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:45949",
+      "key": "buffs3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46169",
+      "key": "save3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46376",
+      "key": "saved",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46401",
+      "key": "journal",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46428",
+      "key": "defense-chronicle",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46451",
+      "key": "async-hidden1",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46522",
+      "key": "async-scout1",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46596",
+      "key": "async-hidden2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46703",
+      "key": "async-scout2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46813",
+      "key": "async-hidden3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:46959",
+      "key": "async-scout3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47111",
+      "key": "coop-entry",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47296",
+      "key": "settings",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47320",
+      "key": "defense",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47397",
+      "key": "preparation",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47439",
+      "key": "prep1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47519",
+      "key": "def1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47608",
+      "key": "prep2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47735",
+      "key": "def2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:47871",
+      "key": "prep3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:48048",
+      "key": "def3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:48234",
+      "key": "picker-prep1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:48591",
+      "key": "picker-prep2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:48995",
+      "key": "picker-prep3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:49449",
+      "key": "picker-def1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:49815",
+      "key": "picker-def2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:50228",
+      "key": "picker-def3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:50691",
+      "key": "strategy1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:50817",
+      "key": "buffs1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:50940",
+      "key": "save1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51048",
+      "key": "strategy2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51221",
+      "key": "buffs2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51391",
+      "key": "save2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51547",
+      "key": "strategy3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51770",
+      "key": "buffs3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:51990",
+      "key": "save3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52197",
+      "key": "saved",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52222",
+      "key": "journal",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52249",
+      "key": "defense-chronicle",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52272",
+      "key": "async-hidden1",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52343",
+      "key": "async-scout1",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52417",
+      "key": "async-hidden2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52524",
+      "key": "async-scout2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52634",
+      "key": "async-hidden3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52780",
+      "key": "async-scout3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52932",
+      "key": "ready1",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:52996",
+      "key": "ready2",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53060",
+      "key": "ready3",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53125",
+      "key": "ready1",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53189",
+      "key": "ready2",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53253",
+      "key": "ready3",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53318",
+      "key": "2-turn",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53613",
+      "key": "2-effect",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:53887",
+      "key": "2-target",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:54147",
+      "key": "2-review",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:54393",
+      "key": "2-wait",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:54640",
+      "key": "2-menu",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:54958",
+      "key": "3-turn",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:55388",
+      "key": "3-effect",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:55785",
+      "key": "3-target",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:56171",
+      "key": "3-review",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:56537",
+      "key": "3-wait",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:56904",
+      "key": "3-menu",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:57357",
+      "key": "2-turn",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:57652",
+      "key": "2-effect",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:57926",
+      "key": "2-target",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:58186",
+      "key": "2-review",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:58432",
+      "key": "2-wait",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:58679",
+      "key": "2-menu",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:58997",
+      "key": "3-turn",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:59427",
+      "key": "3-effect",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:59824",
+      "key": "3-target",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:60210",
+      "key": "3-review",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:60576",
+      "key": "3-wait",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:60943",
+      "key": "3-menu",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61396",
+      "key": "first-defense",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61457",
+      "key": "first-defense",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61518",
+      "key": "shop",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61586",
+      "key": "wardrobe",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61685",
+      "key": "hen-card",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61747",
+      "key": "coop-level2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:61852",
+      "key": "coop-level6",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28391",
+      "key": "quests",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28456",
+      "key": "quests-path",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28520",
+      "key": "quest-detail",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28598",
+      "key": "quest-reward",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28643",
+      "key": "collect-success",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28691",
+      "key": "collect-empty",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28736",
+      "key": "resources",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28791",
+      "key": "tickets",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28838",
+      "key": "games",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28893",
+      "key": "games-rules",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:28947",
+      "key": "game-settings",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:29022",
+      "key": "sound-library",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:29081",
+      "key": "chat-muted",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:29127",
+      "key": "hen-card",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:29425",
+      "key": "wardrobe",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:29743",
+      "key": "item-detail",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1709:30036",
+      "key": "keyboard",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36265",
+      "key": "quests",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36330",
+      "key": "quests-path",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36394",
+      "key": "quest-detail",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36472",
+      "key": "quest-reward",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36517",
+      "key": "collect-success",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36565",
+      "key": "collect-empty",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36610",
+      "key": "resources",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36665",
+      "key": "tickets",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36712",
+      "key": "games",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36767",
+      "key": "games-rules",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36821",
+      "key": "game-settings",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36896",
+      "key": "sound-library",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:36955",
+      "key": "chat-muted",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:37001",
+      "key": "hen-card",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:37299",
+      "key": "wardrobe",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:37617",
+      "key": "item-detail",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1710:37910",
+      "key": "keyboard",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53643",
+      "key": "terms1",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53673",
+      "key": "terms2",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53703",
+      "key": "terms3",
+      "width": 390,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53733",
+      "key": "terms1",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53763",
+      "key": "terms2",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1723:53793",
+      "key": "terms3",
+      "width": 360,
+      "loop": "music_coop",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:52735",
+      "key": "1-turn",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:52885",
+      "key": "1-effect",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53035",
+      "key": "1-review",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53185",
+      "key": "1-wait",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53335",
+      "key": "1-menu",
+      "width": 390,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53485",
+      "key": "1-turn",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53635",
+      "key": "1-effect",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53785",
+      "key": "1-review",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:53935",
+      "key": "1-wait",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    },
+    {
+      "node": "1713:54085",
+      "key": "1-menu",
+      "width": 360,
+      "loop": "music_arena",
+      "stopLoopOnExternalExit": true
+    }
+  ]
+}

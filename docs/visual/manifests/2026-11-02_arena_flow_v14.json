@@ -1,0 +1,3521 @@
+{
+  "schema_version": 14,
+  "date": "2026-11-02",
+  "issue": 28,
+  "status": "ready_for_owner_review",
+  "owner_approval_set": false,
+  "file_key": "pTm5JOM8r7b8ukBrk3UsXg",
+  "page_id": "359:2",
+  "navigator_ids": [
+    "366:5662",
+    "389:15954"
+  ],
+  "sizes": [
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      740
+    ]
+  ],
+  "state_count": 55,
+  "frame_count": 110,
+  "existing_sources": {
+    "lobby": "216:13",
+    "arena": "216:2",
+    "crowd": "216:4",
+    "floor": "216:7",
+    "foreground": "216:8",
+    "shadow": "216:11",
+    "ring": "216:12",
+    "vs": "218:6",
+    "nameplate": "218:8",
+    "round": "218:10",
+    "victory": "218:12",
+    "defeat": "218:14",
+    "draw": "218:17",
+    "bot": "218:19",
+    "live": "218:21",
+    "radar": "218:30",
+    "rematch": "218:58",
+    "mode1": "218:52",
+    "mode2": "218:54",
+    "mode3": "218:56",
+    "impact": "299:12",
+    "C01": "293:461",
+    "C02": "293:562",
+    "C03": "293:675",
+    "C04": "293:793",
+    "C05": "293:913",
+    "C06": "293:1034"
+  },
+  "asset_components": {
+    "lobby": "359:5",
+    "arena": "359:8",
+    "crowd": "359:11",
+    "floor": "359:14",
+    "foreground": "359:17",
+    "shadow": "359:20",
+    "ring": "359:23",
+    "vs": "359:26",
+    "nameplate": "359:29",
+    "round": "359:32",
+    "victory": "359:35",
+    "defeat": "359:38",
+    "draw": "359:41",
+    "bot": "359:44",
+    "live": "359:47",
+    "radar": "359:50",
+    "rematch": "359:53",
+    "mode1": "359:56",
+    "mode2": "359:59",
+    "mode3": "359:62",
+    "impact": "359:65",
+    "C01": "359:99",
+    "C02": "359:141",
+    "C03": "359:183",
+    "C04": "359:225",
+    "C05": "359:273",
+    "C06": "359:312"
+  },
+  "screens": [
+    {
+      "key": "01-format",
+      "label": "Арена",
+      "width": 390,
+      "height": 844,
+      "id": "360:3248",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3248",
+      "status": "review"
+    },
+    {
+      "key": "02-lock2",
+      "label": "Две против двух",
+      "width": 390,
+      "height": 844,
+      "id": "360:3342",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3342",
+      "status": "review"
+    },
+    {
+      "key": "03-lock3",
+      "label": "Три против трёх",
+      "width": 390,
+      "height": 844,
+      "id": "360:3388",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3388",
+      "status": "review"
+    },
+    {
+      "key": "04-types2",
+      "label": "Тип боя · 2×2",
+      "width": 390,
+      "height": 844,
+      "id": "360:3434",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3434",
+      "status": "review"
+    },
+    {
+      "key": "05-types3",
+      "label": "Тип боя · 3×3",
+      "width": 390,
+      "height": 844,
+      "id": "360:3485",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3485",
+      "status": "review"
+    },
+    {
+      "key": "06-launch",
+      "label": "Одна против одной",
+      "width": 390,
+      "height": 844,
+      "id": "360:3536",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3536",
+      "status": "review"
+    },
+    {
+      "key": "07-email",
+      "label": "Вызвать друга",
+      "width": 390,
+      "height": 844,
+      "id": "360:3592",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3592",
+      "status": "review"
+    },
+    {
+      "key": "08-found",
+      "label": "Запрос отправлен",
+      "width": 390,
+      "height": 844,
+      "id": "360:3676",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3676",
+      "status": "review"
+    },
+    {
+      "key": "09-waiting",
+      "label": "Приглашение отправлено",
+      "width": 390,
+      "height": 844,
+      "id": "360:3765",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3765",
+      "status": "review"
+    },
+    {
+      "key": "10-accepted",
+      "label": "Приглашение принято",
+      "width": 390,
+      "height": 844,
+      "id": "360:3888",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-3888",
+      "status": "review"
+    },
+    {
+      "key": "11-declined",
+      "label": "Друг отказался",
+      "width": 390,
+      "height": 844,
+      "id": "360:4011",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4011",
+      "status": "review"
+    },
+    {
+      "key": "12-expired",
+      "label": "Время вышло",
+      "width": 390,
+      "height": 844,
+      "id": "360:4134",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4134",
+      "status": "review"
+    },
+    {
+      "key": "13-telegram",
+      "label": "Приглашение в QuRa",
+      "width": 390,
+      "height": 844,
+      "id": "360:4257",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4257",
+      "status": "review"
+    },
+    {
+      "key": "14-lobby",
+      "label": "Лобби · 1×1",
+      "width": 390,
+      "height": 844,
+      "id": "360:4377",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4377",
+      "status": "review"
+    },
+    {
+      "key": "15-ready",
+      "label": "Все готовы",
+      "width": 390,
+      "height": 844,
+      "id": "360:4515",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4515",
+      "status": "review"
+    },
+    {
+      "key": "16-battle",
+      "label": "Дружеский бой",
+      "width": 390,
+      "height": 844,
+      "id": "360:4653",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4653",
+      "status": "review"
+    },
+    {
+      "key": "17-battle-chat",
+      "label": "Дружеский бой",
+      "width": 390,
+      "height": 844,
+      "id": "360:4796",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4796",
+      "status": "review"
+    },
+    {
+      "key": "18-win",
+      "label": "Результат боя",
+      "width": 390,
+      "height": 844,
+      "id": "360:4958",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-4958",
+      "status": "review"
+    },
+    {
+      "key": "19-loss",
+      "label": "Результат боя",
+      "width": 390,
+      "height": 844,
+      "id": "360:5094",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5094",
+      "status": "review"
+    },
+    {
+      "key": "20-draw",
+      "label": "Результат боя",
+      "width": 390,
+      "height": 844,
+      "id": "360:5230",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5230",
+      "status": "review"
+    },
+    {
+      "key": "21-bot-roster",
+      "label": "Тренировка с ботом",
+      "width": 390,
+      "height": 844,
+      "id": "360:5366",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5366",
+      "status": "review"
+    },
+    {
+      "key": "22-bot-battle",
+      "label": "Тренировка",
+      "width": 390,
+      "height": 844,
+      "id": "360:5442",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5442",
+      "status": "review"
+    },
+    {
+      "key": "23-search",
+      "label": "Ищем соперника",
+      "width": 390,
+      "height": 844,
+      "id": "360:5581",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5581",
+      "status": "review"
+    },
+    {
+      "key": "24-match",
+      "label": "Соперник найден",
+      "width": 390,
+      "height": 844,
+      "id": "360:5622",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5622",
+      "status": "review"
+    },
+    {
+      "key": "25-safety",
+      "label": "Настройки чата",
+      "width": 390,
+      "height": 844,
+      "id": "360:5663",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5663",
+      "status": "review"
+    },
+    {
+      "key": "26-blocked",
+      "label": "Лобби · 1×1",
+      "width": 390,
+      "height": 844,
+      "id": "360:5712",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5712",
+      "status": "review"
+    },
+    {
+      "key": "27-sent",
+      "label": "Лобби · 1×1",
+      "width": 390,
+      "height": 844,
+      "id": "360:5839",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5839",
+      "status": "review"
+    },
+    {
+      "key": "28-report",
+      "label": "Жалоба отправлена",
+      "width": 390,
+      "height": 844,
+      "id": "360:5977",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-5977",
+      "status": "review"
+    },
+    {
+      "key": "29-rematch",
+      "label": "Реванш",
+      "width": 390,
+      "height": 844,
+      "id": "360:6017",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6017",
+      "status": "review"
+    },
+    {
+      "key": "30-not-found",
+      "label": "Повторите запрос",
+      "width": 390,
+      "height": 844,
+      "id": "360:6140",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6140",
+      "status": "review"
+    },
+    {
+      "key": "31-chat-limit",
+      "label": "Чат боя",
+      "width": 390,
+      "height": 844,
+      "id": "360:6224",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6224",
+      "status": "review"
+    },
+    {
+      "key": "32-left",
+      "label": "Друг покинул лобби",
+      "width": 390,
+      "height": 844,
+      "id": "360:6359",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6359",
+      "status": "review"
+    },
+    {
+      "key": "01-format",
+      "label": "Арена",
+      "width": 360,
+      "height": 740,
+      "id": "360:6482",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6482",
+      "status": "review"
+    },
+    {
+      "key": "02-lock2",
+      "label": "Две против двух",
+      "width": 360,
+      "height": 740,
+      "id": "360:6576",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6576",
+      "status": "review"
+    },
+    {
+      "key": "03-lock3",
+      "label": "Три против трёх",
+      "width": 360,
+      "height": 740,
+      "id": "360:6622",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6622",
+      "status": "review"
+    },
+    {
+      "key": "04-types2",
+      "label": "Тип боя · 2×2",
+      "width": 360,
+      "height": 740,
+      "id": "360:6668",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6668",
+      "status": "review"
+    },
+    {
+      "key": "05-types3",
+      "label": "Тип боя · 3×3",
+      "width": 360,
+      "height": 740,
+      "id": "360:6719",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6719",
+      "status": "review"
+    },
+    {
+      "key": "06-launch",
+      "label": "Одна против одной",
+      "width": 360,
+      "height": 740,
+      "id": "360:6770",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6770",
+      "status": "review"
+    },
+    {
+      "key": "07-email",
+      "label": "Вызвать друга",
+      "width": 360,
+      "height": 740,
+      "id": "360:6826",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6826",
+      "status": "review"
+    },
+    {
+      "key": "08-found",
+      "label": "Запрос отправлен",
+      "width": 360,
+      "height": 740,
+      "id": "360:6910",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6910",
+      "status": "review"
+    },
+    {
+      "key": "09-waiting",
+      "label": "Приглашение отправлено",
+      "width": 360,
+      "height": 740,
+      "id": "360:6999",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-6999",
+      "status": "review"
+    },
+    {
+      "key": "10-accepted",
+      "label": "Приглашение принято",
+      "width": 360,
+      "height": 740,
+      "id": "360:7122",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7122",
+      "status": "review"
+    },
+    {
+      "key": "11-declined",
+      "label": "Друг отказался",
+      "width": 360,
+      "height": 740,
+      "id": "360:7245",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7245",
+      "status": "review"
+    },
+    {
+      "key": "12-expired",
+      "label": "Время вышло",
+      "width": 360,
+      "height": 740,
+      "id": "360:7368",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7368",
+      "status": "review"
+    },
+    {
+      "key": "13-telegram",
+      "label": "Приглашение в QuRa",
+      "width": 360,
+      "height": 740,
+      "id": "360:7491",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7491",
+      "status": "review"
+    },
+    {
+      "key": "14-lobby",
+      "label": "Лобби · 1×1",
+      "width": 360,
+      "height": 740,
+      "id": "360:7611",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7611",
+      "status": "review"
+    },
+    {
+      "key": "15-ready",
+      "label": "Все готовы",
+      "width": 360,
+      "height": 740,
+      "id": "360:7744",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7744",
+      "status": "review"
+    },
+    {
+      "key": "16-battle",
+      "label": "Дружеский бой",
+      "width": 360,
+      "height": 740,
+      "id": "360:7877",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-7877",
+      "status": "review"
+    },
+    {
+      "key": "17-battle-chat",
+      "label": "Дружеский бой",
+      "width": 360,
+      "height": 740,
+      "id": "360:8020",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8020",
+      "status": "review"
+    },
+    {
+      "key": "18-win",
+      "label": "Результат боя",
+      "width": 360,
+      "height": 740,
+      "id": "360:8182",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8182",
+      "status": "review"
+    },
+    {
+      "key": "19-loss",
+      "label": "Результат боя",
+      "width": 360,
+      "height": 740,
+      "id": "360:8315",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8315",
+      "status": "review"
+    },
+    {
+      "key": "20-draw",
+      "label": "Результат боя",
+      "width": 360,
+      "height": 740,
+      "id": "360:8448",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8448",
+      "status": "review"
+    },
+    {
+      "key": "21-bot-roster",
+      "label": "Тренировка с ботом",
+      "width": 360,
+      "height": 740,
+      "id": "360:8581",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8581",
+      "status": "review"
+    },
+    {
+      "key": "22-bot-battle",
+      "label": "Тренировка",
+      "width": 360,
+      "height": 740,
+      "id": "360:8657",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8657",
+      "status": "review"
+    },
+    {
+      "key": "23-search",
+      "label": "Ищем соперника",
+      "width": 360,
+      "height": 740,
+      "id": "360:8796",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8796",
+      "status": "review"
+    },
+    {
+      "key": "24-match",
+      "label": "Соперник найден",
+      "width": 360,
+      "height": 740,
+      "id": "360:8837",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8837",
+      "status": "review"
+    },
+    {
+      "key": "25-safety",
+      "label": "Настройки чата",
+      "width": 360,
+      "height": 740,
+      "id": "360:8878",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8878",
+      "status": "review"
+    },
+    {
+      "key": "26-blocked",
+      "label": "Лобби · 1×1",
+      "width": 360,
+      "height": 740,
+      "id": "360:8927",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-8927",
+      "status": "review"
+    },
+    {
+      "key": "27-sent",
+      "label": "Лобби · 1×1",
+      "width": 360,
+      "height": 740,
+      "id": "360:9054",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9054",
+      "status": "review"
+    },
+    {
+      "key": "28-report",
+      "label": "Жалоба отправлена",
+      "width": 360,
+      "height": 740,
+      "id": "360:9187",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9187",
+      "status": "review"
+    },
+    {
+      "key": "29-rematch",
+      "label": "Реванш",
+      "width": 360,
+      "height": 740,
+      "id": "360:9227",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9227",
+      "status": "review"
+    },
+    {
+      "key": "30-not-found",
+      "label": "Повторите запрос",
+      "width": 360,
+      "height": 740,
+      "id": "360:9350",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9350",
+      "status": "review"
+    },
+    {
+      "key": "31-chat-limit",
+      "label": "Чат боя",
+      "width": 360,
+      "height": 740,
+      "id": "360:9434",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9434",
+      "status": "review"
+    },
+    {
+      "key": "32-left",
+      "label": "Друг покинул лобби",
+      "width": 360,
+      "height": 740,
+      "id": "360:9569",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=360-9569",
+      "status": "review"
+    },
+    {
+      "key": "33-battle-sent",
+      "label": "Сообщение в бою отправлено",
+      "width": 390,
+      "height": 844,
+      "id": "365:6004",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6004",
+      "status": "review"
+    },
+    {
+      "key": "34-result-sent",
+      "label": "Сообщение после боя отправлено",
+      "width": 390,
+      "height": 844,
+      "id": "365:6165",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6165",
+      "status": "review"
+    },
+    {
+      "key": "35-bot-result",
+      "label": "Результат тренировки",
+      "width": 390,
+      "height": 844,
+      "id": "365:6300",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6300",
+      "status": "review"
+    },
+    {
+      "key": "36-lobby-sent",
+      "label": "Сообщение в лобби отправлено",
+      "width": 390,
+      "height": 844,
+      "id": "365:6436",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6436",
+      "status": "review"
+    },
+    {
+      "key": "33-battle-sent",
+      "label": "Сообщение в бою отправлено",
+      "width": 360,
+      "height": 740,
+      "id": "365:6573",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6573",
+      "status": "review"
+    },
+    {
+      "key": "34-result-sent",
+      "label": "Сообщение после боя отправлено",
+      "width": 360,
+      "height": 740,
+      "id": "365:6734",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6734",
+      "status": "review"
+    },
+    {
+      "key": "35-bot-result",
+      "label": "Результат тренировки",
+      "width": 360,
+      "height": 740,
+      "id": "365:6866",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6866",
+      "status": "review"
+    },
+    {
+      "key": "36-lobby-sent",
+      "label": "Сообщение в лобби отправлено",
+      "width": 360,
+      "height": 740,
+      "id": "365:6999",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=365-6999",
+      "status": "review"
+    },
+    {
+      "key": "37-friend-methods",
+      "label": "Вызвать друга",
+      "width": 390,
+      "height": 844,
+      "id": "385:14518",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14518",
+      "status": "review"
+    },
+    {
+      "key": "38-partners",
+      "label": "Ваши партнёры",
+      "width": 390,
+      "height": 844,
+      "id": "385:14613",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14613",
+      "status": "review"
+    },
+    {
+      "key": "39-invite-new",
+      "label": "Новый друг в QuRa",
+      "width": 390,
+      "height": 844,
+      "id": "385:14748",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14748",
+      "status": "review"
+    },
+    {
+      "key": "40-share-sheet",
+      "label": "Поделиться",
+      "width": 390,
+      "height": 844,
+      "id": "385:14839",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14839",
+      "status": "review"
+    },
+    {
+      "key": "41-link-copied",
+      "label": "Ссылка скопирована",
+      "width": 390,
+      "height": 844,
+      "id": "385:14916",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14916",
+      "status": "review"
+    },
+    {
+      "key": "42-link-sent",
+      "label": "Друг приглашён",
+      "width": 390,
+      "height": 844,
+      "id": "385:14999",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-14999",
+      "status": "review"
+    },
+    {
+      "key": "43-new-onboarding",
+      "label": "Друг осваивается",
+      "width": 390,
+      "height": 844,
+      "id": "385:15082",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15082",
+      "status": "review"
+    },
+    {
+      "key": "44-partners-empty",
+      "label": "Приглашённые мной",
+      "width": 390,
+      "height": 844,
+      "id": "385:15165",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15165",
+      "status": "review"
+    },
+    {
+      "key": "45-referrer-empty",
+      "label": "Кто пригласил меня",
+      "width": 390,
+      "height": 844,
+      "id": "385:15241",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15241",
+      "status": "review"
+    },
+    {
+      "key": "46-partner-notready",
+      "label": "Пока рано на Арену",
+      "width": 390,
+      "height": 844,
+      "id": "385:15317",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15317",
+      "status": "review"
+    },
+    {
+      "key": "47-no-telegram",
+      "label": "Ждём входа друга",
+      "width": 390,
+      "height": 844,
+      "id": "385:15399",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15399",
+      "status": "review"
+    },
+    {
+      "key": "48-self-invite",
+      "label": "Это ваш аккаунт",
+      "width": 390,
+      "height": 844,
+      "id": "385:15442",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15442",
+      "status": "review"
+    },
+    {
+      "key": "49-duplicate",
+      "label": "Приглашение уже есть",
+      "width": 390,
+      "height": 844,
+      "id": "385:15485",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15485",
+      "status": "review"
+    },
+    {
+      "key": "50-blocked-invite",
+      "label": "Вызов недоступен",
+      "width": 390,
+      "height": 844,
+      "id": "385:15528",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15528",
+      "status": "review"
+    },
+    {
+      "key": "51-invite-limit",
+      "label": "Небольшая пауза",
+      "width": 390,
+      "height": 844,
+      "id": "385:15571",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15571",
+      "status": "review"
+    },
+    {
+      "key": "52-email-sending",
+      "label": "Отправляем запрос",
+      "width": 390,
+      "height": 844,
+      "id": "385:15614",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15614",
+      "status": "review"
+    },
+    {
+      "key": "53-share-fallback",
+      "label": "Поделитесь ссылкой",
+      "width": 390,
+      "height": 844,
+      "id": "385:15655",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15655",
+      "status": "review"
+    },
+    {
+      "key": "54-link-error",
+      "label": "Ссылка недоступна",
+      "width": 390,
+      "height": 844,
+      "id": "385:15731",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=385-15731",
+      "status": "review"
+    },
+    {
+      "key": "37-friend-methods",
+      "label": "Вызвать друга",
+      "width": 360,
+      "height": 740,
+      "id": "386:15452",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15452",
+      "status": "review"
+    },
+    {
+      "key": "38-partners",
+      "label": "Ваши партнёры",
+      "width": 360,
+      "height": 740,
+      "id": "386:15547",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15547",
+      "status": "review"
+    },
+    {
+      "key": "39-invite-new",
+      "label": "Новый друг в QuRa",
+      "width": 360,
+      "height": 740,
+      "id": "386:15682",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15682",
+      "status": "review"
+    },
+    {
+      "key": "40-share-sheet",
+      "label": "Поделиться",
+      "width": 360,
+      "height": 740,
+      "id": "386:15773",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15773",
+      "status": "review"
+    },
+    {
+      "key": "41-link-copied",
+      "label": "Ссылка скопирована",
+      "width": 360,
+      "height": 740,
+      "id": "386:15850",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15850",
+      "status": "review"
+    },
+    {
+      "key": "42-link-sent",
+      "label": "Друг приглашён",
+      "width": 360,
+      "height": 740,
+      "id": "386:15933",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-15933",
+      "status": "review"
+    },
+    {
+      "key": "43-new-onboarding",
+      "label": "Друг осваивается",
+      "width": 360,
+      "height": 740,
+      "id": "386:16016",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16016",
+      "status": "review"
+    },
+    {
+      "key": "44-partners-empty",
+      "label": "Приглашённые мной",
+      "width": 360,
+      "height": 740,
+      "id": "386:16099",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16099",
+      "status": "review"
+    },
+    {
+      "key": "45-referrer-empty",
+      "label": "Кто пригласил меня",
+      "width": 360,
+      "height": 740,
+      "id": "386:16175",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16175",
+      "status": "review"
+    },
+    {
+      "key": "46-partner-notready",
+      "label": "Пока рано на Арену",
+      "width": 360,
+      "height": 740,
+      "id": "386:16251",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16251",
+      "status": "review"
+    },
+    {
+      "key": "47-no-telegram",
+      "label": "Ждём входа друга",
+      "width": 360,
+      "height": 740,
+      "id": "386:16333",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16333",
+      "status": "review"
+    },
+    {
+      "key": "48-self-invite",
+      "label": "Это ваш аккаунт",
+      "width": 360,
+      "height": 740,
+      "id": "386:16376",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16376",
+      "status": "review"
+    },
+    {
+      "key": "49-duplicate",
+      "label": "Приглашение уже есть",
+      "width": 360,
+      "height": 740,
+      "id": "386:16419",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16419",
+      "status": "review"
+    },
+    {
+      "key": "50-blocked-invite",
+      "label": "Вызов недоступен",
+      "width": 360,
+      "height": 740,
+      "id": "386:16462",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16462",
+      "status": "review"
+    },
+    {
+      "key": "51-invite-limit",
+      "label": "Небольшая пауза",
+      "width": 360,
+      "height": 740,
+      "id": "386:16505",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16505",
+      "status": "review"
+    },
+    {
+      "key": "52-email-sending",
+      "label": "Отправляем запрос",
+      "width": 360,
+      "height": 740,
+      "id": "386:16548",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16548",
+      "status": "review"
+    },
+    {
+      "key": "53-share-fallback",
+      "label": "Поделитесь ссылкой",
+      "width": 360,
+      "height": 740,
+      "id": "386:16589",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16589",
+      "status": "review"
+    },
+    {
+      "key": "54-link-error",
+      "label": "Ссылка недоступна",
+      "width": 360,
+      "height": 740,
+      "id": "386:16665",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=386-16665",
+      "status": "review"
+    },
+    {
+      "key": "55-incoming",
+      "label": "Принять входящий вызов",
+      "width": 390,
+      "height": 844,
+      "id": "391:17426",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=391-17426",
+      "status": "review"
+    },
+    {
+      "key": "55-incoming",
+      "label": "Принять входящий вызов",
+      "width": 360,
+      "height": 740,
+      "id": "391:17551",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=391-17551",
+      "status": "review"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "366:5957",
+      "width": 390,
+      "batch": 1,
+      "keys": [
+        "01-format",
+        "02-lock2",
+        "03-lock3",
+        "04-types2",
+        "05-types3",
+        "06-launch",
+        "07-email",
+        "08-found"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_1.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-5957"
+    },
+    {
+      "id": "366:6486",
+      "width": 390,
+      "batch": 2,
+      "keys": [
+        "09-waiting",
+        "10-accepted",
+        "11-declined",
+        "12-expired",
+        "13-telegram",
+        "14-lobby",
+        "15-ready",
+        "16-battle"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_2.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-6486"
+    },
+    {
+      "id": "366:7529",
+      "width": 390,
+      "batch": 3,
+      "keys": [
+        "17-battle-chat",
+        "18-win",
+        "19-loss",
+        "20-draw",
+        "21-bot-roster",
+        "22-bot-battle",
+        "23-search",
+        "24-match"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_3.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-7529"
+    },
+    {
+      "id": "366:8408",
+      "width": 390,
+      "batch": 4,
+      "keys": [
+        "25-safety",
+        "26-blocked",
+        "27-sent",
+        "28-report",
+        "29-rematch",
+        "30-not-found",
+        "31-chat-limit",
+        "32-left"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_4.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-8408"
+    },
+    {
+      "id": "366:9239",
+      "width": 390,
+      "batch": 5,
+      "keys": [
+        "33-battle-sent",
+        "34-result-sent",
+        "35-bot-result",
+        "36-lobby-sent"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_5.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-9239"
+    },
+    {
+      "id": "389:16105",
+      "width": 390,
+      "batch": 6,
+      "keys": [
+        "37-friend-methods",
+        "38-partners",
+        "39-invite-new",
+        "40-share-sheet",
+        "41-link-copied",
+        "42-link-sent"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_6.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-16105"
+    },
+    {
+      "id": "389:16677",
+      "width": 390,
+      "batch": 7,
+      "keys": [
+        "43-new-onboarding",
+        "44-partners-empty",
+        "45-referrer-empty",
+        "46-partner-notready",
+        "47-no-telegram",
+        "48-self-invite"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_7.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-16677"
+    },
+    {
+      "id": "389:17090",
+      "width": 390,
+      "batch": 8,
+      "keys": [
+        "49-duplicate",
+        "50-blocked-invite",
+        "51-invite-limit",
+        "52-email-sending",
+        "53-share-fallback",
+        "54-link-error",
+        "55-incoming"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_390_8.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-17090"
+    },
+    {
+      "id": "366:9803",
+      "width": 360,
+      "batch": 1,
+      "keys": [
+        "01-format",
+        "02-lock2",
+        "03-lock3",
+        "04-types2",
+        "05-types3",
+        "06-launch",
+        "07-email",
+        "08-found"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_1.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-9803"
+    },
+    {
+      "id": "366:10332",
+      "width": 360,
+      "batch": 2,
+      "keys": [
+        "09-waiting",
+        "10-accepted",
+        "11-declined",
+        "12-expired",
+        "13-telegram",
+        "14-lobby",
+        "15-ready",
+        "16-battle"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_2.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-10332"
+    },
+    {
+      "id": "366:11365",
+      "width": 360,
+      "batch": 3,
+      "keys": [
+        "17-battle-chat",
+        "18-win",
+        "19-loss",
+        "20-draw",
+        "21-bot-roster",
+        "22-bot-battle",
+        "23-search",
+        "24-match"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_3.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-11365"
+    },
+    {
+      "id": "366:12235",
+      "width": 360,
+      "batch": 4,
+      "keys": [
+        "25-safety",
+        "26-blocked",
+        "27-sent",
+        "28-report",
+        "29-rematch",
+        "30-not-found",
+        "31-chat-limit",
+        "32-left"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_4.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-12235"
+    },
+    {
+      "id": "366:13061",
+      "width": 360,
+      "batch": 5,
+      "keys": [
+        "33-battle-sent",
+        "34-result-sent",
+        "35-bot-result",
+        "36-lobby-sent"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_5.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=366-13061"
+    },
+    {
+      "id": "389:17389",
+      "width": 360,
+      "batch": 6,
+      "keys": [
+        "37-friend-methods",
+        "38-partners",
+        "39-invite-new",
+        "40-share-sheet",
+        "41-link-copied",
+        "42-link-sent"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_6.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-17389"
+    },
+    {
+      "id": "389:17919",
+      "width": 360,
+      "batch": 7,
+      "keys": [
+        "43-new-onboarding",
+        "44-partners-empty",
+        "45-referrer-empty",
+        "46-partner-notready",
+        "47-no-telegram",
+        "48-self-invite"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_7.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-17919"
+    },
+    {
+      "id": "389:18332",
+      "width": 360,
+      "batch": 8,
+      "keys": [
+        "49-duplicate",
+        "50-blocked-invite",
+        "51-invite-limit",
+        "52-email-sending",
+        "53-share-fallback",
+        "54-link-error",
+        "55-incoming"
+      ],
+      "path": "assets/screens/arena_flow_v14/arena_360_8.png",
+      "figma_url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=389-18332"
+    }
+  ],
+  "files": [
+    {
+      "file": "arena_360_1.png",
+      "size": 1010101,
+      "sha256": "514176286046d601131d5fa1ef7ffc53d1c78d79a3446ffb142dfe63e3c1f1db",
+      "width": 1520,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_1.png"
+    },
+    {
+      "file": "arena_360_2.png",
+      "size": 1025961,
+      "sha256": "5c4982922791ccba294ecfe07af71bbb8ec087d0ace734acebe65c5711d05cc8",
+      "width": 1520,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_2.png"
+    },
+    {
+      "file": "arena_360_3.png",
+      "size": 1444465,
+      "sha256": "988fd4543d816897100b3140a5c7bcbbc3451dea2156a08e708e0bfcae4d47b9",
+      "width": 1520,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_3.png"
+    },
+    {
+      "file": "arena_360_4.png",
+      "size": 892952,
+      "sha256": "065a4c8d93f9139bc7f2781d6bfa9cf100d65a7291894f520e7da4b9418359f9",
+      "width": 1520,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_4.png"
+    },
+    {
+      "file": "arena_360_5.png",
+      "size": 770045,
+      "sha256": "38acb469e2776226fa672ecdc094511af51b821cf2a37a91d94e72018a882126",
+      "width": 1520,
+      "height": 882,
+      "path": "assets/screens/arena_flow_v14/arena_360_5.png"
+    },
+    {
+      "file": "arena_360_6.png",
+      "size": 737973,
+      "sha256": "051bd3db12738b5508304882c69b2383275fed4fbbba7c46981d9c285de2e638",
+      "width": 1144,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_6.png"
+    },
+    {
+      "file": "arena_360_7.png",
+      "size": 749623,
+      "sha256": "cfdc0e17e52faedafd464ca2c955e9c442f2063538ce49b77f5fcdbd22c0edbf",
+      "width": 1144,
+      "height": 1666,
+      "path": "assets/screens/arena_flow_v14/arena_360_7.png"
+    },
+    {
+      "file": "arena_360_8.png",
+      "size": 1011583,
+      "sha256": "9f35cb7c255ee1394eb1c1d4c3c84f3e05f6986531fd0df6ae529f1b7eea0bde",
+      "width": 1144,
+      "height": 2470,
+      "path": "assets/screens/arena_flow_v14/arena_360_8.png"
+    },
+    {
+      "file": "arena_390_1.png",
+      "size": 1178409,
+      "sha256": "086d9225c95ca8c0490a521050742cdd8a1118ba17e07d7c4fcec6c54b653eec",
+      "width": 1640,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_1.png"
+    },
+    {
+      "file": "arena_390_2.png",
+      "size": 1266633,
+      "sha256": "e86db94e567c862704c90f149d52a4e04ac4201eb0857648b1e4f344fa5f1fcb",
+      "width": 1640,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_2.png"
+    },
+    {
+      "file": "arena_390_3.png",
+      "size": 1804665,
+      "sha256": "a9165d94e3acc1bfc1b580e58e2a39a115282e91adc0cbfeed4ae94edb17ccb6",
+      "width": 1640,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_3.png"
+    },
+    {
+      "file": "arena_390_4.png",
+      "size": 1058683,
+      "sha256": "a0b226d66d1d733d2b3c6ce2467a9fc6d94d4ca609339e20224375d99310367b",
+      "width": 1640,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_4.png"
+    },
+    {
+      "file": "arena_390_5.png",
+      "size": 965114,
+      "sha256": "eb492776caa711bf9ce7bddff97e2d22d7bb8884296f0340f414366a43a11b99",
+      "width": 1640,
+      "height": 986,
+      "path": "assets/screens/arena_flow_v14/arena_390_5.png"
+    },
+    {
+      "file": "arena_390_6.png",
+      "size": 912151,
+      "sha256": "f85e24a59579de431979b72fe528528a89c60ea332b5553c547080488b13bd18",
+      "width": 1234,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_6.png"
+    },
+    {
+      "file": "arena_390_7.png",
+      "size": 894636,
+      "sha256": "9ca9270d2413f731e70e26460cec99cb43f831b13b0546dffacf155628b23c97",
+      "width": 1234,
+      "height": 1874,
+      "path": "assets/screens/arena_flow_v14/arena_390_7.png"
+    },
+    {
+      "file": "arena_390_8.png",
+      "size": 1206705,
+      "sha256": "9426abb31b8afd9a0a43048dea5e668489a80badcf3bcad7a1835b4277ccf5b2",
+      "width": 1234,
+      "height": 2782,
+      "path": "assets/screens/arena_flow_v14/arena_390_8.png"
+    },
+    {
+      "file": "poses_owner_fit.png",
+      "local": "poses_after.png",
+      "size": 2477097,
+      "sha256": "10712c044b9dd6a7e2cc106f4c85511831de61a4c2096da8bce7e4a8513425ff",
+      "width": 919,
+      "height": 4200,
+      "path": "assets/screens/arena_flow_v14/poses_owner_fit.png"
+    }
+  ],
+  "validation": {
+    "screenCount": 110,
+    "edges": [
+      [
+        "390/01-format",
+        "360:3281",
+        "1×1",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/01-format",
+        "360:3288",
+        "2×2 · закрыто",
+        "390/02-lock2",
+        "ON_CLICK"
+      ],
+      [
+        "390/01-format",
+        "360:3295",
+        "3×3 · закрыто",
+        "390/03-lock3",
+        "ON_CLICK"
+      ],
+      [
+        "390/02-lock2",
+        "360:3382",
+        "action/Магазин и выращивание",
+        "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=302-515",
+        "ON_CLICK"
+      ],
+      [
+        "390/02-lock2",
+        "360:3384",
+        "action/Какие будут типы боя?",
+        "390/04-types2",
+        "ON_CLICK"
+      ],
+      [
+        "390/02-lock2",
+        "360:3386",
+        "action/К выбору формата",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/03-lock3",
+        "360:3428",
+        "action/Магазин и выращивание",
+        "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=302-515",
+        "ON_CLICK"
+      ],
+      [
+        "390/03-lock3",
+        "360:3430",
+        "action/Какие будут типы боя?",
+        "390/05-types3",
+        "ON_CLICK"
+      ],
+      [
+        "390/03-lock3",
+        "360:3432",
+        "action/К выбору формата",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/04-types2",
+        "360:3483",
+        "action/К условиям открытия",
+        "390/02-lock2",
+        "ON_CLICK"
+      ],
+      [
+        "390/05-types3",
+        "360:3534",
+        "action/К условиям открытия",
+        "390/03-lock3",
+        "ON_CLICK"
+      ],
+      [
+        "390/06-launch",
+        "360:3569",
+        "С ботом",
+        "390/21-bot-roster",
+        "ON_CLICK"
+      ],
+      [
+        "390/06-launch",
+        "360:3576",
+        "Подобрать соперника",
+        "390/23-search",
+        "ON_CLICK"
+      ],
+      [
+        "390/06-launch",
+        "360:3583",
+        "Вызвать друга",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/06-launch",
+        "360:3590",
+        "action/‹ К форматам",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/07-email",
+        "360:3672",
+        "action/Отправить приглашение",
+        "390/52-email-sending",
+        "ON_CLICK"
+      ],
+      [
+        "390/07-email",
+        "360:3674",
+        "action/‹ К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/08-found",
+        "387:16396",
+        "action/Ожидать ответа",
+        "390/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "390/08-found",
+        "387:16398",
+        "action/К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/09-waiting",
+        "360:3884",
+        "action/Посмотреть приглашение",
+        "390/13-telegram",
+        "ON_CLICK"
+      ],
+      [
+        "390/09-waiting",
+        "360:3886",
+        "action/Отменить приглашение",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/10-accepted",
+        "360:4007",
+        "action/Войти в лобби",
+        "390/14-lobby",
+        "ON_CLICK"
+      ],
+      [
+        "390/10-accepted",
+        "360:4009",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/11-declined",
+        "360:4130",
+        "action/Пригласить снова",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/11-declined",
+        "360:4132",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/12-expired",
+        "360:4253",
+        "action/Пригласить снова",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/12-expired",
+        "360:4255",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/13-telegram",
+        "360:4371",
+        "action/Открыть Арену",
+        "390/55-incoming",
+        "ON_CLICK"
+      ],
+      [
+        "390/13-telegram",
+        "360:4373",
+        "action/Отказаться",
+        "390/11-declined",
+        "ON_CLICK"
+      ],
+      [
+        "390/13-telegram",
+        "360:4375",
+        "action/Вернуться в QuRa",
+        "390/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "390/14-lobby",
+        "360:4498",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/14-lobby",
+        "360:4509",
+        "action/↑",
+        "390/36-lobby-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/14-lobby",
+        "360:4511",
+        "action/Я готов",
+        "390/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/14-lobby",
+        "360:4513",
+        "action/Выйти из лобби",
+        "390/32-left",
+        "ON_CLICK"
+      ],
+      [
+        "390/15-ready",
+        "360:4636",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/15-ready",
+        "360:4647",
+        "action/↑",
+        "390/27-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/15-ready",
+        "360:4649",
+        "action/Начать бой",
+        "390/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/15-ready",
+        "360:4651",
+        "action/Выйти из лобби",
+        "390/32-left",
+        "ON_CLICK"
+      ],
+      [
+        "390/16-battle",
+        "360:4783",
+        "action/Удар",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/16-battle",
+        "360:4785",
+        "action/Защита",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/16-battle",
+        "360:4788",
+        "action/Манёвр",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/16-battle",
+        "360:4790",
+        "action/Особый",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/16-battle",
+        "360:4794",
+        "action/Чат · 2",
+        "390/17-battle-chat",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4926",
+        "action/Удар",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4928",
+        "action/Защита",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4931",
+        "action/Манёвр",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4933",
+        "action/Особый",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4940",
+        "action/Свернуть чат",
+        "390/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4945",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/17-battle-chat",
+        "360:4956",
+        "action/↑",
+        "390/33-battle-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/18-win",
+        "360:5076",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/18-win",
+        "360:5087",
+        "action/↑",
+        "390/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/18-win",
+        "360:5090",
+        "action/Реванш",
+        "390/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "390/18-win",
+        "360:5092",
+        "action/На Арену",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/19-loss",
+        "360:5212",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/19-loss",
+        "360:5223",
+        "action/↑",
+        "390/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/19-loss",
+        "360:5226",
+        "action/Реванш",
+        "390/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "390/19-loss",
+        "360:5228",
+        "action/На Арену",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/20-draw",
+        "360:5348",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/20-draw",
+        "360:5359",
+        "action/↑",
+        "390/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/20-draw",
+        "360:5362",
+        "action/Реванш",
+        "390/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "390/20-draw",
+        "360:5364",
+        "action/На Арену",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/21-bot-roster",
+        "360:5438",
+        "action/Начать тренировку",
+        "390/22-bot-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/21-bot-roster",
+        "360:5440",
+        "action/‹ К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/22-bot-battle",
+        "360:5572",
+        "action/Удар",
+        "390/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "390/22-bot-battle",
+        "360:5574",
+        "action/Защита",
+        "390/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "390/22-bot-battle",
+        "360:5577",
+        "action/Манёвр",
+        "390/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "390/22-bot-battle",
+        "360:5579",
+        "action/Особый",
+        "390/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "390/23-search",
+        "360:5581",
+        "Q28/390/23-search",
+        "390/24-match",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "390/23-search",
+        "360:5620",
+        "action/Отменить поиск",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/24-match",
+        "360:5661",
+        "action/Войти в лобби",
+        "390/14-lobby",
+        "ON_CLICK"
+      ],
+      [
+        "390/25-safety",
+        "360:5703",
+        "action/Пожаловаться на сообщение",
+        "390/28-report",
+        "ON_CLICK"
+      ],
+      [
+        "390/25-safety",
+        "360:5705",
+        "action/Заблокировать Марию",
+        "390/26-blocked",
+        "ON_CLICK"
+      ],
+      [
+        "390/25-safety",
+        "360:5710",
+        "action/Вернуться к чату",
+        "390/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/26-blocked",
+        "360:5831",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/26-blocked",
+        "360:5835",
+        "action/Разблокировать",
+        "390/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/26-blocked",
+        "360:5837",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/27-sent",
+        "360:5960",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/27-sent",
+        "360:5973",
+        "action/Начать бой",
+        "390/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/27-sent",
+        "360:5975",
+        "action/Выйти из лобби",
+        "390/32-left",
+        "ON_CLICK"
+      ],
+      [
+        "390/28-report",
+        "360:6013",
+        "action/Заблокировать Марию",
+        "390/26-blocked",
+        "ON_CLICK"
+      ],
+      [
+        "390/28-report",
+        "360:6015",
+        "action/Вернуться к чату",
+        "390/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/29-rematch",
+        "360:6017",
+        "Q28/390/29-rematch",
+        "390/14-lobby",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "390/29-rematch",
+        "360:6136",
+        "action/Вернуться к чату",
+        "390/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "390/29-rematch",
+        "360:6138",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/30-not-found",
+        "360:6220",
+        "action/Найти друга",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/30-not-found",
+        "360:6222",
+        "action/Исправить email",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/31-chat-limit",
+        "360:6343",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/31-chat-limit",
+        "360:6357",
+        "action/Вернуться к бою",
+        "390/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/32-left",
+        "360:6478",
+        "action/Пригласить снова",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/32-left",
+        "360:6480",
+        "action/К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/01-format",
+        "360:6515",
+        "1×1",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/01-format",
+        "360:6522",
+        "2×2 · закрыто",
+        "360/02-lock2",
+        "ON_CLICK"
+      ],
+      [
+        "360/01-format",
+        "360:6529",
+        "3×3 · закрыто",
+        "360/03-lock3",
+        "ON_CLICK"
+      ],
+      [
+        "360/02-lock2",
+        "360:6616",
+        "action/Магазин и выращивание",
+        "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=302-515",
+        "ON_CLICK"
+      ],
+      [
+        "360/02-lock2",
+        "360:6618",
+        "action/Какие будут типы боя?",
+        "360/04-types2",
+        "ON_CLICK"
+      ],
+      [
+        "360/02-lock2",
+        "360:6620",
+        "action/К выбору формата",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/03-lock3",
+        "360:6662",
+        "action/Магазин и выращивание",
+        "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=302-515",
+        "ON_CLICK"
+      ],
+      [
+        "360/03-lock3",
+        "360:6664",
+        "action/Какие будут типы боя?",
+        "360/05-types3",
+        "ON_CLICK"
+      ],
+      [
+        "360/03-lock3",
+        "360:6666",
+        "action/К выбору формата",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/04-types2",
+        "360:6717",
+        "action/К условиям открытия",
+        "360/02-lock2",
+        "ON_CLICK"
+      ],
+      [
+        "360/05-types3",
+        "360:6768",
+        "action/К условиям открытия",
+        "360/03-lock3",
+        "ON_CLICK"
+      ],
+      [
+        "360/06-launch",
+        "360:6803",
+        "С ботом",
+        "360/21-bot-roster",
+        "ON_CLICK"
+      ],
+      [
+        "360/06-launch",
+        "360:6810",
+        "Подобрать соперника",
+        "360/23-search",
+        "ON_CLICK"
+      ],
+      [
+        "360/06-launch",
+        "360:6817",
+        "Вызвать друга",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/06-launch",
+        "360:6824",
+        "action/‹ К форматам",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/07-email",
+        "360:6906",
+        "action/Отправить приглашение",
+        "360/52-email-sending",
+        "ON_CLICK"
+      ],
+      [
+        "360/07-email",
+        "360:6908",
+        "action/‹ К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/08-found",
+        "387:16417",
+        "action/Ожидать ответа",
+        "360/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "360/08-found",
+        "387:16419",
+        "action/К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/09-waiting",
+        "360:7118",
+        "action/Посмотреть приглашение",
+        "360/13-telegram",
+        "ON_CLICK"
+      ],
+      [
+        "360/09-waiting",
+        "360:7120",
+        "action/Отменить приглашение",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/10-accepted",
+        "360:7241",
+        "action/Войти в лобби",
+        "360/14-lobby",
+        "ON_CLICK"
+      ],
+      [
+        "360/10-accepted",
+        "360:7243",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/11-declined",
+        "360:7364",
+        "action/Пригласить снова",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/11-declined",
+        "360:7366",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/12-expired",
+        "360:7487",
+        "action/Пригласить снова",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/12-expired",
+        "360:7489",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/13-telegram",
+        "360:7605",
+        "action/Открыть Арену",
+        "360/55-incoming",
+        "ON_CLICK"
+      ],
+      [
+        "360/13-telegram",
+        "360:7607",
+        "action/Отказаться",
+        "360/11-declined",
+        "ON_CLICK"
+      ],
+      [
+        "360/13-telegram",
+        "360:7609",
+        "action/Вернуться в QuRa",
+        "360/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "360/14-lobby",
+        "360:7732",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/14-lobby",
+        "360:7740",
+        "action/↑",
+        "360/36-lobby-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/14-lobby",
+        "360:7742",
+        "action/Я готов",
+        "360/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "360/15-ready",
+        "360:7865",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/15-ready",
+        "360:7873",
+        "action/↑",
+        "360/27-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/15-ready",
+        "360:7875",
+        "action/Начать бой",
+        "360/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/16-battle",
+        "360:8007",
+        "action/Удар",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/16-battle",
+        "360:8009",
+        "action/Защита",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/16-battle",
+        "360:8012",
+        "action/Манёвр",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/16-battle",
+        "360:8014",
+        "action/Особый",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/16-battle",
+        "360:8018",
+        "action/Чат · 2",
+        "360/17-battle-chat",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8150",
+        "action/Удар",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8152",
+        "action/Защита",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8155",
+        "action/Манёвр",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8157",
+        "action/Особый",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8164",
+        "action/Свернуть чат",
+        "360/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8169",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/17-battle-chat",
+        "360:8180",
+        "action/↑",
+        "360/33-battle-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/18-win",
+        "360:8300",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/18-win",
+        "360:8308",
+        "action/↑",
+        "360/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/18-win",
+        "360:8311",
+        "action/Реванш",
+        "360/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "360/18-win",
+        "360:8313",
+        "action/На Арену",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/19-loss",
+        "360:8433",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/19-loss",
+        "360:8441",
+        "action/↑",
+        "360/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/19-loss",
+        "360:8444",
+        "action/Реванш",
+        "360/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "360/19-loss",
+        "360:8446",
+        "action/На Арену",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/20-draw",
+        "360:8566",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/20-draw",
+        "360:8574",
+        "action/↑",
+        "360/34-result-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/20-draw",
+        "360:8577",
+        "action/Реванш",
+        "360/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "360/20-draw",
+        "360:8579",
+        "action/На Арену",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/21-bot-roster",
+        "360:8653",
+        "action/Начать тренировку",
+        "360/22-bot-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/21-bot-roster",
+        "360:8655",
+        "action/‹ К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/22-bot-battle",
+        "360:8787",
+        "action/Удар",
+        "360/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "360/22-bot-battle",
+        "360:8789",
+        "action/Защита",
+        "360/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "360/22-bot-battle",
+        "360:8792",
+        "action/Манёвр",
+        "360/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "360/22-bot-battle",
+        "360:8794",
+        "action/Особый",
+        "360/35-bot-result",
+        "ON_CLICK"
+      ],
+      [
+        "360/23-search",
+        "360:8796",
+        "Q28/360/23-search",
+        "360/24-match",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "360/23-search",
+        "360:8835",
+        "action/Отменить поиск",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/24-match",
+        "360:8876",
+        "action/Войти в лобби",
+        "360/14-lobby",
+        "ON_CLICK"
+      ],
+      [
+        "360/25-safety",
+        "360:8918",
+        "action/Пожаловаться на сообщение",
+        "360/28-report",
+        "ON_CLICK"
+      ],
+      [
+        "360/25-safety",
+        "360:8920",
+        "action/Заблокировать Марию",
+        "360/26-blocked",
+        "ON_CLICK"
+      ],
+      [
+        "360/25-safety",
+        "360:8925",
+        "action/Вернуться к чату",
+        "360/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "360/26-blocked",
+        "360:9046",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/26-blocked",
+        "360:9050",
+        "action/Разблокировать",
+        "360/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "360/26-blocked",
+        "360:9052",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/27-sent",
+        "360:9175",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/27-sent",
+        "360:9185",
+        "action/Начать бой",
+        "360/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/28-report",
+        "360:9223",
+        "action/Заблокировать Марию",
+        "360/26-blocked",
+        "ON_CLICK"
+      ],
+      [
+        "360/28-report",
+        "360:9225",
+        "action/Вернуться к чату",
+        "360/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "360/29-rematch",
+        "360:9227",
+        "Q28/360/29-rematch",
+        "360/14-lobby",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "360/29-rematch",
+        "360:9346",
+        "action/Вернуться к чату",
+        "360/18-win",
+        "ON_CLICK"
+      ],
+      [
+        "360/29-rematch",
+        "360:9348",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/30-not-found",
+        "360:9430",
+        "action/Найти друга",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/30-not-found",
+        "360:9432",
+        "action/Исправить email",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/31-chat-limit",
+        "360:9553",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/31-chat-limit",
+        "360:9567",
+        "action/Вернуться к бою",
+        "360/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/32-left",
+        "360:9688",
+        "action/Пригласить снова",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/32-left",
+        "360:9690",
+        "action/К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/33-battle-sent",
+        "365:6038",
+        "action/Свернуть чат",
+        "390/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/33-battle-sent",
+        "365:6042",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/34-result-sent",
+        "365:6183",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/34-result-sent",
+        "365:6195",
+        "action/Реванш",
+        "390/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "390/34-result-sent",
+        "365:6196",
+        "action/На Арену",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/35-bot-result",
+        "365:6330",
+        "action/Реванш",
+        "390/22-bot-battle",
+        "ON_CLICK"
+      ],
+      [
+        "390/35-bot-result",
+        "365:6331",
+        "action/На Арену",
+        "390/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "390/36-lobby-sent",
+        "365:6458",
+        "action/⋯",
+        "390/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "390/36-lobby-sent",
+        "365:6469",
+        "action/Я готов",
+        "390/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/36-lobby-sent",
+        "365:6470",
+        "action/Выйти из лобби",
+        "390/32-left",
+        "ON_CLICK"
+      ],
+      [
+        "360/33-battle-sent",
+        "365:6607",
+        "action/Свернуть чат",
+        "360/16-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/33-battle-sent",
+        "365:6611",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/34-result-sent",
+        "365:6752",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/34-result-sent",
+        "365:6761",
+        "action/Реванш",
+        "360/29-rematch",
+        "ON_CLICK"
+      ],
+      [
+        "360/34-result-sent",
+        "365:6762",
+        "action/На Арену",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/35-bot-result",
+        "365:6893",
+        "action/Реванш",
+        "360/22-bot-battle",
+        "ON_CLICK"
+      ],
+      [
+        "360/35-bot-result",
+        "365:6894",
+        "action/На Арену",
+        "360/01-format",
+        "ON_CLICK"
+      ],
+      [
+        "360/36-lobby-sent",
+        "365:7021",
+        "action/⋯",
+        "360/25-safety",
+        "ON_CLICK"
+      ],
+      [
+        "360/36-lobby-sent",
+        "365:7029",
+        "action/Я готов",
+        "360/15-ready",
+        "ON_CLICK"
+      ],
+      [
+        "390/37-friend-methods",
+        "385:14551",
+        "Из партнёрки",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/37-friend-methods",
+        "385:14558",
+        "Новый друг",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/37-friend-methods",
+        "385:14604",
+        "По email",
+        "390/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "390/37-friend-methods",
+        "385:14611",
+        "action/‹ К способам игры",
+        "390/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "390/38-partners",
+        "385:14693",
+        "action/Вызвать",
+        "390/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "390/38-partners",
+        "385:14742",
+        "action/Условия боя",
+        "390/46-partner-notready",
+        "ON_CLICK"
+      ],
+      [
+        "390/38-partners",
+        "385:14744",
+        "action/Пригласить нового друга",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/39-invite-new",
+        "385:14830",
+        "action/Поделиться",
+        "390/40-share-sheet",
+        "ON_CLICK"
+      ],
+      [
+        "390/39-invite-new",
+        "385:14832",
+        "action/Копировать",
+        "390/41-link-copied",
+        "ON_CLICK"
+      ],
+      [
+        "390/39-invite-new",
+        "385:14837",
+        "action/‹ К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/40-share-sheet",
+        "385:14912",
+        "action/Отправить другу",
+        "390/42-link-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/40-share-sheet",
+        "385:14914",
+        "action/Отмена",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/41-link-copied",
+        "385:14995",
+        "action/Ссылка отправлена",
+        "390/42-link-sent",
+        "ON_CLICK"
+      ],
+      [
+        "390/41-link-copied",
+        "385:14997",
+        "action/‹ К приглашению",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/42-link-sent",
+        "385:15078",
+        "action/Как друг станет готов?",
+        "390/43-new-onboarding",
+        "ON_CLICK"
+      ],
+      [
+        "390/42-link-sent",
+        "385:15080",
+        "action/‹ К приглашению",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/43-new-onboarding",
+        "385:15161",
+        "action/К моим партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/43-new-onboarding",
+        "385:15163",
+        "action/‹ К приглашению",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/44-partners-empty",
+        "385:15237",
+        "action/Пригласить нового друга",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/44-partners-empty",
+        "385:15239",
+        "action/‹ К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/45-referrer-empty",
+        "385:15313",
+        "action/Пригласить нового друга",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/45-referrer-empty",
+        "385:15315",
+        "action/‹ К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/46-partner-notready",
+        "385:15397",
+        "action/К партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/47-no-telegram",
+        "385:15438",
+        "action/Проверить ответ",
+        "390/10-accepted",
+        "ON_CLICK"
+      ],
+      [
+        "390/47-no-telegram",
+        "385:15440",
+        "action/К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/48-self-invite",
+        "385:15481",
+        "action/К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/48-self-invite",
+        "385:15483",
+        "action/К партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/49-duplicate",
+        "385:15524",
+        "action/Посмотреть приглашение",
+        "390/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "390/49-duplicate",
+        "385:15526",
+        "action/К партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/50-blocked-invite",
+        "385:15567",
+        "action/К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/50-blocked-invite",
+        "385:15569",
+        "action/К партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/51-invite-limit",
+        "385:15610",
+        "action/К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/51-invite-limit",
+        "385:15612",
+        "action/К партнёрам",
+        "390/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "390/52-email-sending",
+        "385:15614",
+        "Q28/390/52-email-sending",
+        "390/08-found",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "390/53-share-fallback",
+        "385:15727",
+        "action/Скопировать ссылку",
+        "390/41-link-copied",
+        "ON_CLICK"
+      ],
+      [
+        "390/53-share-fallback",
+        "385:15729",
+        "action/‹ К приглашению",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/54-link-error",
+        "385:15770",
+        "action/Загрузить ещё раз",
+        "390/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "390/54-link-error",
+        "385:15772",
+        "action/‹ К способам вызова",
+        "390/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/37-friend-methods",
+        "386:15485",
+        "Из партнёрки",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/37-friend-methods",
+        "386:15492",
+        "Новый друг",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/37-friend-methods",
+        "386:15538",
+        "По email",
+        "360/07-email",
+        "ON_CLICK"
+      ],
+      [
+        "360/37-friend-methods",
+        "386:15545",
+        "action/‹ К способам игры",
+        "360/06-launch",
+        "ON_CLICK"
+      ],
+      [
+        "360/38-partners",
+        "386:15627",
+        "action/Вызвать",
+        "360/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "360/38-partners",
+        "386:15676",
+        "action/Условия боя",
+        "360/46-partner-notready",
+        "ON_CLICK"
+      ],
+      [
+        "360/38-partners",
+        "386:15678",
+        "action/Пригласить нового друга",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/39-invite-new",
+        "386:15764",
+        "action/Поделиться",
+        "360/40-share-sheet",
+        "ON_CLICK"
+      ],
+      [
+        "360/39-invite-new",
+        "386:15766",
+        "action/Копировать",
+        "360/41-link-copied",
+        "ON_CLICK"
+      ],
+      [
+        "360/39-invite-new",
+        "386:15771",
+        "action/‹ К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/40-share-sheet",
+        "386:15846",
+        "action/Отправить другу",
+        "360/42-link-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/40-share-sheet",
+        "386:15848",
+        "action/Отмена",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/41-link-copied",
+        "386:15929",
+        "action/Ссылка отправлена",
+        "360/42-link-sent",
+        "ON_CLICK"
+      ],
+      [
+        "360/41-link-copied",
+        "386:15931",
+        "action/‹ К приглашению",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/42-link-sent",
+        "386:16012",
+        "action/Как друг станет готов?",
+        "360/43-new-onboarding",
+        "ON_CLICK"
+      ],
+      [
+        "360/42-link-sent",
+        "386:16014",
+        "action/‹ К приглашению",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/43-new-onboarding",
+        "386:16095",
+        "action/К моим партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/43-new-onboarding",
+        "386:16097",
+        "action/‹ К приглашению",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/44-partners-empty",
+        "386:16171",
+        "action/Пригласить нового друга",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/44-partners-empty",
+        "386:16173",
+        "action/‹ К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/45-referrer-empty",
+        "386:16247",
+        "action/Пригласить нового друга",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/45-referrer-empty",
+        "386:16249",
+        "action/‹ К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/46-partner-notready",
+        "386:16331",
+        "action/К партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/47-no-telegram",
+        "386:16372",
+        "action/Проверить ответ",
+        "360/10-accepted",
+        "ON_CLICK"
+      ],
+      [
+        "360/47-no-telegram",
+        "386:16374",
+        "action/К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/48-self-invite",
+        "386:16415",
+        "action/К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/48-self-invite",
+        "386:16417",
+        "action/К партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/49-duplicate",
+        "386:16458",
+        "action/Посмотреть приглашение",
+        "360/09-waiting",
+        "ON_CLICK"
+      ],
+      [
+        "360/49-duplicate",
+        "386:16460",
+        "action/К партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/50-blocked-invite",
+        "386:16501",
+        "action/К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/50-blocked-invite",
+        "386:16503",
+        "action/К партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/51-invite-limit",
+        "386:16544",
+        "action/К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "360/51-invite-limit",
+        "386:16546",
+        "action/К партнёрам",
+        "360/38-partners",
+        "ON_CLICK"
+      ],
+      [
+        "360/52-email-sending",
+        "386:16548",
+        "Q28/360/52-email-sending",
+        "360/08-found",
+        "AFTER_TIMEOUT"
+      ],
+      [
+        "360/53-share-fallback",
+        "386:16661",
+        "action/Скопировать ссылку",
+        "360/41-link-copied",
+        "ON_CLICK"
+      ],
+      [
+        "360/53-share-fallback",
+        "386:16663",
+        "action/‹ К приглашению",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/54-link-error",
+        "386:16704",
+        "action/Загрузить ещё раз",
+        "360/39-invite-new",
+        "ON_CLICK"
+      ],
+      [
+        "360/54-link-error",
+        "386:16706",
+        "action/‹ К способам вызова",
+        "360/37-friend-methods",
+        "ON_CLICK"
+      ],
+      [
+        "390/55-incoming",
+        "391:17446",
+        "action/Принять вызов",
+        "390/10-accepted",
+        "ON_CLICK"
+      ],
+      [
+        "390/55-incoming",
+        "391:17447",
+        "action/Отказаться",
+        "390/11-declined",
+        "ON_CLICK"
+      ],
+      [
+        "360/55-incoming",
+        "391:17571",
+        "action/Принять вызов",
+        "360/10-accepted",
+        "ON_CLICK"
+      ],
+      [
+        "360/55-incoming",
+        "391:17572",
+        "action/Отказаться",
+        "360/11-declined",
+        "ON_CLICK"
+      ]
+    ],
+    "errors": [],
+    "nodeTypes": {
+      "FRAME": 5491,
+      "INSTANCE": 1036,
+      "RECTANGLE": 2659,
+      "TEXT": 2182
+    },
+    "fonts": [
+      "Onest",
+      "Russo One"
+    ],
+    "starts": [
+      {
+        "nodeId": "360:3248",
+        "name": "Арена · 390×844"
+      },
+      {
+        "nodeId": "360:6482",
+        "name": "Арена · 360×740"
+      },
+      {
+        "nodeId": "360:4796",
+        "name": "Чат во время боя"
+      },
+      {
+        "nodeId": "360:4958",
+        "name": "Результат и реванш"
+      },
+      {
+        "nodeId": "366:5662",
+        "name": "Все состояния · обзор и исключения"
+      },
+      {
+        "nodeId": "385:14518",
+        "name": "Друг · три пути · 390"
+      },
+      {
+        "nodeId": "386:15452",
+        "name": "Друг · три пути · 360"
+      },
+      {
+        "nodeId": "389:15954",
+        "name": "Обзор трёх путей и исключений"
+      }
+    ],
+    "disabled": [
+      {
+        "screen": "Q28/390/04-types2",
+        "id": "360:3481",
+        "reactions": 0
+      },
+      {
+        "screen": "Q28/390/05-types3",
+        "id": "360:3532",
+        "reactions": 0
+      },
+      {
+        "screen": "Q28/360/04-types2",
+        "id": "360:6715",
+        "reactions": 0
+      },
+      {
+        "screen": "Q28/360/05-types3",
+        "id": "360:6766",
+        "reactions": 0
+      },
+      {
+        "screen": "Q28/390/46-partner-notready",
+        "id": "385:15395",
+        "reactions": 0
+      },
+      {
+        "screen": "Q28/360/46-partner-notready",
+        "id": "386:16329",
+        "reactions": 0
+      }
+    ]
+  },
+  "backend_status": "design_only; bot training described by GAME_UI_V2; online invitations chat team formats require server implementation",
+  "referral_link_contract": "GET /partners/me: bot_link_url or link_url; no invented personal URL",
+  "missing_game_graphics": [],
+  "native_share_note": "OS handoff preview; actual native sheet uses navigator.share, clipboard fallback",
+  "proposed_chat_limits": {
+    "max_characters": 200,
+    "messages": 5,
+    "seconds": 10,
+    "requires_confirmation": true
+  },
+  "fit_changes": {
+    "page": "293:451",
+    "original_cards_preserved": true,
+    "poses_updated": 12,
+    "masters": [
+      "357:444",
+      "357:548",
+      "357:664",
+      "357:786",
+      "357:902",
+      "357:1009"
+    ]
+  }
+}
