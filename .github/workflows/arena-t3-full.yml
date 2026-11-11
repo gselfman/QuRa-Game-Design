@@ -1,0 +1,31 @@
+name: Arena T3 full matrix corrected
+on:
+  push:
+    branches: [arena/t3-rule-experiments-2026-10-30]
+    paths:
+      - 'tools/arena-engine.mjs'
+      - 'tools/arena-sim-cli.mjs'
+      - '.github/workflows/arena-t3-full.yml'
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify tests
+        run: node --test tests/
+      - name: Recalculate corrected equilibrium 6x6 with simultaneous Maneuver and Special
+        run: node tools/arena-sim-cli.mjs --per-pair 10000 --seed 20261030 --equal-speed simultaneous --special-order simultaneous --out arena-t3-full
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arena-t3-corrected-360k
+          path: arena-t3-full/
