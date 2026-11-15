@@ -38,7 +38,7 @@ app.innerHTML=`
  <div id="zoom-controls" class="hidden"><button id="zoom-out" aria-label="Уменьшить увеличение">−</button><strong id="zoom-value">4×</strong><button id="zoom-in" aria-label="Увеличить увеличение">+</button></div>
  <div id="hint" class="hint">${icon('aim')}<span>Цель — мишень <b>под платформой</b></span></div>
  <div id="ability" class="ability hidden"></div>
- <div id="hit-marker"></div>
+ <div id="hit-marker"></div><div id="scope-guide" class="hidden" aria-live="polite"></div>
  <div id="toast" role="status" aria-live="polite"></div>
  <div class="vitals"><div class="pulse-line"><span class="heart-icon">${icon('heart')}</span><div><span>ПУЛЬС</span><strong id="pulse">72</strong></div><svg id="ecg" viewBox="0 0 150 36"><path id="ecg-path" d="M0 25H150"/></svg></div><div class="breath-line"><span>${icon('breath')} ДЫХАНИЕ</span><strong id="breath-label">Спокойное</strong></div><div class="breath-track"><i id="breath-fill"></i></div></div>
  <div class="ammo"><span id="capsule-icons"></span><div><strong id="ammo">18</strong><small id="ammo-capacity">/18</small><span>КАПСУЛЫ</span></div><i></i><div><strong id="solved">0</strong><small id="total">/1</small><span>МИШЕНИ</span></div></div>
@@ -92,7 +92,7 @@ async function boot(){
 function start(levelId:number,training:boolean){
   audio.stop();audio.start();inGame=true;view='game';resultTimer=0;scoreTimer=0;toastTimer=0;$('#score-float').classList.remove('show');$('#toast').classList.remove('visible');settled=false;resumeTimer=0;closeModal();$('#menus').classList.add('hidden');$('#hud').classList.remove('hidden');$('#round-banner').classList.add('hidden');
   const level=balance.levels.find(l=>l.id===levelId)!;const loadout=balance.loadouts.find(l=>l.id===level.loadoutId)!;
-  world.setup(level,loadout,core);core.start(levelId,training);core.quiet=qaFreeze;world.magnification=loadout.maxMagnification;setAds(false);
+  world.setup(level,loadout,core);core.start(levelId,training);core.quiet=qaFreeze;world.magnification=level.entryMagnification??loadout.maxMagnification;setAds(false);
   $('#level-label').textContent=`${level.environmentTitle.toUpperCase()} · ${level.distanceM} М`;
   $('#level-no').textContent=String(levelId).padStart(2,'0');$('#wind').classList.toggle('hidden',levelId<3);$('#hint').classList.remove('hidden');$('#ammo-capacity').textContent=level.mode==='balloons'?'/8':'/18';$('#hint span').innerHTML=level.mode==='balloons'?'Лопните <b>пять шариков</b>. Курочек бережём!':'Цель — мишень <b>под платформой</b>';toast(training?'Тренировка: ошибки не заканчивают попытку':level.mode==='balloons'?'Пять шариков · 1 км · берите упреждение':'Цель — круглая мишень под платформой');
   updateHUD();
@@ -127,10 +127,10 @@ function updateHUD(){
   $('#mistakes').querySelectorAll('i').forEach((n,i)=>n.classList.toggle('used',i<core.mistakes));$('#pulse').textContent=String(Math.round(core.pulse));$('#breath-fill').style.width=`${core.breath}%`;
   $('#breath-label').textContent=core.holding?'Задержано':core.lockout>0?'Восстановление':core.breath<35?'Глубокий выдох':'Спокойное';$('#breath').classList.toggle('active',core.holding);$('#breath-fill').classList.toggle('low',core.breath<30);
   $('#fire').classList.toggle('cooling',!!core.shot||core.cooldown>0||core.wiping>0||core.state!=='playing');$('#wipe').classList.toggle('hidden',core.water<.06||!ads);$('#wipe-sweep').classList.toggle('wiping',core.wiping>0);
-  $('#zoom-value').textContent=`${Math.round(world.magnification)}×`;($('#zoom-in') as HTMLButtonElement).disabled=world.magnification>=core.loadout.maxMagnification-.01;($('#zoom-out') as HTMLButtonElement).disabled=world.magnification<=core.loadout.defaultMagnification+.01;$('#wind-label').textContent=`ВЕТЕР ${core.wind>=0?'→':'←'}`;$('#wind-strength').style.width=`${Math.abs(core.wind)*40+4}px`;
+  const guide=world.scopeGuide();$('#scope-guide').textContent=guide;$('#scope-guide').classList.toggle('hidden',!guide);$('#zoom-value').textContent=`${Math.round(world.magnification)}×`;($('#zoom-in') as HTMLButtonElement).disabled=world.magnification>=core.loadout.maxMagnification-.01;($('#zoom-out') as HTMLButtonElement).disabled=world.magnification<=core.loadout.defaultMagnification+.01;$('#wind-label').textContent=`ВЕТЕР ${core.wind>=0?'→':'←'}`;$('#wind-strength').style.width=`${Math.abs(core.wind)*40+4}px`;
   const path=[];for(let x=0;x<=150;x+=2){const phase=(x/150+core.time*core.pulse/60)%1;let y=24;if(phase>.30&&phase<.38)y-=Math.sin((phase-.3)/.08*Math.PI)*5;if(phase>.48&&phase<.54)y+=Math.sin((phase-.48)/.06*Math.PI)*7;if(phase>.54&&phase<.59)y-=Math.sin((phase-.54)/.05*Math.PI)*21;if(phase>.59&&phase<.64)y+=Math.sin((phase-.59)/.05*Math.PI)*10;path.push(`${x===0?'M':'L'}${x} ${y}`);}$('#ecg-path').setAttribute('d',path.join(''));
   $('.heart-icon').style.transform=`scale(${1+Math.pow(Math.max(0,Math.sin(core.time*core.pulse/60*Math.PI*2)),10)*.18})`;
-  $('#water-drops').style.opacity=String(core.water);$('#ability').classList.toggle('hidden',core.sensory==='none'&&!core.professorActive);
+  $('#water-drops').classList.toggle('hidden',core.water<=.015);$('#water-drops').style.opacity=String(core.water);$('#ability').classList.toggle('hidden',core.sensory==='none'&&!core.professorActive);
   $('#ability').textContent=core.sensory==='glamour'?'♫ Гламурочка волнует публику':core.sensory==='water-warning'?'Боевик готовит залп':core.professorActive?'Поле Профессора активно':'';
   $('#capsule-icons').innerHTML=Array.from({length:Math.min(core.ammo,5)},()=>icon('capsule')).join('');
 }
@@ -147,7 +147,7 @@ function frame(dt:number){
 }
 function applySettings(){
   audio.set(settings.sound,settings.volume/100);document.body.classList.toggle('left-hand',settings.left);$('#menu-sound').classList.toggle('muted',!settings.sound);
-  if(world){world.engine.setHardwareScalingLevel(settings.low?2:Math.max(1,devicePixelRatio/1.5));world.scene.shadowsEnabled=!settings.low;world.resize();}
+  if(world){world.low=settings.low;world.engine.setHardwareScalingLevel(settings.low?1:1/Math.min(devicePixelRatio||1,1.5));world.scene.shadowsEnabled=!settings.low;world.resize();}
   $('#setting-sound').toggleAttribute('checked',settings.sound);($('#setting-sound') as HTMLInputElement).checked=settings.sound;
   for(const k of ['calm','left','low'])($('#setting-'+k) as HTMLInputElement).checked=settings[k];
   ($('#setting-volume') as HTMLInputElement).value=String(settings.volume);($('#setting-sensitivity') as HTMLInputElement).value=String(settings.sensitivity);

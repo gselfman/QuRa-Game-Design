@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "ks-prototype-0.2",
+  "configVersion": "ks-prototype-0.2.1",
   "status": "PROTOTYPE_BALANCE",
   "gameId": "kuro-sniper",
   "rules": {
@@ -246,7 +246,7 @@
       "family": "final",
       "title": "Финальная винтовка",
       "defaultMagnification": 24,
-      "maxMagnification": 96,
+      "maxMagnification": 192,
       "optic": "telescopic",
       "bipod": true,
       "cooldownS": 1.05
@@ -413,7 +413,8 @@
         3,
         4,
         5
-      ]
+      ],
+      "entryMagnification": 144
     },
     {
       "id": 10,
@@ -428,7 +429,8 @@
       "flightTimeS": 1.35,
       "roundIds": [
         1
-      ]
+      ],
+      "entryMagnification": 64
     }
   ]
 }

@@ -2,7 +2,7 @@ import {
   Engine,Scene,FreeCamera,Camera,Vector3,Color3,Color4,HemisphericLight,DirectionalLight,
   MeshBuilder,Mesh,TransformNode,StandardMaterial,PBRMaterial,DynamicTexture,Texture,
   ShadowGenerator,SceneLoader,AssetContainer,RenderTargetTexture,ShaderMaterial,Effect,Matrix,
-  HDRCubeTexture,PhotoDome,Vector4,VertexData,Vector2,Viewport,
+  HDRCubeTexture,Vector4,VertexData,Vector2,Viewport,PointLight,
 } from '@babylonjs/core';
 import '@babylonjs/loaders/glTF';
 import {scopeFov,clamp} from './game.mjs';
@@ -20,10 +20,10 @@ export class World {
   particles:any[]=[];level:any;core:any;ready=false;menu=true;elapsed=0;bullet:Mesh;
   levelMaterials:any[]=[];buildingEnvironment=false;
   onFrame:((dt:number)=>void)|null=null;resizeObserver:ResizeObserver;low=false;
-  rigRecipes:any={};sky:PhotoDome|null=null;skyLight:HDRCubeTexture|null=null;
+  rigRecipes:any={};sky:Mesh|null=null;skyLight:HDRCubeTexture|null=null;
   constructor(public canvas:HTMLCanvasElement){
     this.engine=new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true,alpha:false,powerPreference:'high-performance'});
-    this.engine.setHardwareScalingLevel(Math.max(1,window.devicePixelRatio/1.5));
+    this.engine.setHardwareScalingLevel(1/Math.min(window.devicePixelRatio||1,1.5));
     this.scene=new Scene(this.engine);this.scene.clearColor=new Color4(.66,.78,.83,1);
     this.scene.ambientColor=new Color3(.35,.32,.25);
     this.scene.fogMode=Scene.FOGMODE_EXP2;this.scene.fogDensity=.00028;this.scene.fogColor=new Color3(.76,.83,.82);
@@ -33,7 +33,8 @@ export class World {
     const hemi=new HemisphericLight('sky-light',new Vector3(.2,1,-.3),this.scene);hemi.intensity=.78;hemi.groundColor=C('#8a7952');
     this.sun=new DirectionalLight('sun',new Vector3(-.45,-1,.35),this.scene);this.sun.position=new Vector3(15,30,-15);this.sun.intensity=2.5;this.sun.diffuse=C('#ffdfac');
     this.shadow=new ShadowGenerator(1024,this.sun);this.shadow.useBlurExponentialShadowMap=true;this.shadow.blurKernel=12;this.shadow.darkness=.18;
-    this.materials.wood=this.woodMaterial('oak','#9b663c');this.materials.darkWood=this.woodMaterial('walnut','#553a29');this.materials.cream=this.mat('cream','#f4e5c6');this.materials.red=this.mat('red','#b7533d');this.materials.gold=this.mat('gold','#ddb86a',.55,.35);this.materials.metal=this.mat('metal','#3e4645',.7,.33);this.materials.green=this.mat('green','#658353');
+    this.materials.wood=this.woodMaterial('oak','#9b663c');this.materials.darkWood=this.woodMaterial('walnut','#553a29');this.materials.floor=this.photoMaterial('worn-floor','ref-floor');this.materials.floor.albedoColor=new Color3(1.1,1,.85);this.materials.cream=this.mat('cream','#f4e5c6');this.materials.red=this.mat('red','#b7533d');this.materials.gold=this.mat('gold','#ddb86a',.55,.35);this.materials.metal=this.mat('metal','#3e4645',.7,.33);this.materials.green=this.mat('green','#658353');
+    this.materials.clothCream=this.clothMaterial('canvas-cream','#e9ddc4');this.materials.clothRed=this.clothMaterial('canvas-red','#b75c46');
     this.environment=new TransformNode('environment',this.scene);
     this.scope=new RenderTargetTexture('scope-view',{width:768,height:768},this.scene,false,false,0,false,Texture.BILINEAR_SAMPLINGMODE);this.scope.activeCamera=this.scopeCamera;this.scope.ignoreCameraViewport=true;this.scope.renderList=null;this.scene.customRenderTargets.push(this.scope);
     this.overlay=new Scene(this.engine);this.overlay.autoClear=false;this.overlay.autoClearDepthAndStencil=true;
@@ -50,24 +51,37 @@ export class World {
   }
   mat(name:string,hex:string,metallic=0,roughness=.85,scene=this.scene){const m=new PBRMaterial(name,scene);m.albedoColor=C(hex).toLinearSpace();m.metallic=metallic;m.roughness=roughness;m.environmentIntensity=.7;if(this.buildingEnvironment)this.levelMaterials.push(m);return m;}
   woodMaterial(name:string,hex:string){
-    const m=this.photoMaterial(name,'wood');m.albedoColor=name==='walnut'?new Color3(.47,.36,.27):new Color3(.94,.83,.66);return m;
+    const m=this.photoMaterial(name,'ref-wall');m.albedoColor=name==='walnut'?new Color3(.49,.35,.24):new Color3(.97,.83,.64);return m;
+  }
+  clothMaterial(name:string,hex:string){
+    const m=this.mat(name,hex,0,.97),t=new DynamicTexture(name+'-weave',{width:128,height:128},this.scene,false),ctx=t.getContext();
+    ctx.fillStyle='#e8e2d6';ctx.fillRect(0,0,128,128);
+    for(let i=0;i<128;i+=2){ctx.strokeStyle=i%4?'#c6c0b4':'#ffffff';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,128);ctx.moveTo(0,i);ctx.lineTo(128,i);ctx.stroke();}
+    t.update();t.uScale=12;t.vScale=12;m.albedoTexture=t;return m;
   }
   photoMaterial(name:string,type:string,u=1,v=1){
     const m=this.mat(name,'#ffffff',0,1);
     const map=(suffix:string,linear=false)=>{const t=new Texture(`/assets/materials/${type}-${suffix}.webp`,this.scene);t.uScale=u;t.vScale=v;t.anisotropicFilteringLevel=8;t.gammaSpace=!linear;return t;};
-    m.albedoTexture=map('color');m.bumpTexture=map('normal',true);m.bumpTexture.level=.65;m.invertNormalMapX=true;m.invertNormalMapY=true;
+    const albedo=type==='ref-grass'?new Texture('/assets/materials/meadow-albedo-v1.png',this.scene):map('color');albedo.uScale=u;albedo.vScale=v;albedo.anisotropicFilteringLevel=8;m.albedoTexture=albedo;m.bumpTexture=map('normal',true);m.bumpTexture.level=.65;m.invertNormalMapX=true;m.invertNormalMapY=true;
     m.metallicTexture=map('orm',true);m.useAmbientOcclusionFromMetallicTextureRed=true;m.useRoughnessFromMetallicTextureAlpha=false;m.useRoughnessFromMetallicTextureGreen=true;m.useMetallnessFromMetallicTextureBlue=true;return m;
   }
   box(name:string,pos:number[],scale:number[],mat:any,parent=this.environment){const [w,h,d]=scale,uv=(a:number,b:number)=>new Vector4(0,0,a/2,b/2);const m=MeshBuilder.CreateBox(name,{width:w,height:h,depth:d,faceUV:[uv(w,h),uv(w,h),uv(d,h),uv(d,h),uv(w,d),uv(w,d)]},this.scene);m.position.set(pos[0],pos[1],pos[2]);m.material=mat;m.parent=parent;m.receiveShadows=true;return m;}
   async load(onProgress:(n:number)=>void){
     this.rigRecipes=await fetch('/assets/rigs/rigs.json').then(r=>r.json());
     await Promise.all(Object.values(this.rigRecipes).flatMap((r:any)=>r.layers).map(async (l:any)=>{this.textures[l.url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(l.url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));t.hasAlpha=true;});}));
-    this.sky=new PhotoDome('photographic-sky','/assets/materials/sky.webp',{resolution:32,size:6000,useDirectMapping:true},this.scene);this.sky.mesh.isPickable=false;this.sky.setEnabled(false);
+    const woodland=await new Promise<Texture>((resolve,reject)=>{const t=new Texture('/assets/materials/woodland-panorama-v1.png',this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});
+    Effect.ShadersStore.ksBackdropVertexShader=Effect.ShadersStore.ksLensVertexShader;
+    Effect.ShadersStore.ksBackdropFragmentShader='precision highp float;varying vec2 vUV;uniform sampler2D backdropView;void main(){gl_FragColor=texture2D(backdropView,vUV);}';
+    this.sky=MeshBuilder.CreatePlane('woodland-distant-backdrop',{width:7400,height:3700},this.scene);this.sky.position.set(0,100,3100);this.sky.isPickable=false;
+    const backdrop=new ShaderMaterial('woodland-distant-backdrop-material',this.scene,{vertex:'ksBackdrop',fragment:'ksBackdrop'},{attributes:['position','uv'],uniforms:['worldViewProjection'],samplers:['backdropView']});backdrop.setTexture('backdropView',woodland);this.sky.material=backdrop;this.sky.setEnabled(false);
+    await Promise.all(['/assets/materials/meadow-albedo-v1.png','/assets/foliage/meadow-flowers-v1.png','/assets/foliage/oak-v1.png'].map(async url=>{this.textures[url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});}));
+
     this.skyLight=new HDRCubeTexture('/assets/materials/sky-light.hdr',this.scene,128,false,true,false,true);
     this.scene.environmentTexture=this.skyLight;this.scene.environmentIntensity=.55;this.weaponScene.environmentTexture=this.skyLight;this.weaponScene.environmentIntensity=.75;
     const codes=['ryaba','fool','professor','fighter','glamour'];let done=0;
     await Promise.all(codes.flatMap(code=>['perch','card'].map(async pose=>{const t=await new Promise<Texture>((resolve,reject)=>{const tex=new Texture(`/assets/characters/${code}/${pose}.webp`,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(tex),(_,e)=>reject(e));tex.hasAlpha=true;});this.textures[`${code}-${pose}`]=t;onProgress(++done/16);})));
     this.stationContainer=await SceneLoader.LoadAssetContainerAsync('/assets/models/','ks-target-station.glb',this.scene);onProgress(++done/16);
+    for(const mesh of this.stationContainer.meshes)if(mesh.material?.name.includes('Honey oak'))mesh.material=this.materials.wood;
     await Promise.all(['airgun','sport','sniper','precision','final'].map(async family=>{const container=await SceneLoader.LoadAssetContainerAsync('/assets/models/',`ks-rifle-${family}.glb`,this.weaponScene);container.addAllToScene();for(const m of container.materials)if(m instanceof PBRMaterial){m.metallic=Math.min(m.metallic??0,.4);m.roughness=Math.max(m.roughness??.5,.4);}const root=new TransformNode('gun-'+family,this.weaponScene);for(const r of container.rootNodes)r.parent=root;root.setEnabled(false);this.guns[family]=root;onProgress(++done/16);}));
     this.ready=true;
     this.engine.runRenderLoop(()=>{const dt=Math.min(this.engine.getDeltaTime()/1000,.05);this.onFrame?.(dt);this.render(dt);});
@@ -83,31 +97,32 @@ export class World {
   }
   buildEnvironment(level:any){
     const d=level.distanceM,indoor=level.id<=2;
-    this.sky?.setEnabled(!indoor);this.scene.environmentIntensity=indoor?.25:.65;
-    this.scene.clearColor=indoor?new Color4(.29,.24,.18,1):new Color4(.65,.79,.86,1);this.scene.fogDensity=indoor?0:.00024;
+    this.sky?.setEnabled(!indoor);this.scene.environmentIntensity=indoor?.4:.65;
+    this.scene.clearColor=indoor?new Color4(.29,.24,.18,1):new Color4(.65,.79,.86,1);this.scene.fogDensity=indoor?0:level.id>=9?.00008:.00016;
     this.sun.intensity=indoor?1.3:1.25;this.sun.diffuse=C(level.id===9?'#ffce98':'#ffe1b1');
     if(indoor){
       const w=13;for(let x=-w/2;x<w/2;x+=.65){this.box('back-plank',[x,2.1,d+.75],[.64,4.2,.14],x%1>.2?this.materials.wood:this.materials.darkWood);}
-      for(let z=2;z<d+1;z+=.65)this.box('floor-board',[0,-.06,z],[w,.12,.64],this.materials.wood);
+      const floor=MeshBuilder.CreateGround('weathered-floor',{width:w,height:d+2},this.scene);floor.parent=this.environment;floor.position.set(0,0,d/2);floor.material=this.materials.floor;floor.receiveShadows=true;
+      for(const t of [this.materials.floor.albedoTexture,this.materials.floor.bumpTexture,this.materials.floor.metallicTexture]){t.uScale=w/3;t.vScale=(d+2)/3;}
       this.box('rear-crossbeam',[0,3.45,d+.52],[13,.26,.3],this.materials.darkWood);
-      const velvet=this.mat('velvet-green','#50624d');
-      this.box('target-backdrop',[0,1.8,d+.60],[9.2,3.05,.04],velvet);
+      this.box('target-backdrop',[0,1.8,d+.60],[9.2,3.05,.04],this.materials.darkWood);
       for(const x of [-4.65,4.65])this.box('backdrop-gold-trim',[x,1.8,d+.54],[.045,3.12,.035],this.materials.gold);
       const sign=MeshBuilder.CreatePlane('fairground-sign',{width:3.25,height:.5},this.scene);sign.parent=this.environment;sign.position.set(0,3.25,d+.46);const signTex=new DynamicTexture('sign',{width:1024,height:160},this.scene,false);const sx=signTex.getContext() as CanvasRenderingContext2D;sx.fillStyle='#334438';sx.fillRect(0,0,1024,160);sx.strokeStyle='#cbb27e';sx.lineWidth=3;sx.strokeRect(8,8,1008,144);sx.fillStyle='#f2d79d';sx.textAlign='center';sx.font='bold 57px Onest';sx.fillText('QuRa  /  ДОБРЫЙ ТИР',512,100);signTex.update();const sm=new StandardMaterial('sign-mat',this.scene);sm.diffuseTexture=signTex;sm.emissiveColor=new Color3(.25,.25,.25);sign.material=sm;this.levelMaterials.push(sm);
       for(const x of [-6.2,6.2]){this.box('side-pillar',[x,2.25,d-1],[.3,4.5,.35],this.materials.darkWood);this.box('side-wall',[x,1.4,d/2],[.15,2.8,d],this.materials.wood);}
-      const awningZ=Math.min(6,d-1);for(let x=-6.3;x<=6;x+=.65){const a=this.box('awning',[x,3.7,awningZ],[.65,.1,2],Math.round(x/.65)%2?this.materials.cream:this.materials.red);a.rotation.x=-.07;this.box('awning-valance',[x,3.48,awningZ-1],[.65,.4,.06],Math.round(x/.65)%2?this.materials.cream:this.materials.red);}
+      const awningZ=Math.min(6,d-1);for(let x=-6.3;x<=6;x+=.65){const fabric=Math.round(x/.65)%2?this.materials.clothCream:this.materials.clothRed;
+        const a=MeshBuilder.CreateGround('curved-canvas-awning',{width:.65,height:2,subdivisions:12,updatable:true},this.scene);const p=a.getVerticesData('position')!;for(let i=0;i<p.length;i+=3)p[i+1]=-.18*Math.sin((p[i+2]+1)*Math.PI/2);a.updateVerticesData('position',p);a.refreshBoundingInfo();a.parent=this.environment;a.position.set(x,3.7,awningZ);a.material=fabric;(fabric as PBRMaterial).backFaceCulling=false;
+        this.box('awning-valance',[x,3.48,awningZ-1],[.65,.4,.045],fabric);
+        const hem=MeshBuilder.CreateCylinder('rounded-fabric-hem',{height:.65,diameter:.08,tessellation:12},this.scene);hem.parent=this.environment;hem.position.set(x,3.28,awningZ-1);hem.rotation.z=Math.PI/2;hem.material=fabric;
+      }
+      for(const x of [-3.5,3.5]){const light=new PointLight('warm-fairground-lamp',new Vector3(x,3.2,d-.6),this.scene);light.parent=this.environment;light.diffuse=C('#ffd298');light.intensity=7;light.range=6;}
       for(let x=-5.6;x<6;x+=1.4){const bulb=MeshBuilder.CreateSphere('warm-bulb',{diameter:.12,segments:8},this.scene);bulb.position.set(x,3.35,awningZ-.8);bulb.parent=this.environment;const m=new StandardMaterial('bulb',this.scene);m.emissiveColor=C('#ffcb73');bulb.material=m;}
       this.box('counter',[0,.52,1.05],[13,.15,.7],this.materials.darkWood);
       for(const x of [-5.2,5.2]){const barrel=MeshBuilder.CreateCylinder('seed-barrel',{height:.8,diameterTop:.55,diameterBottom:.63,tessellation:16},this.scene);barrel.parent=this.environment;barrel.position.set(x,.4,d-1);barrel.material=this.materials.wood;for(const y of [.15,.65]){const band=MeshBuilder.CreateTorus('barrel-band',{diameter:.60,thickness:.045,tessellation:24},this.scene);band.parent=this.environment;band.position.set(x,y,d-1);band.material=this.materials.metal;}}
     }else{
-      const ground=MeshBuilder.CreateGround('meadow',{width:3200,height:3600,subdivisions:1},this.scene);ground.position.z=1500;ground.material=this.photoMaterial('meadow-scan','grass',400,450);ground.parent=this.environment;ground.receiveShadows=true;this.grassClumps(d);
-      const nearMat=this.mat('near-grass','#70854d');for(let i=0;i<42;i++){const x=(i%2?1:-1)*(2.7+(i%9)*1.7),z=3+i*2.3;const m=MeshBuilder.CreateCylinder('grass-stem',{height:.18+(i%4)*.1,diameterTop:0,diameterBottom:.06,tessellation:3},this.scene);m.position.set(x,.12,z);m.material=nearMat;m.parent=this.environment;}
+      const ground=MeshBuilder.CreateGround('meadow',{width:3200,height:3600,subdivisions:1},this.scene);ground.position.z=1500;ground.material=this.photoMaterial('meadow-scan','ref-grass',3200,3600);ground.parent=this.environment;ground.receiveShadows=true;this.grassClumps(d);this.forestCards(d);
       this.box('shooting-table',[0,.48,.95],[3,.12,1.2],this.materials.darkWood);
       for(const x of [-3.8,3.8]){this.box('target-beam',[x,.16,d],[.18,.32,12],this.materials.darkWood);}
-      for(let i=0;i<18;i++){
-        const x=(i%2?-1:1)*(26+(i%7)*8),z=d+65+(i*19)%140;
-        this.tree(x,z,2+(i%4)*.7,i);
-      }
+
       for(let x=-10;x<=10;x+=2){this.box('fence-post',[x,.55,d+3],[.12,1.1,.12],this.materials.darkWood);}
       for(const y of [.35,.75])this.box('fence-rail',[0,y,d+3],[23,.08,.07],this.materials.wood);
       const pole=this.box('windsock-pole',[-5,1.7,d-1],[.06,3.4,.06],this.materials.metal);
@@ -115,26 +130,32 @@ export class World {
       if(level.id===5){this.box('barn',[9,2.8,d+12],[7,5.6,7],this.materials.red);const roof=this.box('barn-roof',[9,5.7,d+12],[7.8,.2,8],this.materials.darkWood);roof.rotation.z=-.12;this.box('barn-door',[9,1.5,d+8.45],[2.5,3,.05],this.materials.darkWood);}
       if([6,8,9].includes(level.id))this.windmill(-18,d+30);
       if(level.id===9){for(const x of [-3.8,3.8])this.box('terrace-pillar',[x,2.6,1.5],[.3,5.2,.3],this.materials.darkWood);this.box('terrace-roof',[0,4.3,1],[8.5,.24,4],this.materials.wood);}
-      for(let i=0;i<5;i++){const hill=MeshBuilder.CreateSphere('far-hill',{diameter:300+i*30,segments:12},this.scene);hill.scaling.y=.22;hill.position.set((i-2)*220,-10,d+650);hill.material=this.mat('hill'+i,i%2?'#779486':'#94a58c');hill.parent=this.environment;}
+
     }
   }
   grassClumps(distance:number){
-    const positions:number[]=[],indices:number[]=[],colors:number[]=[],normals:number[]=[];
-    for(let i=0;i<1800;i++){
+    const positions:number[]=[],indices:number[]=[],colors:number[]=[],normals:number[]=[],uvs:number[]=[];
+    for(let i=0;i<1600;i++){
       const seed=(n:number)=>{const x=Math.sin(i*127.1+n*311.7)*43758.5453;return x-Math.floor(x);};
-      const x=(seed(1)-.5)*48,z=seed(2)<.65?2+seed(3)*45:distance-7+seed(3)*15;
-      if(Math.abs(x)<1.2)continue;
-      const h=.10+seed(4)*.28,w=.012+seed(5)*.02,angle=seed(6)*6.28,dx=Math.cos(angle)*w,dz=Math.sin(angle)*w,b=positions.length/3;
-      positions.push(x-dx,0,z-dz,x+dx,0,z+dz,x+dx*.6+.035,h*.6,z+dz*.6,x+.06,h,z);
-      indices.push(b,b+1,b+2,b,b+2,b+3);const shade=.8+seed(7)*.3;for(let k=0;k<4;k++)colors.push(.24*shade,.32*shade,.095*shade,1);
+      const x=(seed(1)-.5)*32,z=seed(2)<.65?2+seed(3)*40:distance-7+seed(3)*15;
+      if(Math.abs(x)<.6&&z<6)continue;
+      const h=.19+seed(4)*.22,w=h*2,angle=seed(6)*6.28;
+      for(let side=0;side<2;side++){const dx=Math.cos(angle+side*Math.PI/2)*w/2,dz=Math.sin(angle+side*Math.PI/2)*w/2,b=positions.length/3;
+        positions.push(x-dx,-.025,z-dz,x+dx,-.025,z+dz,x+dx,h,z+dz,x-dx,h,z-dz);uvs.push(0,0,1,0,1,1,0,1);indices.push(b,b+1,b+2,b,b+2,b+3);const shade=.78+seed(7)*.22;for(let k=0;k<4;k++)colors.push(shade,shade,shade,1);
+      }
     }
-    VertexData.ComputeNormals(positions,indices,normals);const data=new VertexData();data.positions=positions;data.indices=indices;data.normals=normals;data.colors=colors;
-    const mesh=new Mesh('meadow-blades',this.scene);data.applyToMesh(mesh);mesh.parent=this.environment;mesh.material=this.mat('grass-blades','#ffffff');(mesh.material as PBRMaterial).backFaceCulling=false;mesh.receiveShadows=true;mesh.metadata={detail:true};
+    VertexData.ComputeNormals(positions,indices,normals);const data=new VertexData();data.positions=positions;data.indices=indices;data.normals=normals;data.colors=colors;data.uvs=uvs;
+    const mesh=new Mesh('meadow-flowers',this.scene);data.applyToMesh(mesh);mesh.parent=this.environment;
+    const material=new StandardMaterial('flowering-meadow-cutout',this.scene),tex=new Texture('/assets/foliage/meadow-flowers-v1.png',this.scene,false,true);tex.hasAlpha=true;tex.anisotropicFilteringLevel=4;material.diffuseTexture=tex;material.useAlphaFromDiffuseTexture=true;material.transparencyMode=1;material.alphaCutOff=.4;material.backFaceCulling=false;material.emissiveColor=new Color3(.15,.15,.15);material.specularColor=Color3.Black();mesh.material=material;this.levelMaterials.push(material);mesh.receiveShadows=true;mesh.metadata={detail:true};
   }
-  tree(x:number,z:number,h:number,i:number){
-    const trunk=MeshBuilder.CreateCylinder('tree-trunk',{height:h,diameterTop:.18,diameterBottom:.35,tessellation:6},this.scene);trunk.position.set(x,h/2,z);trunk.material=this.materials.darkWood;trunk.parent=this.environment;
-    const leaf=this.mat('leaf'+i,i%3===0?'#688853':i%3===1?'#84995a':'#a8a46a');
-    for(let j=0;j<3;j++){const crown=MeshBuilder.CreateIcoSphere('tree-crown',{radius:h*.65,subdivisions:1,flat:false},this.scene);crown.position.set(x+(j-1)*h*.35,h+(j%2)*h*.4,z+(j%2)*.4);crown.scaling.y=1.15;crown.material=leaf;crown.parent=this.environment;}
+  forestCards(distance:number){
+    const positions:number[]=[],indices:number[]=[],uvs:number[]=[],normals:number[]=[];
+    for(let i=0;i<28;i++){const h=4.8+(i%5)*.45,w=h*.72,x=(i-13.5)*3.8,z=distance+45+(i%3)*11,b=positions.length/3;
+      positions.push(x-w/2,0,z,x+w/2,0,z,x+w/2,h,z,x-w/2,h,z);uvs.push(i%2?1:0,0,i%2?0:1,0,i%2?0:1,1,i%2?1:0,1);indices.push(b,b+1,b+2,b,b+2,b+3);
+    }
+    VertexData.ComputeNormals(positions,indices,normals);const data=new VertexData();data.positions=positions;data.indices=indices;data.normals=normals;data.uvs=uvs;
+    const mesh=new Mesh('detailed-forest',this.scene);data.applyToMesh(mesh);mesh.parent=this.environment;
+    const m=new StandardMaterial('oak-foliage',this.scene);m.diffuseTexture=this.textures['/assets/foliage/oak-v1.png'];m.diffuseTexture.hasAlpha=true;m.useAlphaFromDiffuseTexture=true;m.transparencyMode=1;m.alphaCutOff=.45;m.backFaceCulling=false;m.emissiveColor=new Color3(.20,.20,.20);m.specularColor=Color3.Black();mesh.material=m;this.levelMaterials.push(m);
   }
   windmill(x:number,z:number){
     this.box('windmill-tower',[x,3,z],[2,6,2],this.materials.cream);const hub=new TransformNode('windmill-hub',this.scene);hub.parent=this.environment;hub.position.set(x,5,z-1.2);hub.metadata={windmill:true};
@@ -184,6 +205,9 @@ export class World {
     const camera=this.overlay.activeCamera as FreeCamera;camera.orthoLeft=-w/2;camera.orthoRight=w/2;camera.orthoTop=h/2;camera.orthoBottom=-h/2;
     this.lens.scaling.set(this.diameter,this.diameter,1);this.lens.position.set(0,0,0);
     const cssH=this.canvas.clientHeight,cssW=this.canvas.clientWidth;document.documentElement.style.setProperty('--lens',`${Math.min(cssH*.76,cssW*.46)}px`);
+    const pixels=Math.ceil(Math.min(cssH*.76,cssW*.46)*Math.min(devicePixelRatio,2)/256)*256;
+    const resolution=clamp(pixels,512,this.low?768:1536);
+    if(this.scope.getSize().width!==resolution)this.scope.resize({width:resolution,height:resolution});
   }
   direction(){return new Vector3(Math.sin(this.yaw)*Math.cos(this.pitch),Math.sin(this.pitch),Math.cos(this.yaw)*Math.cos(this.pitch));}
   aimDelta(dx:number,dy:number,sensitivity=1){
@@ -191,6 +215,14 @@ export class World {
     const limit=Math.atan2(7,this.level.distanceM)+.12;this.yaw=clamp(this.yaw+dx*f,-limit,limit);this.pitch=clamp(this.pitch-dy*f,-.32,.32);
   }
   targetWorldPoint(id:string){const t=this.core.target(id);return t?new Vector3(t.x,t.y,this.level.distanceM):null;}
+  scopeGuide(){
+    if(!this.ads||this.level.id<9)return '';
+    const points=this.core.targets.filter((t:any)=>!t.solved&&!t.penaltyUntil).map((t:any)=>{
+      const p=Vector3.Project(new Vector3(t.x,t.y,this.level.distanceM),Matrix.Identity(),this.scopeCamera.getTransformationMatrix(),new Viewport(0,0,1,1));return {x:p.x-.5,y:p.y-.5};
+    });
+    if(!points.length||points.some((p:any)=>Math.hypot(p.x,p.y)<.43))return '';
+    points.sort((a:any,b:any)=>Math.hypot(a.x,a.y)-Math.hypot(b.x,b.y));const p=points[0],angle=Math.atan2(p.y,p.x),arrows=['→','↘','↓','↙','←','↖','↑','↗'];return 'ЦЕЛЬ '+arrows[(Math.round(angle/(Math.PI/4))+8)%8];
+  }
   aimAt(id:string){const p=this.targetWorldPoint(id);if(p){const v=p.subtract(this.camera.position);this.yaw=Math.atan2(v.x,v.z);this.pitch=Math.atan2(v.y,Math.hypot(v.x,v.z));}}
   fireEffect(){this.recoil=1;}
   featherBurst(id:string){const a=this.actors.find(a=>a.id===id);if(!a)return;for(let i=0;i<14;i++){const mesh=MeshBuilder.CreatePlane('feather',{width:.07,height:.18,sideOrientation:Mesh.DOUBLESIDE},this.scene);mesh.material=this.materials.cream;mesh.position=a.root.position.add(new Vector3(0,.6,0));mesh.position.z-=.1;this.particles.push({mesh,velocity:new Vector3(Math.sin(i*2.4)*1.2,.8+(i%4)*.3,-.3),age:0});}}
@@ -198,7 +230,8 @@ export class World {
     if(!this.ready||!this.level)return;this.elapsed+=dt;
     const running=!this.core.paused;const sway=this.core.aimSway();
     const dir=new Vector3(Math.sin(this.yaw+sway.x)*Math.cos(this.pitch+sway.y),Math.sin(this.pitch+sway.y),Math.cos(this.yaw+sway.x)*Math.cos(this.pitch+sway.y));
-    this.camera.setTarget(this.camera.position.add(dir));this.scopeCamera.position.copyFrom(this.camera.position);this.scopeCamera.setTarget(this.camera.position.add(dir));
+    const focalPoint=this.camera.position.add(dir.scale(Math.max(10,this.level.distanceM)));
+    this.camera.setTarget(focalPoint);this.scopeCamera.position.copyFrom(this.camera.position);this.scopeCamera.setTarget(focalPoint);
     this.scopeCamera.fov=scopeFov(this.camera.fov,this.engine.getRenderHeight(),this.diameter,this.magnification);
     this.lensShader.setFloat('time',this.core.time);this.lensShader.setFloat('fieldRadius',0);
     const prof=this.core.targets.find((t:any)=>t.code==='professor'&&!t.solved&&!t.penaltyUntil);

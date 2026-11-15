@@ -27,7 +27,7 @@ test('one projectile in flight and a cooldown prevent repeated trigger spam',()=
 });
 test('training permits mistakes without ending the session',()=>{const g=game(1,true);for(let i=0;i<12;i++)g.resolve({kind:'miss'});assert.equal(g.state,'playing');assert.equal(g.mistakes,12);});
 test('target disk and hen have separate collision regions',()=>{const t=[{id:'C01',x:0,y:.88,solved:false,penaltyUntil:0}];assert.equal(resolveImpact({x:0,y:.88},t,.5).kind,'target');assert.equal(resolveImpact({x:0,y:2},t,.5).kind,'hen');assert.equal(resolveImpact({x:.8,y:.88},t,.5).kind,'miss');});
-test('lens-only FOV has correct apparent magnification, independent of lens size',()=>{for(const m of [1,2,4,24,96])for(const ratio of [.5,.66,.76]){const f=scopeFov(.87,600,600*ratio,m);const apparent=ratio*Math.tan(.87/2)/Math.tan(f/2);assert(Math.abs(apparent-m)<1e-8);}assert.equal(maxScore(),3050);});
+test('lens-only FOV has correct apparent magnification, independent of lens size',()=>{for(const m of [1,2,4,24,64,96,144,192])for(const ratio of [.5,.66,.76]){const f=scopeFov(.87,600,600*ratio,m);const apparent=ratio*Math.tan(.87/2)/Math.tan(f/2);assert(Math.abs(apparent-m)<1e-8);}assert.equal(maxScore(),3050);});
 test('wind and Professor field affect trajectory deterministically and remain frozen for each shot',()=>{
  const g=game(9);g.quiet=false;g.round=3;g.setupRound();g.time=2;advance(g,.01);assert(g.professorActive);const t=g.target('C04');const d={x:t.x,y:t.y-1.5,z:1000},n=Math.hypot(d.x,d.y,d.z);g.fire({x:0,y:1.5,z:0},{x:d.x/n,y:d.y/n,z:d.z/n});const wind=g.shot.wind,field=g.shot.field;assert(field>0);advance(g,.3);assert.equal(g.shot.wind,wind);assert.equal(g.shot.field,field);
 });

@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "Owner-supplied game contact sheet, 2026-11-15; visual style reference only",
+  "assets": [
+    {
+      "file": "public/assets/foliage/meadow-flowers-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: ONE transparent-background vegetation texture atlas for a real-time 3D mobile game. The attached image is STYLE REFERENCE ONLY, especially its lower-left sunny meadow: believable lush green grass with small white daisies and tiny buttercup yellow flowers. Generate a new single horizontal 2048 x 1024 RGBA cutout asset: one naturally irregular low meadow clump, about one metre wide, side-on at ground level, grass and leaves occupying lower 80 percent, a few white daisies and yellow wildflowers rising to different heights. Fine individual blades, green clover leaves, realistic small petals, soft neutral daylight, no baked cast shadow, clean alpha around every blade. Continuous loosely spaced vegetation, not a grid, no scene backdrop, no sky, no horizon, no soil block, no container, no labels, no phone, no chickens, no UI. Transparent empty space above and around the clump. This is an actual foliage material to place on intersecting cards in an interactive 3D game, not a mockup or screenshot. Keep thin edges clean and natural."
+    },
+    {
+      "file": "public/assets/materials/woodland-panorama-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: equirectangular 360-degree environment panorama, 2:1 aspect, to be mapped inside a sphere as a distant background in a real-time mobile game. Attached contact sheet is STYLE REFERENCE only; follow its bottom row sunny green alpine meadow setting, not the phones, not the game UI. Generate one new complete continuous panoramic landscape: lush mixed woodland at the distant edges of a wide empty grassy clearing, soft forested foothills, distant blue mountains, bright blue sky with soft small cumulus clouds. Warm pleasant late morning light, believable intricate tree canopies, natural deep green leaves, detailed soft grass, cheerful countryside, photographic realism. Horizon approximately at vertical center, sky fills upper half, grassy ground fills lower half. Camera level at human eye height, uninterrupted panorama with matching left and right edges, realistic equirectangular projection for spherical mapping. Keep central foreground and middle distance completely clear and open so gameplay targets can be placed separately. No people, no animals, no chickens, no weapons, no targets, no buildings, no text, no phone, no UI, no graphic overlay. These are distant environment pixels only, not a mockup or a game screenshot."
+    },
+    {
+      "file": "public/assets/foliage/oak-v1.png",
+      "prompt": "TREE_PROMPT_V021.txt"
+    },
+    {
+      "file": "public/assets/materials/meadow-albedo-v1.png",
+      "prompt": "GRASS_ALBEDO_PROMPT_V021.txt"
+    }
+  ]
+}

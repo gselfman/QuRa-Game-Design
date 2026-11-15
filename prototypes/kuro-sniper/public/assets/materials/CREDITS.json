@@ -34,6 +34,42 @@
         "Dimitrios Savva",
         "Jarod Guest"
       ]
+    },
+    {
+      "name": "weathered_brown_planks",
+      "source": "https://polyhaven.com/a/weathered_brown_planks",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "role": "ref-wall",
+      "channels": [
+        "diffuse",
+        "normal OpenGL",
+        "AO/roughness/metallic"
+      ]
+    },
+    {
+      "name": "old_wood_floor",
+      "source": "https://polyhaven.com/a/old_wood_floor",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "role": "ref-floor",
+      "channels": [
+        "diffuse",
+        "normal OpenGL",
+        "AO/roughness/metallic"
+      ]
+    },
+    {
+      "name": "leafy_grass",
+      "source": "https://polyhaven.com/a/leafy_grass",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "role": "ref-grass",
+      "channels": [
+        "diffuse",
+        "normal OpenGL",
+        "AO/roughness/metallic"
+      ]
     }
   ]
 }

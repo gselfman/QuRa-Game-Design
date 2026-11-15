@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "level": 9,
+      "entry": 144,
+      "width": 512,
+      "near": 40,
+      "waterHidden": true,
+      "diameter": 296.4,
+      "renderHeight": 390,
+      "cssHeight": 390,
+      "targetDiameterPixels": 24.08710173116336,
+      "centered": true,
+      "device": "mobile"
+    },
+    {
+      "level": 10,
+      "entry": 64,
+      "width": 512,
+      "near": 40,
+      "waterHidden": true,
+      "diameter": 296.4,
+      "renderHeight": 390,
+      "cssHeight": 390,
+      "targetDiameterPixels": 21.410757094367433,
+      "centered": true,
+      "device": "mobile"
+    },
+    {
+      "level": 9,
+      "entry": 144,
+      "width": 1536,
+      "near": 40,
+      "waterHidden": true,
+      "diameter": 969,
+      "renderHeight": 1275,
+      "cssHeight": 850,
+      "targetDiameterPixels": 78.74629412111099,
+      "centered": true,
+      "device": "retina"
+    },
+    {
+      "level": 10,
+      "entry": 64,
+      "width": 1536,
+      "near": 40,
+      "waterHidden": true,
+      "diameter": 969,
+      "renderHeight": 1275,
+      "cssHeight": 850,
+      "targetDiameterPixels": 69.996705885432,
+      "centered": true,
+      "device": "retina"
+    }
+  ],
+  "errors": []
+}

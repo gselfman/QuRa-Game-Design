@@ -28,3 +28,6 @@
 @media(max-height:500px){#breath.breath-button{left:24px;bottom:24px;width:61px;height:61px}.right-controls #aim.aim-button{left:auto;right:0;top:-18px;bottom:auto;width:50px;height:50px}.right-controls #aim svg{width:20px;height:20px}.left-hand #breath.breath-button{left:auto;right:24px}.left-hand .right-controls #aim.aim-button{right:auto;left:0}}
 .level-grid{grid-template-columns:repeat(5,1fr);gap:10px}.level-card{padding:14px 15px}.level-distance{font-size:29px}.level-place{font-size:16px}.level-weapon{font-size:10px}.level-record{font-size:8px}.level-card.env-balloon_finale{border-color:#d8b46ba1;background:linear-gradient(135deg,#a7804370,#263c2fcc)}
 @media(max-height:500px){.level-grid{gap:6px}.level-card{padding:8px 9px}.level-distance{font-size:18px}.level-place{font-size:11px}.level-weapon{font-size:7px}.level-record{font-size:6px}}
+
+#scope-guide{position:absolute;left:calc(50% + var(--lens)/2 + 12px);top:calc(50% + 93px);font-size:10px;letter-spacing:.4px;color:#f5d78c;background:#203027c9;border:1px solid #ecd29644;border-radius:8px;padding:7px 9px;white-space:nowrap;pointer-events:none}
+@media(max-height:500px){#scope-guide{top:calc(50% + 85px);font-size:8px;padding:6px}}
