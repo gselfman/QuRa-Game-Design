@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "configVersion": "ks-prototype-0.1",
+  "status": "PROTOTYPE_BALANCE",
+  "gameId": "kuro-sniper",
+  "rules": {
+    "roundsPerLevel": 5,
+    "ammoPerLevel": 18,
+    "mistakesToFail": 3,
+    "requiredHitsPerLevel": 15,
+    "oneProjectileInFlight": true,
+    "resetMistakesBetweenRounds": false
+  },
+  "scoring": {
+    "hit": 100,
+    "centerBonus": 50,
+    "centerRadiusFraction": 0.25,
+    "streakStep": 10,
+    "streakMax": 40,
+    "henPenalty": 100,
+    "scoreFloor": 0,
+    "flawlessLevelBonus": 300,
+    "maxScorePerLevel": 3050
+  },
+  "aim": {
+    "baseVerticalFovDeg": 50,
+    "minimumViewportHeightCssPx": 360,
+    "scopeDiameterHeightRatio": 0.66,
+    "minScopedTargetCssPx": 14,
+    "adsInS": 0.35,
+    "adsOutS": 0.25,
+    "geometry": "lens-only-two-cameras"
+  },
+  "breath": {
+    "capacity": 100,
+    "minimumToStart": 25,
+    "drainPerS": 25,
+    "maxHoldS": 3,
+    "recoveryPerS": 20,
+    "recoveryDelayS": 0.6,
+    "normalExhaleS": 0.6,
+    "exhaustedExhaleS": 1,
+    "exhaustedLockoutS": 2,
+    "heldBreathSwayMultiplier": 0.2,
+    "heldPulseSwayMultiplier": 0.6
+  },
+  "heart": {
+    "baseBpm": 72,
+    "minBpm": 60,
+    "maxBpm": 120,
+    "stressContributionBpm": 28,
+    "smoothingTimeS": 2
+  },
+  "director": {
+    "maxStrongSensoryAttacks": 1,
+    "minCleanWindowS": 1.5,
+    "maxWaterCoverageFraction": 0.3,
+    "wipeS": 0.8,
+    "waterDecayS": 4
+  },
+  "simulation": {
+    "fixedStepS": 0.008333333333333333,
+    "seeded": true
+  },
+  "characters": [
+    {
+      "id": "C01",
+      "code": "ryaba",
+      "title": "Ряба",
+      "ability": "calm",
+      "telegraphS": 0,
+      "activeS": 0,
+      "restS": 0
+    },
+    {
+      "id": "C03",
+      "code": "fool",
+      "title": "Дурочка",
+      "ability": "platform_sway",
+      "telegraphS": 0.7,
+      "activeS": 3,
+      "restS": 2
+    },
+    {
+      "id": "C04",
+      "code": "professor",
+      "title": "Профессор",
+      "ability": "local_field",
+      "telegraphS": 1,
+      "activeS": 3,
+      "restS": 3
+    },
+    {
+      "id": "C02",
+      "code": "fighter",
+      "title": "Боевик",
+      "ability": "water",
+      "telegraphS": 1,
+      "activeS": 0.25,
+      "restS": 5
+    },
+    {
+      "id": "C06",
+      "code": "glamour",
+      "title": "Гламурочка",
+      "ability": "show",
+      "telegraphS": 1,
+      "activeS": 3,
+      "restS": 4
+    }
+  ],
+  "rounds": [
+    {
+      "id": 1,
+      "characterIds": [
+        "C01"
+      ]
+    },
+    {
+      "id": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ]
+    },
+    {
+      "id": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "id": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ]
+    },
+    {
+      "id": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ]
+    }
+  ],
+  "loadouts": [
+    {
+      "id": "airgun_basic",
+      "family": "airgun",
+      "title": "Первая воздушка",
+      "defaultMagnification": 1,
+      "maxMagnification": 1,
+      "optic": "reflex",
+      "bipod": false,
+      "cooldownS": 0.75
+    },
+    {
+      "id": "airgun_sport",
+      "family": "airgun",
+      "title": "Спортивная воздушка",
+      "defaultMagnification": 2,
+      "maxMagnification": 2,
+      "optic": "telescopic",
+      "bipod": false,
+      "cooldownS": 0.7
+    },
+    {
+      "id": "sport_4x",
+      "family": "sport",
+      "title": "Спортивная винтовка",
+      "defaultMagnification": 4,
+      "maxMagnification": 4,
+      "optic": "telescopic",
+      "bipod": false,
+      "cooldownS": 0.85
+    },
+    {
+      "id": "sport_variable",
+      "family": "sport",
+      "title": "Спортивная винтовка · новая оптика",
+      "defaultMagnification": 6,
+      "maxMagnification": 8,
+      "optic": "telescopic",
+      "bipod": false,
+      "cooldownS": 0.8
+    },
+    {
+      "id": "sniper_first",
+      "family": "sniper",
+      "title": "Первая снайперская",
+      "defaultMagnification": 8,
+      "maxMagnification": 16,
+      "optic": "telescopic",
+      "bipod": false,
+      "cooldownS": 1.1
+    },
+    {
+      "id": "sniper_bipod",
+      "family": "sniper",
+      "title": "Снайперская с упором",
+      "defaultMagnification": 10,
+      "maxMagnification": 32,
+      "optic": "telescopic",
+      "bipod": true,
+      "cooldownS": 1
+    },
+    {
+      "id": "precision",
+      "family": "precision",
+      "title": "Точная спортивная",
+      "defaultMagnification": 12,
+      "maxMagnification": 48,
+      "optic": "telescopic",
+      "bipod": true,
+      "cooldownS": 0.95
+    },
+    {
+      "id": "precision_shade",
+      "family": "precision",
+      "title": "Улучшенная оптика",
+      "defaultMagnification": 18,
+      "maxMagnification": 72,
+      "optic": "telescopic",
+      "bipod": true,
+      "cooldownS": 0.9
+    },
+    {
+      "id": "final_rifle",
+      "family": "final",
+      "title": "Финальная винтовка",
+      "defaultMagnification": 24,
+      "maxMagnification": 96,
+      "optic": "telescopic",
+      "bipod": true,
+      "cooldownS": 1.05
+    }
+  ],
+  "levels": [
+    {
+      "id": 1,
+      "distanceM": 10,
+      "targetDiameterM": 0.5,
+      "environmentId": "booth",
+      "environmentTitle": "Будка",
+      "loadoutId": "airgun_basic",
+      "abilityIntensity": 0.25,
+      "windStrength": 0,
+      "flightTimeS": 0.08,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "distanceM": 25,
+      "targetDiameterM": 0.5,
+      "environmentId": "gallery",
+      "environmentTitle": "Тир",
+      "loadoutId": "airgun_sport",
+      "abilityIntensity": 0.4,
+      "windStrength": 0,
+      "flightTimeS": 0.12,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "distanceM": 50,
+      "targetDiameterM": 0.5,
+      "environmentId": "glade",
+      "environmentTitle": "Поляна",
+      "loadoutId": "sport_4x",
+      "abilityIntensity": 0.55,
+      "windStrength": 0.2,
+      "flightTimeS": 0.18,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 4,
+      "distanceM": 100,
+      "targetDiameterM": 0.5,
+      "environmentId": "field",
+      "environmentTitle": "Поле",
+      "loadoutId": "sport_variable",
+      "abilityIntensity": 0.65,
+      "windStrength": 0.35,
+      "flightTimeS": 0.26,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "distanceM": 200,
+      "targetDiameterM": 0.5,
+      "environmentId": "farm",
+      "environmentTitle": "Ферма",
+      "loadoutId": "sniper_first",
+      "abilityIntensity": 0.75,
+      "windStrength": 0.45,
+      "flightTimeS": 0.4,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 6,
+      "distanceM": 350,
+      "targetDiameterM": 0.45,
+      "environmentId": "meadow",
+      "environmentTitle": "Луг",
+      "loadoutId": "sniper_bipod",
+      "abilityIntensity": 0.85,
+      "windStrength": 0.55,
+      "flightTimeS": 0.6,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "distanceM": 500,
+      "targetDiameterM": 0.4,
+      "environmentId": "valley",
+      "environmentTitle": "Долина",
+      "loadoutId": "precision",
+      "abilityIntensity": 0.9,
+      "windStrength": 0.65,
+      "flightTimeS": 0.8,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 8,
+      "distanceM": 750,
+      "targetDiameterM": 0.4,
+      "environmentId": "hot_meadow",
+      "environmentTitle": "Жаркий луг",
+      "loadoutId": "precision_shade",
+      "abilityIntensity": 0.95,
+      "windStrength": 0.8,
+      "flightTimeS": 1.05,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 9,
+      "distanceM": 1000,
+      "targetDiameterM": 0.4,
+      "environmentId": "final_terrace",
+      "environmentTitle": "Финальная площадка",
+      "loadoutId": "final_rifle",
+      "abilityIntensity": 1,
+      "windStrength": 1,
+      "flightTimeS": 1.35,
+      "roundIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}

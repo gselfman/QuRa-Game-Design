@@ -1,0 +1,951 @@
+{
+  "schemaVersion": 1,
+  "status": "PROTOTYPE_BALANCE",
+  "rounds": [
+    {
+      "id": "L01-R1",
+      "levelId": 1,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.25,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L01-R2",
+      "levelId": 1,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.25,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L01-R3",
+      "levelId": 1,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.25,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L01-R4",
+      "levelId": 1,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.25,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L01-R5",
+      "levelId": 1,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.25,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L02-R1",
+      "levelId": 2,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.4,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L02-R2",
+      "levelId": 2,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.4,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L02-R3",
+      "levelId": 2,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.4,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L02-R4",
+      "levelId": 2,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.4,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L02-R5",
+      "levelId": 2,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.4,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L03-R1",
+      "levelId": 3,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.55,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.2,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L03-R2",
+      "levelId": 3,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.55,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.2,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L03-R3",
+      "levelId": 3,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.55,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.2,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L03-R4",
+      "levelId": 3,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.55,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.2,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L03-R5",
+      "levelId": 3,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.55,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.2,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L04-R1",
+      "levelId": 4,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.65,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.35,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L04-R2",
+      "levelId": 4,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.65,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.35,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L04-R3",
+      "levelId": 4,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.65,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.35,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L04-R4",
+      "levelId": 4,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.65,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.35,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L04-R5",
+      "levelId": 4,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.65,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.35,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L05-R1",
+      "levelId": 5,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.75,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.45,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L05-R2",
+      "levelId": 5,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.75,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.45,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L05-R3",
+      "levelId": 5,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.75,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.45,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L05-R4",
+      "levelId": 5,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.75,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.45,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L05-R5",
+      "levelId": 5,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.75,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.45,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L06-R1",
+      "levelId": 6,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.85,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.55,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L06-R2",
+      "levelId": 6,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.85,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.55,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L06-R3",
+      "levelId": 6,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.85,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.55,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L06-R4",
+      "levelId": 6,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.85,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.55,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L06-R5",
+      "levelId": 6,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.85,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.55,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L07-R1",
+      "levelId": 7,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.9,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.65,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L07-R2",
+      "levelId": 7,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.9,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.65,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L07-R3",
+      "levelId": 7,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.9,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.65,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L07-R4",
+      "levelId": 7,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.9,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.65,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L07-R5",
+      "levelId": 7,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.9,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.65,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L08-R1",
+      "levelId": 8,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 0.95,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.8,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L08-R2",
+      "levelId": 8,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 0.95,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.8,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L08-R3",
+      "levelId": 8,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 0.95,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.8,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L08-R4",
+      "levelId": 8,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 0.95,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.8,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L08-R5",
+      "levelId": 8,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 0.95,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 0.8,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    },
+    {
+      "id": "L09-R1",
+      "levelId": 9,
+      "roundId": 1,
+      "characterIds": [
+        "C01"
+      ],
+      "positionsNormalized": [
+        0
+      ],
+      "abilityIntensity": 1,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 1,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 1
+    },
+    {
+      "id": "L09-R2",
+      "levelId": 9,
+      "roundId": 2,
+      "characterIds": [
+        "C01",
+        "C03"
+      ],
+      "positionsNormalized": [
+        -0.09,
+        0.09
+      ],
+      "abilityIntensity": 1,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 1,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 2
+    },
+    {
+      "id": "L09-R3",
+      "levelId": 9,
+      "roundId": 3,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "positionsNormalized": [
+        -0.18,
+        0,
+        0.18
+      ],
+      "abilityIntensity": 1,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 1,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 3
+    },
+    {
+      "id": "L09-R4",
+      "levelId": 9,
+      "roundId": 4,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02"
+      ],
+      "positionsNormalized": [
+        -0.27,
+        -0.09,
+        0.09,
+        0.27
+      ],
+      "abilityIntensity": 1,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 1,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 4
+    },
+    {
+      "id": "L09-R5",
+      "levelId": 9,
+      "roundId": 5,
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -0.36,
+        -0.18,
+        0,
+        0.18,
+        0.36
+      ],
+      "abilityIntensity": 1,
+      "seedPolicy": "fixed_per_level_until_explicit_new_training",
+      "windStrength": 1,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
+    }
+  ]
+}

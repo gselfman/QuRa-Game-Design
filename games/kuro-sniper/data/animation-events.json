@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "timeOrigin": "confirmed_contact",
+  "success": [
+    {
+      "timeMs": 0,
+      "event": "target_success",
+      "logic": "disable_ability_and_resolve_once"
+    },
+    {
+      "timeMs": 40,
+      "event": "latch_release"
+    },
+    {
+      "timeMs": 60,
+      "event": "platform_fold_start"
+    },
+    {
+      "timeMs": 220,
+      "event": "drop_flap_start"
+    },
+    {
+      "timeMs": 650,
+      "event": "landing_window_start"
+    },
+    {
+      "timeMs": 950,
+      "event": "recover_indignant"
+    },
+    {
+      "timeMs": 1500,
+      "event": "ground_idle_peck"
+    }
+  ],
+  "penalty": {
+    "platformReleased": false,
+    "returnToSamePlatform": true,
+    "maxReactionS": 2,
+    "errors": 1,
+    "scorePenalty": 100
+  },
+  "requiredClips": [
+    "perch_idle_a",
+    "perch_idle_b",
+    "blink",
+    "look_player",
+    "ability_telegraph",
+    "ability_active",
+    "ability_recover",
+    "platform_surprise",
+    "drop_flap",
+    "land_soft",
+    "recover_indignant",
+    "walk",
+    "peck_a",
+    "penalty_startle",
+    "penalty_fly_return"
+  ]
+}

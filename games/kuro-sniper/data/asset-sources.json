@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-15",
+  "fileKey": "pTm5JOM8r7b8ukBrk3UsXg",
+  "sourcePageId": "293:451",
+  "sourcePageName": "33_CHARACTER_POSES_v13",
+  "sourceStatus": "existing canonical identity; PERCH v14 instances inspected; new 3D adaptation not produced or approved",
+  "characters": [
+    {
+      "id": "C01",
+      "code": "ryaba",
+      "title": "Ряба",
+      "nodeId": "357:444",
+      "componentKey": "ca2797355f8750c94377b3c8a98c777fcfea9664",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=357-444",
+      "existingPng": "assets/characters/v13/poses/ryaba/perch.png",
+      "note": "Existing PNG v13 and live component v14 may differ in accessory fit; resolve against live selected source before producing new art."
+    },
+    {
+      "id": "C03",
+      "code": "fool",
+      "title": "Дурочка",
+      "nodeId": "357:664",
+      "componentKey": "fde61f02539dc7057e878afcc55739fcd71f6cad",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=357-664",
+      "existingPng": "assets/characters/v13/poses/fool/perch.png",
+      "note": "Existing PNG v13 and live component v14 may differ in accessory fit; resolve against live selected source before producing new art."
+    },
+    {
+      "id": "C04",
+      "code": "professor",
+      "title": "Профессор",
+      "nodeId": "357:786",
+      "componentKey": "e197373aa6cd767c6a0c01c296ecf1f13b9222e8",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=357-786",
+      "existingPng": "assets/characters/v13/poses/professor/perch.png",
+      "note": "Existing PNG v13 and live component v14 may differ in accessory fit; resolve against live selected source before producing new art."
+    },
+    {
+      "id": "C02",
+      "code": "fighter",
+      "title": "Боевик",
+      "nodeId": "357:548",
+      "componentKey": "e68233ae52f9fb717c36691babd43ab7137ab78f",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=357-548",
+      "existingPng": "assets/characters/v13/poses/fighter/perch.png",
+      "note": "Existing PNG v13 and live component v14 may differ in accessory fit; resolve against live selected source before producing new art."
+    },
+    {
+      "id": "C06",
+      "code": "glamour",
+      "title": "Гламурочка",
+      "nodeId": "357:1009",
+      "componentKey": "9265b0120be62596840be1754bfd4a620139fff6",
+      "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=357-1009",
+      "existingPng": "assets/characters/v13/poses/glamour/perch.png",
+      "note": "Existing PNG v13 and live component v14 may differ in accessory fit; resolve against live selected source before producing new art."
+    }
+  ],
+  "destination": {
+    "pageId": "2001:2",
+    "boardId": "2001:3",
+    "url": "https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=2001-3"
+  },
+  "brandSource": {
+    "fileKey": "5CeOcsre3HC0PmRJVUxwOA",
+    "logoNodeId": "32:35",
+    "status": "discovered, not copied into new page"
+  }
+}
