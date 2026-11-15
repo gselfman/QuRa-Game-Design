@@ -2,7 +2,9 @@
 
 ## Что уже доступно и что требуется
 
-Проверено 15.11.2026: Figma подключена; GitHub доступен через `gh`; Node.js и Python есть. Blender не найден в PATH и `/Applications/Blender*.app`. Поиск подключаемого Blender-плагина в текущем каталоге не дал результата. Это не мешает управлению Blender через его официальный Python API и командный режим. Дополнительные платные 3D/animation-платформы для начала не нужны.
+Проверено 15.11.2026: Figma подключена; GitHub доступен через `gh`; Node.js и Python есть. **Blender 5.3.0 установлен для Apple Silicon** в `/Applications/Blender.app`, команда доступна как `/opt/homebrew/bin/blender`. macOS приняла notarized Developer ID приложения. Автоматический Python-запуск, сохранение `.blend`, Cycles CPU, EEVEE GPU через Metal и экспорт/обратная загрузка анимированного GLB проверены успешно. Рабочий профиль: EEVEE/Metal для быстрых превью, Cycles/CPU для проверенного офлайн-рендера. Cycles/GPU не заявляется проверенным: тесты остановлены на длительной компиляции. Подробности — в [отчёте установки](BLENDER_SETUP.md).
+
+Поиск подключаемого Blender-плагина в текущем каталоге не дал результата. Управление уже работает через официальный Python API и командный режим; дополнительный MCP-плагин и платные 3D/animation-платформы для начала не нужны.
 
 Предлагаемый набор:
 
@@ -25,10 +27,19 @@
 
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --version
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --python games/kuro-sniper/tools/blender_probe.py -- --output /tmp/kuro-sniper-blender-probe
+/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --python-exit-code 1 --python games/kuro-sniper/tools/blender_probe.py -- --output /tmp/kuro-sniper-blender-probe
 ```
 
-Запускать из корня репозитория. Скрипт создаёт диагностические `.blend`, `.glb` и JSON с версией; это **не модель курочки**. После успешного запуска версия Blender фиксируется в production manifest, чтобы повторная генерация не зависела от внезапного обновления. Диагностика не требует интернет-доступа, API-ключа или открытого порта.
+Запускать из корня репозитория. Скрипт создаёт диагностические `.blend`, `.glb`, PNG и JSON с версией; проверяет реальный рендер и изменение поворота после обратной загрузки анимации. Это **не модель курочки**. После успешного запуска версия Blender фиксируется в production manifest, чтобы повторная генерация не зависела от внезапного обновления. Диагностика не требует интернет-доступа, API-ключа или открытого порта.
+
+Для независимости от порядка Intel/Apple Silicon Homebrew в PATH есть проектная команда:
+
+```sh
+bash games/kuro-sniper/tools/blender.sh --version
+bash games/kuro-sniper/tools/blender.sh --background --factory-startup --python-exit-code 1 --python games/kuro-sniper/tools/blender_probe.py -- --output /tmp/kuro-sniper-blender-probe
+```
+
+Опция `--python-exit-code 1` обязательна в автоматических заданиях: ошибка Python должна завершать задачу ошибкой, а не выглядеть успешным запуском Blender. Сохранение настроек устройства Cycles не означает, что каждая новая сцена автоматически выбрала GPU: в скрипте рендера задавать `scene.render.engine='CYCLES'` и `scene.cycles.device='GPU'` явно.
 
 Не устанавливать случайный community MCP с правом исполнять любой код только ради слова «нейросеть». Сначала CLI; если позже понадобится интерактивный bridge, отдельно выбрать поддерживаемое решение, проверить код и ограничить локальным доступом. Не открывать bridge в интернет.
 

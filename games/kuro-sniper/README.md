@@ -6,6 +6,8 @@
 
 [Открыть отдельный раздел Figma](https://www.figma.com/design/pTm5JOM8r7b8ukBrk3UsXg?node-id=2001-3) · [Обзор раздела в PNG](preview/figma-overview.png) · [Фактическая проверка пакета](VALIDATION.md).
 
+Blender установлен и проверен: [состояние инструментов и команды запуска](BLENDER_SETUP.md).
+
 ## Как пользоваться пакетом
 
 1. [Библия и границы игры](GAME_BIBLE.md).

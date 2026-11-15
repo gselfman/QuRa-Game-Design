@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-15",
+  "timezone": "Europe/Moscow",
+  "blenderVersion": "5.3.0",
+  "buildHash": "02f0899d78e3",
+  "architecture": "arm64",
+  "hardware": "Apple M2",
+  "application": "/Applications/Blender.app",
+  "executable": "/Applications/Blender.app/Contents/MacOS/Blender",
+  "cli": "/opt/homebrew/bin/blender",
+  "installer": "official Homebrew cask blender via /opt/homebrew/bin/brew",
+  "macosValidation": {
+    "signature": "PASS",
+    "gatekeeper": "accepted",
+    "source": "Notarized Developer ID"
+  },
+  "headlessPython": "PASS",
+  "cpuRender": "PASS",
+  "blendSave": "PASS",
+  "glbAnimationRoundTrip": {
+    "purpose": "diagnostic cube only; no production chicken model or rig tested",
+    "blenderVersion": "5.3.0",
+    "files": [
+      "probe.blend",
+      "probe.glb",
+      "probe.png"
+    ],
+    "frames": [
+      1,
+      30
+    ],
+    "fps": 30,
+    "mesh": "KS_DIAGNOSTIC_CUBE_NOT_CHARACTER",
+    "glbBytes": 3068,
+    "pngBytes": 212162,
+    "animationRoundTrip": true,
+    "rotationChangeDegrees": 34.37745882860347,
+    "renderEngine": "CYCLES_CPU"
+  },
+  "productionChickenRig": "NOT_RUN",
+  "mobileGameFPS": "NOT_RUN",
+  "artifactsWorkspaceRelative": "output/blender-check",
+  "graphicsGPU": {
+    "status": "PASS",
+    "backend": "METAL",
+    "engine": "BLENDER_EEVEE",
+    "report": {
+      "purpose": "diagnostic cube only; no production chicken model or rig tested",
+      "blenderVersion": "5.3.0",
+      "files": [
+        "probe.blend",
+        "probe.glb",
+        "probe.png"
+      ],
+      "frames": [
+        1,
+        30
+      ],
+      "fps": 30,
+      "mesh": "KS_DIAGNOSTIC_CUBE_NOT_CHARACTER",
+      "glbBytes": 3068,
+      "pngBytes": 155334,
+      "animationRoundTrip": true,
+      "rotationChangeDegrees": 34.37745882860347,
+      "renderEngine": "BLENDER_EEVEE",
+      "graphicsBackend": "METAL"
+    }
+  },
+  "cyclesGPU": {
+    "status": "NOT_VERIFIED",
+    "deviceDetected": "Apple M2 (GPU - 10 cores)",
+    "attempts": [
+      {
+        "kernelOptimization": "FULL",
+        "result": "CANCELLED_DURING_COMPILATION",
+        "note": "Stopped after more than 8 minutes without a rendered image."
+      },
+      {
+        "kernelOptimization": "OFF",
+        "result": "CANCELLED_DURING_COMPILATION",
+        "note": "Stopped without a rendered image after EEVEE/Metal had passed."
+      }
+    ],
+    "note": "No GPU render pass is claimed for Cycles. Use verified CPU Cycles path; repeat GPU test separately if needed."
+  },
+  "savedProfile": {
+    "preferencesSaved": true,
+    "graphicsBackend": "METAL",
+    "cyclesComputeDeviceType": "NONE",
+    "preservesExistingPreferences": true,
+    "renderRecommendation": "EEVEE/Metal GPU for previews; Cycles CPU for offline renders"
+  },
+  "eeveeArtifactsWorkspaceRelative": "output/blender-eevee-check"
+}

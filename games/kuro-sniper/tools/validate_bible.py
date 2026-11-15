@@ -75,6 +75,7 @@ for document in ROOT.glob('*.md'):
         if re.match(r'^[a-zA-Z]+:', link) or link.startswith('#'):
             continue
         assert (document.parent / link.split('#')[0]).exists(), (document.name, link)
-compile((ROOT / 'tools/blender_probe.py').read_text(), 'blender_probe.py', 'exec')
+for script in ('blender_probe.py', 'blender_metal_check.py', 'configure_blender.py'):
+    compile((ROOT / 'tools' / script).read_text(), script, 'exec')
 print('PASS: 9 levels / 45 rounds / 135 targets; ammo, score, references, 47 briefs, lens geometry and links.')
-print('NOT RUN: game runtime, live optics rendering, animation quality, real-device FPS, Blender execution.')
+print('NOT RUN by this validator: game runtime, live optics rendering, animation quality, real-device FPS or Blender. See blender-environment.json for separate installed-tool checks.')
