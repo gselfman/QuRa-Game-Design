@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "ks-prototype-0.1",
+  "configVersion": "ks-prototype-0.2",
   "status": "PROTOTYPE_BALANCE",
   "gameId": "kuro-sniper",
   "rules": {
@@ -9,7 +9,16 @@
     "mistakesToFail": 3,
     "requiredHitsPerLevel": 15,
     "oneProjectileInFlight": true,
-    "resetMistakesBetweenRounds": false
+    "resetMistakesBetweenRounds": false,
+    "finale": {
+      "levelId": 10,
+      "rounds": 1,
+      "ammo": 8,
+      "requiredHits": 5,
+      "mistakesToFail": 3,
+      "distanceM": 1000,
+      "maxScore": 1150
+    }
   },
   "scoring": {
     "hit": 100,
@@ -54,9 +63,9 @@
   "director": {
     "maxStrongSensoryAttacks": 1,
     "minCleanWindowS": 1.5,
-    "maxWaterCoverageFraction": 0.3,
-    "wipeS": 0.8,
-    "waterDecayS": 4
+    "maxWaterCoverageFraction": 0.65,
+    "wipeS": 1.2,
+    "waterDecayS": 23
   },
   "simulation": {
     "fixedStepS": 0.008333333333333333,
@@ -163,14 +172,14 @@
       "cooldownS": 0.75
     },
     {
-      "id": "airgun_sport",
-      "family": "airgun",
-      "title": "Спортивная воздушка",
+      "id": "classic_bolt",
+      "family": "sport",
+      "title": "Классическая болтовая",
       "defaultMagnification": 2,
       "maxMagnification": 2,
       "optic": "telescopic",
       "bipod": false,
-      "cooldownS": 0.7
+      "cooldownS": 1.15
     },
     {
       "id": "sport_4x",
@@ -268,7 +277,7 @@
       "targetDiameterM": 0.5,
       "environmentId": "gallery",
       "environmentTitle": "Тир",
-      "loadoutId": "airgun_sport",
+      "loadoutId": "classic_bolt",
       "abilityIntensity": 0.4,
       "windStrength": 0,
       "flightTimeS": 0.12,
@@ -404,6 +413,21 @@
         3,
         4,
         5
+      ]
+    },
+    {
+      "id": 10,
+      "mode": "balloons",
+      "distanceM": 1000,
+      "targetDiameterM": 0.8,
+      "environmentId": "balloon_finale",
+      "environmentTitle": "Двор с шариками",
+      "loadoutId": "final_rifle",
+      "abilityIntensity": 0,
+      "windStrength": 0.75,
+      "flightTimeS": 1.35,
+      "roundIds": [
+        1
       ]
     }
   ]

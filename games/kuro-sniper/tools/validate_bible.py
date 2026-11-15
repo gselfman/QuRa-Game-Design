@@ -16,8 +16,8 @@ screens = read('screen-prompts.json')['prompts']
 assets = read('asset-prompts.json')['jobs']
 rounds = read('round-plan.json')['rounds']
 events = read('animation-events.json')
-assert len(b['levels']) == 9
-assert [l['id'] for l in b['levels']] == list(range(1, 10))
+assert len(b['levels']) == 10
+assert [l['id'] for l in b['levels']] == list(range(1, 11))
 assert b['levels'][-1]['distanceM'] == 1000
 assert len(b['characters']) == 5
 character_ids = {c['id'] for c in b['characters']}
@@ -27,7 +27,7 @@ assert [r['characterIds'] for r in b['rounds']] == [
     ['C01', 'C03', 'C04', 'C02'], ['C01', 'C03', 'C04', 'C02', 'C06']]
 hits = sum(len(r['characterIds']) for r in b['rounds'])
 assert hits == b['rules']['requiredHitsPerLevel'] == 15
-assert hits * len(b['levels']) == 135
+assert hits * (len(b['levels'])-1)+b['rules']['finale']['requiredHits'] == 140
 ammo = b['rules']['ammoPerLevel']
 fail = b['rules']['mistakesToFail']
 assert (ammo, fail) == (18, 3)
@@ -40,14 +40,14 @@ assert maximum == score['maxScorePerLevel'] == 3050
 loadouts = {w['id']: w for w in b['loadouts']}
 assert len(loadouts) == 9
 assert len({w['family'] for w in loadouts.values()}) == 5
-assert len(rounds) == 45 and len({r['id'] for r in rounds}) == 45
+assert len(rounds) == 46 and len({r['id'] for r in rounds}) == 46
 for level in b['levels']:
     weapon = loadouts[level['loadoutId']]
     assert 1 <= weapon['defaultMagnification'] <= weapon['maxMagnification']
     actual = [r for r in rounds if r['levelId'] == level['id']]
-    assert len(actual) == 5
-    assert sum(r['goals'] for r in actual) == 15
-    assert all(r['characterIds'] == b['rounds'][r['roundId'] - 1]['characterIds'] for r in actual)
+    assert len(actual) == (1 if level.get('mode')=='balloons' else 5)
+    assert sum(r['goals'] for r in actual) == (5 if level.get('mode')=='balloons' else 15)
+    assert all(r['characterIds'] == (b['rounds'][-1]['characterIds'] if level.get('mode')=='balloons' else b['rounds'][r['roundId'] - 1]['characterIds']) for r in actual)
     assert all(not r['resetAmmo'] and not r['resetMistakes'] for r in actual)
     theta = math.radians(b['aim']['baseVerticalFovDeg'])
     height = b['aim']['minimumViewportHeightCssPx']
@@ -59,7 +59,7 @@ for level in b['levels']:
     measured_m = (lens_diameter / height) * math.tan(theta / 2) / math.tan(scope_fov / 2)
     assert math.isclose(measured_m, maximum_m, rel_tol=1e-10)
     print(f"L{level['id']}: {level['distanceM']} m, max {maximum_m}x, target {diameter:.1f} CSS px")
-assert len(screens) == 18 and len({p['id'] for p in screens}) == 18
+assert len(screens) == 20 and len({p['id'] for p in screens}) == 20
 for level in b['levels']:
     pair = [p for p in screens if p['levelId'] == level['id']]
     assert {p['view'] for p in pair} == {'world', 'scope'}
@@ -77,5 +77,5 @@ for document in ROOT.glob('*.md'):
         assert (document.parent / link.split('#')[0]).exists(), (document.name, link)
 for script in ('blender_probe.py', 'blender_metal_check.py', 'configure_blender.py'):
     compile((ROOT / 'tools' / script).read_text(), script, 'exec')
-print('PASS: 9 levels / 45 rounds / 135 targets; ammo, score, references, 47 briefs, lens geometry and links.')
+print('PASS: 10 levels / 46 rounds / 140 targets; ammo, score, references, 49 briefs, lens geometry and links.')
 print('NOT RUN by this validator: game runtime, live optics rendering, animation quality, real-device FPS or Blender. See blender-environment.json for separate installed-tool checks.')

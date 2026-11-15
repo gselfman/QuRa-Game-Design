@@ -1,0 +1,20 @@
+{
+  "finale": {
+    "state": "won",
+    "level": 10,
+    "round": 1,
+    "ammo": 3,
+    "score": 1150,
+    "mistakes": 0,
+    "ads": true,
+    "water": 0
+  },
+  "controls": "breath left, ADS right; mirrored layout verified",
+  "dance": "independent wing motion verified",
+  "performance": {
+    "p50": 16.69999999999891,
+    "p95": 17.600000000000364,
+    "fps": 59.97600959759064
+  },
+  "errors": []
+}

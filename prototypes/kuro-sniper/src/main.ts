@@ -29,7 +29,7 @@ app.innerHTML=`
 <div class="cinema-shade"></div>
 <div id="loading"><div class="brand">QuRa<span>ИГРЫ С ХАРАКТЕРОМ</span></div><div class="load-emblem">${icon('aim')}</div><h1>Куро Снайпер</h1><p id="load-label">Готовим тир и встречаем курочек…</p><div class="load-track"><i id="load-bar"></i></div></div>
 <div id="hud" class="hidden">
- <header class="hud-top"><div class="level-label"><span id="level-label">БУДКА</span><strong>Уровень <b id="level-no">01</b><small>/ 09</small></strong><div class="round-dots" id="round-dots"></div></div>
+ <header class="hud-top"><div class="level-label"><span id="level-label">БУДКА</span><strong>Уровень <b id="level-no">01</b><small>/ 10</small></strong><div class="round-dots" id="round-dots"></div></div>
  <div class="score-block"><span>ОЧКИ</span><strong id="score">0</strong><div id="score-float"></div></div>
  <div class="top-right"><div class="mistakes"><span>ОШИБКИ</span><div id="mistakes"><i></i><i></i><i></i></div></div><button id="pause" class="icon-button" aria-label="Пауза">${icon('pause')}</button></div></header>
  <div id="wind" class="wind hidden">${icon('wind')}<span id="wind-label">ВЕТЕР →</span><i id="wind-strength"></i></div>
@@ -41,9 +41,9 @@ app.innerHTML=`
  <div id="hit-marker"></div>
  <div id="toast" role="status" aria-live="polite"></div>
  <div class="vitals"><div class="pulse-line"><span class="heart-icon">${icon('heart')}</span><div><span>ПУЛЬС</span><strong id="pulse">72</strong></div><svg id="ecg" viewBox="0 0 150 36"><path id="ecg-path" d="M0 25H150"/></svg></div><div class="breath-line"><span>${icon('breath')} ДЫХАНИЕ</span><strong id="breath-label">Спокойное</strong></div><div class="breath-track"><i id="breath-fill"></i></div></div>
- <div class="ammo"><span id="capsule-icons"></span><div><strong id="ammo">18</strong><small>/18</small><span>КАПСУЛЫ</span></div><i></i><div><strong id="solved">0</strong><small id="total">/1</small><span>МИШЕНИ</span></div></div>
- <button id="aim" class="round-button aim-button" aria-label="Прицел">${icon('aim')}<span>ПРИЦЕЛ</span></button>
- <div class="right-controls"><button id="wipe" class="utility hidden" aria-label="Протереть линзу">${icon('wipe')}<span>Протереть</span></button><button id="breath" class="round-button breath-button" aria-label="Задержать дыхание">${icon('breath')}<span>ДЫХАНИЕ</span></button><button id="fire" class="fire-button" aria-label="Выстрел">${icon('shoot')}<span>ВЫСТРЕЛ</span></button></div>
+ <div class="ammo"><span id="capsule-icons"></span><div><strong id="ammo">18</strong><small id="ammo-capacity">/18</small><span>КАПСУЛЫ</span></div><i></i><div><strong id="solved">0</strong><small id="total">/1</small><span>МИШЕНИ</span></div></div>
+ <button id="breath" class="round-button breath-button" aria-label="Задержать дыхание">${icon('breath')}<span>ЗАДЕРЖАТЬ</span></button>
+ <div class="right-controls"><button id="wipe" class="utility hidden" aria-label="Протереть линзу">${icon('wipe')}<span>Протереть</span></button><button id="aim" class="round-button aim-button" aria-label="Прицел" aria-pressed="false">${icon('aim')}<span>ПРИЦЕЛ</span></button><button id="fire" class="fire-button" aria-label="Выстрел">${icon('shoot')}<span>ВЫСТРЕЛ</span></button></div>
  <div class="desktop-hint">Тянуть — навести <i>·</i> ПКМ — прицел <i>·</i> Пробел — выстрел <i>·</i> Shift — дыхание</div>
  <div id="round-banner" class="hidden"><span>ЧИСТОЕ ПОПАДАНИЕ</span><strong>Раунд пройден</strong><p>Курочки в безопасности</p></div>
 </div>
@@ -65,10 +65,10 @@ const qa=new URLSearchParams(location.search).has('qa');
 function toast(message:string){$('#toast').textContent=message;$('#toast').classList.add('visible');toastTimer=2.1;}
 function showModal(html:string){$('#modal-card').innerHTML=html;$('#modal').classList.remove('hidden');$('#modal-card').querySelector<HTMLButtonElement>('button')?.focus();}
 function closeModal(){$('#modal').classList.add('hidden');}
-function setAds(value:boolean){ads=value;const reflex=core.level.id===1;world.setAds(value);$('#scope-housing').classList.toggle('hidden',!value||reflex);$('#reticle').classList.toggle('hidden',value&&!reflex);$('#reticle').classList.toggle('red-dot',value&&reflex);$('#aim').classList.toggle('active',value);$('#zoom-controls').classList.toggle('hidden',!value||core.loadout.maxMagnification<=1);$('#zoom-controls').classList.toggle('fixed',core.loadout.defaultMagnification===core.loadout.maxMagnification);audio.play('click');}
+function setAds(value:boolean){ads=value;const reflex=core.level.id===1;world.setAds(value);$('#scope-housing').classList.toggle('hidden',!value||reflex);$('#reticle').classList.toggle('hidden',value&&!reflex);$('#reticle').classList.toggle('red-dot',value&&reflex);$('#aim').classList.toggle('active',value);$('#aim').setAttribute('aria-pressed',String(value));$('#zoom-controls').classList.toggle('hidden',!value||core.loadout.maxMagnification<=1);$('#zoom-controls').classList.toggle('fixed',core.loadout.defaultMagnification===core.loadout.maxMagnification);audio.play('click');}
 function event(e:any){
-  if(e.type==='round'){world?.setActors(core.targets);$('#round-dots').innerHTML=Array.from({length:5},(_,i)=>`<i class="${i<core.round?'active':''}"></i>`).join('');if(inGame){setAds(false);world.aimAt(core.targets[0].id);if(core.round>1){const c=CAST[core.round-1];toast(`${c.name}: ${c.role.toLowerCase()}`);}}}
-  if(['fire','hit','hen','miss','water','wipe','breath','exhale','won'].includes(e.type))audio.play(e.type);
+  if(e.type==='round'){world?.setActors(core.targets);$('#round-dots').innerHTML=Array.from({length:core.level.mode==='balloons'?1:5},(_,i)=>`<i class="${i<core.round?'active':''}"></i>`).join('');if(inGame){setAds(false);world.aimAt(core.targets[0].id);if(core.round>1){const c=CAST[core.round-1];toast(`${c.name}: ${c.role.toLowerCase()}`);}}}
+  if(['fire','hit','hen','miss','water','wipe','breath','exhale','won'].includes(e.type))audio.play(e.type==='hit'&&core.level.mode==='balloons'?'pop':e.type,core.loadout.id==='classic_bolt'?'classic':core.loadout.family);
   if(e.type==='fire'){world.fireEffect();$('#fire').classList.add('firing');setTimeout(()=>$('#fire').classList.remove('firing'),120);}
   if(e.type==='hit'){$('#hit-marker').className='success';setTimeout(()=>$('#hit-marker').className='',500);$('#score-float').textContent=`+${e.earned}${e.center?' · В ЦЕНТР!':''}`;$('#score-float').classList.add('show');scoreTimer=1.3;}
   if(e.type==='hen'){world.featherBurst(e.targetId);toast('В мишень, а не в курочку!');$('#hit-marker').className='penalty';setTimeout(()=>$('#hit-marker').className='',450);}
@@ -90,30 +90,30 @@ async function boot(){
 }
 
 function start(levelId:number,training:boolean){
-  audio.start();inGame=true;view='game';resultTimer=0;settled=false;resumeTimer=0;closeModal();$('#menus').classList.add('hidden');$('#hud').classList.remove('hidden');$('#round-banner').classList.add('hidden');
+  audio.stop();audio.start();inGame=true;view='game';resultTimer=0;scoreTimer=0;toastTimer=0;$('#score-float').classList.remove('show');$('#toast').classList.remove('visible');settled=false;resumeTimer=0;closeModal();$('#menus').classList.add('hidden');$('#hud').classList.remove('hidden');$('#round-banner').classList.add('hidden');
   const level=balance.levels.find(l=>l.id===levelId)!;const loadout=balance.loadouts.find(l=>l.id===level.loadoutId)!;
   world.setup(level,loadout,core);core.start(levelId,training);core.quiet=qaFreeze;world.magnification=loadout.maxMagnification;setAds(false);
   $('#level-label').textContent=`${level.environmentTitle.toUpperCase()} · ${level.distanceM} М`;
-  $('#level-no').textContent=String(levelId).padStart(2,'0');$('#wind').classList.toggle('hidden',levelId<3);$('#hint').classList.remove('hidden');toast(training?'Тренировка: ошибки не заканчивают попытку':'Цель — круглая мишень под платформой');
+  $('#level-no').textContent=String(levelId).padStart(2,'0');$('#wind').classList.toggle('hidden',levelId<3);$('#hint').classList.remove('hidden');$('#ammo-capacity').textContent=level.mode==='balloons'?'/8':'/18';$('#hint span').innerHTML=level.mode==='balloons'?'Лопните <b>пять шариков</b>. Курочек бережём!':'Цель — мишень <b>под платформой</b>';toast(training?'Тренировка: ошибки не заканчивают попытку':level.mode==='balloons'?'Пять шариков · 1 км · берите упреждение':'Цель — круглая мишень под платформой');
   updateHUD();
 }
 function showHome(){
-  closeModal();inGame=false;view='home';ads=false;world.setAds(false);$('#scope-housing').classList.add('hidden');$('#hud').classList.add('hidden');$('#menus').classList.remove('hidden');showView('home');
+  audio.stop();closeModal();inGame=false;view='home';ads=false;world.setAds(false);$('#scope-housing').classList.add('hidden');$('#hud').classList.add('hidden');$('#menus').classList.remove('hidden');showView('home');
   world.setup(balance.levels[0],balance.loadouts[0],core,true);core.start(1,true);core.round=5;core.setupRound();core.state='menu';core.quiet=false;renderLevelGrid();
 }
 function showView(name:string){view=name;for(const id of ['home','level-select','settings'])$('#'+id).classList.toggle('hidden',id!==name);}
 function renderLevelGrid(){
-  $('#level-grid').innerHTML=balance.levels.map(l=>{const r=records[l.id],w=balance.loadouts.find(w=>w.id===l.loadoutId)!;return `<button class="level-card env-${l.environmentId}" data-level="${l.id}"><div><span class="level-index">${String(l.id).padStart(2,'0')}</span><span class="level-distance">${l.distanceM}<small>М</small></span></div><span class="level-place">${l.environmentTitle}</span><span class="level-weapon">${w.title}</span><span class="level-record">${r?'★'.repeat(3-Math.min(r.mistakes,2))+' &nbsp; '+r.score+' очков':'Пять раундов · '+(l.id<3?'Без ветра':'Ветер и характеры')}</span></button>`;}).join('');
+  $('#level-grid').innerHTML=balance.levels.map(l=>{const r=records[l.id],w=balance.loadouts.find(w=>w.id===l.loadoutId)!;return `<button class="level-card env-${l.environmentId}" data-level="${l.id}"><div><span class="level-index">${String(l.id).padStart(2,'0')}</span><span class="level-distance">${l.distanceM}<small>М</small></span></div><span class="level-place">${l.environmentTitle}</span><span class="level-weapon">${w.title}</span><span class="level-record">${r?'★'.repeat(3-Math.min(r.mistakes,2))+' &nbsp; '+r.score+' очков':l.mode==='balloons'?'Пять шариков · движущиеся цели':'Пять раундов · '+(l.id<3?'Без ветра':'Ветер и характеры')}</span></button>`;}).join('');
   $('#level-grid').querySelectorAll<HTMLButtonElement>('[data-level]').forEach(b=>b.onclick=()=>start(Number(b.dataset.level),false));
 }
-function pause(){if(!inGame||!['playing','transition'].includes(core.state))return;core.setPaused(true);showModal(`<div class="eyebrow">МОМЕНТ ДЛЯ ВЫДОХА</div><h2>Пауза</h2><p>Курочки никуда не торопятся.</p><button class="primary" id="resume">Продолжить ${icon('arrow')}</button><button class="secondary" id="restart">Начать уровень заново</button><button class="text-button" id="pause-settings">${icon('settings')} Настройки</button><button class="text-button" id="quit">В главное меню</button>`);$('#resume').onclick=resume;$('#restart').onclick=()=>start(core.level.id,core.training);$('#quit').onclick=showHome;$('#pause-settings').onclick=()=>{closeModal();settingsFromPause=true;$('#menus').classList.remove('hidden');showView('settings');};}
+function pause(){if(!inGame||!['playing','transition'].includes(core.state))return;core.setPaused(true);audio.stop();showModal(`<div class="eyebrow">МОМЕНТ ДЛЯ ВЫДОХА</div><h2>Пауза</h2><p>Курочки никуда не торопятся.</p><button class="primary" id="resume">Продолжить ${icon('arrow')}</button><button class="secondary" id="restart">Начать уровень заново</button><button class="text-button" id="pause-settings">${icon('settings')} Настройки</button><button class="text-button" id="quit">В главное меню</button>`);$('#resume').onclick=resume;$('#restart').onclick=()=>start(core.level.id,core.training);$('#quit').onclick=showHome;$('#pause-settings').onclick=()=>{closeModal();settingsFromPause=true;$('#menus').classList.remove('hidden');showView('settings');};}
 function resume(){closeModal();resumeTimer=1.1;toast('Приготовьтесь…');setTimeout(()=>{if(inGame&&resumeTimer>0){core.setPaused(false);resumeTimer=0;}},1100);}
 function result(){
   if(settled)return;settled=true;const won=core.state==='won',stars=won?3-Math.min(2,core.mistakes):0;
   if(won&&!core.training){const old=records[core.level.id];if(!old||old.score<core.score){records[core.level.id]={score:core.score,mistakes:core.mistakes};try{localStorage.setItem('ks-records',JSON.stringify(records));}catch{}}}
   const accuracy=core.shots?Math.round(core.hits/core.shots*100):0;
-  showModal(`<div class="result-icon ${won?'won':''}">${icon(won?'flag':'aim')}</div><div class="eyebrow">${core.level.environmentTitle.toUpperCase()} · ${core.level.distanceM} М</div><h2>${won?'Красивый выстрел!':'Ещё одна попытка?'}</h2><p>${won?'Все курочки внизу. Все в безопасности.':'Три ошибки. Сделайте выдох — и снова в тир.'}</p>${won?`<div class="stars">${'★'.repeat(stars)}<span>${'★'.repeat(3-stars)}</span></div>`:''}<div class="result-stats"><div><strong>${core.score}</strong><span>ОЧКОВ</span></div><div><strong>${accuracy}%</strong><span>ТОЧНОСТЬ</span></div><div><strong>${core.centers}</strong><span>В ЦЕНТР</span></div></div><button class="primary" id="next">${won&&core.level.id<9?'Следующая дистанция':'Повторить уровень'} ${icon('arrow')}</button><button class="secondary" id="result-levels">Выбрать уровень</button><button class="text-button" id="result-home">В главное меню</button>`);
-  $('#next').onclick=()=>start(won&&core.level.id<9?core.level.id+1:core.level.id,core.training);$('#result-levels').onclick=()=>{showHome();showView('level-select');};$('#result-home').onclick=showHome;
+  showModal(`<div class="result-icon ${won?'won':''}">${icon(won?'flag':'aim')}</div><div class="eyebrow">${core.level.environmentTitle.toUpperCase()} · ${core.level.distanceM} М</div><h2>${won?'Красивый выстрел!':'Ещё одна попытка?'}</h2><p>${won?(core.level.mode==='balloons'?'Все шарики лопнули. Курочки гуляют дальше.':'Все курочки внизу. Все в безопасности.'):'Три ошибки. Сделайте выдох — и снова в тир.'}</p>${won?`<div class="stars">${'★'.repeat(stars)}<span>${'★'.repeat(3-stars)}</span></div>`:''}<div class="result-stats"><div><strong>${core.score}</strong><span>ОЧКОВ</span></div><div><strong>${accuracy}%</strong><span>ТОЧНОСТЬ</span></div><div><strong>${core.centers}</strong><span>В ЦЕНТР</span></div></div><button class="primary" id="next">${won&&core.level.id<balance.levels.length?'Следующая дистанция':'Повторить уровень'} ${icon('arrow')}</button><button class="secondary" id="result-levels">Выбрать уровень</button><button class="text-button" id="result-home">В главное меню</button>`);
+  $('#next').onclick=()=>start(won&&core.level.id<balance.levels.length?core.level.id+1:core.level.id,core.training);$('#result-levels').onclick=()=>{showHome();showView('level-select');};$('#result-home').onclick=showHome;
 }
 function shoot(){
   if(!inGame||!$('#modal').classList.contains('hidden')||core.paused||view!=='game')return;
@@ -177,6 +177,6 @@ function bind(){
   const orientation=()=>{if(innerHeight>innerWidth&&inGame&&!core.paused)pause();};addEventListener('resize',orientation);
   for(const k of ['sound','calm','left','low'])$('#setting-'+k).addEventListener('change',e=>{settings[k]=(e.target as HTMLInputElement).checked;applySettings();});
   for(const k of ['volume','sensitivity'])$('#setting-'+k).addEventListener('input',e=>{settings[k]=Number((e.target as HTMLInputElement).value);applySettings();});
-  $('#water-drops').innerHTML=Array.from({length:11},(_,i)=>`<i style="left:${8+(i*29)%84}%;top:${5+(i*31)%86}%;width:${10+(i%4)*7}px;height:${15+(i%4)*9}px;transform:rotate(${i*17}deg)"></i>`).join('');
+  $('#water-drops').innerHTML=Array.from({length:24},(_,i)=>`<i style="left:${8+(i*29)%84}%;top:${5+(i*31)%86}%;width:${22+(i%5)*11}px;height:${28+(i%5)*14}px;transform:rotate(${i*17}deg)"></i>`).join('');
 }
 boot();

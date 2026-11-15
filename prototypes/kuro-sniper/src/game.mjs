@@ -12,10 +12,11 @@ export function scopeFov(baseFov,height,diameter,magnification){return 2*Math.at
 export function maxScore(hits=15){return hits*150+Array.from({length:hits},(_,i)=>Math.min(i*10,40)).reduce((a,b)=>a+b,0)+300;}
 export function resolveImpact(point, targets, diameter){
   for(const target of targets){
-    if(target.solved||target.penaltyUntil>0)continue;
-    const radius=Math.hypot(point.x-target.x,point.y-target.y)/(diameter/2);
-    if(radius<=1)return {kind:'target',targetId:target.id,center:radius<=.25,radius};
-    const dx=Math.abs(point.x-target.x),dy=point.y-1.45;
+    if(target.penaltyUntil>0)continue;
+    const radius=Math.hypot(point.x-target.x,(point.y-target.y)/(target.radiusScaleY??1))/(diameter/2);
+    if(!target.solved&&radius<=1)return {kind:'target',targetId:target.id,center:radius<=.25,radius};
+    if(target.solved&&target.bodyY!==.03)continue;
+    const dx=Math.abs(point.x-target.x),dy=point.y-(target.bodyY??1.45);
     if(dx<.56&&dy>.03&&dy<1.30)return {kind:'hen',targetId:target.id};
   }
   return {kind:'miss'};
@@ -33,14 +34,14 @@ export class GameCore {
   start(levelId=1,training=false){
     this.level=this.balance.levels.find(x=>x.id===levelId)||this.balance.levels[0];
     this.loadout=this.balance.loadouts.find(x=>x.id===this.level.loadoutId);
-    this.training=training;this.score=0;this.ammo=18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
+    this.training=training;this.score=0;this.ammo=this.level.mode==='balloons'?8:18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
     this.breath=100;this.stress=0;this.pulse=72;this.water=0;this.wiping=0;this.holding=false;this.lockout=0;this.holdTime=0;
     this.time=0;this.shot=null;this.cooldown=0;this.recoveryDelay=0;this.transition=0;this.paused=false;this.lastResult=null;this.state='playing';this.abilityClock=0;this.sensory='none';this.sensoryTimer=0;this.abilityIndex=0;this.setupRound();
     this.emit('start',{levelId:this.level.id,training});
   }
   setupRound(){
-    const count=this.round;
-    this.targets=CAST.slice(0,count).map((c,i)=>({id:c.id,code:c.code,name:c.name,baseX:(i-(count-1)/2)*1.9,x:(i-(count-1)/2)*1.9,y:.88,solved:false,solvedAt:-1,penaltyUntil:0,ability:0}));
+    const finale=this.level.mode==='balloons',count=finale?5:this.round,spacing=finale?8:1.9;
+    this.targets=CAST.slice(0,count).map((c,i)=>({id:c.id,code:c.code,name:c.name,baseX:(i-(count-1)/2)*spacing,x:(i-(count-1)/2)*spacing,y:finale?2.8:.88,bodyY:finale?.03:1.45,radiusScaleY:finale?1.18:1,solved:false,solvedAt:-1,penaltyUntil:0,ability:0}));
     this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;this.emit('round',{round:this.round,targets:this.targets});
   }
   get wind(){return this.quiet?0:this.level.windStrength*Math.sin(this.time*.32+this.level.id*.73);}
@@ -50,7 +51,7 @@ export class GameCore {
     if(!value){if(this.holding)this.recoveryDelay=.6;this.holding=false;this.holdTime=0;return;}
     if(this.state==='playing'&&!this.paused&&this.breath>=25&&this.lockout<=0&&!this.wiping){this.holding=true;this.holdTime=0;this.emit('breath');}
   }
-  wipe(){if(this.state==='playing'&&!this.paused&&this.water>.02&&!this.wiping&&!this.shot){this.wiping=.8;this.hold(false);this.emit('wipe');return true;}return false;}
+  wipe(){if(this.state==='playing'&&!this.paused&&this.water>.02&&!this.wiping&&!this.shot){this.wiping=1.2;this.hold(false);this.emit('wipe');return true;}return false;}
   setPaused(value){if(['playing','transition'].includes(this.state)){this.paused=value;this.hold(false);this.emit('pause',{paused:value});}}
   aimSway(){
     if(this.quiet)return {x:0,y:0};
@@ -80,13 +81,18 @@ export class GameCore {
       this.holdTime+=dt;this.breath=Math.max(0,this.breath-25*dt);
       if(this.breath<=0||this.holdTime>=3){this.holding=false;this.holdTime=0;this.lockout=2;this.recoveryDelay=.6;this.emit('exhale');}
     }else if(!this.recoveryDelay)this.breath=Math.min(100,this.breath+20*dt);
-    this.stress=clamp(this.stress-dt*(inOptics?.025:.08)+(this.sensory==='glamour'?dt*.12*this.level.abilityIntensity:0),0,1);
-    const bpm=clamp(72+28*this.stress+(this.sensory==='glamour'?20*this.level.abilityIntensity:0),60,120);
-    this.pulse=lerp(this.pulse,bpm,1-Math.exp(-dt/2));this.water=Math.max(0,this.water-dt*.15);
-    if(this.wiping>0){this.wiping=Math.max(0,this.wiping-dt);this.water=Math.max(0,this.water-dt*2);if(this.wiping===0)this.emit('wiped');}
+    this.stress=clamp(this.stress-dt*(inOptics?.025:.08)+(this.sensory==='glamour'?dt*.22*this.level.abilityIntensity:0),0,1);
+    const bpm=clamp(72+28*this.stress+(this.sensory==='glamour'?28*this.level.abilityIntensity:0),60,120);
+    this.pulse=lerp(this.pulse,bpm,1-Math.exp(-dt/2));this.water=Math.max(0,this.water-dt*.04);
+    if(this.wiping>0){this.wiping=Math.max(0,this.wiping-dt);this.water=Math.max(0,this.water-dt*1.05);if(this.wiping===0)this.emit('wiped');}
     for(const t of this.targets){
       if(t.penaltyUntil){t.penaltyUntil=Math.max(0,t.penaltyUntil-dt);if(!t.penaltyUntil)this.emit('returned',{targetId:t.id});}
-      t.ability=0;t.x=t.baseX;t.y=.88;
+      t.ability=0;t.x=t.baseX;t.y=this.level.mode==='balloons'?2.8:.88;
+      if(this.level.mode==='balloons'){
+        const phase=CAST.findIndex(c=>c.id===t.id)*1.7;
+        if(!this.quiet){t.x+=Math.sin(this.time*.92+phase)*4.5;t.y+=Math.sin(this.time*2.1+phase)*.22;}
+        continue;
+      }
       if(t.solved||t.penaltyUntil||this.quiet)continue;
       if(t.code==='fool'){
         const phase=this.time%5.7;t.ability=phase>.7&&phase<3.7?1:0;
@@ -94,7 +100,7 @@ export class GameCore {
       }
       if(t.code==='professor')t.ability=this.time%7>1&&this.time%7<4?1:0;
     }
-    if(!this.quiet)this.updateSensory(dt);
+    if(!this.quiet&&this.level.mode!=='balloons')this.updateSensory(dt);
     if(this.shot){
       const s=this.shot;s.time=Math.min(s.duration,s.time+dt);const f=s.time/s.duration;
       s.point={x:s.origin.x+s.direction.x*s.travel*f+(s.wind+s.field)*f*f,y:s.origin.y+s.direction.y*s.travel*f,z:s.origin.z+s.direction.z*s.travel*f};
@@ -110,10 +116,10 @@ export class GameCore {
     if(this.sensoryTimer>0){
       this.sensoryTimer-=dt;
       if(this.sensory==='water-warning'&&this.sensoryTimer<=0){
-        if(this.targets.some(t=>t.code==='fighter'&&!t.solved&&!t.penaltyUntil)){this.water=Math.min(1,this.water+.75*this.level.abilityIntensity);this.emit('water');}
+        if(this.targets.some(t=>t.code==='fighter'&&!t.solved&&!t.penaltyUntil)){this.water=Math.min(1,this.water+.92);this.emit('water');}
         this.sensory='none';this.abilityClock=0;
       }else if(this.sensory==='glamour-warning'&&this.sensoryTimer<=0){
-        if(this.targets.some(t=>t.code==='glamour'&&!t.solved&&!t.penaltyUntil)){this.sensory='glamour';this.sensoryTimer=3;this.emit('show');}else {this.sensory='none';this.abilityClock=0;}
+        if(this.targets.some(t=>t.code==='glamour'&&!t.solved&&!t.penaltyUntil)){this.sensory='glamour';this.sensoryTimer=4.5;this.emit('show');}else {this.sensory='none';this.abilityClock=0;}
       }else if(this.sensoryTimer<=0){this.sensory='none';this.abilityClock=0;}
       return;
     }
@@ -132,7 +138,7 @@ export class GameCore {
       if((t.code==='fighter'&&this.sensory.startsWith('water'))||(t.code==='glamour'&&this.sensory.startsWith('glamour'))){this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;}
       this.lastResult={...result,earned};this.emit('hit',{...result,earned});
       if(this.targets.every(x=>x.solved)){
-        if(this.round===5){if(this.mistakes===0)this.score+=300;this.state='won';this.hold(false);this.emit('won',{score:this.score});}
+        if(this.round===5||this.level.mode==='balloons'){if(this.mistakes===0)this.score+=300;this.state='won';this.hold(false);this.emit('won',{score:this.score});}
         else {this.state='transition';this.transition=1.6;this.emit('round-clear',{round:this.round});}
       }
     }else {

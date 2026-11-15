@@ -1,0 +1,41 @@
+{
+  "kind": "offline synthesized render; does not certify authenticity or subjective sound quality",
+  "profiles": [
+    {
+      "family": "airgun",
+      "peak": 0.11275490373373032,
+      "rms": 0.003617520338206567,
+      "tailS": 0.6399092970521542
+    },
+    {
+      "family": "classic",
+      "peak": 0.20222894847393036,
+      "rms": 0.009370595050613335,
+      "tailS": 0.9093877551020408
+    },
+    {
+      "family": "sport",
+      "peak": 0.17178449034690857,
+      "rms": 0.006990553161570786,
+      "tailS": 0.7898412698412698
+    },
+    {
+      "family": "sniper",
+      "peak": 0.2558710277080536,
+      "rms": 0.011281537879746298,
+      "tailS": 0.969954648526077
+    },
+    {
+      "family": "precision",
+      "peak": 0.2751731872558594,
+      "rms": 0.012461245839355354,
+      "tailS": 0.9397052154195011
+    },
+    {
+      "family": "final",
+      "peak": 0.30231738090515137,
+      "rms": 0.013864910744982152,
+      "tailS": 1.0638548752834467
+    }
+  ]
+}

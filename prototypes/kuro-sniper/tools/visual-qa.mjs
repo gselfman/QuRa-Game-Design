@@ -1,0 +1,19 @@
+import {chromium} from '@playwright/test';
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--ignore-gpu-blocklist']});
+const ctx=await browser.newContext({viewport:{width:844,height:390},isMobile:true,hasTouch:true});const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())});
+await p.goto('http://127.0.0.1:5178/?qa=1');await p.waitForFunction(()=>!!window.__KS_QA__,undefined,{timeout:90000});
+await p.evaluate(()=>{const q=window.__KS_QA__;q.start(5);q.freeze(true);q.core.round=5;q.core.setupRound();q.ads(true);q.world.aimAt('C06');q.core.sensory='glamour';q.core.time=2;});await p.waitForTimeout(1500);await p.screenshot({path:'qa/v02-glamour-mobile.png'});
+const pose1=await p.evaluate(()=>window.__KS_QA__.world.actors.find(a=>a.code==='glamour').rig.wingR.rotation.z);
+await p.evaluate(()=>window.__KS_QA__.advance(.22));await p.waitForTimeout(100);const pose2=await p.evaluate(()=>window.__KS_QA__.world.actors.find(a=>a.code==='glamour').rig.wingR.rotation.z);assert.notEqual(pose1,pose2);
+await p.evaluate(()=>{const q=window.__KS_QA__;q.core.water=.92;});await p.waitForTimeout(350);await p.screenshot({path:'qa/v02-water-mobile.png'});
+await p.evaluate(()=>{const q=window.__KS_QA__;q.core.water=0;q.core.quiet=false;q.core.sensory='none';q.core.time=2;q.core.update(.001);q.freeze(true);q.core.quiet=false;q.world.aimAt('C04');});await p.waitForTimeout(500);await p.screenshot({path:'qa/v02-anomaly-mobile.png'});
+await p.evaluate(()=>{const q=window.__KS_QA__;q.start(10);q.freeze(true);q.ads(true);q.world.aimAt('C01');});await p.waitForTimeout(700);await p.screenshot({path:'qa/v02-finale-mobile.png'});
+for(let i=0;i<5;i++){await p.evaluate(()=>{const q=window.__KS_QA__;q.world.aimAt(q.core.targets.find(t=>!t.solved).id)});await p.waitForTimeout(60);await p.locator('#fire').dispatchEvent('pointerdown',{pointerId:7,button:0});await p.evaluate(()=>window.__KS_QA__.advance(1.4));}
+const result=await p.evaluate(()=>window.__KS_QA__.state);assert.equal(result.state,'won');assert.equal(result.ammo,3);assert.equal(result.score,1150);
+await p.evaluate(()=>{const q=window.__KS_QA__;q.start(1);q.freeze(true);q.core.round=5;q.core.setupRound();q.world.yaw=0;});await p.waitForTimeout(300);await p.screenshot({path:'qa/v02-booth-mobile.png'});
+const breath=await p.locator('#breath').boundingBox(),aim=await p.locator('#aim').boundingBox();assert(breath.x<150);assert(aim.x>650);
+await p.evaluate(()=>{document.body.classList.add('left-hand')});const leftBreath=await p.locator('#breath').boundingBox(),leftAim=await p.locator('#aim').boundingBox();assert(leftBreath.x>650);assert(leftAim.x<150);
+await p.evaluate(()=>{document.body.classList.remove('left-hand');const q=window.__KS_QA__;q.start(5);q.core.round=5;q.core.setupRound();q.ads(true);q.freeze(false)});await p.waitForTimeout(2000);
+const performance=await p.evaluate(()=>new Promise(resolve=>{const samples=[];let last=performance.now();function step(t){samples.push(t-last);last=t;if(samples.length<180)requestAnimationFrame(step);else{samples.shift();samples.sort((a,b)=>a-b);resolve({p50:samples[Math.floor(samples.length*.5)],p95:samples[Math.floor(samples.length*.95)],fps:window.__KS_QA__.world.engine.getFps()})}}requestAnimationFrame(step)}));
+assert.equal(errors.length,0,errors.join('\n'));const report={finale:result,controls:'breath left, ADS right; mirrored layout verified',dance:'independent wing motion verified',performance,errors};fs.writeFileSync('qa/v02-browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));await browser.close();

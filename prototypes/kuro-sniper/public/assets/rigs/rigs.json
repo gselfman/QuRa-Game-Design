@@ -1,0 +1,812 @@
+{
+  "ryaba": {
+    "foot": 670,
+    "layers": [
+      {
+        "url": "/assets/rigs/ryaba-00-legL.webp",
+        "rect": [
+          163,
+          554,
+          312,
+          671
+        ],
+        "z": 2,
+        "joint": "legL",
+        "role": "left boot"
+      },
+      {
+        "url": "/assets/rigs/ryaba-01-legR.webp",
+        "rect": [
+          331,
+          554,
+          514,
+          670
+        ],
+        "z": 2,
+        "joint": "legR",
+        "role": "right boot"
+      },
+      {
+        "url": "/assets/rigs/ryaba-02-body.webp",
+        "rect": [
+          36,
+          187,
+          542,
+          579
+        ],
+        "z": 10,
+        "joint": "body",
+        "role": "parts/torso"
+      },
+      {
+        "url": "/assets/rigs/ryaba-03-body.webp",
+        "rect": [
+          243,
+          318,
+          485,
+          558
+        ],
+        "z": 20,
+        "joint": "body",
+        "role": "complete vest"
+      },
+      {
+        "url": "/assets/rigs/ryaba-04-body.webp",
+        "rect": [
+          280,
+          335,
+          455,
+          523
+        ],
+        "z": 30,
+        "joint": "body",
+        "role": "bag strap"
+      },
+      {
+        "url": "/assets/rigs/ryaba-05-body.webp",
+        "rect": [
+          380,
+          481,
+          512,
+          601
+        ],
+        "z": 31,
+        "joint": "body",
+        "role": "bag — front right flank"
+      },
+      {
+        "url": "/assets/rigs/ryaba-06-wingL.webp",
+        "rect": [
+          438,
+          321,
+          532,
+          540
+        ],
+        "z": 60,
+        "joint": "wingL",
+        "role": "parts/left_wing"
+      },
+      {
+        "url": "/assets/rigs/ryaba-07-wingR.webp",
+        "rect": [
+          169,
+          313,
+          353,
+          539
+        ],
+        "z": 61,
+        "joint": "wingR",
+        "role": "parts/right_wing"
+      },
+      {
+        "url": "/assets/rigs/ryaba-08-head.webp",
+        "rect": [
+          221,
+          66,
+          506,
+          328
+        ],
+        "z": 70,
+        "joint": "head",
+        "role": "head_native_base"
+      },
+      {
+        "url": "/assets/rigs/ryaba-09-head.webp",
+        "rect": [
+          171,
+          58,
+          566,
+          277
+        ],
+        "z": 80,
+        "joint": "head",
+        "role": "hat"
+      },
+      {
+        "url": "/assets/rigs/ryaba-10-head.webp",
+        "rect": [
+          301,
+          176,
+          447,
+          253
+        ],
+        "z": 90,
+        "joint": "head",
+        "role": "glasses — optical centers"
+      }
+    ],
+    "source": "QuRa canonical v12 registered anatomy and outfit layers"
+  },
+  "fool": {
+    "foot": 664,
+    "layers": [
+      {
+        "url": "/assets/rigs/fool-00-legL.webp",
+        "rect": [
+          188,
+          523,
+          363,
+          662
+        ],
+        "z": 3,
+        "joint": "legL",
+        "role": "parts/legs_bare"
+      },
+      {
+        "url": "/assets/rigs/fool-00-legR.webp",
+        "rect": [
+          357,
+          524,
+          525,
+          653
+        ],
+        "z": 3,
+        "joint": "legR",
+        "role": "parts/legs_bare"
+      },
+      {
+        "url": "/assets/rigs/fool-01-body.webp",
+        "rect": [
+          4,
+          154,
+          567,
+          564
+        ],
+        "z": 10,
+        "joint": "body",
+        "role": "parts/torso"
+      },
+      {
+        "url": "/assets/rigs/fool-02-body.webp",
+        "rect": [
+          261,
+          325,
+          528,
+          555
+        ],
+        "z": 20,
+        "joint": "body",
+        "role": "complete vest"
+      },
+      {
+        "url": "/assets/rigs/fool-03-body.webp",
+        "rect": [
+          319,
+          411,
+          505,
+          614
+        ],
+        "z": 30,
+        "joint": "body",
+        "role": "shopper — front right flank"
+      },
+      {
+        "url": "/assets/rigs/fool-04-body.webp",
+        "rect": [
+          304,
+          292,
+          477,
+          430
+        ],
+        "z": 45,
+        "joint": "body",
+        "role": "beads"
+      },
+      {
+        "url": "/assets/rigs/fool-05-wingL.webp",
+        "rect": [
+          461,
+          318,
+          564,
+          548
+        ],
+        "z": 60,
+        "joint": "wingL",
+        "role": "parts/left_wing"
+      },
+      {
+        "url": "/assets/rigs/fool-06-wingR.webp",
+        "rect": [
+          177,
+          315,
+          360,
+          549
+        ],
+        "z": 61,
+        "joint": "wingR",
+        "role": "parts/right_wing"
+      },
+      {
+        "url": "/assets/rigs/fool-07-body.webp",
+        "rect": [
+          459,
+          417,
+          501,
+          480
+        ],
+        "z": 65,
+        "joint": "body",
+        "role": "flute above wing"
+      },
+      {
+        "url": "/assets/rigs/fool-08-head.webp",
+        "rect": [
+          461,
+          219,
+          497,
+          315
+        ],
+        "z": 69,
+        "joint": "head",
+        "role": "scarf tail tucked behind head"
+      },
+      {
+        "url": "/assets/rigs/fool-09-head.webp",
+        "rect": [
+          232,
+          43,
+          508,
+          331
+        ],
+        "z": 70,
+        "joint": "head",
+        "role": "head_native_base"
+      },
+      {
+        "url": "/assets/rigs/fool-10-body.webp",
+        "rect": [
+          234,
+          77,
+          535,
+          250
+        ],
+        "z": 80,
+        "joint": "body",
+        "role": "scarf wrapped over crown"
+      },
+      {
+        "url": "/assets/rigs/fool-11-head.webp",
+        "rect": [
+          315,
+          163,
+          476,
+          251
+        ],
+        "z": 90,
+        "joint": "head",
+        "role": "glasses — optical centers"
+      },
+      {
+        "url": "/assets/rigs/fool-12-body.webp",
+        "rect": [
+          260,
+          559,
+          296,
+          586
+        ],
+        "z": 95,
+        "joint": "body",
+        "role": "07 ring — visible left ankle"
+      }
+    ],
+    "source": "QuRa canonical v12 registered anatomy and outfit layers"
+  },
+  "professor": {
+    "foot": 653,
+    "layers": [
+      {
+        "url": "/assets/rigs/professor-00-legL.webp",
+        "rect": [
+          230,
+          517,
+          281,
+          574
+        ],
+        "z": 3,
+        "joint": "legL",
+        "role": "upper legs — claws hidden"
+      },
+      {
+        "url": "/assets/rigs/professor-00-legR.webp",
+        "rect": [
+          367,
+          521,
+          407,
+          574
+        ],
+        "z": 3,
+        "joint": "legR",
+        "role": "upper legs — claws hidden"
+      },
+      {
+        "url": "/assets/rigs/professor-01-legL.webp",
+        "rect": [
+          152,
+          547,
+          314,
+          654
+        ],
+        "z": 4,
+        "joint": "legL",
+        "role": "left croc — upper leg retained"
+      },
+      {
+        "url": "/assets/rigs/professor-02-legR.webp",
+        "rect": [
+          331,
+          544,
+          511,
+          647
+        ],
+        "z": 4,
+        "joint": "legR",
+        "role": "right croc — upper leg retained"
+      },
+      {
+        "url": "/assets/rigs/professor-03-body.webp",
+        "rect": [
+          15,
+          143,
+          516,
+          550
+        ],
+        "z": 10,
+        "joint": "body",
+        "role": "parts/torso"
+      },
+      {
+        "url": "/assets/rigs/professor-04-body.webp",
+        "rect": [
+          230,
+          326,
+          506,
+          585
+        ],
+        "z": 20,
+        "joint": "body",
+        "role": "complete coat"
+      },
+      {
+        "url": "/assets/rigs/professor-05-body.webp",
+        "rect": [
+          317,
+          301,
+          477,
+          581
+        ],
+        "z": 30,
+        "joint": "body",
+        "role": "satchel — front right flank"
+      },
+      {
+        "url": "/assets/rigs/professor-06-body.webp",
+        "rect": [
+          338,
+          330,
+          444,
+          527
+        ],
+        "z": 45,
+        "joint": "body",
+        "role": "magnifier"
+      },
+      {
+        "url": "/assets/rigs/professor-07-wingL.webp",
+        "rect": [
+          437,
+          346,
+          524,
+          542
+        ],
+        "z": 60,
+        "joint": "wingL",
+        "role": "parts/left_wing"
+      },
+      {
+        "url": "/assets/rigs/professor-08-wingR.webp",
+        "rect": [
+          151,
+          325,
+          347,
+          533
+        ],
+        "z": 61,
+        "joint": "wingR",
+        "role": "parts/right_wing"
+      },
+      {
+        "url": "/assets/rigs/professor-09-head.webp",
+        "rect": [
+          244,
+          87,
+          314,
+          169
+        ],
+        "z": 68,
+        "joint": "head",
+        "role": "pencil behind hair"
+      },
+      {
+        "url": "/assets/rigs/professor-10-head.webp",
+        "rect": [
+          186,
+          41,
+          521,
+          337
+        ],
+        "z": 70,
+        "joint": "head",
+        "role": "head_native_base"
+      },
+      {
+        "url": "/assets/rigs/professor-11-head.webp",
+        "rect": [
+          244,
+          87,
+          306,
+          151
+        ],
+        "z": 85,
+        "joint": "head",
+        "role": "pencil visible shaft"
+      },
+      {
+        "url": "/assets/rigs/professor-12-head.webp",
+        "rect": [
+          290,
+          191,
+          434,
+          277
+        ],
+        "z": 90,
+        "joint": "head",
+        "role": "glasses — optical centers"
+      }
+    ],
+    "source": "QuRa canonical v12 registered anatomy and outfit layers"
+  },
+  "fighter": {
+    "foot": 663,
+    "layers": [
+      {
+        "url": "/assets/rigs/fighter-00-body.webp",
+        "rect": [
+          441,
+          333,
+          495,
+          424
+        ],
+        "z": 1,
+        "joint": "body",
+        "role": "far carry strap — behind torso"
+      },
+      {
+        "url": "/assets/rigs/fighter-01-legL.webp",
+        "rect": [
+          185,
+          515,
+          341,
+          662
+        ],
+        "z": 2,
+        "joint": "legL",
+        "role": "left boot"
+      },
+      {
+        "url": "/assets/rigs/fighter-02-legR.webp",
+        "rect": [
+          343,
+          532,
+          511,
+          664
+        ],
+        "z": 2,
+        "joint": "legR",
+        "role": "right boot"
+      },
+      {
+        "url": "/assets/rigs/fighter-03-body.webp",
+        "rect": [
+          14,
+          207,
+          576,
+          553
+        ],
+        "z": 10,
+        "joint": "body",
+        "role": "parts/torso"
+      },
+      {
+        "url": "/assets/rigs/fighter-04-body.webp",
+        "rect": [
+          262,
+          329,
+          515,
+          543
+        ],
+        "z": 20,
+        "joint": "body",
+        "role": "complete vest"
+      },
+      {
+        "url": "/assets/rigs/fighter-05-body.webp",
+        "rect": [
+          377,
+          331,
+          553,
+          454
+        ],
+        "z": 35,
+        "joint": "body",
+        "role": "near carry strap"
+      },
+      {
+        "url": "/assets/rigs/fighter-06-body.webp",
+        "rect": [
+          283,
+          279,
+          476,
+          390
+        ],
+        "z": 45,
+        "joint": "body",
+        "role": "cartridges"
+      },
+      {
+        "url": "/assets/rigs/fighter-07-wingL.webp",
+        "rect": [
+          452,
+          323,
+          576,
+          539
+        ],
+        "z": 60,
+        "joint": "wingL",
+        "role": "parts/left_wing"
+      },
+      {
+        "url": "/assets/rigs/fighter-08-wingR.webp",
+        "rect": [
+          166,
+          314,
+          357,
+          539
+        ],
+        "z": 61,
+        "joint": "wingR",
+        "role": "parts/right_wing"
+      },
+      {
+        "url": "/assets/rigs/fighter-09-wingL.webp",
+        "rect": [
+          395,
+          447,
+          563,
+          567
+        ],
+        "z": 65,
+        "joint": "wingL",
+        "role": "water toy — visible in front of wing"
+      },
+      {
+        "url": "/assets/rigs/fighter-10-head.webp",
+        "rect": [
+          262,
+          51,
+          488,
+          349
+        ],
+        "z": 70,
+        "joint": "head",
+        "role": "head_native_base"
+      },
+      {
+        "url": "/assets/rigs/fighter-11-head.webp",
+        "rect": [
+          190,
+          126,
+          496,
+          261
+        ],
+        "z": 80,
+        "joint": "head",
+        "role": "bandana"
+      },
+      {
+        "url": "/assets/rigs/fighter-12-head.webp",
+        "rect": [
+          308,
+          176,
+          464,
+          249
+        ],
+        "z": 90,
+        "joint": "head",
+        "role": "glasses — optical centers"
+      }
+    ],
+    "source": "QuRa canonical v12 registered anatomy and outfit layers"
+  },
+  "glamour": {
+    "foot": 689,
+    "layers": [
+      {
+        "url": "/assets/rigs/glamour-00-legL.webp",
+        "rect": [
+          228,
+          537,
+          363,
+          690
+        ],
+        "z": 3,
+        "joint": "legL",
+        "role": "parts/legs_bare"
+      },
+      {
+        "url": "/assets/rigs/glamour-00-legR.webp",
+        "rect": [
+          357,
+          535,
+          514,
+          678
+        ],
+        "z": 3,
+        "joint": "legR",
+        "role": "parts/legs_bare"
+      },
+      {
+        "url": "/assets/rigs/glamour-01-body.webp",
+        "rect": [
+          5,
+          219,
+          538,
+          574
+        ],
+        "z": 10,
+        "joint": "body",
+        "role": "parts/torso"
+      },
+      {
+        "url": "/assets/rigs/glamour-02-body.webp",
+        "rect": [
+          291,
+          340,
+          492,
+          548
+        ],
+        "z": 20,
+        "joint": "body",
+        "role": "complete vest"
+      },
+      {
+        "url": "/assets/rigs/glamour-03-body.webp",
+        "rect": [
+          378,
+          322,
+          527,
+          563
+        ],
+        "z": 30,
+        "joint": "body",
+        "role": "H bag — front right flank"
+      },
+      {
+        "url": "/assets/rigs/glamour-04-body.webp",
+        "rect": [
+          378,
+          305,
+          488,
+          366
+        ],
+        "z": 45,
+        "joint": "body",
+        "role": "diamonds"
+      },
+      {
+        "url": "/assets/rigs/glamour-05-wingL.webp",
+        "rect": [
+          484,
+          357,
+          528,
+          502
+        ],
+        "z": 60,
+        "joint": "wingL",
+        "role": "parts/left_wing"
+      },
+      {
+        "url": "/assets/rigs/glamour-06-wingR.webp",
+        "rect": [
+          219,
+          332,
+          390,
+          569
+        ],
+        "z": 61,
+        "joint": "wingR",
+        "role": "parts/right_wing"
+      },
+      {
+        "url": "/assets/rigs/glamour-07-head.webp",
+        "rect": [
+          251,
+          64,
+          530,
+          362
+        ],
+        "z": 70,
+        "joint": "head",
+        "role": "head_native_base"
+      },
+      {
+        "url": "/assets/rigs/glamour-08-head.webp",
+        "rect": [
+          260,
+          51,
+          580,
+          239
+        ],
+        "z": 80,
+        "joint": "head",
+        "role": "hat"
+      },
+      {
+        "url": "/assets/rigs/glamour-09-head.webp",
+        "rect": [
+          353,
+          151,
+          516,
+          236
+        ],
+        "z": 90,
+        "joint": "head",
+        "role": "glasses — optical centers"
+      },
+      {
+        "url": "/assets/rigs/glamour-10-legL.webp",
+        "rect": [
+          314,
+          606,
+          352,
+          628
+        ],
+        "z": 95,
+        "joint": "legL",
+        "role": "left anklet — leg shaft"
+      },
+      {
+        "url": "/assets/rigs/glamour-11-legR.webp",
+        "rect": [
+          391,
+          595,
+          431,
+          621
+        ],
+        "z": 95,
+        "joint": "legR",
+        "role": "right anklet — leg shaft"
+      }
+    ],
+    "source": "QuRa canonical v12 registered anatomy and outfit layers"
+  }
+}

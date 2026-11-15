@@ -1,0 +1,39 @@
+{
+  "provider": "Poly Haven",
+  "provider_url": "https://polyhaven.com",
+  "assets": [
+    {
+      "name": "wood_floor_deck",
+      "source": "https://polyhaven.com/a/wood_floor_deck",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "channels": [
+        "diffuse",
+        "normal OpenGL",
+        "AO/roughness/metallic"
+      ]
+    },
+    {
+      "name": "aerial_grass_rock",
+      "source": "https://polyhaven.com/a/aerial_grass_rock",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "channels": [
+        "diffuse",
+        "normal OpenGL",
+        "AO/roughness/metallic"
+      ]
+    },
+    {
+      "name": "kloofendal_48d_partly_cloudy_puresky",
+      "source": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+      "license": "CC0-1.0",
+      "resolution": "sky 2k / light 1k",
+      "authors": [
+        "Greg Zaal",
+        "Dimitrios Savva",
+        "Jarod Guest"
+      ]
+    }
+  ]
+}

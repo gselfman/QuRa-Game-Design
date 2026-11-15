@@ -946,6 +946,32 @@
       "resetAmmo": false,
       "resetMistakes": false,
       "goals": 5
+    },
+    {
+      "id": "L10-R1",
+      "levelId": 10,
+      "roundId": 1,
+      "mode": "balloons",
+      "characterIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C02",
+        "C06"
+      ],
+      "positionsNormalized": [
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1
+      ],
+      "abilityIntensity": 0,
+      "seedPolicy": "deterministic_paths",
+      "windStrength": 0.75,
+      "resetAmmo": false,
+      "resetMistakes": false,
+      "goals": 5
     }
   ]
 }

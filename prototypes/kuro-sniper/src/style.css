@@ -16,3 +16,15 @@
 #reticle.red-dot i{width:4px;height:4px;left:7px;top:7px;border-radius:50%;background:#ff7158;box-shadow:0 0 7px #ff7158b0}#reticle.red-dot b{display:none}
 @media(pointer:coarse){#zoom-controls button{width:44px;height:44px}.top-right .icon-button,.menu-nav .icon-button{width:44px;height:44px}}
 #zoom-controls.fixed button{display:none}
+/* Two-thumb layout: hold below vitals, infrequent ADS above right trigger. */
+#breath.breath-button{left:max(31px,env(safe-area-inset-left));right:auto;top:auto;bottom:55px;width:78px;height:78px}
+.right-controls #aim.aim-button{left:auto;right:2px;bottom:auto;top:-35px;width:65px;height:65px}
+.right-controls #aim svg{width:25px;height:25px}
+.left-hand #breath.breath-button{left:auto;right:max(31px,env(safe-area-inset-right))}
+.left-hand .right-controls #aim.aim-button{right:auto;left:2px}
+#water-drops{background:radial-gradient(ellipse at 23% 25%,#aac9d84d,transparent 42%),radial-gradient(ellipse at 80% 76%,#a8c4d74d,transparent 48%);backdrop-filter:blur(2.3px) contrast(.88);box-shadow:inset 0 0 60px #7eafbd38}
+#water-drops i{background:radial-gradient(ellipse at 32% 23%,#ffffff88,transparent 28%),linear-gradient(140deg,#e2f3f64a,#b5d7e82b 48%,#427b9c65);box-shadow:inset 3px 4px 5px #f5fbff99,inset -2px -4px 5px #2b577966,2px 4px 5px #1235;backdrop-filter:blur(6px) saturate(.7);border:1px solid #e0f3ff38}
+#wipe-sweep.wiping{animation-duration:1.2s}
+@media(max-height:500px){#breath.breath-button{left:24px;bottom:24px;width:61px;height:61px}.right-controls #aim.aim-button{left:auto;right:0;top:-18px;bottom:auto;width:50px;height:50px}.right-controls #aim svg{width:20px;height:20px}.left-hand #breath.breath-button{left:auto;right:24px}.left-hand .right-controls #aim.aim-button{right:auto;left:0}}
+.level-grid{grid-template-columns:repeat(5,1fr);gap:10px}.level-card{padding:14px 15px}.level-distance{font-size:29px}.level-place{font-size:16px}.level-weapon{font-size:10px}.level-record{font-size:8px}.level-card.env-balloon_finale{border-color:#d8b46ba1;background:linear-gradient(135deg,#a7804370,#263c2fcc)}
+@media(max-height:500px){.level-grid{gap:6px}.level-card{padding:8px 9px}.level-distance{font-size:18px}.level-place{font-size:11px}.level-weapon{font-size:7px}.level-record{font-size:6px}}

@@ -31,3 +31,27 @@ test('lens-only FOV has correct apparent magnification, independent of lens size
 test('wind and Professor field affect trajectory deterministically and remain frozen for each shot',()=>{
  const g=game(9);g.quiet=false;g.round=3;g.setupRound();g.time=2;advance(g,.01);assert(g.professorActive);const t=g.target('C04');const d={x:t.x,y:t.y-1.5,z:1000},n=Math.hypot(d.x,d.y,d.z);g.fire({x:0,y:1.5,z:0},{x:d.x/n,y:d.y/n,z:d.z/n});const wind=g.shot.wind,field=g.shot.field;assert(field>0);advance(g,.3);assert.equal(g.shot.wind,wind);assert.equal(g.shot.field,field);
 });
+
+test('water substantially obstructs the lens for seconds and can be wiped with a deliberate action',()=>{
+ const g=game(5);g.water=.92;advance(g,10);assert(g.water>.50);assert(g.wipe());assert.equal(g.holding,false);advance(g,1.21);assert.equal(g.water,0);assert.equal(g.wiping,0);
+ g.water=.92;advance(g,24);assert.equal(g.water,0);
+});
+test('finale is one round with five moving balloons, eight capsules and safe hens below',()=>{
+ const g=game(10);assert.equal(g.level.mode,'balloons');assert.equal(g.targets.length,5);assert.equal(g.ammo,8);
+ const t=g.targets[0];assert.equal(resolveImpact({x:t.x,y:t.y},g.targets,.8).kind,'target');assert.equal(resolveImpact({x:t.x,y:.9},g.targets,.8).kind,'hen');
+ const x=t.x;g.quiet=false;advance(g,.25);assert(Math.abs(t.x-x)>.5);g.quiet=true;advance(g,.01);
+ for(const target of [...g.targets])shoot(g,target.id);
+ assert.equal(g.state,'won');assert.equal(g.hits,5);assert.equal(g.ammo,3);assert.equal(g.score,maxScore(5));
+});
+test('moving finale rewards leading the balloon through full projectile flight',()=>{
+ const g=game(10);g.quiet=false;
+ for(const t of g.targets){
+  const phase=g.targets.findIndex(x=>x.id===t.id)*1.7,arrival=g.time+g.level.flightTimeS;
+  const x=t.baseX+Math.sin(arrival*.92+phase)*4.5-g.wind*g.level.targetDiameterM*.38;
+  const y=2.8+Math.sin(arrival*2.1+phase)*.22;
+  const d={x,y:y-1.5,z:1000},n=Math.hypot(d.x,d.y,d.z);
+  assert(g.fire({x:0,y:1.5,z:0},{x:d.x/n,y:d.y/n,z:d.z/n}));advance(g,1.36);
+ }
+ assert.equal(g.hits,5);assert.equal(g.state,'won');assert.equal(g.mistakes,0);
+});
+test('a hen remains protected after its balloon has burst',()=>{const g=game(10);const t=g.targets[0];g.resolve({kind:'target',targetId:t.id,center:true});const result=resolveImpact({x:t.x,y:.9},g.targets,.8);assert.equal(result.kind,'hen');g.resolve(result);assert.equal(g.mistakes,1);assert(t.solved);});

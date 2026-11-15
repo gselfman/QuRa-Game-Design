@@ -16,6 +16,7 @@ options = parser.parse_args()
 root = Path(__file__).resolve().parents[1] / 'dist'
 if not (root / 'index.html').is_file():
     raise SystemExit('Game build not found. Run npm ci and npm run build first.')
+local_info = json.loads((root / 'kuro-prototype-info.json').read_text())
 
 class Handler(SimpleHTTPRequestHandler):
     extensions_map = {**SimpleHTTPRequestHandler.extensions_map, '.glb': 'model/gltf-binary', '.js': 'application/javascript', '.wasm': 'application/wasm'}
@@ -30,7 +31,8 @@ for port in range(options.port, options.port + 11):
     except OSError:
         try:
             with urllib.request.urlopen(f'http://127.0.0.1:{port}/kuro-prototype-info.json', timeout=.5) as response:
-                if json.load(response).get('id') == 'qura-kuro-sniper-prototype':
+                running = json.load(response)
+                if running.get('id') == local_info['id'] and running.get('version') == local_info['version']:
                     print(f'Game already running: http://127.0.0.1:{port}/')
                     if options.open:
                         webbrowser.open(f'http://127.0.0.1:{port}/')
