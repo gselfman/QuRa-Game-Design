@@ -1,0 +1,15 @@
+{
+  "note": "Chrome headless on Apple M2; mobile viewport emulation, not a physical phone benchmark",
+  "stats": {
+    "viewport": [
+      844,
+      390
+    ],
+    "frameTimeP50Ms": 16.699999999999818,
+    "frameTimeP95Ms": 17.699999999999818,
+    "engineFPS": 59.86828976145425,
+    "activeMeshes": 238,
+    "sceneMeshes": 244
+  },
+  "errors": []
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "peripheralPixelDifferenceMax": 0,
+  "testROI": [
+    130,
+    200,
+    330,
+    330
+  ],
+  "targetBoundsBeforePx": [
+    16,
+    25
+  ],
+  "targetBoundsAfterPx": [
+    34,
+    34
+  ],
+  "observedMagnification": 2.125,
+  "expectedMagnification": 2,
+  "note": "Pixel threshold measurement has ~1px antialiasing uncertainty."
+}

@@ -1,0 +1,101 @@
+{
+  "campaign": [
+    {
+      "state": "won",
+      "level": 1,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 2,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 3,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 4,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 5,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 6,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 7,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 8,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    },
+    {
+      "state": "won",
+      "level": 9,
+      "round": 5,
+      "ammo": 3,
+      "score": 3050,
+      "mistakes": 0,
+      "ads": false,
+      "water": 0
+    }
+  ],
+  "mobileTouch": "PASS: hold breath + drag + fire with three simultaneous contacts",
+  "pause": "PASS",
+  "breath": "PASS",
+  "threeMisses": "PASS",
+  "orientation": "PASS",
+  "errors": [],
+  "notFound": []
+}
