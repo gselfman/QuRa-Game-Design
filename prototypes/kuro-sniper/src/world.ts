@@ -155,11 +155,13 @@ export class World {
     this.detailRoot=dressLocation(this,level);
   }
   advertPoster(distance:number){
-    const w=5.7,h=3.20,x=0,y=1.88,z=distance+.51;
-    const poster=MeshBuilder.CreatePlane('poultry-yard-original-figma-poster',{width:w,height:h},this.scene);poster.parent=this.environment;poster.position.set(x,y,z);
-    const m=new StandardMaterial('poultry-yard-poster-material',this.scene);m.diffuseTexture=this.textures['/assets/posters/poultry-yard-promo-figma.png'];m.emissiveColor=new Color3(.20,.20,.20);m.specularColor=Color3.Black();poster.material=m;this.levelMaterials.push(m);
-    for(const side of [-1,1])this.box('poster-oak-frame',[side*(w/2+.045),y,z-.025],[.09,h+.18,.08],this.materials.darkWood);
-    for(const side of [-1,1])this.box('poster-oak-frame',[0,y+side*(h/2+.045),z-.025],[w+.18,.09,.08],this.materials.darkWood);
+    // A small paper poster on the inner right wall, outside the target backdrop.
+    const w=.80,h=w*941/1672;
+    const mount=new TransformNode('poultry-yard-side-wall-mount',this.scene);mount.parent=this.environment;mount.position.set(6.11,1.95,distance-.40);mount.rotation.y=Math.PI/2;
+    const poster=MeshBuilder.CreatePlane('poultry-yard-original-figma-poster',{width:w,height:h},this.scene);poster.parent=mount;poster.isPickable=false;
+    const m=new StandardMaterial('poultry-yard-poster-material',this.scene);m.diffuseTexture=this.textures['/assets/posters/poultry-yard-promo-figma.png'];m.diffuseColor=new Color3(.62,.60,.55);m.emissiveColor=Color3.Black();m.specularColor=Color3.Black();poster.material=m;this.levelMaterials.push(m);
+    for(const side of [-1,1])this.box('poster-oak-frame',[side*(w/2+.015),0,-.012],[.03,h+.06,.025],this.materials.darkWood,mount);
+    for(const side of [-1,1])this.box('poster-oak-frame',[0,side*(h/2+.015),-.012],[w+.06,.03,.025],this.materials.darkWood,mount);
   }
   scatterHay(distance:number){
     const mask=new DynamicTexture('hay-patch-opacity',{width:256,height:256},this.scene,false),mc=mask.getContext() as CanvasRenderingContext2D;mc.clearRect(0,0,256,256);const gradient=mc.createRadialGradient(128,128,42,128,128,126);gradient.addColorStop(0,'rgba(255,255,255,.98)');gradient.addColorStop(.65,'rgba(255,255,255,.85)');gradient.addColorStop(1,'rgba(255,255,255,0)');mc.fillStyle=gradient;mc.fillRect(0,0,256,256);mask.update();mask.hasAlpha=true;
