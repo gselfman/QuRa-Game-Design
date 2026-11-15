@@ -1,3 +1,4 @@
+import {henMotion,groundMotions} from './hen-motion.mjs';
 export const CAST = [
   { id:'C01', code:'ryaba', name:'Ряба', role:'Спокойная цель', color:'#d9a75d' },
   { id:'C03', code:'fool', name:'Дурочка', role:'Раскачивает мишень', color:'#a3d4b4' },
@@ -10,17 +11,20 @@ export const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
 export function scopeFov(baseFov,height,diameter,magnification){return 2*Math.atan(diameter/height*Math.tan(baseFov/2)/magnification);}
 export function maxScore(hits=15){return hits*150+Array.from({length:hits},(_,i)=>Math.min(i*10,40)).reduce((a,b)=>a+b,0)+300;}
-export function resolveImpact(point, targets, diameter){
+export function resolveImpact(point, targets, diameter,time=null){
+  const ground=time===null?null:groundMotions(targets,time);
   for(const target of targets){
     if(target.penaltyUntil>0)continue;
     const radius=Math.hypot(point.x-target.x,(point.y-target.y)/(target.radiusScaleY??1))/(diameter/2);
     if(!target.solved&&radius<=1)return {kind:'target',targetId:target.id,center:radius<=.25,radius};
-    if(target.solved&&target.bodyY!==.03)continue;
-    const dx=Math.abs(point.x-target.x),dy=point.y-(target.bodyY??1.45);
+    if(target.solved&&target.bodyY!==.03){if(time!==null){const pose=ground.get(target.id),dx=Math.abs(point.x-pose.x),dy=point.y-pose.y;if(dx<.50&&dy>.06&&dy<1.28)return {kind:'hen',targetId:target.id};}continue;}
+    const dx=Math.abs(point.x-(target.bodyX??target.x)),dy=point.y-(target.bodyY??1.45);
     if(dx<.56&&dy>.03&&dy<1.30)return {kind:'hen',targetId:target.id};
   }
   return {kind:'miss'};
 }
+
+function gaitIntegral(u){const v=u+Math.PI/2,n=Math.floor(v/Math.PI),r=v-n*Math.PI;return 2*n+1-Math.cos(r);}
 
 export class GameCore {
   constructor(balance,onEvent=(_event)=>{}){
@@ -87,10 +91,10 @@ export class GameCore {
     if(this.wiping>0){this.wiping=Math.max(0,this.wiping-dt);this.water=Math.max(0,this.water-dt*1.05);if(this.wiping===0)this.emit('wiped');}
     for(const t of this.targets){
       if(t.penaltyUntil){t.penaltyUntil=Math.max(0,t.penaltyUntil-dt);if(!t.penaltyUntil)this.emit('returned',{targetId:t.id});}
-      t.ability=0;t.x=t.baseX;t.y=this.level.mode==='balloons'?2.8:.88;
+      t.ability=0;t.x=t.solved?(t.fallX??t.baseX):t.baseX;t.y=this.level.mode==='balloons'?2.8:t.solved?(t.fallY??.88):.88;
       if(this.level.mode==='balloons'){
         const phase=CAST.findIndex(c=>c.id===t.id)*1.7;
-        if(!this.quiet){t.x+=Math.sin(this.time*.92+phase)*4.5;t.y+=Math.sin(this.time*2.1+phase)*.22;}
+        t.velocityX=0;if(!this.quiet){t.x=t.baseX+Math.sin(this.time*.92+phase)*4.5;t.y+=Math.sin(this.time*2.1+phase)*.22;t.velocityX=Math.cos(this.time*.92+phase)*4.14;}t.bodyX=t.x-.13*t.velocityX;t.stepPhase=this.quiet?0:4.5*(gaitIntegral(this.time*.92+phase)-gaitIntegral(phase))/.65*Math.PI*2;
         continue;
       }
       if(t.solved||t.penaltyUntil||this.quiet)continue;
@@ -104,7 +108,7 @@ export class GameCore {
     if(this.shot){
       const s=this.shot;s.time=Math.min(s.duration,s.time+dt);const f=s.time/s.duration;
       s.point={x:s.origin.x+s.direction.x*s.travel*f+(s.wind+s.field)*f*f,y:s.origin.y+s.direction.y*s.travel*f,z:s.origin.z+s.direction.z*s.travel*f};
-      if(s.time>=s.duration){const result=resolveImpact(s.point,this.targets,this.level.targetDiameterM);this.shot=null;this.resolve(result);}
+      if(s.time>=s.duration){const result=resolveImpact(s.point,this.targets,this.level.targetDiameterM,this.time);this.shot=null;this.resolve(result);}
     }
     if(this.state==='transition'){
       this.transition-=dt;
@@ -133,7 +137,7 @@ export class GameCore {
     const t=this.target(result.targetId);
     if(result.kind==='target'&&(!t||t.solved))return;
     if(result.kind==='target'&&t&&!t.solved){
-      t.solved=true;t.solvedAt=this.time;t.ability=0;this.hits++;if(result.center)this.centers++;
+      t.fallX=t.x;t.fallY=t.y;t.solved=true;t.solvedAt=this.time;t.ability=0;this.hits++;if(result.center)this.centers++;
       const earned=100+(result.center?50:0)+Math.min(this.streak*10,40);this.score+=earned;this.streak++;this.stress=Math.max(0,this.stress-.08);
       if((t.code==='fighter'&&this.sensory.startsWith('water'))||(t.code==='glamour'&&this.sensory.startsWith('glamour'))){this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;}
       this.lastResult={...result,earned};this.emit('hit',{...result,earned});

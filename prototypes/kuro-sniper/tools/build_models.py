@@ -58,6 +58,14 @@ def reset():
 
 def finish(obj, name, mat, bevel=0):
     obj.name = name
+    if obj.type == 'MESH':
+        layer=obj.data.uv_layers.active or obj.data.uv_layers.new(name='Prop UV')
+        for poly in obj.data.polygons:
+            normal=poly.normal
+            axis=max(range(3),key=lambda i:abs(normal[i])); uv_axes=([1,2] if axis==0 else [0,2] if axis==1 else [0,1])
+            for loop_index in poly.loop_indices:
+                v=obj.data.vertices[obj.data.loops[loop_index].vertex_index].co
+                layer.data[loop_index].uv=(v[uv_axes[0]]*2,v[uv_axes[1]]*2)
     obj.data.materials.append(M[mat])
     if bevel:
         mod = obj.modifiers.new('Soft manufactured edges', 'BEVEL')
@@ -78,7 +86,7 @@ def box(name, location, scale, mat, bevel=.006):
     return finish(obj, name, mat, bevel)
 
 
-def cylinder(name, location, radius, length, mat, axis='Y', vertices=24):
+def cylinder(name, location, radius, length, mat, axis='Y', vertices=32):
     bpy.ops.mesh.primitive_cylinder_add(vertices=vertices, radius=radius, depth=length, location=location)
     obj = bpy.context.object
     if axis == 'Y':
@@ -93,7 +101,7 @@ def cylinder(name, location, radius, length, mat, axis='Y', vertices=24):
 
 
 def sphere(name, location, radius, mat):
-    bpy.ops.mesh.primitive_uv_sphere_add(segments=16, ring_count=8, radius=radius, location=location)
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=24, ring_count=12, radius=radius, location=location)
     obj = finish(bpy.context.object, name, mat)
     for p in obj.data.polygons:
         p.use_smooth = True
@@ -214,6 +222,35 @@ def gun(kind):
         tube('reflex_frame', [(-.03,-.09,.182),(-.03,-.09,.238),(0,-.09,.25),(.03,-.09,.238),(.03,-.09,.182)],.005,'metal')
     else:
         scope(kind,kind in ['sniper','precision','final'])
+    # Cosmetic service fittings and tactile details; no internals are modelled.
+    for side in [-1,1]:
+        for y in [-.16,.045]:
+            cylinder('blackened_receiver_fastener',(side*.044,y,.113),.0065,.003,'steel',axis='X',vertices=16)
+            box('fastener_slot',(side*.046,y,.113),(.0015,.007,.0013),'rubber',.0003)
+        cylinder('sling_swivel_pin',(side*.046,.40,-.035),.005,.009,'steel',axis='X',vertices=12)
+    for y in [.495,.512,.529]:
+        box('buttpad_moulded_rib',(0,y,-.052),(.087,.006,.095),'rubber',.002)
+    if kind!='airgun':
+        # A recessed-looking chamber plate and small protective lips.
+        box('ejection_port_recess',(.043,-.018,.112),(.003,.092,.028),'rubber',.002)
+        for z in [.097,.128]:box('ejection_port_edge',(.046,-.018,z),(.003,.10,.003),'steel',.001)
+        for j in range(24):
+            a=j*math.tau/24
+            for y in [.033,.052]:
+                cylinder('eyepiece_knurl',(math.cos(a)*.035,y,.242+math.sin(a)*.035),.0013,.018,'metal',vertices=8)
+        for j in range(12):
+            a=j*math.tau/12
+            tick=box('turret_index_mark',(math.cos(a)*.020,-.085+math.sin(a)*.020,.299),(.0015,.005,.001),'steel',.0002)
+            tick.rotation_euler.z=a
+        for side in [-1,1]:
+            for y in [-.16,-.01,.045]:
+                cylinder('mount_torx_fastener',(side*.033,y,.243),.0045,.0025,'steel',axis='X',vertices=12)
+    if kind in ['sniper','precision','final']:
+        for i in range(8):
+            cylinder('muzzle_brake_recess',(0,muzzle_y+.009+i*.011,.106),.024,.003,'rubber',vertices=24)
+        for side in [-1,1]:
+            for i in range(5):
+                box('chassis_finish_line',(side*.050,-.34+i*.045,.069),(.001,.024,.002),'steel',.0003)
     # Consistent root node, so assets can be positioned by parent transform.
     root=bpy.data.objects.new('KS_WEAPON_ROOT',None)
     bpy.context.collection.objects.link(root)

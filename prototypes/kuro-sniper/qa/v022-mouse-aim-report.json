@@ -1,0 +1,74 @@
+{
+  "method": "UI controls and real mouse only; QA hook reads state, never changes aim or freezes motion",
+  "results": [
+    {
+      "device": "user-retina",
+      "level": 9,
+      "ordinary": {
+        "pitch": -0.0016832421378488792,
+        "focusY": -0.18324372756296126,
+        "guide": "",
+        "mag": 48,
+        "ammo": 18
+      },
+      "recovered": {
+        "guide": "",
+        "mag": 96,
+        "ammo": 18,
+        "shot": null
+      }
+    },
+    {
+      "device": "user-retina",
+      "level": 10,
+      "ordinary": {
+        "pitch": 0.00023659068259899264,
+        "focusY": 1.7365906870133925,
+        "guide": "",
+        "mag": 48,
+        "ammo": 8
+      },
+      "recovered": {
+        "guide": "",
+        "mag": 64,
+        "ammo": 8,
+        "shot": null
+      }
+    },
+    {
+      "device": "mobile-size",
+      "level": 9,
+      "ordinary": {
+        "pitch": -0.0017499982135449493,
+        "focusY": -0.25,
+        "guide": "",
+        "mag": 48,
+        "ammo": 18
+      },
+      "recovered": {
+        "guide": "",
+        "mag": 96,
+        "ammo": 18,
+        "shot": null
+      }
+    },
+    {
+      "device": "mobile-size",
+      "level": 10,
+      "ordinary": {
+        "pitch": -0.00037409202681973103,
+        "focusY": 1.125907955729518,
+        "guide": "",
+        "mag": 48,
+        "ammo": 8
+      },
+      "recovered": {
+        "guide": "",
+        "mag": 64,
+        "ammo": 8,
+        "shot": null
+      }
+    }
+  ],
+  "errors": []
+}

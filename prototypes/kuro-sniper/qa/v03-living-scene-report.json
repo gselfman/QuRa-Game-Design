@@ -1,0 +1,71 @@
+{
+  "scene": {
+    "hay": 18400,
+    "poster": true,
+    "bulbs": 9,
+    "bulbColor": [
+      0.9568836390344458,
+      0.6124055289820454,
+      0.23922090975861146
+    ]
+  },
+  "dot": {
+    "width": 6,
+    "glow": "rgba(255, 209, 169, 0.65) 0px 0px 0px 1px, rgba(255, 56, 43, 0.9) 0px 0px 6px 0px, rgba(255, 56, 43, 0.6) 0px 0px 16px 0px"
+  },
+  "fall": {
+    "y": 1.3849663750000012,
+    "left": -0.0242031904274084,
+    "right": 0.0242031904274084
+  },
+  "walkDistance": 0.6914750545520465,
+  "locations": [
+    {
+      "level": 2,
+      "props": 50,
+      "gunMeshes": 12
+    },
+    {
+      "level": 3,
+      "props": 17,
+      "gunMeshes": 12
+    },
+    {
+      "level": 4,
+      "props": 28,
+      "gunMeshes": 12
+    },
+    {
+      "level": 5,
+      "props": 52,
+      "gunMeshes": 11
+    },
+    {
+      "level": 6,
+      "props": 18,
+      "gunMeshes": 11
+    },
+    {
+      "level": 7,
+      "props": 24,
+      "gunMeshes": 12
+    },
+    {
+      "level": 8,
+      "props": 17,
+      "gunMeshes": 12
+    },
+    {
+      "level": 9,
+      "props": 45,
+      "gunMeshes": 11
+    },
+    {
+      "level": 10,
+      "props": 67,
+      "gunMeshes": 11
+    }
+  ],
+  "casing": "visible",
+  "errors": []
+}

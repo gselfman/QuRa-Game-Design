@@ -1,0 +1,17 @@
+{
+  "source": "Original prototype arrangements synthesized locally with Web Audio; no borrowed songs or weapon recordings",
+  "cues": [
+    {
+      "name": "glamour-jazz",
+      "peak": 0.13365425169467926,
+      "rms": 0.019139453731262256,
+      "seconds": 5.4
+    },
+    {
+      "name": "gravity-field",
+      "peak": 0.08449619263410568,
+      "rms": 0.011252505667501298,
+      "seconds": 5.4
+    }
+  ]
+}

@@ -55,3 +55,15 @@ test('moving finale rewards leading the balloon through full projectile flight',
  assert.equal(g.hits,5);assert.equal(g.state,'won');assert.equal(g.mistakes,0);
 });
 test('a hen remains protected after its balloon has burst',()=>{const g=game(10);const t=g.targets[0];g.resolve({kind:'target',targetId:t.id,center:true});const result=resolveImpact({x:t.x,y:.9},g.targets,.8);assert.equal(result.kind,'hen');g.resolve(result);assert.equal(g.mistakes,1);assert(t.solved);});
+
+test('hen falls with gravity, lands above floor and then walks and pecks',async()=>{
+ const {henMotion,HEN_RELEASE_S,HEN_FALL_S}=await import('../src/hen-motion.mjs');const t={id:'C01',baseX:0,fallX:.2,solvedAt:0};
+ assert.equal(henMotion(t,0).mode,'release');const early=henMotion(t,HEN_RELEASE_S+.1),late=henMotion(t,HEN_RELEASE_S+.3);assert(early.y>late.y);assert.equal(late.mode,'fall');
+ assert.equal(henMotion(t,HEN_RELEASE_S+HEN_FALL_S+.01).mode,'land');
+ const poses=Array.from({length:200},(_,i)=>henMotion(t,i*.1));assert(poses.every(p=>p.y>=.03-1e-8));assert(poses.some(p=>p.mode==='peck'));assert(poses.some(p=>p.mode==='look'));assert(Math.max(...poses.map(p=>p.x))-Math.min(...poses.map(p=>p.x))>2);
+});
+test('a walking hen is a protected collision region at its actual floor position',async()=>{
+ const {henMotion}=await import('../src/hen-motion.mjs');const g=game();g.round=2;g.setupRound();const t=g.targets[0];g.resolve({kind:'target',targetId:t.id,center:true});const pose=henMotion(t,g.time+2);
+ const hit=resolveImpact({x:pose.x,y:pose.y+.6},g.targets,g.level.targetDiameterM,g.time+2);assert.equal(hit.kind,'hen');g.resolve(hit);assert.equal(g.mistakes,1);assert(t.solved);
+});
+test('grounded hens keep body separation instead of walking through each other',async()=>{const {groundMotions}=await import('../src/hen-motion.mjs');const targets=[{id:'C01',baseX:0,fallX:0,solvedAt:0,solved:true,bodyY:1.45},{id:'C03',baseX:.5,fallX:.5,solvedAt:0,solved:true,bodyY:1.45}];const poses=groundMotions(targets,2);assert(poses.get('C03').x-poses.get('C01').x>=.9-1e-8);assert.equal(poses.get('C01').mode,'look');});

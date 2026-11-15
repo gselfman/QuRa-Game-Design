@@ -29,5 +29,17 @@
 .level-grid{grid-template-columns:repeat(5,1fr);gap:10px}.level-card{padding:14px 15px}.level-distance{font-size:29px}.level-place{font-size:16px}.level-weapon{font-size:10px}.level-record{font-size:8px}.level-card.env-balloon_finale{border-color:#d8b46ba1;background:linear-gradient(135deg,#a7804370,#263c2fcc)}
 @media(max-height:500px){.level-grid{gap:6px}.level-card{padding:8px 9px}.level-distance{font-size:18px}.level-place{font-size:11px}.level-weapon{font-size:7px}.level-record{font-size:6px}}
 
-#scope-guide{position:absolute;left:calc(50% + var(--lens)/2 + 12px);top:calc(50% + 93px);font-size:10px;letter-spacing:.4px;color:#f5d78c;background:#203027c9;border:1px solid #ecd29644;border-radius:8px;padding:7px 9px;white-space:nowrap;pointer-events:none}
+#scope-guide{position:absolute;left:calc(50% + var(--lens)/2 + 12px);top:calc(50% + 93px);font-size:10px;letter-spacing:.4px;color:#f5d78c;background:#203027c9;border:1px solid #ecd29644;border-radius:8px;padding:7px 9px;white-space:nowrap;pointer-events:auto;cursor:pointer}
 @media(max-height:500px){#scope-guide{top:calc(50% + 85px);font-size:8px;padding:6px}}
+
+#scope-guide{min-height:40px}
+/* Illuminated reflex dot: small precise centre, visible red halo in daylight. */
+#reticle.red-dot{width:32px;height:32px}
+#reticle.red-dot i{width:6px;height:6px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff0d0 0 13%,#ff3a24 28% 100%);box-shadow:0 0 0 1px #ffd1a9a6,0 0 6px #ff382be6,0 0 16px #ff382b99}
+.crosshair em{width:4px;height:4px;background:#ff4931;box-shadow:0 0 5px #ff5136d9,0 0 10px #ff5c3b66}
+.crosshair i,.crosshair b{filter:drop-shadow(0 0 .65px #fff7d89c)}
+
+.fire-button svg{transform:rotate(38deg);stroke-width:1.6}
+
+#toast{top:auto;bottom:145px}#hud.toast-active #hint{opacity:0}
+@media(max-height:500px){#toast{top:auto;bottom:112px}}

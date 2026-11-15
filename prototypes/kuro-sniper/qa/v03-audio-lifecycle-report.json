@@ -1,0 +1,25 @@
+{
+  "loaded": [
+    "gravity-field",
+    "glamour-jazz",
+    "hen-cluck"
+  ],
+  "stems": {
+    "music": true,
+    "gravity": true
+  },
+  "faded": {
+    "music": null,
+    "gravity": null,
+    "active": 0
+  },
+  "adsMusicGain": 1,
+  "muted": {
+    "active": 0,
+    "music": null,
+    "gravity": null,
+    "gain": 0
+  },
+  "pause": "all sources stopped",
+  "errors": []
+}

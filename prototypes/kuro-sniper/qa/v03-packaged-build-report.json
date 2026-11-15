@@ -1,0 +1,14 @@
+{
+  "version": {
+    "id": "qura-kuro-sniper-prototype",
+    "version": "0.3.0",
+    "mode": "local-only",
+    "rewards": false
+  },
+  "normalShot": {
+    "score": 100,
+    "ammo": 17
+  },
+  "qaHooks": "absent",
+  "errors": []
+}
