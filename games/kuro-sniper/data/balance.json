@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "ks-prototype-0.3.0",
+  "configVersion": "ks-prototype-0.4.0",
   "status": "PROTOTYPE_BALANCE",
   "gameId": "kuro-sniper",
   "rules": {
@@ -13,23 +13,37 @@
     "finale": {
       "levelId": 10,
       "rounds": 1,
-      "ammo": 8,
+      "ammo": 12,
       "requiredHits": 5,
-      "mistakesToFail": 3,
+      "mistakesToFail": 7,
       "distanceM": 1000,
-      "maxScore": 1150
+      "maxScore": 1951
     }
   },
   "scoring": {
-    "hit": 100,
-    "centerBonus": 50,
+    "version": "qura-sniper-s4",
+    "hit": 10,
+    "centerMultiplier": 1.25,
     "centerRadiusFraction": 0.25,
-    "streakStep": 10,
-    "streakMax": 40,
-    "henPenalty": 100,
-    "scoreFloor": 0,
-    "flawlessLevelBonus": 300,
-    "maxScorePerLevel": 3050
+    "seriesEveryHits": 3,
+    "seriesStep": 0.1,
+    "seriesMax": 1.5,
+    "mistakeCoefficientDrop": 0.1,
+    "minimumAccuracyCoefficient": 0.3,
+    "levelWeights": [
+      1,
+      1.3,
+      1.7,
+      2.1,
+      2.7,
+      3.3,
+      4,
+      5,
+      6,
+      30
+    ],
+    "henPenaltyBase": 10,
+    "scoreFloor": 0
   },
   "aim": {
     "baseVerticalFovDeg": 50,
@@ -169,7 +183,9 @@
       "maxMagnification": 1,
       "optic": "reflex",
       "bipod": false,
-      "cooldownS": 0.75
+      "cooldownS": 0.75,
+      "audioReference": "ИЖ-38",
+      "audioKey": "airgun_izh38"
     },
     {
       "id": "classic_bolt",
@@ -179,7 +195,9 @@
       "maxMagnification": 2,
       "optic": "telescopic",
       "bipod": false,
-      "cooldownS": 1.15
+      "cooldownS": 1.15,
+      "audioReference": "Мосин 1891/30",
+      "audioKey": "mosin_9130"
     },
     {
       "id": "sport_4x",
@@ -189,7 +207,9 @@
       "maxMagnification": 4,
       "optic": "telescopic",
       "bipod": false,
-      "cooldownS": 0.85
+      "cooldownS": 0.85,
+      "audioReference": "Anschütz 1903",
+      "audioKey": "anschutz_1903"
     },
     {
       "id": "sport_variable",
@@ -199,7 +219,9 @@
       "maxMagnification": 8,
       "optic": "telescopic",
       "bipod": false,
-      "cooldownS": 0.8
+      "cooldownS": 0.8,
+      "audioReference": "Anschütz 1903",
+      "audioKey": "anschutz_1903"
     },
     {
       "id": "sniper_first",
@@ -209,7 +231,9 @@
       "maxMagnification": 16,
       "optic": "telescopic",
       "bipod": false,
-      "cooldownS": 1.1
+      "cooldownS": 1.1,
+      "audioReference": "Remington 700",
+      "audioKey": "remington_700"
     },
     {
       "id": "sniper_bipod",
@@ -219,7 +243,9 @@
       "maxMagnification": 32,
       "optic": "telescopic",
       "bipod": true,
-      "cooldownS": 1
+      "cooldownS": 1,
+      "audioReference": "Remington 700",
+      "audioKey": "remington_700"
     },
     {
       "id": "precision",
@@ -229,7 +255,9 @@
       "maxMagnification": 48,
       "optic": "telescopic",
       "bipod": true,
-      "cooldownS": 0.95
+      "cooldownS": 0.95,
+      "audioReference": "Accuracy International AWM",
+      "audioKey": "ai_awm"
     },
     {
       "id": "precision_shade",
@@ -239,7 +267,9 @@
       "maxMagnification": 72,
       "optic": "telescopic",
       "bipod": true,
-      "cooldownS": 0.9
+      "cooldownS": 0.9,
+      "audioReference": "Accuracy International AWM",
+      "audioKey": "ai_awm"
     },
     {
       "id": "final_rifle",
@@ -249,7 +279,9 @@
       "maxMagnification": 192,
       "optic": "telescopic",
       "bipod": true,
-      "cooldownS": 1.05
+      "cooldownS": 1.05,
+      "audioReference": "Barrett MRAD",
+      "audioKey": "barrett_mrad"
     }
   ],
   "levels": [
@@ -269,14 +301,16 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 60,
+      "maxScore": 228
     },
     {
       "id": 2,
       "distanceM": 25,
       "targetDiameterM": 0.5,
       "environmentId": "gallery",
-      "environmentTitle": "Тир",
+      "environmentTitle": "Светлый сарай-тир",
       "loadoutId": "classic_bolt",
       "abilityIntensity": 0.4,
       "windStrength": 0,
@@ -287,7 +321,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 70,
+      "maxScore": 294
     },
     {
       "id": 3,
@@ -305,7 +341,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 80,
+      "maxScore": 384
     },
     {
       "id": 4,
@@ -323,7 +361,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 90,
+      "maxScore": 474
     },
     {
       "id": 5,
@@ -341,7 +381,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 100,
+      "maxScore": 609
     },
     {
       "id": 6,
@@ -359,7 +401,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 115,
+      "maxScore": 744
     },
     {
       "id": 7,
@@ -377,7 +421,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 130,
+      "maxScore": 900
     },
     {
       "id": 8,
@@ -395,7 +441,9 @@
         3,
         4,
         5
-      ]
+      ],
+      "timeLimitS": 150,
+      "maxScore": 1128
     },
     {
       "id": 9,
@@ -414,7 +462,9 @@
         4,
         5
       ],
-      "entryMagnification": 144
+      "entryMagnification": 144,
+      "timeLimitS": 180,
+      "maxScore": 1353
     },
     {
       "id": 10,
@@ -430,7 +480,9 @@
       "roundIds": [
         1
       ],
-      "entryMagnification": 64
+      "entryMagnification": 64,
+      "timeLimitS": 180,
+      "maxScore": 1951
     }
   ]
 }

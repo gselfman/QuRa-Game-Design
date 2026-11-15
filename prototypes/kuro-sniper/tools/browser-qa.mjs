@@ -1,5 +1,6 @@
 import {chromium} from '@playwright/test';
 import fs from 'node:fs';
+import {maxScore} from '../src/rewards.mjs';
 import assert from 'node:assert/strict';
 fs.mkdirSync('qa',{recursive:true});
 const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--ignore-gpu-blocklist']});
@@ -29,7 +30,7 @@ for(let level=1;level<=9;level++){
   if(r<5)await page.evaluate(()=>window.__KS_QA__.advance(1.7));
  }
  const result=await page.evaluate(()=>window.__KS_QA__.state);
- assert.equal(result.state,'won',`level ${level}`);assert.equal(result.ammo,3);assert.equal(result.score,3050);campaign.push(result);console.log('PASS campaign level',level);
+ assert.equal(result.state,'won',`level ${level}`);assert.equal(result.ammo,3);assert.equal(result.score,maxScore(15,level));campaign.push(result);console.log('PASS campaign level',level);
 }
 await page.evaluate(()=>{window.__KS_QA__.start(1);window.__KS_QA__.freeze(false);});
 await page.click('#pause');const time=await page.evaluate(()=>window.__KS_QA__.core.time);await page.waitForTimeout(250);assert.equal(await page.evaluate(()=>window.__KS_QA__.core.time),time);await page.click('#resume');await page.waitForTimeout(1250);assert.equal(await page.evaluate(()=>window.__KS_QA__.core.paused),false);

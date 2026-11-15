@@ -1,0 +1,1100 @@
+{
+  "stable": {
+    "horses": 4,
+    "windows": 12,
+    "pitch": -0.02479491754474951,
+    "yaw": 0,
+    "guide": "",
+    "hit": "C01-bullseye"
+  },
+  "level5": {
+    "score": 609,
+    "max": 609,
+    "xp": 318,
+    "progress": {
+      "version": 2,
+      "xp": 318,
+      "attemptXp": {
+        "846f403b-c19e-42a1-a491-3e306c1ee4ff": 318
+      },
+      "chests": {
+        "5": {
+          "id": "qura:sniper:milestone:5:v1",
+          "tier": "gold",
+          "title": "Золотой сундук",
+          "xp": 60,
+          "buff": "Боевой купол",
+          "count": 1,
+          "opened": false
+        }
+      },
+      "buffs": {}
+    }
+  },
+  "persistence": {
+    "xp": 378,
+    "buffCount": 1,
+    "reopen": "no duplicate"
+  },
+  "patterns": [
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 0.45083829741326004,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": 1.2958408569628563,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": 0.6180251579767058,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": 1.5163270588475106,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": 0.1818439464225611,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 0.8330405509046933,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": 0.47431067291020396,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": 0.46636928121608434,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": 1.6829960644231035,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.6000000000000005
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 1.0884199320522856,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.6000000000000014
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": 0.2732744471915335,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": 1.5163270588475117,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.200000000000002
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 1.1780972450961724,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.200000000000003
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": 0.05589797928885628,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": 1.0493308827361938,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.8000000000000034
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 1.0884199320522887,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.8000000000000043
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 4.300000000000005
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": 0.3745018561002394,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.400000000000005
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 0.8330405509046985,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.4000000000000052
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.9000000000000066
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.0000000000000058
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.000000000000006
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 0.45083829741326753,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.000000000000007
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.500000000000008
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.600000000000007
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.6000000000000076
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": 1.060788079605503e-14,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.6000000000000085
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.1000000000000094
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.2000000000000086
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.200000000000009
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.40000000000001
+      },
+      {
+        "code": "fool",
+        "mode": "turn",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 0.14,
+        "stop": 0.20000000000000995
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.700000000000011
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.8000000000000105
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.8000000000000105
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 3.0000000000000115
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -0.4743106729101763,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.3000000000000123
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.400000000000012
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.4000000000000119
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.5999999999999917
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -1.2958408569628714,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.8999999999999924
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.999999999999992
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -7.304974700020788e-15,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 2.1999999999999718
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -1.7701515298730772,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.4999999999999725
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.5999999999999721
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.35816265655057355,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.7999999999999519
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -1.7701515298730297,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.0999999999999526
+      },
+      {
+        "code": "fighter",
+        "mode": "turn",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -0.14,
+        "stop": 0.19999999999995222
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.6731256108032924,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 1.399999999999932
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -1.2958408569627413,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "professor",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.6999999999999318
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -0.3745018561003551,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.90689968211714,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.9999999999999121
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": -0.4743106729099988,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "turn",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 0.7071067811860563,
+        "stop": 0.2999999999999119
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -1.0493308827363186,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -1.031288267353822,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "peck",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0.5999999999998922
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.5999999999998913
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.05589797928891458,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -1.5163270588475986,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -1.0312882673537909,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "turn",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -0.14,
+        "stop": 0.19999999999987228
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.1999999999998714
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.273274447191599,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -1.6829960644231035,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.9068996821170503,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.22983537091229328,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 1.7999999999998515
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.4663692812161487,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -1.5163270588473896,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.6731256108031548,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.654515760977993,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 1.3999999999998316
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.6180251579767586,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -1.0493308827359409,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "run",
+        "speed": -0.3581626565504056,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.9795520596349309,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0.9999999999998117
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.7147667872923938,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "run",
+        "speed": -0.37450185609988745,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 3.799999999999814
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -1.1554604368739598,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "look",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0.5999999999998344
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.7479982508547126,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.9999999999998366
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 3.399999999999837
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -1.155460436873891,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "turn",
+        "speed": 0,
+        "facing": 1,
+        "visibleScale": 0.14,
+        "stop": 0.19999999999985718
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.7147667872923401,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.5999999999998593
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.9999999999998597
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.9795520596347351,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": 0.4743106729104809,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.6180251579766687,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.199999999999882
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.5999999999998824
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.6545157609777401,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": 1.295840856963022,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.4663692812160428,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 1.7999999999999048
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 2.199999999999905
+      }
+    ],
+    [
+      {
+        "code": "ryaba",
+        "mode": "run",
+        "speed": -0.22983537091204312,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fool",
+        "mode": "run",
+        "speed": 1.770151529873106,
+        "facing": 1,
+        "visibleScale": 1,
+        "stop": 0
+      },
+      {
+        "code": "professor",
+        "mode": "run",
+        "speed": -0.27327444719149485,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 0
+      },
+      {
+        "code": "fighter",
+        "mode": "fighter",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 1.3999999999999275
+      },
+      {
+        "code": "glamour",
+        "mode": "dance",
+        "speed": 0,
+        "facing": -1,
+        "visibleScale": -1,
+        "stop": 1.7999999999999279
+      }
+    ]
+  ],
+  "finale": {
+    "state": "won",
+    "hits": 5,
+    "ammo": 7,
+    "errors": 0,
+    "time": 17.024999999999675
+  },
+  "timeout": "visible result",
+  "errors": []
+}

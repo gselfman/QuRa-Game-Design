@@ -33,10 +33,18 @@ fail = b['rules']['mistakesToFail']
 assert (ammo, fail) == (18, 3)
 assert ammo - hits == 3 and ammo - hits - (fail - 1) == 1
 score = b['scoring']
-maximum = hits * (score['hit'] + score['centerBonus']) + sum(
-    min(i * score['streakStep'], score['streakMax']) for i in range(hits)
-) + score['flawlessLevelBonus']
-assert maximum == score['maxScorePerLevel'] == 3050
+assert score['version'] == 'qura-sniper-s4'
+weights = score['levelWeights']
+assert len(weights) == 10 and weights == sorted(weights)
+for level in b['levels']:
+    count = 5 if level.get('mode') == 'balloons' else 15
+    maximum = sum(math.floor(10 * weights[level['id']-1] * (1 + min(5, i//3)*.1) * 1.25 + .5) for i in range(count))
+    assert maximum == level['maxScore'], (level['id'], maximum)
+    assert 60 <= level['timeLimitS'] <= 180
+assert b['rules']['finale']['ammo'] == 12 and b['rules']['finale']['mistakesToFail'] == 7
+assert 12 - 5 - 6 == 1
+assert b['rules']['finale']['maxScore'] == b['levels'][-1]['maxScore'] == 1951
+assert sum(l['maxScore'] for l in b['levels']) == 8065
 loadouts = {w['id']: w for w in b['loadouts']}
 assert len(loadouts) == 9
 assert len({w['family'] for w in loadouts.values()}) == 5

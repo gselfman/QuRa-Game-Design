@@ -1,4 +1,7 @@
 import {henMotion,groundMotions} from './hen-motion.mjs';
+import {balloonMotion} from './balloon-motion.mjs';
+import {shotReward,maxScore} from './rewards.mjs';
+export {maxScore} from './rewards.mjs';
 export const CAST = [
   { id:'C01', code:'ryaba', name:'Ряба', role:'Спокойная цель', color:'#d9a75d' },
   { id:'C03', code:'fool', name:'Дурочка', role:'Раскачивает мишень', color:'#a3d4b4' },
@@ -10,7 +13,7 @@ export const CAST = [
 export const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
 export function scopeFov(baseFov,height,diameter,magnification){return 2*Math.atan(diameter/height*Math.tan(baseFov/2)/magnification);}
-export function maxScore(hits=15){return hits*150+Array.from({length:hits},(_,i)=>Math.min(i*10,40)).reduce((a,b)=>a+b,0)+300;}
+
 export function resolveImpact(point, targets, diameter,time=null){
   const ground=time===null?null:groundMotions(targets,time);
   for(const target of targets){
@@ -24,21 +27,20 @@ export function resolveImpact(point, targets, diameter,time=null){
   return {kind:'miss'};
 }
 
-function gaitIntegral(u){const v=u+Math.PI/2,n=Math.floor(v/Math.PI),r=v-n*Math.PI;return 2*n+1-Math.cos(r);}
 
 export class GameCore {
   constructor(balance,onEvent=(_event)=>{}){
     this.balance=balance;this.onEvent=onEvent;this.level=balance.levels[0];this.loadout=balance.loadouts[0];
     this.time=0;this.state='menu';this.paused=false;this.training=false;this.quiet=false;this.targets=[];
-    this.score=0;this.ammo=18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
-    this.breath=100;this.holding=false;this.holdTime=0;this.lockout=0;this.stress=0;this.pulse=72;this.water=0;this.reduceSway=false;
+    this.score=0;this.xp=0;this.elapsedS=0;this.maxStreak=0;this.failReason='';this.ammo=18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
+    this.breath=100;this.holding=false;this.holdTime=0;this.lockout=0;this.stress=0;this.pulse=72;this.water=0;this.reduceSway=false;this.assisted=false;
     this.wiping=0;this.shot=null;this.cooldown=0;this.recoveryDelay=0;this.transition=0;this.phase='rest';this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;this.abilityIndex=0;this.lastResult=null;
   }
   emit(type,data={}){this.onEvent({type,...data});}
   start(levelId=1,training=false){
     this.level=this.balance.levels.find(x=>x.id===levelId)||this.balance.levels[0];
     this.loadout=this.balance.loadouts.find(x=>x.id===this.level.loadoutId);
-    this.training=training;this.score=0;this.ammo=this.level.mode==='balloons'?8:18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
+    this.attemptId=crypto.randomUUID();this.assisted=this.reduceSway;this.training=training;this.score=0;this.xp=0;this.elapsedS=0;this.maxStreak=0;this.failReason='';this.ammo=this.level.mode==='balloons'?this.balance.rules.finale.ammo:18;this.mistakes=0;this.round=1;this.shots=0;this.hits=0;this.centers=0;this.streak=0;
     this.breath=100;this.stress=0;this.pulse=72;this.water=0;this.wiping=0;this.holding=false;this.lockout=0;this.holdTime=0;
     this.time=0;this.shot=null;this.cooldown=0;this.recoveryDelay=0;this.transition=0;this.paused=false;this.lastResult=null;this.state='playing';this.abilityClock=0;this.sensory='none';this.sensoryTimer=0;this.abilityIndex=0;this.setupRound();
     this.emit('start',{levelId:this.level.id,training});
@@ -48,6 +50,11 @@ export class GameCore {
     this.targets=CAST.slice(0,count).map((c,i)=>({id:c.id,code:c.code,name:c.name,baseX:(i-(count-1)/2)*spacing,x:(i-(count-1)/2)*spacing,y:finale?2.8:.88,bodyY:finale?.03:1.45,radiusScaleY:finale?1.18:1,solved:false,solvedAt:-1,penaltyUntil:0,ability:0}));
     this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;this.emit('round',{round:this.round,targets:this.targets});
   }
+  setAssistance(value){this.reduceSway=value;if(value&&['playing','transition'].includes(this.state))this.assisted=true;}
+  get mistakeLimit(){return this.level.mode==='balloons'?this.balance.rules.finale.mistakesToFail:this.balance.rules.mistakesToFail;}
+  get timeLimitS(){return this.level.timeLimitS??60;}
+  get remainingS(){return this.training?Infinity:Math.max(0,this.timeLimitS-this.elapsedS);}
+  get maxScore(){return maxScore(this.level.mode==='balloons'?5:15,this.level.id);}
   get wind(){return this.quiet?0:this.level.windStrength*Math.sin(this.time*.32+this.level.id*.73);}
   get professorActive(){return !this.quiet&&this.targets.some(t=>t.code==='professor'&&!t.solved&&!t.penaltyUntil&&t.ability>.1);}
   target(id){return this.targets.find(t=>t.id===id);}
@@ -80,6 +87,7 @@ export class GameCore {
   update(dt,inOptics=false){
     if(!this.paused&&['won','lost'].includes(this.state)){this.time+=dt;for(const t of this.targets)t.penaltyUntil=Math.max(0,t.penaltyUntil-dt);return;}
     if(this.paused||!['playing','transition'].includes(this.state))return;
+    if(!this.training)dt=Math.min(dt,this.remainingS);this.elapsedS+=dt;
     this.time+=dt;this.lockout=Math.max(0,this.lockout-dt);this.cooldown=Math.max(0,this.cooldown-dt);this.recoveryDelay=Math.max(0,this.recoveryDelay-dt);
     if(this.holding){
       this.holdTime+=dt;this.breath=Math.max(0,this.breath-25*dt);
@@ -93,8 +101,7 @@ export class GameCore {
       if(t.penaltyUntil){t.penaltyUntil=Math.max(0,t.penaltyUntil-dt);if(!t.penaltyUntil)this.emit('returned',{targetId:t.id});}
       t.ability=0;t.x=t.solved?(t.fallX??t.baseX):t.baseX;t.y=this.level.mode==='balloons'?2.8:t.solved?(t.fallY??.88):.88;
       if(this.level.mode==='balloons'){
-        const phase=CAST.findIndex(c=>c.id===t.id)*1.7;
-        t.velocityX=0;if(!this.quiet){t.x=t.baseX+Math.sin(this.time*.92+phase)*4.5;t.y+=Math.sin(this.time*2.1+phase)*.22;t.velocityX=Math.cos(this.time*.92+phase)*4.14;}t.bodyX=t.x-.13*t.velocityX;t.stepPhase=this.quiet?0:4.5*(gaitIntegral(this.time*.92+phase)-gaitIntegral(phase))/.65*Math.PI*2;
+        const motion=balloonMotion(t.code,this.time,t.baseX);Object.assign(t,this.quiet?{...motion,x:t.baseX,bodyX:t.baseX,y:2.8,velocityX:0,stepPhase:0,mode:'look',facing:1}:motion);
         continue;
       }
       if(t.solved||t.penaltyUntil||this.quiet)continue;
@@ -114,6 +121,7 @@ export class GameCore {
       this.transition-=dt;
       if(this.transition<=0){this.round++;this.state='playing';this.setupRound();}
     }
+    if(!this.training&&this.remainingS<=1e-8&&['playing','transition'].includes(this.state)){this.elapsedS=this.timeLimitS;this.state='lost';this.failReason='timeout';this.shot=null;this.hold(false);this.emit('lost',{reason:'timeout'});}
   }
   updateSensory(dt){
     this.abilityClock+=dt;
@@ -138,18 +146,18 @@ export class GameCore {
     if(result.kind==='target'&&(!t||t.solved))return;
     if(result.kind==='target'&&t&&!t.solved){
       t.fallX=t.x;t.fallY=t.y;t.solved=true;t.solvedAt=this.time;t.ability=0;this.hits++;if(result.center)this.centers++;
-      const earned=100+(result.center?50:0)+Math.min(this.streak*10,40);this.score+=earned;this.streak++;this.stress=Math.max(0,this.stress-.08);
+      const reward=shotReward(this.level.id,this.streak,this.mistakes,result.center),earned=reward.earned;this.score+=earned;this.xp+=reward.xp;this.streak++;this.maxStreak=Math.max(this.maxStreak,this.streak);this.stress=Math.max(0,this.stress-.08);
       if((t.code==='fighter'&&this.sensory.startsWith('water'))||(t.code==='glamour'&&this.sensory.startsWith('glamour'))){this.sensory='none';this.sensoryTimer=0;this.abilityClock=0;}
-      this.lastResult={...result,earned};this.emit('hit',{...result,earned});
+      this.lastResult={...result,...reward};this.emit('hit',{...result,...reward});
       if(this.targets.every(x=>x.solved)){
-        if(this.round===5||this.level.mode==='balloons'){if(this.mistakes===0)this.score+=300;this.state='won';this.hold(false);this.emit('won',{score:this.score});}
+        if(this.round===5||this.level.mode==='balloons'){this.state='won';this.hold(false);this.emit('won',{score:this.score});}
         else {this.state='transition';this.transition=1.6;this.emit('round-clear',{round:this.round});}
       }
     }else {
       this.mistakes++;this.streak=0;this.stress=clamp(this.stress+(result.kind==='hen'?.18:.12),0,1);
-      if(result.kind==='hen'&&t){this.score=Math.max(0,this.score-100);t.penaltyUntil=1.8;}
+      if(result.kind==='hen'&&t){this.score=Math.max(0,this.score-Math.round(10*shotReward(this.level.id,0,0).levelFactor));t.penaltyUntil=1.8;}
       this.lastResult=result;this.emit(result.kind==='hen'?'hen':'miss',result);
-      if(!this.training&&this.mistakes>=3){this.state='lost';this.hold(false);this.emit('lost');}
+      if(!this.training&&this.mistakes>=this.mistakeLimit){this.state='lost';this.failReason='mistakes';this.hold(false);this.emit('lost');}
       if(this.training&&this.ammo<=0)this.ammo=18;
     }
   }

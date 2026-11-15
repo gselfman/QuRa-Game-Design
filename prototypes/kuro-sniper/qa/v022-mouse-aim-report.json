@@ -26,12 +26,12 @@
         "focusY": 1.7365906870133925,
         "guide": "",
         "mag": 48,
-        "ammo": 8
+        "ammo": 12
       },
       "recovered": {
         "guide": "",
         "mag": 64,
-        "ammo": 8,
+        "ammo": 12,
         "shot": null
       }
     },
@@ -60,12 +60,12 @@
         "focusY": 1.125907955729518,
         "guide": "",
         "mag": 48,
-        "ammo": 8
+        "ammo": 12
       },
       "recovered": {
         "guide": "",
         "mag": 64,
-        "ammo": 8,
+        "ammo": 12,
         "shot": null
       }
     }

@@ -8,7 +8,7 @@ import '@babylonjs/loaders/glTF';
 import {scopeFov,clamp} from './game.mjs';
 import {CharacterRig} from './character';
 import {henMotion,groundMotions} from './hen-motion.mjs';
-import {dressLocation,makeDetailedWindmill} from './location-details';
+import {dressLocation,makeDetailedWindmill,buildOpenStable} from './location-details';
 import {WEAPON_SOUNDS} from './audio';
 
 type Actor={root:TransformNode,bird:Mesh,rig:CharacterRig,station:TransformNode,hinge:TransformNode|null,target:Mesh,targetRoot:TransformNode,halo:Mesh,card:Texture,perch:Texture,id:string,code:string,groundX:number,perchY:number,cardY:number,landed:boolean,lastCluck:number};
@@ -78,7 +78,7 @@ export class World {
     Effect.ShadersStore.ksBackdropFragmentShader='precision highp float;varying vec2 vUV;uniform sampler2D backdropView;void main(){gl_FragColor=texture2D(backdropView,vUV);}';
     this.sky=MeshBuilder.CreatePlane('woodland-distant-backdrop',{width:7400,height:3700},this.scene);this.sky.position.set(0,100,3100);this.sky.isPickable=false;
     const backdrop=new ShaderMaterial('woodland-distant-backdrop-material',this.scene,{vertex:'ksBackdrop',fragment:'ksBackdrop'},{attributes:['position','uv'],uniforms:['worldViewProjection'],samplers:['backdropView']});backdrop.setTexture('backdropView',woodland);this.sky.material=backdrop;this.sky.setEnabled(false);
-    await Promise.all(['/assets/materials/meadow-albedo-v1.png','/assets/foliage/meadow-flowers-v1.png','/assets/foliage/oak-v1.png','/assets/posters/poultry-yard-promo-figma.png','/assets/materials/dry-hay-v1.png'].map(async url=>{this.textures[url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});}));
+    await Promise.all(['/assets/materials/meadow-albedo-v1.png','/assets/foliage/meadow-flowers-v1.png','/assets/foliage/oak-v1.png','/assets/posters/poultry-yard-promo-figma.png','/assets/materials/dry-hay-v1.png','/assets/stable/horse-chestnut-v1.png'].map(async url=>{this.textures[url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});}));
 
     this.skyLight=new HDRCubeTexture('/assets/materials/sky-light.hdr',this.scene,128,false,true,false,true);
     this.scene.environmentTexture=this.skyLight;this.scene.environmentIntensity=.55;this.weaponScene.environmentTexture=this.skyLight;this.weaponScene.environmentIntensity=.75;
@@ -116,10 +116,10 @@ export class World {
   }
   buildEnvironment(level:any){
     const d=level.distanceM,indoor=level.id<=2;
-    this.sky?.setEnabled(!indoor);this.scene.environmentIntensity=indoor?.4:.65;
+    this.sky?.setEnabled(level.id!==1);this.scene.environmentIntensity=indoor?.4:.65;
     this.scene.clearColor=indoor?new Color4(.29,.24,.18,1):new Color4(.65,.79,.86,1);this.scene.fogDensity=indoor?0:level.id>=9?.00008:.00016;
-    this.sun.intensity=indoor?1.3:1.25;this.sun.diffuse=C(level.id===9?'#ffce98':'#ffe1b1');
-    if(indoor){
+    this.sun.intensity=level.id===2?1.65:indoor?1.3:1.25;this.sun.diffuse=C(level.id===9?'#ffce98':'#ffe1b1');
+    if(level.id===2){buildOpenStable(this,level);}else if(indoor){
       const w=13;if(level.id===1){this.scatterHay(d);this.advertPoster(d);}for(let x=-w/2;x<w/2;x+=.65){this.box('back-plank',[x,2.1,d+.75],[.64,4.2,.14],x%1>.2?this.materials.wood:this.materials.darkWood);}
       const floor=MeshBuilder.CreateGround('weathered-floor',{width:w,height:d+2},this.scene);floor.parent=this.environment;floor.position.set(0,0,d/2);floor.material=this.materials.floor;floor.receiveShadows=true;
       for(const t of [this.materials.floor.albedoTexture,this.materials.floor.bumpTexture,this.materials.floor.metallicTexture]){t.uScale=w/3;t.vScale=(d+2)/3;}
@@ -257,7 +257,7 @@ export class World {
     if(!this.level||!this.core?.targets.length)return;
     const d=this.level.distanceM,extra=this.level.mode==='balloons'?7:2.5;
     const xs=this.core.targets.map((t:any)=>t.baseX),lo=Math.min(...xs)-extra,hi=Math.max(...xs)+extra;
-    this.yaw=clamp(this.yaw,Math.atan2(Math.min(-6,lo),d),Math.atan2(Math.max(6,hi),d));
+    const indoor=this.level.id<=2;this.yaw=clamp(this.yaw,Math.atan2(indoor?Math.min(-1.2,Math.min(...xs)-1.2):Math.min(-6,lo),d),Math.atan2(indoor?Math.max(1.2,Math.max(...xs)+1.2):Math.max(6,hi),d));
     this.pitch=clamp(this.pitch,Math.atan2(-.25-this.camera.position.y,d),Math.atan2(4.4-this.camera.position.y,d));
   }
   overview(){
@@ -272,7 +272,7 @@ export class World {
   }
   targetWorldPoint(id:string){const t=this.core.target(id);return t?new Vector3(t.x,t.y,this.level.distanceM):null;}
   scopeGuide(){
-    if(!this.ads||this.level.id<9)return '';
+    if(!this.ads||this.level.id<2)return '';
     const points=this.core.targets.filter((t:any)=>!t.solved&&!t.penaltyUntil).map((t:any)=>{
       const p=Vector3.Project(new Vector3(t.x,t.y,this.level.distanceM),Matrix.Identity(),this.scopeCamera.getTransformationMatrix(),new Viewport(0,0,1,1));return {x:p.x-.5,y:p.y-.5};
     });
@@ -315,12 +315,12 @@ export class World {
     const grounded=groundMotions(this.core.targets,this.core.time);
     for(const a of this.actors){
       const t=this.core.target(a.id);if(!t)continue;const time=this.core.time,m=a.bird.material as StandardMaterial;
-      a.rig.root.setEnabled(!this.low);a.bird.setEnabled(this.low);
+      a.rig.root.setEnabled(!this.low);a.bird.setEnabled(this.low);if(!t.solved&&this.level.mode!=='balloons'){a.rig.root.scaling.x=1;a.bird.scaling.x=1;}
       a.root.position.set(t.x,1.47,this.level.distanceM-.12);a.root.rotation.set(0,0,0);a.root.scaling.setAll(1);
       a.station.position.x=t.x;a.targetRoot.position.x=t.x;a.targetRoot.position.y=t.y;
       if(this.level.mode==='balloons'){
         const speed=this.core.state==='playing'?(t.velocityX??0):0;a.root.position.x=t.bodyX??t.x;a.root.position.y=.03+Math.abs(Math.sin(t.stepPhase??time*11))*.025;a.root.rotation.z=Math.sign(speed)*.035;
-        a.rig.animate(time,t.penaltyUntil?'fly':this.core.state!=='playing'?'look':'run',0,speed,t.stepPhase);
+        a.rig.animate(time,t.penaltyUntil?'fly':this.core.state!=='playing'?'look':t.mode??'run',0,speed,t.stepPhase);a.rig.root.scaling.x=(t.facing??1)*(t.turnScale??1);a.bird.scaling.x=t.facing??1;
         if(t.penaltyUntil)a.root.position.y+=Math.sin((1-t.penaltyUntil/1.8)*Math.PI)*.65;
         a.targetRoot.setEnabled(!t.solved);a.halo.setEnabled(false);
         for(const child of a.targetRoot.getChildMeshes())if(child.metadata?.string){const vertical=t.y-this.level.targetDiameterM*.59-a.root.position.y-1.16,dx=a.root.position.x-t.x;child.scaling.y=Math.hypot(vertical,dx);child.position.set(dx/2,-this.level.targetDiameterM*.59-vertical/2,0);child.rotation.z=Math.atan2(dx,vertical);}
@@ -330,7 +330,7 @@ export class World {
       if(a.hinge){a.hinge.rotationQuaternion=null;a.hinge.rotation.x=t.solved?-Math.min(1,(time-t.solvedAt)*5)*1.4:0;}
       if(t.solved){
         const pose=grounded.get(t.id)??henMotion(t,time),age=time-t.solvedAt;a.root.position.set(pose.x,pose.y,this.level.distanceM+pose.z);a.root.rotation.z=pose.roll;a.root.scaling.set(1+(1-pose.squash)*.32,pose.squash,1);
-        a.rig.animate(time,t.penaltyUntil?'fly':pose.mode,age,pose.speed,pose.stepPhase);
+        a.rig.animate(time,t.penaltyUntil?'fly':pose.mode,age,pose.speed,pose.stepPhase);if(Math.abs(pose.speed)>.03)a.rig.root.scaling.x=Math.sign(pose.speed);a.bird.scaling.x=a.rig.root.scaling.x;
         if(t.penaltyUntil)a.root.position.y+=Math.sin((1-t.penaltyUntil/1.8)*Math.PI)*.65;
         if(pose.grounded&&!a.landed){a.landed=true;this.featherBurst(a.id,3);this.onReaction?.('land',a.code);}
         if(pose.mode==='look'&&time-a.lastCluck>4.5){a.lastCluck=time;this.onReaction?.('cluck',a.code);}
@@ -348,6 +348,7 @@ export class World {
     if(this.core.shot){this.bullet.setEnabled(true);this.bullet.position.copyFromFloats(this.core.shot.point.x,this.core.shot.point.y,this.core.shot.point.z);}else this.bullet.setEnabled(false);
     if(running){for(const p of this.particles){p.age+=dt;p.velocity.y=Math.max(-.8,p.velocity.y-dt*2.4);p.velocity.x+=(this.core.wind*.08-p.velocity.x*.35)*dt;p.mesh.position.addInPlace(p.velocity.scale(dt));p.mesh.position.y=Math.max(.025,p.mesh.position.y);p.mesh.rotation.z+=dt*p.spin;p.mesh.visibility=Math.max(0,1-p.age/p.life);if(p.age>p.life)p.mesh.dispose();}this.particles=this.particles.filter(p=>p.age<p.life);for(const n of this.environment.getChildTransformNodes())if(n.metadata?.windmill)n.rotation.z+=dt*.35;else if(n.metadata?.flutter)n.rotation.y=Math.sin(this.core.time*2+n.metadata.phase)*(.12+Math.abs(this.core.wind)*.3);}
     if(running){for(const c of this.casings){c.age+=dt;c.velocity.y-=dt*2.4;c.mesh.position.addInPlace(c.velocity.scale(dt));c.mesh.rotation.x+=dt*10;c.mesh.rotation.z+=dt*7;if(c.age>1.2)c.mesh.dispose();}this.casings=this.casings.filter(c=>c.age<=1.2);}
+    for(const horse of this.environment.getChildMeshes())if(horse.metadata?.horse){horse.scaling.y=1+Math.sin(this.core.time*1.1+horse.metadata.phase)*.002;horse.rotation.z=Math.sin(this.core.time*.25+horse.metadata.phase)*.003;}
     for(const flag of this.detailRoot?.getChildMeshes()??[])if(flag.metadata?.flutter)flag.rotation.y=Math.sin(this.core.time*2+flag.metadata.phase)*(.12+Math.abs(this.core.wind)*.3);
     for(const bulb of this.bulbs){const f=.80+.14*Math.sin(this.core.time*1.5+bulb.metadata.phase)+.04*Math.sin(this.core.time*4.7+bulb.metadata.phase);(bulb.material as StandardMaterial).emissiveColor.copyFromFloats(1*f,.64*f,.25*f);}
     for(const light of this.scene.lights)if(light.metadata?.twinkle)light.intensity=7*(.88+.12*Math.sin(this.core.time*1.5+light.metadata.phase));

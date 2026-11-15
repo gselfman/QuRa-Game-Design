@@ -1,0 +1,25 @@
+{
+  "info": {
+    "id": "qura-kuro-sniper-prototype",
+    "version": "0.4.0",
+    "mode": "local-only",
+    "rewards": false,
+    "localRewards": true,
+    "accountRewards": false
+  },
+  "score": "13",
+  "ammo": "17",
+  "popup": "+12 XP+13 очков",
+  "progress": {
+    "version": 2,
+    "xp": 12,
+    "attemptXp": {
+      "d26b953c-b199-4cc1-94f0-794c02ecf657": 12
+    },
+    "chests": {},
+    "buffs": {}
+  },
+  "timer": "1:09",
+  "qaHooks": "absent",
+  "errors": []
+}

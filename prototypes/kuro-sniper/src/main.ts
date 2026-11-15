@@ -3,8 +3,11 @@ import balance from './balance.json';
 import {GameCore,CAST,clamp} from './game.mjs';
 import {World} from './world';
 import {AudioDirector} from './audio';
+import {shotReward,maxScore,SCORE_VERSION,emptyProgress,settleAttempt,openChest,compareRuns,CHESTS} from './rewards.mjs';
 
 const icons:Record<string,string>={
+  chest:'<path d="M3 11V8a9 6 0 0 1 18 0v3M3 11h18v10H3zM7 11V4m10 7V4"/><path d="M10 10h4v5h-4z" fill="currentColor"/>',
+  shield:'<path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5z"/><path d="m8 12 3 3 5-6"/>',
   aim:'<circle cx="12" cy="12" r="7"/><path d="M12 1v6m0 10v6M1 12h6m10 0h6"/>',
   shoot:'<path d="M7 21h10V9c0-4-5-8-5-8S7 5 7 9v12Z" fill="currentColor" fill-opacity=".25"/><path d="M7 10h10M7 17h10M6 23h12"/>',
   breath:'<path d="M10 3v7c-1-4-3-4-5-1-2 3-3 8-1 10 2 2 5 0 6-2V9m4-6v7c1-4 3-4 5-1 2 3 3 8 1 10-2 2-5 0-6-2V9m-4-2 2-2 2 2"/>',
@@ -27,11 +30,11 @@ const app=$('#app');
 app.innerHTML=`
 <canvas id="world" aria-label="Игровой тир. Перетаскивайте изображение для наведения."></canvas>
 <div class="cinema-shade"></div>
-<div id="loading"><div class="brand">QuRa<span>ИГРЫ С ХАРАКТЕРОМ</span></div><div class="load-emblem">${icon('aim')}</div><h1>Куро Снайпер</h1><p id="load-label">Готовим тир и встречаем курочек…</p><div class="load-track"><i id="load-bar"></i></div></div>
+<div id="loading"><div class="brand">QuRa<span>ИГРЫ С ХАРАКТЕРОМ</span></div><div class="load-emblem">${icon('aim')}</div><h1>QuRa · Кура</h1><p id="load-label">Готовим тир и встречаем курочек…</p><div class="load-track"><i id="load-bar"></i></div></div>
 <div id="hud" class="hidden">
  <header class="hud-top"><div class="level-label"><span id="level-label">БУДКА</span><strong>Уровень <b id="level-no">01</b><small>/ 10</small></strong><div class="round-dots" id="round-dots"></div></div>
- <div class="score-block"><span>ОЧКИ</span><strong id="score">0</strong><div id="score-float"></div></div>
- <div class="top-right"><div class="mistakes"><span>ОШИБКИ</span><div id="mistakes"><i></i><i></i><i></i></div></div><button id="pause" class="icon-button" aria-label="Пауза">${icon('pause')}</button></div></header>
+ <div class="score-block"><span>ОЧКИ</span><strong id="score">0</strong><div class="score-meta"><span id="score-cap"></span><span id="combo-label"></span></div></div><div class="run-clock"><span>ВРЕМЯ</span><strong id="time-left">1:00</strong><small id="run-xp">0 XP</small></div>
+ <div class="top-right"><div class="mistakes"><span>ОШИБКИ</span><div id="mistakes"><i></i><i></i><i></i></div></div><button id="pause" class="icon-button" aria-label="Пауза">${icon('pause')}</button></div></header><div id="score-float"></div>
  <div id="wind" class="wind hidden">${icon('wind')}<span id="wind-label">ВЕТЕР →</span><i id="wind-strength"></i></div>
  <div id="reticle"><i></i><b></b></div>
  <div id="scope-housing" class="hidden"><div class="scope-rim"></div><div class="crosshair"><i></i><b></b><em></em></div><div class="scope-fine-scale">· &nbsp; · &nbsp; · &nbsp; · &nbsp; ·</div><div id="water-drops"></div><div id="wipe-sweep"></div><span class="optic-mark">Q / PRECISION OPTICS</span></div>
@@ -48,8 +51,8 @@ app.innerHTML=`
  <div id="round-banner" class="hidden"><span>ЧИСТОЕ ПОПАДАНИЕ</span><strong>Раунд пройден</strong><p>Курочки в безопасности</p></div>
 </div>
 <div id="menus" class="hidden">
- <div class="menu-nav"><div class="brand">QuRa<span>ИГРЫ С ХАРАКТЕРОМ</span></div><div class="nav-tools"><span class="mode-tag">ДОБРЫЙ ТИР · 0.3.1</span><button class="icon-button" id="menu-sound" aria-label="Звук">${icon('sound')}</button><button class="icon-button" id="menu-settings" aria-label="Настройки">${icon('settings')}</button></div></div>
- <section id="home" class="menu-view"><div class="home-copy"><div class="eyebrow"><i></i> ТОЧНОСТЬ. ВЫДЕРЖКА. КУРОЧКИ.</div><h1>КУРО<br><span>СНАЙПЕР</span></h1><p>Поймай момент.<br>Попади в мишень. Перехитри курочек.</p><div class="start-row"><button class="primary" id="start">В тир ${icon('arrow')}</button><button class="secondary" id="choose">Выбрать уровень</button></div><button id="training" class="text-button">${icon('aim')} Спокойная тренировка <span>без ограничения ошибок</span></button><div class="home-rule">${icon('heart')} <span>Курочкам — семечки.<br>Капсулам — мишени.</span></div></div><div class="home-character"><div class="hero-orbit"></div><img src="/assets/characters/ryaba/perch.webp" alt="Каноническая Ряба QuRa"><span class="hero-caption"><i></i> Знакомьтесь, Ряба.<small>Она верит в вашу меткость.</small></span></div><div class="cast-strip">${CAST.map(c=>`<div><img src="/assets/characters/${c.code}/perch.webp" alt="${c.name}"><span>${c.name}</span></div>`).join('')}<span class="cast-note">ПЯТЬ ХАРАКТЕРОВ.<br>ДЕСЯТЬ ИСПЫТАНИЙ.</span></div></section>
+ <div class="menu-nav"><div class="brand">QuRa<span>ИГРЫ С ХАРАКТЕРОМ</span></div><div class="nav-tools"><span class="mode-tag">ДОБРЫЙ ТИР · 0.4</span><button class="icon-button" id="rewards" aria-label="Награды и рекорды">${icon('chest')}</button><button class="icon-button" id="menu-sound" aria-label="Звук">${icon('sound')}</button><button class="icon-button" id="menu-settings" aria-label="Настройки">${icon('settings')}</button></div></div>
+ <section id="home" class="menu-view"><div class="home-copy"><div class="eyebrow"><i></i> ТОЧНОСТЬ. ВЫДЕРЖКА. КУРОЧКИ.</div><h1>QuRa<br><span>КУРА</span></h1><p>Поймай момент.<br>Попади в мишень. Перехитри курочек.</p><div class="start-row"><button class="primary" id="start">В тир ${icon('arrow')}</button><button class="secondary" id="choose">Выбрать уровень</button></div><button id="training" class="text-button">${icon('aim')} Спокойная тренировка <span>без ограничения ошибок</span></button><div class="home-rule">${icon('heart')} <span>Курочкам — семечки.<br>Патронам — мишени.</span></div></div><div class="home-character"><div class="hero-orbit"></div><img src="/assets/characters/ryaba/perch.webp" alt="Каноническая Ряба QuRa"><span class="hero-caption"><i></i> Знакомьтесь, Ряба.<small>Она верит в вашу меткость.</small></span></div><div class="cast-strip">${CAST.map(c=>`<div><img src="/assets/characters/${c.code}/perch.webp" alt="${c.name}"><span>${c.name}</span></div>`).join('')}<span class="cast-note">ПЯТЬ ХАРАКТЕРОВ.<br>ДЕСЯТЬ ИСПЫТАНИЙ.</span></div></section>
  <section id="level-select" class="menu-view hidden"><div class="section-heading"><button class="icon-button back-home" aria-label="Назад">${icon('back')}</button><div><div class="eyebrow">ОТ БУДКИ ДО КИЛОМЕТРА</div><h2>Выберите дистанцию</h2></div></div><div class="level-grid" id="level-grid"></div></section>
  <section id="settings" class="menu-view hidden"><div class="section-heading"><button class="icon-button back-settings" aria-label="Назад">${icon('back')}</button><div><div class="eyebrow">УДОБНО ИМЕННО ВАМ</div><h2>Настройки</h2></div></div><div class="settings-card"><label><span>Звуки тира<small>Выстрелы, курочки, дыхание</small></span><input id="setting-sound" type="checkbox"></label><label><span>Громкость</span><input id="setting-volume" type="range" min="0" max="100"></label><label><span>Чувствительность прицела</span><input id="setting-sensitivity" type="range" min="30" max="180"></label><label><span>Меньше покачивания<small>Для спокойной тренировки</small></span><input id="setting-calm" type="checkbox"></label><label><span>Управление для левши</span><input id="setting-left" type="checkbox"></label><label><span>Лёгкая графика<small>Меньше теней, ниже разрешение</small></span><input id="setting-low" type="checkbox"></label></div></section>
 </div>
@@ -57,10 +60,25 @@ app.innerHTML=`
 <div id="rotate"><div>${icon('aim')}</div><h2>Разверните телефон</h2><p>Курочки уже заняли свои места.<br>Удобнее целиться горизонтально.</p></div>`;
 
 let settings:any={sound:true,volume:38,sensitivity:100,calm:false,left:false,low:false};let records:Record<string,any>={};
-try{settings={...settings,...JSON.parse(localStorage.getItem('ks-settings')||'{}')};records=JSON.parse(localStorage.getItem('ks-records')||'{}');}catch{}
+try{settings={...settings,...JSON.parse(localStorage.getItem('ks-settings')||'{}')};records=JSON.parse(localStorage.getItem('ks-records-s4')||'{}');}catch{}
 const audio=new AudioDirector();audio.set(settings.sound,settings.volume/100);
 let world:World;let core:GameCore;let view='home',inGame=false,ads=false,settingsFromPause=false;let resultTimer=0,bannerTimer=0,toastTimer=0,scoreTimer=0,uiClock=0;let accumulator=0;let settled=false;let resumeTimer=0;let qaFreeze=false;let touchHoldTimer:any=null;
 const qa=new URLSearchParams(location.search).has('qa');
+
+let progress:any=emptyProgress();
+try{const saved=JSON.parse(localStorage.getItem('ks-progress-v2')||'null');if(saved?.version===2&&saved.attemptXp&&saved.chests&&saved.buffs)progress=saved;}catch{}
+const recordKey=(id:number)=>`${id}:${settings.calm?'calm':'standard'}`;
+function saveProgress(next:any){try{localStorage.setItem('ks-progress-v2',JSON.stringify(next));progress=next;return true;}catch{toast('Не удалось сохранить награду. Освободите место в браузере и попробуйте ещё раз.');return false;}}
+function chestPicture(tier:string){return `<div class="reward-chest tier-${tier}">${icon('chest')}<i>✦</i></div>`;}
+function openMilestone(level:number){
+ const chest=progress.chests[level];if(!chest)return;showModal(`${chestPicture(chest.tier)}<div class="eyebrow">РУБЕЖ ${level} · НАГРАДА</div><h2>${chest.title}</h2><p>За первое прохождение. XP и баф сохранятся в вашем запасе.</p><div id="chest-content"></div><button class="primary" id="chest-open">${chest.opened?'Посмотреть награду':'Открыть сундук'}</button><button class="text-button" id="chest-back">Мои награды</button>`);
+ const reveal=()=>{const opened=openChest(progress,level);if(opened.reward&&!saveProgress(opened.progress))return;audio.play('won');$('.reward-chest').classList.add('opened');$('#chest-content').innerHTML=`<div class="chest-loot"><div><b>+${chest.xp} XP</b><span>Опыт</span></div><div>${icon('shield')}<b>×${chest.count}</b><span>${chest.buff}</span></div></div><p class="reward-note">${chest.opened?'Награда уже в запасе':'Сохранено в запас'} · локальный прототип</p>`;$('#chest-open').classList.add('hidden');};$('#chest-open').onclick=reveal;$('#chest-back').onclick=showRewards;if(chest.opened)reveal();
+}
+function showRewards(){
+ const pending=Object.entries(progress.chests).filter(([,c]:any)=>!c.opened);const current=balance.levels.map(l=>({level:l.id,record:records[recordKey(l.id)]}));
+ showModal(`<div class="eyebrow">QuRa · МОЙ ПРОГРЕСС</div><h2>Награды и рекорды</h2><div class="wallet-xp">${progress.xp} <span>XP</span></div><p>XP за каждое точное попадание. Серии без промахов дают больше опыта. Повторное открытие сундука награду не дублирует.</p><div class="milestone-chests">${Object.entries(CHESTS).map(([id,c]:any)=>`<button class="milestone ${progress.chests[id]?'available':'locked'}" data-chest="${id}" ${progress.chests[id]?'':'disabled'}>${chestPicture(c.tier)}<b>${id} уровень</b><span>${progress.chests[id]?.opened?'Получен':progress.chests[id]?'Открыть':'Пройдите уровень'}</span></button>`).join('')}</div><div class="buff-stock">${icon('shield')} Боевой купол <b>×${progress.buffs['Боевой купол']||0}</b><small>Бафы в запасе; подключение к аккаунту — следующий этап.</small></div><details class="my-records"><summary>Мои рекорды · ${settings.calm?'меньше покачивания':'стандарт'}</summary>${current.map(({level,record})=>`<div><span>Уровень ${level}</span><b>${record?record.score+' очков':'—'}</b></div>`).join('')}</details><p class="reward-note">Прогресс хранится в этом браузере. Общий рейтинг ещё не подключён.</p><button class="secondary" id="rewards-close">Вернуться</button>`);
+ $('#rewards-close').onclick=()=>{if(inGame&&['won','lost'].includes(core.state)){settled=false;result();}else closeModal();};document.querySelectorAll<HTMLButtonElement>('[data-chest]').forEach(btn=>btn.onclick=()=>openMilestone(Number(btn.dataset.chest)));
+}
 
 function toast(message:string){$('#toast').textContent=message;$('#toast').classList.add('visible');$('#hud').classList.add('toast-active');toastTimer=2.1;}
 function showModal(html:string){$('#modal-card').innerHTML=html;$('#modal').classList.remove('hidden');$('#modal-card').querySelector<HTMLButtonElement>('button')?.focus();}
@@ -71,9 +89,9 @@ function event(e:any){
   if(e.type==='round'){world?.setActors(core.targets);$('#round-dots').innerHTML=Array.from({length:core.level.mode==='balloons'?1:5},(_,i)=>`<i class="${i<core.round?'active':''}"></i>`).join('');if(inGame){setAds(false);world.aimAt(core.targets[0].id);if(core.round>1){const c=CAST[core.round-1];toast(`${c.name}: ${c.role.toLowerCase()}`);}}}
   if(['fire','hit','hen','miss','water','wipe','breath','exhale','won'].includes(e.type))audio.play(e.type==='hit'&&core.level.mode==='balloons'?'pop':e.type,core.loadout.id==='classic_bolt'?'classic':core.loadout.family);
   if(e.type==='fire'){world.fireEffect();$('#fire').classList.add('firing');setTimeout(()=>$('#fire').classList.remove('firing'),120);}
-  if(e.type==='hit'){if(core.level.mode!=='balloons')world.featherBurst(e.targetId,6);$('#hit-marker').className='success';setTimeout(()=>$('#hit-marker').className='',500);$('#score-float').textContent=`+${e.earned}${e.center?' · В ЦЕНТР!':''}`;$('#score-float').classList.add('show');scoreTimer=1.3;}
+  if(e.type==='hit'){const checkpoint=settleAttempt(progress,{id:core.attemptId,level:core.level.id,xp:core.xp,won:false,training:core.training});saveProgress(checkpoint.progress);if(core.level.mode!=='balloons')world.featherBurst(e.targetId,6);$('#hit-marker').className='success';setTimeout(()=>$('#hit-marker').className='',500);$('#score-float').innerHTML=core.training?`<b>Тренировка</b><span>+${e.earned} очков</span>`:`<b>+${e.xp} XP</b><span>+${e.earned} очков${e.center?' · в центр':''}</span>`;$('#score-float').classList.add('show');scoreTimer=1.3;}
   if(e.type==='hen'){world.featherBurst(e.targetId);toast('В мишень, а не в курочку!');$('#hit-marker').className='penalty';setTimeout(()=>$('#hit-marker').className='',450);}
-  if(e.type==='miss'){toast('Мимо. Выдохните и попробуйте ещё раз.');}
+  if(e.type==='miss'){toast(`Мимо · +0 XP · коэффициент точности ${Math.round(shotReward(core.level.id,0,core.mistakes).accuracyFactor*100)}%`);}
   if(e.type==='warning'){toast(e.code==='fighter'?'Боевик поднимает водяной бластер…':'Гламурочка готовит выступление…');}
   if(e.type==='water')toast('Капли на оптике — линзу можно протереть');
   if(e.type==='round-clear'){core.hold(false);bannerTimer=1.45;$('#round-banner').classList.remove('hidden');audio.play('round');}
@@ -93,9 +111,9 @@ async function boot(){
 function start(levelId:number,training:boolean){
   audio.stop();audio.start();inGame=true;view='game';resultTimer=0;scoreTimer=0;toastTimer=0;$('#score-float').classList.remove('show');$('#toast').classList.remove('visible');settled=false;resumeTimer=0;closeModal();$('#menus').classList.add('hidden');$('#hud').classList.remove('hidden');$('#round-banner').classList.add('hidden');
   const level=balance.levels.find(l=>l.id===levelId)!;const loadout=balance.loadouts.find(l=>l.id===level.loadoutId)!;
-  world.setup(level,loadout,core);core.start(levelId,training);core.quiet=qaFreeze;world.magnification=level.entryMagnification??loadout.maxMagnification;setAds(false);
+  audio.weaponKey=loadout.audioKey;world.setup(level,loadout,core);core.start(levelId,training);core.quiet=qaFreeze;world.magnification=level.entryMagnification??loadout.maxMagnification;setAds(false);
   $('#level-label').textContent=`${level.environmentTitle.toUpperCase()} · ${level.distanceM} М`;
-  $('#level-no').textContent=String(levelId).padStart(2,'0');$('#wind').classList.toggle('hidden',levelId<3);$('#hint').classList.remove('hidden');$('#ammo-capacity').textContent=level.mode==='balloons'?'/8':'/18';$('#hint span').innerHTML=level.mode==='balloons'?'Лопните <b>пять шариков</b>. Курочек бережём!':'Цель — мишень <b>под платформой</b>';toast(training?'Тренировка: ошибки не заканчивают попытку':level.mode==='balloons'?'Пять шариков · 1 км · берите упреждение':'Цель — круглая мишень под платформой');
+  $('#level-no').textContent=String(levelId).padStart(2,'0');$('#wind').classList.toggle('hidden',levelId<3);$('#hint').classList.remove('hidden');$('#ammo-capacity').textContent='/'+core.ammo;$('#mistakes').innerHTML=Array.from({length:core.mistakeLimit},()=>'<i></i>').join('');$('#hint span').innerHTML=level.mode==='balloons'?'Лопните <b>пять шариков</b>. Курочек бережём!':'Цель — мишень <b>под платформой</b>';toast(training?'Тренировка: ошибки не заканчивают попытку':level.mode==='balloons'?'Пять шариков · 1 км · берите упреждение':'Цель — круглая мишень под платформой');
   updateHUD();
 }
 function showHome(){
@@ -104,16 +122,18 @@ function showHome(){
 }
 function showView(name:string){view=name;for(const id of ['home','level-select','settings'])$('#'+id).classList.toggle('hidden',id!==name);}
 function renderLevelGrid(){
-  $('#level-grid').innerHTML=balance.levels.map(l=>{const r=records[l.id],w=balance.loadouts.find(w=>w.id===l.loadoutId)!;return `<button class="level-card env-${l.environmentId}" data-level="${l.id}"><div><span class="level-index">${String(l.id).padStart(2,'0')}</span><span class="level-distance">${l.distanceM}<small>М</small></span></div><span class="level-place">${l.environmentTitle}</span><span class="level-weapon">${w.title}</span><span class="level-record">${r?'★'.repeat(3-Math.min(r.mistakes,2))+' &nbsp; '+r.score+' очков':l.mode==='balloons'?'Пять шариков · движущиеся цели':'Пять раундов · '+(l.id<3?'Без ветра':'Ветер и характеры')}</span></button>`;}).join('');
+  $('#level-grid').innerHTML=balance.levels.map(l=>{const r=records[recordKey(l.id)],w=balance.loadouts.find(w=>w.id===l.loadoutId)!;return `<button class="level-card env-${l.environmentId}" data-level="${l.id}"><div><span class="level-index">${String(l.id).padStart(2,'0')}</span><span class="level-distance">${l.distanceM}<small>М</small></span></div><span class="level-place">${l.environmentTitle}</span><span class="level-weapon">${w.audioReference} · ${l.timeLimitS} с</span><span class="level-record">${r?'★'.repeat(3-Math.min(r.mistakes,2))+' &nbsp; '+r.score+' очков':l.mode==='balloons'?'Пять шариков · движущиеся цели':'Пять раундов · '+(l.id<3?'Без ветра':'Ветер и характеры')}</span></button>`;}).join('');
   $('#level-grid').querySelectorAll<HTMLButtonElement>('[data-level]').forEach(b=>b.onclick=()=>start(Number(b.dataset.level),false));
 }
 function pause(){if(!inGame||!['playing','transition'].includes(core.state))return;core.setPaused(true);audio.stop();showModal(`<div class="eyebrow">МОМЕНТ ДЛЯ ВЫДОХА</div><h2>Пауза</h2><p>Курочки никуда не торопятся.</p><button class="primary" id="resume">Продолжить ${icon('arrow')}</button><button class="secondary" id="restart">Начать уровень заново</button><button class="text-button" id="pause-settings">${icon('settings')} Настройки</button><button class="text-button" id="quit">В главное меню</button>`);$('#resume').onclick=resume;$('#restart').onclick=()=>start(core.level.id,core.training);$('#quit').onclick=showHome;$('#pause-settings').onclick=()=>{closeModal();settingsFromPause=true;$('#menus').classList.remove('hidden');showView('settings');};}
 function resume(){closeModal();resumeTimer=1.1;toast('Приготовьтесь…');setTimeout(()=>{if(inGame&&resumeTimer>0){core.setPaused(false);resumeTimer=0;}},1100);}
 function result(){
   if(settled)return;settled=true;const won=core.state==='won',stars=won?3-Math.min(2,core.mistakes):0;
-  if(won&&!core.training){const old=records[core.level.id];if(!old||old.score<core.score){records[core.level.id]={score:core.score,mistakes:core.mistakes};try{localStorage.setItem('ks-records',JSON.stringify(records));}catch{}}}
-  const accuracy=core.shots?Math.round(core.hits/core.shots*100):0;
-  showModal(`<div class="result-icon ${won?'won':''}">${icon(won?'flag':'aim')}</div><div class="eyebrow">${core.level.environmentTitle.toUpperCase()} · ${core.level.distanceM} М</div><h2>${won?'Красивый выстрел!':'Ещё одна попытка?'}</h2><p>${won?(core.level.mode==='balloons'?'Все шарики лопнули. Курочки гуляют дальше.':'Все курочки внизу. Все в безопасности.'):'Три ошибки. Сделайте выдох — и снова в тир.'}</p>${won?`<div class="stars">${'★'.repeat(stars)}<span>${'★'.repeat(3-stars)}</span></div>`:''}<div class="result-stats"><div><strong>${core.score}</strong><span>ОЧКОВ</span></div><div><strong>${accuracy}%</strong><span>ТОЧНОСТЬ</span></div><div><strong>${core.centers}</strong><span>В ЦЕНТР</span></div></div><button class="primary" id="next">${won&&core.level.id<balance.levels.length?'Следующая дистанция':'Повторить уровень'} ${icon('arrow')}</button><button class="secondary" id="result-levels">Выбрать уровень</button><button class="text-button" id="result-home">В главное меню</button>`);
+  const accuracy=core.shots?Math.round(core.hits/core.shots*100):0,run={id:core.attemptId,version:SCORE_VERSION,category:core.assisted?'calm':'standard',level:core.level.id,score:core.score,xp:core.xp,accuracy,mistakes:core.mistakes,maxStreak:core.maxStreak,elapsedS:Number(core.elapsedS.toFixed(3)),won,training:core.training};
+  if(won&&!core.training){const key=`${core.level.id}:${run.category}`,old=records[key];if(!old||compareRuns(run,old)<0){records[key]=run;try{localStorage.setItem('ks-records-s4',JSON.stringify(records));}catch{}}}
+  const settlement=settleAttempt(progress,run),saved=saveProgress(settlement.progress),chest=saved?settlement.chest:null;
+  showModal(`<div class="result-icon ${won?'won':''}">${icon(won?'flag':'aim')}</div><div class="eyebrow">${core.level.environmentTitle.toUpperCase()} · ${core.level.distanceM} М</div><h2>${won?'Красивый выстрел!':'Ещё одна попытка?'}</h2><p>${won?(core.level.mode==='balloons'?'Все шарики лопнули. Курочки гуляют дальше.':'Все курочки внизу. Все в безопасности.'):core.failReason==='timeout'?'Время вышло. Присмотритесь к ритму курочек и попробуйте снова.':`${core.mistakeLimit} ошибок. Сделайте выдох — и снова в тир.`}</p>${won?`<div class="stars">${'★'.repeat(stars)}<span>${'★'.repeat(3-stars)}</span></div>`:''}<div class="result-stats"><div><strong>${core.score}</strong><span>ОЧКОВ</span></div><div><strong>${accuracy}%</strong><span>ТОЧНОСТЬ</span></div><div><strong>${core.centers}</strong><span>В ЦЕНТР</span></div></div><div class="result-rewards"><b>${core.training?'Тренировочный результат':`+${core.xp} XP за попытку`}</b><span>${core.training?'Тренировка — без наград':saved?'XP сохранены в запасе':'Не удалось сохранить XP'}</span></div>${chest&&!chest.opened?`<button class="chest-claim" id="claim-chest">${icon('chest')} ${chest.title} · открыть</button>`:''}<button class="primary" id="next">${won&&core.level.id<balance.levels.length?'Следующая дистанция':'Повторить уровень'} ${icon('arrow')}</button><button class="secondary" id="result-levels">Выбрать уровень</button><button class="text-button" id="result-home">В главное меню</button>`);
+  if($('#claim-chest'))$('#claim-chest').onclick=()=>openMilestone(core.level.id);
   $('#next').onclick=()=>start(won&&core.level.id<balance.levels.length?core.level.id+1:core.level.id,core.training);$('#result-levels').onclick=()=>{showHome();showView('level-select');};$('#result-home').onclick=showHome;
 }
 function shoot(){
@@ -124,6 +144,7 @@ function shoot(){
   if(!core.fire(ray.origin,ray.direction)&&core.wiping)toast('Ещё мгновение — линза будет чистой');
 }
 function updateHUD(){
+  const reward=shotReward(core.level.id,core.streak,core.mistakes);$('#score-cap').textContent=`МАКС. ${core.maxScore}`;$('#combo-label').textContent=`СЕРИЯ ${core.streak} · ×${reward.seriesFactor.toFixed(1)} · БОНУС ${Math.round(reward.accuracyFactor*100)}%`;const remaining=Math.ceil(core.remainingS);$('#time-left').textContent=core.training?'∞':`${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,'0')}`;$('#time-left').classList.toggle('urgent',remaining<=15);$('#run-xp').textContent=core.training?'ПРАКТИКА':`${core.xp} XP`;
   $('#score').textContent=core.score.toLocaleString('ru');$('#ammo').textContent=String(core.ammo).padStart(2,'0');$('#solved').textContent=String(core.targets.filter(t=>t.solved).length);$('#total').textContent='/'+core.targets.length;
   $('#mistakes').querySelectorAll('i').forEach((n,i)=>n.classList.toggle('used',i<core.mistakes));$('#pulse').textContent=String(Math.round(core.pulse));$('#breath-fill').style.width=`${core.breath}%`;
   $('#breath-label').textContent=core.holding?'Задержано':core.lockout>0?'Восстановление':core.breath<35?'Глубокий выдох':'Спокойное';$('#breath').classList.toggle('active',core.holding);$('#breath-fill').classList.toggle('low',core.breath<30);
@@ -152,11 +173,11 @@ function applySettings(){
   $('#setting-sound').toggleAttribute('checked',settings.sound);($('#setting-sound') as HTMLInputElement).checked=settings.sound;
   for(const k of ['calm','left','low'])($('#setting-'+k) as HTMLInputElement).checked=settings[k];
   ($('#setting-volume') as HTMLInputElement).value=String(settings.volume);($('#setting-sensitivity') as HTMLInputElement).value=String(settings.sensitivity);
-  if(core){core.quiet=qaFreeze;core.reduceSway=settings.calm;}
+  if(core){core.quiet=qaFreeze;core.setAssistance(settings.calm);}
   try{localStorage.setItem('ks-settings',JSON.stringify(settings));}catch{}
 }
 function bind(){
-  $('#start').onclick=()=>start(1,false);$('#training').onclick=()=>start(1,true);$('#choose').onclick=()=>{audio.start();showView('level-select');};$('#menu-settings').onclick=()=>{audio.start();settingsFromPause=false;showView('settings');};$('#menu-sound').onclick=()=>{audio.start();settings.sound=!settings.sound;applySettings();};
+  $('#rewards').onclick=()=>{audio.start();showRewards();};$('#start').onclick=()=>start(1,false);$('#training').onclick=()=>start(1,true);$('#choose').onclick=()=>{audio.start();showView('level-select');};$('#menu-settings').onclick=()=>{audio.start();settingsFromPause=false;showView('settings');};$('#menu-sound').onclick=()=>{audio.start();settings.sound=!settings.sound;applySettings();};
   document.querySelectorAll('.back-home').forEach(e=>(e as HTMLElement).onclick=()=>showView('home'));
   $('.back-settings').onclick=()=>{if(settingsFromPause){$('#menus').classList.add('hidden');view='game';pause();}else showView('home');};
   $('#scope-guide').onclick=findYard;$('#pause').onclick=pause;$('#aim').onclick=()=>{if(!core.paused&&core.state==='playing')setAds(!ads);};

@@ -1,0 +1,6 @@
+{
+  "tests": 24,
+  "pass": 24,
+  "fail": 0,
+  "method": "node:test, actual projectile integration and deterministic reward/state checks"
+}

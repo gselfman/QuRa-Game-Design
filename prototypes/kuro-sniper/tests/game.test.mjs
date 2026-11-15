@@ -2,16 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {GameCore,resolveImpact,scopeFov,maxScore} from '../src/game.mjs';
+import {balloonMotion,BALLOON_PATTERNS} from '../src/balloon-motion.mjs';
+import {shotReward,emptyProgress,settleAttempt,openChest,compareRuns} from '../src/rewards.mjs';
 const balance=JSON.parse(fs.readFileSync(new URL('../src/balance.json',import.meta.url)));
 function advance(g,seconds){for(let t=0;t<seconds;t+=1/120)g.update(1/120);}
 function game(level=1,training=false){const g=new GameCore(balance);g.start(level,training);g.quiet=true;return g;}
 function shoot(g,id){const t=g.target(id),origin={x:0,y:1.5,z:0},d={x:t.x,y:t.y-1.5,z:g.level.distanceM};const n=Math.hypot(d.x,d.y,d.z);assert(g.fire(origin,{x:d.x/n,y:d.y/n,z:d.z/n}));advance(g,Math.max(g.level.flightTimeS,g.loadout.cooldownS)+.03);}
 
 test('all nine levels are completable through actual projectile integration, with 15 hits and correct score',()=>{
- for(let level=1;level<=9;level++){const g=game(level);for(let r=1;r<=5;r++){assert.equal(g.round,r);assert.equal(g.targets.length,r);for(const t of [...g.targets])shoot(g,t.id);if(r<5)advance(g,1.7);}assert.equal(g.state,'won');assert.equal(g.hits,15);assert.equal(g.ammo,3);assert.equal(g.score,3050);}
+ for(let level=1;level<=9;level++){const g=game(level);for(let r=1;r<=5;r++){assert.equal(g.round,r);assert.equal(g.targets.length,r);for(const t of [...g.targets])shoot(g,t.id);if(r<5)advance(g,1.7);}assert.equal(g.state,'won');assert.equal(g.hits,15);assert.equal(g.ammo,3);assert.equal(g.score,maxScore(15,level));}
 });
-test('third error fails exactly once; a bird costs one error and 100 points',()=>{
- const g=game();g.score=220;g.resolve({kind:'hen',targetId:'C01'});assert.equal(g.score,120);assert.equal(g.mistakes,1);assert.equal(g.targets[0].solved,false);assert(g.targets[0].penaltyUntil>0);g.resolve({kind:'miss'});g.resolve({kind:'miss'});assert.equal(g.state,'lost');g.resolve({kind:'miss'});assert.equal(g.mistakes,3);
+test('third error fails exactly once; a bird costs one error and the level-scaled penalty',()=>{
+ const g=game();g.score=220;g.resolve({kind:'hen',targetId:'C01'});assert.equal(g.score,210);assert.equal(g.mistakes,1);assert.equal(g.targets[0].solved,false);assert(g.targets[0].penaltyUntil>0);g.resolve({kind:'miss'});g.resolve({kind:'miss'});assert.equal(g.state,'lost');g.resolve({kind:'miss'});assert.equal(g.mistakes,3);
 });
 test('a solved target is idempotent and cannot grant another score or mistake',()=>{
  const g=game();g.round=2;g.setupRound();g.resolve({kind:'target',targetId:'C01',center:true});const s=g.score;g.resolve({kind:'target',targetId:'C01',center:true});assert.equal(g.score,s);assert.equal(g.mistakes,0);
@@ -27,7 +29,7 @@ test('one projectile in flight and a cooldown prevent repeated trigger spam',()=
 });
 test('training permits mistakes without ending the session',()=>{const g=game(1,true);for(let i=0;i<12;i++)g.resolve({kind:'miss'});assert.equal(g.state,'playing');assert.equal(g.mistakes,12);});
 test('target disk and hen have separate collision regions',()=>{const t=[{id:'C01',x:0,y:.88,solved:false,penaltyUntil:0}];assert.equal(resolveImpact({x:0,y:.88},t,.5).kind,'target');assert.equal(resolveImpact({x:0,y:2},t,.5).kind,'hen');assert.equal(resolveImpact({x:.8,y:.88},t,.5).kind,'miss');});
-test('lens-only FOV has correct apparent magnification, independent of lens size',()=>{for(const m of [1,2,4,24,64,96,144,192])for(const ratio of [.5,.66,.76]){const f=scopeFov(.87,600,600*ratio,m);const apparent=ratio*Math.tan(.87/2)/Math.tan(f/2);assert(Math.abs(apparent-m)<1e-8);}assert.equal(maxScore(),3050);});
+test('lens-only FOV has correct apparent magnification, independent of lens size',()=>{for(const m of [1,2,4,24,64,96,144,192])for(const ratio of [.5,.66,.76]){const f=scopeFov(.87,600,600*ratio,m);const apparent=ratio*Math.tan(.87/2)/Math.tan(f/2);assert(Math.abs(apparent-m)<1e-8);}assert.equal(maxScore(),228);});
 test('wind and Professor field affect trajectory deterministically and remain frozen for each shot',()=>{
  const g=game(9);g.quiet=false;g.round=3;g.setupRound();g.time=2;advance(g,.01);assert(g.professorActive);const t=g.target('C04');const d={x:t.x,y:t.y-1.5,z:1000},n=Math.hypot(d.x,d.y,d.z);g.fire({x:0,y:1.5,z:0},{x:d.x/n,y:d.y/n,z:d.z/n});const wind=g.shot.wind,field=g.shot.field;assert(field>0);advance(g,.3);assert.equal(g.shot.wind,wind);assert.equal(g.shot.field,field);
 });
@@ -36,19 +38,18 @@ test('water substantially obstructs the lens for seconds and can be wiped with a
  const g=game(5);g.water=.92;advance(g,10);assert(g.water>.50);assert(g.wipe());assert.equal(g.holding,false);advance(g,1.21);assert.equal(g.water,0);assert.equal(g.wiping,0);
  g.water=.92;advance(g,24);assert.equal(g.water,0);
 });
-test('finale is one round with five moving balloons, eight capsules and safe hens below',()=>{
- const g=game(10);assert.equal(g.level.mode,'balloons');assert.equal(g.targets.length,5);assert.equal(g.ammo,8);
+test('finale is one round with five moving balloons, twelve cartridges and safe hens below',()=>{
+ const g=game(10);assert.equal(g.level.mode,'balloons');assert.equal(g.targets.length,5);assert.equal(g.ammo,12);
  const t=g.targets[0];assert.equal(resolveImpact({x:t.x,y:t.y},g.targets,.8).kind,'target');assert.equal(resolveImpact({x:t.x,y:.9},g.targets,.8).kind,'hen');
- const x=t.x;g.quiet=false;advance(g,.25);assert(Math.abs(t.x-x)>.5);g.quiet=true;advance(g,.01);
+ const x=t.x;g.quiet=false;advance(g,.25);assert(Math.abs(t.x-x)>.1);g.quiet=true;advance(g,.01);
  for(const target of [...g.targets])shoot(g,target.id);
- assert.equal(g.state,'won');assert.equal(g.hits,5);assert.equal(g.ammo,3);assert.equal(g.score,maxScore(5));
+ assert.equal(g.state,'won');assert.equal(g.hits,5);assert.equal(g.ammo,7);assert.equal(g.score,maxScore(5,10));
 });
 test('moving finale rewards leading the balloon through full projectile flight',()=>{
  const g=game(10);g.quiet=false;
  for(const t of g.targets){
-  const phase=g.targets.findIndex(x=>x.id===t.id)*1.7,arrival=g.time+g.level.flightTimeS;
-  const x=t.baseX+Math.sin(arrival*.92+phase)*4.5-g.wind*g.level.targetDiameterM*.38;
-  const y=2.8+Math.sin(arrival*2.1+phase)*.22;
+  const arrival=g.time+g.level.flightTimeS,motion=balloonMotion(t.code,arrival,t.baseX);
+  const x=motion.x-g.wind*g.level.targetDiameterM*.38,y=motion.y;
   const d={x,y:y-1.5,z:1000},n=Math.hypot(d.x,d.y,d.z);
   assert(g.fire({x:0,y:1.5,z:0},{x:d.x/n,y:d.y/n,z:d.z/n}));advance(g,1.36);
  }
@@ -67,3 +68,12 @@ test('a walking hen is a protected collision region at its actual floor position
  const hit=resolveImpact({x:pose.x,y:pose.y+.6},g.targets,g.level.targetDiameterM,g.time+2);assert.equal(hit.kind,'hen');g.resolve(hit);assert.equal(g.mistakes,1);assert(t.solved);
 });
 test('grounded hens keep body separation instead of walking through each other',async()=>{const {groundMotions}=await import('../src/hen-motion.mjs');const targets=[{id:'C01',baseX:0,fallX:0,solvedAt:0,solved:true,bodyY:1.45},{id:'C03',baseX:.5,fallX:.5,solvedAt:0,solved:true,bodyY:1.45}];const poses=groundMotions(targets,2);assert(poses.get('C03').x-poses.get('C01').x>=.9-1e-8);assert.equal(poses.get('C01').mode,'look');});
+
+test('clock expires once, freezes on pause, and training has no deadline',()=>{const g=game();advance(g,5);const remaining=g.remainingS;g.setPaused(true);advance(g,10);assert.equal(g.remainingS,remaining);g.setPaused(false);advance(g,60);assert.equal(g.state,'lost');assert.equal(g.failReason,'timeout');assert.equal(g.remainingS,0);const practice=game(1,true);advance(practice,200);assert.equal(practice.state,'playing');assert.equal(practice.remainingS,Infinity);});
+test('finale permits six mistakes and fails on seventh',()=>{const g=game(10);for(let i=0;i<6;i++)g.resolve({kind:'miss'});assert.equal(g.state,'playing');g.resolve({kind:'miss'});assert.equal(g.state,'lost');assert.equal(g.mistakes,7);});
+test('every balloon has stable shot windows, limited speed and correct facing',()=>{for(const code of Object.keys(BALLOON_PATTERNS)){const poses=Array.from({length:4000},(_,i)=>balloonMotion(code,i*.02));assert(poses.some(p=>p.stopRemainingS>2));assert(Math.max(...poses.map(p=>Math.abs(p.velocityX)))<2);for(const p of poses)if(Math.abs(p.velocityX)>.01)assert.equal(p.facing,Math.sign(p.velocityX));assert(poses.some(p=>p.facing===1));assert(poses.some(p=>p.facing===-1));}});
+test('clean series increases points and XP, misses reduce future coefficients',()=>{assert.equal(shotReward(1,0,0).earned,10);assert(shotReward(1,3,0).earned>shotReward(1,0,0).earned);assert(shotReward(1,6,0).xp>shotReward(1,0,0).xp);assert(shotReward(5,0,1).earned<shotReward(5,0,0).earned);assert(shotReward(5,0,1).xp<shotReward(5,0,0).xp);assert(maxScore(5,10)>maxScore(15,9));});
+test('Per-attempt XP checkpoints and milestone chest are idempotent and training cannot award them',()=>{const initial=emptyProgress(),run={id:'attempt-1',level:5,xp:200,won:true,training:false};const once=settleAttempt(initial,run);assert.equal(once.progress.xp,200);assert(once.chest&&!once.chest.opened);const twice=settleAttempt(once.progress,run);assert.equal(twice.xpAdded,0);assert.equal(twice.progress.xp,200);const opened=openChest(twice.progress,5);assert.equal(opened.progress.xp,260);assert.equal(opened.progress.buffs['Боевой купол'],1);const repeated=openChest(opened.progress,5);assert.equal(repeated.reward,null);assert.equal(repeated.progress.xp,260);assert.equal(initial.xp,0);const nextRun=settleAttempt(repeated.progress,{...run,id:'attempt-2',won:false});assert.equal(nextRun.progress.xp,460);assert.equal(settleAttempt(initial,{...run,training:true}).progress.xp,0);for(const level of [9,10])assert(settleAttempt(initial,{...run,level}).chest);});
+test('records sort by points, accuracy, fewer errors, then time',()=>{const a={score:100,accuracy:100,mistakes:0,elapsedS:20};assert(compareRuns(a,{...a,score:90})<0);assert(compareRuns(a,{...a,accuracy:90})<0);assert(compareRuns(a,{...a,mistakes:1})<0);assert(compareRuns(a,{...a,elapsedS:30})<0);});
+
+test('assisted record category is sticky during a run and resets on a fresh standard run',()=>{const g=game();assert.equal(g.assisted,false);g.setAssistance(true);g.setAssistance(false);assert.equal(g.assisted,true);g.start(1);assert.equal(g.assisted,false);g.setAssistance(true);g.start(2);assert.equal(g.assisted,true);});

@@ -61,3 +61,38 @@ export function makeDetailedWindmill(w:World,x:number,z:number){
  }
  return root;
 }
+
+// A sunlit stable range: actual gaps between posts, exterior meadow and calm horses.
+export function buildOpenStable(w:World,level:any){
+ const d=level.distanceM,scene=w.scene,wood=w.materials.wood,dark=w.materials.darkWood,trim=w.materials.cream;
+ const box=(n:string,p:number[],s:number[],m:any)=>w.box(n,p,s,m);
+ const floor=MeshBuilder.CreateGround('stable-worn-plank-floor',{width:13,height:d+2},scene);floor.parent=w.environment;floor.position.z=d/2;floor.material=w.materials.floor;floor.receiveShadows=true;
+ for(const tex of [w.materials.floor.albedoTexture,w.materials.floor.bumpTexture,w.materials.floor.metallicTexture]){tex.uScale=13/3;tex.vScale=(d+2)/3;}
+ const outside=MeshBuilder.CreateGround('stable-exterior-meadow',{width:150,height:140},scene);outside.parent=w.environment;outside.position.set(0,-.025,35);outside.material=w.photoMaterial('stable-outdoor-grass','ref-grass',35,35);
+ box('stable-target-back-wall',[0,2.4,d+.8],[13,.1+4.7,.18],wood);box('stable-quiet-target-panel',[0,1.8,d+.66],[9.3,3.15,.06],dark);
+ for(const side of [-1,1]){
+  box('stable-low-side-wall',[side*6.4,.5,d/2],[.18,1,d+1],wood);
+  box('stable-window-top-beam',[side*6.4,3.65,d/2],[.18,.30,d+1],dark);
+  for(let z=2;z<d;z+=4.5){
+   box('stable-window-post',[side*6.4,2.25,z],[.20,4.5,.20],dark);
+   box('stable-window-sill',[side*6.32,1.10,z+2.1],[.30,.12,3.7],trim);
+   box('stable-window-header',[side*6.32,3.35,z+2.1],[.25,.12,3.7],trim);
+   const shutter=box('open-stable-window-shutter',[side*6.48,2.20,z+.15],[.07,2.15,1.25],wood);shutter.rotation.y=side*1.22;
+   const light=MeshBuilder.CreateGround('sunlight-through-stable-window',{width:2.6,height:3.3},scene);light.parent=w.environment;light.position.set(side*3.9,.008,z+1.4);light.rotation.y=side*.4;
+   const mat=new StandardMaterial('soft-stable-window-light',scene);mat.diffuseColor=C('#ffe3a1');mat.emissiveColor=C('#b58a43');mat.specularColor=Color3.Black();mat.alpha=.10;light.material=mat;light.isPickable=false;w.levelMaterials.push(mat);
+  }
+  for(const z of [7,13]){
+   for(const y of [.6,1.15])box('horse-stall-rail',[side*3.75,y,z+1.8],[.11,.1,4.4],dark);
+   for(const dz of [-.4,4])box('horse-stall-post',[side*3.75,.78,z+dz],[.16,1.56,.16],wood);
+   const horse=MeshBuilder.CreatePlane('calm-horse-in-side-stall',{width:3.25,height:2.17,sideOrientation:Mesh.DOUBLESIDE},scene);horse.parent=w.environment;horse.position.set(side*4.7,1.13,z+2.0);horse.scaling.x=side;
+   const hm=new StandardMaterial('chestnut-horse-coat',scene);hm.diffuseTexture=w.textures['/assets/stable/horse-chestnut-v1.png'];hm.diffuseTexture.hasAlpha=true;hm.useAlphaFromDiffuseTexture=true;hm.transparencyMode=1;hm.alphaCutOff=.65;hm.backFaceCulling=false;hm.emissiveColor=new Color3(.16,.16,.16);hm.specularColor=Color3.Black();horse.material=hm;horse.isPickable=false;horse.metadata={horse:true,phase:z+side};w.levelMaterials.push(hm);
+  }
+ }
+ for(let z=2;z<d+1;z+=4.5){
+  box('stable-roof-crossbeam',[0,4.05,z],[13.1,.20,.24],dark);
+  for(const side of [-1,1]){const brace=box('stable-sloped-roof-rafter',[side*3.25,4.65,z],[6.8,.14,.18],wood);brace.rotation.z=-side*.18;}
+ }
+ for(const side of [-1,1]){const roof=box('stable-weathered-roof',[side*3.3,4.7,d/2],[6.9,.14,d+3],wood);roof.rotation.z=-side*.18;}
+ box('stable-roof-ridge',[0,5.35,d/2],[.22,.22,d+3],dark);
+ w.scatterHay(d);
+}

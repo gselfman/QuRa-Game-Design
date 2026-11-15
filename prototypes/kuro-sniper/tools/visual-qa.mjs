@@ -10,7 +10,7 @@ await p.evaluate(()=>{const q=window.__KS_QA__;q.core.water=.92;});await p.waitF
 await p.evaluate(()=>{const q=window.__KS_QA__;q.core.water=0;q.core.quiet=false;q.core.sensory='none';q.core.time=2;q.core.update(.001);q.freeze(true);q.core.quiet=false;q.world.aimAt('C04');});await p.waitForTimeout(500);await p.screenshot({path:'qa/v02-anomaly-mobile.png'});
 await p.evaluate(()=>{const q=window.__KS_QA__;q.start(10);q.freeze(true);q.ads(true);q.world.aimAt('C01');});await p.waitForTimeout(700);await p.screenshot({path:'qa/v02-finale-mobile.png'});
 for(let i=0;i<5;i++){await p.evaluate(()=>{const q=window.__KS_QA__;q.world.aimAt(q.core.targets.find(t=>!t.solved).id)});await p.waitForTimeout(60);await p.locator('#fire').dispatchEvent('pointerdown',{pointerId:7,button:0});await p.evaluate(()=>window.__KS_QA__.advance(1.4));}
-const result=await p.evaluate(()=>window.__KS_QA__.state);assert.equal(result.state,'won');assert.equal(result.ammo,3);assert.equal(result.score,1150);
+const result=await p.evaluate(()=>window.__KS_QA__.state);assert.equal(result.state,'won');assert.equal(result.ammo,7);assert.equal(result.score,1951);
 await p.evaluate(()=>{const q=window.__KS_QA__;q.start(1);q.freeze(true);q.core.round=5;q.core.setupRound();q.world.yaw=0;});await p.waitForTimeout(300);await p.screenshot({path:'qa/v02-booth-mobile.png'});
 const breath=await p.locator('#breath').boundingBox(),aim=await p.locator('#aim').boundingBox();assert(breath.x<150);assert(aim.x>650);
 await p.evaluate(()=>{document.body.classList.add('left-hand')});const leftBreath=await p.locator('#breath').boundingBox(),leftAim=await p.locator('#aim').boundingBox();assert(leftBreath.x>650);assert(leftAim.x<150);
