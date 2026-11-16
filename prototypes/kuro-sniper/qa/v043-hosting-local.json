@@ -1,0 +1,73 @@
+{
+  "base": "http://127.0.0.1:5190/QuRa-Game-Design/sniper/",
+  "errors": [],
+  "failedRequests": [],
+  "assetCount": 226,
+  "levels": [
+    {
+      "id": 1,
+      "sd": 0,
+      "frames": 0
+    },
+    {
+      "id": 2,
+      "sd": 42.2384618457404,
+      "frames": 47
+    },
+    {
+      "id": 3,
+      "sd": 41.971580850971826,
+      "frames": 354
+    },
+    {
+      "id": 4,
+      "sd": 43.19139594591161,
+      "frames": 388
+    },
+    {
+      "id": 5,
+      "sd": 41.75622252198981,
+      "frames": 421
+    },
+    {
+      "id": 6,
+      "sd": 44.25938130522541,
+      "frames": 465
+    },
+    {
+      "id": 7,
+      "sd": 44.54057649801464,
+      "frames": 485
+    },
+    {
+      "id": 8,
+      "sd": 44.834401120586705,
+      "frames": 550
+    },
+    {
+      "id": 9,
+      "sd": 53.37080104585333,
+      "frames": 679
+    },
+    {
+      "id": 10,
+      "sd": 60.20658884265012,
+      "frames": 808
+    }
+  ],
+  "title": "QuRa. Снайпер",
+  "normalShot": {
+    "ammo": "17",
+    "score": "10"
+  },
+  "info": {
+    "id": "qura-kuro-sniper-prototype",
+    "version": "0.4.3",
+    "mode": "local-only",
+    "rewards": false,
+    "localRewards": true,
+    "accountRewards": false,
+    "displayName": "QuRa. Снайпер"
+  },
+  "passed": true
+}

@@ -1,3 +1,4 @@
+import {assetUrl} from './asset-url';
 import {
   Engine,Scene,FreeCamera,Camera,Vector3,Color3,Color4,HemisphericLight,DirectionalLight,
   MeshBuilder,Mesh,TransformNode,StandardMaterial,PBRMaterial,DynamicTexture,Texture,
@@ -80,32 +81,32 @@ export class World {
   }
   photoMaterial(name:string,type:string,u=1,v=1){
     const m=this.mat(name,'#ffffff',0,1);
-    const map=(suffix:string,linear=false)=>{const t=new Texture(`/assets/materials/${type}-${suffix}.webp`,this.scene);t.uScale=u;t.vScale=v;t.anisotropicFilteringLevel=8;t.gammaSpace=!linear;return t;};
-    const albedo=type==='ref-grass'?new Texture('/assets/materials/meadow-albedo-v1.png',this.scene):map('color');albedo.uScale=u;albedo.vScale=v;albedo.anisotropicFilteringLevel=8;m.albedoTexture=albedo;m.bumpTexture=map('normal',true);m.bumpTexture.level=.65;m.invertNormalMapX=true;m.invertNormalMapY=true;
+    const map=(suffix:string,linear=false)=>{const t=new Texture(assetUrl(`/assets/materials/${type}-${suffix}.webp`),this.scene);t.uScale=u;t.vScale=v;t.anisotropicFilteringLevel=8;t.gammaSpace=!linear;return t;};
+    const albedo=type==='ref-grass'?new Texture(assetUrl('/assets/materials/meadow-albedo-v1.png'),this.scene):map('color');albedo.uScale=u;albedo.vScale=v;albedo.anisotropicFilteringLevel=8;m.albedoTexture=albedo;m.bumpTexture=map('normal',true);m.bumpTexture.level=.65;m.invertNormalMapX=true;m.invertNormalMapY=true;
     m.metallicTexture=map('orm',true);m.useAmbientOcclusionFromMetallicTextureRed=true;m.useRoughnessFromMetallicTextureAlpha=false;m.useRoughnessFromMetallicTextureGreen=true;m.useMetallnessFromMetallicTextureBlue=true;return m;
   }
   box(name:string,pos:number[],scale:number[],mat:any,parent=this.environment){const [w,h,d]=scale,uv=(a:number,b:number)=>new Vector4(0,0,a/2,b/2);const m=MeshBuilder.CreateBox(name,{width:w,height:h,depth:d,faceUV:[uv(w,h),uv(w,h),uv(d,h),uv(d,h),uv(w,d),uv(w,d)]},this.scene);m.position.set(pos[0],pos[1],pos[2]);m.material=mat;m.parent=parent;m.receiveShadows=true;return m;}
   async load(onProgress:(n:number)=>void){
-    this.rigRecipes=await fetch('/assets/rigs/rigs.json').then(r=>r.json());
-    await Promise.all(Object.values(this.rigRecipes).flatMap((r:any)=>r.layers).map(async (l:any)=>{this.textures[l.url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(l.url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));t.hasAlpha=true;});}));
-    const woodland=await new Promise<Texture>((resolve,reject)=>{const t=new Texture('/assets/materials/woodland-panorama-v1.png',this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});
+    this.rigRecipes=await fetch(assetUrl('/assets/rigs/rigs.json')).then(r=>r.json());
+    await Promise.all(Object.values(this.rigRecipes).flatMap((r:any)=>r.layers).map(async (l:any)=>{this.textures[l.url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(assetUrl(l.url),this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));t.hasAlpha=true;});}));
+    const woodland=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(assetUrl('/assets/materials/woodland-panorama-v1.png'),this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});
     Effect.ShadersStore.ksBackdropVertexShader=Effect.ShadersStore.ksLensVertexShader;
     Effect.ShadersStore.ksBackdropFragmentShader='precision highp float;varying vec2 vUV;uniform sampler2D backdropView;void main(){gl_FragColor=texture2D(backdropView,vUV);}';
     this.sky=MeshBuilder.CreatePlane('woodland-distant-backdrop',{width:7400,height:3700},this.scene);this.sky.position.set(0,100,3100);this.sky.isPickable=false;
     const backdrop=new ShaderMaterial('woodland-distant-backdrop-material',this.scene,{vertex:'ksBackdrop',fragment:'ksBackdrop'},{attributes:['position','uv'],uniforms:['worldViewProjection'],samplers:['backdropView']});backdrop.setTexture('backdropView',woodland);this.sky.material=backdrop;this.sky.setEnabled(false);
-    await Promise.all(['/assets/materials/meadow-albedo-v1.png','/assets/foliage/meadow-flowers-v1.png','/assets/foliage/oak-v1.png','/assets/posters/poultry-yard-promo-figma.png','/assets/materials/dry-hay-v1.png','/assets/stable/horse-chestnut-v1.png'].map(async url=>{this.textures[url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(url,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});}));
+    await Promise.all(['/assets/materials/meadow-albedo-v1.png','/assets/foliage/meadow-flowers-v1.png','/assets/foliage/oak-v1.png','/assets/posters/poultry-yard-promo-figma.png','/assets/materials/dry-hay-v1.png','/assets/stable/horse-chestnut-v1.png'].map(async url=>{this.textures[url]=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(assetUrl(url),this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});}));
 
-    this.skyLight=new HDRCubeTexture('/assets/materials/sky-light.hdr',this.scene,128,false,true,false,true);
+    this.skyLight=new HDRCubeTexture(assetUrl('/assets/materials/sky-light.hdr'),this.scene,128,false,true,false,true);
     this.scene.environmentTexture=this.skyLight;this.scene.environmentIntensity=.55;this.weaponScene.environmentTexture=this.skyLight;this.weaponScene.environmentIntensity=.75;
     const codes=['ryaba','fool','professor','fighter','glamour'];let done=0;
-    await Promise.all(codes.flatMap(code=>['perch','card'].map(async pose=>{const t=await new Promise<Texture>((resolve,reject)=>{const tex=new Texture(`/assets/characters/${code}/${pose}.webp`,this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(tex),(_,e)=>reject(e));tex.hasAlpha=true;});this.textures[`${code}-${pose}`]=t;onProgress(++done/16);})));
-    this.stationContainer=await SceneLoader.LoadAssetContainerAsync('/assets/models/v03/','ks-target-station.glb',this.scene);onProgress(++done/16);
+    await Promise.all(codes.flatMap(code=>['perch','card'].map(async pose=>{const t=await new Promise<Texture>((resolve,reject)=>{const tex=new Texture(assetUrl(`/assets/characters/${code}/${pose}.webp`),this.scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(tex),(_,e)=>reject(e));tex.hasAlpha=true;});this.textures[`${code}-${pose}`]=t;onProgress(++done/16);})));
+    this.stationContainer=await SceneLoader.LoadAssetContainerAsync(assetUrl('/assets/models/v03/'),'ks-target-station.glb',this.scene);onProgress(++done/16);
     for(const mesh of this.stationContainer.meshes)if(mesh.material?.name.includes('Honey oak'))mesh.material=this.materials.wood;
-    const walnut=await new Promise<Texture>((resolve,reject)=>{const t=new Texture('/assets/materials/rifle-walnut-v1.png',this.weaponScene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});walnut.anisotropicFilteringLevel=8;
+    const walnut=await new Promise<Texture>((resolve,reject)=>{const t=new Texture(assetUrl('/assets/materials/rifle-walnut-v1.png'),this.weaponScene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>resolve(t),(_,e)=>reject(e));});walnut.anisotropicFilteringLevel=8;
     const micro=new DynamicTexture('brushed-metal-microdetail',{width:256,height:256},this.weaponScene,false),ctx=micro.getContext() as CanvasRenderingContext2D,im=ctx.createImageData(256,256);
     for(let y=0;y<256;y++)for(let x=0;x<256;x++){const i=(y*256+x)*4,nx=Math.sin(x*.53+Math.sin(y*.025))*.055,ny=Math.cos(y*.31)*.015;im.data[i]=128+nx*127;im.data[i+1]=128+ny*127;im.data[i+2]=255;im.data[i+3]=255;}ctx.putImageData(im,0,0);micro.update();micro.gammaSpace=false;
     await Promise.all(['airgun','sport','sniper','precision','final'].map(async family=>{
-      const container=await SceneLoader.LoadAssetContainerAsync('/assets/models/v03/',`ks-rifle-${family}.glb`,this.weaponScene);container.addAllToScene();
+      const container=await SceneLoader.LoadAssetContainerAsync(assetUrl('/assets/models/v03/'),`ks-rifle-${family}.glb`,this.weaponScene);container.addAllToScene();
       for(const m of container.materials)if(m instanceof PBRMaterial){m.environmentIntensity=1;
         if(m.name.includes('walnut')||m.name.includes('Walnut')){m.albedoTexture=walnut;m.albedoColor=Color3.White();m.bumpTexture=micro;m.bumpTexture.level=.12;m.clearCoat.isEnabled=true;m.clearCoat.intensity=.26;m.clearCoat.roughness=.22;m.roughness=.38;}
         else if(m.name.includes('glass')){m.roughness=.09;m.clearCoat.isEnabled=true;m.clearCoat.intensity=1;m.clearCoat.roughness=.05;}
@@ -207,7 +208,7 @@ export class World {
     }
     VertexData.ComputeNormals(positions,indices,normals);const data=new VertexData();data.positions=positions;data.indices=indices;data.normals=normals;data.colors=colors;data.uvs=uvs;
     const mesh=new Mesh('meadow-flowers',this.scene);data.applyToMesh(mesh);mesh.parent=this.environment;
-    const material=new StandardMaterial('flowering-meadow-cutout',this.scene),tex=new Texture('/assets/foliage/meadow-flowers-v1.png',this.scene,false,true);tex.hasAlpha=true;tex.anisotropicFilteringLevel=4;material.diffuseTexture=tex;material.useAlphaFromDiffuseTexture=true;material.transparencyMode=1;material.alphaCutOff=.4;material.backFaceCulling=false;material.emissiveColor=new Color3(.15,.15,.15);material.specularColor=Color3.Black();mesh.material=material;this.levelMaterials.push(material);mesh.receiveShadows=true;mesh.metadata={detail:true};
+    const material=new StandardMaterial('flowering-meadow-cutout',this.scene),tex=new Texture(assetUrl('/assets/foliage/meadow-flowers-v1.png'),this.scene,false,true);tex.hasAlpha=true;tex.anisotropicFilteringLevel=4;material.diffuseTexture=tex;material.useAlphaFromDiffuseTexture=true;material.transparencyMode=1;material.alphaCutOff=.4;material.backFaceCulling=false;material.emissiveColor=new Color3(.15,.15,.15);material.specularColor=Color3.Black();mesh.material=material;this.levelMaterials.push(material);mesh.receiveShadows=true;mesh.metadata={detail:true};
   }
   forestCards(distance:number){
     const positions:number[]=[],indices:number[]=[],uvs:number[]=[],normals:number[]=[];
