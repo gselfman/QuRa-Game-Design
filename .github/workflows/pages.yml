@@ -1,12 +1,13 @@
-name: Deploy Arena prototype to GitHub Pages
+name: Deploy QuRa prototypes to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "codex/kuro-sniper-prototype-v01"]
     paths:
       - "arena/**"
       - "arena-live/**"
       - "arena-live-3x3/**"
+      - "prototypes/kuro-sniper/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -26,8 +27,40 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      # Keep the existing Arena routes on their main-branch versions.
+      - name: Checkout Arena
         uses: actions/checkout@v4
+        with:
+          ref: main
+          path: arena-source
+      # The sniper prototype is developed independently of the main branch.
+      - name: Checkout Sniper
+        uses: actions/checkout@v4
+        with:
+          ref: codex/kuro-sniper-prototype-v01
+          path: sniper-source
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: sniper-source/prototypes/kuro-sniper/package-lock.json
+      - name: Build and check Sniper
+        working-directory: sniper-source/prototypes/kuro-sniper
+        env:
+          PAGES_REPOSITORY: ${{ github.event.repository.name }}
+        run: |
+          npm ci
+          npm test
+          npm run build -- --base="/${PAGES_REPOSITORY}/sniper/"
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file = 'dist/kuro-prototype-info.json';
+          const info = JSON.parse(fs.readFileSync(file, 'utf8'));
+          info.mode = 'public-demo';
+          info.hosting = 'github-pages';
+          fs.writeFileSync(file, JSON.stringify(info, null, 2) + '\n');
+          NODE
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
@@ -35,9 +68,11 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp arena/index.html _site/index.html
-          cp -r arena-live _site/arena-live
-          cp -r arena-live-3x3 _site/arena-live-3x3
+          cp arena-source/arena/index.html _site/index.html
+          cp -r arena-source/arena-live _site/arena-live
+          cp -r arena-source/arena-live-3x3 _site/arena-live-3x3
+          cp -r sniper-source/prototypes/kuro-sniper/dist _site/sniper
+          touch _site/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
