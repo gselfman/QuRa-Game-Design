@@ -42,7 +42,7 @@ for port in range(options.port, options.port + 11):
 if server is None:
     raise SystemExit('No free local port found. Close an earlier game window and try again.')
 url = f'http://127.0.0.1:{server.server_port}/'
-print(f'QuRa / Кура: {url}', flush=True)
+print(f'QuRa. Снайпер: {url}', flush=True)
 print('Закройте это окно или нажмите Ctrl+C, чтобы остановить игру.', flush=True)
 if options.open:
     threading.Timer(.3, lambda: webbrowser.open(url)).start()

@@ -1,0 +1,14 @@
+{
+  "normal": {
+    "ads": 1,
+    "mean": 117.07595486111111,
+    "sd": 67.6942267609421,
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)"
+  },
+  "injected": {
+    "ads": 1,
+    "mean": 74,
+    "sd": 0,
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)"
+  }
+}

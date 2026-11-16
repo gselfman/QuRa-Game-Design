@@ -15,7 +15,8 @@ type Actor={root:TransformNode,bird:Mesh,rig:CharacterRig,station:TransformNode,
 const FOOT_ANCHORS:Record<string,number[]>={ryaba:[623,670],fool:[594,664],professor:[601,653],fighter:[614,663],glamour:[599,689]};
 const C=(s:string)=>Color3.FromHexString(s);
 export class World {
-  engine:Engine;scene:Scene;camera:FreeCamera;scopeCamera:FreeCamera;scope:RenderTargetTexture;
+  private glContext:WebGLRenderingContext|WebGL2RenderingContext;
+  engine:Engine;scene:Scene;camera:FreeCamera;scopeCamera:FreeCamera;scope!:RenderTargetTexture;scopeStatus={mode:'independent-world-list',frames:0,contextRestores:0};
   overlay:Scene;lens:Mesh;lensShader:ShaderMaterial;weaponScene:Scene;weaponCamera:FreeCamera;
   environment:TransformNode;actors:Actor[]=[];guns:Record<string,TransformNode>={};gun:TransformNode|null=null;
   stationContainer:AssetContainer|null=null;shadow:ShadowGenerator;sun:DirectionalLight;
@@ -27,6 +28,7 @@ export class World {
   rigRecipes:any={};sky:Mesh|null=null;skyLight:HDRCubeTexture|null=null;weaponCycle=100;weaponProfile='airgun';casingEjected=true;casings:any[]=[];
   constructor(public canvas:HTMLCanvasElement){
     this.engine=new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true,alpha:false,powerPreference:'high-performance'});
+    this.glContext=(canvas.getContext('webgl2')||canvas.getContext('webgl')) as WebGLRenderingContext|WebGL2RenderingContext;
     this.engine.setHardwareScalingLevel(1/Math.min(window.devicePixelRatio||1,1.5));
     this.scene=new Scene(this.engine);this.scene.clearColor=new Color4(.66,.78,.83,1);
     this.scene.ambientColor=new Color3(.35,.32,.25);
@@ -40,18 +42,31 @@ export class World {
     this.materials.wood=this.woodMaterial('oak','#9b663c');this.materials.darkWood=this.woodMaterial('walnut','#553a29');this.materials.floor=this.photoMaterial('worn-floor','ref-floor');this.materials.floor.albedoColor=new Color3(1.1,1,.85);this.materials.cream=this.mat('cream','#f4e5c6');this.materials.red=this.mat('red','#b7533d');this.materials.gold=this.mat('gold','#ddb86a',.55,.35);this.materials.metal=this.mat('metal','#3e4645',.7,.33);this.materials.green=this.mat('green','#658353');
     this.materials.feather=this.featherMaterial();this.materials.clothCream=this.clothMaterial('canvas-cream','#e9ddc4');this.materials.clothRed=this.clothMaterial('canvas-red','#b75c46');
     this.environment=new TransformNode('environment',this.scene);
-    this.scope=new RenderTargetTexture('scope-view',{width:768,height:768},this.scene,false,false,0,false,Texture.BILINEAR_SAMPLINGMODE);this.scope.activeCamera=this.scopeCamera;this.scope.ignoreCameraViewport=true;this.scope.renderList=null;this.scene.customRenderTargets.push(this.scope);
+    this.replaceScopeTarget(768);
     this.overlay=new Scene(this.engine);this.overlay.autoClear=false;this.overlay.autoClearDepthAndStencil=true;
     const ortho=new FreeCamera('lens-composite',new Vector3(0,0,-10),this.overlay);ortho.mode=Camera.ORTHOGRAPHIC_CAMERA;ortho.setTarget(Vector3.Zero());this.overlay.activeCamera=ortho;
     Effect.ShadersStore.ksLensVertexShader='precision highp float;attribute vec3 position;attribute vec2 uv;uniform mat4 worldViewProjection;varying vec2 vUV;void main(){vUV=uv;gl_Position=worldViewProjection*vec4(position,1.0);}';
-    Effect.ShadersStore.ksLensFragmentShader=`precision highp float;varying vec2 vUV;uniform sampler2D lensView;uniform float visible,time,fieldRadius;uniform vec2 fieldCenter;void main(){float d=length(vUV-0.5)*2.0;if(d>1.0||visible<0.01)discard;vec2 uv=vUV;vec2 delta=uv-fieldCenter;float r=length(delta)/max(.001,fieldRadius);float mask=(1.0-smoothstep(.6,1.0,r))*smoothstep(.08,.28,r)*step(.001,fieldRadius);uv+=vec2(-delta.y,delta.x)*sin(time*2.0+r*8.0)*.095*mask;uv+=normalize(delta+vec2(.00001))*sin(r*18.0-time*3.0)*fieldRadius*.018*mask;vec3 col=texture2D(lensView,uv).rgb;float edge=smoothstep(0.82,1.0,d);col*=1.0-edge*0.13;gl_FragColor=vec4(col,visible);}`;
+    Effect.ShadersStore.ksLensFragmentShader=`precision highp float;varying vec2 vUV;uniform sampler2D lensView;uniform float visible,time,fieldRadius;uniform vec2 fieldCenter;void main(){float d=length(vUV-0.5)*2.0;if(d>1.0||visible<0.01)discard;vec2 uv=vUV;if(fieldRadius>0.0001){vec2 delta=uv-fieldCenter;float r=length(delta)/max(.001,fieldRadius);float mask=(1.0-smoothstep(.6,1.0,r))*smoothstep(.08,.28,r)*step(.001,fieldRadius);uv+=vec2(-delta.y,delta.x)*sin(time*2.0+r*8.0)*.095*mask;uv+=normalize(delta+vec2(.00001))*sin(r*18.0-time*3.0)*fieldRadius*.018*mask;}vec3 col=texture2D(lensView,clamp(uv,vec2(0.001),vec2(0.999))).rgb;float edge=smoothstep(0.82,1.0,d);col*=1.0-edge*0.13;gl_FragColor=vec4(col,visible);}`;
     this.lensShader=new ShaderMaterial('lens-compositor',this.overlay,{vertex:'ksLens',fragment:'ksLens'},{attributes:['position','uv'],uniforms:['worldViewProjection','visible','time','fieldRadius','fieldCenter'],samplers:['lensView'],needAlphaBlending:true});this.lensShader.setTexture('lensView',this.scope);this.lensShader.setFloat('visible',0);this.lensShader.setFloat('fieldRadius',0);this.lensShader.setVector2('fieldCenter',Vector2.Zero());this.lensShader.backFaceCulling=false;this.lensShader.disableDepthWrite=true;
     this.lens=MeshBuilder.CreatePlane('round-lens',{size:1},this.overlay);this.lens.material=this.lensShader;this.lens.isPickable=false;
     this.weaponScene=new Scene(this.engine);this.weaponScene.autoClear=false;this.weaponScene.autoClearDepthAndStencil=true;
     this.weaponCamera=new FreeCamera('hands-camera',Vector3.Zero(),this.weaponScene);this.weaponCamera.setTarget(new Vector3(0,0,1));this.weaponCamera.minZ=.01;this.weaponCamera.fov=.95;this.weaponScene.activeCamera=this.weaponCamera;
     const gunlight=new HemisphericLight('gun-sky',new Vector3(0,1,-1),this.weaponScene);gunlight.intensity=.95;gunlight.groundColor=C('#5c5143');const key=new DirectionalLight('gun-key',new Vector3(-1,-1,1),this.weaponScene);key.intensity=2.2;key.diffuse=C('#ffe2ae');
     this.bullet=MeshBuilder.CreateSphere('capsule',{diameter:.025,segments:6},this.scene);this.bullet.material=this.mat('capsule','#ffd785',.15,.4);this.bullet.setEnabled(false);
+    this.engine.onContextRestoredObservable.add(()=>{this.scopeStatus.contextRestores++;this.replaceScopeTarget(this.scope.getSize().width);this.resize();});
     this.resizeObserver=new ResizeObserver(()=>this.resize());this.resizeObserver.observe(canvas);this.resize();
+  }
+  private replaceScopeTarget(resolution:number){
+    const previous=this.scope;
+    if(previous){const index=this.scene.customRenderTargets.indexOf(previous);if(index>=0)this.scene.customRenderTargets.splice(index,1);previous.dispose();}
+    const target=new RenderTargetTexture('scope-view',{width:resolution,height:resolution},this.scene,false,false,0,false,Texture.BILINEAR_SAMPLINGMODE);
+    target.activeCamera=this.scopeCamera;target.ignoreCameraViewport=true;
+    // The primary camera's cached active list can be empty/stale. Build optics
+    // from the live world, including newly spawned targets, every single pass.
+    target.renderList=[];target.getCustomRenderList=()=>this.scene.meshes;target.forceLayerMaskCheck=true;
+    target.onAfterRenderObservable.add(()=>this.scopeStatus.frames++);
+    this.scope=target;this.scene.customRenderTargets.push(target);this.lensShader?.setTexture('lensView',target);
+    if(previous)this.engine.wipeCaches(true);
   }
   mat(name:string,hex:string,metallic=0,roughness=.85,scene=this.scene){const m=new PBRMaterial(name,scene);m.albedoColor=C(hex).toLinearSpace();m.metallic=metallic;m.roughness=roughness;m.environmentIntensity=.7;if(this.buildingEnvironment)this.levelMaterials.push(m);return m;}
   woodMaterial(name:string,hex:string){
@@ -103,7 +118,7 @@ export class World {
 
     await Promise.all(this.weaponScene.meshes.filter(m=>m.material instanceof PBRMaterial).map(m=>m.material!.forceCompilationAsync(m)));
     this.ready=true;
-    this.engine.runRenderLoop(()=>{if(document.hidden)return;const dt=Math.min(this.engine.getDeltaTime()/1000,.05);this.onFrame?.(dt);this.render(dt);});
+    this.engine.runRenderLoop(()=>{if(document.hidden||this.glContext.isContextLost())return;const dt=Math.min(this.engine.getDeltaTime()/1000,.05);this.onFrame?.(dt);this.render(dt);});
   }
   setup(level:any,loadout:any,core:any,menu=false){
     this.level=level;this.core=core;this.menu=menu;this.yaw=0;this.pitch=Math.atan2(.88-1.5,level.distanceM);this.magnification=loadout.maxMagnification;this.recoil=0;this.ads=0;this.weaponCycle=100;this.casingEjected=true;this.weaponProfile=loadout.id==='classic_bolt'?'classic':loadout.family;this.casings.forEach(c=>c.mesh.dispose());this.casings=[];
@@ -244,13 +259,14 @@ export class World {
   }
   setAds(value:boolean){this.clampAim();this.ads=value?1:0;this.resize();}
   resize(){
+    if(this.glContext.isContextLost())return;
     this.engine.resize();const w=this.engine.getRenderWidth(),h=this.engine.getRenderHeight();this.diameter=Math.min(h*.76,w*.46);
     const camera=this.overlay.activeCamera as FreeCamera;camera.orthoLeft=-w/2;camera.orthoRight=w/2;camera.orthoTop=h/2;camera.orthoBottom=-h/2;
     this.lens.scaling.set(this.diameter,this.diameter,1);this.lens.position.set(0,0,0);
     const cssH=this.canvas.clientHeight,cssW=this.canvas.clientWidth;document.documentElement.style.setProperty('--lens',`${Math.min(cssH*.76,cssW*.46)}px`);
     const pixels=Math.ceil(Math.min(cssH*.76,cssW*.46)*Math.min(devicePixelRatio,2)/256)*256;
     const resolution=clamp(pixels,512,this.low?768:1536);
-    if(this.scope.getSize().width!==resolution)this.scope.resize({width:resolution,height:resolution});
+    if(this.scope.getSize().width!==resolution)this.replaceScopeTarget(resolution);
   }
   direction(){return new Vector3(Math.sin(this.yaw)*Math.cos(this.pitch),Math.sin(this.pitch),Math.cos(this.yaw)*Math.cos(this.pitch));}
   clampAim(){

@@ -1,0 +1,887 @@
+{
+  "cases": [
+    {
+      "mode": "metal-retina",
+      "device": {
+        "webgl": 2,
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)"
+      },
+      "levels": [
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 90.24034288194444,
+            "sd": 52.44006027772131
+          },
+          "texture": {
+            "mean": 117.07595486111111,
+            "sd": 67.6942267609421
+          },
+          "size": 1024,
+          "frames": 114,
+          "visible": {
+            "mean": 87.72699652777777,
+            "sd": 45.61456563910735
+          }
+        },
+        {
+          "level": 3,
+          "ads": 1,
+          "canvas": {
+            "mean": 184.87727864583334,
+            "sd": 15.140087323286094
+          },
+          "texture": {
+            "mean": 182.71050347222223,
+            "sd": 15.643681967823525
+          },
+          "size": 1024,
+          "frames": 7790
+        },
+        {
+          "level": 4,
+          "ads": 1,
+          "canvas": {
+            "mean": 110.962890625,
+            "sd": 45.765047745157105
+          },
+          "texture": {
+            "mean": 129.52061631944446,
+            "sd": 59.05902958912411
+          },
+          "size": 1024,
+          "frames": 8401
+        },
+        {
+          "level": 5,
+          "ads": 1,
+          "canvas": {
+            "mean": 105.427734375,
+            "sd": 46.368122748212826
+          },
+          "texture": {
+            "mean": 127.43012152777777,
+            "sd": 60.78700343937025
+          },
+          "size": 1024,
+          "frames": 8414
+        },
+        {
+          "level": 6,
+          "ads": 1,
+          "canvas": {
+            "mean": 119.06749131944444,
+            "sd": 47.304626092834866
+          },
+          "texture": {
+            "mean": 133.97905815972223,
+            "sd": 58.6040083225887
+          },
+          "size": 1024,
+          "frames": 8427
+        },
+        {
+          "level": 7,
+          "ads": 1,
+          "canvas": {
+            "mean": 151.53993055555554,
+            "sd": 49.367320193830444
+          },
+          "texture": {
+            "mean": 134.16362847222223,
+            "sd": 52.509701947732886
+          },
+          "size": 1024,
+          "frames": 8436
+        },
+        {
+          "level": 8,
+          "ads": 1,
+          "canvas": {
+            "mean": 152.82541232638889,
+            "sd": 47.74481420951565
+          },
+          "texture": {
+            "mean": 135.98480902777777,
+            "sd": 50.77029676024412
+          },
+          "size": 1024,
+          "frames": 8443
+        },
+        {
+          "level": 9,
+          "ads": 1,
+          "canvas": {
+            "mean": 137.64453125,
+            "sd": 57.62573387357226
+          },
+          "texture": {
+            "mean": 178.83062065972223,
+            "sd": 55.61142409906965
+          },
+          "size": 1024,
+          "frames": 8451
+        },
+        {
+          "level": 10,
+          "ads": 1,
+          "canvas": {
+            "mean": 75.16265190972223,
+            "sd": 37.85994667964324
+          },
+          "texture": {
+            "mean": 73.17730034722223,
+            "sd": 37.905979908858214
+          },
+          "size": 1024,
+          "frames": 8487
+        }
+      ],
+      "periphery": "main camera projection identical; screenshot pair retained",
+      "resize": [
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 90.81467013888889,
+            "sd": 49.560134909895325
+          },
+          "texture": {
+            "mean": 83.60319010416667,
+            "sd": 42.2384618457404
+          },
+          "size": 512,
+          "frames": 8538
+        },
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 102.60362413194444,
+            "sd": 61.322033746469685
+          },
+          "texture": {
+            "mean": 143.68402777777777,
+            "sd": 70.93515956804268
+          },
+          "size": 1280,
+          "frames": 8577
+        },
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 90.61143663194444,
+            "sd": 52.27508405994468
+          },
+          "texture": {
+            "mean": 95.33550347222223,
+            "sd": 57.26553061351919
+          },
+          "size": 768,
+          "frames": 8620
+        }
+      ],
+      "activeField": {
+        "level": 3,
+        "ads": 1,
+        "canvas": {
+          "mean": 151.48708767361111,
+          "sd": 48.28718889156424
+        },
+        "texture": {
+          "mean": 150.76605902777777,
+          "sd": 51.99067969447734
+        },
+        "size": 1024,
+        "frames": 8676,
+        "visible": {
+          "mean": 113.84771050347223,
+          "sd": 40.046163766188826
+        }
+      },
+      "restored": {
+        "level": 2,
+        "ads": 1,
+        "canvas": {
+          "mean": 191.32313368055554,
+          "sd": 14.813744189642435
+        },
+        "texture": {
+          "mean": 195.00010850694446,
+          "sd": 20.33686305997475
+        },
+        "size": 1024,
+        "frames": 9311,
+        "visible": {
+          "mean": 87.13823784722223,
+          "sd": 45.60409158116659
+        }
+      }
+    },
+    {
+      "mode": "webgl1-mobile",
+      "device": {
+        "webgl": 1,
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)"
+      },
+      "levels": [
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 77.85536024305556,
+            "sd": 19.847596945583145
+          },
+          "texture": {
+            "mean": 71.99131944444444,
+            "sd": 15.8468599893782
+          },
+          "size": 512,
+          "frames": 4,
+          "visible": {
+            "mean": 91.1728515625,
+            "sd": 42.54943209746175
+          }
+        },
+        {
+          "level": 3,
+          "ads": 1,
+          "canvas": {
+            "mean": 98.87239583333333,
+            "sd": 37.6497990922998
+          },
+          "texture": {
+            "mean": 103.24967447916667,
+            "sd": 42.46559639360047
+          },
+          "size": 512,
+          "frames": 213
+        },
+        {
+          "level": 4,
+          "ads": 1,
+          "canvas": {
+            "mean": 99.40744357638889,
+            "sd": 39.2402138717074
+          },
+          "texture": {
+            "mean": 110.10763888888889,
+            "sd": 43.844381358582545
+          },
+          "size": 512,
+          "frames": 233
+        },
+        {
+          "level": 5,
+          "ads": 1,
+          "canvas": {
+            "mean": 114.97894965277777,
+            "sd": 47.15182600676004
+          },
+          "texture": {
+            "mean": 92.53537326388889,
+            "sd": 26.291341594323864
+          },
+          "size": 512,
+          "frames": 239
+        },
+        {
+          "level": 6,
+          "ads": 1,
+          "canvas": {
+            "mean": 112.73849826388889,
+            "sd": 43.29199222489473
+          },
+          "texture": {
+            "mean": 117.51671006944444,
+            "sd": 44.781861119843065
+          },
+          "size": 512,
+          "frames": 248
+        },
+        {
+          "level": 7,
+          "ads": 1,
+          "canvas": {
+            "mean": 118.47309027777777,
+            "sd": 44.07674775358906
+          },
+          "texture": {
+            "mean": 121.07790798611111,
+            "sd": 45.15809908515402
+          },
+          "size": 512,
+          "frames": 265
+        },
+        {
+          "level": 8,
+          "ads": 1,
+          "canvas": {
+            "mean": 124.74262152777777,
+            "sd": 44.6720951233645
+          },
+          "texture": {
+            "mean": 129.18728298611111,
+            "sd": 45.41764710042417
+          },
+          "size": 512,
+          "frames": 281
+        },
+        {
+          "level": 9,
+          "ads": 1,
+          "canvas": {
+            "mean": 130.90603298611111,
+            "sd": 48.226060267767025
+          },
+          "texture": {
+            "mean": 132.58821614583334,
+            "sd": 53.998207877879835
+          },
+          "size": 512,
+          "frames": 296
+        },
+        {
+          "level": 10,
+          "ads": 1,
+          "canvas": {
+            "mean": 115.71961805555556,
+            "sd": 56.106891153614654
+          },
+          "texture": {
+            "mean": 98.48296440972223,
+            "sd": 60.182298045048995
+          },
+          "size": 512,
+          "frames": 314
+        }
+      ],
+      "periphery": "main camera projection identical; screenshot pair retained",
+      "resize": [
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 91.81640625,
+            "sd": 43.66541843717171
+          },
+          "texture": {
+            "mean": 83.63845486111111,
+            "sd": 42.09907313378355
+          },
+          "size": 512,
+          "frames": 361
+        },
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 91.81640625,
+            "sd": 43.66541843717171
+          },
+          "texture": {
+            "mean": 83.63845486111111,
+            "sd": 42.09907313378355
+          },
+          "size": 512,
+          "frames": 483
+        },
+        {
+          "level": 2,
+          "ads": 1,
+          "canvas": {
+            "mean": 0,
+            "sd": 0
+          },
+          "texture": {
+            "mean": 95.31325954861111,
+            "sd": 57.072882083553985
+          },
+          "size": 768,
+          "frames": 492,
+          "visible": {
+            "mean": 81.39615885416667,
+            "sd": 26.644820608897348
+          }
+        }
+      ],
+      "activeField": {
+        "level": 3,
+        "ads": 1,
+        "canvas": {
+          "mean": 113.29958767361111,
+          "sd": 42.33400723098114
+        },
+        "texture": {
+          "mean": 141.49359809027777,
+          "sd": 59.474592664071444
+        },
+        "size": 1024,
+        "frames": 662,
+        "visible": {
+          "mean": 67.24131944444444,
+          "sd": 28.35480441351184
+        }
+      },
+      "restored": {
+        "level": 2,
+        "ads": 1,
+        "canvas": {
+          "mean": 154.04969618055554,
+          "sd": 54.727795907317315
+        },
+        "texture": {
+          "mean": 186.43315972222223,
+          "sd": 14.970597725747526
+        },
+        "size": 512,
+        "frames": 793,
+        "visible": {
+          "mean": 91.1728515625,
+          "sd": 42.54943209746175
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "contextLossDiagnostics": [
+    "BJS - [14:25:26]: Error compiling effect",
+    "BJS - [14:25:26]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=37442, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal color",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:25:27]: Attributes: position normal",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:25:27]: Trying next fallback.",
+    "BJS - [14:25:27]: Error compiling effect",
+    "BJS - [14:25:27]: Unable to compile effect:",
+    "BJS - [14:25:27]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:25:27]: Attributes: position normal uv",
+    "BJS - [14:25:27]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:25:27]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=37442, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal color",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define MAINUV1\n#define UV1\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSE\n#define DIFFUSEDIRECTUV 1\n#define AM",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vDiffuseColor vSpecularColor vEmissiveColor visibility vFogInfos vFogColor pointSize vDiffuseInfos vAmbientInfos vOpacityInfos vEmissiveInfos vSpecularInfos vBumpInfos vLightmapInfos vRefractionInfos mBones ",
+    "BJS - [14:26:11]: Attributes: position normal",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define DETAILDIRECTUV 0\n#define DETAIL_NORMALBLENDMETHOD 0\n#define VIGNETTEBLENDMODEMULTIPLY\n#define TONEMAPPING 0\n#define SAMPLER3DGREENDEPTH\n#define SAMPLER3DBGRMAP\n#define DIFFUSEDIRECTUV 0\n#define AMBIENTDIRECTUV 0\n#define OPACITYDIRECTUV 0\n#d",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false",
+    "BJS - [14:26:11]: Trying next fallback.",
+    "BJS - [14:26:11]: Error compiling effect",
+    "BJS - [14:26:11]: Unable to compile effect:",
+    "BJS - [14:26:11]: Uniforms: world view viewProjection vEyePosition vLightsType vAmbientColor vAlbedoColor baseWeight baseDiffuseRoughness vReflectivityColor vMetallicReflectanceFactors vEmissiveColor visibility vFogInfos vFogColor pointSize vAlbedoInfos vBaseWeightInfos vBaseDiffuseRoughnessInfos vA",
+    "BJS - [14:26:11]: Attributes: position normal uv",
+    "BJS - [14:26:11]: Defines:\n#define MATERIALPLUGIN_7\n#define BRDF_V_HEIGHT_CORRELATED\n#define MS_BRDF_ENERGY_CONSERVATION\n#define SPHERICAL_HARMONICS\n#define SPECULAR_GLOSSINESS_ENERGY_CONSERVATION\n#define MIX_IBL_RADIANCE_WITH_IRRADIANCE\n#define LEGACY_SPECULAR_ENERGY_CONSERVATION\n#define BASE_DIFFU",
+    "BJS - [14:26:11]: Error: Something went wrong while creating a gl vertex shader object. gl error=0, gl isContextLost=true, _contextWasLost=false"
+  ]
+}

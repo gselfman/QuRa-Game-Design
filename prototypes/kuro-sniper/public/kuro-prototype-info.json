@@ -1,8 +1,9 @@
 {
   "id": "qura-kuro-sniper-prototype",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "mode": "local-only",
   "rewards": false,
   "localRewards": true,
-  "accountRewards": false
+  "accountRewards": false,
+  "displayName": "QuRa. Снайпер"
 }

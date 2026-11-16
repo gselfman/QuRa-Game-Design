@@ -1,0 +1,16 @@
+{
+  "title": "QuRa. Снайпер",
+  "version": {
+    "id": "qura-kuro-sniper-prototype",
+    "version": "0.4.2",
+    "mode": "local-only",
+    "rewards": false,
+    "localRewards": true,
+    "accountRewards": false,
+    "displayName": "QuRa. Снайпер"
+  },
+  "score": 13,
+  "ammo": 17,
+  "qaHooks": "absent",
+  "errors": []
+}

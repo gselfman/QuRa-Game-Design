@@ -30,7 +30,7 @@
 ## Самостоятельное задание на первый клип
 
 ```text
-PROJECT: QuRa / QuRa / Кура. JOB: KS-ANIM-C01-DROP-v001.
+PROJECT: QuRa / QuRa. Снайпер. JOB: KS-ANIM-C01-DROP-v001.
 INPUTS: exact canonical Ryaba reference from Figma pTm5JOM8r7b8ukBrk3UsXg node357:444; accepted pilot Ryaba.blend; rigVersion; hinged platform model and landing marker. If the accepted rig is missing, report that dependency; do not replace Ryaba with another bird.
 TASK: use Blender Python to create the 1.5-second successful-target reaction and export actual animation clips. Preserve all character anatomy, face, feather markings, accessory fit and fixed proportions. At contact0ms gameplay confirms target; latch40ms; platform folds60–220ms; surprised reaction100–260ms; wings/root controlled descent220–700ms; feet contact650–950ms; indignant recovery950–1500ms then ground idle/peck. No injuries, death or uncontrolled ragdoll. Root follows a parameterized landing arc; no foot sliding at contact. Secondary tail/comb motion settles smoothly.
 OUTPUT: source blend, GLB with named clips platform_surprise/drop_flap/land_soft/recover_indignant; JSON event markers; front/three-quarter preview renders and keyframe contact sheet. Author at30fps, interpolate in60fps runtime. Report actual clip durations, skeleton, texture paths and warnings. Do not claim animated GLB from an MP4 or sprite preview. Save a new version, never overwrite accepted source.
@@ -39,7 +39,7 @@ OUTPUT: source blend, GLB with named clips platform_surprise/drop_flap/land_soft
 ## Самостоятельное задание на корректную оптику
 
 ```text
-PROJECT: QuRa / QuRa / Кура. JOB: KS-OPTICS-PILOT-v001.
+PROJECT: QuRa / QuRa. Снайпер. JOB: KS-OPTICS-PILOT-v001.
 Create a test scene in TypeScript/Babylon.js with one world simulation, a fixed-FOV main camera, a separate narrow-FOV scope camera rendering to texture, a round lens mask, and a HUD rendered once on top. Scope pass excludes weapon, HUD, lens surface and player-local effects. Only the lens interior is magnified. All objects outside lens retain normal distant scale. Every object inside lens uses the same camera perspective. Reticle is at lens center, never shifted toward a bird. The target is a separate disk BELOW the canonical hen platform.
 Calibrate magnification in actual screen pixels, accounting for lens diameter and render-target compositing, per CAMERA_AND_AIM.md. Add a frozen simulation fixture with test disks and demonstrate peripheral pixel-scale invariance, correct magnification±5%, centered reticle±1px, and valid hit direction on each configured distance. Render both camera passes from the same animation snapshot. Supply measured screenshots and mobile frame-time results; do not fake magnification by scaling the entire canvas or selected hen.
 ```
